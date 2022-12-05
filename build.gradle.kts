@@ -3,6 +3,8 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val slayTheSpireInstallDir = "${System.getenv("HOME")}/.local/share/Steam/steamapps/common/SlayTheSpire"
 val modName = "Marisa"
 
+description = "test"
+
 buildscript {
     repositories {
         mavenCentral()
@@ -15,30 +17,35 @@ buildscript {
 
 plugins {
     application
+    java
     kotlin("jvm") version "1.7.20"
 }
 
 repositories {
-    jcenter()
     mavenCentral()
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
-    compileClasspath(fileTree("lib"))
-    compileClasspath(files("${slayTheSpireInstallDir}/desktop-1.0.jar"))
+    compileOnly(fileTree("lib"))
+    compileOnly(files("${slayTheSpireInstallDir}/desktop-1.0.jar"))
 }
 
 sourceSets {
     main {
-        java {
-            srcDirs.add(file("src/main/kotlin/"))
-        }
+        java.srcDir("src/main")
+//        java {
+//            srcDirs.add(file("src/main/kotlin/"))
+//        }
     }
 }
 
-tasks.register<Jar>("jar1") {
+val jar1 = "jar1"
+
+tasks.register<Jar>(jar1) {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     archiveName = "$modName.jar"
     from(sourceSets.main.get().output) { }
     dependsOn(configurations.runtimeClasspath)
@@ -52,11 +59,7 @@ tasks.register<Jar>("jar1") {
 
 tasks.register<Copy>("copyJarToStsMods") {
     dependsOn("clean")
-    dependsOn("jar1")
-
-    if (slayTheSpireInstallDir == null || slayTheSpireInstallDir == "null") {
-        throw Exception("STS_HOME is not set.")
-    }
+    dependsOn(jar1)
 
     from("build/libs/${modName}.jar")
     into("$slayTheSpireInstallDir\\mods")
@@ -64,11 +67,7 @@ tasks.register<Copy>("copyJarToStsMods") {
 
 tasks.register<Copy>("copyJarToWorkshopFolder") {
     dependsOn("clean")
-    dependsOn("jar1")
-
-    if (slayTheSpireInstallDir == null || slayTheSpireInstallDir == "null") {
-        throw Exception("STS_HOME is not set.")
-    }
+    dependsOn(jar1)
 
     from("build/libs/${modName}.jar")
     into("${slayTheSpireInstallDir}/${modName}/content") // publish to Workshop folder

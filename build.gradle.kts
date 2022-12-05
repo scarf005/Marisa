@@ -3,8 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val slayTheSpireInstallDir = "${System.getenv("HOME")}/.local/share/Steam/steamapps/common/SlayTheSpire"
 val modName = "Marisa"
 
-description = "test"
-
 buildscript {
     repositories {
         mavenCentral()
@@ -15,10 +13,15 @@ buildscript {
     }
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 plugins {
     application
     java
-    kotlin("jvm") version "1.7.20"
+//    kotlin("jvm") version "1.7.20"
 }
 
 repositories {
@@ -26,8 +29,8 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("reflect"))
+//    implementation(kotlin("stdlib-jdk8"))
+//    implementation(kotlin("reflect"))
     compileOnly(fileTree("lib"))
     compileOnly(files("${slayTheSpireInstallDir}/desktop-1.0.jar"))
 }
@@ -41,9 +44,7 @@ sourceSets {
     }
 }
 
-val jar1 = "jar1"
-
-tasks.register<Jar>(jar1) {
+tasks.register<Jar>("createJar") {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
     archiveName = "$modName.jar"
@@ -51,7 +52,7 @@ tasks.register<Jar>(jar1) {
     dependsOn(configurations.runtimeClasspath)
     from({
         configurations.runtimeClasspath.get()
-            .filter { it.name.endsWith("jar") }
+            .filter { it.name.endsWith("createJar") }
             .map { zipTree(it) }
     })
     from(file("src/ModTheSpire.json"))
@@ -59,15 +60,15 @@ tasks.register<Jar>(jar1) {
 
 tasks.register<Copy>("copyJarToStsMods") {
     dependsOn("clean")
-    dependsOn(jar1)
+    dependsOn("createJar")
 
     from("build/libs/${modName}.jar")
-    into("$slayTheSpireInstallDir\\mods")
+    into("${slayTheSpireInstallDir}/mods")
 }
 
 tasks.register<Copy>("copyJarToWorkshopFolder") {
     dependsOn("clean")
-    dependsOn(jar1)
+    dependsOn("createJar")
 
     from("build/libs/${modName}.jar")
     into("${slayTheSpireInstallDir}/${modName}/content") // publish to Workshop folder

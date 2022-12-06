@@ -32,10 +32,8 @@ class ChargeUpSpray : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        var cnt = 8
-        if (p.hasRelic("SimpleLauncher")) {
-            cnt = 6
-        }
+        val cnt = if (p.hasRelic("SimpleLauncher")) 6 else 8
+
         if (p.hasPower("ChargeUpPower") && !p.hasPower("OneTimeOffPlusPower")) {
             if (p.getPower("ChargeUpPower").amount >= cnt) {
                 AbstractDungeon.actionManager.addToTop(
@@ -55,9 +53,7 @@ class ChargeUpSpray : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return ChargeUpSpray()
-    }
+    override fun makeCopy(): AbstractCard = ChargeUpSpray()
 
     override fun upgrade() {
         if (!upgraded) {

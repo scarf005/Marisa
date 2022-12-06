@@ -27,14 +27,6 @@ class Acceleration : CustomCard(
         block = baseBlock
     }
 
-    /*
-    public void applyPowers(){
-      super.applyPowers();
-      if (this.upgraded){
-        this.retain = true;
-      }
-    }
-  */
     override fun applyPowersToBlock() {}
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         for (i in 0 until block) {
@@ -45,16 +37,9 @@ class Acceleration : CustomCard(
                 addToBot(DrawDrawPileAction())
             }
         }
-        /*
-    AbstractDungeon.actionManager.addToTop(
-        new MakeTempCardInHandAction(new Burn())
-    );
-    */
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Acceleration()
-    }
+    override fun makeCopy(): AbstractCard = Acceleration()
 
     override fun upgrade() {
         if (!upgraded) {
@@ -68,14 +53,13 @@ class Acceleration : CustomCard(
     companion object {
         const val ID = "Acceleration"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
+        val NAME: String? = cardStrings.NAME
+        val DESCRIPTION: String? = cardStrings.DESCRIPTION
+        val DESCRIPTION_UPG: String? = cardStrings.UPGRADE_DESCRIPTION
         const val IMG_PATH = "img/cards/GuidingStar.png"
         private const val COST = 0
         private const val DRAW = 2
 
-        //        private const val DRAW_UPG = 1
         private const val AMP = 1
         private const val AMP_UPG = 1
     }

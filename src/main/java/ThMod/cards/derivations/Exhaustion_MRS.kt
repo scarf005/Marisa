@@ -25,7 +25,7 @@ class Exhaustion_MRS : CustomCard(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         if (p.hasRelic("Medical Kit")) {
-            useMedicalKit(p)
+//            useMedicalKit(p)
         } else {
             AbstractDungeon.actionManager.addToBottom(
                 UseCardAction(this)
@@ -33,9 +33,7 @@ class Exhaustion_MRS : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Exhaustion_MRS()
-    }
+    override fun makeCopy(): AbstractCard = Exhaustion_MRS()
 
     override fun upgrade() {}
 

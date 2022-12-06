@@ -34,14 +34,10 @@ class BlazingStar : AmplifiedAttack(
         isException = true
     }
 
+    private fun burns() = AbstractDungeon.player.hand.group.filterIsInstance<Burn>().size
+    private fun burnDamage() = baseDamage + burns() * magicNumber
     override fun applyPowers() {
-        val p = AbstractDungeon.player
-        block = baseDamage
-        for (c in p.hand.group) {
-            if (c is Burn) {
-                block += magicNumber
-            }
-        }
+        block = burnDamage()
         super.applyPowers()
     }
 
@@ -50,13 +46,7 @@ class BlazingStar : AmplifiedAttack(
     }
 
     override fun calculateCardDamage(mo: AbstractMonster) {
-        val p = AbstractDungeon.player
-        block = baseDamage
-        for (c in p.hand.group) {
-            if (c is Burn) {
-                block += magicNumber
-            }
-        }
+        block = burnDamage()
         super.calculateCardDamage(mo)
     }
 
@@ -73,9 +63,7 @@ class BlazingStar : AmplifiedAttack(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return BlazingStar()
-    }
+    override fun makeCopy(): AbstractCard = BlazingStar()
 
     override fun upgrade() {
         if (!upgraded) {

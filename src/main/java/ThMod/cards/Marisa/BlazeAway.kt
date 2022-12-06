@@ -56,15 +56,7 @@ class BlazeAway : CustomCard(
                 card.setCostForTurn(0)
             }
             ThMod.logger.info(
-                "BlazeAway : card :" + card.cardID
-                        + " ; baseD :" + card.baseDamage
-                        + " ; D : " + card.damage
-                        + " ; baseB :" + card.baseBlock
-                        + " ; B : " + card.block
-                        + " ; baseM :" + card.baseMagicNumber
-                        + " ; M : " + card.magicNumber
-                        + " ; C : " + card.cost
-                        + " ; CFT : " + card.costForTurn
+                """BlazeAway : card :${card.cardID} ; baseD :${card.baseDamage} ; D : ${card.damage} ; baseB :${card.baseBlock} ; B : ${card.block} ; baseM :${card.baseMagicNumber} ; M : ${card.magicNumber} ; C : ${card.cost} ; CFT : ${card.costForTurn}"""
             )
             repeat((0 until magicNumber).count()) {
                 AbstractDungeon.actionManager.addToBottom(
@@ -74,9 +66,7 @@ class BlazeAway : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return BlazeAway()
-    }
+    override fun makeCopy(): AbstractCard = BlazeAway()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -1,105 +1,100 @@
-package ThMod.cards.derivations;
+package ThMod.cards.derivations
 
-import ThMod.abstracts.AmplifiedAttack;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Burn;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import ThMod.abstracts.AmplifiedAttack
+import ThMod.patches.AbstractCardEnum
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
+import com.megacrit.cardcrawl.actions.common.DamageAction
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
+import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.cards.DamageInfo
+import com.megacrit.cardcrawl.cards.status.Burn
+import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.monsters.AbstractMonster
 
-import ThMod.patches.AbstractCardEnum;
+class WhiteDwarf : AmplifiedAttack(
+    ID,
+    NAME,
+    IMG_PATH,
+    COST,
+    DESCRIPTION,
+    CardType.ATTACK,
+    AbstractCardEnum.MARISA_DERIVATIONS,
+    CardRarity.SPECIAL,
+    CardTarget.ENEMY
+) {
+    private var magn = MULTIPLIER
 
-public class WhiteDwarf extends AmplifiedAttack {
-
-  public static final String ID = "WhiteDwarf";
-  private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-  public static final String NAME = cardStrings.NAME;
-  public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-  public static final String DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION;
-  private static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-  public static final String IMG_PATH = "img/cards/Marisa/WhiteDwarf.png";
-  private static final int COST = 0;
-  private static final int ATTACK_DMG = 0;
-  private static final int HAND_REQ = 4;
-  private static final float MULTIPLIER = 2f;
-  private static final float MULTIPLIER_UPG = 3f;
-
-  private float magn = MULTIPLIER;
-
-  public WhiteDwarf() {
-    super(
-        ID,
-        NAME,
-        IMG_PATH,
-        COST,
-        DESCRIPTION,
-        AbstractCard.CardType.ATTACK,
-        AbstractCardEnum.MARISA_DERIVATIONS,
-        AbstractCard.CardRarity.SPECIAL,
-        AbstractCard.CardTarget.ENEMY
-    );
-
-    this.baseDamage = this.damage = ATTACK_DMG;
-    this.exhaust = true;
-  }
-
-  @Override
-  public void applyPowers() {
-    AbstractPlayer player = AbstractDungeon.player;
-    this.ampNumber = (int) (Math.floor(player.discardPile.size() * this.magn));
-    super.applyPowers();
-  }
-
-  @Override
-  public void calculateDamageDisplay(AbstractMonster mo) {
-    calculateCardDamage(mo);
-  }
-
-  @Override
-  public void calculateCardDamage(AbstractMonster mo) {
-    AbstractPlayer player = AbstractDungeon.player;
-    this.ampNumber = (int) (Math.floor(player.discardPile.size() * this.magn));
-    super.calculateCardDamage(mo);
-  }
-
-  public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-    if (p.hand.size() <= HAND_REQ) {
-      return true;
-    } else {
-      this.cantUseMessage = EXTENDED_DESCRIPTION[0];
-      return false;
+    init {
+        damage = ATTACK_DMG
+        baseDamage = damage
+        exhaust = true
     }
-  }
 
-  public void use(AbstractPlayer p, AbstractMonster m) {
-    AbstractDungeon.actionManager.addToBottom(
-        new DamageAction(
-            m,
-            new DamageInfo(p, this.block, this.damageTypeForTurn),
-            AttackEffect.SLASH_DIAGONAL
+    override fun applyPowers() {
+        val player = AbstractDungeon.player
+        ampNumber = Math.floor((player.discardPile.size() * magn).toDouble()).toInt()
+        super.applyPowers()
+    }
+
+    override fun calculateDamageDisplay(mo: AbstractMonster) {
+        calculateCardDamage(mo)
+    }
+
+    override fun calculateCardDamage(mo: AbstractMonster) {
+        val player = AbstractDungeon.player
+        ampNumber = Math.floor((player.discardPile.size() * magn).toDouble()).toInt()
+        super.calculateCardDamage(mo)
+    }
+
+    override fun canUse(p: AbstractPlayer, m: AbstractMonster): Boolean {
+        return if (p.hand.size() <= HAND_REQ) {
+            true
+        } else {
+            cantUseMessage = EXTENDED_DESCRIPTION[0]
+            false
+        }
+    }
+
+    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+        AbstractDungeon.actionManager.addToBottom(
+            DamageAction(
+                m,
+                DamageInfo(p, block, damageTypeForTurn),
+                AttackEffect.SLASH_DIAGONAL
+            )
         )
-    );
-    AbstractDungeon.actionManager.addToBottom(
-        new MakeTempCardInHandAction(new Burn(), 2)
-    );
-  }
-
-  public AbstractCard makeCopy() {
-    return new WhiteDwarf();
-  }
-
-  public void upgrade() {
-    if (!this.upgraded) {
-      upgradeName();
-      this.magn = MULTIPLIER_UPG;
-      this.rawDescription = DESCRIPTION_UPG;
-      initializeDescription();
+        AbstractDungeon.actionManager.addToBottom(
+            MakeTempCardInHandAction(Burn(), 2)
+        )
     }
-  }
+
+    override fun makeCopy(): AbstractCard {
+        return WhiteDwarf()
+    }
+
+    override fun upgrade() {
+        if (!upgraded) {
+            upgradeName()
+            magn = MULTIPLIER_UPG
+            rawDescription = DESCRIPTION_UPG
+            initializeDescription()
+        }
+    }
+
+    companion object {
+        const val ID = "WhiteDwarf"
+        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
+        val NAME = cardStrings.NAME
+        val DESCRIPTION = cardStrings.DESCRIPTION
+        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
+        private val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
+        const val IMG_PATH = "img/cards/Marisa/WhiteDwarf.png"
+        private const val COST = 0
+        private const val ATTACK_DMG = 0
+        private const val HAND_REQ = 4
+        private const val MULTIPLIER = 2f
+        private const val MULTIPLIER_UPG = 3f
+    }
 }

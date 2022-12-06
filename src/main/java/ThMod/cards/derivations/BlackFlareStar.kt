@@ -1,69 +1,66 @@
-package ThMod.cards.derivations;
+package ThMod.cards.derivations
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import ThMod.action.BlackFlareStarAction
+import ThMod.patches.AbstractCardEnum
+import basemod.abstracts.CustomCard
+import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.monsters.AbstractMonster
 
-import ThMod.action.BlackFlareStarAction;
-import ThMod.patches.AbstractCardEnum;
-import basemod.abstracts.CustomCard;
-
-public class BlackFlareStar extends CustomCard {
-
-  public static final String ID = "BlackFlareStar";
-  private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-  public static final String NAME = cardStrings.NAME;
-  public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-  public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-  public static final String IMG_PATH = "img/cards/Marisa/BlackFlareStar.png";
-  private static final int COST = 0;
-  private static final int BLC_AMT = 4;
-  private static final int UPG_BLC = 2;
-  private static final int HAND_REQ = 4;
-
-  public BlackFlareStar() {
-    super(
-        ID,
-        NAME,
-        IMG_PATH,
-        COST,
-        DESCRIPTION,
-        AbstractCard.CardType.SKILL,
-        AbstractCardEnum.MARISA_DERIVATIONS,
-        AbstractCard.CardRarity.SPECIAL,
-        AbstractCard.CardTarget.SELF
-    );
-    this.baseBlock = BLC_AMT;
-    this.exhaust = true;
-  }
-
-  public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-    if (p.hand.size() >= HAND_REQ) {
-      return true;
-    } else {
-      this.cantUseMessage = EXTENDED_DESCRIPTION[0];
-      return false;
+class BlackFlareStar : CustomCard(
+    ID,
+    NAME,
+    IMG_PATH,
+    COST,
+    DESCRIPTION,
+    CardType.SKILL,
+    AbstractCardEnum.MARISA_DERIVATIONS,
+    CardRarity.SPECIAL,
+    CardTarget.SELF
+) {
+    init {
+        baseBlock = BLC_AMT
+        exhaust = true
     }
-  }
 
-  public void use(AbstractPlayer p, AbstractMonster m) {
-
-    AbstractDungeon.actionManager.addToBottom(
-        new BlackFlareStarAction(this.block)
-    );
-  }
-
-  public AbstractCard makeCopy() {
-    return new BlackFlareStar();
-  }
-
-  public void upgrade() {
-    if (!this.upgraded) {
-      upgradeName();
-      this.upgradeBlock(UPG_BLC);
+    override fun canUse(p: AbstractPlayer, m: AbstractMonster): Boolean {
+        return if (p.hand.size() >= HAND_REQ) {
+            true
+        } else {
+            cantUseMessage = EXTENDED_DESCRIPTION[0]
+            false
+        }
     }
-  }
+
+    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+        AbstractDungeon.actionManager.addToBottom(
+            BlackFlareStarAction(block)
+        )
+    }
+
+    override fun makeCopy(): AbstractCard {
+        return BlackFlareStar()
+    }
+
+    override fun upgrade() {
+        if (!upgraded) {
+            upgradeName()
+            upgradeBlock(UPG_BLC)
+        }
+    }
+
+    companion object {
+        const val ID = "BlackFlareStar"
+        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
+        val NAME = cardStrings.NAME
+        val DESCRIPTION = cardStrings.DESCRIPTION
+        val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
+        const val IMG_PATH = "img/cards/Marisa/BlackFlareStar.png"
+        private const val COST = 0
+        private const val BLC_AMT = 4
+        private const val UPG_BLC = 2
+        private const val HAND_REQ = 4
+    }
 }

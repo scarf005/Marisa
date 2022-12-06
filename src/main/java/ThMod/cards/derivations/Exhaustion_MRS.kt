@@ -1,53 +1,49 @@
-package ThMod.cards.derivations;
+package ThMod.cards.derivations
 
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import basemod.abstracts.CustomCard
+import com.megacrit.cardcrawl.actions.utility.UseCardAction
+import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.monsters.AbstractMonster
 
-import basemod.abstracts.CustomCard;
-
-public class Exhaustion_MRS extends CustomCard {
-
-  public static final String ID = "Exhaustion_MRS";
-  private static final CardStrings cardStrings =
-      CardCrawlGame.languagePack.getCardStrings("Exhaustion_MRS");
-  public static final String NAME = cardStrings.NAME;
-  public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-  private static final int COST = -2;
-
-  public Exhaustion_MRS() {
-    super(
-        ID,
-        NAME,
-        "img/cards/exhaustion.png",
-        COST,
-        DESCRIPTION,
-        CardType.STATUS,
-        CardColor.COLORLESS,
-        CardRarity.SPECIAL,
-        CardTarget.NONE
-    );
-    this.exhaust = true;
-  }
-
-  public void use(AbstractPlayer p, AbstractMonster m) {
-    if (p.hasRelic("Medical Kit")) {
-      useMedicalKit(p);
-    } else {
-      AbstractDungeon.actionManager.addToBottom(
-          new UseCardAction(this)
-      );
+class Exhaustion_MRS : CustomCard(
+    ID,
+    NAME,
+    "img/cards/exhaustion.png",
+    COST,
+    DESCRIPTION,
+    CardType.STATUS,
+    CardColor.COLORLESS,
+    CardRarity.SPECIAL,
+    CardTarget.NONE
+) {
+    init {
+        exhaust = true
     }
-  }
 
-  public AbstractCard makeCopy() {
-    return new Exhaustion_MRS();
-  }
+    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+        if (p.hasRelic("Medical Kit")) {
+            useMedicalKit(p)
+        } else {
+            AbstractDungeon.actionManager.addToBottom(
+                UseCardAction(this)
+            )
+        }
+    }
 
-  public void upgrade() {
-  }
+    override fun makeCopy(): AbstractCard {
+        return Exhaustion_MRS()
+    }
+
+    override fun upgrade() {}
+
+    companion object {
+        const val ID = "Exhaustion_MRS"
+        private val cardStrings = CardCrawlGame.languagePack.getCardStrings("Exhaustion_MRS")
+        val NAME = cardStrings.NAME
+        val DESCRIPTION = cardStrings.DESCRIPTION
+        private const val COST = -2
+    }
 }

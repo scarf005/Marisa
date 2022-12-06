@@ -1,275 +1,234 @@
-package ThMod.characters;
+package ThMod.characters
 
-import ThMod.ThMod;
-import ThMod.cards.Marisa.MasterSpark;
-import ThMod.patches.AbstractCardEnum;
-import ThMod.patches.ThModClassEnum;
-import basemod.abstracts.CustomPlayer;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.EnergyManager;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.core.Settings.GameLanguage;
-import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import java.util.ArrayList;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import ThMod.ThMod
+import ThMod.cards.Marisa.MasterSpark
+import ThMod.patches.AbstractCardEnum
+import ThMod.patches.ThModClassEnum
+import basemod.abstracts.CustomPlayer
+import com.badlogic.gdx.graphics.Color
+import com.badlogic.gdx.graphics.g2d.BitmapFont
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion
+import com.badlogic.gdx.math.MathUtils
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
+import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.cards.AbstractCard.CardColor
+import com.megacrit.cardcrawl.cards.DamageInfo
+import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.core.EnergyManager
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.core.Settings.GameLanguage
+import com.megacrit.cardcrawl.events.beyond.SpireHeart
+import com.megacrit.cardcrawl.events.city.Vampires
+import com.megacrit.cardcrawl.helpers.FontHelper
+import com.megacrit.cardcrawl.helpers.ImageMaster
+import com.megacrit.cardcrawl.helpers.ScreenShake
+import com.megacrit.cardcrawl.screens.CharSelectInfo
+import com.megacrit.cardcrawl.unlock.UnlockTracker
+import org.apache.logging.log4j.LogManager
 
-public class Marisa extends CustomPlayer {
+class Marisa(name: String) :
+    CustomPlayer(name, ThModClassEnum.MARISA, ORB_TEXTURES, ORB_VFX, LAYER_SPEED, null, null) {
+    init {
+        dialogX = drawX // set location for text bubbles
+        dialogY = drawY + 220.0f * Settings.scale
+        logger.info("init Marisa")
+        initializeClass(
+            null,
+            MARISA_SHOULDER_2,  // required call to load textures and setup energy/loadout
+            MARISA_SHOULDER_1,
+            MARISA_CORPSE,
+            loadout,
+            20.0f, -10.0f, 220.0f, 290.0f,
+            EnergyManager(ENERGY_PER_TURN)
+        )
+        loadAnimation(MARISA_SKELETON_ATLAS, MARISA_SKELETON_JSON, 2.0f)
+        // if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
+        val ee = state.setAnimation(0, MARISA_ANIMATION, true).apply {
+            time = endTime * MathUtils.random()
+            timeScale = 1.0f
+        }
 
-  private static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
-  private static final String MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png"; // shoulder2 / shoulder_1
-  private static final String MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png"; // shoulder1 / shoulder_2
-  private static final String MARISA_CORPSE = "img/char/Marisa/fallen.png"; // dead corpse
-  public static final Logger logger = LogManager.getLogger(ThMod.class.getName());
-  //private static final float[] layerSpeeds = { 20.0F, 0.0F, -40.0F, 0.0F, 0.0F, 5.0F, 0.0F, -8.0F, 0.0F, 8.0F };
-  private static final String MARISA_SKELETON_ATLAS = "img/char/Marisa/MarisaModelv3.atlas";// Marisa_v0 / MarisaModel_v02 /MarisaModelv3
-  private static final String MARISA_SKELETON_JSON = "img/char/Marisa/MarisaModelv3.json";
-  private static final String MARISA_ANIMATION = "Idle";// Sprite / Idle
-  private static final String[] ORB_TEXTURES = {
-      "img/UI/EPanel/layer5.png",
-      "img/UI/EPanel/layer4.png",
-      "img/UI/EPanel/layer3.png",
-      "img/UI/EPanel/layer2.png",
-      "img/UI/EPanel/layer1.png",
-      "img/UI/EPanel/layer0.png",
-      "img/UI/EPanel/layer5d.png",
-      "img/UI/EPanel/layer4d.png",
-      "img/UI/EPanel/layer3d.png",
-      "img/UI/EPanel/layer2d.png",
-      "img/UI/EPanel/layer1d.png"
-  };
-  private static final String ORB_VFX = "img/UI/energyBlueVFX.png";
-  private static final float[] LAYER_SPEED =
-      {-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
-  //public static final String SPRITER_ANIM_FILEPATH = "img/char/MyCharacter/marisa_test.scml"; // spriter animation scml
-
-  public Marisa(String name) {
-    //super(name, setClass, null, null , null ,new SpriterAnimation(SPRITER_ANIM_FILEPATH));
-    super(name, ThModClassEnum.MARISA, ORB_TEXTURES, ORB_VFX, LAYER_SPEED, null, null);
-    //super(name, setClass, null, null, (String) null, null);
-
-    this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
-    this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
-
-    logger.info("init Marisa");
-
-    initializeClass(
-        null,
-        MARISA_SHOULDER_2, // required call to load textures and setup energy/loadout
-        MARISA_SHOULDER_1,
-        MARISA_CORPSE,
-        getLoadout(),
-        20.0F, -10.0F, 220.0F, 290.0F,
-        new EnergyManager(ENERGY_PER_TURN)
-    );
-
-    loadAnimation(MARISA_SKELETON_ATLAS, MARISA_SKELETON_JSON, 2.0F);
-    // if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
-    AnimationState.TrackEntry e = this.state.setAnimation(0, MARISA_ANIMATION, true);
-    e.setTime(e.getEndTime() * MathUtils.random());
-    this.stateData.setMix("Hit", "Idle", 0.1F);
-    e.setTimeScale(1.0F);
-    logger.info("init finish");
-  }
-
-  public ArrayList<String> getStartingDeck() { // starting deck 'nuff said
-    ArrayList<String> retVal = new ArrayList<>();
-    retVal.add("Strike_MRS");
-    retVal.add("Strike_MRS");
-    retVal.add("Strike_MRS");
-    retVal.add("Strike_MRS");
-    retVal.add("Defend_MRS");
-    retVal.add("Defend_MRS");
-    retVal.add("Defend_MRS");
-    retVal.add("Defend_MRS");
-    retVal.add("MasterSpark");
-    retVal.add("UpSweep");
-    return retVal;
-  }
-
-  public ArrayList<String> getStartingRelics() { // starting relics - also simple
-    ArrayList<String> retVal = new ArrayList<>();
-    retVal.add("MiniHakkero");
-    UnlockTracker.markRelicAsSeen("MiniHakkero");
-    return retVal;
-  }
-
-  private static final int STARTING_HP = 75;
-  private static final int MAX_HP = 75;
-  private static final int STARTING_GOLD = 99;
-  private static final int HAND_SIZE = 5;
-  private static final int ASCENSION_MAX_HP_LOSS = 5;
-
-  public CharSelectInfo getLoadout() { // the rest of the character loadout so includes your character select screen info plus hp and starting gold
-    String title;
-    String flavor;
-    if (Settings.language == Settings.GameLanguage.ZHS) {
-      title = "\u666e\u901a\u7684\u9b54\u6cd5\u4f7f";
-      flavor = "\u4f4f\u5728\u9b54\u6cd5\u68ee\u6797\u7684\u9b54\u6cd5\u4f7f\u3002 NL \u5584\u957f\u4e8e\u5149\u548c\u70ed\u7684\u9b54\u6cd5\u3002";
-    } else if (Settings.language == Settings.GameLanguage.JPN) {
-      title = "\u666e\u901a\u306e\u9b54\u6cd5\u4f7f\u3044";
-      flavor = "\u9b54\u6cd5\u306e\u68ee\u306b\u4f4f\u3093\u3067\u3044\u308b\u666e\u901a\u306e\u9b54\u6cd5\u4f7f\u3044\u3002 NL \u5149\u3068\u71b1\u306e\u9b54\u6cd5\u304c\u5f97\u610f\u3002";
-    } else if (Settings.language == Settings.GameLanguage.ZHT) {
-      title = "\u666e\u901a\u7684\u9b54\u6cd5\u4f7f";
-      flavor = "\u4f4f\u5728\u9b54\u6cd5\u68ee\u6797\u7684\u9b54\u6cd5\u4f7f\u3002 NL \u5584\u9577\u65bc\u5149\u548c\u71b1\u7684\u9b54\u6cd5\u3002";
-    } else if (Settings.language == Settings.GameLanguage.KOR) {
-      title = "\ud3c9\ubc94\ud55c \ub9c8\ubc95\uc0ac";
-      flavor = "\ub9c8\ubc95\uc758 \uc232\uc5d0 \uc0ac\ub294 \"\ud3c9\ubc94\ud55c\" \ub9c8\ubc95\uc0ac \uc785\ub2c8\ub2e4. NL \ube5b\uacfc \uc5f4 \ub9c8\ubc95\uc774 \ud2b9\uae30\uc785\ub2c8\ub2e4.";
-    } else if(Settings.language == Settings.GameLanguage.FRA) {
-      title = "La magicienne ordinaire";
-      flavor = "La magicienne \"ordinaire\" vie dans la for\u00eat magique.  NL Sp\u00e9cialis\u00e9es dans la magie de la lumi\u00e8re et de la chaleur.";
-    } else {
-      title = "The Ordinary Magician";
-      flavor = "The \"ordinary\" magician lives in the Forest of Magic. NL Specializes in light and heat magic.";
+        stateData.setMix("Hit", "Idle", 0.1f)
+        logger.info("init finish")
     }
-    return new CharSelectInfo(
-        title,
-        flavor,
-        STARTING_HP,
-        MAX_HP,
-        0,
-        STARTING_GOLD,
-        HAND_SIZE,
-        this,
-        getStartingRelics(),
-        getStartingDeck(),
-        false
-    );
-  }
 
-  public AbstractCard.CardColor getCardColor() {
-    return AbstractCardEnum.MARISA_COLOR;
-  }
-
-  public AbstractCard getStartCardForEvent() {
-    return new MasterSpark();
-  }
-
-  public String getTitle(PlayerClass playerClass) {
-    String title;
-    if (Settings.language == GameLanguage.ZHS) {
-      title = "\u666e\u901a\u7684\u9b54\u6cd5\u4f7f";
-    } else if (Settings.language == GameLanguage.JPN) {
-      title = "\u666e\u901a\u306e\u9b54\u6cd5\u4f7f\u3044";
-    } else if (Settings.language == GameLanguage.ZHT) {
-      title = "\u666e\u901a\u7684\u9b54\u6cd5\u4f7f";
-    } else if (Settings.language == GameLanguage.KOR) {
-      title = "\ud3c9\ubc94\ud55c \ub9c8\ubc95\uc0ac";
-    } else {
-      title = "The Ordinary Magician";
+    override fun getStartingDeck(): ArrayList<String> { // create starting deck
+        val strikes = Array(4) { "Strike_MRS" }
+        val defends = Array(4) { "Defend_MRS" }
+        val others = arrayOf("MasterSpark", "UpSweep")
+        return (strikes + defends + others).toCollection(ArrayList())
     }
-    return title;
-  }
 
-  public Color getCardTrailColor() {
-    return ThMod.STARLIGHT;
-  }
-
-  public int getAscensionMaxHPLoss() {
-    return ASCENSION_MAX_HP_LOSS;
-  }
-
-  public BitmapFont getEnergyNumFont() {
-    return FontHelper.energyNumFontBlue;
-  }
-
-  public void doCharSelectScreenSelectEffect() {
-    CardCrawlGame.sound.playA("SELECT_MRS", MathUtils.random(-0.1F, 0.1F));
-    CardCrawlGame.screenShake.shake(
-        ScreenShake.ShakeIntensity.MED,
-        ScreenShake.ShakeDur.SHORT,
-        false
-    );
-  }
-
-  public String getCustomModeCharacterButtonSoundKey() {
-    return "SELECT_MRS";
-  }
-
-  public String getLocalizedCharacterName() {
-    String char_name;
-    if ((Settings.language == Settings.GameLanguage.JPN) || (Settings.language
-        == Settings.GameLanguage.ZHS) || (Settings.language == Settings.GameLanguage.ZHT)) {
-      char_name = "\u9b54\u7406\u6c99";
-    } else if (Settings.language == Settings.GameLanguage.KOR) {
-      char_name = "\ub9c8\ub9ac\uc0ac";
-    } else {
-      char_name = "Marisa";
+    override fun getStartingRelics(): ArrayList<String> { // starting relics
+        UnlockTracker.markRelicAsSeen("MiniHakkero")
+        return arrayListOf("MiniHakkero")
     }
-    return char_name;
-  }
 
-  public AbstractPlayer newInstance() {
-    return new Marisa(this.name);
-  }
+    private data class LoadoutText(val title: String, val flavor: String)
 
-  @Override
-  public String getVampireText() {
-    return com.megacrit.cardcrawl.events.city.Vampires.DESCRIPTIONS[1];
-  }
+    private fun loadoutText(): LoadoutText = when (Settings.language) {
+        GameLanguage.ZHS -> LoadoutText(
+            title = """普通的魔法使""",
+            flavor = """住在魔法森林的魔法使。 NL 善长于光和热的魔法。"""
+        )
 
-  public Color getCardRenderColor() {
-    return ThMod.STARLIGHT;
-  }
+        GameLanguage.JPN -> LoadoutText(
+            title = """普通の魔法使い""",
+            flavor = """魔法の森に住んでいる普通の魔法使い。 NL 光と熱の魔法が得意。"""
+        )
 
-  public void updateOrb(int orbCount) {
-    this.energyOrb.updateOrb(orbCount);
-  }
+        GameLanguage.ZHT -> LoadoutText(
+            title = """普通的魔法使""",
+            flavor = """住在魔法森林的魔法使。 NL 善長於光和熱的魔法。"""
+        )
 
-  public TextureAtlas.AtlasRegion getOrb() {
-    return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ThMod.CARD_ENERGY_ORB), 0, 0, 24, 24);
-  }
+        GameLanguage.KOR -> LoadoutText(
+            title = """평범한 마법사""",
+            flavor = """마법의 숲에 사는 "평범한" 마법사 입니다. NL 빛과 열 마법이 특기입니다."""
+        )
 
-  public Color getSlashAttackColor() {
-    return ThMod.STARLIGHT;
-  }
+        GameLanguage.FRA -> LoadoutText(
+            title = "La magicienne ordinaire",
+            flavor = """La magicienne "ordinaire" vie dans la forêt magique.  NL Spécialisées dans la magie de la lumière et de la chaleur."""
+        )
 
-  public AttackEffect[] getSpireHeartSlashEffect() {
-    return new AttackEffect[]{
-        AttackEffect.SLASH_HEAVY,
-        AttackEffect.FIRE,
-        AttackEffect.SLASH_DIAGONAL,
-        AttackEffect.SLASH_HEAVY,
-        AttackEffect.FIRE,
-        AttackEffect.SLASH_DIAGONAL
-    };
-  }
-
-  public String getSpireHeartText() {
-    return com.megacrit.cardcrawl.events.beyond.SpireHeart.DESCRIPTIONS[10];
-  }
-
-  public void damage(DamageInfo info) {
-    if ((info.owner != null) && (info.type != DamageInfo.DamageType.THORNS) && (
-        info.output - this.currentBlock > 0)) {
-      AnimationState.TrackEntry e =
-          this.state.setAnimation(0, "Hit", false);
-      this.state.addAnimation(0, "Idle", true, 0.0F);
-      e.setTimeScale(1.0F);
+        else -> LoadoutText(
+            title = "The Ordinary Magician",
+            flavor = """The "ordinary" magician lives in the Forest of Magic. NL Specializes in light and heat magic."""
+        )
     }
-    super.damage(info);
-  }
 
-  public void applyPreCombatLogic() {
-    super.applyPreCombatLogic();
-    ThMod.typhoonCounter = 0;
-    ThMod.logger.info(
-        "Marisa : applyPreCombatLogic : I just reset the god damn typhoon counter ! current counter : "
-            + ThMod.typhoonCounter
-    );
-  }
+    /**
+     * the rest of the character loadout so includes your character select screen info plus hp and starting gold
+     */
+    override fun getLoadout(): CharSelectInfo {
+        val (title, flavor) = loadoutText()
+        return CharSelectInfo(
+            title,
+            flavor,
+            STARTING_HP,
+            MAX_HP,
+            0,
+            STARTING_GOLD,
+            HAND_SIZE,
+            this,
+            startingRelics,
+            startingDeck,
+            false
+        )
+    }
 
+    override fun getCardColor(): CardColor = AbstractCardEnum.MARISA_COLOR
+
+    override fun getStartCardForEvent(): AbstractCard = MasterSpark()
+
+    override fun getTitle(playerClass: PlayerClass) = when (Settings.language) {
+        GameLanguage.ZHS -> """普通的魔法使"""
+        GameLanguage.JPN -> """普通の魔法使い"""
+        GameLanguage.ZHT -> """普通的魔法使"""
+        GameLanguage.KOR -> """평범한 마법사"""
+        else -> "The Ordinary Magician"
+    }
+
+    override fun getCardTrailColor(): Color = ThMod.STARLIGHT
+
+    override fun getAscensionMaxHPLoss(): Int = ASCENSION_MAX_HP_LOSS
+
+    override fun getEnergyNumFont(): BitmapFont = FontHelper.energyNumFontBlue
+
+    override fun doCharSelectScreenSelectEffect() {
+        CardCrawlGame.sound.playA("SELECT_MRS", MathUtils.random(-0.1f, 0.1f))
+        CardCrawlGame.screenShake.shake(
+            ScreenShake.ShakeIntensity.MED,
+            ScreenShake.ShakeDur.SHORT,
+            false
+        )
+    }
+
+    override fun getCustomModeCharacterButtonSoundKey() = "SELECT_MRS"
+
+    override fun getLocalizedCharacterName() = when (Settings.language) {
+        GameLanguage.JPN, GameLanguage.ZHS, GameLanguage.ZHT -> """魔理沙"""
+        GameLanguage.KOR -> """마리사"""
+        else -> "Marisa"
+    }
+
+    override fun newInstance(): AbstractPlayer = Marisa(name)
+
+    override fun getVampireText(): String = Vampires.DESCRIPTIONS[1]
+
+    override fun getCardRenderColor(): Color = ThMod.STARLIGHT
+
+    override fun updateOrb(orbCount: Int) {
+        energyOrb.updateOrb(orbCount)
+    }
+
+    override fun getOrb(): AtlasRegion = AtlasRegion(ImageMaster.loadImage(ThMod.CARD_ENERGY_ORB), 0, 0, 24, 24)
+
+    override fun getSlashAttackColor(): Color = ThMod.STARLIGHT
+
+    override fun getSpireHeartSlashEffect(): Array<AttackEffect> {
+        return arrayOf(
+            AttackEffect.SLASH_HEAVY,
+            AttackEffect.FIRE,
+            AttackEffect.SLASH_DIAGONAL,
+            AttackEffect.SLASH_HEAVY,
+            AttackEffect.FIRE,
+            AttackEffect.SLASH_DIAGONAL
+        )
+    }
+
+    override fun getSpireHeartText(): String = SpireHeart.DESCRIPTIONS[10]
+
+    override fun damage(info: DamageInfo) {
+        if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output - currentBlock > 0) {
+            val e = state.setAnimation(0, "Hit", false)
+            e.timeScale = 1.0f
+            state.addAnimation(0, "Idle", true, 0.0f)
+        }
+        super.damage(info)
+    }
+
+    override fun applyPreCombatLogic() {
+        super.applyPreCombatLogic()
+        ThMod.typhoonCounter = 0
+        ThMod.logger.info(
+            """Marisa : applyPreCombatLogic : I just reset the god damn typhoon counter ! current counter : ${ThMod.typhoonCounter}"""
+        )
+    }
+
+    companion object {
+        val logger = LogManager.getLogger(ThMod::class.java.name)
+        private const val ENERGY_PER_TURN = 3 // how much energy you get every turn
+        private const val MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
+        private const val MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2
+        private const val MARISA_CORPSE = "img/char/Marisa/fallen.png" // dead corpse
+
+        private const val MARISA_SKELETON_ATLAS =
+            "img/char/Marisa/MarisaModelv3.atlas" // Marisa_v0 / MarisaModel_v02 /MarisaModelv3
+        private const val MARISA_SKELETON_JSON = "img/char/Marisa/MarisaModelv3.json"
+        private const val MARISA_ANIMATION = "Idle" // Sprite / Idle
+        private val ORB_TEXTURES = arrayOf(
+            "img/UI/EPanel/layer5.png",
+            "img/UI/EPanel/layer4.png",
+            "img/UI/EPanel/layer3.png",
+            "img/UI/EPanel/layer2.png",
+            "img/UI/EPanel/layer1.png",
+            "img/UI/EPanel/layer0.png",
+            "img/UI/EPanel/layer5d.png",
+            "img/UI/EPanel/layer4d.png",
+            "img/UI/EPanel/layer3d.png",
+            "img/UI/EPanel/layer2d.png",
+            "img/UI/EPanel/layer1d.png"
+        )
+        private const val ORB_VFX = "img/UI/energyBlueVFX.png"
+        private val LAYER_SPEED = floatArrayOf(-40.0f, -32.0f, 20.0f, -20.0f, 0.0f, -10.0f, -8.0f, 5.0f, -5.0f, 0.0f)
+
+        private const val STARTING_HP = 75
+        private const val MAX_HP = 75
+        private const val STARTING_GOLD = 99
+        private const val HAND_SIZE = 5
+        private const val ASCENSION_MAX_HP_LOSS = 5
+    }
 }

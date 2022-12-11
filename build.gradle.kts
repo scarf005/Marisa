@@ -1,7 +1,9 @@
+import org.jetbrains.kotlin.com.google.gson.Gson
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.text.SimpleDateFormat
 
 val slayTheSpireInstallDir = "${System.getenv("HOME")}/.local/share/Steam/steamapps/common/SlayTheSpire"
-val modName = "Marisa"
+val modName = "MarisaMod"
 
 buildscript {
     repositories {
@@ -31,6 +33,7 @@ repositories {
 dependencies {
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))
+    implementation("com.google.code.gson:gson:2.10")
 
     compileOnly(fileTree("lib"))
     compileOnly(files("${slayTheSpireInstallDir}/desktop-1.0.jar"))
@@ -45,26 +48,56 @@ sourceSets {
     }
 }
 
+@Suppress("PropertyName")
+data class ModTheSpire(
+    val modid: String,
+    val name: String,
+    val author_list: List<String>,
+    val description: String,
+    val dependencies: List<String>,
+    val version: String,
+    val sts_version: String,
+    val update_json: String,
+)
+
+val template = file("src/main/resources/ModTheSpire.template.json")
+val configPath = "src/main/resources/ModTheSpire.json"
+
+val gson = Gson().newBuilder().setPrettyPrinting().create()
+fun updateVersion() {
+    val config = gson.fromJson(template.readText(), ModTheSpire::class.java)
+    val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(System.currentTimeMillis())
+    val newConfig = config.copy(version = date)
+    println("Updating version to $date")
+    file(configPath).writeText(gson.toJson(newConfig))
+}
+tasks.register("updateVersion") {
+    updateVersion()
+}
+
 tasks.register<Jar>("createJar") {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-
-    archiveName = "$modName.jar"
-    from(sourceSets.main.get().output) { }
+    dependsOn("updateVersion")
     dependsOn(configurations.runtimeClasspath)
+
+    from(sourceSets.main.get().output) { }
     from({
         configurations.runtimeClasspath.get()
             .filter { it.name.endsWith("createJar") }
             .map { zipTree(it) }
     })
-    from(file("src/ModTheSpire.json"))
+    from(file("src/main/resources/ModTheSpire.json"))
 }
 
 tasks.register<Copy>("toMods") {
     dependsOn("clean")
     dependsOn("createJar")
 
+    println("my jar: \"build/libs/${modName}.jar\"")
     from("build/libs/${modName}.jar")
-    into("${slayTheSpireInstallDir}/mods")
+    val dest = "${slayTheSpireInstallDir}/mods"
+    println("moving to $dest")
+    into(dest)
 }
 
 tasks.register<Copy>("toWorkshop") {
@@ -76,13 +109,7 @@ tasks.register<Copy>("toWorkshop") {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
-}
-val compileKotlin: KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    jvmTarget = "1.8"
-}
-val compileTestKotlin: KotlinCompile by tasks
-compileTestKotlin.kotlinOptions {
-    jvmTarget = "1.8"
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }

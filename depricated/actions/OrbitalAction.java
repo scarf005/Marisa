@@ -1,4 +1,4 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
 import java.util.ArrayList;
 import java.util.Iterator;

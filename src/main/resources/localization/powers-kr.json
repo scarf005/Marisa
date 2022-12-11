@@ -1,0 +1,210 @@
+{
+  "DarkMatterPower": {
+    "NAME": "암흑 물질",
+    "DESCRIPTIONS": [
+      "이번 턴에 #y암흑 #y물질 카드를 사용할 수 없습니다.",
+      ""
+    ]
+  },
+  "ExtraDraw": {
+    "NAME": "탈출 속도",
+    "DESCRIPTIONS": [
+      "턴이 시작될 때 카드를 #b",
+      " 장 더 뽑고 #y화상 카드를 #b",
+      " 장 얻습니다."
+    ]
+  },
+  "EventHorizonPower": {
+    "NAME": "사건의 지평선",
+    "DESCRIPTIONS": [
+      "한 턴에 #b",
+      " 번, #y증폭을 발동하면 버린 카드 더미에서 공격 카드를 가져옵니다.",
+      " (",
+      " 번 남음)"
+    ]
+  },
+  "MilliPulsaPower": {
+    "NAME": "밀리초 펄서",
+    "DESCRIPTIONS": [
+      "#y증폭이 [E] 를 소모하지 않습니다.",
+      ""
+    ]
+  },
+  "TempStrengthLoss": {
+    "NAME": "일시적 약화",
+    "DESCRIPTIONS": [
+      "이번 턴에 적이 주는 피해를 #b",
+      " 감소시킵니다."
+    ]
+  },
+  "ExtraEnergyPower": {
+    "NAME": "추가 에너지",
+    "DESCRIPTIONS": [
+      "매 턴",
+      " 추가 [E] 를 얻습니다."
+    ]
+  },
+  "ChargeUpPower": {
+    "NAME": "충전",
+    "DESCRIPTIONS": [
+      "현재 #b",
+      " 의 #y충전을 가지고 있습니다",
+      " 다음 공격은 #b",
+      " 배의 피해를 줍니다."
+    ]
+  },
+  "PolarisUniquePower": {
+    "NAME": "안내별",
+    "DESCRIPTIONS": [
+      "턴이 시작할 때 #y안내별 카드가 뽑을 카드 더미에 있으면 [E] 를 얻습니다."
+    ]
+  },
+  "OrrerysSunPower": {
+    "NAME": "오러리즈 선",
+    "DESCRIPTIONS": [
+      "#y충전이 소모될 때마다 방어도를 #b",
+      " 얻습니다."
+    ]
+  },
+  "Charged": {
+    "NAME": "충전 완료!",
+    "DESCRIPTIONS": [
+      "다음 공격이 #b",
+      " 배의 피해를 줍니다."
+    ]
+  },
+  "MPPower": {
+    "NAME": "최대 출력",
+    "DESCRIPTIONS": [
+      "이번 턴에 공격 카드의 피해가 #b",
+      " 배가 됩니다."
+    ]
+  },
+  "EnergyFlowPower": {
+    "NAME": "에너지의 흐름",
+    "DESCRIPTIONS": [
+      "턴이 끝날 때 #y충전을 #b",
+      " 얻습니다."
+    ]
+  },
+  "PulseMagicPower": {
+    "NAME": "파동 마법",
+    "DESCRIPTIONS": [
+      "이번 턴에 #y증폭이 [E] 를 소모하지 않습니다.",
+      ""
+    ]
+  },
+  "SingularityPower": {
+    "NAME": "특이점",
+    "DESCRIPTIONS": [
+      "비용이 0 인 카드를 사용할 때마다 손에 있는 무작위 공격 카드의 피해가 #b",
+      " 증가합니다."
+    ]
+  },
+  "WitchOfGreedGold": {
+    "NAME": "욕심쟁이 마녀",
+    "DESCRIPTIONS": [
+      "전투가 끝나면 #b",
+      " 골드를 얻습니다."
+    ]
+  },
+  "WitchOfGreedPotion": {
+    "NAME": "욕심쟁이 마녀",
+    "DESCRIPTIONS": [
+      "전투가 끝나면 무작위 포션을 #b",
+      " 개 얻습니다."
+    ]
+  },
+  "OneTimeOffPlusPower": {
+    "NAME": "잠깐의 휴식",
+    "DESCRIPTIONS": [
+      "이번 턴에 #y증폭을 발동하거나 #y충전을 소모할 수 없습니다.",
+      ""
+    ]
+  },
+  "OneTimeOffPower": {
+    "NAME": "잠깐의 휴식",
+    "DESCRIPTIONS": [
+      "이번 턴에 #y증폭을 발동할 수 없습니다.",
+      ""
+    ]
+  },
+  "SuperNovaPower": {
+    "NAME": "초신성",
+    "DESCRIPTIONS": [
+      "#y화상 카드가 #y소멸될 때마다 #y힘을 #b",
+      "",
+      " 얻습니다. NL #y화상 카드의 피해를 받지 않습니다. NL 턴이 끝날 때 손에 있는 카드가 #y소멸됩니다."
+    ]
+  },
+  "CasketOfStarPlusPower": {
+    "NAME": "별이 담긴 상자",
+    "DESCRIPTIONS": [
+      "#y방어도를 얻으면 #y강화된 #y스파크 카드를 #b",
+      " 장 얻습니다."
+    ]
+  },
+  "CasketOfStarPower": {
+    "NAME": "별이 담긴 상자",
+    "DESCRIPTIONS": [
+      "#y방어도를 얻으면 #y스파크 카드를 #b",
+      " 장 얻습니다."
+    ]
+  },
+  "ManaRampagePower": {
+    "NAME": "마나 폭주",
+    "DESCRIPTIONS": [
+      "다음 공격 카드를 #b",
+      " 번 사용합니다."
+    ]
+  },
+  "PropBagPower": {
+    "NAME": "휴대용 소도구 가방",
+    "DESCRIPTIONS": [
+      "전투가 끝나면 #y",
+      " 유물이 사라집니다."
+    ]
+  },
+  "UltraShortWavePower": {
+    "NAME": "얼티밋 쇼트웨이브",
+    "DESCRIPTIONS": [
+      "#y얼티밋 #y쇼트웨이브의 효과를 #b",
+      " 증가시킵니다."
+    ]
+  },
+  "SatelIllusPower": {
+    "NAME": "새틀라이트 일루전",
+    "DESCRIPTIONS": [
+      "내 턴 동안 뽑을 카드 더미가 증가하면 [E] 를 #b",
+      " 얻습니다."
+    ]
+  },
+  "GrandCrossPower": {
+    "NAME": "증폭",
+    "DESCRIPTIONS": [
+      "이번 턴에 #y증폭을 발동했습니다.",
+      ""
+    ]
+  },
+  "Wraith": {
+    "NAME": "망령",
+    "DESCRIPTIONS": [
+      "턴이 시작할 때 무작위 카드를 #y소멸시킵니다.",
+      ""
+    ]
+  },
+  "LimboContact": {
+    "NAME": "죽은 자와의 조우",
+    "DESCRIPTIONS": [
+      "이 적에게 공격을 받으면 #y망령을 1 받습니다. NL 이 적이 죽으면 #y망령을 1 받습니다.",
+      ""
+    ]
+  },
+  "InfernoClaw": {
+    "NAME": "불타는 발톱",
+    "DESCRIPTIONS": [
+      "이 적에게 피해를 받을 때마다 #y화상 카드를 뽑을 카드 더미에 추가합니다.",
+      ""
+    ]
+  }
+}

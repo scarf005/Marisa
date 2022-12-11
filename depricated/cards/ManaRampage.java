@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import ThMod.patches.AbstractCardEnum;
-import ThMod.powers.Marisa.ManaRampagePower;
+import marisa.patches.AbstractCardEnum;
+import marisa.powers.Marisa.ManaRampagePower;
 import basemod.abstracts.CustomCard;
 
 @Deprecated

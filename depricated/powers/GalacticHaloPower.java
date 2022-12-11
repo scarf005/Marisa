@@ -1,4 +1,4 @@
-package ThMod.powers.deprecated;
+package marisa.powers.deprecated;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 
 @Deprecated
 public class GalacticHaloPower
@@ -39,7 +39,7 @@ public class GalacticHaloPower
   public void onPlayCard(AbstractCard card, AbstractMonster m) {
     if (card.type == CardType.ATTACK) {
       this.cnt++;
-      ThMod.logger.info(
+      marisa.logger.info(
           "GalacticHaloPower : Adding counter for playing :" + card.cardID + " ; counter :"
               + this.cnt);
     }
@@ -47,10 +47,10 @@ public class GalacticHaloPower
 
   public void atEndOfTurn(boolean isPlayer) {
     AbstractPlayer p = AbstractDungeon.player;
-    ThMod.logger.info(
+    marisa.logger.info(
         "GalacticHaloPower : end of turn : counter : " + this.cnt + " ; Player turn :" + isPlayer);
     if ((isPlayer) && (this.cnt > 0)) {
-      ThMod.logger.info(
+      marisa.logger.info(
           "GalacticHaloPower : Granting block ; counter : " + cnt + " ; amount :" + this.amount);
       AbstractDungeon.actionManager.addToBottom(
           new GainBlockAction(p, p, this.amount * this.cnt));

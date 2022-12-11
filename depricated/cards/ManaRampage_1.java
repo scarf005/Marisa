@@ -1,6 +1,6 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.action.DamageUpAction;
+import marisa.action.DamageUpAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 
 @Deprecated

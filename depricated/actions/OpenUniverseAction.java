@@ -1,4 +1,4 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
 import java.util.ArrayList;
 
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 
 @Deprecated
 public class OpenUniverseAction
@@ -30,13 +30,13 @@ public class OpenUniverseAction
     this.isDone = false;
     AbstractPlayer p = AbstractDungeon.player;
 
-    ThMod.logger.info("OpenUniverseAction : generationg cards");
+    marisa.logger.info("OpenUniverseAction : generationg cards");
 
     ArrayList<AbstractCard> cl = new ArrayList<AbstractCard>();
 
     for (int i = 0; i < 5; i++) {
       AbstractCard card = AbstractDungeon.returnTrulyRandomCard();
-      ThMod.logger.info("OpenUniverse : generationg : " + card.cardID);
+      marisa.logger.info("OpenUniverse : generationg : " + card.cardID);
       if (this.upgraded) {
         card.upgrade();
       }
@@ -52,14 +52,14 @@ public class OpenUniverseAction
       );
     }
 
-    ThMod.logger.info("OpenUniverse : shuffling");
+    marisa.logger.info("OpenUniverse : shuffling");
 
     p.drawPile.shuffle();
     for (AbstractRelic r : p.relics) {
       r.onShuffle();
     }
 
-    ThMod.logger.info("OpenUniverse : done");
+    marisa.logger.info("OpenUniverse : done");
 
     this.isDone = true;
   }

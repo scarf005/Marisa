@@ -1,6 +1,6 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.action.ConsumeChargeUpAction;
+import marisa.action.ConsumeChargeUpAction;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.abstracts.CustomCard;
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 
 @Deprecated
 public class EnergyRecoil extends CustomCard {

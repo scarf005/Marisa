@@ -1,4 +1,4 @@
-package ThMod.powers.deprecated;
+package marisa.powers.deprecated;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;

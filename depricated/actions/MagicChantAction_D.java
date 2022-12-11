@@ -1,4 +1,4 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -8,13 +8,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 
 @Deprecated
 public class MagicChantAction_D extends AbstractGameAction{
 	private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("RetainCardsAction");
 	public static final String[] TEXT = uiStrings.TEXT;
-  
+
 	public MagicChantAction_D(AbstractCreature source, int amount){
 		setValues(AbstractDungeon.player, source, amount);
 		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
@@ -32,8 +32,8 @@ public class MagicChantAction_D extends AbstractGameAction{
 		if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved){
 			if (AbstractDungeon.handCardSelectScreen.selectedCards.size()>0) {
 				for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group){
-					ThMod.logger.info("MagicChantAction : Retaining :"+c.name);
-					
+					marisa.logger.info("MagicChantAction : Retaining :"+c.name);
+
 					if (c.canUpgrade()) {
 						c.upgrade();
 					}
@@ -42,7 +42,7 @@ public class MagicChantAction_D extends AbstractGameAction{
 					}
 					/*
 					ThMod.logger.info("RetainNBlockAction : Applying power for :"+c.name);
-					
+
 					AbstractDungeon.actionManager.addToBottom(
 							new ApplyPowerAction(
 									this.source,this.source,

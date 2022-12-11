@@ -1,4 +1,4 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import ThMod.powers.Marisa.ChargeUpPower;
+import marisa.powers.Marisa.ChargeUpPower;
 
 @Deprecated
 public class BigCrunchAction extends AbstractGameAction {

@@ -1,6 +1,6 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -59,10 +59,10 @@ public class GuidingStar_D extends CustomCard {
     }
 		/*
 		p.drawPile.shuffle();
-		
+
 		for (AbstractRelic r : p.relics) {
 			r.onShuffle();
-	    }   
+	    }
 	    */
   }
 

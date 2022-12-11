@@ -1,6 +1,6 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
@@ -31,7 +31,7 @@ public class ManaRampAction
     if (upgraded) {
       card.upgrade();
     }
-    ThMod.logger.info(
+    marisa.logger.info(
         "ManaRampAction : Initialization complete ; card number :" +
             number +
             " ; card : " +
@@ -45,7 +45,7 @@ public class ManaRampAction
     number--;
     if (number < 0) {
       this.isDone = true;
-      ThMod.logger.info("ManaRampAction : done : all out");
+      marisa.logger.info("ManaRampAction : done : all out");
       return;
     }
 
@@ -53,7 +53,7 @@ public class ManaRampAction
 
     if (target == null) {
       this.isDone = true;
-      ThMod.logger.info("ManaRampAction : done : no target");
+      marisa.logger.info("ManaRampAction : done : no target");
       return;
     }
     AbstractDungeon.player.limbo.group.add(card);
@@ -66,7 +66,7 @@ public class ManaRampAction
     card.targetAngle = 0.0F;
     card.drawScale = 0.12F;
     //card.dontTriggerOnUseCard = true;
-    ThMod.logger.info(
+    marisa.logger.info(
         "ManaRampAction : card : " +
             card.cardID +
             " ; target : " +

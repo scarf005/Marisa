@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 
 @Deprecated
@@ -27,14 +27,14 @@ public class SuperPerseids extends CustomCard {
 	private static final int UPG_DMG = 6;
 	private static final int BLC = 4;
 	private static final int UPG_BLC = 2;
-	
+
 	public SuperPerseids() {
 		super(
 				ID,
 				NAME,
-				IMG_PATH, 
+				IMG_PATH,
 				COST,
-				DESCRIPTION, 
+				DESCRIPTION,
 				AbstractCard.CardType.SKILL,
 				AbstractCardEnum.MARISA_COLOR,
 				AbstractCard.CardRarity.UNCOMMON,
@@ -46,12 +46,12 @@ public class SuperPerseids extends CustomCard {
 		this.damageType = DamageType.THORNS;
 		this.damageTypeForTurn = DamageType.THORNS;
 	}
-	
+
 	@Override
 	public void applyPowers() {
 		super.applyPowers();
 	}
-	  
+
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		int cnt = 0;
 		for (AbstractCard c : p.hand.group) {
@@ -69,7 +69,7 @@ public class SuperPerseids extends CustomCard {
 					);
 		}
 	}
-	
+
 	public void triggerOnExhaust() {
 		AbstractDungeon.actionManager.addToBottom(
 				new DamageRandomEnemyAction(
@@ -77,12 +77,12 @@ public class SuperPerseids extends CustomCard {
 							AbstractDungeon.player,
 							this.damage,
 							DamageType.THORNS
-							), 
+							),
 						AttackEffect.FIRE
 						)
 				);
 	}
-	
+
 	public AbstractCard makeCopy() {
 		return new SuperPerseids();
 	}

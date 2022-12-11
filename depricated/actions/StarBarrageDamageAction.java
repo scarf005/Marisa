@@ -1,4 +1,4 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

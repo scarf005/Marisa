@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
-import ThMod.ThMod;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.patches.AbstractCardEnum;
 
 @Deprecated
 public class EarthLightRay extends CustomCard {
@@ -48,7 +48,7 @@ public class EarthLightRay extends CustomCard {
 
   public void use(AbstractPlayer p, AbstractMonster m) {
     AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.magicNumber));
-    if (ThMod.Amplified(this, AMP)) {
+    if (marisa.Amplified(this, AMP)) {
       if (!p.discardPile.isEmpty()) {
         AbstractDungeon.actionManager.addToBottom(new DiscardPileToHandAction(1));
       }

@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -52,5 +52,3 @@ public class Burn_MRS extends CustomCard {
 	      upgradeName();
 	}
 }
-
-

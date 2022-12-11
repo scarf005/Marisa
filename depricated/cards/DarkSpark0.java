@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -14,9 +14,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import ThMod.action.SparkCostAction;
-import ThMod.patches.AbstractCardEnum;
-import ThMod.powers.deprecated.DarkSparkPower;
+import marisa.action.SparkCostAction;
+import marisa.patches.AbstractCardEnum;
+import marisa.powers.deprecated.DarkSparkPower;
 import basemod.abstracts.CustomCard;
 
 @Deprecated

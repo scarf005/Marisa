@@ -1,8 +1,8 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import static ThMod.patches.CardTagEnum.SPARK;
+import static marisa.patches.CardTagEnum.SPARK;
 
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;

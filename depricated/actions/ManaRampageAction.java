@@ -1,6 +1,6 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -33,7 +33,7 @@ public class ManaRampageAction
       }
       list.add(tmp);
     }
-    ThMod.logger.info(
+    marisa.logger.info(
         "ManaRampageAction : Initialize complete ; card number :" +
             amount +
             " ; upgraded : " +
@@ -70,7 +70,7 @@ public class ManaRampageAction
     card.purgeOnUse = true;
     card.targetAngle = 0.0F;
     card.drawScale = 0.12F;
-    ThMod.logger.info(
+    marisa.logger.info(
         "ManaRampageAction : card : " +
             card.cardID +
             " ; target : " +

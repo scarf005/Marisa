@@ -1,7 +1,7 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.ThMod;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -68,7 +68,7 @@ public class BlazeAway extends CustomCard {
 
   public void use(AbstractPlayer p, AbstractMonster m) {
     if (lastAttack != null) {
-      ThMod.logger.info("BlazeAway : last attack :" + lastAttack.cardID);
+      marisa.logger.info("BlazeAway : last attack :" + lastAttack.cardID);
       AbstractCard card = lastAttack.makeStatEquivalentCopy();
       /*
       if (ThMod.Amplified(this, AMP)) {
@@ -80,7 +80,7 @@ public class BlazeAway extends CustomCard {
       if (card.costForTurn>=0){
         card.setCostForTurn(0);
       }
-      ThMod.logger.info(
+      marisa.logger.info(
           "BlazeAway : card :" + card.cardID
               + " ; baseD :" + card.baseDamage
               + " ; D : " + card.damage
@@ -96,7 +96,7 @@ public class BlazeAway extends CustomCard {
       );
 
     } else {
-      ThMod.logger.info("BlazeAway : error : last attack is null ");
+      marisa.logger.info("BlazeAway : error : last attack is null ");
     }
 
   }

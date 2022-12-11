@@ -1,4 +1,4 @@
-package ThMod.powers.deprecated;
+package marisa.powers.deprecated;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 
 @Deprecated
 public class DiasporaPower extends AbstractPower {
@@ -35,7 +35,7 @@ public class DiasporaPower extends AbstractPower {
 
   public void atEndOfRound() {
     if (this.owner.isPlayer) {
-      ThMod.logger.info("DiasporaPower : AtEndOfRound : Why this applied to player?!");
+      marisa.logger.info("DiasporaPower : AtEndOfRound : Why this applied to player?!");
       return;
     }
     if (this.owner.currentHealth <= this.amount) {

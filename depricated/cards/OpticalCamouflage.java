@@ -1,8 +1,8 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 
-import ThMod.ThMod;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,7 +46,7 @@ public class OpticalCamouflage extends CustomCard {
   }
 
   public void use(AbstractPlayer p, AbstractMonster m) {
-    if (ThMod.Amplified(this, this.AMP)) {
+    if (marisa.Amplified(this, this.AMP)) {
       this.block *= 2;
     }
     AbstractDungeon.actionManager.addToBottom(

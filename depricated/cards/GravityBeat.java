@@ -1,4 +1,4 @@
-package ThMod.cards.Marisa;
+package marisa.cards.Marisa;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 
 public class GravityBeat extends CustomCard {

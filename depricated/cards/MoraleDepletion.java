@@ -1,6 +1,6 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.powers.Marisa.OneTimeOffPlusPower;
+import marisa.powers.Marisa.OneTimeOffPlusPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower;
 
 @Deprecated

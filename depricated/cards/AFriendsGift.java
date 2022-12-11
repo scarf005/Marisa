@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import ThMod.ThMod;
-import ThMod.abstracts.AmplifiedAttack;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.abstracts.AmplifiedAttack;
+import marisa.patches.AbstractCardEnum;
 
 @Deprecated
 public class AFriendsGift
@@ -52,7 +52,7 @@ public class AFriendsGift
 
   public void use(AbstractPlayer p, AbstractMonster m) {
     this.exhaust = true;
-    if (ThMod.Amplified(this, AMP)) {
+    if (marisa.Amplified(this, AMP)) {
       this.exhaust = false;
       AbstractDungeon.actionManager.addToBottom(
           new DamageAction(
@@ -79,14 +79,14 @@ public class AFriendsGift
   }
 
   public void atTurnStart() {
-    ThMod.logger.info(
+    marisa.logger.info(
         "AFriendsGift_1 : atTurnStart : Upgrading damage : base :" + this.baseDamage +
             " ; damage : " + this.damage +
             " ; Amplified base : " + this.baseBlock +
             " ; AMplified damage : " + this.block
     );
     this.upgradeDamage(2);
-    ThMod.logger.info(
+    marisa.logger.info(
         "AFriendsGift_1 : atTurnStart : upgraded damage : base :" + this.baseDamage +
             " ; damage : " + this.damage +
             " ; Amplified base : " + this.baseBlock +

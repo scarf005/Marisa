@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import ThMod.ThMod;
-import ThMod.patches.AbstractCardEnum;
-import ThMod.powers.Marisa.BlazeAwayPower;
+import marisa.ThMod;
+import marisa.patches.AbstractCardEnum;
+import marisa.powers.Marisa.BlazeAwayPower;
 
 @Deprecated
 public class BlazeAway_1 extends CustomCard {
@@ -39,11 +39,11 @@ public class BlazeAway_1 extends CustomCard {
 
   public void use(AbstractPlayer p, AbstractMonster m) {
     int stack = this.magicNumber;
-    if (ThMod.Amplified(this, AMP)) {
+    if (marisa.Amplified(this, AMP)) {
       stack += AMP_STC;
     }
 
-    ThMod.logger.info("BlazeWay : Applying power : " + stack);
+    marisa.logger.info("BlazeWay : Applying power : " + stack);
 
     AbstractDungeon.actionManager
         .addToBottom(new ApplyPowerAction(p, p, new BlazeAwayPower(p, stack), stack));

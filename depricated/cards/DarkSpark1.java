@@ -1,6 +1,6 @@
-package ThMod.cards.Marisa;
+package marisa.cards.Marisa;
 
-import static ThMod.patches.CardTagEnum.SPARK;
+import static marisa.patches.CardTagEnum.SPARK;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 
 public class DarkSpark

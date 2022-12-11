@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -20,22 +20,22 @@ public class Parasite_MRS extends CustomCard {
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = -2;
 	private static final int HEAL = 3;
-  
+
 	public Parasite_MRS(){
 		super(
-				ID, 
-				NAME, 
+				ID,
+				NAME,
 				"img/cards/parasite.png",
 				COST,
-				DESCRIPTION, 
-				AbstractCard.CardType.CURSE, 
-				AbstractCard.CardColor.CURSE, 
+				DESCRIPTION,
+				AbstractCard.CardType.CURSE,
+				AbstractCard.CardColor.CURSE,
 				AbstractCard.CardRarity.CURSE,
 				AbstractCard.CardTarget.SELF
 				);
 		this.exhaust = true;
 	}
-	
+
 	@Override
 	public boolean canUse(AbstractPlayer p, AbstractMonster m) {
 		return true;

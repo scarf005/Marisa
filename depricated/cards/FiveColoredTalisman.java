@@ -1,7 +1,7 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.patches.AbstractCardEnum;
-import ThMod.powers.deprecated.TalismanPower;
+import marisa.patches.AbstractCardEnum;
+import marisa.powers.deprecated.TalismanPower;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

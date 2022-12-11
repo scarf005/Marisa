@@ -1,6 +1,6 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.powers.deprecated.NebulaPower;
+import marisa.powers.deprecated.NebulaPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
-import ThMod.patches.AbstractCardEnum;
+import marisa.patches.AbstractCardEnum;
 
 @Deprecated
 public class NebulaRing extends CustomCard {
@@ -60,4 +60,3 @@ public class NebulaRing extends CustomCard {
     }
   }
 }
-

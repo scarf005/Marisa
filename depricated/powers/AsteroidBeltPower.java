@@ -1,4 +1,4 @@
-package ThMod.powers.deprecated;
+package marisa.powers.deprecated;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 
 @Deprecated
 public class AsteroidBeltPower
@@ -47,7 +47,7 @@ public class AsteroidBeltPower
     if (info.type == DamageInfo.DamageType.NORMAL) {
       this.isAttacked = true;
       flash();
-      ThMod.logger.info("AsteroidBeltPower : Attacked");
+      marisa.logger.info("AsteroidBeltPower : Attacked");
       AbstractDungeon.actionManager.addToTop(
           new RemoveSpecificPowerAction(owner, owner, pow)
       );

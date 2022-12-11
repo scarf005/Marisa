@@ -202,7 +202,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
         logger.info("ThMod : Card used : " + card.cardID + " ; cost : " + card.costForTurn)
         if (card.costForTurn == 0 || card.costForTurn <= -2 || card.costForTurn == -1 && AbstractDungeon.player.energy.energy <= 0) {
             typhoonCounter++
-            logger.info("typhoon-counter increased , now :" + typhoonCounter)
+            logger.info("typhoon-counter increased , now :$typhoonCounter")
         }
         if (card.retain) {
             card.retain = false
@@ -271,48 +271,55 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
         val power: String
         val potion: String
         val event: String
-        if (Settings.language == GameLanguage.ZHS) {
-            logger.info("lang == zhs")
-            card = CARD_STRING_ZH
-            relic = RELIC_STRING_ZH
-            power = POWER_STRING_ZH
-            potion = POTION_STRING_ZH
-            event = EVENT_PATH_ZHS
-        } else if (Settings.language == GameLanguage.JPN) {
-            logger.info("lang == jpn")
-            card = CARD_STRING_JP
-            relic = RELIC_STRING_JP
-            power = POWER_STRING_JP
-            potion = POTION_STRING_JP
-            event = EVENT_PATH
-        } else if (Settings.language == GameLanguage.ZHT) {
-            logger.info("lang == zht")
-            card = CARD_STRING_ZHT
-            relic = RELIC_STRING_ZHT
-            power = POWER_STRING_ZHT
-            potion = POTION_STRING_ZHT
-            event = EVENT_PATH_ZHT
-        } else if (Settings.language == GameLanguage.KOR) {
-            logger.info("lang == kor")
-            card = CARD_STRING_KR
-            relic = RELIC_STRING_KR
-            power = POWER_STRING_KR
-            potion = POTION_STRING_KR
-            event = EVENT_PATH_KR
-        } else if (Settings.language == GameLanguage.FRA) {
-            logger.info("lang == fra")
-            card = CARD_STRING_FR
-            relic = RELIC_STRING_FR
-            power = POWER_STRING_FR
-            potion = POTION_STRING_FR
-            event = EVENT_PATH
-        } else {
-            logger.info("lang == eng")
-            card = CARD_STRING
-            relic = RELIC_STRING
-            power = POWER_STRING
-            potion = POTION_STRING
-            event = EVENT_PATH
+        when (Settings.language) {
+            GameLanguage.ZHS -> {
+                logger.info("lang == zhs")
+                card = CARD_STRING_ZH
+                relic = RELIC_STRING_ZH
+                power = POWER_STRING_ZH
+                potion = POTION_STRING_ZH
+                event = EVENT_PATH_ZHS
+            }
+            GameLanguage.JPN -> {
+                logger.info("lang == jpn")
+                card = CARD_STRING_JP
+                relic = RELIC_STRING_JP
+                power = POWER_STRING_JP
+                potion = POTION_STRING_JP
+                event = EVENT_PATH
+            }
+            GameLanguage.ZHT -> {
+                logger.info("lang == zht")
+                card = CARD_STRING_ZHT
+                relic = RELIC_STRING_ZHT
+                power = POWER_STRING_ZHT
+                potion = POTION_STRING_ZHT
+                event = EVENT_PATH_ZHT
+            }
+            GameLanguage.KOR -> {
+                logger.info("lang == kor")
+                card = CARD_STRING_KR
+                relic = RELIC_STRING_KR
+                power = POWER_STRING_KR
+                potion = POTION_STRING_KR
+                event = EVENT_PATH_KR
+            }
+            GameLanguage.FRA -> {
+                logger.info("lang == fra")
+                card = CARD_STRING_FR
+                relic = RELIC_STRING_FR
+                power = POWER_STRING_FR
+                potion = POTION_STRING_FR
+                event = EVENT_PATH
+            }
+            else -> {
+                logger.info("lang == eng")
+                card = CARD_STRING
+                relic = RELIC_STRING
+                power = POWER_STRING
+                potion = POTION_STRING
+                event = EVENT_PATH
+            }
         }
         relicStrings = Gdx.files.internal(relic).readString(StandardCharsets.UTF_8.toString())
         BaseMod.loadCustomStrings(RelicStrings::class.java, relicStrings)
@@ -330,15 +337,13 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
     override fun receivePostInitialize() {
         logger.info("Adding badge, configs,event and potion")
         val settingsPanel = ModPanel()
-        val labelText: String
-        labelText = if (Settings.language == GameLanguage.ZHS) {
-            "\u4f7f\u7528\u5176\u4ed6\u89d2\u8272\u65f6\u662f\u5426\u5f00\u542f\u9ed1\u732b\u4e8b\u4ef6\uff1f"
+        val labelText: String = if (Settings.language == GameLanguage.ZHS) {
+            """使用其他角色时是否开启黑猫事件？"""
         } else {
             "Enable Black Cat event when playing other characters?"
         }
-        val labelText_branch: String
-        labelText_branch = if (Settings.language == GameLanguage.ZHS) {
-            "\u4f7f\u7528\u539f\u7248\u7684\u6811\u679d"
+        val labelTextBranch: String = if (Settings.language == GameLanguage.ZHS) {
+            """使用原版的树枝"""
         } else {
             "Don't replace Dead Branch?"
         }
@@ -355,7 +360,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
             isCatEventEnabled = button.enabled
             try {
                 val config = SpireConfig(
-                    "MarisaMod", "MarisaModCongfig",
+                    "MarisaMod", "MarisaModConfig",
                     marisaModDefaultProp
                 )
                 config.setBool("enablePlaceholder", isCatEventEnabled)
@@ -365,7 +370,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
             }
         }
         val enableDeadBranchButton = ModLabeledToggleButton(
-            labelText_branch,
+            labelTextBranch,
             350.0f,
             600.0f,
             Settings.CREAM_COLOR,
@@ -377,7 +382,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
             isCatEventEnabled = button.enabled
             try {
                 val config = SpireConfig(
-                    "MarisaMod", "MarisaModCongfig",
+                    "MarisaMod", "MarisaModConfig",
                     marisaModDefaultProp
                 )
                 config.setBool("enablePlaceholder", isDeadBranchEnabled)
@@ -517,7 +522,6 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
         cardsToAdd.add(EventHorizon())
         cardsToAdd.add(Singularity())
         cardsToAdd.add(CasketOfStar())
-        //cardsToAdd.add(new PolarisUnique());
         cardsToAdd.add(EscapeVelocity())
         cardsToAdd.add(MillisecondPulsars())
         cardsToAdd.add(SuperNova())
@@ -528,6 +532,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
         cardsToAdd.add(Exhaustion_MRS())
         cardsToAdd.add(Strike_MRS())
         cardsToAdd.add(Wraith())
+        //cardsToAdd.add(new PolarisUnique());
     }
 
     internal inner class Keywords {
@@ -626,12 +631,9 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
   }
 */
         //For Amplify cards
-        fun Amplified(card: AbstractCard, AMP: Int): Boolean {
+        fun isAmplified(card: AbstractCard, AMP: Int): Boolean {
             logger.info(
-                "ThMod.Amplified : card to check : "
-                        + card.cardID
-                        + " ; costForTurn : "
-                        + card.costForTurn
+                """ThMod.Amplified : card to check : ${card.cardID} ; costForTurn : ${card.costForTurn}"""
             )
             val p = AbstractDungeon.player
             if (p.hasPower("OneTimeOffPlusPower") || p.hasPower("OneTimeOffPower")) {
@@ -639,18 +641,15 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
                 return false
             }
             var res = false
-            if (p.hasPower("MilliPulsaPower") || p.hasPower("PulseMagicPower")
+            if (p.hasPower("MilliPulsePower") || p.hasPower("PulseMagicPower")
                 || card.freeToPlayOnce || card.purgeOnUse
             ) {
                 logger.info(
-                    "ThMod.Amplified :Free Amplify tag detected,returning true : Milli :"
-                            + p.hasPower("MilliPulsaPower")
-                            + " ; Pulse :"
-                            + p.hasPower("PulseMagicPower")
-                            + " ; Free2Play :"
-                            + card.freeToPlayOnce
-                            + " ; purge on use :"
-                            + card.purgeOnUse
+                    """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${p.hasPower("MilliPulsePower")} ; Pulse :${
+                        p.hasPower(
+                            "PulseMagicPower"
+                        )
+                    } ; Free2Play :${card.freeToPlayOnce} ; purge on use :${card.purgeOnUse}"""
                 )
                 res = true
             } else {
@@ -683,90 +682,19 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
                 }
             }
             logger.info(
-                "ThMod.Amplified : card : " + card.cardID + " ; Amplify : " + res + " ; costForTurn : "
-                        + card.costForTurn
+                """ThMod.Amplified : card : ${card.cardID} ; Amplify : $res ; costForTurn : ${card.costForTurn}"""
             )
             return res
         }
 
-        fun initialize() {
-            Marisa()
-        }
-
-        private fun loadJson(jsonPath: String): String {
-            return Gdx.files.internal(jsonPath).readString(StandardCharsets.UTF_8.toString())
-        }
+        private fun loadJson(jsonPath: String): String =
+            Gdx.files.internal(jsonPath).readString(StandardCharsets.UTF_8.toString())
 
         @JvmStatic
         val randomMarisaCard: AbstractCard
-            get() {
-                val card: AbstractCard
-                val rng = AbstractDungeon.miscRng.random(0, 100)
-                card = if (rng == 15) {
-                    GuidingStar()
-                } else {
-                    AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
-                }
-                return card
-            } /*
-
-
-
-............................................................................................................................................
-............................................................................................................................................
-....................................................:7......................................................................................
-....................................................7II7?,::::::::::::......................................................................
-.................................,,,...............,,????7+~::::::::::::,...................................................................
-..............................~:,,,:::......,..::::=I777 7?I77,:::::::::::..................................................................
-...................................,,:::::::::::::,7777I777777777=,:::::::::................................................................
-....................................,,,,:::,,,,,.::=7 777777?777777I::,,,,,,::..............................................................
-...............................................,:,,777777777777?777777+.,,,,,,,.............................................................
-..............................................:,I7III777777?77777I?77I77.,,,,,,,,...........................................................
-............................................,,,:7I++II7777777?=7I77I=77I=,,,,,,,,,.....~?IIIIII?+=:,........................................
-...........................................,,,,,,=7777777II77777?I?77+I7I,,,,,,,,.=+7777777777777777777777I?=====...........................
-..........................................,,,,,,7II7777777777=?7II77???=~:..,,:,II77I?==+?I77777777777777IIIIII7:...........................
-........................................,,,,,,,..===7777?=I=IIIII++++?I7III7I77~7II777777777777777777777777+................................
-.......................................,,,,~7III7=I?...,~?I7?III=II..,,,,,,..~I~=?77I?+++?I7777777777I7777=.................................
-..................................,,,,,,,,,~++III?+IIIIIIIIIIII7=====III7+~~?II77:,,,?7I?+?I7777777I++IIIII7................................
-..........................,,,,,,+?III?7~~??IIII+7+==+:+?++?IIIIIIIIIIII?7=I?IIIIIIII=,,.,:,+77777?I7777=.,..................................
-.......................,,,,,,,7IIIIII+?7III7I~~:III~?II=?III+:~IIIIIIIII?II,==:I7=II~,,,,,,,,.~7I77I=+7.....................................
-...................::::::,,,,IIIIIIIIIIII:II=IIIIIII?I=I???~~+~I=I?II??I?I7II:III=?IIII+..I??I7,,,.+777.....................................
-................,:::::::,,:~7IIIII7I7I7??I?=???I?IIII?+I?I=~I?,I?=??????IIII?I+??I=?=+III??IIII7.,,,,.......................................
-.............:::::::,~+=+7IIIIIIII7?I7:???~?????~I???+~I??=~I?=~?I=+II~???????7????I=I??III7?II,,,,,:,,,:...................................
-............:::::,+IIIIII?+II7II77777II??=????+?:I???+=????+?I+7+II=?:I?+??????=+????=???+IIIIIII:.7I~7?:,,,................................
-...........,:::,7IIIIIIIIIIII7I777?+~77?I7???++=7?~+?++I~7?IIII~7+??~77??=I????~=+????=??:7IIII77I+?IIIIII=.,,:.............................
-..............,7IIIIIIIII7777II++??++I??=????+=7II+??,I+=?+~~II?I777~~I???.I+??~=+?????+??+=?I7777IIII+?I7,:::::,,..........................
-..................77IIIIII7I77777+++~I???~I??I~I.:=,~~=,,77I7+I+77I7I7~:...:?,I.+++:??????:?I+7777IIIIIIII7~,,::,,:.........................
-...................IIII77777777?~+?==+I?+?+?++?+7:~=::~=~I777=+I7777I7I7=?=:::~.+::+?????+I==?~?7777777II???II7I7~::........................
-....................,=+?II?=?7I???===?=+???+++=I7=~++~=?+7777?I777777777:==~~=:?=?+~===????++?+I77I?I77I77I7777777=.........................
-...............................??+:=?=~???:~?+=I7II~=~~I7777777777777777~+I??+==+?+??:+=??+?=+~I77+7777:..:I777I=:..........................
-...............................I??=??~??????=??I=IIIIII77777777I77777777IIII7=7+?????+:~+??=+=+?~?+~,.......................................
-...............................~I????~???+???:IIII=7II777777777777777777II7+=I+I????I=+++?=+~+??............................................
-..............................??+,??+~=?+:+???????I+II777I?+~~~~=I7I7777I+=I???????+=++~+??=???~............................................
-.............................~?~+??+=+?:I~?:+????===7777777I=+??==777777+??7I??~=?+==?????+??==:............................................
-.............................:I.+????:??:+:=~=???I,:I7I7777777777777777I~=+I++II?+?+??+??+???..,:...........................................
-..............................~..?+??=?==I?~?+II?=+?=~==?=I77777777?=++=~==I===?I?++???+?++:?...............................................
-...............................,..I++II:I??=+,I?~?~7III+~III?===?II?~IIII?~:=~=??I~I???+??+,.:,.............................................
-....................................+I?III+I=I=?::~7777I=:~=???++==~I777I?:+~++~I~I??++?I:+,................................................
-.....................................,.I++=I=~?:.I+II7I77777777777?I+7=+II=+=:.+,II?+~+=~:..................................................
-....................................  7I:7?,.,,,=~=7~?7777777777777777..==?.,,,,.=II77777,..................................................
-..................................I777777I~::::::7777=+77I?+====+?++I==.7~.~~::::.77777777,.................................................
-.................................+ 77777II::::::,7777777  I+==+IIIIII7.~III7+++++++++++++++++++++++++++++++++++++++++=~.....................
-................................=77777777I:::::::+777777777777?+?++.~7IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII?................
-...............................I7777777777,,:::::,+777777777777~?:~IIIII====II:7?~7IIII+=III==~+III7~~III?IIIIII~:77?,=77III7+..............
-...............................III77777777.::::::::::::,:::::,.7.:IIIIII....:....,.=7......?I+7II?,:....+?..7??IIII????I+I7III+.............
-..............................++II77777777.::::::::::::~?+++???I.?IIIII7,,,,:.=:.==?III.?7:::::+III7..++++??II,:==.?~=7.?IIIII7.............
-............................+7777777IIIII7,:::::::::::::.?+????I.+IIIII7====?......+II.=7?.IIIIIII.=.,I:?I:.7I,=?I.?:=I.?IIIIII.............
-............................777777I=7I==?I,::::::::::::=I,:,...,,.?IIII7....?.......?.~II7~,..,~7I?..=I~..=7II,+==.?I:~.?IIII7..............
-.............................:777?+~7777I7,:::::::::::,??+,:::::::.,IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII,...............
-.................................:777+~+II~::::::::::,,,,::,,::::::,:,..=7I77777777777777777777777777777777777777777777?,...................
-..................................+=IIIIIII.:::::::,,,,,,,,,,,,,,,,,,,,:::,,,,,,,.????????I,................................................
-....................................7777777.,::::,,,,,,,,=.:,,,,,,,,,.??:,,,,::,,.7IIIIII77:................................................
-....................................7IIIIII~.,,,,,,,,,,,==:.,,,,,,,,,,:~.,,,,,,,,.IIIIIIIII~................................................
-............................................................................................................................................
-............................................................................................................................................
-............................................................................................................................................
-
-	 */
+            get() = when (AbstractDungeon.miscRng.random(0, 100)) {
+                    15 -> GuidingStar()
+                    else -> AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
+            }
     }
 }

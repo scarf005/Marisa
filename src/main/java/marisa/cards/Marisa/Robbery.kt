@@ -33,7 +33,7 @@ class Robbery : CustomCard(
             RobberyDamageAction(
                 m,
                 DamageInfo(p, damage, damageTypeForTurn),
-                Marisa.Amplified(this, AMP)
+                Marisa.isAmplified(this, AMP)
             )
         )
     }

@@ -30,7 +30,7 @@ class DeepEcologicalBomb : CustomCard(
     override fun calculateCardDamage(mo: AbstractMonster) {}
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         var num = 1
-        if (Marisa.Amplified(this, AMP)) {
+        if (Marisa.isAmplified(this, AMP)) {
             num++
         }
         AbstractDungeon.actionManager.addToBottom(

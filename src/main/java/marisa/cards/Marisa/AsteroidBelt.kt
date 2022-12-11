@@ -31,7 +31,7 @@ class AsteroidBelt : CustomCard(
         AbstractDungeon.actionManager.addToBottom(
             GainBlockAction(p, p, block)
         )
-        if (Marisa.Amplified(this, AMP)) {
+        if (Marisa.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(
                     p,

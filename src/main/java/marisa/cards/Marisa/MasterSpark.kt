@@ -39,7 +39,7 @@ class MasterSpark : AmplifiedAttack(
                 MindblastEffect(p.dialogX, p.dialogY, false)
             )
         )
-        if (Marisa.Amplified(this, AMP)) {
+        if (Marisa.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(
                     m,

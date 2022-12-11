@@ -33,7 +33,7 @@ class ShootTheMoon : AmplifiedAttack(
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         val po: AbstractPower
         val fightingBoss = m.type == AbstractMonster.EnemyType.BOSS
-        if (Marisa.Amplified(this, AMP)) {
+        if (Marisa.isAmplified(this, AMP)) {
             if (!fightingBoss) {
                 for (pow in m.powers) {
                     if (pow.type == AbstractPower.PowerType.BUFF) {

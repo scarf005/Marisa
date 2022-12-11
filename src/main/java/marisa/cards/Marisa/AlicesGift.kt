@@ -41,7 +41,7 @@ class AlicesGift : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (Marisa.Amplified(this, AMP)) {
+        if (Marisa.isAmplified(this, AMP)) {
             damage *= 3
         }
         AbstractDungeon.actionManager.addToBottom(

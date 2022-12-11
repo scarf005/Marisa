@@ -25,7 +25,7 @@ class BinaryStars : CustomCard(
     CardTarget.SELF
 ) {
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (Marisa.Amplified(this, AMP)) {
+        if (Marisa.isAmplified(this, AMP)) {
             var c: AbstractCard = BlackFlareStar()
             if (upgraded) {
                 c.upgrade()

@@ -58,7 +58,7 @@ tasks.register<Jar>("createJar") {
     from(file("src/ModTheSpire.json"))
 }
 
-tasks.register<Copy>("copyJarToStsMods") {
+tasks.register<Copy>("toMods") {
     dependsOn("clean")
     dependsOn("createJar")
 
@@ -66,7 +66,7 @@ tasks.register<Copy>("copyJarToStsMods") {
     into("${slayTheSpireInstallDir}/mods")
 }
 
-tasks.register<Copy>("copyJarToWorkshopFolder") {
+tasks.register<Copy>("toWorkshop") {
     dependsOn("clean")
     dependsOn("createJar")
 

@@ -12,6 +12,7 @@
   "dependencies": [
     "basemod"
   ],
-  "version": "0.15.4.002",
-  "sts_version": "01-14-2020"
+  "version": "TBD",
+  "sts_version": "01-14-2020",
+  "update_json": "https://api.github.com/repos/lf201014/STS_ThMod_MRS/releases/latest"
 }

@@ -261,66 +261,28 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
 
     override fun receiveEditStrings() {
         logger.info("start editing strings")
+
+        val langName = when (Settings.language) {
+            GameLanguage.ZHT -> "zht"
+            GameLanguage.ZHS -> "zh"
+            GameLanguage.KOR -> "ko"
+            GameLanguage.JPN -> "jp"
+            GameLanguage.FRA -> "fr"
+            else -> "en"
+        }
+        logger.info("lang : $langName")
+
         val relicStrings: String
         val cardStrings: String
         val powerStrings: String
         val potionStrings: String
         val eventStrings: String
-        val relic: String
-        val card: String
-        val power: String
-        val potion: String
-        val event: String
-        when (Settings.language) {
-            GameLanguage.ZHS -> {
-                logger.info("lang == zhs")
-                card = CARD_STRING_ZH
-                relic = RELIC_STRING_ZH
-                power = POWER_STRING_ZH
-                potion = POTION_STRING_ZH
-                event = EVENT_PATH_ZHS
-            }
-            GameLanguage.JPN -> {
-                logger.info("lang == jpn")
-                card = CARD_STRING_JP
-                relic = RELIC_STRING_JP
-                power = POWER_STRING_JP
-                potion = POTION_STRING_JP
-                event = EVENT_PATH
-            }
-            GameLanguage.ZHT -> {
-                logger.info("lang == zht")
-                card = CARD_STRING_ZHT
-                relic = RELIC_STRING_ZHT
-                power = POWER_STRING_ZHT
-                potion = POTION_STRING_ZHT
-                event = EVENT_PATH_ZHT
-            }
-            GameLanguage.KOR -> {
-                logger.info("lang == kor")
-                card = CARD_STRING_KR
-                relic = RELIC_STRING_KR
-                power = POWER_STRING_KR
-                potion = POTION_STRING_KR
-                event = EVENT_PATH_KR
-            }
-            GameLanguage.FRA -> {
-                logger.info("lang == fra")
-                card = CARD_STRING_FR
-                relic = RELIC_STRING_FR
-                power = POWER_STRING_FR
-                potion = POTION_STRING_FR
-                event = EVENT_PATH
-            }
-            else -> {
-                logger.info("lang == eng")
-                card = CARD_STRING
-                relic = RELIC_STRING
-                power = POWER_STRING
-                potion = POTION_STRING
-                event = EVENT_PATH
-            }
-        }
+        val relic = "localization/relics-$langName.json"
+        val card = "localization/cards-$langName.json"
+        val power = "localization/powers-$langName.json"
+        val potion = "localization/potions-$langName.json"
+        val event = "localization/events-$langName.json"
+
         relicStrings = Gdx.files.internal(relic).readString(StandardCharsets.UTF_8.toString())
         BaseMod.loadCustomStrings(RelicStrings::class.java, relicStrings)
         cardStrings = Gdx.files.internal(card).readString(StandardCharsets.UTF_8.toString())
@@ -331,32 +293,20 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
         BaseMod.loadCustomStrings(PotionStrings::class.java, potionStrings)
         eventStrings = Gdx.files.internal(event).readString(StandardCharsets.UTF_8.toString())
         BaseMod.loadCustomStrings(EventStrings::class.java, eventStrings)
+
         logger.info("done editing strings")
     }
 
     override fun receivePostInitialize() {
         logger.info("Adding badge, configs,event and potion")
         val settingsPanel = ModPanel()
-        val labelText: String = if (Settings.language == GameLanguage.ZHS) {
-            """使用其他角色时是否开启黑猫事件？"""
-        } else {
-            "Enable Black Cat event when playing other characters?"
+
+        val (labelText, labelTextBranch) = when (Settings.language) {
+            GameLanguage.ZHS -> """使用其他角色时是否开启黑猫事件？""" to """使用原版的树枝"""
+            else -> "Enable Black Cat event when playing other characters?" to "Don't replace Dead Branch?"
         }
-        val labelTextBranch: String = if (Settings.language == GameLanguage.ZHS) {
-            """使用原版的树枝"""
-        } else {
-            "Don't replace Dead Branch?"
-        }
-        val enableBlackCatButton = ModLabeledToggleButton(
-            labelText,
-            350.0f,
-            700.0f,
-            Settings.CREAM_COLOR,
-            FontHelper.charDescFont,
-            isCatEventEnabled,
-            settingsPanel,
-            { label: ModLabel? -> }
-        ) { button: ModToggleButton ->
+
+        val buttonLambda = { button: ModToggleButton ->
             isCatEventEnabled = button.enabled
             try {
                 val config = SpireConfig(
@@ -369,6 +319,16 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
                 e.printStackTrace()
             }
         }
+        val enableBlackCatButton = ModLabeledToggleButton(
+            labelText,
+            350.0f,
+            700.0f,
+            Settings.CREAM_COLOR,
+            FontHelper.charDescFont,
+            isCatEventEnabled,
+            settingsPanel,
+            { label: ModLabel? -> },
+            buttonLambda)
         val enableDeadBranchButton = ModLabeledToggleButton(
             labelTextBranch,
             350.0f,
@@ -377,20 +337,8 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
             FontHelper.charDescFont,
             isDeadBranchEnabled,
             settingsPanel,
-            { label: ModLabel? -> }
-        ) { button: ModToggleButton ->
-            isCatEventEnabled = button.enabled
-            try {
-                val config = SpireConfig(
-                    "MarisaMod", "MarisaModConfig",
-                    marisaModDefaultProp
-                )
-                config.setBool("enablePlaceholder", isDeadBranchEnabled)
-                config.save()
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
+            { label: ModLabel? -> },
+            buttonLambda)
         settingsPanel.addUIElement(enableBlackCatButton)
         settingsPanel.addUIElement(enableDeadBranchButton)
         BaseMod.addEvent(Mushrooms_MRS.ID, Mushrooms_MRS::class.java, Exordium.ID)

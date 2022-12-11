@@ -120,63 +120,22 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
 
     override fun receiveEditRelics() {
         logger.info("Begin editing relics.")
-        BaseMod.addRelicToCustomPool(
+        arrayOf(
             MiniHakkero(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             BewitchedHakkero(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             MagicBroom(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             AmplifyWand(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             ExperimentalFamiliar(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             RampagingMagicTools(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             BreadOfAWashokuLover(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             SimpleLauncher(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             HandmadeGrimoire(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             ShroomBag(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
             SproutingBranch(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        BaseMod.addRelicToCustomPool(
-            BigShroomBag(),
-            AbstractCardEnum.MARISA_COLOR
-        )
-        /*
-    BaseMod.addRelicToCustomPool(
-        new Cape(),
-        MARISA_COLOR
-    );
-*/BaseMod.addRelic(
-            CatCart(),
-            RelicType.SHARED
-        )
+            BigShroomBag()
+        ).forEach { BaseMod.addRelicToCustomPool(it, AbstractCardEnum.MARISA_COLOR) }
+        BaseMod.addRelic(CatCart(), RelicType.SHARED)
+        /* BaseMod.addRelicToCustomPool(Cape(), MARISA_COLOR) */
         //BaseMod.addRelicToCustomPool(new Cape_1(), AbstractCardEnum.MARISA_COLOR);
         logger.info("Relics editing finished.")
     }
@@ -186,7 +145,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         loadCardsToAdd()
         logger.info("adding cards for MARISA")
         for (card in cardsToAdd) {
-            logger.info("Adding card : " + card.name)
+            logger.info("""Adding card : ${card.name}""")
             BaseMod.addCard(card)
         }
         logger.info("done editing cards")
@@ -202,7 +161,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
     }
 
     override fun receiveCardUsed(card: AbstractCard) {
-        logger.info("ThMod : Card used : " + card.cardID + " ; cost : " + card.costForTurn)
+        logger.info("""ThMod : Card used : ${card.cardID} ; cost : ${card.costForTurn}""")
         if (card.costForTurn == 0 || card.costForTurn <= -2 || card.costForTurn == -1 && AbstractDungeon.player.energy.energy <= 0) {
             typhoonCounter++
             logger.info("typhoon-counter increased , now :$typhoonCounter")
@@ -211,23 +170,19 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
             card.retain = false
         }
         if (card.hasTag(CardTagEnum.SPARK)) {
-            AbstractDungeon.actionManager.addToTop(
-                SparkCostAction()
-            )
+            AbstractDungeon.actionManager.addToTop(SparkCostAction())
         }
     }
 
     override fun receivePostEnergyRecharge() {
-        if (!AbstractDungeon.player.hand.isEmpty) {
-            for (c in AbstractDungeon.player.hand.group) {
-                if (c is GuidingStar) {
-                    AbstractDungeon.actionManager.addToBottom(
-                        GainEnergyAction(1)
-                    )
-                    c.flash()
-                }
+        if (AbstractDungeon.player.hand.isEmpty) return
+
+        AbstractDungeon.player.hand.group
+            .filterIsInstance<GuidingStar>()
+            .forEach {
+                AbstractDungeon.actionManager.addToBottom(GainEnergyAction(1))
+                it.flash()
             }
-        }
     }
 
     override fun receivePowersModified() {
@@ -247,7 +202,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         val gson = Gson()
         val keywordsPath = "localization/keywords-$langName.json"
         val keywords = gson.fromJson(loadJson(keywordsPath), Keywords::class.java)
-        for (key in keywords.keywords) {
+        keywords.keywords.forEach { key ->
             logger.info("""Loading keyword : ${key.NAMES[0]}""")
             BaseMod.addKeyword(key.NAMES, key.DESCRIPTION)
         }
@@ -258,27 +213,17 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         logger.info("start editing strings")
         logger.info("lang : $langName")
 
-        val relicStrings: String
-        val cardStrings: String
-        val powerStrings: String
-        val potionStrings: String
-        val eventStrings: String
-        val relic = "localization/relics-$langName.json"
-        val card = "localization/cards-$langName.json"
-        val power = "localization/powers-$langName.json"
-        val potion = "localization/potions-$langName.json"
-        val event = "localization/events-$langName.json"
-
-        relicStrings = Gdx.files.internal(relic).readString(StandardCharsets.UTF_8.toString())
-        BaseMod.loadCustomStrings(RelicStrings::class.java, relicStrings)
-        cardStrings = Gdx.files.internal(card).readString(StandardCharsets.UTF_8.toString())
-        BaseMod.loadCustomStrings(CardStrings::class.java, cardStrings)
-        powerStrings = Gdx.files.internal(power).readString(StandardCharsets.UTF_8.toString())
-        BaseMod.loadCustomStrings(PowerStrings::class.java, powerStrings)
-        potionStrings = Gdx.files.internal(potion).readString(StandardCharsets.UTF_8.toString())
-        BaseMod.loadCustomStrings(PotionStrings::class.java, potionStrings)
-        eventStrings = Gdx.files.internal(event).readString(StandardCharsets.UTF_8.toString())
-        BaseMod.loadCustomStrings(EventStrings::class.java, eventStrings)
+        mapOf(
+            "relics" to RelicStrings::class.java,
+            "cards" to CardStrings::class.java,
+            "powers" to PowerStrings::class.java,
+            "potions" to PotionStrings::class.java,
+            "events" to EventStrings::class.java
+        ).forEach { (kind, stringClass) ->
+            Gdx.files.internal("localization/$kind-$langName.json")
+                .readString(StandardCharsets.UTF_8.toString())
+                .also { BaseMod.loadCustomStrings(stringClass, it) }
+        }
 
         logger.info("done editing strings")
     }
@@ -336,7 +281,8 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
     BaseMod.addEvent(TestEvent.ID, TestEvent.class, Exordium.ID);
     BaseMod.addEvent(TestEvent.ID, TestEvent.class, TheBeyond.ID);
     BaseMod.addEvent(TestEvent.ID, TestEvent.class, TheCity.ID);
-*/BaseMod.addPotion(
+*/
+        BaseMod.addPotion(
             ShroomBrew::class.java,
             Color.NAVY.cpy(),
             Color.LIME.cpy(),
@@ -372,13 +318,14 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         zombieFairy = ZOMBIE_FAIRY_ENC;
         break;
     }
-    */BaseMod.addMonster(ORIN_ENCOUNTER, GetMonster { Orin() })
+    */
+        BaseMod.addMonster(ORIN_ENCOUNTER, GetMonster { Orin() })
         BaseMod.addMonster(ZOMBIE_FAIRY_ENC, GetMonster { ZombieFairy() })
         val badge = ImageMaster.loadImage(MOD_BADGE)
         BaseMod.registerModBadge(
             badge,
             "MarisaMod",
-            "Flynn , Hell , Hohner_257 , Samsara",
+            "Flynn , Hell , Hohner_257 , Samsara, scarf005",
             "A Mod of the poor blonde girl from Touhou Project(",
             settingsPanel
         )
@@ -498,12 +445,12 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
 
         @JvmField
         val logger: Logger = LogManager.getLogger(Marisa::class.java.name)
+
         private const val ORIN_ENCOUNTER = "Orin"
-
-        //private static final String ORIN_ENCOUNTER_ZHS = "\u963f\u71d0";
         private const val ZOMBIE_FAIRY_ENC = "ZombieFairy"
+        //        private const val ORIN_ENCOUNTER_ZHS = """阿燐"""
+        //        private const val ZOMBIE_FAIRY_ENC_ZHS = """僵尸妖精"""
 
-        //private static final String ZOMBIE_FAIRY_ENC_ZHS = "\u50f5\u5c38\u5996\u7cbe";
         private const val MOD_BADGE = "img/UI/badge.png"
 
         //card backgrounds
@@ -528,34 +475,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         @JvmField
         var isDeadBranchEnabled = false
 
-        //private ArrayList<AbstractRelic> relicsToAdd = new ArrayList<>();
-        /*
-  //For Spark Themed cards
-  public static boolean isSpark(AbstractCard card) {
-    return (
-        (card.cardID.equals("Spark")) ||
-            (card.cardID.equals("DarkSpark")) ||
-            (card.cardID.equals("Strike_MRS")) ||
-            (card.cardID.equals("FinalSpark")) ||
-            (card.cardID.equals("DoubleSpark")) ||
-            (card.cardID.equals("RefractionSpark")) ||
-            (card.cardID.equals("MachineGunSpark")) ||
-            (card.cardID.equals("MasterSpark"))
-    );
-  }*/
-        //For the FXXKING Exhaustion curse
-        /*
-  public static boolean ExhaustionCheck() {
-    boolean res = false;
-    for (AbstractCard c : AbstractDungeon.player.hand.group) {
-      if (c instanceof Exhaustion_MRS) {
-        res = true;
-      }
-    }
-    return res;
-  }
-*/
-        //For Amplify cards
+        /** TODO: it does lots of stuff I cannot understand, split it into multiple parts */
         fun isAmplified(card: AbstractCard, multiplier: Int): Boolean {
             logger.info(
                 """ThMod.Amplified : card to check : ${card.cardID} ; costForTurn : ${card.costForTurn}"""
@@ -570,11 +490,10 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
                 || card.freeToPlayOnce || card.purgeOnUse
             ) {
                 logger.info(
-                    """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${p.hasPower("MilliPulsePower")} ; Pulse :${
-                        p.hasPower(
-                            "PulseMagicPower"
-                        )
-                    } ; Free2Play :${card.freeToPlayOnce} ; purge on use :${card.purgeOnUse}"""
+                    """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${p.hasPower("MilliPulsePower")} ; 
+                        |Pulse :${p.hasPower("PulseMagicPower")} ; 
+                        |Free2Play :${card.freeToPlayOnce} ; 
+                        |purge on use :${card.purgeOnUse}""".trimMargin()
                 )
                 res = true
             } else {

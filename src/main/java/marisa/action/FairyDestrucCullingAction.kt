@@ -1,29 +1,20 @@
-package marisa.action;
+package marisa.action
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.watcher.JudgementAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.actions.watcher.JudgementAction
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
-public class FairyDestrucCullingAction extends AbstractGameAction {
-
-  private int threshold;
-
-  public FairyDestrucCullingAction(int threshold) {
-    this.threshold = threshold;
-  }
-
-  @Override
-  public void update() {
-    // TODO Auto-generated method stub
-    this.isDone = false;
-    if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-      this.isDone = true;
-      return;
-    }
-    for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-      addToBot(new JudgementAction(m, this.threshold));
-        /*
+class FairyDestrucCullingAction(private val threshold: Int) : AbstractGameAction() {
+    override fun update() {
+        // TODO Auto-generated method stub
+        isDone = false
+        if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
+            isDone = true
+            return
+        }
+        for (m in AbstractDungeon.getCurrRoom().monsters.monsters) {
+            addToBot(JudgementAction(m, threshold))
+            /*
       if (m.currentHealth <= this.threshold) {
         if (m.hasPower("Intangible")) {
           ThMod.logger.info("FairyDestrucCullingAction : Intangible detected : " + m.id);
@@ -48,10 +39,10 @@ public class FairyDestrucCullingAction extends AbstractGameAction {
         );
       }
         */
+        }
+        if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
+            AbstractDungeon.actionManager.clearPostCombatActions()
+        }
+        isDone = true
     }
-    if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-      AbstractDungeon.actionManager.clearPostCombatActions();
-    }
-    this.isDone = true;
-  }
 }

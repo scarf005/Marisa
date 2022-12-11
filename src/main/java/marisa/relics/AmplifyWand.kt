@@ -1,45 +1,41 @@
-package marisa.relics;
+package marisa.relics
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import basemod.abstracts.CustomRelic
+import com.megacrit.cardcrawl.actions.common.GainBlockAction
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.ImageMaster
+import com.megacrit.cardcrawl.relics.AbstractRelic
 
-import basemod.abstracts.CustomRelic;
+class AmplifyWand : CustomRelic(
+    ID,
+    ImageMaster.loadImage(IMG),
+    ImageMaster.loadImage(IMG_OTL),
+    RelicTier.UNCOMMON,
+    LandingSound.FLAT
+) {
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
+    }
 
-public class AmplifyWand extends CustomRelic {
+    override fun makeCopy(): AbstractRelic {
+        return AmplifyWand()
+    }
 
-  public static final String ID = "AmplifyWand";
-  private static final String IMG = "img/relics/AmplifyWand_s.png";
-  private static final String IMG_OTL = "img/relics/outline/AmplifyWand_s.png";
-  private static final int BLOCK_AMT = 4;
+    override fun onTrigger() {
+        flash()
+        AbstractDungeon.actionManager.addToBottom(
+            RelicAboveCreatureAction(AbstractDungeon.player, this)
+        )
+        AbstractDungeon.actionManager.addToBottom(
+            GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, BLOCK_AMT)
+        )
+    }
 
-  public AmplifyWand() {
-    super(
-        ID,
-        ImageMaster.loadImage(IMG),
-        ImageMaster.loadImage(IMG_OTL),
-        RelicTier.UNCOMMON,
-        LandingSound.FLAT
-    );
-  }
-
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  public AbstractRelic makeCopy() {
-    return new AmplifyWand();
-  }
-
-  public void onTrigger() {
-    this.flash();
-    AbstractDungeon.actionManager.addToBottom(
-        new RelicAboveCreatureAction(AbstractDungeon.player, this)
-    );
-    AbstractDungeon.actionManager.addToBottom(
-        new GainBlockAction(AbstractDungeon.player,AbstractDungeon.player,BLOCK_AMT)
-    );
-  }
+    companion object {
+        const val ID = "AmplifyWand"
+        private const val IMG = "img/relics/AmplifyWand_s.png"
+        private const val IMG_OTL = "img/relics/outline/AmplifyWand_s.png"
+        private const val BLOCK_AMT = 4
+    }
 }

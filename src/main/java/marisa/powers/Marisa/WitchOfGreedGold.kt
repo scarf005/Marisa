@@ -1,29 +1,22 @@
-package marisa.powers.Marisa;
+package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.badlogic.gdx.graphics.Texture
+import com.megacrit.cardcrawl.core.AbstractCreature
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.powers.AbstractPower
 
-public class WitchOfGreedGold extends AbstractPower {
+class WitchOfGreedGold(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+    init {
+        name = NAME
+        ID = POWER_ID
+        this.owner = owner
+        this.amount = amount
+        type = PowerType.BUFF
+        updateDescription()
+        img = Texture("img/powers/coin.png")
+    }
 
-  public static final String POWER_ID = "WitchOfGreedGold";
-  private static final PowerStrings powerStrings =
-      CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
-  public static final String NAME = powerStrings.NAME;
-  public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
-  public WitchOfGreedGold(AbstractCreature owner, int amount) {
-    this.name = NAME;
-    this.ID = POWER_ID;
-    this.owner = owner;
-    this.amount = amount;
-    this.type = AbstractPower.PowerType.BUFF;
-    updateDescription();
-    this.img = new Texture("img/powers/coin.png");
-  }
-/*
+    /*
   public void onVictory() {
     AbstractPlayer p = AbstractDungeon.player;
     for (int i = 0; i < this.amount; i++) {
@@ -33,7 +26,14 @@ public class WitchOfGreedGold extends AbstractPower {
     }
   }
 */
-  public void updateDescription() {
-    this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
-  }
+    override fun updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
+    }
+
+    companion object {
+        const val POWER_ID = "WitchOfGreedGold"
+        private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
+        val NAME = powerStrings.NAME
+        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
+    }
 }

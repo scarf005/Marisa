@@ -1,38 +1,32 @@
-package marisa.relics;
+package marisa.relics
 
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import basemod.abstracts.CustomRelic
+import com.megacrit.cardcrawl.helpers.ImageMaster
+import com.megacrit.cardcrawl.relics.AbstractRelic
 
-import basemod.abstracts.CustomRelic;
+class SimpleLauncher : CustomRelic(
+    ID,
+    ImageMaster.loadImage(IMG),
+    ImageMaster.loadImage(IMG_OTL),
+    RelicTier.SHOP,
+    LandingSound.HEAVY
+) {
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
+    }
 
-public class SimpleLauncher extends CustomRelic {
+    override fun getPrice(): Int {
+        return PRICE
+    }
 
-  public static final String ID = "SimpleLauncher";
-  private static final String IMG = "img/relics/FlashLight.png";
-  private static final String IMG_OTL = "img/relics/outline/FlashLight.png";
-  private static final int PRICE = 300;
+    override fun makeCopy(): AbstractRelic {
+        return SimpleLauncher()
+    }
 
-  public SimpleLauncher() {
-    super(
-        ID,
-        ImageMaster.loadImage(IMG),
-        ImageMaster.loadImage(IMG_OTL),
-        RelicTier.SHOP,
-        LandingSound.HEAVY
-    );
-  }
-
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  @Override
-  public int getPrice() {
-    return PRICE;
-  }
-
-  public AbstractRelic makeCopy() {
-    return new SimpleLauncher();
-  }
-
+    companion object {
+        const val ID = "SimpleLauncher"
+        private const val IMG = "img/relics/FlashLight.png"
+        private const val IMG_OTL = "img/relics/outline/FlashLight.png"
+        private const val PRICE = 300
+    }
 }

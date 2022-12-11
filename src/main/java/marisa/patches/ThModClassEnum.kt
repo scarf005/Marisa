@@ -1,11 +1,9 @@
-package marisa.patches;
+package marisa.patches
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum
+import com.megacrit.cardcrawl.characters.AbstractPlayer.PlayerClass
 
-public class ThModClassEnum {
-
-	@SpireEnum
-	public static AbstractPlayer.PlayerClass MARISA;
-
+object ThModClassEnum {
+    @SpireEnum
+    var MARISA: PlayerClass? = null
 }

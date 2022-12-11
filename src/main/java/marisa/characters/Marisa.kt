@@ -26,6 +26,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake
 import com.megacrit.cardcrawl.screens.CharSelectInfo
 import com.megacrit.cardcrawl.unlock.UnlockTracker
 import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
 
 class Marisa(name: String) :
     CustomPlayer(name, ThModClassEnum.MARISA, ORB_TEXTURES, ORB_VFX, LAYER_SPEED, null, null) {
@@ -44,7 +45,7 @@ class Marisa(name: String) :
         )
         loadAnimation(MARISA_SKELETON_ATLAS, MARISA_SKELETON_JSON, 2.0f)
         // if you're using modified versions of base game animations or made animations in spine make sure to include this bit and the following lines
-        val ee = state.setAnimation(0, MARISA_ANIMATION, true).apply {
+        state.setAnimation(0, MARISA_ANIMATION, true).apply {
             time = endTime * MathUtils.random()
             timeScale = 1.0f
         }
@@ -199,7 +200,7 @@ class Marisa(name: String) :
     }
 
     companion object {
-        val logger = LogManager.getLogger(MarisaMod::class.java.name)
+        val logger: Logger = LogManager.getLogger(MarisaMod::class.java.name)
         private const val ENERGY_PER_TURN = 3 // how much energy you get every turn
         private const val MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
         private const val MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2

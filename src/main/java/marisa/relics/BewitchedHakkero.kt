@@ -1,74 +1,61 @@
-package marisa.relics;
+package marisa.relics
 
-import static marisa.patches.CardTagEnum.SPARK;
+import basemod.abstracts.CustomRelic
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
+import com.megacrit.cardcrawl.actions.utility.UseCardAction
+import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.ImageMaster
+import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.MarisaMod
+import marisa.patches.CardTagEnum
+import marisa.powers.Marisa.ChargeUpPower
 
-import marisa.MarisaMod;
-import marisa.powers.Marisa.ChargeUpPower;
-import basemod.abstracts.CustomRelic;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-
-public class BewitchedHakkero extends CustomRelic {
-
-  public static final String ID = "BewitchedHakkero";
-  private static final String IMG = "img/relics/Hakkero_1_s.png";
-  private static final String IMG_OTL = "img/relics/outline/Hakkero_1_s.png";
-
-  public BewitchedHakkero() {
-    super(
-        ID,
-        ImageMaster.loadImage(IMG),
-        ImageMaster.loadImage(IMG_OTL),
-        RelicTier.BOSS,
-        LandingSound.MAGICAL
-    );
-  }
-
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  public AbstractRelic makeCopy() {
-    return new BewitchedHakkero();
-  }
-
-  public void obtain() {
-    if (AbstractDungeon.player.hasRelic("MiniHakkero")) {
-      instantObtain(AbstractDungeon.player, 0, false);
-    } else {
-      super.obtain();
+class BewitchedHakkero : CustomRelic(
+    ID,
+    ImageMaster.loadImage(IMG),
+    ImageMaster.loadImage(IMG_OTL),
+    RelicTier.BOSS,
+    LandingSound.MAGICAL
+) {
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
     }
-  }
 
-  public void onUseCard(AbstractCard card, UseCardAction action) {
-    flash();
-    MarisaMod.logger.info(
-        "BewitchedHakkero : Applying ChargeUpPower for using card : " + card.cardID
-    );
-    int amt = 1;
-    if (card.hasTag(SPARK)) {
-      amt++;
+    override fun makeCopy(): AbstractRelic {
+        return BewitchedHakkero()
     }
-    AbstractDungeon.actionManager.addToTop(
-        new ApplyPowerAction(
-            AbstractDungeon.player,
-            AbstractDungeon.player,
-            new ChargeUpPower(AbstractDungeon.player, amt),
-            amt
+
+    override fun obtain() {
+        if (AbstractDungeon.player.hasRelic("MiniHakkero")) {
+            instantObtain(AbstractDungeon.player, 0, false)
+        } else {
+            super.obtain()
+        }
+    }
+
+    override fun onUseCard(card: AbstractCard, action: UseCardAction) {
+        flash()
+        MarisaMod.logger.info(
+            "BewitchedHakkero : Applying ChargeUpPower for using card : " + card.cardID
         )
-    );
-
-    AbstractDungeon.actionManager.addToBottom(
-        new RelicAboveCreatureAction(AbstractDungeon.player, this)
-    );
-  }
-
-  /*
+        var amt = 1
+        if (card.hasTag(CardTagEnum.SPARK)) {
+            amt++
+        }
+        AbstractDungeon.actionManager.addToTop(
+            ApplyPowerAction(
+                AbstractDungeon.player,
+                AbstractDungeon.player,
+                ChargeUpPower(AbstractDungeon.player, amt),
+                amt
+            )
+        )
+        AbstractDungeon.actionManager.addToBottom(
+            RelicAboveCreatureAction(AbstractDungeon.player, this)
+        )
+    } /*
   @Override
   public int onAttacked(DamageInfo info, int damageAmount) {
     if (
@@ -91,7 +78,8 @@ public class BewitchedHakkero extends CustomRelic {
     return damageAmount;
   }
 */
-  /*
+
+    /*
   @Override
   public void atTurnStartPostDraw() {
     flash();
@@ -109,4 +97,9 @@ public class BewitchedHakkero extends CustomRelic {
   }
 
   */
+    companion object {
+        const val ID = "BewitchedHakkero"
+        private const val IMG = "img/relics/Hakkero_1_s.png"
+        private const val IMG_OTL = "img/relics/outline/Hakkero_1_s.png"
+    }
 }

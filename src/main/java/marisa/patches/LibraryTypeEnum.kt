@@ -1,14 +1,12 @@
-package marisa.patches;
+package marisa.patches
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum
+import com.megacrit.cardcrawl.helpers.CardLibrary.LibraryType
 
-public class LibraryTypeEnum {
+object LibraryTypeEnum {
+    @SpireEnum
+    var MARISA_COLOR: LibraryType? = null
 
-  @SpireEnum
-  public static CardLibrary.LibraryType MARISA_COLOR;
-
-  @SpireEnum
-  public static CardLibrary.LibraryType MARISA_DERIVATIONS;
-
+    @SpireEnum
+    var MARISA_DERIVATIONS: LibraryType? = null
 }

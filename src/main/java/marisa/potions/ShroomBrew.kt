@@ -1,56 +1,53 @@
-package marisa.potions;
+package marisa.potions
 
-import marisa.action.FungusSplashAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.localization.PotionStrings;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.core.AbstractCreature
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.PowerTip
+import com.megacrit.cardcrawl.potions.AbstractPotion
+import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase
+import marisa.action.FungusSplashAction
 
-public class ShroomBrew
-    extends AbstractPotion {
-
-  public static final String POTION_ID = "ShroomBrew";
-  private static final PotionStrings potionStrings =
-      CardCrawlGame.languagePack.getPotionString(POTION_ID);
-  public static final String NAME = potionStrings.NAME;
-  public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
-
-  public ShroomBrew() {
-    super(
-        NAME,
-        POTION_ID,
-        PotionRarity.UNCOMMON,
-        PotionSize.FAIRY,
-        PotionColor.SMOKE
-    );
-    this.potency = getPotency();
-    this.description = DESCRIPTIONS[0];
-    this.isThrown = true;
-    this.targetRequired = true;
-    this.tips.add(
-        new PowerTip(this.name, this.description)
-    );
-    this.tips.add(
-        new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2])
-    );
-  }
-
-  public void use(AbstractCreature target) {
-    if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-      AbstractDungeon.actionManager.addToBottom(
-          new FungusSplashAction(target)
-      );
+class ShroomBrew : AbstractPotion(
+    NAME,
+    POTION_ID,
+    PotionRarity.UNCOMMON,
+    PotionSize.FAIRY,
+    PotionColor.SMOKE
+) {
+    init {
+        potency = getPotency()
+        description = DESCRIPTIONS[0]
+        isThrown = true
+        targetRequired = true
+        tips.add(
+            PowerTip(name, description)
+        )
+        tips.add(
+            PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2])
+        )
     }
-  }
 
-  public AbstractPotion makeCopy() {
-    return new ShroomBrew();
-  }
+    override fun use(target: AbstractCreature) {
+        if (AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
+            AbstractDungeon.actionManager.addToBottom(
+                FungusSplashAction(target)
+            )
+        }
+    }
 
-  public int getPotency(int ascensionLevel) {
-    return 1;
-  }
+    override fun makeCopy(): AbstractPotion {
+        return ShroomBrew()
+    }
+
+    override fun getPotency(ascensionLevel: Int): Int {
+        return 1
+    }
+
+    companion object {
+        const val POTION_ID = "ShroomBrew"
+        private val potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID)
+        val NAME = potionStrings.NAME
+        val DESCRIPTIONS = potionStrings.DESCRIPTIONS
+    }
 }

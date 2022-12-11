@@ -1,22 +1,17 @@
-package marisa.patches;
+package marisa.patches
 
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import marisa.powers.Marisa.PropBagPower
 
-import marisa.powers.Marisa.PropBagPower;
-
-public class SmokeBombNPropBagPatch {
-
-  @SpirePatch(cls = "com.megacrit.cardcrawl.potions.SmokeBomb", method = "use")
-  public static class SmokePatch {
-
-    public static void Prefix() {
-      for (AbstractPower p : AbstractDungeon.player.powers) {
-        if (p instanceof PropBagPower) {
-          p.onVictory();
+class SmokeBombNPropBagPatch {
+    @SpirePatch(cls = "com.megacrit.cardcrawl.potions.SmokeBomb", method = "use")
+    object SmokePatch {
+        @JvmStatic
+        fun Prefix() {
+            for (p in AbstractDungeon.player.powers) {
+                (p as? PropBagPower)?.onVictory()
+            }
         }
-      }
     }
-  }
 }

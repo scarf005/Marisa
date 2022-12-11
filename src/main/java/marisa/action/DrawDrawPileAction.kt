@@ -1,23 +1,21 @@
-package marisa.action;
+package marisa.action
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.actions.common.DrawCardAction
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
-public class DrawDrawPileAction extends AbstractGameAction
-{
-  public DrawDrawPileAction(){
-    this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-    this.duration = Settings.ACTION_DUR_FAST;
-  }
-
-  @Override
-  public void update() {
-    this.isDone = true;
-    if (AbstractDungeon.player.drawPile.isEmpty()){
-      return;
+class DrawDrawPileAction : AbstractGameAction() {
+    init {
+        actionType = ActionType.CARD_MANIPULATION
+        duration = Settings.ACTION_DUR_FAST
     }
-    addToTop(new DrawCardAction(1));
-  }
+
+    override fun update() {
+        isDone = true
+        if (AbstractDungeon.player.drawPile.isEmpty) {
+            return
+        }
+        addToTop(DrawCardAction(1))
+    }
 }

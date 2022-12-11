@@ -1,16 +1,11 @@
-package marisa.action;
+package marisa.action
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
-public class RefreshHandAction extends AbstractGameAction {
-
-  public RefreshHandAction(){
-  }
-
-  @Override
-  public void update() {
-    AbstractDungeon.player.hand.refreshHandLayout();
-    this.isDone = true;
-  }
+class RefreshHandAction : AbstractGameAction() {
+    override fun update() {
+        AbstractDungeon.player.hand.refreshHandLayout()
+        isDone = true
+    }
 }

@@ -1,56 +1,53 @@
-package marisa.relics;
+package marisa.relics
 
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import basemod.abstracts.CustomRelic
+import com.megacrit.cardcrawl.actions.common.DrawCardAction
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
+import com.megacrit.cardcrawl.actions.utility.UseCardAction
+import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.ImageMaster
+import com.megacrit.cardcrawl.relics.AbstractRelic
 
-import basemod.abstracts.CustomRelic;
-
-public class MagicBroom extends CustomRelic {
-
-  public static final String ID = "MagicBroom";
-  private static final String IMG = "img/relics/Broom_s.png";
-  private static final String IMG_OTL = "img/relics/outline/Broom_s.png";
-
-  public MagicBroom() {
-    super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.RARE,
-        LandingSound.FLAT);
-  }
-
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  public AbstractRelic makeCopy() {
-    return new MagicBroom();
-  }
-
-  public void atBattleStart() {
-    this.counter = 0;
-  }
-
-  public void onUseCard(AbstractCard card, UseCardAction action) {
-    if ((card.costForTurn == 0) || (card.costForTurn <= -2) || ((card.costForTurn == -1) && (
-        AbstractDungeon.player.energy.energy <= 0))) {
-      this.counter += 1;
-      if (this.counter >= 3) {
-        this.counter = 0;
-        flash();
-        AbstractDungeon.actionManager.addToBottom(
-            new RelicAboveCreatureAction(AbstractDungeon.player, this)
-        );
-        AbstractDungeon.actionManager.addToBottom(
-            new DrawCardAction(AbstractDungeon.player, 1)
-        );
-      }
+class MagicBroom : CustomRelic(
+    ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.RARE,
+    LandingSound.FLAT
+) {
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
     }
-  }
 
-  public void onVictory() {
-    this.counter = -1;
-  }
+    override fun makeCopy(): AbstractRelic {
+        return MagicBroom()
+    }
+
+    override fun atBattleStart() {
+        counter = 0
+    }
+
+    override fun onUseCard(card: AbstractCard, action: UseCardAction) {
+        if (card.costForTurn == 0 || card.costForTurn <= -2 || card.costForTurn == -1 && AbstractDungeon.player.energy.energy <= 0) {
+            counter += 1
+            if (counter >= 3) {
+                counter = 0
+                flash()
+                AbstractDungeon.actionManager.addToBottom(
+                    RelicAboveCreatureAction(AbstractDungeon.player, this)
+                )
+                AbstractDungeon.actionManager.addToBottom(
+                    DrawCardAction(AbstractDungeon.player, 1)
+                )
+            }
+        }
+    }
+
+    override fun onVictory() {
+        counter = -1
+    }
+
+    companion object {
+        const val ID = "MagicBroom"
+        private const val IMG = "img/relics/Broom_s.png"
+        private const val IMG_OTL = "img/relics/outline/Broom_s.png"
+    }
 }

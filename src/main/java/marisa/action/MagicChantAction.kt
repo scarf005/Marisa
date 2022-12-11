@@ -1,87 +1,79 @@
-package marisa.action;
+package marisa.action
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.cards.CardGroup
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
-import java.util.ArrayList;
+class MagicChantAction : AbstractGameAction() {
+    private val player = AbstractDungeon.player
+    private val numberOfCards: Int
 
-public class MagicChantAction extends AbstractGameAction {
-
-  private static final UIStrings uiStrings = CardCrawlGame.languagePack
-      .getUIString("BetterToHandAction");
-  public static final String[] TEXT = uiStrings.TEXT;
-  private AbstractPlayer player;
-  private int numberOfCards;
-
-  public MagicChantAction() {
-    this.player = AbstractDungeon.player;
-    this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-    this.duration = (this.startDuration = Settings.ACTION_DUR_FAST);
-    this.numberOfCards = 1;
-  }
-
-  public void update() {
-    CardGroup temp;
-    if (this.duration == this.startDuration) {
-      if (this.player.drawPile.isEmpty()) {
-        this.isDone = true;
-        return;
-      }
-
-      if (this.player.drawPile.size() <= this.numberOfCards) {
-        ArrayList<AbstractCard> cardsToMove = new ArrayList();
-        for (AbstractCard c : this.player.drawPile.group) {
-          if (c.canUpgrade()){
-            c.upgrade();
-          }
-          cardsToMove.add(c);
-        }
-        for (AbstractCard c : cardsToMove) {
-          if (this.player.hand.size() == 10) {
-            this.player.drawPile.moveToDiscardPile(c);
-            this.player.createHandIsFullDialog();
-          } else {
-            this.player.drawPile.moveToHand(c, this.player.drawPile);
-          }
-        }
-        this.isDone = true;
-        return;
-      }
-
-      temp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-      for (AbstractCard c : this.player.drawPile.group) {
-        temp.addToTop(c);
-      }
-      temp.sortAlphabetically(true);
-      temp.sortByRarityPlusStatusCardType(false);
-
-      AbstractDungeon.gridSelectScreen.open(temp, this.numberOfCards, TEXT[0], true);
-
-      tickDuration();
-      return;
+    init {
+        actionType = ActionType.CARD_MANIPULATION
+        duration = Settings.ACTION_DUR_FAST.also { startDuration = it }
+        numberOfCards = 1
     }
 
-    if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-      for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
-        if (c.canUpgrade()){
-          c.upgrade();
+    override fun update() {
+        val temp: CardGroup
+        if (duration == startDuration) {
+            if (player.drawPile.isEmpty) {
+                isDone = true
+                return
+            }
+            if (player.drawPile.size() <= numberOfCards) {
+                val cardsToMove = ArrayList<AbstractCard?>()
+                for (c in player.drawPile.group) {
+                    if (c.canUpgrade()) {
+                        c.upgrade()
+                    }
+                    cardsToMove.add(c)
+                }
+                for (c in cardsToMove) {
+                    if (player.hand.size() == 10) {
+                        player.drawPile.moveToDiscardPile(c)
+                        player.createHandIsFullDialog()
+                    } else {
+                        player.drawPile.moveToHand(c, player.drawPile)
+                    }
+                }
+                isDone = true
+                return
+            }
+            temp = CardGroup(CardGroup.CardGroupType.UNSPECIFIED)
+            for (c in player.drawPile.group) {
+                temp.addToTop(c)
+            }
+            temp.sortAlphabetically(true)
+            temp.sortByRarityPlusStatusCardType(false)
+            AbstractDungeon.gridSelectScreen.open(temp, numberOfCards, TEXT[0], true)
+            tickDuration()
+            return
         }
-        if (this.player.hand.size() == 10) {
-          this.player.drawPile.moveToDiscardPile(c);
-          this.player.createHandIsFullDialog();
-        } else {
-          this.player.drawPile.moveToHand(c, this.player.drawPile);
+        if (AbstractDungeon.gridSelectScreen.selectedCards.isNotEmpty()) {
+            for (c in AbstractDungeon.gridSelectScreen.selectedCards) {
+                if (c.canUpgrade()) {
+                    c.upgrade()
+                }
+                if (player.hand.size() == 10) {
+                    player.drawPile.moveToDiscardPile(c)
+                    player.createHandIsFullDialog()
+                } else {
+                    player.drawPile.moveToHand(c, player.drawPile)
+                }
+            }
+            AbstractDungeon.gridSelectScreen.selectedCards.clear()
+            AbstractDungeon.player.hand.refreshHandLayout()
         }
-      }
-      AbstractDungeon.gridSelectScreen.selectedCards.clear();
-      AbstractDungeon.player.hand.refreshHandLayout();
+        tickDuration()
     }
-    tickDuration();
-  }
+
+    companion object {
+        private val uiStrings = CardCrawlGame.languagePack
+            .getUIString("BetterToHandAction")
+        val TEXT: Array<String> = uiStrings.TEXT
+    }
 }

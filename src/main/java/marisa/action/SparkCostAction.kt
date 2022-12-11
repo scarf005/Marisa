@@ -1,39 +1,27 @@
-package marisa.action;
+package marisa.action
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import marisa.cards.Marisa.FinalSpark
 
-import marisa.cards.Marisa.FinalSpark;
+class SparkCostAction : AbstractGameAction() {
+    init {
+        actionType = ActionType.CARD_MANIPULATION
+        duration = Settings.ACTION_DUR_FAST
+    }
 
-public class SparkCostAction
-	extends AbstractGameAction{
-
-	public SparkCostAction(){
-		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-		this.duration = Settings.ACTION_DUR_FAST;
-	}
-
-	public void update(){
-		this.isDone = false;
-
-	    for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-	    	if ((c instanceof FinalSpark)){
-	    		c.updateCost(-1);
-	    	}
-	    }
-	    for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-	    	if ((c instanceof FinalSpark)){
-	    		c.updateCost(-1);
-	    	}
-	    }
-	    for (AbstractCard c : AbstractDungeon.player.hand.group) {
-	    	if ((c instanceof FinalSpark)){
-	    		c.updateCost(-1);
-	    	}
-	    }
-
-		this.isDone = true;
-	}
+    override fun update() {
+        isDone = false
+        for (c in AbstractDungeon.player.discardPile.group) {
+            (c as? FinalSpark)?.updateCost(-1)
+        }
+        for (c in AbstractDungeon.player.drawPile.group) {
+            (c as? FinalSpark)?.updateCost(-1)
+        }
+        for (c in AbstractDungeon.player.hand.group) {
+            (c as? FinalSpark)?.updateCost(-1)
+        }
+        isDone = true
+    }
 }

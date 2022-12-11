@@ -1,47 +1,43 @@
-package marisa.monsters;
+package marisa.monsters
 
-import marisa.MarisaMod;
-import marisa.action.OrinsDebuffAction;
-import marisa.action.SummonFairyAction;
-import marisa.powers.monsters.InfernoClaw;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.ChangeStateAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.HealAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.actions.common.SuicideAction;
-import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
-import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.core.Settings.GameLanguage;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ModHelper;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect;
-import org.apache.logging.log4j.Logger;
+import com.badlogic.gdx.graphics.Color
+import com.badlogic.gdx.math.MathUtils
+import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
+import com.megacrit.cardcrawl.actions.ClearCardQueueAction
+import com.megacrit.cardcrawl.actions.animations.VFXAction
+import com.megacrit.cardcrawl.actions.common.*
+import com.megacrit.cardcrawl.actions.unique.CanLoseAction
+import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction
+import com.megacrit.cardcrawl.actions.utility.WaitAction
+import com.megacrit.cardcrawl.cards.DamageInfo
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.core.Settings.GameLanguage
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.ModHelper
+import com.megacrit.cardcrawl.monsters.AbstractMonster
+import com.megacrit.cardcrawl.powers.StrengthPower
+import com.megacrit.cardcrawl.powers.WeakPower
+import com.megacrit.cardcrawl.vfx.combat.BiteEffect
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect
+import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect
+import marisa.MarisaMod
+import marisa.action.OrinsDebuffAction
+import marisa.action.SummonFairyAction
+import marisa.powers.monsters.InfernoClaw
 
-public class Orin extends AbstractMonster/* implements BaseMod.GetMonster */ {
-
-  private static final Logger logger = MarisaMod.logger;
-  public static final String ID = "Orin";
-  public static final String NAME = "Orin";
-  /*
+class Orin : AbstractMonster(
+    NAME,
+    "Orin",
+    STAGE_1_HP,
+    0.0f,
+    -30.0f,
+    220.0f,
+    200.0f,
+    tempImgUrl,
+    -20.0f,
+    -10.0f
+) /* implements BaseMod.GetMonster */ {
+    /*
   public static final String[] MOVES = {
       ""
   };
@@ -49,538 +45,472 @@ public class Orin extends AbstractMonster/* implements BaseMod.GetMonster */ {
       ""
   };
   */
-  private boolean form1 = true;
-  private boolean att = true;
-  private boolean firstTurn = true;
-  private static final int STAGE_1_HP = 68;
-  private static final int S_1_HP = 82;
-  private static final int STAGE_2_HP = 272;
-  private static final int S_2_HP = 328;
-  private static final int STR = 3;
-  private static final int STR_A = 5;
-  private static final int DOUBLE_TAP = 5;
-  private static final int DOUBLE_TAP_A = 6;
-  private static final int CAT_TAP = 4;
-  private static final int CAT_TAP_A = 5;
-  private static final int HELL_FIRE = 4;
-  private static final int HELL_FIRE_A = 5;
-  private static final int WEAK = 1;
-  private static final int WEAK_A = 2;
-  private static final int WRAITH = 2;
-  //private static final int WRAITH_A = 2;
-  private static final int SUMMON = 2;
-  private static final int SUMMON_FIRST = 4;
-  private static final int SUMMON_THRESHOLD = 2;
-  private static final int EXECUTE = 6;
-  private static final int EXECUTE_A = 6;
-  private static final int EXECUTE_THRESHOLD = 8;
-  private static final int EXECUTE_THRESHOLD_A = 6;
-  private static final int QUAD_DMG = 3;
-  private static final int QUAD_DMG_A = 4;
-  //private static final int BLOCK = 8;
-  private static final int BLOCK_UPG = 12;
-  private int doubleTap;
-  private int catTap;
-  private int hellFireDmg;
-  private int strength;
-  private int weak;
-  private int wraith;
-  private int exc;
-  private int executeDmg;
-  private int quad;
-  private int blc;
-  private int turnCount = 0;
-  private static final String tempImgUrl = "img/monsters/Orin/Orin_.png";
-  private static final String MODEL_HUMANOID_ATLAS = "img/monsters/Orin/Orin.atlas";
-  private static final String MODEL_HUMANOID_JSON = "img/monsters/Orin/Orin.json";
-  private static final String MODEL_CAT_ATLAS = "img/monsters/Orin/rincat.atlas";
-  private static final String MODEL_CAT_JSON = "img/monsters/Orin/rincat.json";
+    private var form1 = true
+    private var att = true
+    private var firstTurn = true
+    private var doubleTap = 0
+    private var catTap = 0
+    private var hellFireDmg = 0
+    private var strength = 0
+    private var weak = 0
+    private val wraith: Int
+    private var exc = 0
+    private var executeDmg = 0
+    private var quad = 0
+    private var blc = 0
+    private var turnCount = 0
 
-  public Orin() {
-    super(NAME, "Orin", STAGE_1_HP, 0.0F, -30.0F, 220.0F, 200.0F, tempImgUrl, -20.0F, -10.0F);
-    if (Settings.language == GameLanguage.ZHS) {
-      this.name = "\u963f\u71d0";
+    init {
+        if (Settings.language == GameLanguage.ZHS) {
+            name = "\u963f\u71d0"
+        }
+        if (AbstractDungeon.ascensionLevel >= 8) {
+            setHp(S_1_HP)
+        } else {
+            setHp(STAGE_1_HP)
+        }
+        //this.doubleTap = DOUBLE_TAP;
+        //this.blc = BLOCK;
+        wraith = WRAITH
+        if (AbstractDungeon.ascensionLevel >= 3) {
+            catTap = CAT_TAP_A
+            hellFireDmg = HELL_FIRE_A
+            executeDmg = EXECUTE_A
+            doubleTap = DOUBLE_TAP_A
+        } else {
+            catTap = CAT_TAP
+            hellFireDmg = HELL_FIRE
+            executeDmg = EXECUTE
+            doubleTap = DOUBLE_TAP
+        }
+        if (AbstractDungeon.ascensionLevel >= 18) {
+            strength = STR_A
+            weak = WEAK_A
+            exc = EXECUTE_THRESHOLD_A
+            quad = QUAD_DMG_A
+        } else {
+            strength = STR
+            weak = WEAK
+            exc = EXECUTE_THRESHOLD
+            quad = QUAD_DMG
+        }
+        damage.add(DamageInfo(this, catTap))
+        damage.add(DamageInfo(this, hellFireDmg))
+        damage.add(DamageInfo(this, doubleTap))
+        damage.add(DamageInfo(this, executeDmg))
+        damage.add(DamageInfo(this, quad))
+        type = EnemyType.ELITE
+        loadAnimation(MODEL_CAT_ATLAS, MODEL_CAT_JSON, 3.0f)
+        val e = state.setAnimation(0, "newAnimation", true)
+        e.time = e.endTime * MathUtils.random()
     }
-    if (AbstractDungeon.ascensionLevel >= 8) {
-      setHp(S_1_HP);
-    } else {
-      setHp(STAGE_1_HP);
-    }
-    //this.doubleTap = DOUBLE_TAP;
-    //this.blc = BLOCK;
-    this.wraith = WRAITH;
-    if (AbstractDungeon.ascensionLevel >= 3) {
-      this.catTap = CAT_TAP_A;
-      this.hellFireDmg = HELL_FIRE_A;
-      this.executeDmg = EXECUTE_A;
-      this.doubleTap = DOUBLE_TAP_A;
-    } else {
-      this.catTap = CAT_TAP;
-      this.hellFireDmg = HELL_FIRE;
-      this.executeDmg = EXECUTE;
-      this.doubleTap = DOUBLE_TAP;
-    }
-    if (AbstractDungeon.ascensionLevel >= 18) {
-      this.strength = STR_A;
-      this.weak = WEAK_A;
-      this.exc = EXECUTE_THRESHOLD_A;
-      this.quad = QUAD_DMG_A;
-    } else {
-      this.strength = STR;
-      this.weak = WEAK;
-      this.exc = EXECUTE_THRESHOLD;
-      this.quad = QUAD_DMG;
-    }
-    this.damage.add(new DamageInfo(this, this.catTap));
-    this.damage.add(new DamageInfo(this, this.hellFireDmg));
-    this.damage.add(new DamageInfo(this, this.doubleTap));
-    this.damage.add(new DamageInfo(this, this.executeDmg));
-    this.damage.add(new DamageInfo(this,this.quad));
 
-    this.type = AbstractMonster.EnemyType.ELITE;
-
-    loadAnimation(MODEL_CAT_ATLAS, MODEL_CAT_JSON, 3.0f);
-    AnimationState.TrackEntry e = this.state.setAnimation(0, "newAnimation", true);
-    e.setTime(e.getEndTime() * MathUtils.random());
-  }
-
-  @Override
-  public void usePreBattleAction() {
-    AbstractDungeon.getCurrRoom().cannotLose = true;
-    AbstractDungeon.actionManager.addToTop(
-        new ApplyPowerAction(
-            this, this, new InfernoClaw(this)
+    override fun usePreBattleAction() {
+        AbstractDungeon.getCurrRoom().cannotLose = true
+        AbstractDungeon.actionManager.addToTop(
+            ApplyPowerAction(
+                this, this, InfernoClaw(this)
+            )
         )
-    );
-  }
+    }
 
-  @Override
-  public void takeTurn() {
-    AbstractPlayer p = AbstractDungeon.player;
-    switch (this.nextMove) {
-      case 1:
-        //catBite
-        AbstractDungeon.actionManager.addToBottom(
-            new WaitAction(0.3F)
-        );
-        AbstractDungeon.actionManager.addToBottom(
-            new VFXAction(
-                new BiteEffect(
-                    p.hb.cX + MathUtils.random(-50.0F, 50.0F) * Settings.scale
-                    , p.hb.cY + MathUtils.random(-50.0F, 50.0F) * Settings.scale
-                    , Color.ORANGE.cpy()
+    override fun takeTurn() {
+        val p = AbstractDungeon.player
+        when (nextMove.toInt()) {
+            1 -> {
+                //catBite
+                AbstractDungeon.actionManager.addToBottom(
+                    WaitAction(0.3f)
                 )
-                , 0.1F
-            )
-        );
-        AbstractDungeon.actionManager.addToBottom(
-            new DamageAction(
-                p
-                , this.damage.get(0)
-                , AbstractGameAction.AttackEffect.NONE
-            )
-        );
-        AbstractDungeon.actionManager.addToBottom(
-            new VFXAction(
-                new BiteEffect(
-                    p.hb.cX + MathUtils.random(-50.0F, 50.0F) * Settings.scale
-                    , p.hb.cY + MathUtils.random(-50.0F, 50.0F) * Settings.scale
-                    , Color.ORANGE.cpy()
+                AbstractDungeon.actionManager.addToBottom(
+                    VFXAction(
+                        BiteEffect(
+                            p.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale,
+                            p.hb.cY + MathUtils.random(-50.0f, 50.0f) * Settings.scale,
+                            Color.ORANGE.cpy()
+                        ), 0.1f
+                    )
                 )
-                , 0.1F
-            )
-        );
-        AbstractDungeon.actionManager.addToBottom(
-            new DamageAction(
-                p
-                , this.damage.get(0)
-                , AbstractGameAction.AttackEffect.NONE
-            )
-        );
-        /*
+                AbstractDungeon.actionManager.addToBottom(
+                    DamageAction(
+                        p, damage[0], AttackEffect.NONE
+                    )
+                )
+                AbstractDungeon.actionManager.addToBottom(
+                    VFXAction(
+                        BiteEffect(
+                            p.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale,
+                            p.hb.cY + MathUtils.random(-50.0f, 50.0f) * Settings.scale,
+                            Color.ORANGE.cpy()
+                        ), 0.1f
+                    )
+                )
+                AbstractDungeon.actionManager.addToBottom(
+                    DamageAction(
+                        p, damage[0], AttackEffect.NONE
+                    )
+                )
+            }
+
+            2 ->         //buff
+                AbstractDungeon.actionManager.addToBottom(
+                    ApplyPowerAction(
+                        this, this, StrengthPower(this, strength), strength
+                    )
+                )
+
+            3 -> {
+                //hell fire
+                //missing vfx
+                AbstractDungeon.actionManager.addToBottom(
+                    VFXAction(
+                        this,
+                        IntenseZoomEffect(hb.cX, hb.cY, true), 0.05f, true
+                    )
+                )
+                AbstractDungeon.actionManager.addToBottom(
+                    ChangeStateAction(this, "TRANSFORM")
+                )
+            }
+
+            4 -> {
+                //doubleTap
+                AbstractDungeon.actionManager.addToBottom(
+                    DamageAction(
+                        p, damage[2], AttackEffect.SLASH_DIAGONAL
+                    )
+                )
+                AbstractDungeon.actionManager.addToBottom(
+                    DamageAction(
+                        p, damage[2], AttackEffect.SLASH_DIAGONAL
+                    )
+                )
+                /*
         AbstractDungeon.actionManager.addToBottom(
             new GainBlockAction(this, this, this.blc)
         );
-        */
-        break;
-      case 2:
-        //buff
-        AbstractDungeon.actionManager.addToBottom(
-            new ApplyPowerAction(
-                this
-                , this
-                , new StrengthPower(this, this.strength)
-                , this.strength
+        */AbstractDungeon.actionManager.addToBottom(
+                    ApplyPowerAction(
+                        p,
+                        this,
+                        WeakPower(
+                            p,
+                            weak,
+                            true
+                        ),
+                        weak
+                    )
+                )
+            }
+
+            5 ->         //quadruple
+            {
+                var i = 0
+                while (i < 4) {
+                    AbstractDungeon.actionManager.addToBottom(
+                        DamageAction(
+                            p, damage[4], AttackEffect.FIRE
+                        )
+                    )
+                    i++
+                }
+            }
+
+            6 ->         //debuff
+                //missing vfx
+                AbstractDungeon.actionManager.addToBottom(
+                    OrinsDebuffAction(wraith, this)
+                )
+
+            7 ->         //spawnFairy firstTurn
+            {
+                var i = 0
+                while (i < SUMMON_FIRST) {
+                    AbstractDungeon.actionManager.addToBottom(
+                        SummonFairyAction(this)
+                    )
+                    i++
+                }
+            }
+
+            8 ->         //spawnFairy normal
+            {
+                var i = 0
+                while (i < SUMMON) {
+                    AbstractDungeon.actionManager.addToBottom(
+                        SummonFairyAction(this)
+                    )
+                    i++
+                }
+            }
+
+            9 -> {
+                //execute
+                //missing vfx
+                var i = 0
+                while (i < 6) {
+                    AbstractDungeon.actionManager.addToBottom(
+                        DamageAction(
+                            p, damage[3], AttackEffect.FIRE
+                        )
+                    )
+                    i++
+                }
+                AbstractDungeon.actionManager.addToBottom(
+                    RemoveSpecificPowerAction(
+                        p, this, "Wraith"
+                    )
+                )
+            }
+
+            else -> logger.info(
+                "Orin : takeTurn : error :action number "
+                        + nextMove
+                        + " should never be called."
             )
-        );
-        break;
-      case 3:
-        //hell fire
-        //missing vfx
-        AbstractDungeon.actionManager.addToBottom(
-            new VFXAction(
-                this,
-                new IntenseZoomEffect(this.hb.cX, this.hb.cY, true), 0.05F, true)
-        );
-        AbstractDungeon.actionManager.addToBottom(
-            new ChangeStateAction(this, "TRANSFORM")
-        );
-        break;
-      case 4:
-        //doubleTap
-        AbstractDungeon.actionManager.addToBottom(
-            new DamageAction(
-                p
-                , this.damage.get(2)
-                , AttackEffect.SLASH_DIAGONAL
-            )
-        );
-        AbstractDungeon.actionManager.addToBottom(
-            new DamageAction(
-                p
-                , this.damage.get(2)
-                , AttackEffect.SLASH_DIAGONAL
-            )
-        );
+        }
+        AbstractDungeon.actionManager.addToBottom(RollMoveAction(this))
+    }
+
+    private fun setDoubleTapAction() {
+        logger.info("Orin : setDoubleTapAction : form1 : $form1")
+        if (form1) {
+            setMove(1.toByte(), Intent.ATTACK_DEFEND, catTap, 2, true)
+        } else {
+            setMove(4.toByte(), Intent.ATTACK_DEFEND, doubleTap, 2, true)
+        }
+    }
+
+    private fun setMultiAttackAction() {
+        logger.info("Orin : setMultiAttackAction : form1 : $form1")
+        if (form1) {
+            setMove(3.toByte(), Intent.ATTACK_BUFF, hellFireDmg, 6, true)
+        } else {
+            setMove(5.toByte(), Intent.ATTACK, hellFireDmg, 4, true)
+        }
+    }
+
+    private fun setBuffAction() {
+        logger.info("Orin : setBuffAction : form1 : $form1")
+        if (form1) {
+            setMove(2.toByte(), Intent.BUFF)
+        } else {
+            setMove(6.toByte(), Intent.DEBUFF)
+        }
+    }
+
+    private fun setSummonAction() {
+        logger.info("Orin : setSummonAction : firstTurn : ")
         /*
-        AbstractDungeon.actionManager.addToBottom(
-            new GainBlockAction(this, this, this.blc)
-        );
-        */
-        AbstractDungeon.actionManager.addToBottom(
-            new ApplyPowerAction(
-                p,
-                this,
-                new WeakPower(
-                    p,
-                    this.weak,
-                    true
-                ),
-                this.weak
-            )
-        );
-        break;
-      case 5:
-        //quadruple
-        for (int i = 0; i < 4; i++) {
-          AbstractDungeon.actionManager.addToBottom(
-              new DamageAction(
-                  p
-                  , this.damage.get(4)
-                  , AttackEffect.FIRE
-              )
-          );
-        }
-        break;
-      case 6:
-        //debuff
-        //missing vfx
-        AbstractDungeon.actionManager.addToBottom(
-            new OrinsDebuffAction(this.wraith, this)
-        );
-        break;
-      case 7:
-        //spawnFairy firstTurn
-        for (int i = 0; i < SUMMON_FIRST; i++) {
-          AbstractDungeon.actionManager.addToBottom(
-              new SummonFairyAction(this)
-          );
-        }
-        break;
-      case 8:
-        //spawnFairy normal
-        for (int i = 0; i < SUMMON; i++) {
-          AbstractDungeon.actionManager.addToBottom(
-              new SummonFairyAction(this)
-          );
-        }
-        break;
-      case 9:
-        //execute
-        //missing vfx
-        for (int i = 0; i < 6; i++) {
-          AbstractDungeon.actionManager.addToBottom(
-              new DamageAction(
-                  p
-                  , this.damage.get(3)
-                  , AttackEffect.FIRE
-              )
-          );
-        }
-        AbstractDungeon.actionManager.addToBottom(
-            new RemoveSpecificPowerAction(
-                p, this, "Wraith"
-            )
-        );
-        break;
-      default:
-        logger.info(
-            "Orin : takeTurn : error :action number "
-                + this.nextMove
-                + " should never be called."
-        );
-        break;
-    }
-    AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
-  }
-
-  private void setDoubleTapAction() {
-    logger.info("Orin : setDoubleTapAction : form1 : " + form1);
-    if (this.form1) {
-      setMove((byte) 1, Intent.ATTACK_DEFEND, this.catTap, 2, true);
-    } else {
-      setMove((byte) 4, Intent.ATTACK_DEFEND, this.doubleTap, 2, true);
-    }
-  }
-
-  private void setMultiAttackAction() {
-    logger.info("Orin : setMultiAttackAction : form1 : " + form1);
-    if (this.form1) {
-      setMove((byte) 3, Intent.ATTACK_BUFF, this.hellFireDmg, 6, true);
-    } else {
-      setMove((byte) 5, Intent.ATTACK, this.hellFireDmg, 4, true);
-    }
-  }
-
-  private void setBuffAction() {
-    logger.info("Orin : setBuffAction : form1 : " + form1);
-    if (this.form1) {
-      setMove((byte) 2, Intent.BUFF);
-    } else {
-      setMove((byte) 6, Intent.DEBUFF);
-    }
-  }
-
-  private void setSummonAction() {
-    logger.info("Orin : setSummonAction : firstTurn : ");
-    /*
     if (this.firstTurn) {
       setMove((byte) 7, Intent.UNKNOWN);
     } else
-    */
-    {
-      setMove((byte) 8, Intent.UNKNOWN);
+    */run { setMove(8.toByte(), Intent.UNKNOWN) }
     }
-  }
 
-  private void setExecuteAction() {
-    setMove((byte) 9, Intent.ATTACK, this.executeDmg, 6, true);
-  }
-
-  private int fairyCount() {
-    int aliveCount = 0;
-
-    for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-      if (m != this && !m.isDying) {
-        ++aliveCount;
-      }
+    private fun setExecuteAction() {
+        setMove(9.toByte(), Intent.ATTACK, executeDmg, 6, true)
     }
-    return aliveCount;
-  }
 
-  private boolean canExecute() {
-    if (!AbstractDungeon.player.hasPower("Wraith")) {
-      return false;
-    } else {
-      return AbstractDungeon.player.getPower("Wraith").amount > this.exc;
+    private fun fairyCount(): Int {
+        var aliveCount = 0
+        for (m in AbstractDungeon.getMonsters().monsters) {
+            if (m !== this && !m.isDying) {
+                ++aliveCount
+            }
+        }
+        return aliveCount
     }
-  }
 
-  @Override
-  protected void getMove(int num) {
-    logger.info(
-        "Orin : GetMove : turnCount : " +
-            turnCount +
-            " ; num : " +
-            num
-    );
-    if (this.form1) {
-      if (this.halfDead) {
-        return;
-      }
-      turnCount++;
-      switch (turnCount) {
-        case 1:
-          setBuffAction();
-          return;
-        case 2:
-          setDoubleTapAction();
-          return;
-        case 3:
-          setMultiAttackAction();
-          return;
-        default:
-          logger.info("Orin : form 1 :getMove : error : turnCount :" + turnCount);
-          setMultiAttackAction();
-          break;
-      }
-      /*
+    private fun canExecute(): Boolean {
+        return if (!AbstractDungeon.player.hasPower("Wraith")) {
+            false
+        } else {
+            AbstractDungeon.player.getPower("Wraith").amount > exc
+        }
+    }
+
+    override fun getMove(num: Int) {
+        logger.info(
+            "Orin : GetMove : turnCount : " +
+                    turnCount +
+                    " ; num : " +
+                    num
+        )
+        if (form1) {
+            if (halfDead) {
+                return
+            }
+            turnCount++
+            when (turnCount) {
+                1 -> {
+                    setBuffAction()
+                    return
+                }
+
+                2 -> {
+                    setDoubleTapAction()
+                    return
+                }
+
+                3 -> {
+                    setMultiAttackAction()
+                    return
+                }
+
+                else -> {
+                    logger.info("Orin : form 1 :getMove : error : turnCount :$turnCount")
+                    setMultiAttackAction()
+                }
+            }
+            /*
       if (this.firstTurn) {
         setBuffAction();
         this.firstTurn = false;
         return;
       }
-      */
-      if (turnCount >= 4) {
-        setMultiAttackAction();
-        return;
-      }
-      if (num > 50) {
-        setDoubleTapAction();
-      } else {
-        setBuffAction();
-      }
-    } else {
-      int fairyCount = fairyCount();
-      MarisaMod.logger.info("Orin : getMove : fairyCount : " + fairyCount);
-      /*
+      */if (turnCount >= 4) {
+                setMultiAttackAction()
+                return
+            }
+            if (num > 50) {
+                setDoubleTapAction()
+            } else {
+                setBuffAction()
+            }
+        } else {
+            val fairyCount = fairyCount()
+            MarisaMod.logger.info("Orin : getMove : fairyCount : $fairyCount")
+            /*
       if (this.firstTurn) {
         setSummonAction();
         return;
       }
-      */
-      if (canExecute()) {
-        setExecuteAction();
-        return;
-      }
-      if (!firstTurn) {
-        if (fairyCount < SUMMON_THRESHOLD) {
-          setSummonAction();
-          return;
+      */if (canExecute()) {
+                setExecuteAction()
+                return
+            }
+            if (!firstTurn) {
+                if (fairyCount < SUMMON_THRESHOLD) {
+                    setSummonAction()
+                    return
+                }
+            } else {
+                firstTurn = false
+            }
+            logger.info("Orin : getMove : roll Action phase")
+            val actions = IntArray(4)
+            var act_cnt = 0
+            if (fairyCount == SUMMON_THRESHOLD && !lastMove(7.toByte()) && !lastMove(8.toByte())) {
+                logger.info("Orin : getMove : roll action : adding summon action")
+                actions[act_cnt] = 0 //summon : 0
+                act_cnt++
+            }
+            if (!lastMove(4.toByte())) {
+                logger.info("Orin : getMove : roll action : adding double attack action")
+                actions[act_cnt] = 1 //double : 1
+                act_cnt++
+            }
+            if (!lastMove(5.toByte())) {
+                logger.info("Orin : getMove : roll action : adding multi attack action")
+                actions[act_cnt] = 2 //multi : 2
+                act_cnt++
+            }
+            if (!lastMove(6.toByte())) {
+                logger.info("Orin : getMove : roll action : adding debuff action")
+                actions[act_cnt] = 3 //debuff : 3
+                act_cnt++
+            }
+            logger.info(
+                "Orin : getMove : roll action : action count : " +
+                        act_cnt +
+                        " ; res code: " + num * act_cnt / 100 +
+                        " ; res : " +
+                        actions[num * act_cnt / 100]
+            )
+            when (actions[num * act_cnt / 100]) {
+                0 -> setSummonAction()
+                1 -> setDoubleTapAction()
+                2 -> setMultiAttackAction()
+                3 -> setBuffAction()
+                else -> {
+                    logger.info(
+                        "Orin : getMove : error : " +
+                                actions[num / 100 * act_cnt] +
+                                " is not a valid action code"
+                    )
+                    setBuffAction()
+                }
+            }
         }
-      } else {
-        firstTurn = false;
-      }
-      logger.info("Orin : getMove : roll Action phase");
-      int[] actions = new int[4];
-      int act_cnt = 0;
-      if ((fairyCount == SUMMON_THRESHOLD) && (!lastMove((byte) 7) && (!lastMove((byte) 8)))) {
-        logger.info("Orin : getMove : roll action : adding summon action");
-        actions[act_cnt] = 0;//summon : 0
-        act_cnt++;
-      }
-      if (!lastMove((byte) 4)) {
-        logger.info("Orin : getMove : roll action : adding double attack action");
-        actions[act_cnt] = 1;//double : 1
-        act_cnt++;
-      }
-      if (!lastMove((byte) 5)) {
-        logger.info("Orin : getMove : roll action : adding multi attack action");
-        actions[act_cnt] = 2;//multi : 2
-        act_cnt++;
-      }
-      if (!lastMove((byte) 6)) {
-        logger.info("Orin : getMove : roll action : adding debuff action");
-        actions[act_cnt] = 3;//debuff : 3
-        act_cnt++;
-      }
-      logger.info(
-          "Orin : getMove : roll action : action count : " +
-              act_cnt +
-              " ; res code: " +
-              num * act_cnt / 100 +
-              " ; res : " +
-              actions[num * act_cnt / 100]
-      );
-      switch (actions[num * act_cnt / 100]) {
-        case 0:
-          setSummonAction();
-          break;
-        case 1:
-          setDoubleTapAction();
-          break;
-        case 2:
-          setMultiAttackAction();
-          break;
-        case 3:
-          setBuffAction();
-          break;
-        default:
-          logger.info(
-              "Orin : getMove : error : " +
-                  actions[num / 100 * act_cnt] +
-                  " is not a valid action code"
-          );
-          setBuffAction();
-          break;
-      }
     }
-  }
 
-  public void damage(DamageInfo info) {
-    super.damage(info);
-    if ((this.currentHealth <= 0) && (!this.halfDead)) {
-      logger.info("Orin : damage : catForm defeated,transforming");
-      if (AbstractDungeon.getCurrRoom().cannotLose) {
-        this.halfDead = true;
-      }
-      /*
+    override fun damage(info: DamageInfo) {
+        super.damage(info)
+        if (currentHealth <= 0 && !halfDead) {
+            logger.info("Orin : damage : catForm defeated,transforming")
+            if (AbstractDungeon.getCurrRoom().cannotLose) {
+                halfDead = true
+            }
+            /*
       for (AbstractPower p : this.powers) {
         p.onDeath();
       }
-      */
-      for (AbstractRelic r : AbstractDungeon.player.relics) {
-        r.onMonsterDeath(this);
-      }
-      AbstractDungeon.actionManager.addToTop(
-          new ClearCardQueueAction()
-      );
-      att = false;
-      setMove((byte) 3, Intent.UNKNOWN);
-      createIntent();
-      //AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, DIALOG[0]));
-      setMove((byte) 3, Intent.UNKNOWN);
-      applyPowers();
-      //this.firstTurn = true;
-    }
-  }
-
-  public void changeState(String key) {
-    if (key.equals("TRANSFORM")) {
-      if (AbstractDungeon.ascensionLevel >= 9) {
-        this.maxHealth = S_2_HP;
-      } else {
-        this.maxHealth = STAGE_2_HP;
-      }
-      this.blc = BLOCK_UPG;
-      if ((Settings.isEndless) && (AbstractDungeon.player.hasBlight("ToughEnemies"))) {
-        float mod = AbstractDungeon.player.getBlight("ToughEnemies").effectFloat();
-        this.maxHealth = ((int) (this.maxHealth * mod));
-      }
-      if (ModHelper.isModEnabled("MonsterHunter")) {
-        this.currentHealth = ((int) (this.currentHealth * 1.5F));
-      }
-      //this.state.setAnimation(0, "Idle_2", true);
-      this.halfDead = false;
-      this.form1 = false;
-
-      AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, this.maxHealth));
-      AbstractDungeon.actionManager.addToBottom(new CanLoseAction());
-
-      loadAnimation(MODEL_HUMANOID_ATLAS, MODEL_HUMANOID_JSON, 3.0F);
-      AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-      e.setTime(e.getEndTime() * MathUtils.random());
-
-      this.updateHitbox(0.0F, -30.0f, 220.0F, 350.0F);
-
-      for (int i = 0; i < SUMMON_FIRST; i++) {
-        AbstractDungeon.actionManager.addToBottom(
-            new SummonFairyAction(this)
-        );
-      }
-      if (att) {
-        for (int i = 0; i < 6; i++) {
-          AbstractDungeon.actionManager.addToTop(
-              new DamageAction(
-                  AbstractDungeon.player
-                  , this.damage.get(1)
-                  , AttackEffect.FIRE
-                  , true
-              )
-          );
+      */for (r in AbstractDungeon.player.relics) {
+                r.onMonsterDeath(this)
+            }
+            AbstractDungeon.actionManager.addToTop(
+                ClearCardQueueAction()
+            )
+            att = false
+            setMove(3.toByte(), Intent.UNKNOWN)
+            createIntent()
+            //AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, DIALOG[0]));
+            setMove(3.toByte(), Intent.UNKNOWN)
+            applyPowers()
+            //this.firstTurn = true;
         }
-      }
-        /*
+    }
+
+    override fun changeState(key: String) {
+        if (key == "TRANSFORM") {
+            if (AbstractDungeon.ascensionLevel >= 9) {
+                maxHealth = S_2_HP
+            } else {
+                maxHealth = STAGE_2_HP
+            }
+            blc = BLOCK_UPG
+            if (Settings.isEndless && AbstractDungeon.player.hasBlight("ToughEnemies")) {
+                val mod = AbstractDungeon.player.getBlight("ToughEnemies").effectFloat()
+                maxHealth = (maxHealth * mod).toInt()
+            }
+            if (ModHelper.isModEnabled("MonsterHunter")) {
+                currentHealth = (currentHealth * 1.5f).toInt()
+            }
+            //this.state.setAnimation(0, "Idle_2", true);
+            halfDead = false
+            form1 = false
+            AbstractDungeon.actionManager.addToBottom(HealAction(this, this, maxHealth))
+            AbstractDungeon.actionManager.addToBottom(CanLoseAction())
+            loadAnimation(MODEL_HUMANOID_ATLAS, MODEL_HUMANOID_JSON, 3.0f)
+            val e = state.setAnimation(0, "Idle", true)
+            e.time = e.endTime * MathUtils.random()
+            updateHitbox(0.0f, -30.0f, 220.0f, 350.0f)
+            for (i in 0 until SUMMON_FIRST) {
+                AbstractDungeon.actionManager.addToBottom(
+                    SummonFairyAction(this)
+                )
+            }
+            if (att) {
+                for (i in 0..5) {
+                    AbstractDungeon.actionManager.addToTop(
+                        DamageAction(
+                            AbstractDungeon.player, damage[1], AttackEffect.FIRE, true
+                        )
+                    )
+                }
+            }
+            /*
       case "ATTACK_1":
         this.state.setAnimation(0, "Attack_1", false);
         this.state.addAnimation(0, "Idle_1", true, 0.0F);
@@ -590,34 +520,71 @@ public class Orin extends AbstractMonster/* implements BaseMod.GetMonster */ {
         this.state.addAnimation(0, "Idle_2", true, 0.0F);
         break;
         */
-    }
-  }
-
-  public void die() {
-    if (!AbstractDungeon.getCurrRoom().cannotLose) {
-      for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-        if ((!m.isDead) && (!m.isDying)) {
-          AbstractDungeon.actionManager.addToTop(
-              new HideHealthBarAction(m)
-          );
-          AbstractDungeon.actionManager.addToTop(
-              new SuicideAction(m)
-          );
-          AbstractDungeon.actionManager.addToTop(
-              new VFXAction(
-                  m
-                  , new InflameEffect(m)
-                  , 0.2F
-              )
-          );
         }
-      }
     }
-  }
-/*
+
+    override fun die() {
+        if (!AbstractDungeon.getCurrRoom().cannotLose) {
+            for (m in AbstractDungeon.getCurrRoom().monsters.monsters) {
+                if (!m.isDead && !m.isDying) {
+                    AbstractDungeon.actionManager.addToTop(
+                        HideHealthBarAction(m)
+                    )
+                    AbstractDungeon.actionManager.addToTop(
+                        SuicideAction(m)
+                    )
+                    AbstractDungeon.actionManager.addToTop(
+                        VFXAction(
+                            m, InflameEffect(m), 0.2f
+                        )
+                    )
+                }
+            }
+        }
+    } /*
   @Override
   public AbstractMonster get() {
     return new Orin();
   }
   */
+
+    companion object {
+        private val logger = MarisaMod.logger
+        const val ID = "Orin"
+        const val NAME = "Orin"
+        private const val STAGE_1_HP = 68
+        private const val S_1_HP = 82
+        private const val STAGE_2_HP = 272
+        private const val S_2_HP = 328
+        private const val STR = 3
+        private const val STR_A = 5
+        private const val DOUBLE_TAP = 5
+        private const val DOUBLE_TAP_A = 6
+        private const val CAT_TAP = 4
+        private const val CAT_TAP_A = 5
+        private const val HELL_FIRE = 4
+        private const val HELL_FIRE_A = 5
+        private const val WEAK = 1
+        private const val WEAK_A = 2
+        private const val WRAITH = 2
+
+        //private static final int WRAITH_A = 2;
+        private const val SUMMON = 2
+        private const val SUMMON_FIRST = 4
+        private const val SUMMON_THRESHOLD = 2
+        private const val EXECUTE = 6
+        private const val EXECUTE_A = 6
+        private const val EXECUTE_THRESHOLD = 8
+        private const val EXECUTE_THRESHOLD_A = 6
+        private const val QUAD_DMG = 3
+        private const val QUAD_DMG_A = 4
+
+        //private static final int BLOCK = 8;
+        private const val BLOCK_UPG = 12
+        private const val tempImgUrl = "img/monsters/Orin/Orin_.png"
+        private const val MODEL_HUMANOID_ATLAS = "img/monsters/Orin/Orin.atlas"
+        private const val MODEL_HUMANOID_JSON = "img/monsters/Orin/Orin.json"
+        private const val MODEL_CAT_ATLAS = "img/monsters/Orin/rincat.atlas"
+        private const val MODEL_CAT_JSON = "img/monsters/Orin/rincat.json"
+    }
 }

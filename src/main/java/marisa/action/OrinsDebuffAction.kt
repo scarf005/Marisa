@@ -1,62 +1,57 @@
-package marisa.action;
+package marisa.action
 
-import marisa.powers.monsters.WraithPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import java.util.ArrayList;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.actions.animations.VFXAction
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
+import com.megacrit.cardcrawl.core.AbstractCreature
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.powers.AbstractPower
+import com.megacrit.cardcrawl.powers.AbstractPower.PowerType
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect
+import marisa.powers.monsters.WraithPower
 
-public class OrinsDebuffAction extends AbstractGameAction {
+class OrinsDebuffAction(amount: Int, source: AbstractCreature) : AbstractGameAction() {
+    private val p = AbstractDungeon.player
+    private val stack: Int
+    var orin: AbstractCreature
 
-  private AbstractPlayer p = AbstractDungeon.player;
-  private int stack;
-  AbstractCreature orin;
-
-  public OrinsDebuffAction(int amount, AbstractCreature source) {
-    this.actionType = ActionType.DEBUFF;
-    this.duration = Settings.ACTION_DUR_FAST;
-    stack = amount;
-    orin = source;
-  }
-
-  public void update() {
-    this.isDone = false;
-    ArrayList<AbstractPower> pows = new ArrayList<>();
-    for (AbstractPower pow : p.powers) {
-      if (pow.type == AbstractPower.PowerType.BUFF) {
-        pows.add(pow);
-      }
+    init {
+        actionType = ActionType.DEBUFF
+        duration = Settings.ACTION_DUR_FAST
+        stack = amount
+        orin = source
     }
-    if (!pows.isEmpty()) {
-      AbstractPower po = pows.get(AbstractDungeon.miscRng.random(0, pows.size() - 1));
-      AbstractDungeon.actionManager.addToBottom(
-          new RemoveSpecificPowerAction(p, orin, po)
-      );
-    }
-    int stc = AbstractDungeon.miscRng.random(stack, stack + 2);
 
-    AbstractDungeon.actionManager.addToBottom(
-        new ApplyPowerAction(
-            p,
-            orin,
-            new WraithPower(p, stc),
-            stc
+    override fun update() {
+        isDone = false
+        val pows = ArrayList<AbstractPower>()
+        for (pow in p.powers) {
+            if (pow.type == PowerType.BUFF) {
+                pows.add(pow)
+            }
+        }
+        if (!pows.isEmpty()) {
+            val po = pows[AbstractDungeon.miscRng.random(0, pows.size - 1)]
+            AbstractDungeon.actionManager.addToBottom(
+                RemoveSpecificPowerAction(p, orin, po)
+            )
+        }
+        val stc = AbstractDungeon.miscRng.random(stack, stack + 2)
+        AbstractDungeon.actionManager.addToBottom(
+            ApplyPowerAction(
+                p,
+                orin,
+                WraithPower(p, stc),
+                stc
+            )
         )
-    );
-    this.isDone = true;
-    AbstractDungeon.actionManager.addToTop(
-        new VFXAction(
-            p
-            , new InflameEffect(p)
-            , 0.2F
+        isDone = true
+        AbstractDungeon.actionManager.addToTop(
+            VFXAction(
+                p, InflameEffect(p), 0.2f
+            )
         )
-    );
-  }
+    }
 }

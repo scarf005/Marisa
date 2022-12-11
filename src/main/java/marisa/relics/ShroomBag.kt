@@ -1,58 +1,49 @@
-package marisa.relics;
+package marisa.relics
 
-import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.cards.curses.Parasite;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import basemod.abstracts.CustomRelic
+import com.badlogic.gdx.graphics.Texture
+import com.megacrit.cardcrawl.cards.curses.Parasite
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.relics.AbstractRelic
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect
 
-import basemod.abstracts.CustomRelic;
-
-public class ShroomBag extends CustomRelic {
-
-  public static final String ID = "ShroomBag";
-  private static final String IMG = "img/relics/ShroomBag.png";
-  private static final String IMG_OTL = "img/relics/outline/ShroomBag.png";
-
-  public ShroomBag() {
-    super(
-        ID,
-        new Texture(IMG),
-        new Texture(IMG_OTL),
-        RelicTier.COMMON,
-        LandingSound.FLAT
-    );
-  }
-
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  public AbstractRelic makeCopy() {
-    if (AbstractDungeon.player != null){
-      if (AbstractDungeon.player.hasRelic("ShroomBag")){
-        return new BigShroomBag();
-      }
+class ShroomBag : CustomRelic(
+    ID,
+    Texture(IMG),
+    Texture(IMG_OTL),
+    RelicTier.COMMON,
+    LandingSound.FLAT
+) {
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
     }
-    return new ShroomBag();
-  }
 
-  public void onEquip() {
-    AbstractDungeon.effectList.add(
-        new ShowCardAndObtainEffect(
-            new Parasite(),
-            Settings.WIDTH / 2.0F,
-            Settings.HEIGHT / 2.0F)
-    );
-    AbstractDungeon.effectList.add(
-        new ShowCardAndObtainEffect(
-            new Parasite(),
-            Settings.WIDTH / 2.0F,
-            Settings.HEIGHT / 2.0F)
-    );
-  }
-    /*
+    override fun makeCopy(): AbstractRelic {
+        if (AbstractDungeon.player != null) {
+            if (AbstractDungeon.player.hasRelic("ShroomBag")) {
+                return BigShroomBag()
+            }
+        }
+        return ShroomBag()
+    }
+
+    override fun onEquip() {
+        AbstractDungeon.effectList.add(
+            ShowCardAndObtainEffect(
+                Parasite(),
+                Settings.WIDTH / 2.0f,
+                Settings.HEIGHT / 2.0f
+            )
+        )
+        AbstractDungeon.effectList.add(
+            ShowCardAndObtainEffect(
+                Parasite(),
+                Settings.WIDTH / 2.0f,
+                Settings.HEIGHT / 2.0f
+            )
+        )
+    } /*
     @Override
     public void onDrawOrDiscard() {
     	ThMod.logger.info("ShroomBag : onDrawOrDiscard : replaceParasite");
@@ -87,4 +78,10 @@ public class ShroomBag extends CustomRelic {
 		}
 	}
 	*/
+
+    companion object {
+        const val ID = "ShroomBag"
+        private const val IMG = "img/relics/ShroomBag.png"
+        private const val IMG_OTL = "img/relics/outline/ShroomBag.png"
+    }
 }

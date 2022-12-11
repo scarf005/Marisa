@@ -1,54 +1,50 @@
-package marisa.relics;
+package marisa.relics
 
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.actions.unique.DiscoveryAction;
+import basemod.abstracts.CustomRelic
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
+import com.megacrit.cardcrawl.actions.unique.DiscoveryAction
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.ImageMaster
+import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.cards.derivations.Spark
 
-import marisa.cards.derivations.Spark;
-import basemod.abstracts.CustomRelic;
+class ExperimentalFamiliar : CustomRelic(
+    ID,
+    ImageMaster.loadImage(IMG),
+    ImageMaster.loadImage(IMG_OTL),
+    RelicTier.BOSS,
+    LandingSound.FLAT
+) {
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
+    }
 
-public class ExperimentalFamiliar extends CustomRelic {
+    override fun makeCopy(): AbstractRelic {
+        return ExperimentalFamiliar()
+    }
 
-  public static final String ID = "ExperimentalFamiliar";
-  private static final String IMG = "img/relics/ExpFami.png";
-  private static final String IMG_OTL = "img/relics/outline/ExpFami.png";
+    override fun atTurnStartPostDraw() {
+        AbstractDungeon.actionManager.addToBottom(
+            RelicAboveCreatureAction(AbstractDungeon.player, this)
+        )
+        AbstractDungeon.actionManager.addToBottom(
+            MakeTempCardInHandAction(Spark(), 1)
+        )
+    }
 
-  public ExperimentalFamiliar() {
-    super(
-        ID,
-        ImageMaster.loadImage(IMG),
-        ImageMaster.loadImage(IMG_OTL),
-        RelicTier.BOSS,
-        LandingSound.FLAT
-    );
-  }
+    override fun atBattleStart() {
+        AbstractDungeon.actionManager.addToBottom(
+            RelicAboveCreatureAction(AbstractDungeon.player, this)
+        )
+        AbstractDungeon.actionManager.addToBottom(
+            DiscoveryAction()
+        )
+    }
 
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  public AbstractRelic makeCopy() {
-    return new ExperimentalFamiliar();
-  }
-
-  public void atTurnStartPostDraw() {
-    AbstractDungeon.actionManager.addToBottom(
-        new RelicAboveCreatureAction(AbstractDungeon.player, this)
-    );
-    AbstractDungeon.actionManager.addToBottom(
-        new MakeTempCardInHandAction(new Spark(), 1)
-    );
-  }
-
-  public void atBattleStart() {
-    AbstractDungeon.actionManager.addToBottom(
-        new RelicAboveCreatureAction(AbstractDungeon.player, this)
-    );
-    AbstractDungeon.actionManager.addToBottom(
-        new DiscoveryAction()
-    );
-  }
+    companion object {
+        const val ID = "ExperimentalFamiliar"
+        private const val IMG = "img/relics/ExpFami.png"
+        private const val IMG_OTL = "img/relics/outline/ExpFami.png"
+    }
 }

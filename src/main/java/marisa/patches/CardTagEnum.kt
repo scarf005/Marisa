@@ -1,9 +1,9 @@
-package marisa.patches;
+package marisa.patches
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum
+import com.megacrit.cardcrawl.cards.AbstractCard
 
-public class CardTagEnum {
-  @SpireEnum
-  public static AbstractCard.CardTags SPARK;
+object CardTagEnum {
+    @SpireEnum
+    var SPARK: AbstractCard.CardTags? = null
 }

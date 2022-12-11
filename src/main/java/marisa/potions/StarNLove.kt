@@ -1,52 +1,55 @@
-package marisa.potions;
+package marisa.potions
 
-import marisa.powers.Marisa.ChargeUpPower;
-import marisa.powers.Marisa.PulseMagicPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.localization.PotionStrings;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
+import com.megacrit.cardcrawl.core.AbstractCreature
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.PowerTip
+import com.megacrit.cardcrawl.potions.AbstractPotion
+import marisa.powers.Marisa.ChargeUpPower
+import marisa.powers.Marisa.PulseMagicPower
 
-public class StarNLove extends AbstractPotion {
+class StarNLove : AbstractPotion(
+    NAME,
+    POTION_ID,
+    PotionRarity.RARE,
+    PotionSize.HEART,
+    PotionColor.SWIFT
+) {
+    init {
+        potency = getPotency()
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1]
+        tips.clear()
+        tips.add(PowerTip(name, description))
+    }
 
-  public static final String POTION_ID = "StarNLove";
-  private static final PotionStrings potionStrings =
-      CardCrawlGame.languagePack.getPotionString(POTION_ID);
-  public static final String NAME = potionStrings.NAME;
-  public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
+    override fun use(abstractCreature: AbstractCreature) {
+        addToBot(
+            ApplyPowerAction(
+                AbstractDungeon.player, AbstractDungeon.player,
+                PulseMagicPower(AbstractDungeon.player), 1
+            )
+        )
+        addToBot(
+            ApplyPowerAction(
+                AbstractDungeon.player, AbstractDungeon.player,
+                ChargeUpPower(AbstractDungeon.player, this.getPotency()), this.getPotency()
+            )
+        )
+    }
 
-  public StarNLove() {
-    super(
-        NAME,
-        POTION_ID,
-        PotionRarity.RARE,
-        PotionSize.HEART,
-        PotionColor.SWIFT
-    );
-    this.potency = getPotency();
-    this.description = DESCRIPTIONS[0] + this.potency + DESCRIPTIONS[1];
-    this.tips.clear();
-    this.tips.add(new PowerTip(this.name,this.description));
-  }
+    override fun getPotency(i: Int): Int {
+        return 8
+    }
 
-  @Override
-  public void use(AbstractCreature abstractCreature) {
-    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-        new PulseMagicPower(AbstractDungeon.player), 1));
-    addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-        new ChargeUpPower(AbstractDungeon.player, this.getPotency()), this.getPotency()));
-  }
+    override fun makeCopy(): AbstractPotion {
+        return StarNLove()
+    }
 
-  @Override
-  public int getPotency(int i) {
-    return 8;
-  }
-
-  @Override
-  public AbstractPotion makeCopy() {
-    return null;
-  }
+    companion object {
+        const val POTION_ID = "StarNLove"
+        private val potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID)
+        val NAME = potionStrings.NAME
+        val DESCRIPTIONS = potionStrings.DESCRIPTIONS
+    }
 }

@@ -1,69 +1,63 @@
-package marisa.powers.Marisa;
+package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.badlogic.gdx.graphics.Texture
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction
+import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.core.AbstractCreature
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.MarisaMod
+import marisa.cards.derivations.GuidingStar
 
-import marisa.MarisaMod;
-import marisa.cards.derivations.GuidingStar;
+class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
+    private val p: AbstractPlayer
+    var Gain: Boolean
 
-import com.megacrit.cardcrawl.localization.PowerStrings;
-
-public class PolarisUniquePower extends AbstractPower {
-
-  public static final String POWER_ID = "PolarisUniquePower";
-  private static final PowerStrings powerStrings = CardCrawlGame.languagePack
-      .getPowerStrings(POWER_ID);
-  public static final String NAME = powerStrings.NAME;
-  public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-  private AbstractPlayer p;
-  public boolean Gain;
-
-  public PolarisUniquePower(AbstractCreature owner) {
-    MarisaMod.logger.info("PolarisUniquePower : Init");
-    this.name = NAME;
-    this.ID = POWER_ID;
-    this.type = AbstractPower.PowerType.BUFF;
-    updateDescription();
-    this.img = new Texture("img/powers/transmute.png");
-    this.p = AbstractDungeon.player;
-    this.Gain = false;
-    this.owner = owner;
-
-    MarisaMod.logger.info("PolarisUniquePower : Done initing");
-  }
-
-
-  public void stackPower(int stackAmount) {
-    MarisaMod.logger.info("PolarisUniquePower : StackPower");
-  }
-
-  public void atStartOfTurnPostDraw() {
-    MarisaMod.logger.info("PolarisUniquePower : Checking");
-
-    for (AbstractCard c : p.drawPile.group) {
-      if (c instanceof GuidingStar) {
-        this.Gain = true;
-      }
+    init {
+        MarisaMod.logger.info("PolarisUniquePower : Init")
+        name = NAME
+        ID = POWER_ID
+        type = PowerType.BUFF
+        updateDescription()
+        img = Texture("img/powers/transmute.png")
+        p = AbstractDungeon.player
+        Gain = false
+        this.owner = owner
+        MarisaMod.logger.info("PolarisUniquePower : Done initing")
     }
-    MarisaMod.logger.info("PolarisUniquePower : Result : " + Gain);
-    if (Gain) {
-      flash();
-      AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+
+    override fun stackPower(stackAmount: Int) {
+        MarisaMod.logger.info("PolarisUniquePower : StackPower")
     }
-    this.Gain = false;
 
-    MarisaMod.logger.info("PolarisUniquePower : Done Checking");
-  }
+    override fun atStartOfTurnPostDraw() {
+        MarisaMod.logger.info("PolarisUniquePower : Checking")
+        for (c in p.drawPile.group) {
+            if (c is GuidingStar) {
+                Gain = true
+            }
+        }
+        MarisaMod.logger.info("PolarisUniquePower : Result : $Gain")
+        if (Gain) {
+            flash()
+            AbstractDungeon.actionManager.addToBottom(GainEnergyAction(1))
+        }
+        Gain = false
+        MarisaMod.logger.info("PolarisUniquePower : Done Checking")
+    }
 
-  public void updateDescription() {
-    MarisaMod.logger.info("PolarisUniquePower : updating Description");
-    this.description = (DESCRIPTIONS[0]);
-    MarisaMod.logger.info("PolarisUniquePower : Done updating Description");
-  }
+    override fun updateDescription() {
+        MarisaMod.logger.info("PolarisUniquePower : updating Description")
+        description = DESCRIPTIONS[0]
+        MarisaMod.logger.info("PolarisUniquePower : Done updating Description")
+    }
+
+    companion object {
+        const val POWER_ID = "PolarisUniquePower"
+        private val powerStrings = CardCrawlGame.languagePack
+            .getPowerStrings(POWER_ID)
+        val NAME = powerStrings.NAME
+        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
+    }
 }

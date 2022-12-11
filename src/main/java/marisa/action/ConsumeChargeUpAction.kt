@@ -1,48 +1,43 @@
-package marisa.action;
+package marisa.action
 
-import marisa.MarisaMod;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import marisa.MarisaMod
 
-public class ConsumeChargeUpAction extends AbstractGameAction {
+class ConsumeChargeUpAction(amount: Int) : AbstractGameAction() {
+    private val amt: Int
 
-  private int amt;
-
-  public ConsumeChargeUpAction(int amount) {
-    this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-    this.duration = Settings.ACTION_DUR_FAST;
-    this.amt = amount;
-  }
-
-  public void update() {
-    this.isDone = false;
-    AbstractPlayer p = AbstractDungeon.player;
-
-    if (!p.hasPower("ChargeUpPower")) {
-      this.isDone = true;
-      return;
+    init {
+        actionType = ActionType.CARD_MANIPULATION
+        duration = Settings.ACTION_DUR_FAST
+        amt = amount
     }
 
-    AbstractPower c = p.getPower("ChargeUpPower");
-    MarisaMod.logger.info(
-        "ConsumeChargeUpAction :"
-        + " Consume amount : "
-        + this.amt
-        + " ; Charge-Up stacks : "
-        + c.amount
-    );
-    if ((this.amt<=0)||(c.amount<=0)){
-      this.isDone = true;
-      return;
+    override fun update() {
+        isDone = false
+        val p = AbstractDungeon.player
+        if (!p.hasPower("ChargeUpPower")) {
+            isDone = true
+            return
+        }
+        val c = p.getPower("ChargeUpPower")
+        MarisaMod.logger.info(
+            "ConsumeChargeUpAction :"
+                    + " Consume amount : "
+                    + amt
+                    + " ; Charge-Up stacks : "
+                    + c.amount
+        )
+        if (amt <= 0 || c.amount <= 0) {
+            isDone = true
+            return
+        }
+        c.stackPower(-amt)
+        if (p.hasPower("OrrerysSunPower")) {
+            p.getPower("OrrerysSunPower").onSpecificTrigger()
+        }
+        c.updateDescription()
+        isDone = true
     }
-    c.stackPower(-this.amt);
-    if (p.hasPower("OrrerysSunPower")) {
-      p.getPower("OrrerysSunPower").onSpecificTrigger();
-    }
-    c.updateDescription();
-    this.isDone = true;
-  }
 }

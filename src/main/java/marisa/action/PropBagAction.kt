@@ -1,122 +1,99 @@
-package marisa.action;
+package marisa.action
 
-import marisa.MarisaMod;
-import marisa.powers.Marisa.PropBagPower;
-import marisa.relics.AmplifyWand;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.relics.BlueCandle;
-import com.megacrit.cardcrawl.relics.GremlinHorn;
-import com.megacrit.cardcrawl.relics.Kunai;
-import com.megacrit.cardcrawl.relics.LetterOpener;
-import com.megacrit.cardcrawl.relics.MeatOnTheBone;
-import com.megacrit.cardcrawl.relics.MercuryHourglass;
-import com.megacrit.cardcrawl.relics.MummifiedHand;
-import com.megacrit.cardcrawl.relics.OrnamentalFan;
-import com.megacrit.cardcrawl.relics.Shuriken;
-import com.megacrit.cardcrawl.relics.Sundial;
-import java.util.ArrayList;
+import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
+import com.megacrit.cardcrawl.core.Settings
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.relics.*
+import marisa.MarisaMod
+import marisa.powers.Marisa.PropBagPower
+import marisa.relics.AmplifyWand
 
-public class PropBagAction
-	extends AbstractGameAction{
-
-	public PropBagAction(){
-		this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
-		this.duration = Settings.ACTION_DUR_FAST;
-	}
-
-	public void update(){
-
-		AbstractPlayer p = AbstractDungeon.player;
-		MarisaMod.logger.info("PropBagAction : Checking for relics");
-
-		ArrayList<AbstractRelic> rs = new ArrayList<AbstractRelic>();
-		AbstractRelic r;
-
-		if (!p.hasRelic("Meat on the Bone")){
-      r = new MeatOnTheBone();
-      rs.add(r);
+class PropBagAction : AbstractGameAction() {
+    init {
+        actionType = ActionType.CARD_MANIPULATION
+        duration = Settings.ACTION_DUR_FAST
     }
 
-    if (!p.hasRelic("Mummified Hand")){
-      r = new MummifiedHand();
-      rs.add(r);
+    override fun update() {
+        val p = AbstractDungeon.player
+        MarisaMod.logger.info("PropBagAction : Checking for relics")
+        val rs = ArrayList<AbstractRelic>()
+        var r: AbstractRelic
+        if (!p.hasRelic("Meat on the Bone")) {
+            r = MeatOnTheBone()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Mummified Hand")) {
+            r = MummifiedHand()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Letter Opener")) {
+            r = LetterOpener()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Shuriken")) {
+            r = Shuriken()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Gremlin Horn")) {
+            r = GremlinHorn()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Sundial")) {
+            r = Sundial()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Mercury Hourglass")) {
+            r = MercuryHourglass()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Ornamental Fan")) {
+            r = OrnamentalFan()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Kunai")) {
+            r = Kunai()
+            rs.add(r)
+        }
+        if (!p.hasRelic("Blue Candle")) {
+            r = BlueCandle()
+            rs.add(r)
+        }
+        if (!p.hasRelic("AmplifyWand")) {
+            r = AmplifyWand()
+            rs.add(r)
+        }
+        if (rs.size <= 0) {
+            MarisaMod.logger.info("PropBagAction : No relic to give,returning")
+            isDone = true
+            return
+        }
+        if (rs.size == 1) {
+            r = rs[0]
+            MarisaMod.logger.info("PropBagAction : Only one relic to give : " + r.relicId)
+            AbstractDungeon.actionManager.addToBottom(
+                ApplyPowerAction(
+                    p, p,
+                    PropBagPower(p, r)
+                )
+            )
+            isDone = true
+            return
+        }
+        rs.size
+        val index = AbstractDungeon.miscRng.random(0, rs.size - 1)
+        r = rs[index]
+        MarisaMod.logger.info(
+            "PropBagAction : random relic : " + r.relicId
+                    + " ; random index : " + index
+        )
+        AbstractDungeon.actionManager.addToBottom(
+            ApplyPowerAction(
+                p, p,
+                PropBagPower(p, r)
+            )
+        )
+        isDone = true
     }
-
-    if (!p.hasRelic("Letter Opener")){
-      r = new LetterOpener();
-      rs.add(r);
-    }
-
-    if (!p.hasRelic("Shuriken")){
-      r = new Shuriken();
-      rs.add(r);
-    }
-
-		if (!p.hasRelic("Gremlin Horn")){
-			r = new GremlinHorn();
-			rs.add(r);
-		}
-		if (!p.hasRelic("Sundial")){
-			r = new Sundial();
-			rs.add(r);
-		}
-		if (!p.hasRelic("Mercury Hourglass")){
-			r = new MercuryHourglass();
-			rs.add(r);
-		}
-		if (!p.hasRelic("Ornamental Fan")){
-			r = new OrnamentalFan();
-			rs.add(r);
-		}
-		if (!p.hasRelic("Kunai")){
-			r = new Kunai();
-			rs.add(r);
-		}
-		if (!p.hasRelic("Blue Candle")){
-			r = new BlueCandle();
-			rs.add(r);
-		}
-		if (!p.hasRelic("AmplifyWand")){
-			r = new AmplifyWand();
-			rs.add(r);
-		}
-
-		if (rs.size()<=0) {
-			MarisaMod.logger.info("PropBagAction : No relic to give,returning");
-			this.isDone =true;
-			return;
-		}
-		if (rs.size()==1) {
-			r = rs.get(0);
-			MarisaMod.logger.info("PropBagAction : Only one relic to give : "+r.relicId);
-			AbstractDungeon.actionManager.addToBottom(
-					new ApplyPowerAction(
-							p,p,
-							new PropBagPower(p,r)
-							)
-					);
-			this.isDone = true;
-			return;
-		}
-		rs.size();
-		int index = AbstractDungeon.miscRng.random(0,rs.size()-1);
-		r = rs.get(index);
-		MarisaMod.logger.info(
-				"PropBagAction : random relic : "+r.relicId
-				+" ; random index : "+index
-				);
-		AbstractDungeon.actionManager.addToBottom(
-				new ApplyPowerAction(
-						p,p,
-						new PropBagPower(p,r)
-						)
-				);
-		this.isDone = true;
-
-	}
 }

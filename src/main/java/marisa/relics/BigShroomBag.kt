@@ -1,36 +1,32 @@
-package marisa.relics;
+package marisa.relics
 
-import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import basemod.abstracts.CustomRelic
+import com.badlogic.gdx.graphics.Texture
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.relics.AbstractRelic
 
-import basemod.abstracts.CustomRelic;
+class BigShroomBag : CustomRelic(
+    ID,
+    Texture(IMG),
+    Texture(IMG_OTL),
+    RelicTier.SPECIAL,
+    LandingSound.FLAT
+) {
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
+    }
 
-public class BigShroomBag extends CustomRelic {
+    override fun makeCopy(): AbstractRelic {
+        return BigShroomBag()
+    }
 
-  public static final String ID = "BigShroomBag";
-  private static final String IMG = "img/relics/BigShroomBag.png";
-  private static final String IMG_OTL = "img/relics/outline/BigShroomBag.png";
+    override fun onEquip() {
+        AbstractDungeon.player.loseRelic("ShroomBag")
+    }
 
-  public BigShroomBag() {
-    super(
-        ID,
-        new Texture(IMG),
-        new Texture(IMG_OTL),
-        RelicTier.SPECIAL,
-        LandingSound.FLAT
-    );
-  }
-
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  public AbstractRelic makeCopy() {
-    return new BigShroomBag();
-  }
-
-  public void onEquip() {
-    AbstractDungeon.player.loseRelic("ShroomBag");
-  }
+    companion object {
+        const val ID = "BigShroomBag"
+        private const val IMG = "img/relics/BigShroomBag.png"
+        private const val IMG_OTL = "img/relics/outline/BigShroomBag.png"
+    }
 }

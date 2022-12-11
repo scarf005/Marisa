@@ -1,50 +1,46 @@
-package marisa.powers.Marisa;
+package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.badlogic.gdx.graphics.Texture
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
+import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
+import com.megacrit.cardcrawl.core.AbstractCreature
+import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.powers.AbstractPower
 
-
-public class TempStrengthLoss
-    extends AbstractPower {
-
-  public static final String POWER_ID = "TempStrengthLoss";
-  private static final PowerStrings powerStrings = CardCrawlGame.languagePack
-      .getPowerStrings(POWER_ID);
-  public static final String NAME = powerStrings.NAME;
-  public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
-  public TempStrengthLoss(AbstractCreature owner, int amount) {
-    this.name = NAME;
-    this.ID = POWER_ID;
-    this.owner = owner;
-    this.amount = amount;
-    this.type = AbstractPower.PowerType.DEBUFF;
-    updateDescription();
-    this.img = new Texture("img/powers/dance.png");
-  }
-
-
-  public float atDamageGive(float damage, DamageInfo.DamageType type) {
-    if (type == DamageInfo.DamageType.NORMAL) {
-      return damage - this.amount;
+class TempStrengthLoss(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+    init {
+        name = NAME
+        ID = POWER_ID
+        this.owner = owner
+        this.amount = amount
+        type = PowerType.DEBUFF
+        updateDescription()
+        img = Texture("img/powers/dance.png")
     }
-    return damage;
-  }
 
-  public void atEndOfTurn(boolean isPlayer) {
-    if (!isPlayer) {
-      AbstractDungeon.actionManager
-          .addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "TempStrengthLoss"));
+    override fun atDamageGive(damage: Float, type: DamageType): Float {
+        return if (type == DamageType.NORMAL) {
+            damage - amount
+        } else damage
     }
-  }
 
-  public void updateDescription() {
-    this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
-  }
+    override fun atEndOfTurn(isPlayer: Boolean) {
+        if (!isPlayer) {
+            AbstractDungeon.actionManager
+                .addToBottom(RemoveSpecificPowerAction(owner, owner, "TempStrengthLoss"))
+        }
+    }
+
+    override fun updateDescription() {
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
+    }
+
+    companion object {
+        const val POWER_ID = "TempStrengthLoss"
+        private val powerStrings = CardCrawlGame.languagePack
+            .getPowerStrings(POWER_ID)
+        val NAME = powerStrings.NAME
+        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
+    }
 }

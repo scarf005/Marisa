@@ -1,52 +1,52 @@
-package marisa.relics;
+package marisa.relics
 
-import basemod.abstracts.CustomRelic;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import basemod.abstracts.CustomRelic
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.helpers.ImageMaster
+import com.megacrit.cardcrawl.relics.AbstractRelic
+import com.megacrit.cardcrawl.rooms.AbstractRoom
 
-public class CatCart extends CustomRelic {
-
-  public static final String ID = "CatCart";
-  private static final String IMG = "img/relics/CatCart.png";
-  private static final String IMG_OTL = "img/relics/outline/CatCart.png";
-  private static final int HEAL_PER_CHARGE = 4;
-
-  public CatCart() {
-    super(
-        ID,
-        ImageMaster.loadImage(IMG),
-        ImageMaster.loadImage(IMG_OTL),
-        RelicTier.SPECIAL,
-        LandingSound.FLAT
-    );
-    this.counter = 0;
-  }
-
-  public String getUpdatedDescription() {
-    return DESCRIPTIONS[0];
-  }
-
-  public void onEnterRoom(AbstractRoom room) {
-    flash();
-    this.counter++;
-  }
-
-  public void onTrigger() {
-    if (this.counter > 0) {
-      flash();
-      AbstractDungeon.actionManager.addToTop(
-          new RelicAboveCreatureAction(AbstractDungeon.player, this)
-      );
-      int healAmt = this.counter * HEAL_PER_CHARGE;
-      AbstractDungeon.player.heal(healAmt, true);
-      this.counter = 0;
+class CatCart : CustomRelic(
+    ID,
+    ImageMaster.loadImage(IMG),
+    ImageMaster.loadImage(IMG_OTL),
+    RelicTier.SPECIAL,
+    LandingSound.FLAT
+) {
+    init {
+        counter = 0
     }
-  }
 
-  public AbstractRelic makeCopy() {
-    return new CatCart();
-  }
+    override fun getUpdatedDescription(): String {
+        return DESCRIPTIONS[0]
+    }
+
+    override fun onEnterRoom(room: AbstractRoom) {
+        flash()
+        counter++
+    }
+
+    override fun onTrigger() {
+        if (counter > 0) {
+            flash()
+            AbstractDungeon.actionManager.addToTop(
+                RelicAboveCreatureAction(AbstractDungeon.player, this)
+            )
+            val healAmt = counter * HEAL_PER_CHARGE
+            AbstractDungeon.player.heal(healAmt, true)
+            counter = 0
+        }
+    }
+
+    override fun makeCopy(): AbstractRelic {
+        return CatCart()
+    }
+
+    companion object {
+        const val ID = "CatCart"
+        private const val IMG = "img/relics/CatCart.png"
+        private const val IMG_OTL = "img/relics/outline/CatCart.png"
+        private const val HEAL_PER_CHARGE = 4
+    }
 }

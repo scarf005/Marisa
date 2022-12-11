@@ -32,7 +32,7 @@ class Orbital : CustomCard(
         }
     }
 
-    override fun canUse(p: AbstractPlayer, m: AbstractMonster): Boolean {
+    override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean {
         return false
     }
 

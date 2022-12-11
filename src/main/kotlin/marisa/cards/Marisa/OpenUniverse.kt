@@ -27,7 +27,7 @@ class OpenUniverse : CustomCard(
 
     override fun applyPowers() {}
     override fun calculateCardDamage(mo: AbstractMonster) {}
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         AbstractDungeon.actionManager.addToBottom(
             OpenUniverseAction(magicNumber, upgraded)
         )

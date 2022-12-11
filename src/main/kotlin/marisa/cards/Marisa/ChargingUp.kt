@@ -27,7 +27,7 @@ class ChargingUp : CustomCard(
         exhaust = true
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         val stack = magicNumber
         /*
 			if (ThMod.Amplified(this.costForTurn+AMP, AMP)) {

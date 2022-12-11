@@ -27,7 +27,7 @@ class SuperNova : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         /*
     if ((this.upgraded) && (p.hasPower("SuperNovaPower"))) {
       SuperNovaPower po = (SuperNovaPower) p.getPower("SuperNovaPower");

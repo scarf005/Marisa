@@ -30,7 +30,7 @@ class MaximisePower : CustomCard(
         exhaust = true
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (p.hasPower("ChargeUpPower")) {
             if (p.getPower("ChargeUpPower").amount > 0) {
                 AbstractDungeon.actionManager.addToBottom(

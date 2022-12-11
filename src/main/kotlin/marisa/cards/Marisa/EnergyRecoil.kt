@@ -56,7 +56,7 @@ class EnergyRecoil : CustomCard(
         initializeDescription()
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (block > 0) {
             AbstractDungeon.actionManager.addToBottom(
                 GainBlockAction(p, p, block)

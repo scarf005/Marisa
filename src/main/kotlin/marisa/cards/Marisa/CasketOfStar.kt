@@ -22,7 +22,7 @@ class CasketOfStar : CustomCard(
     CardRarity.RARE,
     CardTarget.SELF
 ) {
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(

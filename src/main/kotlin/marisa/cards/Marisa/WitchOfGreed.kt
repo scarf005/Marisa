@@ -54,7 +54,7 @@ class WitchOfGreed : CustomCard(
       );
     }
   */
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
             AbstractDungeon.getCurrRoom().addGoldToRewards(magicNumber)
             AbstractDungeon.actionManager.addToBottom(

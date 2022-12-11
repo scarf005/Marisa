@@ -1,6 +1,6 @@
 {
   "modid": "TS05_Marisa",
-  "name": "Marisa（霧雨　魔理沙）",
+  "name": "Marisa (霧雨 魔理沙)",
   "author_list": [
     "Flynn",
     "Hell",
@@ -8,7 +8,7 @@
     "Samsara",
     "scarf005"
   ],
-  "description": "Adds Marisa（霧雨　魔理沙） from Touhou Project as a new playable character.",
+  "description": "Adds Marisa (霧雨 魔理沙) from Touhou Project as a new playable character.",
   "dependencies": [
     "basemod"
   ],

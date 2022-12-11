@@ -28,29 +28,7 @@ class DarkSpark : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        /*
-    AbstractDungeon.actionManager.addToBottom(
-        new ExhaustAllNonAttackAction()
-    );
-    */
-        /*
-    AbstractDungeon.actionManager.addToBottom(
-        new DamageAllEnemiesAction(
-            p,
-            this.multiDamage,
-            this.damageTypeForTurn,
-            AbstractGameAction.AttackEffect.NONE
-        )
-    );
-    AbstractDungeon.actionManager.addToBottom(
-        new DamageAllEnemiesAction(
-            p,
-            this.multiDamage,
-            this.damageTypeForTurn,
-            AbstractGameAction.AttackEffect.NONE
-        )
-    );*/
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         for (i in 0 until magicNumber) {
             addToBot(DarkSparkAction(multiDamage, damageType))
         }

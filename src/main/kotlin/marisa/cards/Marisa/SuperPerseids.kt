@@ -58,7 +58,7 @@ class SuperPerseids : CustomCard(
         return false
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {}
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {}
     override fun triggerOnExhaust() {
         applyPowers()
         MarisaMod.logger.info(

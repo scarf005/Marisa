@@ -37,9 +37,7 @@ class Singularity : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Singularity()
-    }
+    override fun makeCopy(): AbstractCard = Singularity()
 
     override fun upgrade() {
         if (!upgraded) {

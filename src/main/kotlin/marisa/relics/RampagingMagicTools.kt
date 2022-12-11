@@ -16,13 +16,9 @@ class RampagingMagicTools : CustomRelic(
     RelicTier.BOSS,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return RampagingMagicTools()
-    }
+    override fun makeCopy(): AbstractRelic = RampagingMagicTools()
 
     override fun onEquip() {
         AbstractDungeon.player.energy.energyMaster += 1

@@ -49,9 +49,7 @@ class MagicAbsorber : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MagicAbsorber()
-    }
+    override fun makeCopy(): AbstractCard = MagicAbsorber()
 
     override fun upgrade() {
         if (!upgraded) {

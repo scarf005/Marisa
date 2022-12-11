@@ -51,9 +51,7 @@ class EarthLightRay : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return EarthLightRay()
-    }
+    override fun makeCopy(): AbstractCard = EarthLightRay()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -44,9 +44,7 @@ class MachineGunSpark : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MachineGunSpark()
-    }
+    override fun makeCopy(): AbstractCard = MachineGunSpark()
 
     override fun upgrade() {
         if (!upgraded) {

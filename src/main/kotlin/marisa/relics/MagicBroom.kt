@@ -13,13 +13,9 @@ class MagicBroom : CustomRelic(
     ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.RARE,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return MagicBroom()
-    }
+    override fun makeCopy(): AbstractRelic = MagicBroom()
 
     override fun atBattleStart() {
         counter = 0

@@ -36,13 +36,9 @@ class ShroomBrew : AbstractPotion(
         }
     }
 
-    override fun makeCopy(): AbstractPotion {
-        return ShroomBrew()
-    }
+    override fun makeCopy(): AbstractPotion = ShroomBrew()
 
-    override fun getPotency(ascensionLevel: Int): Int {
-        return 1
-    }
+    override fun getPotency(ascensionLevel: Int): Int = 1
 
     companion object {
         const val POTION_ID = "ShroomBrew"

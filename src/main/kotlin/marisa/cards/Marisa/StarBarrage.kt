@@ -43,9 +43,7 @@ class StarBarrage : CustomCard(
         applyPowers()
     }
 
-    override fun makeCopy(): AbstractCard {
-        return StarBarrage()
-    }
+    override fun makeCopy(): AbstractCard = StarBarrage()
 
     override fun upgrade() {
         if (!upgraded) {

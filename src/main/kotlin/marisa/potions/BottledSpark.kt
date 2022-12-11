@@ -31,13 +31,9 @@ class BottledSpark : AbstractPotion(
         }
     }
 
-    override fun getPotency(i: Int): Int {
-        return 3
-    }
+    override fun getPotency(i: Int): Int = 3
 
-    override fun makeCopy(): AbstractPotion {
-        return BottledSpark()
-    }
+    override fun makeCopy(): AbstractPotion = BottledSpark()
 
     companion object {
         const val POTION_ID = "BottledSpark"

@@ -47,9 +47,7 @@ class BinaryStars : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return BinaryStars()
-    }
+    override fun makeCopy(): AbstractCard = BinaryStars()
 
     override fun upgrade() {
         if (!upgraded) {

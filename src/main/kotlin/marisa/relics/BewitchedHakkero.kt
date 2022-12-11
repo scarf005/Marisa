@@ -19,13 +19,9 @@ class BewitchedHakkero : CustomRelic(
     RelicTier.BOSS,
     LandingSound.MAGICAL
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return BewitchedHakkero()
-    }
+    override fun makeCopy(): AbstractRelic = BewitchedHakkero()
 
     override fun obtain() {
         if (AbstractDungeon.player.hasRelic("MiniHakkero")) {

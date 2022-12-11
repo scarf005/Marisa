@@ -34,9 +34,7 @@ class DarkSpark : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return DarkSpark()
-    }
+    override fun makeCopy(): AbstractCard = DarkSpark()
 
     override fun upgrade() {
         //upgradeDamage(UPG_DMG);

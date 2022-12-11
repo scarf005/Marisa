@@ -43,9 +43,7 @@ class ChargingUp : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return ChargingUp()
-    }
+    override fun makeCopy(): AbstractCard = ChargingUp()
 
     override fun upgrade() {
         if (!upgraded) {

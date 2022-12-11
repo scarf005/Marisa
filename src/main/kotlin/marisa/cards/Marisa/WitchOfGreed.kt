@@ -81,9 +81,7 @@ class WitchOfGreed : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return WitchOfGreed()
-    }
+    override fun makeCopy(): AbstractCard = WitchOfGreed()
 
     override fun upgrade() {
         if (!upgraded) {

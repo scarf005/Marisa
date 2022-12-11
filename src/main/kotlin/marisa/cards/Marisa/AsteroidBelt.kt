@@ -43,9 +43,7 @@ class AsteroidBelt : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return AsteroidBelt()
-    }
+    override fun makeCopy(): AbstractCard = AsteroidBelt()
 
     override fun upgrade() {
         if (!upgraded) {

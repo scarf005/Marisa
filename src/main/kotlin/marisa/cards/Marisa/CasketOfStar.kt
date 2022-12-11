@@ -44,9 +44,7 @@ class CasketOfStar : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return CasketOfStar()
-    }
+    override fun makeCopy(): AbstractCard = CasketOfStar()
 
     override fun upgrade() {
         if (!upgraded) {

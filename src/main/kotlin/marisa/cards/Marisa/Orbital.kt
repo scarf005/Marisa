@@ -32,9 +32,7 @@ class Orbital : CustomCard(
         }
     }
 
-    override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean {
-        return false
-    }
+    override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean = false
 
     override fun triggerOnExhaust() {
         AbstractDungeon.actionManager.addToBottom(

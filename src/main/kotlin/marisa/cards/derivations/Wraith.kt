@@ -49,9 +49,7 @@ class Wraith : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Wraith()
-    }
+    override fun makeCopy(): AbstractCard = Wraith()
 
     override fun upgrade() {}
 

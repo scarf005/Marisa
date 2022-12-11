@@ -30,9 +30,7 @@ class MagicChant : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MagicChant()
-    }
+    override fun makeCopy(): AbstractCard = MagicChant()
 
     override fun upgrade() {
         if (!upgraded) {

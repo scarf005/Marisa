@@ -37,9 +37,7 @@ class EnergyFlow : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return EnergyFlow()
-    }
+    override fun makeCopy(): AbstractCard = EnergyFlow()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -31,9 +31,7 @@ class PowerUp : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return PowerUp()
-    }
+    override fun makeCopy(): AbstractCard = PowerUp()
 
     override fun upgrade() {
         if (!upgraded) {

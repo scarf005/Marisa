@@ -12,13 +12,9 @@ class BigShroomBag : CustomRelic(
     RelicTier.SPECIAL,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return BigShroomBag()
-    }
+    override fun makeCopy(): AbstractRelic = BigShroomBag()
 
     override fun onEquip() {
         AbstractDungeon.player.loseRelic("ShroomBag")

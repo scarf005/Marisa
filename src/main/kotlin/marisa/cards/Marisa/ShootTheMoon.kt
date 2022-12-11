@@ -75,9 +75,7 @@ class ShootTheMoon : AmplifiedAttack(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return ShootTheMoon()
-    }
+    override fun makeCopy(): AbstractCard = ShootTheMoon()
 
     override fun upgrade() {
         if (!upgraded) {

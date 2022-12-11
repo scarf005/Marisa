@@ -39,9 +39,7 @@ class SprinkleStarSeal : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return SprinkleStarSeal()
-    }
+    override fun makeCopy(): AbstractCard = SprinkleStarSeal()
 
     override fun upgrade() {
         if (!upgraded) {

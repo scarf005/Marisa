@@ -37,9 +37,7 @@ class EscapeVelocity : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return EscapeVelocity()
-    }
+    override fun makeCopy(): AbstractCard = EscapeVelocity()
 
     override fun upgrade() {
         if (!upgraded) {

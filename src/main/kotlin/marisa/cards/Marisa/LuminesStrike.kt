@@ -92,9 +92,7 @@ class LuminesStrike : AmplifiedAttack(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return LuminesStrike()
-    }
+    override fun makeCopy(): AbstractCard = LuminesStrike()
 
     override fun upgrade() {
         if (!upgraded) {

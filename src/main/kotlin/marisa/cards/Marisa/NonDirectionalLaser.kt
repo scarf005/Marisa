@@ -45,9 +45,7 @@ class NonDirectionalLaser : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return NonDirectionalLaser()
-    }
+    override fun makeCopy(): AbstractCard = NonDirectionalLaser()
 
     override fun upgrade() {
         if (!upgraded) {

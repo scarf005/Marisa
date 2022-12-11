@@ -18,9 +18,7 @@ class CatCart : CustomRelic(
         counter = 0
     }
 
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
     override fun onEnterRoom(room: AbstractRoom) {
         flash()
@@ -39,9 +37,7 @@ class CatCart : CustomRelic(
         }
     }
 
-    override fun makeCopy(): AbstractRelic {
-        return CatCart()
-    }
+    override fun makeCopy(): AbstractRelic = CatCart()
 
     companion object {
         const val ID = "CatCart"

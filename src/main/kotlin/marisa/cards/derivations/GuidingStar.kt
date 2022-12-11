@@ -65,9 +65,7 @@ class GuidingStar : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return GuidingStar()
-    }
+    override fun makeCopy(): AbstractCard = GuidingStar()
 
     override fun upgrade() {
         if (!upgraded) {

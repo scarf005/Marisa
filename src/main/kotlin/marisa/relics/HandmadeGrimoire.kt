@@ -14,13 +14,9 @@ class HandmadeGrimoire : CustomRelic(
     RelicTier.UNCOMMON,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return HandmadeGrimoire()
-    }
+    override fun makeCopy(): AbstractRelic = HandmadeGrimoire()
 
     override fun atBattleStart() {
         val cnt = AbstractDungeon.player.masterDeck.size() / 15

@@ -87,9 +87,7 @@ class GravityBeat : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return GravityBeat()
-    }
+    override fun makeCopy(): AbstractCard = GravityBeat()
 
     override fun upgrade() {
         if (!upgraded) {

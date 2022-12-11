@@ -35,9 +35,7 @@ class PropBag : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return PropBag()
-    }
+    override fun makeCopy(): AbstractCard = PropBag()
 
     override fun upgrade() {
         if (!upgraded) {

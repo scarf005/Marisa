@@ -29,9 +29,7 @@ class _6A : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return _6A()
-    }
+    override fun makeCopy(): AbstractCard = _6A()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -72,9 +72,7 @@ class DragonMeteor : AmplifiedAttack(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return DragonMeteor()
-    }
+    override fun makeCopy(): AbstractCard = DragonMeteor()
 
     override fun upgrade() {
         if (!upgraded) {

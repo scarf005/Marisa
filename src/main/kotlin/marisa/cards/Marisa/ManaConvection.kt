@@ -32,9 +32,7 @@ class ManaConvection : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return ManaConvection()
-    }
+    override fun makeCopy(): AbstractCard = ManaConvection()
 
     override fun upgrade() {
         if (!upgraded) {

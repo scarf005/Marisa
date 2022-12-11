@@ -39,9 +39,7 @@ class Spark : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Spark()
-    }
+    override fun makeCopy(): AbstractCard = Spark()
 
     override fun upgrade() {
         if (!upgraded) {

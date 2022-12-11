@@ -49,9 +49,7 @@ class FairyDestructionRay : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return FairyDestructionRay()
-    }
+    override fun makeCopy(): AbstractCard = FairyDestructionRay()
 
     override fun upgrade() {
         if (!upgraded) {

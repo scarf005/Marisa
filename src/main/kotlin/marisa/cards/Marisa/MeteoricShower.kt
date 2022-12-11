@@ -41,9 +41,7 @@ class MeteoricShower : CustomCard(
     */
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MeteoricShower()
-    }
+    override fun makeCopy(): AbstractCard = MeteoricShower()
 
     override fun upgrade() {
         if (!upgraded) {

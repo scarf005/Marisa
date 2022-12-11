@@ -47,9 +47,7 @@ class DC : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return DC()
-    }
+    override fun makeCopy(): AbstractCard = DC()
 
     override fun upgrade() {
         if (!upgraded) {

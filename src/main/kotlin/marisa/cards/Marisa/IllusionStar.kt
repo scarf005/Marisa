@@ -40,9 +40,7 @@ class IllusionStar : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return IllusionStar()
-    }
+    override fun makeCopy(): AbstractCard = IllusionStar()
 
     override fun upgrade() {
         if (!upgraded) {

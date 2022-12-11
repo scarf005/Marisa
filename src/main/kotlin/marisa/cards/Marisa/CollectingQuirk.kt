@@ -81,9 +81,7 @@ class CollectingQuirk : CustomCard(
         initializeDescription()
     }
 
-    override fun makeCopy(): AbstractCard {
-        return CollectingQuirk()
-    }
+    override fun makeCopy(): AbstractCard = CollectingQuirk()
 
     private fun getCounter() {
         val p = AbstractDungeon.player

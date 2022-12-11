@@ -43,9 +43,7 @@ class ShootingEcho : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return ShootingEcho()
-    }
+    override fun makeCopy(): AbstractCard = ShootingEcho()
 
     override fun upgrade() {
         if (!upgraded) {

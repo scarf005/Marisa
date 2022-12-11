@@ -59,9 +59,7 @@ class Occultation : CustomCard(
     */
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Occultation()
-    }
+    override fun makeCopy(): AbstractCard = Occultation()
 
     override fun upgrade() {
         if (!upgraded) {

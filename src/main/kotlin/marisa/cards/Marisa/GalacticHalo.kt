@@ -51,9 +51,7 @@ class GalacticHalo : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return GalacticHalo()
-    }
+    override fun makeCopy(): AbstractCard = GalacticHalo()
 
     override fun upgrade() {
         if (!upgraded) {

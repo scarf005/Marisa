@@ -68,9 +68,7 @@ class OneTimeOff : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return OneTimeOff()
-    }
+    override fun makeCopy(): AbstractCard = OneTimeOff()
 
     override fun upgrade() {
         if (!upgraded) {

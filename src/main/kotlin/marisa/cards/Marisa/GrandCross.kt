@@ -51,9 +51,7 @@ class GrandCross : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return GrandCross()
-    }
+    override fun makeCopy(): AbstractCard = GrandCross()
 
     override fun upgrade() {
         if (!upgraded) {

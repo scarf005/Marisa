@@ -32,9 +32,7 @@ class BigCrunch : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return BigCrunch()
-    }
+    override fun makeCopy(): AbstractCard = BigCrunch()
 
     override fun upgrade() {
         if (!upgraded) {

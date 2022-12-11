@@ -48,9 +48,7 @@ class RefractionSpark : AmplifiedAttack(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return RefractionSpark()
-    }
+    override fun makeCopy(): AbstractCard = RefractionSpark()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -14,13 +14,9 @@ class AmplifyWand : CustomRelic(
     RelicTier.UNCOMMON,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return AmplifyWand()
-    }
+    override fun makeCopy(): AbstractRelic = AmplifyWand()
 
     override fun onTrigger() {
         flash()

@@ -44,9 +44,7 @@ class SuperNova : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return SuperNova()
-    }
+    override fun makeCopy(): AbstractCard = SuperNova()
 
     override fun upgrade() {
         if (!upgraded) {

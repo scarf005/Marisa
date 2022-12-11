@@ -37,9 +37,7 @@ class OrrerysSun : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return OrrerysSun()
-    }
+    override fun makeCopy(): AbstractCard = OrrerysSun()
 
     override fun upgrade() {
         if (!upgraded) {

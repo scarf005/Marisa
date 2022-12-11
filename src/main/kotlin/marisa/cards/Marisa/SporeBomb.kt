@@ -53,9 +53,7 @@ class SporeBomb : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return SporeBomb()
-    }
+    override fun makeCopy(): AbstractCard = SporeBomb()
 
     override fun upgrade() {
         if (!upgraded) {

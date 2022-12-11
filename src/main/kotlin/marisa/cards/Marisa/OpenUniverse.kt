@@ -33,9 +33,7 @@ class OpenUniverse : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return OpenUniverse()
-    }
+    override fun makeCopy(): AbstractCard = OpenUniverse()
 
     override fun upgrade() {
         if (!upgraded) {

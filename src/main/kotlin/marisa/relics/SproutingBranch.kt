@@ -15,13 +15,9 @@ class SproutingBranch : CustomRelic(
     RelicTier.SPECIAL,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return SproutingBranch()
-    }
+    override fun makeCopy(): AbstractRelic = SproutingBranch()
 
     override fun onEquip() {
         AbstractDungeon.rareRelicPool.remove("Dead Branch")

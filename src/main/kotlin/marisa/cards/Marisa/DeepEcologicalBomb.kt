@@ -43,9 +43,7 @@ class DeepEcologicalBomb : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return DeepEcologicalBomb()
-    }
+    override fun makeCopy(): AbstractCard = DeepEcologicalBomb()
 
     override fun upgrade() {
         if (!upgraded) {

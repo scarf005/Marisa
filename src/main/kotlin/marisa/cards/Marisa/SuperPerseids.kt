@@ -54,9 +54,7 @@ class SuperPerseids : CustomCard(
         )
     }
 
-    override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean {
-        return false
-    }
+    override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean = false
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {}
     override fun triggerOnExhaust() {
@@ -78,9 +76,7 @@ class SuperPerseids : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return SuperPerseids()
-    }
+    override fun makeCopy(): AbstractCard = SuperPerseids()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -11,13 +11,9 @@ class Cape : CustomRelic(
     RelicTier.RARE,
     LandingSound.MAGICAL
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return Cape()
-    }
+    override fun makeCopy(): AbstractRelic = Cape()
 
     companion object {
         const val ID = "MarisaMod:Cape"

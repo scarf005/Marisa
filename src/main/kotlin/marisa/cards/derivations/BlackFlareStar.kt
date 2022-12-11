@@ -40,9 +40,7 @@ class BlackFlareStar : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return BlackFlareStar()
-    }
+    override fun makeCopy(): AbstractCard = BlackFlareStar()
 
     override fun upgrade() {
         if (!upgraded) {

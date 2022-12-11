@@ -43,9 +43,7 @@ class ManaRampage : CustomCard(
     */
     }
 
-    override fun makeCopy(): AbstractCard {
-        return ManaRampage()
-    }
+    override fun makeCopy(): AbstractCard = ManaRampage()
 
     override fun upgrade() {
         if (!upgraded) {

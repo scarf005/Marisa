@@ -55,9 +55,7 @@ class MaximisePower : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MaximisePower()
-    }
+    override fun makeCopy(): AbstractCard = MaximisePower()
 
     override fun upgrade() {
         if (!upgraded) {

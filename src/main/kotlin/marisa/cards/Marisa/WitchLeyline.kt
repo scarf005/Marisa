@@ -50,9 +50,7 @@ class WitchLeyline : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return WitchLeyline()
-    }
+    override fun makeCopy(): AbstractCard = WitchLeyline()
 
     override fun upgrade() {
         if (!upgraded) {

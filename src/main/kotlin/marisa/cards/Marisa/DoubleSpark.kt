@@ -51,9 +51,7 @@ class DoubleSpark : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return DoubleSpark()
-    }
+    override fun makeCopy(): AbstractCard = DoubleSpark()
 
     override fun upgrade() {
         if (!upgraded) {

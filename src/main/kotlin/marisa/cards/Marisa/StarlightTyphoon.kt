@@ -47,9 +47,7 @@ class StarlightTyphoon : AmplifiedAttack(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return StarlightTyphoon()
-    }
+    override fun makeCopy(): AbstractCard = StarlightTyphoon()
 
     override fun upgrade() {
         if (!upgraded) {

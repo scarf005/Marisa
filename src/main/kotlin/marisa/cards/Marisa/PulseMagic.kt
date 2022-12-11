@@ -54,9 +54,7 @@ class PulseMagic : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return PulseMagic()
-    }
+    override fun makeCopy(): AbstractCard = PulseMagic()
 
     override fun upgrade() {
         if (!upgraded) {

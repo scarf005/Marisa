@@ -21,13 +21,9 @@ class BreadOfAWashokuLover : CustomRelic(
         usedUp = false
     }
 
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return BreadOfAWashokuLover()
-    }
+    override fun makeCopy(): AbstractRelic = BreadOfAWashokuLover()
 
     override fun onEquip() {
         counter = 0

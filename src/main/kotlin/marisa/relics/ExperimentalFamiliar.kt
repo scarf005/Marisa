@@ -16,13 +16,9 @@ class ExperimentalFamiliar : CustomRelic(
     RelicTier.BOSS,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return ExperimentalFamiliar()
-    }
+    override fun makeCopy(): AbstractRelic = ExperimentalFamiliar()
 
     override fun atTurnStartPostDraw() {
         AbstractDungeon.actionManager.addToBottom(

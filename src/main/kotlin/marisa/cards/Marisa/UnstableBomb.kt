@@ -38,9 +38,7 @@ class UnstableBomb : AmplifiedAttack(
     }
 
     override fun calculateCardDamage(mo: AbstractMonster) {}
-    override fun makeCopy(): AbstractCard {
-        return UnstableBomb()
-    }
+    override fun makeCopy(): AbstractCard = UnstableBomb()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -56,9 +56,7 @@ class AbsoluteMagnitude : AmplifiedAttack(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return AbsoluteMagnitude()
-    }
+    override fun makeCopy(): AbstractCard = AbsoluteMagnitude()
 
     override fun upgrade() {
         if (!upgraded) {

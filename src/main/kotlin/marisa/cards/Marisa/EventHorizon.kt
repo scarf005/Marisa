@@ -25,9 +25,7 @@ class EventHorizon : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return EventHorizon()
-    }
+    override fun makeCopy(): AbstractCard = EventHorizon()
 
     override fun upgrade() {
         if (!upgraded) {

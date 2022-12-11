@@ -60,9 +60,7 @@ class JA : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return JA()
-    }
+    override fun makeCopy(): AbstractCard = JA()
 
     override fun upgrade() {
         if (!upgraded) {

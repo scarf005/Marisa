@@ -49,9 +49,7 @@ class UltraShortWave : CustomCard(
         upgradeBlock(1)
     }
 
-    override fun makeCopy(): AbstractCard {
-        return UltraShortWave()
-    }
+    override fun makeCopy(): AbstractCard = UltraShortWave()
 
     override fun upgrade() {
         if (!upgraded) {

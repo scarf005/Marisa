@@ -40,9 +40,7 @@ class GasGiant : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return GasGiant()
-    }
+    override fun makeCopy(): AbstractCard = GasGiant()
 
     override fun upgrade() {
         if (!upgraded) {

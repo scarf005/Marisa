@@ -32,9 +32,7 @@ class Defend_MRS : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Defend_MRS()
-    }
+    override fun makeCopy(): AbstractCard = Defend_MRS()
 
 
     override fun upgrade() {

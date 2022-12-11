@@ -38,9 +38,7 @@ class Robbery : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return Robbery()
-    }
+    override fun makeCopy(): AbstractCard = Robbery()
 
     override fun upgrade() {
         if (!upgraded) {

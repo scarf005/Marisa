@@ -64,9 +64,7 @@ class EnergyRecoil : CustomCard(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return EnergyRecoil()
-    }
+    override fun makeCopy(): AbstractCard = EnergyRecoil()
 
     override fun upgrade() {
         if (!upgraded) {

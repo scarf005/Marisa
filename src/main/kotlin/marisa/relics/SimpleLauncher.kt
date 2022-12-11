@@ -11,17 +11,11 @@ class SimpleLauncher : CustomRelic(
     RelicTier.SHOP,
     LandingSound.HEAVY
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun getPrice(): Int {
-        return PRICE
-    }
+    override fun getPrice(): Int = PRICE
 
-    override fun makeCopy(): AbstractRelic {
-        return SimpleLauncher()
-    }
+    override fun makeCopy(): AbstractRelic = SimpleLauncher()
 
     companion object {
         const val ID = "SimpleLauncher"

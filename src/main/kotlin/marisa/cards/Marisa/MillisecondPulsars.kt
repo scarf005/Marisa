@@ -32,9 +32,7 @@ class MillisecondPulsars : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MillisecondPulsars()
-    }
+    override fun makeCopy(): AbstractCard = MillisecondPulsars()
 
     override fun upgrade() {
         if (!upgraded) {

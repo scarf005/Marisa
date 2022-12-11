@@ -40,9 +40,7 @@ class MilkyWay : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MilkyWay()
-    }
+    override fun makeCopy(): AbstractCard = MilkyWay()
 
     override fun upgrade() {
         if (!upgraded) {

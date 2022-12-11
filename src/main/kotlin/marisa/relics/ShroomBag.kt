@@ -15,9 +15,7 @@ class ShroomBag : CustomRelic(
     RelicTier.COMMON,
     LandingSound.FLAT
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
     override fun makeCopy(): AbstractRelic {
         if (AbstractDungeon.player != null) {

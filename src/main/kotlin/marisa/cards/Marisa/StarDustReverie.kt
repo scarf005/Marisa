@@ -30,9 +30,7 @@ class StarDustReverie : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return StarDustReverie()
-    }
+    override fun makeCopy(): AbstractCard = StarDustReverie()
 
     override fun upgrade() {
         if (!upgraded) {

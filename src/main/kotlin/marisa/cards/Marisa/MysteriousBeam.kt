@@ -68,9 +68,7 @@ class MysteriousBeam : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MysteriousBeam()
-    }
+    override fun makeCopy(): AbstractCard = MysteriousBeam()
 
     override fun upgrade() {
         if (!upgraded) {

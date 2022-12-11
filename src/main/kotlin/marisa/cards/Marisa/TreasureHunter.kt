@@ -36,9 +36,7 @@ class TreasureHunter : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return TreasureHunter()
-    }
+    override fun makeCopy(): AbstractCard = TreasureHunter()
 
     override fun upgrade() {
         if (!upgraded) {

@@ -86,9 +86,7 @@ class DarkMatter : CustomCard(
 	  */
     }
 
-    override fun makeCopy(): AbstractCard {
-        return DarkMatter()
-    }
+    override fun makeCopy(): AbstractCard = DarkMatter()
 
     override fun upgrade() {
         if (!upgraded) {

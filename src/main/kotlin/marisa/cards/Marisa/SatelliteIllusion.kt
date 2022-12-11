@@ -32,9 +32,7 @@ class SatelliteIllusion : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return SatelliteIllusion()
-    }
+    override fun makeCopy(): AbstractCard = SatelliteIllusion()
 
     override fun upgrade() {
         if (!upgraded) {

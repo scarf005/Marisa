@@ -49,9 +49,7 @@ class UpSweep : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return UpSweep()
-    }
+    override fun makeCopy(): AbstractCard = UpSweep()
 
     override fun upgrade() {
         if (!upgraded) {

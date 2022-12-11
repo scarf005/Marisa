@@ -67,9 +67,7 @@ class FinalSpark : CustomCard(
         isCostModified = false
     }
 
-    override fun makeCopy(): AbstractCard {
-        return FinalSpark()
-    }
+    override fun makeCopy(): AbstractCard = FinalSpark()
 
     override fun upgrade() {
         if (!upgraded) {

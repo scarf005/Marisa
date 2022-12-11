@@ -18,13 +18,9 @@ class MiniHakkero : CustomRelic(
     RelicTier.STARTER,
     LandingSound.MAGICAL
 ) {
-    override fun getUpdatedDescription(): String {
-        return DESCRIPTIONS[0]
-    }
+    override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        return MiniHakkero()
-    }
+    override fun makeCopy(): AbstractRelic = MiniHakkero()
 
     override fun onUseCard(card: AbstractCard, action: UseCardAction) {
         val p = AbstractDungeon.player

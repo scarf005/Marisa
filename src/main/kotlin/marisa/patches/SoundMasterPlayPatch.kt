@@ -28,9 +28,7 @@ object SoundMasterPlayPatch {
             .play(Settings.SOUND_VOLUME * Settings.MASTER_VOLUME)
     }
 
-    private fun load(filename: String): Sfx {
-        return Sfx("audio/sound/$filename", false)
-    }
+    private fun load(filename: String): Sfx = Sfx("audio/sound/$filename", false)
 
     init {
         map["SELECT_MRS"] = load("se_pldead00.ogg")

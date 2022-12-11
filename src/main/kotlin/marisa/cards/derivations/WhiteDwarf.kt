@@ -70,9 +70,7 @@ class WhiteDwarf : AmplifiedAttack(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return WhiteDwarf()
-    }
+    override fun makeCopy(): AbstractCard = WhiteDwarf()
 
     override fun upgrade() {
         if (!upgraded) {

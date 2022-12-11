@@ -60,9 +60,7 @@ class OortCloud : CustomCard(
         )
     }
 
-    override fun makeCopy(): AbstractCard {
-        return OortCloud()
-    }
+    override fun makeCopy(): AbstractCard = OortCloud()
 
     override fun upgrade() {
         if (!upgraded) {

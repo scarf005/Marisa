@@ -58,9 +58,7 @@ class MasterSpark : AmplifiedAttack(
         }
     }
 
-    override fun makeCopy(): AbstractCard {
-        return MasterSpark()
-    }
+    override fun makeCopy(): AbstractCard = MasterSpark()
 
     override fun upgrade() {
         if (!upgraded) {

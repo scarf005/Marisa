@@ -25,7 +25,7 @@ class BlackFlareStar : CustomCard(
         exhaust = true
     }
 
-    override fun canUse(p: AbstractPlayer, m: AbstractMonster): Boolean {
+    override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean {
         return if (p.hand.size() >= HAND_REQ) {
             true
         } else {

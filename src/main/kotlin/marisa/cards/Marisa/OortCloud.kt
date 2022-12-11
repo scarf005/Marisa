@@ -39,7 +39,7 @@ class OortCloud : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (MarisaMod.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(

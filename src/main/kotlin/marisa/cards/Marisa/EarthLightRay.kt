@@ -32,7 +32,7 @@ class EarthLightRay : CustomCard(
         tags.add(CardTags.HEALING)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (!p.discardPile.isEmpty) {
             if (MarisaMod.isAmplified(this, AMP)) {
                 if (upgraded && !p.discardPile.isEmpty) {

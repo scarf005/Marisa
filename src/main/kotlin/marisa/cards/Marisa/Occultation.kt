@@ -41,7 +41,7 @@ class Occultation : CustomCard(
         initializeDescription()
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (!AbstractDungeon.player.drawPile.isEmpty) {
             AbstractDungeon.actionManager.addToBottom(
                 OccultationAction()

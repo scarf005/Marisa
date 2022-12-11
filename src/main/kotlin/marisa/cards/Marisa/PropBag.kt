@@ -27,7 +27,7 @@ class PropBag : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         for (i in 0 until magicNumber) {
             AbstractDungeon.actionManager.addToBottom(
                 PropBagAction()

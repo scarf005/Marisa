@@ -26,7 +26,7 @@ class Defend_MRS : CustomCard(
         baseBlock = BLOCK_AMT
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         AbstractDungeon.actionManager.addToBottom(
             GainBlockAction(p, p, block)
         )
@@ -36,10 +36,6 @@ class Defend_MRS : CustomCard(
         return Defend_MRS()
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun isDefend(): Boolean {
-        return true
-    }
 
     override fun upgrade() {
         if (!upgraded) {

@@ -24,7 +24,7 @@ class StarlightTyphoon : AmplifiedAttack(
     CardTarget.NONE
 ) {
     var counter = 0
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         var cnt = 0
         MarisaMod.logger.info("StarlightTyphoon : onUse")
         for (c in p.hand.group) {

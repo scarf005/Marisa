@@ -45,7 +45,7 @@ class BlazeAway : CustomCard(
         initializeDescription()
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         val last = lastAttack()
         if (last == null) {
             MarisaMod.logger.info("BlazeAway : error : last attack is null ")

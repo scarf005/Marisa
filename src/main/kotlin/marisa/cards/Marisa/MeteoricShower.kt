@@ -26,7 +26,7 @@ class MeteoricShower : CustomCard(
     }
 
     override fun calculateCardDamage(mo: AbstractMonster) {}
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         var cnt = EnergyPanel.totalCount + 1
         if (p.hasRelic("Chemical X")) {
             cnt += 2

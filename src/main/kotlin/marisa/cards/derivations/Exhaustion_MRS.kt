@@ -23,7 +23,7 @@ class Exhaustion_MRS : CustomCard(
         exhaust = true
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (p.hasRelic("Medical Kit")) {
 //            useMedicalKit(p)
         } else {

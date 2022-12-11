@@ -1,4 +1,4 @@
-package ThMod.powers.deprecated;
+package marisa.powers.deprecated;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,8 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import ThMod.ThMod;
-import ThMod.action.DiscToHandATKOnly;
+import marisa.ThMod;
+import marisa.action.DiscToHandATKOnly;
 import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 
 @Deprecated
@@ -44,7 +44,7 @@ public class NebulaPower
 
   @Override
   public int onAttacked(DamageInfo info, int damageAmount) {
-    ThMod.logger.info(
+    marisa.logger.info(
         "NebulaPower : onAttacked : currentBlock : " +
             owner.currentBlock +
             " ; DamageInfo : " +
@@ -74,4 +74,3 @@ public class NebulaPower
     );
   }
 }
-

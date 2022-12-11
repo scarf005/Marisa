@@ -1,7 +1,7 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.ThMod;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -48,7 +48,7 @@ public class ExplosiveMarionette extends CustomCard {
   }
 
   public void use(AbstractPlayer p, AbstractMonster m) {
-    if (ThMod.Amplified(this, AMP)) {
+    if (marisa.Amplified(this, AMP)) {
       this.damage *= 2;
     }
     AbstractDungeon.actionManager.addToBottom(

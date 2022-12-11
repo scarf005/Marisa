@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 /*
 import ThMod.ThMod;
 import ThMod.action.ConsumeChargeUpAction;

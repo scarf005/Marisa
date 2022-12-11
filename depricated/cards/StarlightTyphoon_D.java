@@ -1,8 +1,8 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
-import ThMod.ThMod;
-import ThMod.abstracts.AmplifiedAttack;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.abstracts.AmplifiedAttack;
+import marisa.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -54,7 +54,7 @@ public class StarlightTyphoon_D extends AmplifiedAttack {
       }
     }
     */
-    counter = ThMod.typhoonCounter;
+    counter = marisa.typhoonCounter;
 
     this.ampNumber = this.magicNumber * counter;
     this.rawDescription = (DESCRIPTION + EXTENDED_DESCRIPTION[0]);

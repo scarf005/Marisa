@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -12,9 +12,9 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
-import ThMod.ThMod;
-import ThMod.abstracts.AmplifiedAttack;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.abstracts.AmplifiedAttack;
+import marisa.patches.AbstractCardEnum;
 
 @Deprecated
 public class FluorensentBeam
@@ -57,7 +57,7 @@ public class FluorensentBeam
 
     AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
 
-    if (ThMod.Amplified(this, AMP)) {
+    if (marisa.Amplified(this, AMP)) {
       AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p,
           this.multiAmpDamage, DamageType.HP_LOSS, AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     } else {

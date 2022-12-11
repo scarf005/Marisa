@@ -1,10 +1,10 @@
-package ThMod.action.deprecated;
+package marisa.action.deprecated;
 
-import ThMod.ThMod;
-import ThMod.cards.deprecated.AFriendsGift_1;
-import ThMod.cards.deprecated.ExplosiveMarionette;
-import ThMod.cards.deprecated.FiveColoredTalisman;
-import ThMod.cards.deprecated.OpticalCamouflage;
+import marisa.ThMod;
+import marisa.cards.deprecated.AFriendsGift_1;
+import marisa.cards.deprecated.ExplosiveMarionette;
+import marisa.cards.deprecated.FiveColoredTalisman;
+import marisa.cards.deprecated.OpticalCamouflage;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,7 +20,7 @@ public class CardTransformAction extends AbstractGameAction {
   public CardTransformAction(AbstractCard card, CardGroup group) {
     this.card = card;
     this.group = group;
-    ThMod.logger.info(
+    marisa.logger.info(
         "CardTransformAction : card :"+card.cardID
         +" ; group :"+group.toString()
     );
@@ -59,7 +59,7 @@ public class CardTransformAction extends AbstractGameAction {
         c.upgrade();
       }
 
-      ThMod.logger.info("CardTransformAction : Adding :"+c.cardID+" for random result : "+i);
+      marisa.logger.info("CardTransformAction : Adding :"+c.cardID+" for random result : "+i);
 
       if (group == AbstractDungeon.player.hand) {
         group.removeCard(card);
@@ -75,7 +75,7 @@ public class CardTransformAction extends AbstractGameAction {
       this.isDone = true;
 
     } else {
-      ThMod.logger.info("CardTransformAction:done");
+      marisa.logger.info("CardTransformAction:done");
     }
   }
 }

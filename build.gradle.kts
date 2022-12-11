@@ -29,10 +29,11 @@ repositories {
 }
 
 dependencies {
-    compileOnly(fileTree("lib"))
-    compileOnly(files("${slayTheSpireInstallDir}/desktop-1.0.jar"))
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))
+
+    compileOnly(fileTree("lib"))
+    compileOnly(files("${slayTheSpireInstallDir}/desktop-1.0.jar"))
 }
 
 sourceSets {

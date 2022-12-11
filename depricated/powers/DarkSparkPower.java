@@ -1,6 +1,6 @@
-package ThMod.powers.deprecated;
+package marisa.powers.deprecated;
 
-import ThMod.powers.Marisa.ChargeUpPower;
+import marisa.powers.Marisa.ChargeUpPower;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 
 @Deprecated
 public class DarkSparkPower extends AbstractPower {

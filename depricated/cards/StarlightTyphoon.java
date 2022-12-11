@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
-import ThMod.ThMod;
-import ThMod.cards.derivations.Spark;
-import ThMod.patches.AbstractCardEnum;
+import marisa.ThMod;
+import marisa.cards.derivations.Spark;
+import marisa.patches.AbstractCardEnum;
 
 @Deprecated
 public class StarlightTyphoon extends CustomCard {
@@ -40,15 +40,15 @@ public class StarlightTyphoon extends CustomCard {
 
   public void use(AbstractPlayer p, AbstractMonster m) {
     int cnt = 0;
-    ThMod.logger.info("StarlightTyphoon : onUse");
+    marisa.logger.info("StarlightTyphoon : onUse");
     for (AbstractCard c : p.hand.group) {
       if ((c.type != CardType.ATTACK) && (c != this)) {
-        ThMod.logger.info("StarlightTyphoon : exahsting : " + c.cardID);
+        marisa.logger.info("StarlightTyphoon : exahsting : " + c.cardID);
         AbstractDungeon.actionManager.addToTop(
             new ExhaustSpecificCardAction(c, p.hand, true)
         );
         cnt++;
-        ThMod.logger.info("StarlightTyphoon : counter : " + cnt);
+        marisa.logger.info("StarlightTyphoon : counter : " + cnt);
       }
     }
     for (int i = 0; i < cnt; i++) {
@@ -59,7 +59,7 @@ public class StarlightTyphoon extends CustomCard {
       AbstractDungeon.actionManager.addToBottom(
           new MakeTempCardInHandAction(tmp, 1)
       );
-      ThMod.logger.info("StarlightTyphoon : adding Spark : counter : " + cnt);
+      marisa.logger.info("StarlightTyphoon : adding Spark : counter : " + cnt);
     }
   }
 

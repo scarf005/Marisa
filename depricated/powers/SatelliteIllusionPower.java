@@ -1,4 +1,4 @@
-package ThMod.powers.deprecated;
+package marisa.powers.deprecated;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import ThMod.ThMod;
+import marisa.ThMod;
 
 @Deprecated
 public class SatelliteIllusionPower extends AbstractPower {
@@ -34,7 +34,7 @@ public class SatelliteIllusionPower extends AbstractPower {
 
   public void onUseCard(AbstractCard card, UseCardAction action) {
     if (card.draw <= 0) {
-      ThMod.logger.info("SatelliteIllusionPower : Drawing card for using " + card.cardID);
+      marisa.logger.info("SatelliteIllusionPower : Drawing card for using " + card.cardID);
       AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
     }
   }

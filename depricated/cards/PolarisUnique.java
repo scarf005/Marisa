@@ -1,4 +1,4 @@
-package ThMod.cards.deprecated;
+package marisa.cards.deprecated;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import basemod.abstracts.CustomCard;
-import ThMod.ThMod;
-import ThMod.cards.derivations.GuidingStar;
-import ThMod.patches.AbstractCardEnum;
-import ThMod.powers.Marisa.PolarisUniquePower;
+import marisa.ThMod;
+import marisa.cards.derivations.GuidingStar;
+import marisa.patches.AbstractCardEnum;
+import marisa.powers.Marisa.PolarisUniquePower;
 
 @Deprecated
 public class PolarisUnique extends CustomCard {
@@ -45,7 +45,7 @@ public class PolarisUnique extends CustomCard {
 
   public void use(AbstractPlayer p, AbstractMonster m) {
 
-    ThMod.logger.info("Applying Power:PolarisUnique");
+    marisa.logger.info("Applying Power:PolarisUnique");
     AbstractDungeon.actionManager.addToBottom(
         new ApplyPowerAction(
             p,
@@ -54,7 +54,7 @@ public class PolarisUnique extends CustomCard {
         )
     );
 
-    ThMod.logger.info("Adding card to deck : GuidingStar");
+    marisa.logger.info("Adding card to deck : GuidingStar");
     AbstractCard c = new GuidingStar();
     /*
     if (this.upgraded) {
@@ -65,14 +65,14 @@ public class PolarisUnique extends CustomCard {
         new MakeTempCardInDrawPileAction(c, 1, true, true)
     );
 
-    ThMod.logger.info("Shuffling.");
+    marisa.logger.info("Shuffling.");
 
     p.drawPile.shuffle();
     for (AbstractRelic r : p.relics) {
       r.onShuffle();
     }
 
-    ThMod.logger.info("PolarisUnique : Finished.");
+    marisa.logger.info("PolarisUnique : Finished.");
   }
 
   public AbstractCard makeCopy() {

@@ -44,6 +44,7 @@ import org.apache.logging.log4j.Logger
 import java.nio.charset.StandardCharsets
 import java.util.*
 import basemod.interfaces.PostInitializeSubscriber
+import com.megacrit.cardcrawl.potions.AbstractPotion
 
 @SpireInitializer
 class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,
@@ -52,50 +53,20 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
     EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber {
     private val marisaModDefaultProp = Properties()
 
-    //public static boolean OrinEvent = false;
-    private val cardsToAdd = ArrayList<AbstractCard>()
-
     init {
         BaseMod.subscribe(this)
         logger.info("creating the color : MARISA_COLOR")
-        BaseMod.addColor(
-            AbstractCardEnum.MARISA_COLOR,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            ATTACK_CC,
-            SKILL_CC,
-            POWER_CC,
-            ENERGY_ORB_CC,
-            ATTACK_CC_PORTRAIT,
-            SKILL_CC_PORTRAIT,
-            POWER_CC_PORTRAIT,
-            ENERGY_ORB_CC_PORTRAIT,
-            CARD_ENERGY_ORB
-        )
-        BaseMod.addColor(
-            AbstractCardEnum.MARISA_DERIVATIONS,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            STARLIGHT,
-            ATTACK_CC,
-            SKILL_CC,
-            POWER_CC,
-            ENERGY_ORB_CC,
-            ATTACK_CC_PORTRAIT,
-            SKILL_CC_PORTRAIT,
-            POWER_CC_PORTRAIT,
-            ENERGY_ORB_CC_PORTRAIT,
-            CARD_ENERGY_ORB
-        )
+        listOf(AbstractCardEnum.MARISA_COLOR, AbstractCardEnum.MARISA_DERIVATIONS)
+            .forEach { color ->
+                BaseMod.addColor(
+                    color,
+                    STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT,
+                    ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC,
+                    ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT,
+                    CARD_ENERGY_ORB
+                )
+            }
+
         marisaModDefaultProp.setProperty("isCatEventEnabled", "TRUE")
         try {
             val config = SpireConfig("vexMod", "vexModConfig", marisaModDefaultProp)
@@ -108,7 +79,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
 
     override fun receiveEditCharacters() {
         logger.info("begin editing characters")
-        logger.info("add " + ThModClassEnum.MARISA.toString())
+        logger.info("""add ${ThModClassEnum.MARISA.toString()}""")
         BaseMod.addCharacter(
             Marisa("Marisa"),
             MY_CHARACTER_BUTTON,
@@ -121,30 +92,17 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
     override fun receiveEditRelics() {
         logger.info("Begin editing relics.")
         arrayOf(
-            MiniHakkero(),
-            BewitchedHakkero(),
-            MagicBroom(),
-            AmplifyWand(),
-            ExperimentalFamiliar(),
-            RampagingMagicTools(),
-            BreadOfAWashokuLover(),
-            SimpleLauncher(),
-            HandmadeGrimoire(),
-            ShroomBag(),
-            SproutingBranch(),
-            BigShroomBag()
+            MiniHakkero(), BewitchedHakkero(), MagicBroom(), AmplifyWand(),
+            ExperimentalFamiliar(), RampagingMagicTools(), BreadOfAWashokuLover(), SimpleLauncher(),
+            HandmadeGrimoire(), ShroomBag(), SproutingBranch(), BigShroomBag()
         ).forEach { BaseMod.addRelicToCustomPool(it, AbstractCardEnum.MARISA_COLOR) }
         BaseMod.addRelic(CatCart(), RelicType.SHARED)
-        /* BaseMod.addRelicToCustomPool(Cape(), MARISA_COLOR) */
-        //BaseMod.addRelicToCustomPool(new Cape_1(), AbstractCardEnum.MARISA_COLOR);
         logger.info("Relics editing finished.")
     }
 
     override fun receiveEditCards() {
-        logger.info("starting editing cards")
-        loadCardsToAdd()
         logger.info("adding cards for MARISA")
-        for (card in cardsToAdd) {
+        cardsToAdd().forEach { card ->
             logger.info("""Adding card : ${card.name}""")
             BaseMod.addCard(card)
         }
@@ -213,17 +171,16 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         logger.info("start editing strings")
         logger.info("lang : $langName")
 
-        mapOf(
-            "relics" to RelicStrings::class.java,
-            "cards" to CardStrings::class.java,
-            "powers" to PowerStrings::class.java,
-            "potions" to PotionStrings::class.java,
-            "events" to EventStrings::class.java
-        ).forEach { (kind, stringClass) ->
-            Gdx.files.internal("localization/$kind-$langName.json")
-                .readString(StandardCharsets.UTF_8.toString())
-                .also { BaseMod.loadCustomStrings(stringClass, it) }
-        }
+        listOf(
+            RelicStrings::class.java, CardStrings::class.java, PowerStrings::class.java,
+            PotionStrings::class.java, EventStrings::class.java
+        )
+            .map { it to it.simpleName.removeSuffix("Strings").lowercase() + "s" }
+            .forEach { (cls, kind) ->
+                Gdx.files.internal("localization/$kind-$langName.json")
+                    .readString(StandardCharsets.UTF_8.toString())
+                    .also { BaseMod.loadCustomStrings(cls, it) }
+            }
 
         logger.info("done editing strings")
     }
@@ -252,8 +209,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         }
         val enableBlackCatButton = ModLabeledToggleButton(
             labelText,
-            350.0f,
-            700.0f,
+            350.0f, 700.0f,
             Settings.CREAM_COLOR,
             FontHelper.charDescFont,
             isCatEventEnabled,
@@ -263,8 +219,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         )
         val enableDeadBranchButton = ModLabeledToggleButton(
             labelTextBranch,
-            350.0f,
-            600.0f,
+            350.0f, 600.0f,
             Settings.CREAM_COLOR,
             FontHelper.charDescFont,
             isDeadBranchEnabled,
@@ -276,49 +231,21 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         settingsPanel.addUIElement(enableDeadBranchButton)
         BaseMod.addEvent(Mushrooms_MRS.ID, Mushrooms_MRS::class.java, Exordium.ID)
         BaseMod.addEvent(OrinTheCat.ID, OrinTheCat::class.java, TheBeyond.ID)
-        /*
-    //BaseMod.addEvent(TestEvent.ID, TestEvent.class);
-    BaseMod.addEvent(TestEvent.ID, TestEvent.class, Exordium.ID);
-    BaseMod.addEvent(TestEvent.ID, TestEvent.class, TheBeyond.ID);
-    BaseMod.addEvent(TestEvent.ID, TestEvent.class, TheCity.ID);
-*/
-        BaseMod.addPotion(
-            ShroomBrew::class.java,
-            Color.NAVY.cpy(),
-            Color.LIME.cpy(),
-            Color.OLIVE,
-            "ShroomBrew",
-            ThModClassEnum.MARISA
+
+        data class PotionInfo(
+            val cls: Class<out AbstractPotion>,
+            val liquid: Color,
+            val hybrid: Color,
+            val spot: Color
         )
-        BaseMod.addPotion(
-            StarNLove::class.java,
-            Color.BLUE.cpy(),
-            Color.YELLOW.cpy(),
-            Color.NAVY,
-            "StarNLove",
-            ThModClassEnum.MARISA
-        )
-        BaseMod.addPotion(
-            BottledSpark::class.java,
-            Color.BLUE.cpy(),
-            Color.YELLOW.cpy(),
-            Color.NAVY,
-            "BottledSpark",
-            ThModClassEnum.MARISA
-        )
-        /*
-    String orin, zombieFairy;
-    switch (Settings.language) {
-      case ZHS:
-        orin = ORIN_ENCOUNTER_ZHS;
-        zombieFairy = ZOMBIE_FAIRY_ENC_ZHS;
-        break;
-      default:
-        orin = ORIN_ENCOUNTER;
-        zombieFairy = ZOMBIE_FAIRY_ENC;
-        break;
-    }
-    */
+        listOf(
+            PotionInfo(ShroomBrew::class.java, Color.NAVY.cpy(), Color.LIME.cpy(), Color.OLIVE),
+            PotionInfo(StarNLove::class.java, Color.BLUE.cpy(), Color.YELLOW.cpy(), Color.NAVY),
+            PotionInfo(BottledSpark::class.java, Color.BLUE.cpy(), Color.YELLOW.cpy(), Color.NAVY)
+        ).forEach { (cls, liquid, hybrid, spot) ->
+            BaseMod.addPotion(cls, liquid, hybrid, spot, cls.simpleName, ThModClassEnum.MARISA)
+        }
+
         BaseMod.addMonster(ORIN_ENCOUNTER, GetMonster { Orin() })
         BaseMod.addMonster(ZOMBIE_FAIRY_ENC, GetMonster { ZombieFairy() })
         val badge = ImageMaster.loadImage(MOD_BADGE)
@@ -331,96 +258,26 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         )
     }
 
-    private fun loadCardsToAdd() {
-        cardsToAdd.clear()
-        cardsToAdd.add(Strike_MRS())
-        cardsToAdd.add(Defend_MRS())
-        cardsToAdd.add(MasterSpark())
-        cardsToAdd.add(UpSweep())
-        cardsToAdd.add(DoubleSpark())
-        cardsToAdd.add(NonDirectionalLaser())
-        cardsToAdd.add(LuminesStrike())
-        cardsToAdd.add(MysteriousBeam())
-        cardsToAdd.add(WitchLeyline())
-        cardsToAdd.add(DC())
-        cardsToAdd.add(_6A())
-        cardsToAdd.add(UnstableBomb())
-        cardsToAdd.add(StarBarrage())
-        cardsToAdd.add(ShootingEcho())
-        cardsToAdd.add(MachineGunSpark())
-        cardsToAdd.add(DarkSpark())
-        cardsToAdd.add(DeepEcologicalBomb())
-        cardsToAdd.add(MeteoricShower())
-        cardsToAdd.add(GravityBeat())
-        cardsToAdd.add(GrandCross())
-        cardsToAdd.add(DragonMeteor())
-        cardsToAdd.add(RefractionSpark())
-        cardsToAdd.add(Robbery())
-        cardsToAdd.add(ChargeUpSpray())
-        cardsToAdd.add(AlicesGift())
-        cardsToAdd.add(FairyDestructionRay())
-        cardsToAdd.add(BlazingStar())
-        cardsToAdd.add(ShootTheMoon())
-        cardsToAdd.add(FinalSpark())
-        cardsToAdd.add(JA())
-        cardsToAdd.add(AbsoluteMagnitude())
-        cardsToAdd.add(TreasureHunter())
-        cardsToAdd.add(CollectingQuirk())
-        cardsToAdd.add(MilkyWay())
-        cardsToAdd.add(AsteroidBelt())
-        cardsToAdd.add(PowerUp())
-        cardsToAdd.add(SporeBomb())
-        cardsToAdd.add(IllusionStar())
-        cardsToAdd.add(EnergyRecoil())
-        cardsToAdd.add(GasGiant())
-        cardsToAdd.add(StarDustReverie())
-        cardsToAdd.add(MagicAbsorber())
-        cardsToAdd.add(Occultation())
-        cardsToAdd.add(EarthLightRay())
-        cardsToAdd.add(BlazeAway())
-        cardsToAdd.add(ChargingUp())
-        cardsToAdd.add(DarkMatter())
-        cardsToAdd.add(MagicChant())
-        cardsToAdd.add(OneTimeOff())
-        cardsToAdd.add(ManaConvection())
-        cardsToAdd.add(PropBag())
-        cardsToAdd.add(SprinkleStarSeal())
-        cardsToAdd.add(GalacticHalo())
-        cardsToAdd.add(SuperPerseids())
-        cardsToAdd.add(PulseMagic())
-        cardsToAdd.add(Orbital())
-        cardsToAdd.add(BigCrunch())
-        cardsToAdd.add(OpenUniverse())
-        cardsToAdd.add(StarlightTyphoon())
-        cardsToAdd.add(MaximisePower())
-        cardsToAdd.add(UltraShortWave())
-        cardsToAdd.add(ManaRampage())
-        cardsToAdd.add(BinaryStars())
-        cardsToAdd.add(Acceleration())
-        cardsToAdd.add(WitchOfGreed())
-        cardsToAdd.add(SatelliteIllusion())
-        cardsToAdd.add(OortCloud())
-        cardsToAdd.add(OrrerysSun())
-        cardsToAdd.add(EnergyFlow())
-        cardsToAdd.add(EventHorizon())
-        cardsToAdd.add(Singularity())
-        cardsToAdd.add(CasketOfStar())
-        cardsToAdd.add(EscapeVelocity())
-        cardsToAdd.add(MillisecondPulsars())
-        cardsToAdd.add(SuperNova())
-        cardsToAdd.add(Spark())
-        cardsToAdd.add(GuidingStar())
-        cardsToAdd.add(BlackFlareStar())
-        cardsToAdd.add(WhiteDwarf())
-        cardsToAdd.add(Exhaustion_MRS())
-        cardsToAdd.add(Strike_MRS())
-        cardsToAdd.add(Wraith())
-        //cardsToAdd.add(new PolarisUnique());
-    }
-
     internal inner class Keywords {
         lateinit var keywords: Array<Keyword>
     }
+
+    private fun cardsToAdd() = listOf(
+        Strike_MRS(), Defend_MRS(), MasterSpark(), UpSweep(), DoubleSpark(), NonDirectionalLaser(),
+        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), _6A(), UnstableBomb(), StarBarrage(),
+        ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(), MeteoricShower(),
+        GravityBeat(), GrandCross(), DragonMeteor(), RefractionSpark(), Robbery(), ChargeUpSpray(),
+        AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(), JA(),
+        AbsoluteMagnitude(), TreasureHunter(), CollectingQuirk(), MilkyWay(), AsteroidBelt(),
+        PowerUp(), SporeBomb(), IllusionStar(), EnergyRecoil(), GasGiant(), StarDustReverie(),
+        MagicAbsorber(), Occultation(), EarthLightRay(), BlazeAway(), ChargingUp(), DarkMatter(),
+        MagicChant(), OneTimeOff(), ManaConvection(), PropBag(), SprinkleStarSeal(), GalacticHalo(),
+        SuperPerseids(), PulseMagic(), Orbital(), BigCrunch(), OpenUniverse(), StarlightTyphoon(),
+        MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), WitchOfGreed(),
+        SatelliteIllusion(), OortCloud(), OrrerysSun(), EnergyFlow(), EventHorizon(), Singularity(),
+        CasketOfStar(), EscapeVelocity(), MillisecondPulsars(), SuperNova(), Spark(), GuidingStar(),
+        BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), Wraith(),
+    )
 
     companion object {
         @Suppress("MemberVisibilityCanBePrivate")

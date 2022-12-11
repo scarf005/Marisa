@@ -1,0 +1,22 @@
+package marisa.patches
+
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
+import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import marisa.MarisaMod
+
+class SuperNovaDiscardPatch {
+    @SpirePatch(cls = "com.megacrit.cardcrawl.cards.status.Burn", method = "triggerOnEndOfTurnForPlayingCard")
+    object DisableBurn_PreFix {
+        @SpirePrefixPatch
+        @JvmStatic
+        fun Prefix(_obj_instance: Any?): SpireReturn<*> {
+            if (AbstractDungeon.player.hasPower("SuperNovaPower")) {
+                MarisaMod.logger.info("SuperNovaPatch : Burn detected.")
+                return SpireReturn.Return<Any?>(null)
+            }
+            return SpireReturn.Continue<Any>()
+        }
+    }
+}

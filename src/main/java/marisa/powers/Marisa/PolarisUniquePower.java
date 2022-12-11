@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import marisa.cards.derivations.GuidingStar;
 
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -25,7 +25,7 @@ public class PolarisUniquePower extends AbstractPower {
   public boolean Gain;
 
   public PolarisUniquePower(AbstractCreature owner) {
-    Marisa.logger.info("PolarisUniquePower : Init");
+    MarisaMod.logger.info("PolarisUniquePower : Init");
     this.name = NAME;
     this.ID = POWER_ID;
     this.type = AbstractPower.PowerType.BUFF;
@@ -35,35 +35,35 @@ public class PolarisUniquePower extends AbstractPower {
     this.Gain = false;
     this.owner = owner;
 
-    Marisa.logger.info("PolarisUniquePower : Done initing");
+    MarisaMod.logger.info("PolarisUniquePower : Done initing");
   }
 
 
   public void stackPower(int stackAmount) {
-    Marisa.logger.info("PolarisUniquePower : StackPower");
+    MarisaMod.logger.info("PolarisUniquePower : StackPower");
   }
 
   public void atStartOfTurnPostDraw() {
-    Marisa.logger.info("PolarisUniquePower : Checking");
+    MarisaMod.logger.info("PolarisUniquePower : Checking");
 
     for (AbstractCard c : p.drawPile.group) {
       if (c instanceof GuidingStar) {
         this.Gain = true;
       }
     }
-    Marisa.logger.info("PolarisUniquePower : Result : " + Gain);
+    MarisaMod.logger.info("PolarisUniquePower : Result : " + Gain);
     if (Gain) {
       flash();
       AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
     }
     this.Gain = false;
 
-    Marisa.logger.info("PolarisUniquePower : Done Checking");
+    MarisaMod.logger.info("PolarisUniquePower : Done Checking");
   }
 
   public void updateDescription() {
-    Marisa.logger.info("PolarisUniquePower : updating Description");
+    MarisaMod.logger.info("PolarisUniquePower : updating Description");
     this.description = (DESCRIPTIONS[0]);
-    Marisa.logger.info("PolarisUniquePower : Done updating Description");
+    MarisaMod.logger.info("PolarisUniquePower : Done updating Description");
   }
 }

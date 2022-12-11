@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
 public class HandCheckAction
 	extends AbstractGameAction {
@@ -20,7 +20,7 @@ public class HandCheckAction
 	    	for (AbstractCard c:AbstractDungeon.player.hand.group) {
 	    		c.exhaust = true;
 	    		c.isEthereal = true;
-	    		Marisa.logger.info(
+	    		MarisaMod.logger.info(
 	    				"HandCheckAction : id : " + c.cardID +
 	    				" ; cost for turn : " + c.costForTurn +
 	    				" ; is Ethereal : " + c.isEthereal +

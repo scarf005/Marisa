@@ -1,6 +1,6 @@
 package marisa.action;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import marisa.powers.Marisa.PropBagPower;
 import marisa.relics.AmplifyWand;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -32,7 +32,7 @@ public class PropBagAction
 	public void update(){
 
 		AbstractPlayer p = AbstractDungeon.player;
-		Marisa.logger.info("PropBagAction : Checking for relics");
+		MarisaMod.logger.info("PropBagAction : Checking for relics");
 
 		ArrayList<AbstractRelic> rs = new ArrayList<AbstractRelic>();
 		AbstractRelic r;
@@ -87,13 +87,13 @@ public class PropBagAction
 		}
 
 		if (rs.size()<=0) {
-			Marisa.logger.info("PropBagAction : No relic to give,returning");
+			MarisaMod.logger.info("PropBagAction : No relic to give,returning");
 			this.isDone =true;
 			return;
 		}
 		if (rs.size()==1) {
 			r = rs.get(0);
-			Marisa.logger.info("PropBagAction : Only one relic to give : "+r.relicId);
+			MarisaMod.logger.info("PropBagAction : Only one relic to give : "+r.relicId);
 			AbstractDungeon.actionManager.addToBottom(
 					new ApplyPowerAction(
 							p,p,
@@ -106,7 +106,7 @@ public class PropBagAction
 		rs.size();
 		int index = AbstractDungeon.miscRng.random(0,rs.size()-1);
 		r = rs.get(index);
-		Marisa.logger.info(
+		MarisaMod.logger.info(
 				"PropBagAction : random relic : "+r.relicId
 				+" ; random index : "+index
 				);

@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.action.WasteBombAction
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
@@ -30,7 +30,7 @@ class DeepEcologicalBomb : CustomCard(
     override fun calculateCardDamage(mo: AbstractMonster) {}
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         var num = 1
-        if (Marisa.isAmplified(this, AMP)) {
+        if (MarisaMod.isAmplified(this, AMP)) {
             num++
         }
         AbstractDungeon.actionManager.addToBottom(

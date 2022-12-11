@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import marisa.action.DiscToHandATKOnly;
 
 public class EventHorizonPower
@@ -44,12 +44,12 @@ public class EventHorizonPower
   }
 
   public void onSpecificTrigger() {
-    Marisa.logger.info("EventHorizonPower : Checking ; counter : " + this.cnt);
+    MarisaMod.logger.info("EventHorizonPower : Checking ; counter : " + this.cnt);
     if (this.cnt <= 0) {
       return;
     }
 
-    Marisa.logger.info("EventHorizonPower : Action");
+    MarisaMod.logger.info("EventHorizonPower : Action");
     AbstractPlayer p = AbstractDungeon.player;
     if (!p.discardPile.isEmpty()) {
       flash();
@@ -60,7 +60,7 @@ public class EventHorizonPower
       updateDescription();
     }
 
-    Marisa.logger.info("EventHorizonPower : Done ; counter : " + this.cnt);
+    MarisaMod.logger.info("EventHorizonPower : Done ; counter : " + this.cnt);
   }
 
   public void updateDescription() {

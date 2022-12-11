@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
 import marisa.patches.CardTagEnum
@@ -39,7 +39,7 @@ class MasterSpark : AmplifiedAttack(
                 MindblastEffect(p.dialogX, p.dialogY, false)
             )
         )
-        if (Marisa.isAmplified(this, AMP)) {
+        if (MarisaMod.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(
                     m,

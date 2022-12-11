@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
@@ -61,7 +61,7 @@ class SuperPerseids : CustomCard(
     override fun use(p: AbstractPlayer, m: AbstractMonster) {}
     override fun triggerOnExhaust() {
         applyPowers()
-        Marisa.logger.info(
+        MarisaMod.logger.info(
             "SuperPerseids : triggerOnExhaust : Damaging Random Enemy :"
                     + "; upgraded : " + upgraded
                     + "; damage : " + damage

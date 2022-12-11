@@ -1,6 +1,6 @@
 package marisa.monsters;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import marisa.powers.monsters.LimboContactPower;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ZombieFairy extends AbstractMonster {
 
-  private static final Logger logger = Marisa.logger;
+  private static final Logger logger = MarisaMod.logger;
   public static final String ID = "ZombieFairy";
   public static final String NAME = "Zombie Fairy";
   private static final int HP = 12;
@@ -166,7 +166,7 @@ public class ZombieFairy extends AbstractMonster {
   }
 
   protected void getMove(int num) {
-    Marisa.logger.info("ZombieFairy : GetMove : num : " + num + " ; turnNum : " + turnNum);
+    MarisaMod.logger.info("ZombieFairy : GetMove : num : " + num + " ; turnNum : " + turnNum);
     this.turnNum++;
     if (this.turnNum < 3) {
 

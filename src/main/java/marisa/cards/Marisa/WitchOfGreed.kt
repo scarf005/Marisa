@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.WitchOfGreedGold
 import marisa.powers.Marisa.WitchOfGreedPotion
@@ -65,7 +65,7 @@ class WitchOfGreed : CustomCard(
                     magicNumber
                 )
             )
-            if (Marisa.isAmplified(this, AMP)) {
+            if (MarisaMod.isAmplified(this, AMP)) {
                 val po = AbstractDungeon.returnRandomPotion()
                 AbstractDungeon.getCurrRoom().addPotionToRewards(po)
                 AbstractDungeon.actionManager.addToBottom(
@@ -76,7 +76,7 @@ class WitchOfGreed : CustomCard(
                         1
                     )
                 )
-                Marisa.logger.info("WitchOfGreed : use : Amplified : adding :" + po.ID)
+                MarisaMod.logger.info("WitchOfGreed : use : Amplified : adding :" + po.ID)
             }
         }
     }

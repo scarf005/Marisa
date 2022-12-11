@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
@@ -30,7 +30,7 @@ class IllusionStar : CustomCard(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         for (i in 0 until magicNumber) {
-            val c = Marisa.getRandomMarisaCard()
+            val c = MarisaMod.randomMarisaCard
             AbstractDungeon.actionManager.addToBottom(
                 MakeTempCardInHandAction(c, 1)
             )

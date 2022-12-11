@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
 public class PropBagPower extends AbstractPower {
 
@@ -35,7 +35,7 @@ public class PropBagPower extends AbstractPower {
     this.r = r;
     this.p = AbstractDungeon.player;
     this.rName = r.name;
-    Marisa.logger.info("PropBagPower : Granting relic : " + this.rName);
+    MarisaMod.logger.info("PropBagPower : Granting relic : " + this.rName);
     AbstractDungeon.getCurrRoom().spawnRelicAndObtain(
         Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, r
     );

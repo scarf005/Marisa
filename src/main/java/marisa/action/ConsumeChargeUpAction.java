@@ -1,6 +1,6 @@
 package marisa.action;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -27,7 +27,7 @@ public class ConsumeChargeUpAction extends AbstractGameAction {
     }
 
     AbstractPower c = p.getPower("ChargeUpPower");
-    Marisa.logger.info(
+    MarisaMod.logger.info(
         "ConsumeChargeUpAction :"
         + " Consume amount : "
         + this.amt

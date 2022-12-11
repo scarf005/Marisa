@@ -5,7 +5,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
 public class SuperNovaDiscardPatch {
 
@@ -16,7 +16,7 @@ public class SuperNovaDiscardPatch {
     @SpirePrefixPatch
     public static SpireReturn Prefix(Object _obj_instance) {
       if (AbstractDungeon.player.hasPower("SuperNovaPower")) {
-        Marisa.logger.info("SuperNovaPatch : Burn detected.");
+        MarisaMod.logger.info("SuperNovaPatch : Burn detected.");
         return SpireReturn.Return(null);
       }
       return SpireReturn.Continue();

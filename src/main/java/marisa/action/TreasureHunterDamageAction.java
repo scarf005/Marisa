@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
 public class TreasureHunterDamageAction extends AbstractGameAction {
 
@@ -36,7 +36,7 @@ public class TreasureHunterDamageAction extends AbstractGameAction {
           )
       );
 
-      Marisa.logger.info(
+      MarisaMod.logger.info(
           "TreasureHunterDamageAction : target : " +
               this.target.id +
               " ; damage : " +
@@ -48,7 +48,7 @@ public class TreasureHunterDamageAction extends AbstractGameAction {
 
       AbstractRoom curRoom = AbstractDungeon.getCurrRoom();
 
-      Marisa.logger.info(
+      MarisaMod.logger.info(
           "TreasureHunterDamageAction : Checking : MonsterRoomElite :" +
               (curRoom.eliteTrigger) +
               " ; MonsterRoomBoss :" +
@@ -74,7 +74,7 @@ public class TreasureHunterDamageAction extends AbstractGameAction {
       }
 
       if (reward) {
-        Marisa.logger.info(
+        MarisaMod.logger.info(
             "TreasureHunterDamageAction : Checking : isDying :" + mon.isDying +
                 " ; Current hp : " + mon.currentHealth
         );
@@ -83,7 +83,7 @@ public class TreasureHunterDamageAction extends AbstractGameAction {
                 (!this.target.halfDead) &&
                 (!this.target.hasPower("Minion"))
         ) {
-          Marisa.logger.info("TreasureHunterDamageAction : Granting relic tier :" + this.tier);
+          MarisaMod.logger.info("TreasureHunterDamageAction : Granting relic tier :" + this.tier);
           AbstractDungeon.getCurrRoom().addRelicToRewards(this.tier);
         }
       }

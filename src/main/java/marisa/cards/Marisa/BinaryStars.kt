@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.action.BinaryStarsAction
 import marisa.cards.derivations.BlackFlareStar
 import marisa.cards.derivations.WhiteDwarf
@@ -25,7 +25,7 @@ class BinaryStars : CustomCard(
     CardTarget.SELF
 ) {
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (Marisa.isAmplified(this, AMP)) {
+        if (MarisaMod.isAmplified(this, AMP)) {
             var c: AbstractCard = BlackFlareStar()
             if (upgraded) {
                 c.upgrade()

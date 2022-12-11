@@ -1,6 +1,6 @@
 package marisa.action;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -38,7 +38,7 @@ public class PlayManaRampageCardAction  extends AbstractGameAction {
     card.targetAngle = 0.0F;
     card.drawScale = 0.12F;
     card.lighten(false);
-    Marisa.logger.info(
+    MarisaMod.logger.info(
         "PlayManaRampageCardAction : card : " +
             card.cardID +
             " ; target : " +

@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.action.DrawDrawPileAction
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
@@ -32,7 +32,7 @@ class Acceleration : CustomCard(
         for (i in 0 until block) {
             addToBot(DrawDrawPileAction())
         }
-        if (Marisa.isAmplified(this, AMP)) {
+        if (MarisaMod.isAmplified(this, AMP)) {
             for (i in 0 until magicNumber) {
                 addToBot(DrawDrawPileAction())
             }

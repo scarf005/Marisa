@@ -1,6 +1,6 @@
 package marisa.action;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -28,7 +28,7 @@ public class UnstableBombAction extends AbstractGameAction {
     this.duration = DURATION;
     this.numTimes = numTimes;
     if (target != null) {
-      Marisa.logger.info(
+      MarisaMod.logger.info(
           "UnstableBombAction : target : " + target.name
               + " damage : " + dmg
               + " times: " + this.numTimes
@@ -38,7 +38,7 @@ public class UnstableBombAction extends AbstractGameAction {
 
   public void update() {
     if (this.target == null) {
-      Marisa.logger.info("UnstableBombAction : error : target == null !");
+      MarisaMod.logger.info("UnstableBombAction : error : target == null !");
       this.isDone = true;
       return;
     }

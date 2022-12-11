@@ -40,17 +40,27 @@ import marisa.potions.StarNLove
 import marisa.powers.Marisa.GrandCrossPower
 import marisa.relics.*
 import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
 import java.nio.charset.StandardCharsets
 import java.util.*
 
 @SpireInitializer
-class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber, EditCharactersSubscriber,
+class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber, EditCharactersSubscriber,
     PostInitializeSubscriber, EditRelicsSubscriber, EditCardsSubscriber, EditStringsSubscriber, OnCardUseSubscriber,
     EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber {
     private val marisaModDefaultProp = Properties()
 
     //public static boolean OrinEvent = false;
     private val cardsToAdd = ArrayList<AbstractCard>()
+
+    private val langName = when (Settings.language) {
+        GameLanguage.ZHT -> "zht"
+        GameLanguage.ZHS -> "zh"
+        GameLanguage.KOR -> "ko"
+        GameLanguage.JPN -> "jp"
+        GameLanguage.FRA -> "fr"
+        else -> "en"
+    }
 
     init {
         BaseMod.subscribe(this)
@@ -241,19 +251,11 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
 
     override fun receiveEditKeywords() {
         logger.info("Setting up custom keywords")
-        val keywordsPath: String
-        keywordsPath = when (Settings.language) {
-            GameLanguage.ZHT -> KEYWORD_STRING_ZHT
-            GameLanguage.ZHS -> KEYWORD_STRING_ZHS
-            GameLanguage.KOR -> KEYWORD_STRING_KR
-            GameLanguage.JPN -> KEYWORD_STRING_JP
-            GameLanguage.FRA -> KEYWORD_STRING_FR
-            else -> KEYWORD_STRING
-        }
         val gson = Gson()
-        val keywords: Keywords = gson.fromJson<Keywords>(loadJson(keywordsPath), Keywords::class.java)
+        val keywordsPath = "localization/ThMod_MRS_keywords-$langName.json"
+        val keywords = gson.fromJson(loadJson(keywordsPath), Keywords::class.java)
         for (key in keywords.keywords) {
-            logger.info("Loading keyword : " + key.NAMES[0])
+            logger.info("""Loading keyword : ${key.NAMES[0]}""")
             BaseMod.addKeyword(key.NAMES, key.DESCRIPTION)
         }
         logger.info("Keywords setting finished.")
@@ -261,15 +263,6 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
 
     override fun receiveEditStrings() {
         logger.info("start editing strings")
-
-        val langName = when (Settings.language) {
-            GameLanguage.ZHT -> "zht"
-            GameLanguage.ZHS -> "zh"
-            GameLanguage.KOR -> "ko"
-            GameLanguage.JPN -> "jp"
-            GameLanguage.FRA -> "fr"
-            else -> "en"
-        }
         logger.info("lang : $langName")
 
         val relicStrings: String
@@ -327,7 +320,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
             FontHelper.charDescFont,
             isCatEventEnabled,
             settingsPanel,
-            { label: ModLabel? -> },
+            {  },
             buttonLambda)
         val enableDeadBranchButton = ModLabeledToggleButton(
             labelTextBranch,
@@ -337,7 +330,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
             FontHelper.charDescFont,
             isDeadBranchEnabled,
             settingsPanel,
-            { label: ModLabel? -> },
+            {  },
             buttonLambda)
         settingsPanel.addUIElement(enableBlackCatButton)
         settingsPanel.addUIElement(enableDeadBranchButton)
@@ -483,13 +476,17 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
         //cardsToAdd.add(new PolarisUnique());
     }
 
+    @Suppress("unused")
+    fun initialize() {
+        MarisaMod()
+    }
     internal inner class Keywords {
         lateinit var keywords: Array<Keyword>
     }
 
     companion object {
         @JvmField
-        val logger = LogManager.getLogger(Marisa::class.java.name)
+        val logger: Logger = LogManager.getLogger(Marisa::class.java.name)
         private const val ORIN_ENCOUNTER = "Orin"
 
         //private static final String ORIN_ENCOUNTER_ZHS = "\u963f\u71d0";
@@ -507,44 +504,11 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
         private const val SKILL_CC_PORTRAIT = "img/1024/bg_skill_MRS.png"
         private const val POWER_CC_PORTRAIT = "img/1024/bg_power_MRS.png"
         private const val ENERGY_ORB_CC_PORTRAIT = "img/1024/cardOrb.png"
-        val STARLIGHT = CardHelper.getColor(0, 10, 125)
+        val STARLIGHT: Color = CardHelper.getColor(0, 10, 125)
         const val CARD_ENERGY_ORB = "img/UI/energyOrb.png"
         private const val MY_CHARACTER_BUTTON = "img/charSelect/MarisaButton.png"
         private const val MARISA_PORTRAIT = "img/charSelect/marisaPortrait.jpg"
-        private const val CARD_STRING = "localization/ThMod_Fnh_cards-en.json"
-        private const val CARD_STRING_FR = "localization/ThMod_Fnh_cards-fr.json"
-        private const val CARD_STRING_JP = "localization/ThMod_Fnh_cards-jp.json"
-        private const val CARD_STRING_ZH = "localization/ThMod_Fnh_cards-zh.json"
-        private const val CARD_STRING_ZHT = "localization/ThMod_Fnh_cards-zht.json"
-        private const val CARD_STRING_KR = "localization/ThMod_Fnh_cards-kr.json"
-        private const val RELIC_STRING = "localization/ThMod_Fnh_relics-en.json"
-        private const val RELIC_STRING_FR = "localization/ThMod_Fnh_relics-fr.json"
-        private const val RELIC_STRING_JP = "localization/ThMod_Fnh_relics-jp.json"
-        private const val RELIC_STRING_ZH = "localization/ThMod_Fnh_relics-zh.json"
-        private const val RELIC_STRING_ZHT = "localization/ThMod_Fnh_relics-zht.json"
-        private const val RELIC_STRING_KR = "localization/ThMod_Fnh_relics-kr.json"
-        private const val POWER_STRING = "localization/ThMod_Fnh_powers-en.json"
-        private const val POWER_STRING_FR = "localization/ThMod_Fnh_powers-fr.json"
-        private const val POWER_STRING_JP = "localization/ThMod_Fnh_powers-jp.json"
-        private const val POWER_STRING_ZH = "localization/ThMod_Fnh_powers-zh.json"
-        private const val POWER_STRING_ZHT = "localization/ThMod_Fnh_powers-zht.json"
-        private const val POWER_STRING_KR = "localization/ThMod_Fnh_powers-kr.json"
-        private const val POTION_STRING = "localization/ThMod_MRS_potions-en.json"
-        private const val POTION_STRING_FR = "localization/ThMod_MRS_potions-fr.json"
-        private const val POTION_STRING_JP = "localization/ThMod_MRS_potions-jp.json"
-        private const val POTION_STRING_ZH = "localization/ThMod_MRS_potions-zh.json"
-        private const val POTION_STRING_ZHT = "localization/ThMod_MRS_potions-zht.json"
-        private const val POTION_STRING_KR = "localization/ThMod_MRS_potions-kr.json"
-        private const val KEYWORD_STRING = "localization/ThMod_MRS_keywords-en.json"
-        private const val KEYWORD_STRING_FR = "localization/ThMod_MRS_keywords-fr.json"
-        private const val KEYWORD_STRING_JP = "localization/ThMod_MRS_keywords-jp.json"
-        private const val KEYWORD_STRING_KR = "localization/ThMod_MRS_keywords-kr.json"
-        private const val KEYWORD_STRING_ZHS = "localization/ThMod_MRS_keywords-zh.json"
-        private const val KEYWORD_STRING_ZHT = "localization/ThMod_MRS_keywords-zht.json"
-        private const val EVENT_PATH = "localization/ThMod_MRS_events-en.json"
-        private const val EVENT_PATH_KR = "localization/ThMod_MRS_events-kr.json"
-        private const val EVENT_PATH_ZHS = "localization/ThMod_MRS_events-zh.json"
-        private const val EVENT_PATH_ZHT = "localization/ThMod_MRS_events-zht.json"
+
         var typhoonCounter = 0
         @JvmField
         var isCatEventEnabled = false
@@ -579,7 +543,7 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
   }
 */
         //For Amplify cards
-        fun isAmplified(card: AbstractCard, AMP: Int): Boolean {
+        fun isAmplified(card: AbstractCard, multiplier: Int): Boolean {
             logger.info(
                 """ThMod.Amplified : card to check : ${card.cardID} ; costForTurn : ${card.costForTurn}"""
             )
@@ -601,15 +565,15 @@ class Marisa : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializ
                 )
                 res = true
             } else {
-                if (EnergyPanel.totalCount >= card.costForTurn + AMP) {
+                if (EnergyPanel.totalCount >= card.costForTurn + multiplier) {
                     logger.info("ThMod.Amplified : Sufficient energy ,adding and returning true;")
-                    card.costForTurn += AMP
+                    card.costForTurn += multiplier
                     res = true
                     if (card.costForTurn > 0) {
                         logger
                             .info("ThMod.Amplified : False instance of 0 cost card,decreasing typhoon counter.")
                         typhoonCounter--
-                        logger.info("current Typhoon Counter : " + typhoonCounter)
+                        logger.info("current Typhoon Counter : $typhoonCounter")
                     }
                 }
             }

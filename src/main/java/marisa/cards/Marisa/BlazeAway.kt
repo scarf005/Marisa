@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.action.BlazeAwayAction
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
@@ -48,14 +48,14 @@ class BlazeAway : CustomCard(
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         val last = lastAttack()
         if (last == null) {
-            Marisa.logger.info("BlazeAway : error : last attack is null ")
+            MarisaMod.logger.info("BlazeAway : error : last attack is null ")
         } else {
-            Marisa.logger.info("""BlazeAway : last attack :${last.cardID}""")
+            MarisaMod.logger.info("""BlazeAway : last attack :${last.cardID}""")
             val card = last.makeStatEquivalentCopy()
             if (card.costForTurn >= 0) {
                 card.setCostForTurn(0)
             }
-            Marisa.logger.info(
+            MarisaMod.logger.info(
                 """BlazeAway : card :${card.cardID} ; baseD :${card.baseDamage} ; D : ${card.damage} ; baseB :${card.baseBlock} ; B : ${card.block} ; baseM :${card.baseMagicNumber} ; M : ${card.magicNumber} ; C : ${card.cost} ; CFT : ${card.costForTurn}"""
             )
             repeat((0 until magicNumber).count()) {

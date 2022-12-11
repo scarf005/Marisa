@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.action.RobberyDamageAction
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
@@ -33,7 +33,7 @@ class Robbery : CustomCard(
             RobberyDamageAction(
                 m,
                 DamageInfo(p, damage, damageTypeForTurn),
-                Marisa.isAmplified(this, AMP)
+                MarisaMod.isAmplified(this, AMP)
             )
         )
     }

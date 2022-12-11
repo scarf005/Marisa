@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,30 +36,30 @@ public class BlazeAwayPower
 
 
   public void onPlayCard(AbstractCard card, AbstractMonster m) {
-    Marisa.logger.info("BlazeWayPower : card type check");
+    MarisaMod.logger.info("BlazeWayPower : card type check");
     if (card.type != CardType.ATTACK) {
       return;
     }
 
-    Marisa.logger.info("BlazeWayPower : done checking");
+    MarisaMod.logger.info("BlazeWayPower : done checking");
 
     flash();
     AbstractCard c = card.makeStatEquivalentCopy();
     c.costForTurn = 0;
 
-    Marisa.logger.info("BlazeWayPower : adding " + this.amount + " : " + c.cardID);
+    MarisaMod.logger.info("BlazeWayPower : adding " + this.amount + " : " + c.cardID);
 
     AbstractDungeon.actionManager.addToBottom(
         new MakeTempCardInHandAction(c, this.amount)
     );
 
-    Marisa.logger.info("BlazeWayPower : removing power");
+    MarisaMod.logger.info("BlazeWayPower : removing power");
 
     AbstractDungeon.actionManager.addToBottom(
         new RemoveSpecificPowerAction(owner, owner, this)
     );
 
-    Marisa.logger.info("BlazeWayPower : all done");
+    MarisaMod.logger.info("BlazeWayPower : all done");
   }
 
   public void updateDescription() {

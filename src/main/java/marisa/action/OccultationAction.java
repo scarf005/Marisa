@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
 
 public class OccultationAction
@@ -30,7 +30,7 @@ public class OccultationAction
 
 		ArrayList<AbstractCard> cards = AbstractDungeon.player.drawPile.group;
 		//int cnt = 0;
-		Marisa.logger.info(("Draw pile:"+cards.size()));
+		MarisaMod.logger.info(("Draw pile:"+cards.size()));
 
 		while (!p.drawPile.isEmpty()) {
 			AbstractCard c = p.drawPile.getTopCard();

@@ -1,9 +1,10 @@
 package marisa.patches;
 
-import static marisa.Marisa.logger;
+import static marisa.MarisaMod.logger;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
+import marisa.characters.Marisa;
 import marisa.event.Mushrooms_MRS;
 import marisa.event.OrinTheCat;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -69,7 +70,7 @@ public class MarisaModEventPatch {
       if (
           ((_retVal instanceof Mushrooms_MRS) && (AbstractDungeon.floorNum <= 6)) ||
           ((_retVal instanceof OrinTheCat) && (AbstractDungeon.player.hasRelic("CatCart")))||
-              ((_retVal instanceof  OrinTheCat)&&(!(AbstractDungeon.player instanceof Marisa))&&(!Marisa.isCatEventEnabled))
+              ((_retVal instanceof  OrinTheCat)&&(!(AbstractDungeon.player instanceof Marisa))&&(!MarisaMod.isCatEventEnabled))
       ) {
         return AbstractDungeon.getEvent(AbstractDungeon.eventRng);
       } else {

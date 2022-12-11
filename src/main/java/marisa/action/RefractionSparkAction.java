@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 
 public class RefractionSparkAction
     extends AbstractGameAction {
@@ -32,7 +32,7 @@ public class RefractionSparkAction
 
       AbstractMonster mon = (AbstractMonster) this.target;
 
-      Marisa.logger.info("RefractionSparkAction : calculating damage : " + this.info.base);
+      MarisaMod.logger.info("RefractionSparkAction : calculating damage : " + this.info.base);
 
       float tmp = this.info.base;
       if (mon.currentBlock > 0) {
@@ -46,11 +46,11 @@ public class RefractionSparkAction
       }
 
       if (tmp > 0) {
-        Marisa.logger.info("RefractionSparkAction : increasing damage : " + tmp);
+        MarisaMod.logger.info("RefractionSparkAction : increasing damage : " + tmp);
 
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
           if (c.hasTag(SPARK)) {
-            Marisa.logger.info("RefractionSparkAction : increasing damage for : " + c.cardID);
+            MarisaMod.logger.info("RefractionSparkAction : increasing damage for : " + c.cardID);
             c.baseDamage += tmp;
             c.flash();
             c.applyPowers();
@@ -58,7 +58,7 @@ public class RefractionSparkAction
         }
       }
 
-      Marisa.logger.info("RefractionSparkAction : dealing damage : " + tmp);
+      MarisaMod.logger.info("RefractionSparkAction : dealing damage : " + tmp);
 
       this.target.damage(this.info);
 

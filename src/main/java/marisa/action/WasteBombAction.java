@@ -1,6 +1,6 @@
 package marisa.action;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -47,7 +47,7 @@ public class WasteBombAction
     }
 
     if (this.target == null) {
-      Marisa.logger.info("WasteBombAction : error : target == null !");
+      MarisaMod.logger.info("WasteBombAction : error : target == null !");
       this.isDone = true;
       return;
     }

@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
@@ -41,7 +41,7 @@ class AlicesGift : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (Marisa.isAmplified(this, AMP)) {
+        if (MarisaMod.isAmplified(this, AMP)) {
             damage *= 3
         }
         AbstractDungeon.actionManager.addToBottom(

@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.Marisa
+import marisa.MarisaMod
 import marisa.action.DiscToHandRandAction
 import marisa.action.DiscardPileToHandAction
 import marisa.patches.AbstractCardEnum
@@ -34,7 +34,7 @@ class EarthLightRay : CustomCard(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         if (!p.discardPile.isEmpty) {
-            if (Marisa.isAmplified(this, AMP)) {
+            if (MarisaMod.isAmplified(this, AMP)) {
                 if (upgraded && !p.discardPile.isEmpty) {
                     AbstractDungeon.actionManager.addToBottom(
                         DiscardPileToHandAction(1)

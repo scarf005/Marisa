@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 
-import marisa.Marisa;
+import marisa.MarisaMod;
 import basemod.abstracts.CustomRelic;
 
 @Deprecated
@@ -31,7 +31,7 @@ public class Cape_1 extends CustomRelic {
 
   public void onEnterRoom(AbstractRoom room) {
     if ((room instanceof ShopRoom)) {
-      Marisa.logger.info("Cape_1 : onEnterRoom : ShopRoom detected .");
+      MarisaMod.logger.info("Cape_1 : onEnterRoom : ShopRoom detected .");
       this.flash();
       AbstractRoom currRoom = AbstractDungeon.getCurrRoom();
       currRoom.addPotionToRewards();

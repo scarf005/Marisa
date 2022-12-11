@@ -43,24 +43,17 @@ import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import java.nio.charset.StandardCharsets
 import java.util.*
+import basemod.interfaces.PostInitializeSubscriber
 
 @SpireInitializer
-class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber, EditCharactersSubscriber,
+class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,
+    EditCharactersSubscriber,
     PostInitializeSubscriber, EditRelicsSubscriber, EditCardsSubscriber, EditStringsSubscriber, OnCardUseSubscriber,
     EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber {
     private val marisaModDefaultProp = Properties()
 
     //public static boolean OrinEvent = false;
     private val cardsToAdd = ArrayList<AbstractCard>()
-
-    private val langName = when (Settings.language) {
-        GameLanguage.ZHT -> "zht"
-        GameLanguage.ZHS -> "zh"
-        GameLanguage.KOR -> "ko"
-        GameLanguage.JPN -> "jp"
-        GameLanguage.FRA -> "fr"
-        else -> "en"
-    }
 
     init {
         BaseMod.subscribe(this)
@@ -252,7 +245,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
     override fun receiveEditKeywords() {
         logger.info("Setting up custom keywords")
         val gson = Gson()
-        val keywordsPath = "localization/ThMod_MRS_keywords-$langName.json"
+        val keywordsPath = "localization/keywords-$langName.json"
         val keywords = gson.fromJson(loadJson(keywordsPath), Keywords::class.java)
         for (key in keywords.keywords) {
             logger.info("""Loading keyword : ${key.NAMES[0]}""")
@@ -320,8 +313,9 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
             FontHelper.charDescFont,
             isCatEventEnabled,
             settingsPanel,
-            {  },
-            buttonLambda)
+            { },
+            buttonLambda
+        )
         val enableDeadBranchButton = ModLabeledToggleButton(
             labelTextBranch,
             350.0f,
@@ -330,8 +324,9 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
             FontHelper.charDescFont,
             isDeadBranchEnabled,
             settingsPanel,
-            {  },
-            buttonLambda)
+            { },
+            buttonLambda
+        )
         settingsPanel.addUIElement(enableBlackCatButton)
         settingsPanel.addUIElement(enableDeadBranchButton)
         BaseMod.addEvent(Mushrooms_MRS.ID, Mushrooms_MRS::class.java, Exordium.ID)
@@ -476,15 +471,31 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         //cardsToAdd.add(new PolarisUnique());
     }
 
-    @Suppress("unused")
-    fun initialize() {
-        MarisaMod()
-    }
     internal inner class Keywords {
         lateinit var keywords: Array<Keyword>
     }
 
     companion object {
+        @Suppress("MemberVisibilityCanBePrivate")
+        lateinit var instance: MarisaMod
+
+        @Suppress("MemberVisibilityCanBePrivate", "unused")
+        @JvmStatic
+        fun initialize() {
+            instance = MarisaMod()
+        }
+
+        private val langName
+            get() = when (Settings.language) {
+                GameLanguage.ZHT -> "zht"
+                GameLanguage.ZHS -> "zh"
+                GameLanguage.KOR -> "kr"
+                GameLanguage.JPN -> "jp"
+                GameLanguage.FRA -> "fr"
+                else -> "en"
+            }
+
+
         @JvmField
         val logger: Logger = LogManager.getLogger(Marisa::class.java.name)
         private const val ORIN_ENCOUNTER = "Orin"
@@ -510,8 +521,10 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         private const val MARISA_PORTRAIT = "img/charSelect/marisaPortrait.jpg"
 
         var typhoonCounter = 0
+
         @JvmField
         var isCatEventEnabled = false
+
         @JvmField
         var isDeadBranchEnabled = false
 
@@ -605,8 +618,8 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         @JvmStatic
         val randomMarisaCard: AbstractCard
             get() = when (AbstractDungeon.miscRng.random(0, 100)) {
-                    15 -> GuidingStar()
-                    else -> AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
+                15 -> GuidingStar()
+                else -> AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
             }
     }
 }

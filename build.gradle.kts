@@ -41,10 +41,7 @@ dependencies {
 
 sourceSets {
     main {
-        java.srcDir("src/main")
-//        java {
-//            srcDirs.add(file("src/main/kotlin/"))
-//        }
+        kotlin.srcDir("src/main")
     }
 }
 

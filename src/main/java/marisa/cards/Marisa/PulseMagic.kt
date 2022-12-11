@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.PulseMagicPower
 import basemod.abstracts.CustomCard
@@ -37,7 +37,7 @@ class PulseMagic : CustomCard(
     }
   */
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (marisa.Amplified(this, AMP)) {
+        if (Marisa.Amplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(
                     p, p, PulseMagicPower(p)

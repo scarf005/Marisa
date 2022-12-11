@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import marisa.marisa;
+import marisa.Marisa;
 
 public class SatelIllusPower extends AbstractPower {
 
@@ -23,7 +23,7 @@ public class SatelIllusPower extends AbstractPower {
 
   public void checkDrawPile() {
     int temp = AbstractDungeon.player.drawPile.size();
-    marisa.logger.info(
+    Marisa.logger.info(
         "SatelIllusPower : checkDrawPile :"
             + " counter : " + counter
             + " ; drawPile size " + temp
@@ -53,34 +53,34 @@ public class SatelIllusPower extends AbstractPower {
 
   @Override
   public void onDrawOrDiscard() {
-    marisa.logger.info("SatelIllusPower : onDrawOrDiscard : checkDrawPile");
+    Marisa.logger.info("SatelIllusPower : onDrawOrDiscard : checkDrawPile");
     checkDrawPile();
   }
 
   @Override
   public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-    marisa.logger.info("SatelIllusPower : onApplyPower : checkDrawPile");
+    Marisa.logger.info("SatelIllusPower : onApplyPower : checkDrawPile");
     checkDrawPile();
   }
 
   @Override
   public void onInitialApplication() {
-    marisa.logger.info("SatelIllusPower : onInitialApplication : checkDrawPile");
+    Marisa.logger.info("SatelIllusPower : onInitialApplication : checkDrawPile");
     checkDrawPile();
   }
 
   public void atEndOfRound() {
-    marisa.logger.info("SatelIllusPower : checkDrawPile : atEndOfRound ");
+    Marisa.logger.info("SatelIllusPower : checkDrawPile : atEndOfRound ");
     checkDrawPile();
   }
 
   public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-    marisa.logger.info("SatelIllusPower : checkDrawPile : onAfterUseCard : " + card.cardID);
+    Marisa.logger.info("SatelIllusPower : checkDrawPile : onAfterUseCard : " + card.cardID);
     checkDrawPile();
   }
 
   public void atStartOfTurnPostDraw() {
-    marisa.logger.info("SatelIllusPower : checkDrawPile : atStartOfTurnPostDraw ");
+    Marisa.logger.info("SatelIllusPower : checkDrawPile : atStartOfTurnPostDraw ");
     checkDrawPile();
   }
 

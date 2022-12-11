@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.abstracts.AmplifiedAttack
 import marisa.action.RefractionSparkAction
 import marisa.patches.AbstractCardEnum
@@ -31,7 +31,7 @@ class RefractionSpark : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (marisa.Amplified(this, AMP)) {
+        if (Marisa.Amplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 RefractionSparkAction(
                     m,

@@ -1,6 +1,6 @@
 package marisa.powers.Marisa;
 
-import marisa.marisa;
+import marisa.Marisa;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
@@ -82,7 +82,7 @@ public class SuperNovaPower extends AbstractPower {
 
   private boolean discardCheck(AbstractCard card) {
     if ((card.type == CardType.CURSE) || (card.type == CardType.STATUS)) {
-      marisa.logger.info("SuperNovaPower : discardCheck : " + card.cardID + " detected.");
+      Marisa.logger.info("SuperNovaPower : discardCheck : " + card.cardID + " detected.");
       return true;
     }
     return false;

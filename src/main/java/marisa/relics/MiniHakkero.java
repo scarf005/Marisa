@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import marisa.marisa;
+import marisa.Marisa;
 import marisa.powers.Marisa.ChargeUpPower;
 import basemod.abstracts.CustomRelic;
 
@@ -51,7 +51,7 @@ public class MiniHakkero extends CustomRelic {
     }
     if (available) {
       flash();
-      marisa.logger.info("MiniHakkero : Applying ChargeUpPower for using card : " + card.cardID);
+      Marisa.logger.info("MiniHakkero : Applying ChargeUpPower for using card : " + card.cardID);
       AbstractDungeon.actionManager.addToTop(
           new ApplyPowerAction(
               AbstractDungeon.player,

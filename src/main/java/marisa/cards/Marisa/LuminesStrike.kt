@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
@@ -73,7 +73,7 @@ class LuminesStrike : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (marisa.Amplified(this, AMP)) {
+        if (Marisa.Amplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(
                     m,

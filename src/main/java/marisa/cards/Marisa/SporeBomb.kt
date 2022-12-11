@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
@@ -28,7 +28,7 @@ class SporeBomb : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (marisa.Amplified(this, AMP)) {
+        if (Marisa.Amplified(this, AMP)) {
             for (mo in AbstractDungeon.getCurrRoom().monsters.monsters) {
                 AbstractDungeon.actionManager.addToBottom(
                     ApplyPowerAction(

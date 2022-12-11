@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import marisa.marisa;
+import marisa.Marisa;
 import basemod.abstracts.CustomRelic;
 
 public class BreadOfAWashokuLover extends CustomRelic {
@@ -42,7 +42,7 @@ public class BreadOfAWashokuLover extends CustomRelic {
   }
 
   public void onExhaust(AbstractCard card) {
-    marisa.logger.info(
+    Marisa.logger.info(
         "BreadOfAWashokuLover : onExhaust : this.usedUp :" + this.usedUp +
             " ; this.counter : " + this.counter
     );
@@ -61,7 +61,7 @@ public class BreadOfAWashokuLover extends CustomRelic {
       );
     }
     if (counter >= 13) {
-      marisa.logger.info("BreadOfAWashokuLover : onExhaust : Using Up");
+      Marisa.logger.info("BreadOfAWashokuLover : onExhaust : Using Up");
       this.flash();
       AbstractDungeon.actionManager.addToBottom(
           new RelicAboveCreatureAction(AbstractDungeon.player, this)

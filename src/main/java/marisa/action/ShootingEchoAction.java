@@ -1,6 +1,6 @@
 package marisa.action;
 
-import marisa.marisa;
+import marisa.Marisa;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -38,7 +38,7 @@ public class ShootingEchoAction extends AbstractGameAction {
       }
 
       if (this.player.hand.size() == 1) {
-        marisa.logger.info("ShootingEchoAction : player hand size is 1");
+        Marisa.logger.info("ShootingEchoAction : player hand size is 1");
         AbstractCard c = player.hand.getTopCard();
         if (c instanceof Burn) {
           AbstractDungeon.actionManager.addToBottom(
@@ -49,7 +49,7 @@ public class ShootingEchoAction extends AbstractGameAction {
         this.isDone = true;
         return;
       } else {
-        marisa.logger.info("ShootingEchoAction : opening hand card select");
+        Marisa.logger.info("ShootingEchoAction : opening hand card select");
         AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false);
       }
 

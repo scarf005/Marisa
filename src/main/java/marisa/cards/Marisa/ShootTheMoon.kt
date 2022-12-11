@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
@@ -33,7 +33,7 @@ class ShootTheMoon : AmplifiedAttack(
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         val po: AbstractPower
         val fightingBoss = m.type == AbstractMonster.EnemyType.BOSS
-        if (marisa.Amplified(this, AMP)) {
+        if (Marisa.Amplified(this, AMP)) {
             if (!fightingBoss) {
                 for (pow in m.powers) {
                     if (pow.type == AbstractPower.PowerType.BUFF) {

@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.action.FairyDestrucCullingAction
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
@@ -41,7 +41,7 @@ class FairyDestructionRay : CustomCard(
             )
         )
         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-            if (marisa.Amplified(this, AMP)) {
+            if (Marisa.Amplified(this, AMP)) {
                 AbstractDungeon.actionManager.addToBottom(
                     FairyDestrucCullingAction(magicNumber)
                 )

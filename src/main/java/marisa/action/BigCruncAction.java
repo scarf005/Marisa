@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import marisa.marisa;
+import marisa.Marisa;
 
 public class BigCruncAction
 	extends AbstractGameAction{
@@ -31,7 +31,7 @@ public class BigCruncAction
 		int total = cnt;
 		p.discardPile.shuffle();
 
-		marisa.logger.info(
+		Marisa.logger.info(
 				"BigCruncAction : Discard size : "+p.discardPile.size()
 				+" ; counter : "+cnt
 				);
@@ -46,7 +46,7 @@ public class BigCruncAction
 
 	    cnt = p.drawPile.size() / 2;
 
-		marisa.logger.info(
+		Marisa.logger.info(
 				"BigCruncAction : Draw size : "+p.drawPile.size()
 				+" ; counter : "+cnt
 				);
@@ -61,7 +61,7 @@ public class BigCruncAction
 
 	    int res = total / div;
 
-	    marisa.logger.info(
+	    Marisa.logger.info(
 	    		"BigCruncAction : total :" + total
 	    		+ " ; res : " + res
 	    		);

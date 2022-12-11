@@ -2,7 +2,7 @@ package marisa.action;
 
 //public class BlazeAwayAction {
 
-import marisa.marisa;
+import marisa.Marisa;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -27,7 +27,7 @@ public class BlazeAwayAction
     } else {
       this.isDone = true;
     }
-    marisa.logger.info(
+    Marisa.logger.info(
         "BlazeAwayAction : Initialize complete ; card : " +
             card.name
     );
@@ -52,7 +52,7 @@ public class BlazeAwayAction
     card.purgeOnUse = true;
     card.targetAngle = 0.0F;
     card.drawScale = 0.12F;
-    marisa.logger.info(
+    Marisa.logger.info(
         "BlazeAwayAction : card : " +
             card.cardID +
             " ; target : " +

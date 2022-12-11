@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import marisa.marisa;
+import marisa.Marisa;
 import marisa.action.ConsumeChargeUpAction;
 
 public class ChargeUpPower
@@ -89,7 +89,7 @@ public class ChargeUpPower
       return;
     }
     if ((this.cnt > 0) && (card.type == CardType.ATTACK)) {
-      marisa.logger.info("ChargeUpPower : onPlayCard : consuming stacks for :" + card.cardID);
+      Marisa.logger.info("ChargeUpPower : onPlayCard : consuming stacks for :" + card.cardID);
 
       flash();
 

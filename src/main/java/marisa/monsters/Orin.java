@@ -1,6 +1,6 @@
 package marisa.monsters;
 
-import marisa.marisa;
+import marisa.Marisa;
 import marisa.action.OrinsDebuffAction;
 import marisa.action.SummonFairyAction;
 import marisa.powers.monsters.InfernoClaw;
@@ -38,7 +38,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Orin extends AbstractMonster/* implements BaseMod.GetMonster */ {
 
-  private static final Logger logger = marisa.logger;
+  private static final Logger logger = Marisa.logger;
   public static final String ID = "Orin";
   public static final String NAME = "Orin";
   /*
@@ -432,7 +432,7 @@ public class Orin extends AbstractMonster/* implements BaseMod.GetMonster */ {
       }
     } else {
       int fairyCount = fairyCount();
-      marisa.logger.info("Orin : getMove : fairyCount : " + fairyCount);
+      Marisa.logger.info("Orin : getMove : fairyCount : " + fairyCount);
       /*
       if (this.firstTurn) {
         setSummonAction();

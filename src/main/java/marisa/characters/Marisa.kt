@@ -1,6 +1,6 @@
 package marisa.characters
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.cards.Marisa.MasterSpark
 import marisa.patches.AbstractCardEnum
 import marisa.patches.ThModClassEnum
@@ -131,7 +131,7 @@ class Marisa(name: String) :
         else -> "The Ordinary Magician"
     }
 
-    override fun getCardTrailColor(): Color = marisa.STARLIGHT
+    override fun getCardTrailColor(): Color = Marisa.STARLIGHT
 
     override fun getAscensionMaxHPLoss(): Int = ASCENSION_MAX_HP_LOSS
 
@@ -158,15 +158,15 @@ class Marisa(name: String) :
 
     override fun getVampireText(): String = Vampires.DESCRIPTIONS[1]
 
-    override fun getCardRenderColor(): Color = marisa.STARLIGHT
+    override fun getCardRenderColor(): Color = Marisa.STARLIGHT
 
     override fun updateOrb(orbCount: Int) {
         energyOrb.updateOrb(orbCount)
     }
 
-    override fun getOrb(): AtlasRegion = AtlasRegion(ImageMaster.loadImage(marisa.CARD_ENERGY_ORB), 0, 0, 24, 24)
+    override fun getOrb(): AtlasRegion = AtlasRegion(ImageMaster.loadImage(Marisa.CARD_ENERGY_ORB), 0, 0, 24, 24)
 
-    override fun getSlashAttackColor(): Color = marisa.STARLIGHT
+    override fun getSlashAttackColor(): Color = Marisa.STARLIGHT
 
     override fun getSpireHeartSlashEffect(): Array<AttackEffect> {
         return arrayOf(
@@ -192,14 +192,14 @@ class Marisa(name: String) :
 
     override fun applyPreCombatLogic() {
         super.applyPreCombatLogic()
-        marisa.typhoonCounter = 0
-        marisa.logger.info(
-            """Marisa : applyPreCombatLogic : I just reset the god damn typhoon counter ! current counter : ${marisa.typhoonCounter}"""
+        Marisa.typhoonCounter = 0
+        Marisa.logger.info(
+            """Marisa : applyPreCombatLogic : I just reset the god damn typhoon counter ! current counter : ${Marisa.typhoonCounter}"""
         )
     }
 
     companion object {
-        val logger = LogManager.getLogger(marisa::class.java.name)
+        val logger = LogManager.getLogger(Marisa::class.java.name)
         private const val ENERGY_PER_TURN = 3 // how much energy you get every turn
         private const val MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
         private const val MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2

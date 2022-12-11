@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import marisa.marisa;
+import marisa.Marisa;
 
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class SingularityPower
   public void onAfterUseCard(AbstractCard card, UseCardAction action) {
     if ((card.costForTurn == 0) || (card.costForTurn <= -2) || ((card.costForTurn == -1) && (
         AbstractDungeon.player.energy.energy <= 0))) {
-      marisa.logger.info("SingularityPower : applying upgrade :");
+      Marisa.logger.info("SingularityPower : applying upgrade :");
       this.flash();
       ArrayList<AbstractCard> pool = new ArrayList<>();
       for (AbstractCard c : AbstractDungeon.player.hand.group) {
@@ -51,7 +51,7 @@ public class SingularityPower
       if (!pool.isEmpty()) {
         int rand = AbstractDungeon.miscRng.random(0, pool.size() - 1);
         AbstractCard c = pool.get(rand);
-        marisa.logger.info(
+        Marisa.logger.info(
             "SingularityPower : adding "
                 + this.amount
                 + " base damage to "

@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.action.UnstableBombAction
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
@@ -38,7 +38,7 @@ class CollectingQuirk : CustomCard(
         modifyBlock()
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
-        marisa.logger.info(
+        Marisa.logger.info(
             "CollectingQuirk : applyPowers : damage :"
                     + damage
                     + " ; counter : " + counter
@@ -53,7 +53,7 @@ class CollectingQuirk : CustomCard(
         modifyBlock()
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
-        marisa.logger.info(
+        Marisa.logger.info(
             "CollectingQuirk : applyPowers : damage :"
                     + damage
                     + " ; counter : " + counter

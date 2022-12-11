@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import marisa.marisa;
+import marisa.Marisa;
 
 public class OpenUniverseAction
     extends AbstractGameAction {
@@ -27,42 +27,42 @@ public class OpenUniverseAction
 
   public void update() {
     this.isDone = false;
-    marisa.logger.info("OpenUniverseAction : generating cards");
+    Marisa.logger.info("OpenUniverseAction : generating cards");
 
     for (int i = 0; i < 5; i++) {
-      AbstractCard card = marisa.getRandomMarisaCard();
+      AbstractCard card = Marisa.getRandomMarisaCard();
 
       int rand = 20;
       if (this.upgraded){
         rand += 10;
       }
       int res = AbstractDungeon.miscRng.random(0,99);
-      marisa.logger.info("OpenUniverseAction : random res : "+res);
+      Marisa.logger.info("OpenUniverseAction : random res : "+res);
       if (res < rand){
-        marisa.logger.info("OpenUniverseAction : Upgrading card ");
+        Marisa.logger.info("OpenUniverseAction : Upgrading card ");
         card.upgrade();
       }
-      marisa.logger.info("OpenUniverseAction : adding : " + card.cardID);
+      Marisa.logger.info("OpenUniverseAction : adding : " + card.cardID);
 
       AbstractDungeon.actionManager.addToBottom(
           new MakeTempCardInDrawPileAction(card, 1, true, true)
       );
     }
 
-    marisa.logger.info("OpenUniverseAction : shuffling");
+    Marisa.logger.info("OpenUniverseAction : shuffling");
 
     p.drawPile.shuffle();
     for (AbstractRelic r : p.relics) {
       r.onShuffle();
     }
 
-    marisa.logger.info("OpenUniverseAction : drawing");
+    Marisa.logger.info("OpenUniverseAction : drawing");
 
     AbstractDungeon.actionManager.addToBottom(
         new DrawCardAction(p, draw)
     );
 
-    marisa.logger.info("OpenUniverseAction : done");
+    Marisa.logger.info("OpenUniverseAction : done");
 
     this.isDone = true;
   }

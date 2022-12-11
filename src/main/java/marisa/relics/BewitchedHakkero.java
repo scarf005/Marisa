@@ -2,7 +2,7 @@ package marisa.relics;
 
 import static marisa.patches.CardTagEnum.SPARK;
 
-import marisa.marisa;
+import marisa.Marisa;
 import marisa.powers.Marisa.ChargeUpPower;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -47,7 +47,7 @@ public class BewitchedHakkero extends CustomRelic {
 
   public void onUseCard(AbstractCard card, UseCardAction action) {
     flash();
-    marisa.logger.info(
+    Marisa.logger.info(
         "BewitchedHakkero : Applying ChargeUpPower for using card : " + card.cardID
     );
     int amt = 1;

@@ -1,7 +1,7 @@
 package marisa.action;
 
 
-import static marisa.marisa.logger;
+import static marisa.Marisa.logger;
 
 import marisa.monsters.ZombieFairy;
 import marisa.powers.monsters.LimboContactPower;

@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.abstracts.AmplifiedAttack
 import marisa.cards.derivations.Spark
 import marisa.patches.AbstractCardEnum
@@ -26,18 +26,18 @@ class StarlightTyphoon : AmplifiedAttack(
     var counter = 0
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         var cnt = 0
-        marisa.logger.info("StarlightTyphoon : onUse")
+        Marisa.logger.info("StarlightTyphoon : onUse")
         for (c in p.hand.group) {
             if (c.type != CardType.ATTACK && c !== this) {
-                marisa.logger.info("StarlightTyphoon : exahsting : " + c.name)
+                Marisa.logger.info("StarlightTyphoon : exahsting : " + c.name)
                 AbstractDungeon.actionManager.addToTop(
                     ExhaustSpecificCardAction(c, p.hand, true)
                 )
                 cnt++
-                marisa.logger.info("StarlightTyphoon : counter : $cnt")
+                Marisa.logger.info("StarlightTyphoon : counter : $cnt")
             }
         }
-        marisa.logger.info("StarlightTyphoon : adding Spark : counter : $cnt")
+        Marisa.logger.info("StarlightTyphoon : adding Spark : counter : $cnt")
         val c: AbstractCard = Spark()
         if (upgraded) {
             c.upgrade()

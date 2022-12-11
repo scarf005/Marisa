@@ -1,6 +1,6 @@
 package marisa.action;
 
-import marisa.marisa;
+import marisa.Marisa;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -20,7 +20,7 @@ public class ManaRampageAction
     this.f2p = freeToPlay;
     this.p = AbstractDungeon.player;
     this.upgraded = upgraded;
-    marisa.logger.info(
+    Marisa.logger.info(
         "ManaRampageAction : Initialize complete ; card number :" +
             amount +
             " ; upgraded : " +

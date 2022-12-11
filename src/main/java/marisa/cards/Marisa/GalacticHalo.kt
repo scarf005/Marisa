@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.ChargeUpPower
 import basemod.abstracts.CustomCard
@@ -34,7 +34,7 @@ class GalacticHalo : CustomCard(
     				new GalacticHaloPower(p,this.magicNumber), this.magicNumber)
     		);
     		*/
-        marisa.logger.info(
+        Marisa.logger.info(
             "GalacticHalo : use :"
                     + " magicNumber : " + magicNumber
                     + " baseMagicNumber : " + baseMagicNumber

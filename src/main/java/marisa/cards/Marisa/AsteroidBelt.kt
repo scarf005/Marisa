@@ -1,6 +1,6 @@
 package marisa.cards.Marisa
 
-import marisa.marisa
+import marisa.Marisa
 import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
@@ -31,7 +31,7 @@ class AsteroidBelt : CustomCard(
         AbstractDungeon.actionManager.addToBottom(
             GainBlockAction(p, p, block)
         )
-        if (marisa.Amplified(this, AMP)) {
+        if (Marisa.Amplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(
                     p,

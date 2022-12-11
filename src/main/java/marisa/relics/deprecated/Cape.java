@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.shop.ShopScreen;
 
-import marisa.marisa;
+import marisa.Marisa;
 import basemod.abstracts.CustomRelic;
 
 @Deprecated
@@ -52,7 +52,7 @@ public class Cape extends CustomRelic {
       return;
     }
     if ((room instanceof ShopRoom)) {
-      marisa.logger.info("Cape_1 : onEnterRoom : ShopRoom detected .");
+      Marisa.logger.info("Cape_1 : onEnterRoom : ShopRoom detected .");
       this.avail = true;
       flash();
       this.pulse = true;
@@ -65,27 +65,27 @@ public class Cape extends CustomRelic {
   public void update() {
     super.update();
     if ((this.counter <= 0) || (this.usedUp)) {
-      marisa.logger.info("Cape_1 : update : returning for being used");
+      Marisa.logger.info("Cape_1 : update : returning for being used");
       return;
     }
     if (!this.isObtained) {
-      marisa.logger.info("Cape_1 : update : returning for not obtained");
+      Marisa.logger.info("Cape_1 : update : returning for not obtained");
       return;
     }
     if ((this.RclickStart) && (InputHelper.justReleasedClickRight)) {
       if (this.hb.hovered) {
-        marisa.logger.info("Cape_1 : update : hovered");
+        Marisa.logger.info("Cape_1 : update : hovered");
         this.Rclick = true;
       }
       this.RclickStart = false;
     }
     if ((this.isObtained) && (this.hb != null) && (this.hb.hovered)
         && (InputHelper.justClickedRight)) {
-      marisa.logger.info("Cape_1 : update : right click detected");
+      Marisa.logger.info("Cape_1 : update : right click detected");
       this.RclickStart = true;
     }
     if (this.Rclick) {
-      marisa.logger.info("Cape_1 : update : Calling OnRclick");
+      Marisa.logger.info("Cape_1 : update : Calling OnRclick");
       this.Rclick = false;
       OnRclick();
     }
@@ -130,7 +130,7 @@ public class Cape extends CustomRelic {
   @Override
   public void onSpendGold() {
     if ((this.counter <= 0) || (this.usedUp) || (!this.JustActivated)) {
-      marisa.logger.info(
+      Marisa.logger.info(
           "Cape_1 : OnSpendGold : returning :"
               + " Counter : " + this.counter
               + " usedUp : " + this.usedUp

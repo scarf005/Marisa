@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-import marisa.marisa;
+import marisa.Marisa;
 
 public class StarDustReverieAction
     extends AbstractGameAction {
@@ -26,15 +26,15 @@ public class StarDustReverieAction
     this.isDone = false;
     int cnt = 0;
 
-    marisa.logger.info("StarDustReverieAction : player hand size : " + p.hand.size());
+    Marisa.logger.info("StarDustReverieAction : player hand size : " + p.hand.size());
 
     if (!p.hand.isEmpty()) {
       while (!p.hand.isEmpty()) {
         AbstractCard c = p.hand.getTopCard();
-        marisa.logger.info("StarDustReverieAction : moving " + c.cardID);
+        Marisa.logger.info("StarDustReverieAction : moving " + c.cardID);
         p.hand.moveToDeck(c, true);
         cnt++;
-        marisa.logger.info("StarDustReverieAction : Counter : " + cnt);
+        Marisa.logger.info("StarDustReverieAction : Counter : " + cnt);
       }
     } else {
       this.isDone = true;
@@ -49,14 +49,14 @@ public class StarDustReverieAction
 
     for (int i = 0; i < cnt; i++) {
 
-      AbstractCard c = marisa.getRandomMarisaCard();
+      AbstractCard c = Marisa.getRandomMarisaCard();
 
-      marisa.logger.info("StarDustReverieAction : adding " + c.cardID);
+      Marisa.logger.info("StarDustReverieAction : adding " + c.cardID);
 
       if (this.upgraded) {
         c.upgrade();
       }
-      marisa.logger.info(
+      Marisa.logger.info(
           "StarDustReverieAction : checking : Exhaust : " + c.exhaust +
               " ; Ethereal : " + c.isEthereal +
               " ; Upgraded : " + c.upgraded

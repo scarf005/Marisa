@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.powers.Marisa.ChargeUpPower
 
 class MaximisePower : CustomCard(
     ID,
@@ -31,12 +32,12 @@ class MaximisePower : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (p.hasPower("ChargeUpPower")) {
-            if (p.getPower("ChargeUpPower").amount > 0) {
+        if (p.hasPower(ChargeUpPower.POWER_ID)) {
+            if (p.getPower(ChargeUpPower.POWER_ID).amount > 0) {
                 AbstractDungeon.actionManager.addToBottom(
-                    GainEnergyAction(p.getPower("ChargeUpPower").amount)
+                    GainEnergyAction(p.getPower(ChargeUpPower.POWER_ID).amount)
                 )
-                p.getPower("ChargeUpPower").amount = 0
+                p.getPower(ChargeUpPower.POWER_ID).amount = 0
             }
         }
         AbstractDungeon.actionManager.addToBottom(

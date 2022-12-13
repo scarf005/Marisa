@@ -16,14 +16,14 @@ class FairyDestrucCullingAction(private val threshold: Int) : AbstractGameAction
             addToBot(JudgementAction(m, threshold))
             /*
       if (m.currentHealth <= this.threshold) {
-        if (m.hasPower("Intangible")) {
+        if (m.hasPower(Intangible.POWER_ID)) {
           ThMod.logger.info("FairyDestrucCullingAction : Intangible detected : " + m.id);
           AbstractPower removeMe = m.getPower("Intangible");
           removeMe.onRemove();
           m.powers.remove(removeMe);
           AbstractDungeon.onModifyPower();
         }
-        if (m.hasPower("IntangiblePlayer")) {
+        if (m.hasPower(IntangiblePlayer.POWER_ID)) {
           ThMod.logger.info("FairyDestrucCullingAction : IntangiblePlayer detected : " + m.id);
           AbstractPower removeMe = m.getPower("IntangiblePlayer");
           removeMe.onRemove();

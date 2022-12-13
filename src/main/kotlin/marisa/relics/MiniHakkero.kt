@@ -24,12 +24,8 @@ class MiniHakkero : CustomRelic(
 
     override fun onUseCard(card: AbstractCard, action: UseCardAction) {
         val p = AbstractDungeon.player
-        val available = true
         val div = if (p.hasRelic("SimpleLauncher")) 6 else 8
 
-        if (!available) {
-            return
-        }
 
         flash()
         MarisaMod.logger.info("""MiniHakkero : Applying ChargeUpPower for using card : ${card.cardID}""")

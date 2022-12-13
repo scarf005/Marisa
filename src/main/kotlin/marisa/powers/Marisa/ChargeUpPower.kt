@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaMod
 import marisa.action.ConsumeChargeUpAction
 import marisa.cards.derivations.Exhaustion_MRS
+import marisa.relics.SimpleLauncher
 import kotlin.math.pow
 
 class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
@@ -57,15 +58,16 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     override fun updateDescription() {
         description = if (cnt > 0) {
-            (DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
-                    + "," + DESCRIPTIONS[2] + Math.pow(2.0, cnt.toDouble()).toInt() + DESCRIPTIONS[3])
+            """${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]},${DESCRIPTIONS[2]}${
+                Math.pow(2.0, cnt.toDouble()).toInt()
+            }${DESCRIPTIONS[3]}"""
         } else {
-            DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + "."
+            """${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]}."""
         }
     }
 
     override fun onAfterCardPlayed(card: AbstractCard) {
-        if (owner.hasPower("OneTimeOffPlusPower") || ExhaustionCheck()) {
+        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || ExhaustionCheck()) {
             return
         }
         if (cnt > 0 && card.type == CardType.ATTACK) {
@@ -86,7 +88,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun atDamageFinalGive(damage: Float, type: DamageType): Float {
-        if (owner.hasPower("OneTimeOffPlusPower") || ExhaustionCheck()) {
+        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || ExhaustionCheck()) {
             return damage
         }
         if (cnt > 0) {
@@ -99,7 +101,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     private val divider: Unit
         get() {
-            stc = if (AbstractDungeon.player.hasRelic("SimpleLauncher")) {
+            stc = if (AbstractDungeon.player.hasRelic(SimpleLauncher.ID)) {
                 IMPR_STACK
             } else {
                 ACT_STACK

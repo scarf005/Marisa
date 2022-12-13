@@ -29,7 +29,7 @@ class SuperNova : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         /*
-    if ((this.upgraded) && (p.hasPower("SuperNovaPower"))) {
+    if ((this.upgraded) && (p.hasPower(SuperNovaPower.POWER_ID))) {
       SuperNovaPower po = (SuperNovaPower) p.getPower("SuperNovaPower");
       po.upgraded = true;
     }

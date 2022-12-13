@@ -351,8 +351,10 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
             val res = when {
                 isFree() -> {
                     logger.info(
-                        """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${p.hasPower("MilliPulsePower")} ; 
-                        |Pulse :${p.hasPower("PulseMagicPower")} ; 
+                        """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${
+                            p.hasPower(MillisecondPulsarsPower.POWER_ID)
+                        } ; 
+                        |Pulse :${p.hasPower(PulseMagicPower.POWER_ID)} ; 
                         |Free2Play :${card.freeToPlayOnce} ; 
                         |purge on use :${card.purgeOnUse}""".trimMargin()
                     )

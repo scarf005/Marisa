@@ -12,6 +12,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.powers.Marisa.ChargeUpPower
+import marisa.powers.Marisa.OneTimeOffPlusPower
+import marisa.relics.SimpleLauncher
 
 class ChargeUpSpray : CustomCard(
     ID,
@@ -31,11 +34,11 @@ class ChargeUpSpray : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        val cnt = if (p.hasRelic("SimpleLauncher")) 6 else 8
+    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+        val cnt = if (p.hasRelic(SimpleLauncher.ID)) 6 else 8
 
-        if (p.hasPower("ChargeUpPower") && !p.hasPower("OneTimeOffPlusPower")) {
-            if (p.getPower("ChargeUpPower").amount >= cnt) {
+        if (p.hasPower(ChargeUpPower.POWER_ID) && !p.hasPower(OneTimeOffPlusPower.POWER_ID)) {
+            if (p.getPower(ChargeUpPower.POWER_ID).amount >= cnt) {
                 AbstractDungeon.actionManager.addToTop(
                     DrawCardAction(AbstractDungeon.player, magicNumber)
                 )

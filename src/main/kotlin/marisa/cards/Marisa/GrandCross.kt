@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.powers.Marisa.GrandCrossPower
 
 class GrandCross : CustomCard(
     ID,
@@ -29,7 +30,7 @@ class GrandCross : CustomCard(
 
     override fun applyPowers() {
         super.applyPowers()
-        if (AbstractDungeon.player.hasPower("GrandCrossPower")) {
+        if (AbstractDungeon.player.hasPower(GrandCrossPower.POWER_ID)) {
             if (costForTurn != 0) {
                 this.flash()
                 costForTurn = 0

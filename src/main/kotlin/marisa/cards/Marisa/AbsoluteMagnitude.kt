@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.powers.Marisa.ChargeUpPower
 
 class AbsoluteMagnitude : AmplifiedAttack(
     ID,
@@ -34,8 +35,8 @@ class AbsoluteMagnitude : AmplifiedAttack(
 
     override fun applyPowers() {
         val p = AbstractDungeon.player
-        if (p.hasPower("ChargeUpPower")) {
-            ampNumber = (p.getPower("ChargeUpPower").amount * multiplier).toInt()
+        if (p.hasPower(ChargeUpPower.POWER_ID)) {
+            ampNumber = (p.getPower(ChargeUpPower.POWER_ID).amount * multiplier).toInt()
         }
         super.applyPowers()
         isBlockModified = true

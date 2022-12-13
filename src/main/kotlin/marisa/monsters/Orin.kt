@@ -474,10 +474,10 @@ class Orin : AbstractMonster(
 
     override fun changeState(key: String) {
         if (key == "TRANSFORM") {
-            if (AbstractDungeon.ascensionLevel >= 9) {
-                maxHealth = S_2_HP
+            maxHealth = if (AbstractDungeon.ascensionLevel >= 9) {
+                S_2_HP
             } else {
-                maxHealth = STAGE_2_HP
+                STAGE_2_HP
             }
             blc = BLOCK_UPG
             if (Settings.isEndless && AbstractDungeon.player.hasBlight("ToughEnemies")) {

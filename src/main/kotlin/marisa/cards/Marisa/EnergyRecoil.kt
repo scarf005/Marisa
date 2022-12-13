@@ -27,10 +27,10 @@ class EnergyRecoil : CustomCard(
 
     override fun applyPowers() {
         val p = AbstractDungeon.player
-        if (upgraded) {
-            baseBlock = 3
+        baseBlock = if (upgraded) {
+            3
         } else {
-            baseBlock = 0
+            0
         }
         if (p.hasPower("ChargeUpPower")) {
             baseBlock += p.getPower("ChargeUpPower").amount
@@ -38,20 +38,20 @@ class EnergyRecoil : CustomCard(
         }
         if (block > 0) {
             val extendString = EXTENDED_DESCRIPTION[0] + block + EXTENDED_DESCRIPTION[1]
-            if (!upgraded) {
-                rawDescription = DESCRIPTION + extendString
+            rawDescription = if (!upgraded) {
+                DESCRIPTION + extendString
             } else {
-                rawDescription = DESCRIPTION_UPG + extendString
+                DESCRIPTION_UPG + extendString
             }
             initializeDescription()
         }
     }
 
     override fun onMoveToDiscard() {
-        if (upgraded) {
-            rawDescription = DESCRIPTION_UPG
+        rawDescription = if (upgraded) {
+            DESCRIPTION_UPG
         } else {
-            rawDescription = DESCRIPTION
+            DESCRIPTION
         }
         initializeDescription()
     }

@@ -42,9 +42,6 @@ class Strike_MRS : CustomCard(
 
     override fun makeCopy(): AbstractCard = Strike_MRS()
 
-    @Deprecated("Deprecated in Java")
-    override fun isStrike(): Boolean = true
-
     override fun upgrade() {
         if (!upgraded) {
             upgradeName()

@@ -48,7 +48,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
                     """ZombieFairy : take Turn : Attack : turnNum : $turnNum ; damage : ${damage[0].base} ; 
                         |ActionCancel check: ; target null : ${p == null} ; source null : ${damage[0].owner != null} ; 
                         |source dying : ${damage[0].owner.isDying} ; 
-                        |target dead or escaped : ${p!!.isDeadOrEscaped}""".trimMargin()
+                        |target dead or escaped : ${(p ?: return).isDeadOrEscaped}""".trimMargin()
                 )
                 if (turnNum >= POWER_UP) {
                     repeat(3) { AbstractDungeon.actionManager.addToBottom(DamageAction(p, damage[1])) }

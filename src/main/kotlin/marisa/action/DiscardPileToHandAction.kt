@@ -8,10 +8,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
 class DiscardPileToHandAction(amount: Int) : AbstractGameAction() {
-    private val p: AbstractPlayer
+    private val p: AbstractPlayer = AbstractDungeon.player
 
     init {
-        p = AbstractDungeon.player
         setValues(p, AbstractDungeon.player, amount)
         actionType = ActionType.CARD_MANIPULATION
     }

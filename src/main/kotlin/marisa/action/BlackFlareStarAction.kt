@@ -23,7 +23,7 @@ class BlackFlareStarAction(block: Int) : AbstractGameAction() {
             return
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            if (!AbstractDungeon.handCardSelectScreen.selectedCards.group.isEmpty()) {
+            if (AbstractDungeon.handCardSelectScreen.selectedCards.group.isNotEmpty()) {
                 val cnt = AbstractDungeon.handCardSelectScreen.selectedCards.group.size
                 AbstractDungeon.actionManager.addToTop(
                     GainBlockAction(source, source, blc * cnt)

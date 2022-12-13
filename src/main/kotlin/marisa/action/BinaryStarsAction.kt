@@ -10,11 +10,10 @@ import marisa.cards.derivations.BlackFlareStar
 import marisa.cards.derivations.WhiteDwarf
 
 class BinaryStarsAction(upgraded: Boolean) : AbstractGameAction() {
-    private val p: AbstractPlayer
+    private val p: AbstractPlayer = AbstractDungeon.player
     private val upg: Boolean
 
     init {
-        p = AbstractDungeon.player
         setValues(p, AbstractDungeon.player, 1)
         actionType = ActionType.CARD_MANIPULATION
         duration = Settings.ACTION_DUR_MED

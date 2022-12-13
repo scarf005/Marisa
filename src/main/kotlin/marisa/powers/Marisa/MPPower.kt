@@ -7,10 +7,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
+import kotlin.math.pow
 
 class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
-    var ene = 0
-
     init {
         name = NAME
         ID = POWER_ID
@@ -23,12 +22,12 @@ class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     override fun atDamageFinalGive(damage: Float, type: DamageType): Float {
         return if (type == DamageType.NORMAL) {
-            (damage * Math.pow(2.0, amount.toDouble())).toFloat()
+            (damage * 2.0.pow(amount.toDouble())).toFloat()
         } else damage
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + Math.pow(2.0, amount.toDouble()) + DESCRIPTIONS[1]
+        description = DESCRIPTIONS[0] + 2.0.pow(amount.toDouble()) + DESCRIPTIONS[1]
     }
 
     override fun atEndOfTurn(isPlayer: Boolean) {

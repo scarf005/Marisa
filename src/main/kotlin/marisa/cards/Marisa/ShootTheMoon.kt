@@ -51,14 +51,14 @@ class ShootTheMoon : AmplifiedAttack(
                 )
             )
         } else {
-            if (!m.powers.isEmpty() && !fightingBoss) {
+            if (m.powers.isNotEmpty() && !fightingBoss) {
                 val pows = ArrayList<AbstractPower>()
                 for (pow in m.powers) {
                     if (pow.type == AbstractPower.PowerType.BUFF) {
                         pows.add(pow)
                     }
                 }
-                if (!pows.isEmpty()) {
+                if (pows.isNotEmpty()) {
                     po = pows[(Math.random() * pows.size).toInt()]
                     AbstractDungeon.actionManager.addToBottom(
                         RemoveSpecificPowerAction(m, p, po)

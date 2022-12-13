@@ -61,7 +61,7 @@ class TreasureHunterDamageAction(target: AbstractCreature?, private val info: Da
                     !target.halfDead &&
                     !target.hasPower("Minion")
                 ) {
-                    MarisaMod.logger.info("TreasureHunterDamageAction : Granting relic tier :" + tier)
+                    MarisaMod.logger.info("TreasureHunterDamageAction : Granting relic tier :$tier")
                     AbstractDungeon.getCurrRoom().addRelicToRewards(tier)
                 }
             }

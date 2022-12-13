@@ -10,11 +10,10 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
 class OrbitalAction : AbstractGameAction() {
-    private val p: AbstractPlayer
+    private val p: AbstractPlayer = AbstractDungeon.player
     private val orbitals = ArrayList<AbstractCard>()
 
     init {
-        p = AbstractDungeon.player
         setValues(p, AbstractDungeon.player, amount)
         actionType = ActionType.CARD_MANIPULATION
         duration = Settings.ACTION_DUR_FAST
@@ -75,7 +74,7 @@ class OrbitalAction : AbstractGameAction() {
             tickDuration()
             return
         }
-        if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+        if (AbstractDungeon.gridSelectScreen.selectedCards.isNotEmpty()) {
             for (ca in AbstractDungeon.gridSelectScreen.selectedCards) {
                 p.hand.addToHand(ca)
                 if (AbstractDungeon.player.hasPower("Corruption") && (ca.type

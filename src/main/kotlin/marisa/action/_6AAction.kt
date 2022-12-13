@@ -26,8 +26,7 @@ class _6AAction(target: AbstractCreature?, private val info: DamageInfo) : Abstr
             val mon = target as AbstractMonster
             val tmp = mon.currentHealth
             target.damage(info)
-            val res: Int
-            res = if (mon.isDying) {
+            val res: Int = if (mon.isDying) {
                 tmp
             } else {
                 tmp - mon.currentHealth

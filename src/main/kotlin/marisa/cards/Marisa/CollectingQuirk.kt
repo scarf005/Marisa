@@ -54,11 +54,10 @@ class CollectingQuirk : CustomCard(
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
         MarisaMod.logger.info(
-            "CollectingQuirk : applyPowers : damage :"
-                    + damage
-                    + " ; counter : " + counter
-                    + " ; block :" + block
-                    + " ; magic number :" + magicNumber
+            """CollectingQuirk : applyPowers : damage :$damage ; 
+                |counter : $counter ; 
+                |block :$block ; 
+                |magic number :$magicNumber""".trimMargin()
         )
     }
 

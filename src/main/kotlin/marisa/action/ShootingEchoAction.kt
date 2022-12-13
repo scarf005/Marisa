@@ -12,11 +12,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import marisa.MarisaMod
 
 class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() {
-    var player: AbstractPlayer
+    var player: AbstractPlayer = AbstractDungeon.player
     private val damageTypeForTurn: DamageType
 
     init {
-        player = AbstractDungeon.player
         damageTypeForTurn = DamageType.NORMAL
         duration = Settings.ACTION_DUR_FAST
         actionType = ActionType.EXHAUST

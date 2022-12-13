@@ -1,7 +1,6 @@
 package marisa.potions
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
-import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
@@ -24,10 +23,9 @@ class BottledSpark : AbstractPotion(
         tips.add(PowerTip(name, description))
     }
 
-    override fun use(abstractCreature: AbstractCreature) {
-        val shiv: AbstractCard = Spark()
+    override fun use(unused: AbstractCreature?) {
         if (AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
-            addToBot(MakeTempCardInHandAction(shiv.makeStatEquivalentCopy(), potency))
+            addToBot(MakeTempCardInHandAction(Spark().makeStatEquivalentCopy(), potency))
         }
     }
 

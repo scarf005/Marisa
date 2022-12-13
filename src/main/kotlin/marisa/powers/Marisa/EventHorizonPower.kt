@@ -34,7 +34,7 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
     }
 
     override fun onSpecificTrigger() {
-        MarisaMod.logger.info("EventHorizonPower : Checking ; counter : " + cnt)
+        MarisaMod.logger.info("EventHorizonPower : Checking ; counter : $cnt")
         if (cnt <= 0) {
             return
         }
@@ -48,7 +48,7 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
             cnt--
             updateDescription()
         }
-        MarisaMod.logger.info("EventHorizonPower : Done ; counter : " + cnt)
+        MarisaMod.logger.info("EventHorizonPower : Done ; counter : $cnt")
     }
 
     override fun updateDescription() {

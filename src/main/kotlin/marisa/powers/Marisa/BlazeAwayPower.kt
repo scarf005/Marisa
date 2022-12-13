@@ -23,7 +23,7 @@ class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         img = Texture("img/powers/burst.png")
     }
 
-    override fun onPlayCard(card: AbstractCard, m: AbstractMonster) {
+    override fun onPlayCard(card: AbstractCard, m: AbstractMonster?) {
         MarisaMod.logger.info("BlazeWayPower : card type check")
         if (card.type != CardType.ATTACK) {
             return

@@ -33,7 +33,7 @@ class MasterSpark : AmplifiedAttack(
         tags.add(CardTagEnum.SPARK)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         AbstractDungeon.actionManager.addToBottom(
             VFXAction(
                 MindblastEffect(p.dialogX, p.dialogY, false)

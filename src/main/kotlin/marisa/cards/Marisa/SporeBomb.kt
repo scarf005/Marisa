@@ -27,7 +27,7 @@ class SporeBomb : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         if (MarisaMod.isAmplified(this, AMP)) {
             for (mo in AbstractDungeon.getCurrRoom().monsters.monsters) {
                 AbstractDungeon.actionManager.addToBottom(

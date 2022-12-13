@@ -27,7 +27,7 @@ class DC : CustomCard(
         isInnate = true
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         if (p.discardPile.isEmpty) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(

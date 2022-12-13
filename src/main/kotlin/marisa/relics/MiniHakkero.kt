@@ -25,32 +25,27 @@ class MiniHakkero : CustomRelic(
     override fun onUseCard(card: AbstractCard, action: UseCardAction) {
         val p = AbstractDungeon.player
         val available = true
-        var div = 8
-        if (p.hasRelic("SimpleLauncher")) {
-            div = 6
+        val div = if (p.hasRelic("SimpleLauncher")) 6 else 8
+
+        if (!available) {
+            return
         }
-        if (p.hasPower("ChargeUpPower")) {
-            if (p.getPower("ChargeUpPower").amount >= div) {
-                //available = false;
-            }
-        }
-        if (available) {
-            flash()
-            MarisaMod.logger.info("MiniHakkero : Applying ChargeUpPower for using card : " + card.cardID)
-            AbstractDungeon.actionManager.addToTop(
-                ApplyPowerAction(
-                    AbstractDungeon.player,
-                    AbstractDungeon.player,
-                    ChargeUpPower(AbstractDungeon.player, 1),
-                    1
-                )
+
+        flash()
+        MarisaMod.logger.info("""MiniHakkero : Applying ChargeUpPower for using card : ${card.cardID}""")
+        AbstractDungeon.actionManager.addToTop(
+            ApplyPowerAction(
+                AbstractDungeon.player,
+                AbstractDungeon.player,
+                ChargeUpPower(AbstractDungeon.player, 1),
+                1
             )
-            AbstractDungeon.actionManager.addToBottom(
-                RelicAboveCreatureAction(
-                    AbstractDungeon.player, this
-                )
+        )
+        AbstractDungeon.actionManager.addToBottom(
+            RelicAboveCreatureAction(
+                AbstractDungeon.player, this
             )
-        }
+        )
     }
 
     companion object {

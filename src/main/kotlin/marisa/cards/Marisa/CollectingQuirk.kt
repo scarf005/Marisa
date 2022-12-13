@@ -47,7 +47,7 @@ class CollectingQuirk : CustomCard(
         )
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {
+    override fun calculateCardDamage(mo: AbstractMonster?) {
         //super.calculateCardDamage(mo);
         getCounter()
         modifyBlock()

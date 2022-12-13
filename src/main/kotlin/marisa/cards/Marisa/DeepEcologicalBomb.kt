@@ -27,7 +27,7 @@ class DeepEcologicalBomb : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {}
+    override fun calculateCardDamage(mo: AbstractMonster?) {}
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         var num = 1
         if (MarisaMod.isAmplified(this, AMP)) {

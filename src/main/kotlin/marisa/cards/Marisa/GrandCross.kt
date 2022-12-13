@@ -37,7 +37,7 @@ class GrandCross : CustomCard(
         }
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         AbstractDungeon.actionManager.addToBottom(
             DamageAction(
                 m,

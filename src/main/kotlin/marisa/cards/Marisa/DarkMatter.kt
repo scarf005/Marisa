@@ -40,7 +40,7 @@ class DarkMatter : CustomCard(
         )
     }
 
-    override fun canUse(p: AbstractPlayer, m: AbstractMonster): Boolean {
+    override fun canUse(p: AbstractPlayer, m: AbstractMonster?): Boolean {
         val canUse = super.canUse(p, m)
         if (!canUse) {
             return false

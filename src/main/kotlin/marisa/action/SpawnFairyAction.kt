@@ -13,16 +13,14 @@ import marisa.monsters.ZombieFairy
 import marisa.powers.monsters.LimboContactPower
 
 //public class SpawnFairyAction
-class SpawnFairyAction @JvmOverloads constructor(x: Float, y: Float, slot: Int = -99) : AbstractGameAction() {
+class SpawnFairyAction @JvmOverloads constructor(x: Float, y: Float, private val targetSlot: Int = -99) :
+    AbstractGameAction() {
     private var used = false
-    private val m: AbstractMonster
-    private val targetSlot: Int
+    private val m = ZombieFairy(x, y)
 
     init {
         actionType = ActionType.SPECIAL
         duration = DURATION
-        m = ZombieFairy(x, y)
-        targetSlot = slot
         if (AbstractDungeon.player.hasRelic("Philosopher's Stone")) {
             m.addPower(StrengthPower(m, 1))
             AbstractDungeon.onModifyPower()

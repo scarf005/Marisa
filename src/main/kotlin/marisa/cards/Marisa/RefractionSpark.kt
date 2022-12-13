@@ -30,7 +30,7 @@ class RefractionSpark : AmplifiedAttack(
         tags.add(CardTagEnum.SPARK)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         if (MarisaMod.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 RefractionSparkAction(

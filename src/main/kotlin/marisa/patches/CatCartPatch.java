@@ -5,27 +5,29 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
+import marisa.relics.CatCart;
 
 public class CatCartPatch {
 
-  @SpirePatch(clz = AbstractPlayer.class, method = "damage",paramtypez = {DamageInfo.class})
-  public static class CatCartResurrect {
+    @SpirePatch(clz = AbstractPlayer.class, method = "damage", paramtypez = {DamageInfo.class})
+    public static class CatCartResurrect {
 
-    @SpireInsertPatch(
-        //locator = Locator.class
-        rloc = 149
-    )
-    public static SpireReturn insert(AbstractPlayer _inst, DamageInfo _info) {
-      if ((_inst.hasRelic("CatCart")) && (!_inst.hasRelic("Mark of the Bloom"))) {
-        if ((_inst.getRelic("CatCart").counter > 0) && (!_inst.hasRelic("Mark of the Bloom"))) {
-          _inst.currentHealth = 0;
-          _inst.getRelic("CatCart").onTrigger();
-          return SpireReturn.Return(null);
+        @SpireInsertPatch(
+                //locator = Locator.class
+                rloc = 149
+        )
+        public static SpireReturn insert(AbstractPlayer _inst, DamageInfo _info) {
+            if ((_inst.hasRelic(CatCart.ID)) && (!_inst.hasRelic(MarkOfTheBloom.ID))) {
+                if ((_inst.getRelic(CatCart.ID).counter > 0) && (!_inst.hasRelic(MarkOfTheBloom.ID))) {
+                    _inst.currentHealth = 0;
+                    _inst.getRelic("CatCart").onTrigger();
+                    return SpireReturn.Return(null);
+                }
+            }
+            return SpireReturn.Continue();
         }
-      }
-      return SpireReturn.Continue();
     }
-  }
 /*
   private static class Locator extends SpireInsertLocator {
 

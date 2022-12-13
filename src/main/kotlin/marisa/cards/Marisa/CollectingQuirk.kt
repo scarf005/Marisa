@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import com.megacrit.cardcrawl.relics.Circlet
+import com.megacrit.cardcrawl.relics.RedCirclet
 
 class CollectingQuirk : CustomCard(
     ID,
@@ -89,12 +91,9 @@ class CollectingQuirk : CustomCard(
             divider = UPG_DIVIDER
         }
         counter = p.relics.size
-        if (p.hasRelic("Circlet")) {
-            counter += p.getRelic("Circlet").counter - 1
-        }
-        if (p.hasRelic("Red Circlet")) {
-            counter += p.getRelic("Red Circlet").counter - 1
-        }
+        p.getRelic(Circlet.ID)?.let { counter += it.counter - 1 }
+        p.getRelic(RedCirclet.ID)?.let { counter += it.counter - 1 }
+
         counter /= divider
     }
 

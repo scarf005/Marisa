@@ -1,42 +1,28 @@
-package marisa.patches;
+package marisa.patches
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.relics.MarkOfTheBloom;
-import marisa.relics.CatCart;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn
+import com.megacrit.cardcrawl.cards.DamageInfo
+import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.relics.MarkOfTheBloom
+import marisa.relics.CatCart
 
-public class CatCartPatch {
-
-    @SpirePatch(clz = AbstractPlayer.class, method = "damage", paramtypez = {DamageInfo.class})
-    public static class CatCartResurrect {
-
-        @SpireInsertPatch(
-                //locator = Locator.class
-                rloc = 149
-        )
-        public static SpireReturn insert(AbstractPlayer _inst, DamageInfo _info) {
-            if ((_inst.hasRelic(CatCart.ID)) && (!_inst.hasRelic(MarkOfTheBloom.ID))) {
-                if ((_inst.getRelic(CatCart.ID).counter > 0) && (!_inst.hasRelic(MarkOfTheBloom.ID))) {
-                    _inst.currentHealth = 0;
-                    _inst.getRelic("CatCart").onTrigger();
-                    return SpireReturn.Return(null);
+@Suppress("unused")
+class CatCartPatch {
+    @SpirePatch(clz = AbstractPlayer::class, method = "damage", paramtypez = [DamageInfo::class])
+    object CatCartResurrect {
+        @SpireInsertPatch(rloc = 149)
+        @JvmStatic
+        fun insert(p: AbstractPlayer, unused: DamageInfo?): SpireReturn<*> {
+            if (p.hasRelic(CatCart.ID) && !p.hasRelic(MarkOfTheBloom.ID)) {
+                if (p.getRelic(CatCart.ID).counter > 0 && !p.hasRelic(MarkOfTheBloom.ID)) {
+                    p.currentHealth = 0
+                    p.getRelic(CatCart.ID).onTrigger()
+                    return SpireReturn.Return<Any?>(null)
                 }
             }
-            return SpireReturn.Continue();
+            return SpireReturn.Continue<Any>()
         }
     }
-/*
-  private static class Locator extends SpireInsertLocator {
-
-    public int[] Locate(CtBehavior ctMethodToPatch)
-        throws CannotCompileException, PatchingException {
-      Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractPlayer.class, "isDead");
-      int[] loc = LineFinder.findInOrder(ctMethodToPatch, new ArrayList<Matcher>(), finalMatcher);
-      return new int[]{loc[0]};
-    }
-  }
-  */
 }

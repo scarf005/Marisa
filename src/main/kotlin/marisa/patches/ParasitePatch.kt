@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.relics.BigShroomBag
+import marisa.relics.ShroomBag
 
 class ParasitePatch {
     @SpirePatch(cls = "com.megacrit.cardcrawl.cards.curses.Parasite", method = "use")
@@ -22,16 +24,17 @@ class ParasitePatch {
             p: AbstractPlayer,
             unused: AbstractMonster?
         ): SpireReturn<*> {
-            if (AbstractDungeon.player.hasRelic("ShroomBag") || AbstractDungeon.player.hasRelic("BigShroomBag")) {
+
+            if (AbstractDungeon.player.hasRelic(ShroomBag.ID) || AbstractDungeon.player.hasRelic(BigShroomBag.ID)) {
                 val r: AbstractRelic
                 val heal_amt: Int
                 val draw: Int
-                if (AbstractDungeon.player.hasRelic("BigShroomBag")) {
-                    r = p.getRelic("BigShroomBag")
+                if (AbstractDungeon.player.hasRelic(BigShroomBag.ID)) {
+                    r = p.getRelic(BigShroomBag.ID)
                     heal_amt = 3
                     draw = 2
                 } else {
-                    r = p.getRelic("ShroomBag")
+                    r = p.getRelic(ShroomBag.ID)
                     heal_amt = 2
                     draw = 1
                 }
@@ -61,7 +64,7 @@ class ParasitePatch {
             p: AbstractPlayer,
             unused: AbstractMonster?
         ): SpireReturn<Boolean> {
-            return if (_inst.cardID == "Parasite" && (p.hasRelic("ShroomBag") || p.hasRelic("BigShroomBag"))) {
+            return if (_inst.cardID == "Parasite" && (p.hasRelic(ShroomBag.ID) || p.hasRelic(BigShroomBag.ID))) {
                 SpireReturn.Return(true)
             } else SpireReturn.Continue()
         }

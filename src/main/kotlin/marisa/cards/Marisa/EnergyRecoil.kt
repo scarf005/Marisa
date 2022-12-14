@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.powers.Marisa.ChargeUpPower
 
 class EnergyRecoil : CustomCard(
     ID,
@@ -27,21 +28,17 @@ class EnergyRecoil : CustomCard(
 
     override fun applyPowers() {
         val p = AbstractDungeon.player
-        baseBlock = if (upgraded) {
-            3
-        } else {
-            0
-        }
-        if (p.hasPower("ChargeUpPower")) {
-            baseBlock += p.getPower("ChargeUpPower").amount
+        baseBlock = (if (upgraded) 3 else 0)
+        if (p.hasPower(ChargeUpPower.POWER_ID)) {
+            baseBlock += p.getPower(ChargeUpPower.POWER_ID).amount
             super.applyPowers()
         }
         if (block > 0) {
             val extendString = EXTENDED_DESCRIPTION[0] + block + EXTENDED_DESCRIPTION[1]
-            rawDescription = if (!upgraded) {
-                DESCRIPTION + extendString
-            } else {
+            rawDescription = if (upgraded) {
                 DESCRIPTION_UPG + extendString
+            } else {
+                DESCRIPTION + extendString
             }
             initializeDescription()
         }

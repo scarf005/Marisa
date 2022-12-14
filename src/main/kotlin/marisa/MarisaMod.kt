@@ -37,7 +37,6 @@ import marisa.patches.ThModClassEnum
 import marisa.potions.BottledSpark
 import marisa.potions.ShroomBrew
 import marisa.potions.StarNLove
-import marisa.powers.Marisa.GrandCrossPower
 import marisa.relics.*
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
@@ -45,6 +44,7 @@ import java.nio.charset.StandardCharsets
 import java.util.*
 import basemod.interfaces.PostInitializeSubscriber
 import com.megacrit.cardcrawl.potions.AbstractPotion
+import marisa.powers.Marisa.*
 
 @SpireInitializer
 class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,
@@ -300,8 +300,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
             }
 
 
-        @JvmField
-        val logger: Logger = LogManager.getLogger(Marisa::class.java.name)
+        val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)
 
         private const val ORIN_ENCOUNTER = "Orin"
         private const val ZOMBIE_FAIRY_ENC = "ZombieFairy"
@@ -338,49 +337,50 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
                 """ThMod.Amplified : card to check : ${card.cardID} ; costForTurn : ${card.costForTurn}"""
             )
             val p = AbstractDungeon.player
-            if (p.hasPower("OneTimeOffPlusPower") || p.hasPower("OneTimeOffPower")) {
+
+            fun isFree() = p.hasPower(MillisecondPulsarsPower.POWER_ID) || p.hasPower(PulseMagicPower.POWER_ID)
+                    || card.freeToPlayOnce || card.purgeOnUse
+
+            fun canPay() = EnergyPanel.totalCount >= card.costForTurn + multiplier
+
+            if (p.hasPower(OneTimeOffPlusPower.POWER_ID) || p.hasPower(OneTimeOffPower.POWER_ID)) {
                 logger.info("ThMod.Amplified :OneTimeOff detected,returning false.")
                 return false
             }
-            var res = false
-            if (p.hasPower("MilliPulsePower") || p.hasPower("PulseMagicPower")
-                || card.freeToPlayOnce || card.purgeOnUse
-            ) {
-                logger.info(
-                    """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${p.hasPower("MilliPulsePower")} ; 
-                        |Pulse :${p.hasPower("PulseMagicPower")} ; 
+
+            val res = when {
+                isFree() -> {
+                    logger.info(
+                        """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${
+                            p.hasPower(MillisecondPulsarsPower.POWER_ID)
+                        } ; 
+                        |Pulse :${p.hasPower(PulseMagicPower.POWER_ID)} ; 
                         |Free2Play :${card.freeToPlayOnce} ; 
                         |purge on use :${card.purgeOnUse}""".trimMargin()
-                )
-                res = true
-            } else {
-                if (EnergyPanel.totalCount >= card.costForTurn + multiplier) {
-                    logger.info("ThMod.Amplified : Sufficient energy ,adding and returning true;")
-                    card.costForTurn += multiplier
-                    res = true
-                    if (card.costForTurn > 0) {
-                        logger
-                            .info("ThMod.Amplified : False instance of 0 cost card,decreasing typhoon counter.")
-                        typhoonCounter--
-                        logger.info("current Typhoon Counter : $typhoonCounter")
-                    }
-                }
-            }
-            if (res) {
-                AbstractDungeon.actionManager.addToTop(
-                    ApplyPowerAction(
-                        p,
-                        p,
-                        GrandCrossPower(p)
                     )
-                )
-                if (p.hasPower("EventHorizonPower")) {
-                    p.getPower("EventHorizonPower").onSpecificTrigger()
+                    true
                 }
-                if (p.hasRelic("AmplifyWand")) {
-                    val r = p.getRelic("AmplifyWand")
-                    r.onTrigger()
+
+                canPay() -> {
+                    logger.info("ThMod.Amplified : Sufficient energy, adding and returning true;")
+                    card.costForTurn += multiplier
+                    true
                 }
+
+                else -> false
+            }
+
+//                res = true
+//                if (card.costForTurn > 0) {
+//                    logger
+//                        .info("ThMod.Amplified : False instance of 0 cost card,decreasing typhoon counter.")
+//                    typhoonCounter--
+//                    logger.info("current Typhoon Counter : $typhoonCounter")
+//                }
+            if (res) {
+                AbstractDungeon.actionManager.addToTop(ApplyPowerAction(p, p, GrandCrossPower(p)))
+                p.getPower(EventHorizonPower.POWER_ID)?.onSpecificTrigger()
+                p.getRelic(AmplifyWand.ID)?.onTrigger()
             }
             logger.info(
                 """ThMod.Amplified : card : ${card.cardID} ; Amplify : $res ; costForTurn : ${card.costForTurn}"""

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import com.megacrit.cardcrawl.powers.MinionPower
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect
@@ -59,7 +60,7 @@ class TreasureHunterDamageAction(target: AbstractCreature?, private val info: Da
                 )
                 if (((target as AbstractMonster).isDying || target.currentHealth <= 0) &&
                     !target.halfDead &&
-                    !target.hasPower("Minion")
+                    !target.hasPower(MinionPower.POWER_ID)
                 ) {
                     MarisaMod.logger.info("TreasureHunterDamageAction : Granting relic tier :$tier")
                     AbstractDungeon.getCurrRoom().addRelicToRewards(tier)

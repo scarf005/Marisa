@@ -4,6 +4,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import marisa.MarisaMod
+import marisa.powers.Marisa.ChargeUpPower
+import marisa.powers.Marisa.OrrerysSunPower
 
 class ConsumeChargeUpAction(amount: Int) : AbstractGameAction() {
     private val amt: Int
@@ -17,11 +19,11 @@ class ConsumeChargeUpAction(amount: Int) : AbstractGameAction() {
     override fun update() {
         isDone = false
         val p = AbstractDungeon.player
-        if (!p.hasPower("ChargeUpPower")) {
+        if (!p.hasPower(ChargeUpPower.POWER_ID)) {
             isDone = true
             return
         }
-        val c = p.getPower("ChargeUpPower")
+        val c = p.getPower(ChargeUpPower.POWER_ID)
         MarisaMod.logger.info(
             "ConsumeChargeUpAction :"
                     + " Consume amount : "
@@ -34,8 +36,8 @@ class ConsumeChargeUpAction(amount: Int) : AbstractGameAction() {
             return
         }
         c.stackPower(-amt)
-        if (p.hasPower("OrrerysSunPower")) {
-            p.getPower("OrrerysSunPower").onSpecificTrigger()
+        if (p.hasPower(OrrerysSunPower.POWER_ID)) {
+            p.getPower(OrrerysSunPower.POWER_ID).onSpecificTrigger()
         }
         c.updateDescription()
         isDone = true

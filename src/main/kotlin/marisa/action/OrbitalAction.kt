@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.powers.CorruptionPower
 
 class OrbitalAction : AbstractGameAction() {
     private val p: AbstractPlayer = AbstractDungeon.player
@@ -40,7 +41,7 @@ class OrbitalAction : AbstractGameAction() {
                 car = p.exhaustPile.topCard
                 car.unfadeOut()
                 p.hand.addToHand(car)
-                if (AbstractDungeon.player.hasPower("Corruption") && (car.type
+                if (AbstractDungeon.player.hasPower(CorruptionPower.POWER_ID) && (car.type
                             == CardType.SKILL)
                 ) {
                     car.setCostForTurn(-9)
@@ -77,7 +78,7 @@ class OrbitalAction : AbstractGameAction() {
         if (AbstractDungeon.gridSelectScreen.selectedCards.isNotEmpty()) {
             for (ca in AbstractDungeon.gridSelectScreen.selectedCards) {
                 p.hand.addToHand(ca)
-                if (AbstractDungeon.player.hasPower("Corruption") && (ca.type
+                if (AbstractDungeon.player.hasPower(CorruptionPower.POWER_ID) && (ca.type
                             == CardType.SKILL)
                 ) {
                     ca.setCostForTurn(-9)

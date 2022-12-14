@@ -45,7 +45,7 @@ class DarkMatter : CustomCard(
         if (!canUse) {
             return false
         }
-        if (p.hasPower("DarkMatterPower")) {
+        if (p.hasPower(DarkMatterPower.POWER_ID)) {
             cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0]
             return false
         }

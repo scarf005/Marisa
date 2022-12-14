@@ -24,6 +24,7 @@ import marisa.MarisaMod
 import marisa.action.OrinsDebuffAction
 import marisa.action.SummonFairyAction
 import marisa.powers.monsters.InfernoClaw
+import marisa.powers.monsters.WraithPower
 
 class Orin : AbstractMonster(
     NAME,
@@ -323,10 +324,10 @@ class Orin : AbstractMonster(
     }
 
     private fun canExecute(): Boolean {
-        return if (!AbstractDungeon.player.hasPower("Wraith")) {
+        return if (!AbstractDungeon.player.hasPower(WraithPower.POWER_ID)) {
             false
         } else {
-            AbstractDungeon.player.getPower("Wraith").amount > exc
+            AbstractDungeon.player.getPower(WraithPower.POWER_ID).amount > exc
         }
     }
 

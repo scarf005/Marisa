@@ -1,39 +1,67 @@
-# Marisa Continued
+![](docs/repoTemplate/RepoTemplate.png)
+
+# Marisa: Continued
 
 ## Introduction
 
-This is a mod for [**Slay the Spire**](https://store.steampowered.com/app/646570/Slay_the_Spire/), which adds [**Marisa Kirisame**](https://en.touhouwiki.net/wiki/Kirisame_Marisa) from Touhou Project as a playable character.
+`Marisa: Continued` is a [re-continued][original] mod for [**Slay the Spire**][sts], which adds [**Marisa Kirisame**][marisa] from Touhou Project as a playable character.
 
 > info
-> This mod is a fork of [STS_ThMod_MRS](https://github.com/lf201014/STS_ThMod_MRS)
+> This mod is a fork of [STS_ThMod_MRS](https://github.com/lf201014/STS_ThMod_MRS) mod. Credits goes to the original authors.
+
+[original]: https://steamcommunity.com/sharedfiles/filedetails/?id=1614104912
+[sts]: https://store.steampowered.com/app/646570/Slay_the_Spire/
+[marisa]: https://en.touhouwiki.net/wiki/Kirisame_Marisa
 
 ## Content and Gameplay
 
-### Main Me
+### Charge
+
+- when **Charged Up**, card damage grows up exponentially.
+
+| Charges |  8  | 16  | 24  | 32  |
+| :-----: | :-: | :-: | :-: | :-: |
+| Damage  | x2  | x4  | x8  | x16 |
+
+- charges can be **stacked up 1** by playing a card.
+- there are also cards that gives more charges.
+- charges are **depleted** on attack.
+
+### Amplify
+
+- by using extra energy, cards can be **Amplified** to become much stronger.
+- some cards will let you not cost energy to Amplify them.
 
 ## Usage
 
-### Download
-
-- [ModTheSpire](https://steamcommunity.com/workshop/filedetails/?id=1605060445)
-- [BaseMod](https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019)
-- [Marisa Continued]()
-
 ### Installation
 
-1. Unzip `ModTheSpire.zip`,copy `ModTheSpire.jar` to your Slay the Spire install directory.
-   - For Windows, copy `MTS.cmd` to your Slay the Spire install directory.
-   - For Linux, copy `MTS.sh` to your Slay the Spire install directory and make it executable.
-2. Create a `mods` directory. Place `basemod.jar` and `TS05_Marisa.jar` into the `mods` directory.
+subscribe [ModTheSpire][modthespire] and [BaseMod][basemod].
 
-### Running Mods
+[modthespire]: https://steamcommunity.com/sharedfiles/filedetails/?l=koreana&id=1605060445
+[basemod]: https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019
 
-1. Run ModTheSpire.
-   - For Windows, run `MTS.cmd`.
-   - For Linux, run `MTS.sh`.
-   - Or run `ModTheSpire.jar` with Java 8.
-2. Select BaseMod and MarisaMod.
-3. Press 'Play'.
+#### Subscribe from Steam Workshop
+
+TODO
+
+#### Compile from source
+
+> warning
+> development environment is only tested on linux. may not work for other OS
+
+1. git clone repository `https://github.com/scarf005/Marisa.git`
+
+![](docs/ProjectStructure.png)
+
+2. setup java, kotlin, and gradle in your intellij. language version must be 8.
+
+```sh
+gradle -t toMods # install once
+./gradlew -t toMods --warning-mode all # dev mode: recompile on changes
+```
+
+3. run gradle task to copy jar into your steam mods folder.
 
 ## Credits
 
@@ -47,14 +75,14 @@ This is a mod for [**Slay the Spire**](https://store.steampowered.com/app/646570
 
 ### Special Thanks
 
-- [Rakkis157](https://github.com/Rakkis157) : generously offering help and making great improvement to the English text
-- [Dustin](https://github.com/Skrelpoid) : generously offering help and making great improvement to the English text
-- OPM(一下午) (Tencent QQ: 1315659893) : ascension patch and programming consultation
+- [Rakkis157](https://github.com/Rakkis157): generously offering help and making great improvement to the English text
+- [Dustin](https://github.com/Skrelpoid): generously offering help and making great improvement to the English text
+- OPM(一下午) (Tencent QQ: 1315659893): ascension patch and programming consultation
 - [Gogo](https://github.com/Gogomoe): programming consultation
-- [BlackRuse](https://github.com/lionpkqq) : programming consultation
-- [Hoykj](https://github.com/HOYKJ) : programming consultation
+- [BlackRuse](https://github.com/lionpkqq): programming consultation
+- [Hoykj](https://github.com/HOYKJ): programming consultation
 - 胡又天 : founder and leader of the Touhou Spire Group,making many things possible to happen
-- And other members of Touhou Spire Group : helping me more than one way
+- And other members of Touhou Spire Group: helping me more than one way
 
 ## See Also
 
@@ -71,5 +99,5 @@ This is a mod for [**Slay the Spire**](https://store.steampowered.com/app/646570
 
 ### Recommended Mods
 
-- [SuperFastMode](https://github.com/Skrelpoid/SuperFastMode) : speeding up the game,making the gameplay lightning fast
-- [BetterRewardsMod](https://github.com/Skrelpoid/BetterRewardsMod) : adding a choice at Neow that reward you depending on the score of your last run
+- [SuperFastMode](https://github.com/Skrelpoid/SuperFastMode): speed up the game, make gameplay lightning fast
+- [BetterRewardsMod](https://github.com/Skrelpoid/BetterRewardsMod): adds a choice at Neow that rewards you depending on the score of your last run

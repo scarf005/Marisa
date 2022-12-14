@@ -45,7 +45,7 @@ class MarisaModEventPatch {
     object GetEventPatch {
         @SpirePostfixPatch
         @JvmStatic
-        fun GetEventPatch(event: AbstractEvent, unused: Random?): AbstractEvent {
+        fun GetEventPatch(event: AbstractEvent?, unused: Random?): AbstractEvent? {
             MarisaMod.logger.info(
                 """MarisaModEventPatch : GetEventPatch : PlayerCharacter  : ${AbstractDungeon.player.title} ; retVal event : $event"""
             )

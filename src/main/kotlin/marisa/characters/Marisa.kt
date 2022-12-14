@@ -1,7 +1,7 @@
 package marisa.characters
 
 import marisa.MarisaMod
-import marisa.cards.Marisa.MasterSpark
+import marisa.cards.MasterSpark
 import marisa.patches.AbstractCardEnum
 import marisa.patches.ThModClassEnum
 import basemod.abstracts.CustomPlayer

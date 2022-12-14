@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.localization.*
 import com.megacrit.cardcrawl.rooms.AbstractRoom
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.action.SparkCostAction
-import marisa.cards.Marisa.*
+import marisa.cards.*
 import marisa.cards.derivations.*
 import marisa.characters.Marisa
 import marisa.event.Mushrooms_MRS

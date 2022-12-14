@@ -1,81 +1,66 @@
-package marisa.patches;
+@file:Suppress("unused")
 
-import static marisa.MarisaMod.logger;
+package marisa.patches
 
-import marisa.MarisaMod;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.events.AbstractEvent
+import com.megacrit.cardcrawl.random.Random
+import marisa.MarisaMod
+import marisa.characters.Marisa
+import marisa.event.Mushrooms_MRS
+import marisa.event.OrinTheCat
+import marisa.relics.CatCart
 
-import marisa.characters.Marisa;
-import marisa.event.Mushrooms_MRS;
-import marisa.event.OrinTheCat;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.events.AbstractEvent;
+@Suppress("FunctionName")
+class MarisaModEventPatch {
+    @SpirePatch(clz = AbstractDungeon::class, method = "initializeCardPools")
+    object EventPatch {
 
-public class MarisaModEventPatch {
+        private fun currentEvents() = AbstractDungeon.eventList.joinToString { "$it ; " }
+        private fun logEvents() = MarisaMod.logger.info("MarisaModEventPatch : current event list : ${currentEvents()}")
 
-  @SpirePatch(clz = AbstractDungeon.class, method = "initializeCardPools")
-  public static class EventPatch {
-
-    @SpirePostfixPatch
-    public static void EventListPatch(AbstractDungeon _exordium) {
-      logger.info(
-          "MarisaModEventPatch : EventListPatch :"
-              + " PlayerCharacter : "
-              + AbstractDungeon.player.title
-      );
-      String events = "";
-      for (String tempStr : AbstractDungeon.eventList) {
-        events += tempStr + " ; ";
-      }
-      logger.info("MarisaModEventPatch : current event list : " + events);
-
-      if (AbstractDungeon.player instanceof Marisa) {
-        logger.info("Marisa detected,removing Mushroom_MRS");
-        AbstractDungeon.eventList.remove("Mushrooms");
-      } else {
-        logger.info("removing Mushroom_MRS");
-        AbstractDungeon.eventList.remove("Mushrooms_MRS");
-      }
-      events = "";
-      for (String tempStr : AbstractDungeon.eventList) {
-        events += tempStr + " ; ";
-      }
-      logger.info("MarisaModEventPatch : current event list : " + events);
+        @JvmStatic
+        @SpirePostfixPatch
+        fun EventListPatch(unused: AbstractDungeon?) {
+            MarisaMod.logger.info(
+                """MarisaModEventPatch : EventListPatch : PlayerCharacter : ${AbstractDungeon.player.title}"""
+            )
+            logEvents()
+            when (AbstractDungeon.player) {
+                is Marisa -> "MushRooms"
+                else -> Mushrooms_MRS.ID
+            }
+                .also {
+                    MarisaMod.logger.info("MarisaModEventPatch : EventListPatch : removing $it")
+                    AbstractDungeon.eventList.remove(it)
+                }
+            logEvents()
+        }
     }
-  }
 
-  @SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "getEvent")
-  public static class GetEventPatch {
+    @SpirePatch(cls = "com.megacrit.cardcrawl.dungeons.AbstractDungeon", method = "getEvent")
+    object GetEventPatch {
+        @SpirePostfixPatch
+        @JvmStatic
+        fun GetEventPatch(event: AbstractEvent, unused: Random?): AbstractEvent {
+            MarisaMod.logger.info(
+                """MarisaModEventPatch : GetEventPatch : PlayerCharacter  : ${AbstractDungeon.player.title} ; retVal event : $event"""
+            )
+            val p = AbstractDungeon.player
+            val floor = AbstractDungeon.floorNum
+            val abort: Boolean = when (event) {
+                is OrinTheCat -> (p.hasRelic(CatCart.ID) || (p !is Marisa) && !MarisaMod.isCatEventEnabled)
+                is Mushrooms_MRS -> floor <= 6
+                else -> true
+            }
+            return when (abort) {
+                true -> AbstractDungeon.getEvent(AbstractDungeon.eventRng)
+                else -> event
+            }
+        }
 
-    @SpirePostfixPatch
-    public static AbstractEvent GetEventPatch(
-        AbstractEvent _retVal,
-        com.megacrit.cardcrawl.random.Random rng
-    ) {
-      logger.info(
-          "MarisaModEventPatch : GetEventPatch :" +
-              " PlayerCharacter  : " +
-              AbstractDungeon.player.title +
-              " ; retVal event : " +
-              _retVal.toString()
-      );
-      /*
-      if ((_retVal instanceof Mushrooms) && (AbstractDungeon.player instanceof Marisa)) {
-        logger.info("Swapping mushroom event");
-        return new Mushrooms_MRS();
-      }
-      return _retVal;
-      */
-      if (
-          ((_retVal instanceof Mushrooms_MRS) && (AbstractDungeon.floorNum <= 6)) ||
-          ((_retVal instanceof OrinTheCat) && (AbstractDungeon.player.hasRelic("CatCart")))||
-              ((_retVal instanceof  OrinTheCat)&&(!(AbstractDungeon.player instanceof Marisa))&&(!MarisaMod.isCatEventEnabled))
-      ) {
-        return AbstractDungeon.getEvent(AbstractDungeon.eventRng);
-      } else {
-        return _retVal;
-      }
+
     }
-  }
 }

@@ -37,18 +37,18 @@ class UnstableBomb : AmplifiedAttack(
         )
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {}
+    override fun calculateCardDamage(mo: AbstractMonster?) {}
     override fun makeCopy(): AbstractCard = UnstableBomb()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeDamage(UPG_DMG)
-            upgradeName()
-            ampNumber += UPG_AMP
-            baseBlock = baseDamage + ampNumber
-            block = baseBlock
-            isBlockModified = true
-        }
+        if (upgraded) return
+
+        upgradeDamage(UPG_DMG)
+        upgradeName()
+        ampNumber += UPG_AMP
+        baseBlock = baseDamage + ampNumber
+        block = baseBlock
+        isBlockModified = true
     }
 
     companion object {

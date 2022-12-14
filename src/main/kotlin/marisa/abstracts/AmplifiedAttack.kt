@@ -91,11 +91,11 @@ abstract class AmplifiedAttack(
         return temp
     }
 
-    override fun calculateDamageDisplay(mo: AbstractMonster) {
+    override fun calculateDamageDisplay(mo: AbstractMonster?) {
         calculateCardDamage(mo)
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {
+    override fun calculateCardDamage(mo: AbstractMonster?) {
         if (!isException) {
             damage = baseDamage
             ampDamage = baseDamage + ampNumber

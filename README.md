@@ -1,5 +1,7 @@
 ![](docs/repoTemplate/RepoTemplate.png)
 
+![Kotlin][Kotlin] ![Gradle][Gradle]
+
 # Marisa: Continued
 
 ## Introduction
@@ -105,3 +107,6 @@ gradle -t toMods # install once
 ### License
 
 `src/main/kotlin/marisa`: [MIT](src/main/kotlin/marisa/LICENSE)
+
+[Kotlin]: https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white
+[Gradle]: https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white

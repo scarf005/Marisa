@@ -31,8 +31,7 @@ class RobberyDamageAction(target: AbstractCreature?, private val info: DamageInf
             val mon = target as AbstractMonster
             val tmp = mon.currentHealth
             target.damage(info)
-            var res: Int
-            res = if ((target as AbstractMonster).isDying || target.currentHealth <= 0) {
+            var res: Int = if ((target as AbstractMonster).isDying || target.currentHealth <= 0) {
                 tmp
             } else {
                 tmp - mon.currentHealth

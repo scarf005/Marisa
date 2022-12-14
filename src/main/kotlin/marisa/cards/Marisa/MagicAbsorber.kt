@@ -33,14 +33,14 @@ class MagicAbsorber : CustomCard(
         AbstractDungeon.actionManager.addToBottom(
             GainBlockAction(p, p, block)
         )
-        if (!p.powers.isEmpty()) {
+        if (p.powers.isNotEmpty()) {
             val pows = ArrayList<AbstractPower>()
             for (pow in p.powers) {
                 if (pow.type == AbstractPower.PowerType.DEBUFF) {
                     pows.add(pow)
                 }
             }
-            if (!pows.isEmpty()) {
+            if (pows.isNotEmpty()) {
                 val po = pows[AbstractDungeon.miscRng.random(0, pows.size - 1)]
                 AbstractDungeon.actionManager.addToBottom(
                     RemoveSpecificPowerAction(p, p, po)

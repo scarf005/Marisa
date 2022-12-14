@@ -47,18 +47,17 @@ class CollectingQuirk : CustomCard(
         )
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {
+    override fun calculateCardDamage(unused: AbstractMonster?) {
         //super.calculateCardDamage(mo);
         getCounter()
         modifyBlock()
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
         MarisaMod.logger.info(
-            "CollectingQuirk : applyPowers : damage :"
-                    + damage
-                    + " ; counter : " + counter
-                    + " ; block :" + block
-                    + " ; magic number :" + magicNumber
+            """CollectingQuirk : applyPowers : damage :$damage ; 
+                |counter : $counter ; 
+                |block :$block ; 
+                |magic number :$magicNumber""".trimMargin()
         )
     }
 

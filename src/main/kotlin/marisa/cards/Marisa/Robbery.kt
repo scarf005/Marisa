@@ -28,7 +28,7 @@ class Robbery : CustomCard(
         tags.add(CardTags.HEALING)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         AbstractDungeon.actionManager.addToBottom(
             RobberyDamageAction(
                 m,

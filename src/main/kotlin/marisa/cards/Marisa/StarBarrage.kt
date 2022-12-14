@@ -28,7 +28,7 @@ class StarBarrage : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         magicNumber = baseMagicNumber
         for (i in 0 until magicNumber) {
             AbstractDungeon.actionManager.addToBottom(

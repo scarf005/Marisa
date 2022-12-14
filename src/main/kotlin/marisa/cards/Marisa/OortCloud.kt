@@ -34,7 +34,7 @@ class OortCloud : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {
+    override fun calculateCardDamage(unused: AbstractMonster?) {
         block = baseBlock
         magicNumber = baseMagicNumber
     }

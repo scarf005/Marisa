@@ -51,7 +51,7 @@ class Orbital : CustomCard(
         )
     }
 
-    override fun use(arg0: AbstractPlayer, arg1: AbstractMonster) {}
+    override fun use(arg0: AbstractPlayer, arg1: AbstractMonster?) {}
 
     companion object {
         const val ID = "Orbital"

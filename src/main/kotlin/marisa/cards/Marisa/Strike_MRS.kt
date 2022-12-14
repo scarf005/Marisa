@@ -30,7 +30,7 @@ class Strike_MRS : CustomCard(
         baseDamage = ATTACK_DMG
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         AbstractDungeon.actionManager.addToBottom(
             DamageAction(
                 m,
@@ -41,9 +41,6 @@ class Strike_MRS : CustomCard(
     }
 
     override fun makeCopy(): AbstractCard = Strike_MRS()
-
-    @Deprecated("Deprecated in Java")
-    override fun isStrike(): Boolean = true
 
     override fun upgrade() {
         if (!upgraded) {

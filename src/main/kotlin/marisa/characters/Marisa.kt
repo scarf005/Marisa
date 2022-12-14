@@ -165,7 +165,7 @@ class Marisa(name: String) :
         energyOrb.updateOrb(orbCount)
     }
 
-    override fun getOrb(): AtlasRegion = AtlasRegion(ImageMaster.loadImage(MarisaMod.CARD_ENERGY_ORB), 0, 0, 24, 24)
+    override fun getOrb() = AtlasRegion(ImageMaster.loadImage(MarisaMod.CARD_ENERGY_ORB), 0, 0, 24, 24)
 
     override fun getSlashAttackColor(): Color = MarisaMod.STARLIGHT
 

@@ -26,7 +26,7 @@ class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower()
         this.r = r
         p = AbstractDungeon.player
         rName = r.name
-        MarisaMod.logger.info("PropBagPower : Granting relic : " + rName)
+        MarisaMod.logger.info("PropBagPower : Granting relic : $rName")
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(
             Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, r
         )

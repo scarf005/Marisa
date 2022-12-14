@@ -20,7 +20,7 @@ class ParasitePatch {
         fun Prefix(
             _inst: AbstractCard,
             p: AbstractPlayer,
-            m: AbstractMonster?
+            unused: AbstractMonster?
         ): SpireReturn<*> {
             if (AbstractDungeon.player.hasRelic("ShroomBag") || AbstractDungeon.player.hasRelic("BigShroomBag")) {
                 val r: AbstractRelic
@@ -59,7 +59,7 @@ class ParasitePatch {
         fun Prefix(
             _inst: AbstractCard,
             p: AbstractPlayer,
-            m: AbstractMonster?
+            unused: AbstractMonster?
         ): SpireReturn<Boolean> {
             return if (_inst.cardID == "Parasite" && (p.hasRelic("ShroomBag") || p.hasRelic("BigShroomBag"))) {
                 SpireReturn.Return(true)

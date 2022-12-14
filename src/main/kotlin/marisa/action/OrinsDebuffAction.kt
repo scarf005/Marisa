@@ -32,7 +32,7 @@ class OrinsDebuffAction(amount: Int, source: AbstractCreature) : AbstractGameAct
                 pows.add(pow)
             }
         }
-        if (!pows.isEmpty()) {
+        if (pows.isNotEmpty()) {
             val po = pows[AbstractDungeon.miscRng.random(0, pows.size - 1)]
             AbstractDungeon.actionManager.addToBottom(
                 RemoveSpecificPowerAction(p, orin, po)

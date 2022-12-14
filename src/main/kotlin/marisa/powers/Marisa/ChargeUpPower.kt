@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaMod
 import marisa.action.ConsumeChargeUpAction
 import marisa.cards.derivations.Exhaustion_MRS
+import kotlin.math.pow
 
 class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     private var cnt: Int
@@ -55,11 +56,11 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun updateDescription() {
-        if (cnt > 0) {
-            description = (DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
+        description = if (cnt > 0) {
+            (DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
                     + "," + DESCRIPTIONS[2] + Math.pow(2.0, cnt.toDouble()).toInt() + DESCRIPTIONS[3])
         } else {
-            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + "."
+            DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + "."
         }
     }
 
@@ -90,18 +91,18 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         }
         if (cnt > 0) {
             if (type == DamageType.NORMAL && amount >= 1) {
-                return (damage * Math.pow(2.0, cnt.toDouble())).toFloat()
+                return (damage * 2.0.pow(cnt.toDouble())).toFloat()
             }
         }
         return damage
     }
 
     private val divider: Unit
-        private get() {
-            if (AbstractDungeon.player.hasRelic("SimpleLauncher")) {
-                stc = IMPR_STACK
+        get() {
+            stc = if (AbstractDungeon.player.hasRelic("SimpleLauncher")) {
+                IMPR_STACK
             } else {
-                stc = ACT_STACK
+                ACT_STACK
             }
         }
 

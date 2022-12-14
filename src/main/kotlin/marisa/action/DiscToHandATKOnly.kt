@@ -9,10 +9,9 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
 class DiscToHandATKOnly(amount: Int) : AbstractGameAction() {
-    private val p: AbstractPlayer
+    private val p: AbstractPlayer = AbstractDungeon.player
 
     init {
-        p = AbstractDungeon.player
         setValues(p, AbstractDungeon.player, amount)
         actionType = ActionType.CARD_MANIPULATION
         duration = Settings.ACTION_DUR_MED

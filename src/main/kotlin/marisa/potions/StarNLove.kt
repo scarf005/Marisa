@@ -23,7 +23,7 @@ class StarNLove : AbstractPotion(
         tips.add(PowerTip(name, description))
     }
 
-    override fun use(abstractCreature: AbstractCreature) {
+    override fun use(unused: AbstractCreature?) {
         addToBot(
             ApplyPowerAction(
                 AbstractDungeon.player, AbstractDungeon.player,

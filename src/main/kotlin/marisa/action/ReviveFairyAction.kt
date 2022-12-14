@@ -69,7 +69,7 @@ class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : Ab
             fairy.rollMove()
             MarisaMod.logger.info("ReviveFairyAction : done applying power;")
         } else {
-            MarisaMod.logger.info("ReviveFairyAction : error : target is not ZombieFairy : " + target.name)
+            MarisaMod.logger.info("""ReviveFairyAction : error : target is not ZombieFairy : ${target.name}""")
         }
         isDone = true
     }

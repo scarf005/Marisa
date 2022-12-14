@@ -31,7 +31,7 @@ class MachineGunSpark : CustomCard(
         tags.add(CardTagEnum.SPARK)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         for (i in 0 until magicNumber) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(

@@ -35,7 +35,7 @@ class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() 
                     pool.add(c)
                 }
             }
-            if (!pool.isEmpty()) {
+            if (pool.isNotEmpty()) {
                 val rand = AbstractDungeon.miscRng.random(0, pool.size - 1)
                 val c = pool[rand]
                 MarisaMod.logger.info(

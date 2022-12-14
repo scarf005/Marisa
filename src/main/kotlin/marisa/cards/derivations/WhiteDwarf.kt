@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import kotlin.math.floor
 
 class WhiteDwarf : AmplifiedAttack(
     ID,
@@ -34,7 +35,7 @@ class WhiteDwarf : AmplifiedAttack(
 
     override fun applyPowers() {
         val player = AbstractDungeon.player
-        ampNumber = Math.floor((player.discardPile.size() * magn).toDouble()).toInt()
+        ampNumber = floor((player.discardPile.size() * magn).toDouble()).toInt()
         super.applyPowers()
     }
 
@@ -44,7 +45,7 @@ class WhiteDwarf : AmplifiedAttack(
 
     override fun calculateCardDamage(mo: AbstractMonster) {
         val player = AbstractDungeon.player
-        ampNumber = Math.floor((player.discardPile.size() * magn).toDouble()).toInt()
+        ampNumber = floor((player.discardPile.size() * magn).toDouble()).toInt()
         super.calculateCardDamage(mo)
     }
 

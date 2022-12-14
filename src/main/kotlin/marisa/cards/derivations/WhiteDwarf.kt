@@ -39,11 +39,11 @@ class WhiteDwarf : AmplifiedAttack(
         super.applyPowers()
     }
 
-    override fun calculateDamageDisplay(mo: AbstractMonster) {
+    override fun calculateDamageDisplay(mo: AbstractMonster?) {
         calculateCardDamage(mo)
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {
+    override fun calculateCardDamage(mo: AbstractMonster?) {
         val player = AbstractDungeon.player
         ampNumber = floor((player.discardPile.size() * magn).toDouble()).toInt()
         super.calculateCardDamage(mo)

@@ -3,7 +3,7 @@ package marisa.action
 import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.cards.Marisa.FinalSpark
+import marisa.cards.FinalSpark
 
 class SparkCostAction : AbstractGameAction() {
     init {

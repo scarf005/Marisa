@@ -28,42 +28,41 @@ class ManaRampagePower(owner: AbstractCreature?, amount: Int) : AbstractPower() 
     }
 
     override fun onUseCard(card: AbstractCard, action: UseCardAction) {
-        if (!card.purgeOnUse && card.type == CardType.ATTACK && amount > 0) {
-            flash()
-            for (i in 0 until amount) {
-                var m: AbstractMonster? = null
-                if (action.target != null) {
-                    m = action.target as AbstractMonster
-                }
-                val tmp = card.makeStatEquivalentCopy()
-                AbstractDungeon.player.limbo.addToBottom(tmp)
-                tmp.current_x = card.current_x
-                tmp.current_y = card.current_y
-                tmp.target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale
-                tmp.target_y = Settings.HEIGHT / 2.0f
-                tmp.freeToPlayOnce = true
+        if (card.purgeOnUse || card.type != CardType.ATTACK || amount <= 0) return
+
+        flash()
+        for (i in 0 until amount) {
+            val m = action.target?.let { it as AbstractMonster }
+            val tmp = card.makeStatEquivalentCopy()
+            AbstractDungeon.player.limbo.addToBottom(tmp)
+            tmp.apply {
+                current_x = card.current_x
+                current_y = card.current_y
+                target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale
+                target_y = Settings.HEIGHT / 2.0f
+                freeToPlayOnce = true
                 if (m != null) {
-                    tmp.calculateCardDamage(m)
+                    calculateCardDamage(m)
                 }
-                tmp.purgeOnUse = true
-                AbstractDungeon.actionManager.cardQueue.add(CardQueueItem(tmp, m, card.energyOnUse))
+                purgeOnUse = true
             }
-            AbstractDungeon.actionManager
-                .addToBottom(RemoveSpecificPowerAction(owner, owner, this))
+            AbstractDungeon.player.limbo.addToBottom(tmp)
+            AbstractDungeon.actionManager.cardQueue.add(CardQueueItem(tmp, m, card.energyOnUse))
         }
+        AbstractDungeon.actionManager
+            .addToBottom(RemoveSpecificPowerAction(owner, owner, this))
     }
 
     override fun atEndOfTurn(isPlayer: Boolean) {
-        if (isPlayer) {
-            AbstractDungeon.actionManager
-                .addToBottom(RemoveSpecificPowerAction(owner, owner, this))
-        }
+        if (!isPlayer) return
+
+        AbstractDungeon.actionManager
+            .addToBottom(RemoveSpecificPowerAction(owner, owner, this))
     }
 
     companion object {
         const val POWER_ID = "ManaRampagePower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
+        private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME
         val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }

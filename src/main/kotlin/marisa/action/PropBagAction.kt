@@ -18,82 +18,25 @@ class PropBagAction : AbstractGameAction() {
     override fun update() {
         val p = AbstractDungeon.player
         MarisaMod.logger.info("PropBagAction : Checking for relics")
-        val rs = ArrayList<AbstractRelic>()
-        var r: AbstractRelic
-        if (!p.hasRelic("Meat on the Bone")) {
-            r = MeatOnTheBone()
-            rs.add(r)
+
+        val relics = listOf(
+            MeatOnTheBone(), MummifiedHand(), LetterOpener(), Shuriken(),
+            GremlinHorn(), Sundial(), MercuryHourglass(), OrnamentalFan(),
+            Kunai(), BlueCandle(), AmplifyWand()
+        ).filterNot { p.hasRelic(it.relicId) }
+        // TODO: refactor with Arrow
+
+        when (relics.size) {
+            0 -> {
+                MarisaMod.logger.info("PropBagAction : No relic to give")
+            }
+
+            else -> {
+                val relic = relics.random()
+                MarisaMod.logger.info("PropBagAction : Giving relic : $relic")
+                addToBot(ApplyPowerAction(p, p, PropBagPower(p, relic)))
+            }
         }
-        if (!p.hasRelic("Mummified Hand")) {
-            r = MummifiedHand()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Letter Opener")) {
-            r = LetterOpener()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Shuriken")) {
-            r = Shuriken()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Gremlin Horn")) {
-            r = GremlinHorn()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Sundial")) {
-            r = Sundial()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Mercury Hourglass")) {
-            r = MercuryHourglass()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Ornamental Fan")) {
-            r = OrnamentalFan()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Kunai")) {
-            r = Kunai()
-            rs.add(r)
-        }
-        if (!p.hasRelic("Blue Candle")) {
-            r = BlueCandle()
-            rs.add(r)
-        }
-        if (!p.hasRelic("AmplifyWand")) {
-            r = AmplifyWand()
-            rs.add(r)
-        }
-        if (rs.size <= 0) {
-            MarisaMod.logger.info("PropBagAction : No relic to give,returning")
-            isDone = true
-            return
-        }
-        if (rs.size == 1) {
-            r = rs[0]
-            MarisaMod.logger.info("PropBagAction : Only one relic to give : " + r.relicId)
-            AbstractDungeon.actionManager.addToBottom(
-                ApplyPowerAction(
-                    p, p,
-                    PropBagPower(p, r)
-                )
-            )
-            isDone = true
-            return
-        }
-        rs.size
-        val index = AbstractDungeon.miscRng.random(0, rs.size - 1)
-        r = rs[index]
-        MarisaMod.logger.info(
-            "PropBagAction : random relic : " + r.relicId
-                    + " ; random index : " + index
-        )
-        AbstractDungeon.actionManager.addToBottom(
-            ApplyPowerAction(
-                p, p,
-                PropBagPower(p, r)
-            )
-        )
         isDone = true
     }
 }

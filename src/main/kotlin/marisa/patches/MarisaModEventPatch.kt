@@ -52,9 +52,9 @@ class MarisaModEventPatch {
             val p = AbstractDungeon.player
             val floor = AbstractDungeon.floorNum
             val abort: Boolean = when (event) {
-                is OrinTheCat -> (p.hasRelic(CatCart.ID) || (p !is Marisa) && !MarisaMod.isCatEventEnabled)
+                is OrinTheCat -> p.hasRelic(CatCart.ID) || (p !is Marisa) && !MarisaMod.isCatEventEnabled
                 is Mushrooms_MRS -> floor <= 6
-                else -> true
+                else -> false
             }
             return when (abort) {
                 true -> AbstractDungeon.getEvent(AbstractDungeon.eventRng)

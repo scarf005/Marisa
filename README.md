@@ -101,3 +101,7 @@ gradle -t toMods # install once
 
 - [SuperFastMode](https://github.com/Skrelpoid/SuperFastMode): speed up the game, make gameplay lightning fast
 - [BetterRewardsMod](https://github.com/Skrelpoid/BetterRewardsMod): adds a choice at Neow that rewards you depending on the score of your last run
+
+### License
+
+`src/main/kotlin/marisa`: [MIT](src/main/kotlin/marisa/LICENSE)

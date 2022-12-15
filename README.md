@@ -6,9 +6,7 @@
 <h1>Marisa: Continued</h1>
 </div>
 
-## Introduction
-
-_**Marisa:** Continued_ is a [re-continued][original] mod for [**Slay the Spire**][sts], which adds **[Marisa Kirisame
+a [re-continued][original] mod for [**Slay the Spire**][sts], which adds **[Marisa Kirisame
 ][marisa]** from Touhou Project as a playable character.
 
 > _**Marisa:** Continued_ is a fork of [STS_ThMod_MRS](https://github.com/lf201014/STS_ThMod_MRS) mod. Credits goes to the original authors.
@@ -17,17 +15,15 @@ _**Marisa:** Continued_ is a [re-continued][original] mod for [**Slay the Spire*
 [sts]: https://store.steampowered.com/app/646570/Slay_the_Spire/
 [marisa]: https://en.touhouwiki.net/wiki/Kirisame_Marisa
 
-## What's different from original mod?
+## New features
 
-### Generated Card Previews
+### Previews for generated cards
 
 <div align="center">
   <img src="docs/preview/01.png" width="32%" />
   <img src="docs/preview/02.png" width="32%" />
   <img src="docs/preview/03.png" width="32%" />
 </div>
-
-multiple card previews are also supported.
 
 ## Content and Gameplay
 

@@ -22,6 +22,10 @@ class StarlightTyphoon : AmplifiedAttack(
     CardRarity.UNCOMMON,
     CardTarget.NONE
 ) {
+    init {
+        cardsToPreview = Spark()
+    }
+
     var counter = 0
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         p.hand.group
@@ -47,6 +51,7 @@ class StarlightTyphoon : AmplifiedAttack(
         upgradeMagicNumber(UPG_MULT)
         rawDescription = DESCRIPTION_UPG
         initializeDescription()
+        cardsToPreview = Spark().upgraded()
     }
 
     companion object {

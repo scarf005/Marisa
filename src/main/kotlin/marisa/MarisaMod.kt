@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper
 import com.megacrit.cardcrawl.helpers.FontHelper
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.localization.*
+import com.megacrit.cardcrawl.potions.AbstractPotion
 import com.megacrit.cardcrawl.rooms.AbstractRoom
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.action.SparkCostAction
@@ -37,14 +38,12 @@ import marisa.patches.ThModClassEnum
 import marisa.potions.BottledSpark
 import marisa.potions.ShroomBrew
 import marisa.potions.StarNLove
+import marisa.powers.Marisa.*
 import marisa.relics.*
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import java.nio.charset.StandardCharsets
 import java.util.*
-import basemod.interfaces.PostInitializeSubscriber
-import com.megacrit.cardcrawl.potions.AbstractPotion
-import marisa.powers.Marisa.*
 
 @SpireInitializer
 class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,

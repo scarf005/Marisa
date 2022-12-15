@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.cards.derivations.Spark
 
 class CasketOfStar : CustomCard(
     ID,
@@ -22,6 +23,10 @@ class CasketOfStar : CustomCard(
     CardRarity.RARE,
     CardTarget.SELF
 ) {
+    init {
+        cardsToPreview = Spark()
+    }
+
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(
@@ -47,11 +52,11 @@ class CasketOfStar : CustomCard(
     override fun makeCopy(): AbstractCard = CasketOfStar()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        rawDescription = DESCRIPTION_UPG
+        cardsToPreview = Spark().upgraded()
+        initializeDescription()
     }
 
     companion object {

@@ -5,6 +5,7 @@ import marisa.powers.Marisa.EscapeVelocityPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
@@ -24,6 +25,7 @@ class EscapeVelocity : CustomCard(
     init {
         baseMagicNumber = 1
         magicNumber = baseMagicNumber
+        cardsToPreview = Burn()
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {

@@ -28,6 +28,7 @@ class DoubleSpark : CustomCard(
     init {
         baseDamage = ATK_DMG
         tags.add(CardTagEnum.SPARK)
+        cardsToPreview = Spark()
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
@@ -42,24 +43,20 @@ class DoubleSpark : CustomCard(
                 AttackEffect.SLASH_DIAGONAL
             )
         )
-        val c: AbstractCard = Spark()
-        if (upgraded) {
-            c.upgrade()
-        }
         AbstractDungeon.actionManager.addToBottom(
-            MakeTempCardInHandAction(c, 1)
+            MakeTempCardInHandAction(followUpgrade(Spark()), 1)
         )
     }
 
     override fun makeCopy(): AbstractCard = DoubleSpark()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
+        cardsToPreview = Spark().upgraded()
     }
 
     companion object {

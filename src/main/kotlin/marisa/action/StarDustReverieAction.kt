@@ -40,23 +40,17 @@ class StarDustReverieAction(upgraded: Boolean) : AbstractGameAction() {
         }
         for (i in 0 until cnt) {
             val c = randomMarisaCard
-            MarisaMod.logger.info("StarDustReverieAction : adding " + c.cardID)
+            MarisaMod.logger.info("""StarDustReverieAction : adding ${c.cardID}""")
             if (upgraded) {
                 c.upgrade()
             }
             MarisaMod.logger.info(
-                "StarDustReverieAction : checking : Exhaust : " + c.exhaust +
-                        " ; Ethereal : " + c.isEthereal +
-                        " ; Upgraded : " + c.upgraded
+                """StarDustReverieAction : checking : Exhaust : ${c.exhaust} ; Ethereal : ${c.isEthereal} ; Upgraded : ${c.upgraded}"""
             )
             AbstractDungeon.actionManager.addToBottom(
                 MakeTempCardInHandAction(c, 1)
             )
         }
-        /*
-	    AbstractDungeon.actionManager.addToBottom(
-	    		new HandCheckAction(this.upgraded)
-	    		);
-	    */isDone = true
+        isDone = true
     }
 }

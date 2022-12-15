@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect
+import marisa.cards.derivations.Spark
 
 class FinalSpark : CustomCard(
     ID,
@@ -30,6 +31,7 @@ class FinalSpark : CustomCard(
         isMultiDamage = true
         baseDamage = ATK_DMG
         tags.add(CardTagEnum.SPARK)
+        cardsToPreview = Spark()
     }
 
     override fun applyPowers() {

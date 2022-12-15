@@ -5,6 +5,7 @@ import marisa.powers.Marisa.SuperNovaPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
@@ -25,6 +26,7 @@ class SuperNova : CustomCard(
         //this.tags.add(BaseModCardTags.FORM);
         baseMagicNumber = STACK
         magicNumber = baseMagicNumber
+        cardsToPreview = Burn()
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {

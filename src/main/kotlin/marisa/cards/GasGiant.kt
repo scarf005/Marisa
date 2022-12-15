@@ -26,6 +26,7 @@ class GasGiant : CustomCard(
         baseBlock = BLOCK_AMT
         baseMagicNumber = VUL_GAIN
         magicNumber = baseMagicNumber
+        cardsToPreview = Burn()
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {

@@ -32,6 +32,7 @@ class BlazingStar : AmplifiedAttack(
         baseMagicNumber = AMP_DMG
         magicNumber = baseMagicNumber
         isException = true
+        cardsToPreview = Burn()
     }
 
     private fun burns() = AbstractDungeon.player.hand.group.filterIsInstance<Burn>().size

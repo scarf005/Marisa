@@ -1,19 +1,29 @@
 ![](docs/repoTemplate/RepoTemplate.png)
 
-![Kotlin][Kotlin] ![Gradle][Gradle]
+<div align="center">
+<img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" />
+<img src="https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white" />
+<h1>Marisa: Continued</h1>
+</div>
 
-# Marisa: Continued
+a [re-continued][original] mod for [**Slay the Spire**][sts], which adds **[Marisa Kirisame
+][marisa]** from Touhou Project as a playable character.
 
-## Introduction
-
-`Marisa: Continued` is a [re-continued][original] mod for [**Slay the Spire**][sts], which adds [**Marisa Kirisame**][marisa] from Touhou Project as a playable character.
-
-> info
-> This mod is a fork of [STS_ThMod_MRS](https://github.com/lf201014/STS_ThMod_MRS) mod. Credits goes to the original authors.
+> _**Marisa:** Continued_ is a fork of [STS_ThMod_MRS](https://github.com/lf201014/STS_ThMod_MRS) mod. Credits goes to the original authors.
 
 [original]: https://steamcommunity.com/sharedfiles/filedetails/?id=1614104912
 [sts]: https://store.steampowered.com/app/646570/Slay_the_Spire/
 [marisa]: https://en.touhouwiki.net/wiki/Kirisame_Marisa
+
+## New features
+
+### Previews for generated cards
+
+<div align="center">
+  <img src="docs/preview/01.png" width="32%" />
+  <img src="docs/preview/02.png" width="32%" />
+  <img src="docs/preview/03.png" width="32%" />
+</div>
 
 ## Content and Gameplay
 
@@ -52,18 +62,18 @@ TODO
 > warning
 > development environment is only tested on linux. may not work for other OS
 
-1. git clone repository `https://github.com/scarf005/Marisa.git`
+git clone repository `https://github.com/scarf005/Marisa.git`
 
 ![](docs/ProjectStructure.png)
 
-2. setup java, kotlin, and gradle in your intellij. language version must be 8.
+setup java, kotlin, and gradle in your intellij. language version must be 8.
 
 ```sh
 gradle -t toMods # install once
 ./gradlew -t toMods --warning-mode all # dev mode: recompile on changes
 ```
 
-3. run gradle task to copy jar into your steam mods folder.
+run gradle task to copy jar into your steam mods folder.
 
 ## Credits
 
@@ -102,11 +112,12 @@ gradle -t toMods # install once
 ### Recommended Mods
 
 - [SuperFastMode](https://github.com/Skrelpoid/SuperFastMode): speed up the game, make gameplay lightning fast
-- [BetterRewardsMod](https://github.com/Skrelpoid/BetterRewardsMod): adds a choice at Neow that rewards you depending on the score of your last run
+- [BetterRewardsMod](https://github.com/Skrelpoid/BetterRewardsMod): adds a choice at Neow that rewards you depending on
+  the score of your last run
 
 ### License
 
 `src/main/kotlin/marisa`: [MIT](src/main/kotlin/marisa/LICENSE)
 
-[Kotlin]: https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white
-[Gradle]: https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white
+[kotlin]: https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white
+[gradle]: https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white

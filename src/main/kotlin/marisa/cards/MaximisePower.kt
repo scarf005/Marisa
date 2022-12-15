@@ -29,17 +29,19 @@ class MaximisePower : CustomCard(
         baseMagicNumber = 2
         magicNumber = baseMagicNumber
         exhaust = true
+        cardsToPreview = Exhaustion_MRS()
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (p.hasPower(ChargeUpPower.POWER_ID)) {
-            if (p.getPower(ChargeUpPower.POWER_ID).amount > 0) {
-                AbstractDungeon.actionManager.addToBottom(
+        p.getPower(ChargeUpPower.POWER_ID)
+            ?.takeIf { it.amount > 0 }
+            ?.let { power ->
+                addToBot(
                     GainEnergyAction(p.getPower(ChargeUpPower.POWER_ID).amount)
                 )
-                p.getPower(ChargeUpPower.POWER_ID).amount = 0
+                power.amount = 0
             }
-        }
+
         AbstractDungeon.actionManager.addToBottom(
             ApplyPowerAction(
                 p,
@@ -62,10 +64,6 @@ class MaximisePower : CustomCard(
         if (!upgraded) {
             upgradeName()
             updateCost(-1)
-            //upgradeMagicNumber(1);
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-            //this.exhaust = false;
         }
     }
 

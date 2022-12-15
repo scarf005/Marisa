@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.cards.derivations.Spark
 
 class RefractionSpark : AmplifiedAttack(
     ID,
@@ -28,6 +29,7 @@ class RefractionSpark : AmplifiedAttack(
         ampNumber = AMP_DMG
         baseBlock = baseDamage + ampNumber
         tags.add(CardTagEnum.SPARK)
+        cardsToPreview = Spark()
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {

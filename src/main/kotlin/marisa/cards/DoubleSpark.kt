@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.cards.derivations.Spark
-import marisa.patches.AbstractCardEnum
-import marisa.patches.CardTagEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -13,6 +10,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.cards.derivations.Spark
+import marisa.patches.AbstractCardEnum
+import marisa.patches.CardTagEnum
 
 class DoubleSpark : CustomCard(
     ID,
@@ -28,6 +28,7 @@ class DoubleSpark : CustomCard(
     init {
         baseDamage = ATK_DMG
         tags.add(CardTagEnum.SPARK)
+        cardsToPreview = Spark()
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
@@ -42,24 +43,21 @@ class DoubleSpark : CustomCard(
                 AttackEffect.SLASH_DIAGONAL
             )
         )
-        val c: AbstractCard = Spark()
-        if (upgraded) {
-            c.upgrade()
-        }
         AbstractDungeon.actionManager.addToBottom(
-            MakeTempCardInHandAction(c, 1)
+            MakeTempCardInHandAction(followUpgrade(Spark()), 1)
         )
     }
 
     override fun makeCopy(): AbstractCard = DoubleSpark()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
+        cardsToPreview = Spark().upgraded()
     }
 
     companion object {

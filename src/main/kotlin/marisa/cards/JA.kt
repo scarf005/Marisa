@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.cards.derivations.Spark
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -12,6 +10,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.cards.derivations.Spark
+import marisa.patches.AbstractCardEnum
 
 class JA : CustomCard(
     ID,
@@ -24,9 +24,9 @@ class JA : CustomCard(
     CardRarity.RARE,
     CardTarget.ENEMY
 ) {
-    //private static final int UPG_DMG = 2;
     init {
         baseDamage = ATK_DMG
+        multiplePreviews(cards)
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
@@ -37,38 +37,21 @@ class JA : CustomCard(
                 AttackEffect.SLASH_DIAGONAL
             )
         )
-        var c: AbstractCard = UpSweep()
-        if (upgraded) {
-            c.upgrade()
-        }
-        AbstractDungeon.actionManager.addToBottom(
-            MakeTempCardInHandAction(c, 1)
-        )
-        c = Spark()
-        if (upgraded) {
-            c.upgrade()
-        }
-        AbstractDungeon.actionManager.addToBottom(
-            MakeTempCardInHandAction(c, 1)
-        )
-        c = WitchLeyline()
-        if (upgraded) {
-            c.upgrade()
-        }
-        AbstractDungeon.actionManager.addToBottom(
-            MakeTempCardInHandAction(c, 1)
-        )
+        cards.forEach { addToBot(MakeTempCardInHandAction(it, 1)) }
     }
+
+    private val cards
+        get() = listOf(UpSweep(), Spark(), WitchLeyline()).map { followUpgrade(it) }
 
     override fun makeCopy(): AbstractCard = JA()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            //upgradeDamage(UPG_DMG);
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+
+        upgradeName()
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
+        multiplePreviews(cards)
     }
 
     companion object {

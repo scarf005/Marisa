@@ -23,15 +23,14 @@ class BinaryStars : CustomCard(
     CardRarity.RARE,
     CardTarget.SELF
 ) {
-    // TODO: add
-//    init {
-//        MultiCardPreview.add(BinaryStars(), BlackFlareStar(), WhiteDwarf())
-//    }
+    init {
+        multiplePreviews(stars())
+    }
+
+    private fun stars() = listOf(WhiteDwarf(), BlackFlareStar()).map { followUpgrade(it) }
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (MarisaMod.isAmplified(this, AMP)) {
-            listOf(BlackFlareStar(), WhiteDwarf())
-                .map { followUpgrade(it) }
-                .forEach { addToBot(MakeTempCardInHandAction(it, 1)) }
+            stars().forEach { addToBot(MakeTempCardInHandAction(it, 1)) }
         } else {
             addToBot(BinaryStarsAction(upgraded))
         }
@@ -40,11 +39,12 @@ class BinaryStars : CustomCard(
     override fun makeCopy(): AbstractCard = BinaryStars()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION
-            initializeDescription()
-        }
+        if (upgraded) return
+
+        upgradeName()
+        rawDescription = cardStrings.UPGRADE_DESCRIPTION
+        initializeDescription()
+        multiplePreviews(stars())
     }
 
     companion object {

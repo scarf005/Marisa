@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.cards.derivations.Spark
-import marisa.patches.AbstractCardEnum
-import marisa.patches.CardTagEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -13,6 +10,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.cards.derivations.Spark
+import marisa.patches.AbstractCardEnum
+import marisa.patches.CardTagEnum
 
 class DoubleSpark : CustomCard(
     ID,
@@ -52,6 +52,7 @@ class DoubleSpark : CustomCard(
 
     override fun upgrade() {
         if (upgraded) return
+
         upgradeName()
         upgradeDamage(UPG_DMG)
         rawDescription = DESCRIPTION_UPG

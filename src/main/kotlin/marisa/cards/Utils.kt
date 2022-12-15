@@ -1,5 +1,6 @@
 package marisa.cards
 
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview
 import com.megacrit.cardcrawl.cards.AbstractCard
 import marisa.MarisaMod
 
@@ -12,3 +13,8 @@ fun AbstractCard.followUpgrade(card: AbstractCard) =
 fun AbstractCard.upgraded() = apply { upgrade() }
 
 fun AbstractCard.isAmplified(multiplier: Int = 1) = MarisaMod.isAmplified(this, multiplier)
+
+fun AbstractCard.multiplePreviews(cards: List<AbstractCard>) {
+    MultiCardPreview.clear(this)
+    MultiCardPreview.add(this, *cards.toTypedArray())
+}

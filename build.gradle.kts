@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.com.google.gson.Gson
 import java.text.SimpleDateFormat
 
 val modID = "MarisaContinued"
+val jarFile = "$buildDir/libs/${modID}.jar"
 
 val (gameDir, modTheSpireDir, basemodDir) = run {
     val homeDir = System.getProperty("user.home")!!
@@ -65,9 +66,32 @@ data class ModTheSpire(
     val dependencies: List<String> = listOf("basemod"),
 )
 
+data class Config(
+    val title: String = "Marisa: Continued",
+    val description: String = """
+        [quote=Marisa Kirisame]It ain't magic if it ain't flashy. Danmaku's all about firepower.[/quote]
+
+        Play as your everyday ordinary magician! 
+          
+        [b]SPECIAL THANKS[/b]
+        https://steamcommunity.com/sharedfiles/filedetails/?id=1614104912
+        This mod is a continuation of the original mod. Credits goes to the original author.
+        
+        [b]READ MORE[/b]
+        [list]
+            [*] [url=https://github.com/scarf005/Marisa]github[/url]
+            [*] [url=https://github.com/scarf005/Marisa/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc]bug report[/url]
+            [*] [url=https://github.com/scarf005/Marisa/discussions]discussions[/url]
+        [/list]
+        """.trimIndent(),
+    val visibility: String = "private",
+    val changeNote: String = "",
+    val tags: List<String> = listOf("Touhou", "Character", "Marisa", "Kirisame Marisa")
+)
+
 enum class VersionMode(val jar: String) { DEV("devJar"), RELEASE("releaseJar") }
 
-val gson = Gson().newBuilder().setPrettyPrinting().create()
+val gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create()
 val configFile = file("src/main/resources/ModTheSpire.json")
 
 tasks.register("timestamp") {
@@ -89,16 +113,22 @@ fun Jar.configure(version: VersionMode) {
 tasks.register<Jar>(VersionMode.DEV.jar) { configure(VersionMode.DEV) }
 tasks.register<Jar>(VersionMode.RELEASE.jar) { configure(VersionMode.RELEASE) }
 
-fun Copy.configure(version: VersionMode, dest: String) {
+fun Copy.configure(version: VersionMode) {
     dependsOn(tasks.clean, version.jar)
-    from("build/libs/${modID}.jar")
-    into(dest)
 }
 
 tasks.register<Copy>("toMods") {
-    configure(version = VersionMode.DEV, dest = "${gameDir}/mods")
+    configure(version = VersionMode.DEV)
+    into("$gameDir/mods")
+
+    from("build/libs/${modID}.jar")
 }
 
 tasks.register<Copy>("toWorkshop") {
-    configure(version = VersionMode.RELEASE, dest = "${gameDir}/${modID}/content")
+    configure(version = VersionMode.RELEASE)
+    into("${gameDir}/${modID}")
+
+    from(jarFile) { into("content") }
+    from("docs/thumbnail/image.jpg")
+    file("$gameDir/${modID}/config.json").writeText(gson.toJson(Config()))
 }

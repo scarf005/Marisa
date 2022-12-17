@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.GameActionManager
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class OccultationAction : AbstractGameAction() {
     private val p: AbstractPlayer
@@ -22,7 +22,7 @@ class OccultationAction : AbstractGameAction() {
         }
         val cards = AbstractDungeon.player.drawPile.group
         //int cnt = 0;
-        MarisaMod.logger.info("Draw pile:" + cards.size)
+        MarisaContinued.logger.info("Draw pile:" + cards.size)
         while (!p.drawPile.isEmpty) {
             val c = p.drawPile.topCard
             p.drawPile.moveToDiscardPile(c)

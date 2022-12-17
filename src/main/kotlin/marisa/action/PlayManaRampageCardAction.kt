@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.CardQueueItem
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class PlayManaRampageCardAction internal constructor(upgraded: Boolean) : AbstractGameAction() {
     private val upgraded: Boolean
@@ -33,7 +33,7 @@ class PlayManaRampageCardAction internal constructor(upgraded: Boolean) : Abstra
         card.targetAngle = 0.0f
         card.drawScale = 0.12f
         card.lighten(false)
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "PlayManaRampageCardAction : card : " +
                     card.cardID +
                     " ; target : " +

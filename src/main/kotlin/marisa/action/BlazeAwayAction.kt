@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.CardQueueItem
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 //public class BlazeAwayAction {
 class BlazeAwayAction(card: AbstractCard) : AbstractGameAction() {
@@ -23,7 +23,7 @@ class BlazeAwayAction(card: AbstractCard) : AbstractGameAction() {
         } else {
             isDone = true
         }
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "BlazeAwayAction : Initialize complete ; card : " +
                     card.name
         )
@@ -44,7 +44,7 @@ class BlazeAwayAction(card: AbstractCard) : AbstractGameAction() {
             drawScale = 0.12f
         }
 
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             """BlazeAwayAction : card : ${card.cardID} ; target : ${target.id}"""
         )
         card.applyPowers()

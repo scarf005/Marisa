@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction
@@ -13,6 +11,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.patches.AbstractCardEnum
 
 class SuperPerseids : CustomCard(
     ID,
@@ -59,7 +59,7 @@ class SuperPerseids : CustomCard(
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {}
     override fun triggerOnExhaust() {
         applyPowers()
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "SuperPerseids : triggerOnExhaust : Damaging Random Enemy :"
                     + "; upgraded : " + upgraded
                     + "; damage : " + damage

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.MinionPower
 import com.megacrit.cardcrawl.relics.AbstractRelic.RelicTier
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class TreasureHunterDamageAction(target: AbstractCreature?, private val info: DamageInfo) : AbstractGameAction() {
     private var tier: RelicTier
@@ -30,7 +30,7 @@ class TreasureHunterDamageAction(target: AbstractCreature?, private val info: Da
                     AttackEffect.BLUNT_HEAVY
                 )
             )
-            MarisaMod.logger.info(
+            MarisaContinued.logger.info(
                 "TreasureHunterDamageAction : target : " +
                         target.id +
                         " ; damage : " +
@@ -39,7 +39,7 @@ class TreasureHunterDamageAction(target: AbstractCreature?, private val info: Da
             target.damage(info)
             val mon = target as AbstractMonster
             val curRoom = AbstractDungeon.getCurrRoom()
-            MarisaMod.logger.info(
+            MarisaContinued.logger.info(
                 "TreasureHunterDamageAction : Checking : MonsterRoomElite :" +
                         curRoom.eliteTrigger +
                         " ; MonsterRoomBoss :" +
@@ -54,7 +54,7 @@ class TreasureHunterDamageAction(target: AbstractCreature?, private val info: Da
                 }
             }
             if (reward) {
-                MarisaMod.logger.info(
+                MarisaContinued.logger.info(
                     "TreasureHunterDamageAction : Checking : isDying :" + mon.isDying +
                             " ; Current hp : " + mon.currentHealth
                 )
@@ -62,7 +62,7 @@ class TreasureHunterDamageAction(target: AbstractCreature?, private val info: Da
                     !target.halfDead &&
                     !target.hasPower(MinionPower.POWER_ID)
                 ) {
-                    MarisaMod.logger.info("TreasureHunterDamageAction : Granting relic tier :$tier")
+                    MarisaContinued.logger.info("TreasureHunterDamageAction : Granting relic tier :$tier")
                     AbstractDungeon.getCurrRoom().addRelicToRewards(tier)
                 }
             }

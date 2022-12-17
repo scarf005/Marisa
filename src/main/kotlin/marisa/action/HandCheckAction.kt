@@ -3,9 +3,10 @@ package marisa.action
 import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
-class HandCheckAction(upgraded: Boolean) : AbstractGameAction() {
+@Suppress("unused")
+class HandCheckAction : AbstractGameAction() {
     init {
         actionType = ActionType.CARD_MANIPULATION
         duration = Settings.ACTION_DUR_FAST
@@ -13,14 +14,14 @@ class HandCheckAction(upgraded: Boolean) : AbstractGameAction() {
 
     override fun update() {
         if (duration == Settings.ACTION_DUR_FAST) {
-            for (c in AbstractDungeon.player.hand.group) {
+            AbstractDungeon.player.hand.group.forEach { c ->
                 c.exhaust = true
                 c.isEthereal = true
-                MarisaMod.logger.info(
-                    "HandCheckAction : id : " + c.cardID +
-                            " ; cost for turn : " + c.costForTurn +
-                            " ; is Ethereal : " + c.isEthereal +
-                            " ; Exhaust : " + c.exhaust
+                MarisaContinued.logger.info(
+                    """HandCheckAction : id : ${c.cardID} ; 
+                                |cost for turn : ${c.costForTurn} ; 
+                                |is Ethereal : ${c.isEthereal} ; 
+                                |Exhaust : ${c.exhaust}""".trimMargin()
                 )
             }
         }

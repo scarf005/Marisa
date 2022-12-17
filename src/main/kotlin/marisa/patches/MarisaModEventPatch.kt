@@ -8,24 +8,25 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.events.AbstractEvent
 import com.megacrit.cardcrawl.events.exordium.Mushrooms
 import com.megacrit.cardcrawl.random.Random
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.characters.Marisa
 import marisa.event.Mushrooms_MRS
 import marisa.event.OrinTheCat
 import marisa.relics.CatCart
 
-@Suppress("FunctionName")
+@Suppress("FunctionName", "UNUSED_PARAMETER")
 class MarisaModEventPatch {
     @SpirePatch(clz = AbstractDungeon::class, method = "initializeCardPools")
     object EventPatch {
 
         private fun currentEvents() = AbstractDungeon.eventList.joinToString { "$it ; " }
-        private fun logEvents() = MarisaMod.logger.info("MarisaModEventPatch : current event list : ${currentEvents()}")
+        private fun logEvents() =
+            MarisaContinued.logger.info("MarisaModEventPatch : current event list : ${currentEvents()}")
 
         @JvmStatic
         @SpirePostfixPatch
         fun EventListPatch(unused: AbstractDungeon?) {
-            MarisaMod.logger.info(
+            MarisaContinued.logger.info(
                 """MarisaModEventPatch : EventListPatch : PlayerCharacter : ${AbstractDungeon.player.title}"""
             )
             logEvents()
@@ -34,7 +35,7 @@ class MarisaModEventPatch {
                 else -> Mushrooms_MRS.ID
             }
                 .also {
-                    MarisaMod.logger.info("MarisaModEventPatch : EventListPatch : removing $it")
+                    MarisaContinued.logger.info("MarisaModEventPatch : EventListPatch : removing $it")
                     AbstractDungeon.eventList.remove(it)
                 }
             logEvents()
@@ -46,13 +47,13 @@ class MarisaModEventPatch {
         @SpirePostfixPatch
         @JvmStatic
         fun GetEventPatch(event: AbstractEvent?, unused: Random?): AbstractEvent? {
-            MarisaMod.logger.info(
+            MarisaContinued.logger.info(
                 """MarisaModEventPatch : GetEventPatch : PlayerCharacter  : ${AbstractDungeon.player.title} ; retVal event : $event"""
             )
             val p = AbstractDungeon.player
             val floor = AbstractDungeon.floorNum
             val abort: Boolean = when (event) {
-                is OrinTheCat -> p.hasRelic(CatCart.ID) || (p !is Marisa) && !MarisaMod.isCatEventEnabled
+                is OrinTheCat -> p.hasRelic(CatCart.ID) || (p !is Marisa) && !MarisaContinued.isCatEventEnabled
                 is Mushrooms_MRS -> floor <= 6
                 else -> false
             }

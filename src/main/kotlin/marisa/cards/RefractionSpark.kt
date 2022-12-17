@@ -1,17 +1,17 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.abstracts.AmplifiedAttack
-import marisa.action.RefractionSparkAction
-import marisa.patches.AbstractCardEnum
-import marisa.patches.CardTagEnum
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.abstracts.AmplifiedAttack
+import marisa.action.RefractionSparkAction
 import marisa.cards.derivations.Spark
+import marisa.patches.AbstractCardEnum
+import marisa.patches.CardTagEnum
 
 class RefractionSpark : AmplifiedAttack(
     ID,
@@ -33,7 +33,7 @@ class RefractionSpark : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        if (MarisaMod.isAmplified(this, AMP)) {
+        if (MarisaContinued.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 RefractionSparkAction(
                     m,

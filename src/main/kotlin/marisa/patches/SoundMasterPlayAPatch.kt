@@ -1,3 +1,5 @@
+@file:Suppress("FunctionName", "unused", "UNUSED_PARAMETER")
+
 package marisa.patches
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
@@ -11,33 +13,16 @@ import com.megacrit.cardcrawl.core.Settings
     paramtypes = ["java.lang.String", "float"]
 )
 object SoundMasterPlayAPatch {
-    var map = HashMap<String?, Sfx?>()
+    private val sounds = mapOf(
+        "SELECT_MRS" to load("se_pldead00.ogg")
+    )
 
     @JvmStatic
-    fun Postfix(res: Long, _inst: SoundMaster?, key: String?, pitchAdjust: Float): Long {
-        if (map.containsKey(key)) {
-            /*
-      if (key.equals("SELECT_MRS")) {
-        return ((Sfx) map.get(key)).play(
-            Settings.SOUND_VOLUME * Settings.MASTER_VOLUME * 0.25F,
-            1.0F + pitchAdjust,
-            0.0F
-        );
-      } else*/
-            run {
-                return map[key]!!.play(
-                    Settings.SOUND_VOLUME * Settings.MASTER_VOLUME,
-                    1.0f + pitchAdjust,
-                    0.0f
-                )
-            }
-        }
+    fun Postfix(unused1: Long, unused2: SoundMaster?, key: String?, pitchAdjust: Float): Long {
+        sounds[key]?.play(Settings.SOUND_VOLUME * Settings.MASTER_VOLUME, 1.0f + pitchAdjust, 0.0f)
+
         return 0L
     }
 
     private fun load(filename: String): Sfx = Sfx("audio/sound/$filename", false)
-
-    init {
-        map["SELECT_MRS"] = load("se_pldead00.ogg")
-    }
 }

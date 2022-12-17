@@ -1,9 +1,5 @@
 package marisa.characters
 
-import marisa.MarisaMod
-import marisa.cards.MasterSpark
-import marisa.patches.AbstractCardEnum
-import marisa.patches.ThModClassEnum
 import basemod.abstracts.CustomPlayer
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.g2d.BitmapFont
@@ -25,6 +21,10 @@ import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.helpers.ScreenShake
 import com.megacrit.cardcrawl.screens.CharSelectInfo
 import com.megacrit.cardcrawl.unlock.UnlockTracker
+import marisa.MarisaContinued
+import marisa.cards.MasterSpark
+import marisa.patches.AbstractCardEnum
+import marisa.patches.ThModClassEnum
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 
@@ -132,7 +132,7 @@ class Marisa(name: String) :
         else -> "The Ordinary Magician"
     }
 
-    override fun getCardTrailColor(): Color = MarisaMod.STARLIGHT
+    override fun getCardTrailColor(): Color = MarisaContinued.STARLIGHT
 
     override fun getAscensionMaxHPLoss(): Int = ASCENSION_MAX_HP_LOSS
 
@@ -159,15 +159,15 @@ class Marisa(name: String) :
 
     override fun getVampireText(): String = Vampires.DESCRIPTIONS[1]
 
-    override fun getCardRenderColor(): Color = MarisaMod.STARLIGHT
+    override fun getCardRenderColor(): Color = MarisaContinued.STARLIGHT
 
     override fun updateOrb(orbCount: Int) {
         energyOrb.updateOrb(orbCount)
     }
 
-    override fun getOrb() = AtlasRegion(ImageMaster.loadImage(MarisaMod.CARD_ENERGY_ORB), 0, 0, 24, 24)
+    override fun getOrb() = AtlasRegion(ImageMaster.loadImage(MarisaContinued.CARD_ENERGY_ORB), 0, 0, 24, 24)
 
-    override fun getSlashAttackColor(): Color = MarisaMod.STARLIGHT
+    override fun getSlashAttackColor(): Color = MarisaContinued.STARLIGHT
 
     override fun getSpireHeartSlashEffect(): Array<AttackEffect> {
         return arrayOf(
@@ -193,14 +193,14 @@ class Marisa(name: String) :
 
     override fun applyPreCombatLogic() {
         super.applyPreCombatLogic()
-        MarisaMod.typhoonCounter = 0
-        MarisaMod.logger.info(
-            """Marisa : applyPreCombatLogic : I just reset the god damn typhoon counter ! current counter : ${MarisaMod.typhoonCounter}"""
+        MarisaContinued.typhoonCounter = 0
+        MarisaContinued.logger.info(
+            """Marisa : applyPreCombatLogic : I just reset the god damn typhoon counter ! current counter : ${MarisaContinued.typhoonCounter}"""
         )
     }
 
     companion object {
-        val logger: Logger = LogManager.getLogger(MarisaMod::class.java.name)
+        val logger: Logger = LogManager.getLogger(MarisaContinued::class.java.name)
         private const val ENERGY_PER_TURN = 3 // how much energy you get every turn
         private const val MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
         private const val MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2

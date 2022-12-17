@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower() {
     private val r: AbstractRelic
@@ -26,7 +26,7 @@ class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower()
         this.r = r
         p = AbstractDungeon.player
         rName = r.name
-        MarisaMod.logger.info("PropBagPower : Granting relic : $rName")
+        MarisaContinued.logger.info("PropBagPower : Granting relic : $rName")
         AbstractDungeon.getCurrRoom().spawnRelicAndObtain(
             Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f, r
         )

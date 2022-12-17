@@ -1,9 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
-import marisa.patches.CardTagEnum
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.animations.VFXAction
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -14,6 +10,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect
+import marisa.MarisaContinued
+import marisa.abstracts.AmplifiedAttack
+import marisa.patches.AbstractCardEnum
+import marisa.patches.CardTagEnum
 
 class MasterSpark : AmplifiedAttack(
     ID,
@@ -39,7 +39,7 @@ class MasterSpark : AmplifiedAttack(
                 MindblastEffect(p.dialogX, p.dialogY, false)
             )
         )
-        if (MarisaMod.isAmplified(this, AMP)) {
+        if (MarisaContinued.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(
                     m,

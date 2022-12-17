@@ -1,14 +1,14 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.action.BlazeAwayAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.action.BlazeAwayAction
+import marisa.patches.AbstractCardEnum
 
 class BlazeAway : CustomCard(
     ID,
@@ -48,14 +48,14 @@ class BlazeAway : CustomCard(
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         val last = lastAttack()
         if (last == null) {
-            MarisaMod.logger.info("BlazeAway : error : last attack is null ")
+            MarisaContinued.logger.info("BlazeAway : error : last attack is null ")
         } else {
-            MarisaMod.logger.info("""BlazeAway : last attack :${last.cardID}""")
+            MarisaContinued.logger.info("""BlazeAway : last attack :${last.cardID}""")
             val card = last.makeStatEquivalentCopy()
             if (card.costForTurn >= 0) {
                 card.setCostForTurn(0)
             }
-            MarisaMod.logger.info(
+            MarisaContinued.logger.info(
                 """BlazeAway : card :${card.cardID} ; baseD :${card.baseDamage} ; D : ${card.damage} ; baseB :${card.baseBlock} ; B : ${card.block} ; baseM :${card.baseMagicNumber} ; M : ${card.magicNumber} ; C : ${card.cost} ; CFT : ${card.costForTurn}"""
             )
             repeat((0 until magicNumber).count()) {

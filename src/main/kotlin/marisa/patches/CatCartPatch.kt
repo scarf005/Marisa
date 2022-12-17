@@ -6,7 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.relics.MarkOfTheBloom
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.relics.CatCart
 
 @Suppress("unused")
@@ -15,14 +15,14 @@ class CatCartPatch {
     object CatCartResurrect {
         @SpireInsertPatch(rloc = 149)
         @JvmStatic
-        fun insert(p: AbstractPlayer, unused: DamageInfo?): SpireReturn<*> {
+        fun insert(p: AbstractPlayer, @Suppress("UNUSED_PARAMETER") unused: DamageInfo?): SpireReturn<*> {
             p.getRelic(CatCart.ID)
                 ?.takeUnless { p.hasRelic(MarkOfTheBloom.ID) }
                 ?.takeIf { it.counter > 0 }
                 ?.let {
                     p.currentHealth = 0
                     it.onTrigger()
-                    MarisaMod.logger.info(
+                    MarisaContinued.logger.info(
                         """MarisaModEventPatch : CatCartPatch: Resurrecting player with ${it.counter} counters"""
                     )
                     return SpireReturn.Return<Any?>(null)

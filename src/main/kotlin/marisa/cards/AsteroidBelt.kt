@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
@@ -11,6 +9,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower
+import marisa.MarisaContinued
+import marisa.patches.AbstractCardEnum
 
 class AsteroidBelt : CustomCard(
     ID,
@@ -31,7 +31,7 @@ class AsteroidBelt : CustomCard(
         AbstractDungeon.actionManager.addToBottom(
             GainBlockAction(p, p, block)
         )
-        if (MarisaMod.isAmplified(this, AMP)) {
+        if (MarisaContinued.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(
                     p,

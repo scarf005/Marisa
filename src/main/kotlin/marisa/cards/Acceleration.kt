@@ -1,13 +1,13 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.action.DrawDrawPileAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.action.DrawDrawPileAction
+import marisa.patches.AbstractCardEnum
 
 class Acceleration : CustomCard(
     ID,
@@ -32,7 +32,7 @@ class Acceleration : CustomCard(
         for (i in 0 until block) {
             addToBot(DrawDrawPileAction())
         }
-        if (MarisaMod.isAmplified(this, AMP)) {
+        if (MarisaContinued.isAmplified(this, AMP)) {
             for (i in 0 until magicNumber) {
                 addToBot(DrawDrawPileAction())
             }

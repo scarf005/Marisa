@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.powers.StrengthPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     private val p: AbstractPlayer
@@ -74,7 +74,7 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     private fun discardCheck(card: AbstractCard): Boolean {
         if (card.type == CardType.CURSE || card.type == CardType.STATUS) {
-            MarisaMod.logger.info("SuperNovaPower : discardCheck : " + card.cardID + " detected.")
+            MarisaContinued.logger.info("SuperNovaPower : discardCheck : " + card.cardID + " detected.")
             return true
         }
         return false

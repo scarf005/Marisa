@@ -1,15 +1,15 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.abstracts.AmplifiedAttack
-import marisa.cards.derivations.Spark
-import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.abstracts.AmplifiedAttack
+import marisa.cards.derivations.Spark
+import marisa.patches.AbstractCardEnum
 
 class StarlightTyphoon : AmplifiedAttack(
     ID,
@@ -32,12 +32,12 @@ class StarlightTyphoon : AmplifiedAttack(
             .filterNot { it === this }
             .filterNot { it.type == CardType.ATTACK }
             .onEach {
-                MarisaMod.logger.info("""StarlightTyphoon: exhausting : ${it.name}""")
+                MarisaContinued.logger.info("""StarlightTyphoon: exhausting : ${it.name}""")
                 addToTop(ExhaustSpecificCardAction(it, p.hand, true))
             }
             .count()
             .also {
-                MarisaMod.logger.info("StarlightTyphoon: Spark (x$it)")
+                MarisaContinued.logger.info("StarlightTyphoon: Spark (x$it)")
                 addToBot(MakeTempCardInHandAction(followUpgrade(Spark()), it))
             }
     }

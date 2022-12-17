@@ -1,8 +1,5 @@
 package marisa.event
 
-import marisa.MarisaMod
-import marisa.cards.derivations.Wraith
-import marisa.relics.CatCart
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
@@ -12,6 +9,9 @@ import com.megacrit.cardcrawl.helpers.CardLibrary
 import com.megacrit.cardcrawl.helpers.MonsterHelper
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect
+import marisa.MarisaContinued
+import marisa.cards.derivations.Wraith
+import marisa.relics.CatCart
 
 class OrinTheCat : AbstractEvent() {
     private var screen: CurScreen = CurScreen.INTRO
@@ -44,9 +44,9 @@ class OrinTheCat : AbstractEvent() {
         AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter("Orin")
         orin = AbstractDungeon.getCurrRoom().monsters.monsters[0]
         if (orin != null) {
-            MarisaMod.logger.info("OrinTheCat : orin get : " + orin.name)
+            MarisaContinued.logger.info("OrinTheCat : orin get : " + orin.name)
         } else {
-            MarisaMod.logger.info("OrinTheCat : error : null orin")
+            MarisaContinued.logger.info("OrinTheCat : error : null orin")
         }
     }
 
@@ -58,7 +58,7 @@ class OrinTheCat : AbstractEvent() {
     }
 
     override fun onEnterRoom() {
-        MarisaMod.logger.info("OrinTheCat : OnEnterRoom")
+        MarisaContinued.logger.info("OrinTheCat : OnEnterRoom")
         AbstractDungeon.getCurrRoom().rewards.clear()
     }
 
@@ -76,7 +76,7 @@ class OrinTheCat : AbstractEvent() {
                     logMetric(ID, "Special")
                     return
                 } else {
-                    MarisaMod.logger.info("OrinTheCat : INTRO : Skipping fight!")
+                    MarisaContinued.logger.info("OrinTheCat : INTRO : Skipping fight!")
                     screen = CurScreen.END
                     /*
               if (orin != null) {
@@ -108,7 +108,7 @@ class OrinTheCat : AbstractEvent() {
                     logMetricIgnored(ID)
                     return
                 } else {
-                    MarisaMod.logger.info("OrinTheCat : INTRO : Fight!")
+                    MarisaContinued.logger.info("OrinTheCat : INTRO : Fight!")
                     screen = CurScreen.PRE_COMBAT
                     roomEventText.updateBodyText(DESCRIPTIONS[1])
                     roomEventText.updateDialogOption(0, OPTIONS[2])
@@ -119,7 +119,7 @@ class OrinTheCat : AbstractEvent() {
             }
 
             CurScreen.PRE_COMBAT -> {
-                MarisaMod.logger.info("OrinTheCat : PreCombat : Adding Reward")
+                MarisaContinued.logger.info("OrinTheCat : PreCombat : Adding Reward")
                 val currRoom = AbstractDungeon.getCurrRoom()
                 currRoom.rewards.clear()
                 if (!AbstractDungeon.player.hasRelic("CatCart")) {
@@ -132,13 +132,13 @@ class OrinTheCat : AbstractEvent() {
                 }
                 AbstractDungeon.getCurrRoom().eliteTrigger = true
                 //this.img = ImageMaster.loadImage("images/events/sphereOpen.png");
-                MarisaMod.logger.info("OrinTheCat : PreCombat : Entering combat")
+                MarisaContinued.logger.info("OrinTheCat : PreCombat : Entering combat")
                 enterCombat()
                 AbstractDungeon.lastCombatMetricKey = "Orin"
             }
 
             CurScreen.END -> {
-                MarisaMod.logger.info("OrinTheCat : end : Opening Map")
+                MarisaContinued.logger.info("OrinTheCat : end : Opening Map")
                 openMap()
             }
         }

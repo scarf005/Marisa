@@ -5,8 +5,8 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
-import marisa.MarisaMod.Companion.randomMarisaCard
+import marisa.MarisaContinued
+import marisa.MarisaContinued.Companion.randomMarisaCard
 
 class StarDustReverieAction(upgraded: Boolean) : AbstractGameAction() {
     private val p: AbstractPlayer
@@ -21,14 +21,14 @@ class StarDustReverieAction(upgraded: Boolean) : AbstractGameAction() {
     override fun update() {
         isDone = false
         var cnt = 0
-        MarisaMod.logger.info("StarDustReverieAction : player hand size : " + p.hand.size())
+        MarisaContinued.logger.info("StarDustReverieAction : player hand size : " + p.hand.size())
         if (!p.hand.isEmpty) {
             while (!p.hand.isEmpty) {
                 val c = p.hand.topCard
-                MarisaMod.logger.info("StarDustReverieAction : moving " + c.cardID)
+                MarisaContinued.logger.info("StarDustReverieAction : moving " + c.cardID)
                 p.hand.moveToDeck(c, true)
                 cnt++
-                MarisaMod.logger.info("StarDustReverieAction : Counter : $cnt")
+                MarisaContinued.logger.info("StarDustReverieAction : Counter : $cnt")
             }
         } else {
             isDone = true
@@ -40,11 +40,11 @@ class StarDustReverieAction(upgraded: Boolean) : AbstractGameAction() {
         }
         for (i in 0 until cnt) {
             val c = randomMarisaCard
-            MarisaMod.logger.info("""StarDustReverieAction : adding ${c.cardID}""")
+            MarisaContinued.logger.info("""StarDustReverieAction : adding ${c.cardID}""")
             if (upgraded) {
                 c.upgrade()
             }
-            MarisaMod.logger.info(
+            MarisaContinued.logger.info(
                 """StarDustReverieAction : checking : Exhaust : ${c.exhaust} ; Ethereal : ${c.isEthereal} ; Upgraded : ${c.upgraded}"""
             )
             AbstractDungeon.actionManager.addToBottom(

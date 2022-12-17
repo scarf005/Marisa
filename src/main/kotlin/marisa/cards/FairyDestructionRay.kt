@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.action.FairyDestrucCullingAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction
@@ -11,6 +8,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.action.FairyDestrucCullingAction
+import marisa.patches.AbstractCardEnum
 
 class FairyDestructionRay : CustomCard(
     ID,
@@ -41,7 +41,7 @@ class FairyDestructionRay : CustomCard(
             )
         )
         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-            if (MarisaMod.isAmplified(this, AMP)) {
+            if (MarisaContinued.isAmplified(this, AMP)) {
                 AbstractDungeon.actionManager.addToBottom(
                     FairyDestrucCullingAction(magicNumber)
                 )

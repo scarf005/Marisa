@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class ManaRampageAction(amount: Int, upgraded: Boolean, freeToPlay: Boolean) : AbstractGameAction() {
     private val f2p: Boolean
@@ -18,7 +18,7 @@ class ManaRampageAction(amount: Int, upgraded: Boolean, freeToPlay: Boolean) : A
         f2p = freeToPlay
         p = AbstractDungeon.player
         this.upgraded = upgraded
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "ManaRampageAction : Initialize complete ; card number :" +
                     amount +
                     " ; upgraded : " +

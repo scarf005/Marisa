@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.powers.Marisa.ChargeUpPower
 
 class MiniHakkero : CustomRelic(
@@ -24,24 +24,11 @@ class MiniHakkero : CustomRelic(
 
     override fun onUseCard(card: AbstractCard, action: UseCardAction) {
         val p = AbstractDungeon.player
-        val div = if (p.hasRelic("SimpleLauncher")) 6 else 8
-
 
         flash()
-        MarisaMod.logger.info("""MiniHakkero : Applying ChargeUpPower for using card : ${card.cardID}""")
-        AbstractDungeon.actionManager.addToTop(
-            ApplyPowerAction(
-                AbstractDungeon.player,
-                AbstractDungeon.player,
-                ChargeUpPower(AbstractDungeon.player, 1),
-                1
-            )
-        )
-        AbstractDungeon.actionManager.addToBottom(
-            RelicAboveCreatureAction(
-                AbstractDungeon.player, this
-            )
-        )
+        MarisaContinued.logger.info("""MiniHakkero : Applying ChargeUpPower for using card : ${card.cardID}""")
+        addToTop(ApplyPowerAction(p, p, ChargeUpPower(p, 1), 1))
+        addToBot(RelicAboveCreatureAction(p, this))
     }
 
     companion object {

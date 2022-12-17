@@ -1,3 +1,5 @@
+@file:Suppress("unused", "UNUSED_PARAMETER")
+
 package marisa.patches
 
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch
@@ -7,13 +9,13 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.powers.DuplicationPower
 
-class StupidDupliPotionPatch {
+class StupidDuplicatePotionPatch {
     @SpirePatch(clz = DuplicationPower::class, method = "onUseCard")
     object CapeGoldRewardPatch {
         @SpireInsertPatch(rloc = 15, localvars = ["tmp"])
         @JvmStatic
         fun insert(
-            _inst: DuplicationPower?,
+            unused: DuplicationPower?,
             card: AbstractCard?,
             action: UseCardAction?,
             tmp: AbstractCard

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.MinionPower
 import com.megacrit.cardcrawl.powers.SlowPower
 import com.megacrit.cardcrawl.powers.StrengthPower
 import com.megacrit.cardcrawl.vfx.TintEffect
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.monsters.ZombieFairy
 import marisa.powers.monsters.LimboContactPower
 
@@ -32,7 +32,7 @@ class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : Ab
 
     override fun update() {
         if (target is ZombieFairy) {
-            MarisaMod.logger.info("ReviveFairyAction : setting values;")
+            MarisaContinued.logger.info("ReviveFairyAction : setting values;")
             val fairy = target as ZombieFairy
             target.isDying = false
             target.heal(target.maxHealth, false)
@@ -44,7 +44,7 @@ class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : Ab
             //this.target.powers.clear();
             fairy.revive()
             fairy.turnNum = 0
-            MarisaMod.logger.info("ReviveFairyAction : applying powers;")
+            MarisaContinued.logger.info("ReviveFairyAction : applying powers;")
             AbstractDungeon.actionManager.addToTop(
                 ApplyPowerAction(target, target, MinionPower(target))
             )
@@ -67,9 +67,9 @@ class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : Ab
             }
             fairy.intent = Intent.NONE
             fairy.rollMove()
-            MarisaMod.logger.info("ReviveFairyAction : done applying power;")
+            MarisaContinued.logger.info("ReviveFairyAction : done applying power;")
         } else {
-            MarisaMod.logger.info("""ReviveFairyAction : error : target is not ZombieFairy : ${target.name}""")
+            MarisaContinued.logger.info("""ReviveFairyAction : error : target is not ZombieFairy : ${target.name}""")
         }
         isDone = true
     }

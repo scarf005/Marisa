@@ -1,9 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.action.DiscToHandRandAction
-import marisa.action.DiscardPileToHandAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.HealAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -11,6 +7,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.action.DiscToHandRandAction
+import marisa.action.DiscardPileToHandAction
+import marisa.patches.AbstractCardEnum
 
 class EarthLightRay : CustomCard(
     ID,
@@ -34,7 +34,7 @@ class EarthLightRay : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (!p.discardPile.isEmpty) {
-            if (MarisaMod.isAmplified(this, AMP)) {
+            if (MarisaContinued.isAmplified(this, AMP)) {
                 if (upgraded && !p.discardPile.isEmpty) {
                     AbstractDungeon.actionManager.addToBottom(
                         DiscardPileToHandAction(1)

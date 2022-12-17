@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.action.ConsumeChargeUpAction
 import marisa.cards.derivations.Exhaustion_MRS
 import marisa.relics.SimpleLauncher
@@ -22,7 +22,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         name = NAME
         ID = POWER_ID
         this.owner = owner
-        if (ExhaustionCheck()) {
+        if (isExhausted()) {
             this.amount = 0
         } else {
             this.amount = amount
@@ -36,7 +36,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     override fun stackPower(stackAmount: Int) {
         if (stackAmount > 0) {
-            if (ExhaustionCheck()) {
+            if (isExhausted()) {
                 return
             }
         }
@@ -46,14 +46,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
             amount = 0
         }
         divider
-        /*
-    ThMod.logger.info(
-        "ChargeUpPower : Checking stack divider :"
-            + this.stc
-            + " ; Checking stack number :"
-            + this.amount
-    );
-*/cnt = amount / stc
+        cnt = amount / stc
     }
 
     override fun updateDescription() {
@@ -67,28 +60,22 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun onAfterCardPlayed(card: AbstractCard) {
-        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || ExhaustionCheck()) {
+        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || isExhausted()) {
             return
         }
         if (cnt > 0 && card.type == CardType.ATTACK) {
-            MarisaMod.logger.info("ChargeUpPower : onPlayCard : consuming stacks for :" + card.cardID)
+            MarisaContinued.logger.info("ChargeUpPower : onPlayCard : consuming stacks for :" + card.cardID)
             flash()
             divider
-            /*
-      ThMod.logger.info("ChargeUpPower : onPlayCard :"
-          + " Checking stack number : "
-          + this.stc
-          + " ; Checking square counter : "
-          + this.cnt
-      );
-      */AbstractDungeon.actionManager.addToTop(
+
+            AbstractDungeon.actionManager.addToTop(
                 ConsumeChargeUpAction(cnt * stc)
             )
         }
     }
 
     override fun atDamageFinalGive(damage: Float, type: DamageType): Float {
-        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || ExhaustionCheck()) {
+        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || isExhausted()) {
             return damage
         }
         if (cnt > 0) {
@@ -108,15 +95,8 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
             }
         }
 
-    private fun ExhaustionCheck(): Boolean {
-        var res = false
-        for (c in AbstractDungeon.player.hand.group) {
-            if (c is Exhaustion_MRS) {
-                res = true
-            }
-        }
-        return res
-    }
+    private fun isExhausted(): Boolean =
+        AbstractDungeon.player.hand.group.filterIsInstance<Exhaustion_MRS>().isNotEmpty()
 
     companion object {
         const val POWER_ID = "ChargeUpPower"

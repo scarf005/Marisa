@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.ChargeUpPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
@@ -11,6 +8,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.patches.AbstractCardEnum
+import marisa.powers.Marisa.ChargeUpPower
 
 class GalacticHalo : CustomCard(
     ID, NAME, IMG_PATH,
@@ -34,7 +34,7 @@ class GalacticHalo : CustomCard(
     				new GalacticHaloPower(p,this.magicNumber), this.magicNumber)
     		);
     		*/
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "GalacticHalo : use :"
                     + " magicNumber : " + magicNumber
                     + " baseMagicNumber : " + baseMagicNumber

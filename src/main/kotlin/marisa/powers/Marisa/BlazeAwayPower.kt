@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -24,23 +24,23 @@ class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun onPlayCard(card: AbstractCard, unused: AbstractMonster?) {
-        MarisaMod.logger.info("BlazeWayPower : card type check")
+        MarisaContinued.logger.info("BlazeWayPower : card type check")
         if (card.type != CardType.ATTACK) {
             return
         }
-        MarisaMod.logger.info("BlazeWayPower : done checking")
+        MarisaContinued.logger.info("BlazeWayPower : done checking")
         flash()
         val c = card.makeStatEquivalentCopy()
         c.costForTurn = 0
-        MarisaMod.logger.info("BlazeWayPower : adding " + amount + " : " + c.cardID)
+        MarisaContinued.logger.info("BlazeWayPower : adding " + amount + " : " + c.cardID)
         AbstractDungeon.actionManager.addToBottom(
             MakeTempCardInHandAction(c, amount)
         )
-        MarisaMod.logger.info("BlazeWayPower : removing power")
+        MarisaContinued.logger.info("BlazeWayPower : removing power")
         AbstractDungeon.actionManager.addToBottom(
             RemoveSpecificPowerAction(owner, owner, this)
         )
-        MarisaMod.logger.info("BlazeWayPower : all done")
+        MarisaContinued.logger.info("BlazeWayPower : all done")
     }
 
     override fun updateDescription() {

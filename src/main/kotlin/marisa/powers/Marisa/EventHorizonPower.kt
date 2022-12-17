@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.action.DiscToHandATKOnly
 
 class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
@@ -34,11 +34,11 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
     }
 
     override fun onSpecificTrigger() {
-        MarisaMod.logger.info("EventHorizonPower : Checking ; counter : $cnt")
+        MarisaContinued.logger.info("EventHorizonPower : Checking ; counter : $cnt")
         if (cnt <= 0) {
             return
         }
-        MarisaMod.logger.info("EventHorizonPower : Action")
+        MarisaContinued.logger.info("EventHorizonPower : Action")
         val p = AbstractDungeon.player
         if (!p.discardPile.isEmpty) {
             flash()
@@ -48,7 +48,7 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
             cnt--
             updateDescription()
         }
-        MarisaMod.logger.info("EventHorizonPower : Done ; counter : $cnt")
+        MarisaContinued.logger.info("EventHorizonPower : Done ; counter : $cnt")
     }
 
     override fun updateDescription() {

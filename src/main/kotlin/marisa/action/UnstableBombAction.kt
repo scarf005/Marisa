@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class UnstableBombAction(target: AbstractCreature?, private val min: Int, private val max: Int, numTimes: Int) :
     AbstractGameAction() {
@@ -23,7 +23,7 @@ class UnstableBombAction(target: AbstractCreature?, private val min: Int, privat
         duration = DURATION
         this.numTimes = numTimes
         if (target != null) {
-            MarisaMod.logger.info(
+            MarisaContinued.logger.info(
                 "UnstableBombAction : target : " + target.name
                         + " damage : " + dmg
                         + " times: " + this.numTimes
@@ -33,7 +33,7 @@ class UnstableBombAction(target: AbstractCreature?, private val min: Int, privat
 
     override fun update() {
         if (target == null) {
-            MarisaMod.logger.info("UnstableBombAction : error : target == null !")
+            MarisaContinued.logger.info("UnstableBombAction : error : target == null !")
             isDone = true
             return
         }

@@ -1,3 +1,5 @@
+@file:Suppress("FunctionName", "UNUSED_PARAMETER")
+
 package marisa.patches
 
 import com.evacipated.cardcrawl.modthespire.lib.ByRef
@@ -15,11 +17,11 @@ object SoundMasterUpdatePatch {
     @SpireInsertPatch(rloc = 4, localvars = ["e", "sfx"])
     @JvmStatic
     fun Insert(
-        _inst: SoundMaster?, e: SoundInfo,
+        instance: SoundMaster?, e: SoundInfo,
         @ByRef(type = "com.megacrit.cardcrawl.audio.Sfx") sfx: Array<Any?>
     ) {
         if (sfx[0] == null) {
-            sfx[0] = SoundMasterPlayPatch.map[e.name]
+            sfx[0] = SoundMasterPlayPatch.sounds[e.name]
         }
     }
 }

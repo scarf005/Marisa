@@ -1,5 +1,4 @@
 import org.jetbrains.kotlin.com.google.gson.Gson
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.text.SimpleDateFormat
 
 val modID = "MarisaContinued"
@@ -66,40 +65,40 @@ data class ModTheSpire(
     val dependencies: List<String> = listOf("basemod"),
 )
 
-val gson = Gson().newBuilder().setPrettyPrinting().create()
+enum class VersionMode(val jar: String) { DEV("devJar"), RELEASE("releaseJar") }
 
-tasks.register("updateVersion") {
-    file("src/main/resources/ModTheSpire.json")
-        .writeText(gson.toJson(ModTheSpire(modID)))
+val gson = Gson().newBuilder().setPrettyPrinting().create()
+val configFile = file("src/main/resources/ModTheSpire.json")
+
+tasks.register("timestamp") {
+    configFile.writeText(gson.toJson(ModTheSpire(modID)))
+}
+tasks.register("semver") {
+    configFile.writeText(gson.toJson(ModTheSpire(modID, version = "1.3.20")))
 }
 
-fun Jar.configure(version: String) {
-    dependsOn(tasks.clean, tasks.jar, version)
+fun Jar.configure(version: VersionMode) {
+    dependsOn(
+        tasks.clean, tasks.jar, if (version == VersionMode.DEV) "timestamp" else "semver"
+    )
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(sourceSets.main.get().output)
     exclude("ModTheSpire.template.json")
 }
 
-tasks.register<Jar>("devJar") {
-    configure("updateVersion")
-}
+tasks.register<Jar>(VersionMode.DEV.jar) { configure(VersionMode.DEV) }
+tasks.register<Jar>(VersionMode.RELEASE.jar) { configure(VersionMode.RELEASE) }
 
-fun Copy.configure(dest: String) {
-    dependsOn(tasks.clean, "devJar")
+fun Copy.configure(version: VersionMode, dest: String) {
+    dependsOn(tasks.clean, version.jar)
     from("build/libs/${modID}.jar")
     into(dest)
 }
 
 tasks.register<Copy>("toMods") {
-    configure(dest = "${gameDir}/mods")
+    configure(version = VersionMode.DEV, dest = "${gameDir}/mods")
 }
 
 tasks.register<Copy>("toWorkshop") {
-    configure(dest = "${gameDir}/${modID}/content")
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+    configure(version = VersionMode.RELEASE, dest = "${gameDir}/${modID}/content")
 }

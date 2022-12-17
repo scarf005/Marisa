@@ -4,5 +4,4 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
-rootProject.name = "MarisaContinued
-"
+rootProject.name = "MarisaMod"

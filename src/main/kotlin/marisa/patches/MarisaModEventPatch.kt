@@ -14,7 +14,7 @@ import marisa.event.Mushrooms_MRS
 import marisa.event.OrinTheCat
 import marisa.relics.CatCart
 
-@Suppress("FunctionName")
+@Suppress("FunctionName", "UNUSED_PARAMETER")
 class MarisaModEventPatch {
     @SpirePatch(clz = AbstractDungeon::class, method = "initializeCardPools")
     object EventPatch {

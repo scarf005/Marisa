@@ -15,7 +15,7 @@ class CatCartPatch {
     object CatCartResurrect {
         @SpireInsertPatch(rloc = 149)
         @JvmStatic
-        fun insert(p: AbstractPlayer, unused: DamageInfo?): SpireReturn<*> {
+        fun insert(p: AbstractPlayer, @Suppress("UNUSED_PARAMETER") unused: DamageInfo?): SpireReturn<*> {
             p.getRelic(CatCart.ID)
                 ?.takeUnless { p.hasRelic(MarkOfTheBloom.ID) }
                 ?.takeIf { it.counter > 0 }

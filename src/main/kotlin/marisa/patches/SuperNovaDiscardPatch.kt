@@ -1,3 +1,5 @@
+@file:Suppress("unused", "ClassName", "FunctionName", "UNUSED_PARAMETER")
+
 package marisa.patches
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
@@ -12,7 +14,7 @@ class SuperNovaDiscardPatch {
     object DisableBurn_PreFix {
         @SpirePrefixPatch
         @JvmStatic
-        fun Prefix(_obj_instance: Any?): SpireReturn<*> {
+        fun Prefix(unused: Any?): SpireReturn<*> {
             if (AbstractDungeon.player.hasPower(SuperNovaPower.POWER_ID)) {
                 MarisaContinued.logger.info("SuperNovaPatch : Burn detected.")
                 return SpireReturn.Return<Any?>(null)

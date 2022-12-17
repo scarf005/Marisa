@@ -332,7 +332,7 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
         /** TODO: it does lots of stuff I cannot understand, split it into multiple parts */
         fun isAmplified(card: AbstractCard, multiplier: Int): Boolean {
             logger.info(
-                """ThMod.Amplified : card to check : ${card.cardID} ; costForTurn : ${card.costForTurn}"""
+                """ThMod.Amplified : card to check : ${card.cardID}; costForTurn : ${card.costForTurn}"""
             )
             val p = AbstractDungeon.player
 
@@ -368,13 +368,6 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
                 else -> false
             }
 
-//                res = true
-//                if (card.costForTurn > 0) {
-//                    logger
-//                        .info("ThMod.Amplified : False instance of 0 cost card,decreasing typhoon counter.")
-//                    typhoonCounter--
-//                    logger.info("current Typhoon Counter : $typhoonCounter")
-//                }
             if (res) {
                 AbstractDungeon.actionManager.addToTop(ApplyPowerAction(p, p, GrandCrossPower(p)))
                 p.getPower(EventHorizonPower.POWER_ID)?.onSpecificTrigger()

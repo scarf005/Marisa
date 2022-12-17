@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.patches.CardTagEnum
 import marisa.powers.Marisa.ChargeUpPower
 
@@ -33,7 +33,7 @@ class BewitchedHakkero : CustomRelic(
 
     override fun onUseCard(card: AbstractCard, action: UseCardAction) {
         flash()
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "BewitchedHakkero : Applying ChargeUpPower for using card : " + card.cardID
         )
         var amt = 1

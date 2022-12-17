@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -12,6 +9,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
+import marisa.MarisaContinued
+import marisa.abstracts.AmplifiedAttack
+import marisa.patches.AbstractCardEnum
 
 class LuminesStrike : AmplifiedAttack(
     ID,
@@ -73,7 +73,7 @@ class LuminesStrike : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (MarisaMod.isAmplified(this, AMP)) {
+        if (MarisaContinued.isAmplified(this, AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(
                     m,

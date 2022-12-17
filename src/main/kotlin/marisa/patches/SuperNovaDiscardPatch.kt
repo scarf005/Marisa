@@ -4,7 +4,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
 import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.powers.Marisa.SuperNovaPower
 
 class SuperNovaDiscardPatch {
@@ -14,7 +14,7 @@ class SuperNovaDiscardPatch {
         @JvmStatic
         fun Prefix(_obj_instance: Any?): SpireReturn<*> {
             if (AbstractDungeon.player.hasPower(SuperNovaPower.POWER_ID)) {
-                MarisaMod.logger.info("SuperNovaPatch : Burn detected.")
+                MarisaContinued.logger.info("SuperNovaPatch : Burn detected.")
                 return SpireReturn.Return<Any?>(null)
             }
             return SpireReturn.Continue<Any>()

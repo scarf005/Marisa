@@ -3,7 +3,7 @@ package marisa.action
 import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.powers.Marisa.ChargeUpPower
 import marisa.powers.Marisa.OrrerysSunPower
 
@@ -24,7 +24,7 @@ class ConsumeChargeUpAction(amount: Int) : AbstractGameAction() {
             return
         }
         val c = p.getPower(ChargeUpPower.POWER_ID)
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "ConsumeChargeUpAction :"
                     + " Consume amount : "
                     + amt

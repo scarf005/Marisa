@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.actions.common.PutOnDeckAction
@@ -10,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.patches.AbstractCardEnum
 
 class IllusionStar : CustomCard(
     ID,
@@ -30,7 +30,7 @@ class IllusionStar : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         for (i in 0 until magicNumber) {
-            val c = MarisaMod.randomMarisaCard
+            val c = MarisaContinued.randomMarisaCard
             AbstractDungeon.actionManager.addToBottom(
                 MakeTempCardInHandAction(c, 1)
             )

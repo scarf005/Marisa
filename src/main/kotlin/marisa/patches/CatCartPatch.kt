@@ -6,7 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.relics.MarkOfTheBloom
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.relics.CatCart
 
 @Suppress("unused")
@@ -22,7 +22,7 @@ class CatCartPatch {
                 ?.let {
                     p.currentHealth = 0
                     it.onTrigger()
-                    MarisaMod.logger.info(
+                    MarisaContinued.logger.info(
                         """MarisaModEventPatch : CatCartPatch: Resurrecting player with ${it.counter} counters"""
                     )
                     return SpireReturn.Return<Any?>(null)

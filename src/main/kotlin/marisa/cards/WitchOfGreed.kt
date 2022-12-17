@@ -1,9 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.WitchOfGreedGold
-import marisa.powers.Marisa.WitchOfGreedPotion
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -12,6 +8,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase
+import marisa.MarisaContinued
+import marisa.patches.AbstractCardEnum
+import marisa.powers.Marisa.WitchOfGreedGold
+import marisa.powers.Marisa.WitchOfGreedPotion
 
 class WitchOfGreed : CustomCard(
     ID,
@@ -65,7 +65,7 @@ class WitchOfGreed : CustomCard(
                     magicNumber
                 )
             )
-            if (MarisaMod.isAmplified(this, AMP)) {
+            if (MarisaContinued.isAmplified(this, AMP)) {
                 val po = AbstractDungeon.returnRandomPotion()
                 AbstractDungeon.getCurrRoom().addPotionToRewards(po)
                 AbstractDungeon.actionManager.addToBottom(
@@ -76,7 +76,7 @@ class WitchOfGreed : CustomCard(
                         1
                     )
                 )
-                MarisaMod.logger.info("WitchOfGreed : use : Amplified : adding :" + po.ID)
+                MarisaContinued.logger.info("WitchOfGreed : use : Amplified : adding :" + po.ID)
             }
         }
     }

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.FlightPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.powers.monsters.LimboContactPower
 
 class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
@@ -89,7 +89,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
     }
 
     override fun getMove(num: Int) {
-        MarisaMod.logger.info("ZombieFairy : GetMove : num : $num ; turnNum : $turnNum")
+        MarisaContinued.logger.info("ZombieFairy : GetMove : num : $num ; turnNum : $turnNum")
         turnNum++
         if (turnNum < 3) {
             if (num <= 50) {
@@ -136,7 +136,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
   */
 
     companion object {
-        private val logger = MarisaMod.logger
+        private val logger = MarisaContinued.logger
         const val ID = "ZombieFairy"
         const val NAME = "Zombie Fairy"
         private const val HP = 12

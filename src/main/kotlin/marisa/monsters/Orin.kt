@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.powers.WeakPower
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect
 import com.megacrit.cardcrawl.vfx.combat.IntenseZoomEffect
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.action.OrinsDebuffAction
 import marisa.action.SummonFairyAction
 import marisa.powers.monsters.InfernoClaw
@@ -381,7 +381,7 @@ class Orin : AbstractMonster(
             }
         } else {
             val fairyCount = fairyCount()
-            MarisaMod.logger.info("Orin : getMove : fairyCount : $fairyCount")
+            MarisaContinued.logger.info("Orin : getMove : fairyCount : $fairyCount")
             /*
       if (this.firstTurn) {
         setSummonAction();
@@ -550,7 +550,7 @@ class Orin : AbstractMonster(
   */
 
     companion object {
-        private val logger = MarisaMod.logger
+        private val logger = MarisaContinued.logger
         const val ID = "Orin"
         const val NAME = "Orin"
         private const val STAGE_1_HP = 68

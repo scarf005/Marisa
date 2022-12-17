@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class BigCruncAction(upgraded: Boolean) : AbstractGameAction() {
     private var upg = false
@@ -26,7 +26,7 @@ class BigCruncAction(upgraded: Boolean) : AbstractGameAction() {
         var cnt = p.discardPile.size() / 2
         var total = cnt
         p.discardPile.shuffle()
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "BigCruncAction : Discard size : " + p.discardPile.size()
                     + " ; counter : " + cnt
         )
@@ -37,7 +37,7 @@ class BigCruncAction(upgraded: Boolean) : AbstractGameAction() {
         }
         p.drawPile.shuffle()
         cnt = p.drawPile.size() / 2
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "BigCruncAction : Draw size : " + p.drawPile.size()
                     + " ; counter : " + cnt
         )
@@ -48,7 +48,7 @@ class BigCruncAction(upgraded: Boolean) : AbstractGameAction() {
             }
         }
         val res = total / div
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "BigCruncAction : total :" + total
                     + " ; res : " + res
         )

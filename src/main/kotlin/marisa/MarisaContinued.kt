@@ -46,7 +46,7 @@ import java.nio.charset.StandardCharsets
 import java.util.*
 
 @SpireInitializer
-class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,
+class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,
     EditCharactersSubscriber,
     PostInitializeSubscriber, EditRelicsSubscriber, EditCardsSubscriber, EditStringsSubscriber, OnCardUseSubscriber,
     EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber {
@@ -78,7 +78,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
 
     override fun receiveEditCharacters() {
         logger.info("begin editing characters")
-        logger.info("""add ${ThModClassEnum.MARISA.toString()}""")
+        logger.info("""add ${ThModClassEnum.MARISA}""")
         BaseMod.addCharacter(
             Marisa("Marisa"),
             MY_CHARACTER_BUTTON,
@@ -196,12 +196,11 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         val buttonLambda = { button: ModToggleButton ->
             isCatEventEnabled = button.enabled
             try {
-                val config = SpireConfig(
-                    "MarisaMod", "MarisaModConfig",
-                    marisaModDefaultProp
-                )
-                config.setBool("enablePlaceholder", isCatEventEnabled)
-                config.save()
+                SpireConfig("MarisaContinued", "MarisaContinuedConfig", marisaModDefaultProp)
+                    .run {
+                        setBool("enablePlaceholder", isCatEventEnabled)
+                        save()
+                    }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -250,7 +249,7 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
         val badge = ImageMaster.loadImage(MOD_BADGE)
         BaseMod.registerModBadge(
             badge,
-            "MarisaMod",
+            "MarisaContinued",
             "Flynn , Hell , Hohner_257 , Samsara, scarf005",
             "A Mod of the poor blonde girl from Touhou Project(",
             settingsPanel
@@ -280,12 +279,12 @@ class MarisaMod : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitia
 
     companion object {
         @Suppress("MemberVisibilityCanBePrivate")
-        lateinit var instance: MarisaMod
+        lateinit var instance: MarisaContinued
 
         @Suppress("MemberVisibilityCanBePrivate", "unused")
         @JvmStatic
         fun initialize() {
-            instance = MarisaMod()
+            instance = MarisaContinued()
         }
 
         private val langName

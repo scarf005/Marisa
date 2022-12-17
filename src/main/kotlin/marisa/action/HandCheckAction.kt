@@ -3,7 +3,7 @@ package marisa.action
 import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class HandCheckAction(upgraded: Boolean) : AbstractGameAction() {
     init {
@@ -16,7 +16,7 @@ class HandCheckAction(upgraded: Boolean) : AbstractGameAction() {
             for (c in AbstractDungeon.player.hand.group) {
                 c.exhaust = true
                 c.isEthereal = true
-                MarisaMod.logger.info(
+                MarisaContinued.logger.info(
                     "HandCheckAction : id : " + c.cardID +
                             " ; cost for turn : " + c.costForTurn +
                             " ; is Ethereal : " + c.isEthereal +

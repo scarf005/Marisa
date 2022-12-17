@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.action.ConsumeChargeUpAction
 import marisa.cards.derivations.Exhaustion_MRS
 import marisa.relics.SimpleLauncher
@@ -71,7 +71,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
             return
         }
         if (cnt > 0 && card.type == CardType.ATTACK) {
-            MarisaMod.logger.info("ChargeUpPower : onPlayCard : consuming stacks for :" + card.cardID)
+            MarisaContinued.logger.info("ChargeUpPower : onPlayCard : consuming stacks for :" + card.cardID)
             flash()
             divider
             /*

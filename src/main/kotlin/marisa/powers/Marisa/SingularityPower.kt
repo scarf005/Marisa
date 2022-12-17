@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -27,7 +27,7 @@ class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() 
 
     override fun onAfterUseCard(card: AbstractCard, action: UseCardAction) {
         if (card.costForTurn == 0 || card.costForTurn <= -2 || card.costForTurn == -1 && AbstractDungeon.player.energy.energy <= 0) {
-            MarisaMod.logger.info("SingularityPower : applying upgrade :")
+            MarisaContinued.logger.info("SingularityPower : applying upgrade :")
             flash()
             val pool = ArrayList<AbstractCard>()
             for (c in AbstractDungeon.player.hand.group) {
@@ -38,7 +38,7 @@ class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() 
             if (pool.isNotEmpty()) {
                 val rand = AbstractDungeon.miscRng.random(0, pool.size - 1)
                 val c = pool[rand]
-                MarisaMod.logger.info(
+                MarisaContinued.logger.info(
                     "SingularityPower : adding "
                             + amount
                             + " base damage to "

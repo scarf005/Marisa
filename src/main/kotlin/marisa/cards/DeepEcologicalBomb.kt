@@ -1,14 +1,14 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.action.WasteBombAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
+import marisa.action.WasteBombAction
+import marisa.patches.AbstractCardEnum
 
 class DeepEcologicalBomb : CustomCard(
     ID,
@@ -30,7 +30,7 @@ class DeepEcologicalBomb : CustomCard(
     override fun calculateCardDamage(unused: AbstractMonster?) {}
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         var num = 1
-        if (MarisaMod.isAmplified(this, AMP)) {
+        if (MarisaContinued.isAmplified(this, AMP)) {
             num++
         }
         AbstractDungeon.actionManager.addToBottom(

@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.patches.CardTagEnum
 
 class RefractionSparkAction(target: AbstractCreature?, private val info: DamageInfo) : AbstractGameAction() {
@@ -25,7 +25,7 @@ class RefractionSparkAction(target: AbstractCreature?, private val info: DamageI
                 )
             )
             val mon = target as AbstractMonster
-            MarisaMod.logger.info("RefractionSparkAction : calculating damage : " + info.base)
+            MarisaContinued.logger.info("RefractionSparkAction : calculating damage : " + info.base)
             var tmp = info.base.toFloat()
             if (mon.currentBlock > 0) {
                 tmp -= mon.currentBlock.toFloat()
@@ -37,17 +37,17 @@ class RefractionSparkAction(target: AbstractCreature?, private val info: DamageI
                 tmp = 0f
             }
             if (tmp > 0) {
-                MarisaMod.logger.info("RefractionSparkAction : increasing damage : $tmp")
+                MarisaContinued.logger.info("RefractionSparkAction : increasing damage : $tmp")
                 for (c in AbstractDungeon.player.hand.group) {
                     if (c.hasTag(CardTagEnum.SPARK)) {
-                        MarisaMod.logger.info("RefractionSparkAction : increasing damage for : " + c.cardID)
+                        MarisaContinued.logger.info("RefractionSparkAction : increasing damage for : " + c.cardID)
                         c.baseDamage += tmp.toInt()
                         c.flash()
                         c.applyPowers()
                     }
                 }
             }
-            MarisaMod.logger.info("RefractionSparkAction : dealing damage : $tmp")
+            MarisaContinued.logger.info("RefractionSparkAction : dealing damage : $tmp")
             target.damage(info)
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                 AbstractDungeon.actionManager.clearPostCombatActions()

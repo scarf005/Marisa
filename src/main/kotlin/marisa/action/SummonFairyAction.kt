@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.FlightPower
 import com.megacrit.cardcrawl.powers.MinionPower
 import com.megacrit.cardcrawl.powers.SlowPower
 import com.megacrit.cardcrawl.powers.StrengthPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.monsters.ZombieFairy
 import marisa.powers.monsters.LimboContactPower
 
@@ -25,7 +25,7 @@ class SummonFairyAction(monster: AbstractMonster?) : AbstractGameAction() {
         for (m in AbstractDungeon.getMonsters().monsters) {
             if (m !== source && m is ZombieFairy) {
                 if (m.isDying) {
-                    MarisaMod.logger.info("SummonFairyAction : reviving Fairy;")
+                    MarisaContinued.logger.info("SummonFairyAction : reviving Fairy;")
                     m.turnNum = 0
                     AbstractDungeon.actionManager.addToTop(
                         ReviveFairyAction(m, source)
@@ -52,17 +52,17 @@ class SummonFairyAction(monster: AbstractMonster?) : AbstractGameAction() {
                             ApplyPowerAction(m, m, SlowPower(m, 0))
                         )
                     }
-                    MarisaMod.logger.info("SummonFairyAction : done reviving Fairy;")
+                    MarisaContinued.logger.info("SummonFairyAction : done reviving Fairy;")
                     isDone = true
                     return
                 }
-                MarisaMod.logger.info("SummonFairyAction : Alive Fairy found,increasing counter;")
+                MarisaContinued.logger.info("SummonFairyAction : Alive Fairy found,increasing counter;")
                 count++
-                MarisaMod.logger.info("SummonFairyAction : counter increased: $count")
+                MarisaContinued.logger.info("SummonFairyAction : counter increased: $count")
             }
         }
         if (count < 4) {
-            MarisaMod.logger.info("SummonFairyAction : spawning Fairy;")
+            MarisaContinued.logger.info("SummonFairyAction : spawning Fairy;")
             AbstractDungeon.actionManager.addToTop(
                 SpawnFairyAction(COORDINATE[count][0], COORDINATE[count][1])
             )

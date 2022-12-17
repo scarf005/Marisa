@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.cards.derivations.GuidingStar
 
 class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
@@ -15,7 +15,7 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
     var Gain: Boolean
 
     init {
-        MarisaMod.logger.info("PolarisUniquePower : Init")
+        MarisaContinued.logger.info("PolarisUniquePower : Init")
         name = NAME
         ID = POWER_ID
         type = PowerType.BUFF
@@ -24,33 +24,33 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
         p = AbstractDungeon.player
         Gain = false
         this.owner = owner
-        MarisaMod.logger.info("PolarisUniquePower : Done initing")
+        MarisaContinued.logger.info("PolarisUniquePower : Done initing")
     }
 
     override fun stackPower(stackAmount: Int) {
-        MarisaMod.logger.info("PolarisUniquePower : StackPower")
+        MarisaContinued.logger.info("PolarisUniquePower : StackPower")
     }
 
     override fun atStartOfTurnPostDraw() {
-        MarisaMod.logger.info("PolarisUniquePower : Checking")
+        MarisaContinued.logger.info("PolarisUniquePower : Checking")
         for (c in p.drawPile.group) {
             if (c is GuidingStar) {
                 Gain = true
             }
         }
-        MarisaMod.logger.info("PolarisUniquePower : Result : $Gain")
+        MarisaContinued.logger.info("PolarisUniquePower : Result : $Gain")
         if (Gain) {
             flash()
             AbstractDungeon.actionManager.addToBottom(GainEnergyAction(1))
         }
         Gain = false
-        MarisaMod.logger.info("PolarisUniquePower : Done Checking")
+        MarisaContinued.logger.info("PolarisUniquePower : Done Checking")
     }
 
     override fun updateDescription() {
-        MarisaMod.logger.info("PolarisUniquePower : updating Description")
+        MarisaContinued.logger.info("PolarisUniquePower : updating Description")
         description = DESCRIPTIONS[0]
-        MarisaMod.logger.info("PolarisUniquePower : Done updating Description")
+        MarisaContinued.logger.info("PolarisUniquePower : Done updating Description")
     }
 
     companion object {

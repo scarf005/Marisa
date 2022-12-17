@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class DamageUpAction(amount: Int) : AbstractGameAction() {
     init {
@@ -17,7 +17,7 @@ class DamageUpAction(amount: Int) : AbstractGameAction() {
         if (duration == Settings.ACTION_DUR_FAST) {
             for (c in AbstractDungeon.player.hand.group) {
                 if (c.type == CardType.ATTACK) {
-                    MarisaMod.logger.info("Milky Way Action : add " + amount + " damage to " + c.cardID)
+                    MarisaContinued.logger.info("Milky Way Action : add " + amount + " damage to " + c.cardID)
                     c.baseDamage += amount
                     c.applyPowers()
                     c.flash()

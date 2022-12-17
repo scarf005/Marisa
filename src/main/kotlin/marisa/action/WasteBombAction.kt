@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.powers.Marisa.TempStrengthLoss
 
 class WasteBombAction(private val target: AbstractCreature?, dmg: Int, numTimes: Int, stacks: Int) :
@@ -40,7 +40,7 @@ class WasteBombAction(private val target: AbstractCreature?, dmg: Int, numTimes:
             return
         }
         if (this.target == null) {
-            MarisaMod.logger.info("WasteBombAction : error : target == null !")
+            MarisaContinued.logger.info("WasteBombAction : error : target == null !")
             isDone = true
             return
         }

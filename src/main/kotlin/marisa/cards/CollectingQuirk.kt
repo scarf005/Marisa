@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.action.UnstableBombAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
@@ -11,6 +8,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.relics.Circlet
 import com.megacrit.cardcrawl.relics.RedCirclet
+import marisa.MarisaContinued
+import marisa.action.UnstableBombAction
+import marisa.patches.AbstractCardEnum
 
 class CollectingQuirk : CustomCard(
     ID,
@@ -40,7 +40,7 @@ class CollectingQuirk : CustomCard(
         modifyBlock()
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "CollectingQuirk : applyPowers : damage :"
                     + damage
                     + " ; counter : " + counter
@@ -55,7 +55,7 @@ class CollectingQuirk : CustomCard(
         modifyBlock()
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             """CollectingQuirk : applyPowers : damage :$damage ; 
                 |counter : $counter ; 
                 |block :$block ; 

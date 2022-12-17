@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() {
     var player: AbstractPlayer = AbstractDungeon.player
@@ -28,7 +28,7 @@ class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() 
                 return
             }
             if (player.hand.size() == 1) {
-                MarisaMod.logger.info("ShootingEchoAction : player hand size is 1")
+                MarisaContinued.logger.info("ShootingEchoAction : player hand size is 1")
                 val c = player.hand.topCard
                 if (c is Burn) {
                     AbstractDungeon.actionManager.addToBottom(
@@ -39,7 +39,7 @@ class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() 
                 isDone = true
                 return
             } else {
-                MarisaMod.logger.info("ShootingEchoAction : opening hand card select")
+                MarisaContinued.logger.info("ShootingEchoAction : opening hand card select")
                 AbstractDungeon.handCardSelectScreen.open(TEXT[0], 1, false, false)
             }
             tickDuration()

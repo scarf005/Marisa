@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.relics.*
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.powers.Marisa.PropBagPower
 import marisa.relics.AmplifyWand
 
@@ -17,7 +17,7 @@ class PropBagAction : AbstractGameAction() {
 
     override fun update() {
         val p = AbstractDungeon.player
-        MarisaMod.logger.info("PropBagAction : Checking for relics")
+        MarisaContinued.logger.info("PropBagAction : Checking for relics")
 
         val relics = listOf(
             MeatOnTheBone(), MummifiedHand(), LetterOpener(), Shuriken(),
@@ -28,12 +28,12 @@ class PropBagAction : AbstractGameAction() {
 
         when (relics.size) {
             0 -> {
-                MarisaMod.logger.info("PropBagAction : No relic to give")
+                MarisaContinued.logger.info("PropBagAction : No relic to give")
             }
 
             else -> {
                 val relic = relics.random()
-                MarisaMod.logger.info("PropBagAction : Giving relic : $relic")
+                MarisaContinued.logger.info("PropBagAction : Giving relic : $relic")
                 addToBot(ApplyPowerAction(p, p, PropBagPower(p, relic)))
             }
         }

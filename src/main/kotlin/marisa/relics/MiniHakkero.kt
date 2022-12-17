@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
-import marisa.MarisaMod
+import marisa.MarisaContinued
 import marisa.powers.Marisa.ChargeUpPower
 
 class MiniHakkero : CustomRelic(
@@ -28,7 +28,7 @@ class MiniHakkero : CustomRelic(
 
 
         flash()
-        MarisaMod.logger.info("""MiniHakkero : Applying ChargeUpPower for using card : ${card.cardID}""")
+        MarisaContinued.logger.info("""MiniHakkero : Applying ChargeUpPower for using card : ${card.cardID}""")
         AbstractDungeon.actionManager.addToTop(
             ApplyPowerAction(
                 AbstractDungeon.player,

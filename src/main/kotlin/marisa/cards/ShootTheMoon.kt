@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.MarisaMod
-import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
@@ -13,6 +10,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.MarisaContinued
+import marisa.abstracts.AmplifiedAttack
+import marisa.patches.AbstractCardEnum
 
 class ShootTheMoon : AmplifiedAttack(
     ID,
@@ -33,7 +33,7 @@ class ShootTheMoon : AmplifiedAttack(
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
         val po: AbstractPower
         val fightingBoss = m.type == AbstractMonster.EnemyType.BOSS
-        if (MarisaMod.isAmplified(this, AMP)) {
+        if (MarisaContinued.isAmplified(this, AMP)) {
             if (!fightingBoss) {
                 for (pow in m.powers) {
                     if (pow.type == AbstractPower.PowerType.BUFF) {

@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class BreadOfAWashokuLover : CustomRelic(
     ID,
@@ -30,7 +30,7 @@ class BreadOfAWashokuLover : CustomRelic(
     }
 
     override fun onExhaust(card: AbstractCard) {
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             "BreadOfAWashokuLover : onExhaust : this.usedUp :" + usedUp +
                     " ; this.counter : " + counter
         )
@@ -48,7 +48,7 @@ class BreadOfAWashokuLover : CustomRelic(
             )
         }
         if (counter >= 13) {
-            MarisaMod.logger.info("BreadOfAWashokuLover : onExhaust : Using Up")
+            MarisaContinued.logger.info("BreadOfAWashokuLover : onExhaust : Using Up")
             flash()
             AbstractDungeon.actionManager.addToBottom(
                 RelicAboveCreatureAction(AbstractDungeon.player, this)

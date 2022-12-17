@@ -8,14 +8,14 @@ import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaMod
+import marisa.MarisaContinued
 
 class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     private var counter: Int
 
     fun checkDrawPile() {
         val temp = AbstractDungeon.player.drawPile.size()
-        MarisaMod.logger.info(
+        MarisaContinued.logger.info(
             """SatelIllusPower : checkDrawPile : counter : $counter ; 
                 |drawPile size $temp ; grant energy :${temp > counter}""".trimMargin()
         )
@@ -42,32 +42,32 @@ class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun onDrawOrDiscard() {
-        MarisaMod.logger.info("SatelIllusPower : onDrawOrDiscard : checkDrawPile")
+        MarisaContinued.logger.info("SatelIllusPower : onDrawOrDiscard : checkDrawPile")
         checkDrawPile()
     }
 
     override fun onApplyPower(power: AbstractPower, target: AbstractCreature, source: AbstractCreature) {
-        MarisaMod.logger.info("SatelIllusPower : onApplyPower : checkDrawPile")
+        MarisaContinued.logger.info("SatelIllusPower : onApplyPower : checkDrawPile")
         checkDrawPile()
     }
 
     override fun onInitialApplication() {
-        MarisaMod.logger.info("SatelIllusPower : onInitialApplication : checkDrawPile")
+        MarisaContinued.logger.info("SatelIllusPower : onInitialApplication : checkDrawPile")
         checkDrawPile()
     }
 
     override fun atEndOfRound() {
-        MarisaMod.logger.info("SatelIllusPower : checkDrawPile : atEndOfRound ")
+        MarisaContinued.logger.info("SatelIllusPower : checkDrawPile : atEndOfRound ")
         checkDrawPile()
     }
 
     override fun onAfterUseCard(card: AbstractCard, action: UseCardAction) {
-        MarisaMod.logger.info("""SatelIllusPower : checkDrawPile : onAfterUseCard : ${card.cardID}""")
+        MarisaContinued.logger.info("""SatelIllusPower : checkDrawPile : onAfterUseCard : ${card.cardID}""")
         checkDrawPile()
     }
 
     override fun atStartOfTurnPostDraw() {
-        MarisaMod.logger.info("SatelIllusPower : checkDrawPile : atStartOfTurnPostDraw ")
+        MarisaContinued.logger.info("SatelIllusPower : checkDrawPile : atStartOfTurnPostDraw ")
         checkDrawPile()
     }
 

@@ -1,5 +1,6 @@
 package marisa.cards
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
@@ -7,10 +8,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.MarisaContinued
+import com.megacrit.cardcrawl.powers.FadingPower
+import com.megacrit.cardcrawl.powers.ShiftingPower
 import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
 
@@ -31,61 +32,33 @@ class ShootTheMoon : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        val po: AbstractPower
-        val fightingBoss = m.type == AbstractMonster.EnemyType.BOSS
-        if (MarisaContinued.isAmplified(this, AMP)) {
-            if (!fightingBoss) {
-                for (pow in m.powers) {
-                    if (pow.type == AbstractPower.PowerType.BUFF) {
-                        AbstractDungeon.actionManager.addToBottom(
-                            RemoveSpecificPowerAction(m, p, pow)
-                        )
-                    }
-                }
-            }
-            AbstractDungeon.actionManager.addToBottom(
-                DamageAction(
-                    m,
-                    DamageInfo(p, block, damageTypeForTurn),
-                    AttackEffect.SLASH_DIAGONAL
-                )
-            )
-        } else {
-            if (m.powers.isNotEmpty() && !fightingBoss) {
-                val pows = ArrayList<AbstractPower>()
-                for (pow in m.powers) {
-                    if (pow.type == AbstractPower.PowerType.BUFF) {
-                        pows.add(pow)
-                    }
-                }
-                if (pows.isNotEmpty()) {
-                    po = pows[(Math.random() * pows.size).toInt()]
-                    AbstractDungeon.actionManager.addToBottom(
-                        RemoveSpecificPowerAction(m, p, po)
-                    )
-                }
-            }
-            AbstractDungeon.actionManager.addToBottom(
-                DamageAction(
-                    m,
-                    DamageInfo(p, damage, damageTypeForTurn),
-                    AttackEffect.SLASH_DIAGONAL
-                )
-            )
+        val buffs = m.powers
+            .filter { it.type == AbstractPower.PowerType.BUFF }
+            .filterNot { it.ID == FadingPower.POWER_ID }
+            .filterNot { it.ID == ShiftingPower.POWER_ID }
+
+        val toRemove: List<AbstractGameAction> = when {
+            m.type == AbstractMonster.EnemyType.BOSS -> emptyList()
+            buffs.isEmpty() -> emptyList()
+            isAmplified(AMP) -> buffs.map { RemoveSpecificPowerAction(m, p, it) }
+            else -> listOf(RemoveSpecificPowerAction(m, p, buffs.random()))
         }
+
+        val harm = if (isAmplified(AMP)) block else damage
+        addToBot(DamageAction(m, DamageInfo(p, harm, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL))
+        toRemove.forEach { addToBot(it) }
     }
 
     override fun makeCopy(): AbstractCard = ShootTheMoon()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            ampNumber += UPG_AMP
-            baseBlock = baseDamage + ampNumber
-            block = baseBlock
-            isBlockModified = true
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        ampNumber += UPG_AMP
+        baseBlock = baseDamage + ampNumber
+        block = baseBlock
+        isBlockModified = true
     }
 
     companion object {

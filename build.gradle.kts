@@ -67,6 +67,7 @@ data class ModTheSpire(
 )
 
 data class Config(
+    val steamPublishedID: Long = 2902980404,
     val title: String = "Marisa: Continued",
     val description: String = """
         [quote=Marisa Kirisame]It ain't magic if it ain't flashy. Danmaku's all about firepower.[/quote]

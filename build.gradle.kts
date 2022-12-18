@@ -106,7 +106,7 @@ val gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create(
 val configFile = file("src/main/resources/ModTheSpire.json")
 
 tasks.register("timestamp") {
-    configFile.writeText(gson.toJson(ModTheSpire("$modID:dev")))
+    configFile.writeText(gson.toJson(ModTheSpire("$modID:dev", name = "Marisa: Continued (DEV)")))
 }
 tasks.register("semver") {
     configFile.writeText(gson.toJson(ModTheSpire(modID, version = "1.3.20")))

@@ -73,21 +73,31 @@ data class Config(
         [quote=Marisa Kirisame]It ain't magic if it ain't flashy. Danmaku's all about firepower.[/quote]
 
         Play as your everyday ordinary magician! 
-          
-        [b]SPECIAL THANKS[/b]
-        https://steamcommunity.com/sharedfiles/filedetails/?id=1614104912
-        This mod is a continuation of the original mod. Credits goes to the original author.
         
-        [b]READ MORE[/b]
+        [b]Credits[/b]
+        https://steamcommunity.com/sharedfiles/filedetails/?id=1614104912
+        This mod is a continuation of the abandoned mod. Credits goes to the original author.
+        
+        [b]What's Different From Original Mod[/b]
+        [list]
+            [*] Multiple card previews
+            [*] Fixed Korean translations
+            [*] Bugfixes
+        [/list]
+        
+        [b]Read More[/b]
         [list]
             [*] [url=https://github.com/scarf005/Marisa]github[/url]
             [*] [url=https://github.com/scarf005/Marisa/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc]bug report[/url]
             [*] [url=https://github.com/scarf005/Marisa/discussions]discussions[/url]
         [/list]
-        """.trimIndent(),
-    val visibility: String = "private",
+    """.trimIndent(),
+    val visibility: String = "public",
     val changeNote: String = "",
-    val tags: List<String> = listOf("Touhou", "Character", "Marisa", "Kirisame Marisa")
+    val tags: List<String> = listOf(
+        "Touhou", "Character", "Marisa", "Kirisame Marisa",
+        "English", "Simplified Chinese", "Traditional Chinese", "French", "Korean", "Japanese"
+    ),
 )
 
 enum class VersionMode(val jar: String) { DEV("devJar"), RELEASE("releaseJar") }

@@ -110,7 +110,7 @@ tasks.register("timestamp") {
     configFile.writeText(gson.toJson(ModTheSpire("$modID:dev", name = "Marisa: Continued (DEV)")))
 }
 tasks.register("semver") {
-    configFile.writeText(gson.toJson(ModTheSpire(modID, version = "1.3.20")))
+    configFile.writeText(gson.toJson(ModTheSpire(modID, version = project.version.toString())))
 }
 
 fun Jar.configure(version: VersionMode) {

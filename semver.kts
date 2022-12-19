@@ -18,7 +18,7 @@ value class CommitTitle(private val value: String) {
     val title get() = message.substringAfter(':').trim()
     val version
         get() = when {
-            type.contains("!") -> Version.MAJOR
+            "!" in type -> Version.MAJOR
             type == "feat" -> Version.MINOR
             else -> Version.PATCH
         }

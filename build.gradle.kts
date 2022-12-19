@@ -53,7 +53,7 @@ sourceSets {
     main { kotlin.srcDir("src/main") }
 }
 
-@Suppress("PropertyName")
+@Suppress("PropertyName", "LongLine")
 data class ModTheSpire(
     val modid: String,
     val name: String = "Marisa: Continued (霧雨 魔理沙)",
@@ -66,6 +66,7 @@ data class ModTheSpire(
     val dependencies: List<String> = listOf("basemod"),
 )
 
+@Suppress("LongLine")
 data class Config(
     val steamPublishedID: Long = 2902980404,
     val title: String = "Marisa: Continued",
@@ -93,7 +94,7 @@ data class Config(
         [/list]
     """.trimIndent(),
     val visibility: String = "public",
-    val changeNote: String = "",
+    val changeNote: String = File("changelog.md").readText(),
     val tags: List<String> = listOf(
         "Touhou", "Character", "Marisa", "Kirisame Marisa",
         "English", "Simplified Chinese", "Traditional Chinese", "French", "Korean", "Japanese"

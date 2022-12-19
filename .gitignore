@@ -40,3 +40,6 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# PID
+.attach_pid*

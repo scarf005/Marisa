@@ -2,7 +2,8 @@ import org.jetbrains.kotlin.com.google.gson.Gson
 
 val modID = "MarisaContinued"
 val jarFile = "$buildDir/libs/${modID}.jar"
-val changelog = File("changelog.md").readText()
+val changelog = File("docs/changelog/changelog.md").readText()
+val changeBBCode = File("docs/changelog/changelog.bbcode").readText()
 
 val (gameDir, modTheSpireDir, basemodDir) = run {
     val homeDir = System.getProperty("user.home")!!
@@ -89,7 +90,7 @@ tasks.register("semver") {
             |
             |$changelog
             """.trimMargin(),
-        version = File("version.txt").readText()
+        version = File("docs/changelog/version.txt").readText()
     )
 
     configFile.writeText(gson.toJson(config))
@@ -108,5 +109,6 @@ tasks.register<Copy>("move") {
 
     from(jarFile) { into("content") }
     from("docs/thumbnail/image.jpg")
-    file("$gameDir/${modID}/config.json").writeText(gson.toJson(Config(changeNote = changelog)))
+    file("$gameDir/${modID}/config.json")
+        .writeText(gson.toJson(Config(changeNote = changeBBCode)))
 }

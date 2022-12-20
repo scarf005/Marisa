@@ -34,7 +34,7 @@ class EarthLightRay : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (!p.discardPile.isEmpty) {
-            if (MarisaContinued.isAmplified(this, AMP)) {
+            if (isAmplified(AMP)) {
                 if (upgraded && !p.discardPile.isEmpty) {
                     AbstractDungeon.actionManager.addToBottom(
                         DiscardPileToHandAction(1)

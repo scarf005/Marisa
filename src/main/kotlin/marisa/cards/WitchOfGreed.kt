@@ -65,7 +65,7 @@ class WitchOfGreed : CustomCard(
                     magicNumber
                 )
             )
-            if (MarisaContinued.isAmplified(this, AMP)) {
+            if (isAmplified(AMP)) {
                 val po = AbstractDungeon.returnRandomPotion()
                 AbstractDungeon.getCurrRoom().addPotionToRewards(po)
                 AbstractDungeon.actionManager.addToBottom(

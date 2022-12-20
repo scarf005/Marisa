@@ -41,7 +41,7 @@ class FairyDestructionRay : CustomCard(
             )
         )
         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-            if (MarisaContinued.isAmplified(this, AMP)) {
+            if (isAmplified(AMP)) {
                 AbstractDungeon.actionManager.addToBottom(
                     FairyDestrucCullingAction(magicNumber)
                 )

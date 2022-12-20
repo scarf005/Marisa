@@ -28,7 +28,7 @@ class SporeBomb : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        if (MarisaContinued.isAmplified(this, AMP)) {
+        if (isAmplified(AMP)) {
             for (mo in AbstractDungeon.getCurrRoom().monsters.monsters) {
                 AbstractDungeon.actionManager.addToBottom(
                     ApplyPowerAction(

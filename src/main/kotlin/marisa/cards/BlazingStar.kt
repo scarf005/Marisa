@@ -52,7 +52,7 @@ class BlazingStar : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (MarisaContinued.isAmplified(this, AMP)) {
+        if (isAmplified(AMP)) {
             block *= 2
         }
         AbstractDungeon.actionManager.addToBottom(

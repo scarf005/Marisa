@@ -29,7 +29,7 @@ class BinaryStars : CustomCard(
 
     private fun stars() = listOf(WhiteDwarf(), BlackFlareStar()).map { followUpgrade(it) }
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (MarisaContinued.isAmplified(this, AMP)) {
+        if (isAmplified(AMP)) {
             stars().forEach { addToBot(MakeTempCardInHandAction(it, 1)) }
         } else {
             addToBot(BinaryStarsAction(upgraded))

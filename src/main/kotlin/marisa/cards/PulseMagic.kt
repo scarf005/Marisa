@@ -37,7 +37,7 @@ class PulseMagic : CustomCard(
     }
   */
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (MarisaContinued.isAmplified(this, AMP)) {
+        if (isAmplified(AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(
                     p, p, PulseMagicPower(p)

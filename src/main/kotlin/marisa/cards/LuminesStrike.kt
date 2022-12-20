@@ -73,7 +73,7 @@ class LuminesStrike : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        if (MarisaContinued.isAmplified(this, AMP)) {
+        if (isAmplified(AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 DamageAction(
                     m,

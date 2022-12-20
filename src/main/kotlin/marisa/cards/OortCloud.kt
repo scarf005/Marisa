@@ -40,7 +40,7 @@ class OortCloud : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (MarisaContinued.isAmplified(this, AMP)) {
+        if (isAmplified(AMP)) {
             AbstractDungeon.actionManager.addToBottom(
                 ApplyPowerAction(
                     p,

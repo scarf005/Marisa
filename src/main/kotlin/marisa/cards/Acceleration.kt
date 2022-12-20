@@ -32,7 +32,7 @@ class Acceleration : CustomCard(
         for (i in 0 until block) {
             addToBot(DrawDrawPileAction())
         }
-        if (MarisaContinued.isAmplified(this, AMP)) {
+        if (isAmplified(AMP)) {
             for (i in 0 until magicNumber) {
                 addToBot(DrawDrawPileAction())
             }

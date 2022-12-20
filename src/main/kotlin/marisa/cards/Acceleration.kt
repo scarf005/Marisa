@@ -1,12 +1,11 @@
 package marisa.cards
 
 import basemod.abstracts.CustomCard
+import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaContinued
-import marisa.action.DrawDrawPileAction
 import marisa.patches.AbstractCardEnum
 
 class Acceleration : CustomCard(
@@ -29,13 +28,10 @@ class Acceleration : CustomCard(
 
     override fun applyPowersToBlock() {}
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        for (i in 0 until block) {
-            addToBot(DrawDrawPileAction())
-        }
-        if (isAmplified(AMP)) {
-            for (i in 0 until magicNumber) {
-                addToBot(DrawDrawPileAction())
-            }
+        addToBot(DrawCardAction(block))
+
+        if (isAmplified()) {
+            addToBot(DrawCardAction(magicNumber))
         }
     }
 

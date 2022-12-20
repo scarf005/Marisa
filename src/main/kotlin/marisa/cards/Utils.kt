@@ -12,7 +12,7 @@ fun AbstractCard.followUpgrade(card: AbstractCard) =
 
 fun AbstractCard.upgraded() = apply { upgrade() }
 
-fun AbstractCard.isAmplified(multiplier: Int = 1) = MarisaContinued.isAmplified(this, multiplier)
+fun AbstractCard.isAmplified(cost: Int = 1) = MarisaContinued.isAmplified(this, cost)
 
 fun AbstractCard.multiplePreviews(cards: List<AbstractCard>) {
     MultiCardPreview.clear(this)

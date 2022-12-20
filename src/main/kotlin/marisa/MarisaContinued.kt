@@ -330,7 +330,7 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
         var isDeadBranchEnabled = false
 
         /** TODO: it does lots of stuff I cannot understand, split it into multiple parts */
-        fun isAmplified(card: AbstractCard, multiplier: Int): Boolean {
+        fun isAmplified(card: AbstractCard, cost: Int): Boolean {
             logger.info(
                 """ThMod.Amplified : card to check : ${card.cardID}; costForTurn : ${card.costForTurn}"""
             )
@@ -339,7 +339,7 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
             fun isFree() = p.hasPower(MillisecondPulsarsPower.POWER_ID) || p.hasPower(PulseMagicPower.POWER_ID)
                     || card.freeToPlayOnce || card.purgeOnUse
 
-            fun canPay() = EnergyPanel.totalCount >= card.costForTurn + multiplier
+            fun canPay() = EnergyPanel.totalCount >= card.costForTurn + cost
 
             if (p.hasPower(OneTimeOffPlusPower.POWER_ID) || p.hasPower(OneTimeOffPower.POWER_ID)) {
                 logger.info("ThMod.Amplified :OneTimeOff detected,returning false.")
@@ -361,7 +361,7 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
 
                 canPay() -> {
                     logger.info("ThMod.Amplified : Sufficient energy, adding and returning true;")
-                    card.costForTurn += multiplier
+                    card.costForTurn += cost
                     true
                 }
 

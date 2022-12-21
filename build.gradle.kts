@@ -88,7 +88,7 @@ tasks.register("semver") {
         description = """
             |Adds Marisa (霧雨 魔理沙) from Touhou Project as a new playable character.
             |
-            |$changelog
+            |${changelog.replace("##", "*").replace("#", "")}
             """.trimMargin(),
         version = File("docs/changelog/version.txt").readText()
     )

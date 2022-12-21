@@ -50,10 +50,21 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
     EditCharactersSubscriber,
     PostInitializeSubscriber, EditRelicsSubscriber, EditCardsSubscriber, EditStringsSubscriber, OnCardUseSubscriber,
     EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber {
-    private val marisaModDefaultProp = Properties()
+    private enum class Config { CATEVENT, REPLACEDEADBRANCH }
+
+    private val defaultConfig = Properties().apply {
+        setProperty(Config.CATEVENT.name, "FALSE")
+        setProperty(Config.REPLACEDEADBRANCH.name, "FALSE")
+    }
+
+    private fun getConfig() = SpireConfig("MarisaContinued", "MarisaContinuedConfig", defaultConfig)
 
     init {
         BaseMod.subscribe(this)
+
+        isCatEventEnabled = getConfig().getBool(Config.CATEVENT.name)
+        isDeadBranchEnabled = getConfig().getBool(Config.REPLACEDEADBRANCH.name)
+
         logger.info("creating the color : MARISA_COLOR")
         listOf(AbstractCardEnum.MARISA_COLOR, AbstractCardEnum.MARISA_DERIVATIONS)
             .forEach { color ->
@@ -65,15 +76,6 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
                     CARD_ENERGY_ORB
                 )
             }
-
-        marisaModDefaultProp.setProperty("isCatEventEnabled", "TRUE")
-        try {
-            val config = SpireConfig("vexMod", "vexModConfig", marisaModDefaultProp)
-            config.load()
-            isCatEventEnabled = config.getBool("isCatEventEnabled")
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
     }
 
     override fun receiveEditCharacters() {
@@ -186,49 +188,37 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
 
     override fun receivePostInitialize() {
         logger.info("Adding badge, configs,event and potion")
+
         val settingsPanel = ModPanel()
-
-        val (labelText, labelTextBranch) = when (Settings.language) {
-            GameLanguage.ZHS -> """使用其他角色时是否开启黑猫事件？""" to """使用原版的树枝"""
-            else -> "Enable Black Cat event when playing other characters?" to "Don't replace Dead Branch?"
-        }
-
-        val buttonLambda = { button: ModToggleButton ->
-            isCatEventEnabled = button.enabled
-            try {
-                SpireConfig("MarisaContinued", "MarisaContinuedConfig", marisaModDefaultProp)
-                    .run {
-                        setBool("enablePlaceholder", isCatEventEnabled)
-                        save()
-                    }
-            } catch (e: Exception) {
-                e.printStackTrace()
-            }
-        }
-        val enableBlackCatButton = ModLabeledToggleButton(
-            labelText,
-            350.0f, 700.0f,
-            Settings.CREAM_COLOR,
-            FontHelper.charDescFont,
-            isCatEventEnabled,
-            settingsPanel,
-            { },
-            buttonLambda
+        BaseMod.registerModBadge(
+            ImageMaster.loadImage(MOD_BADGE),
+            "MarisaContinued", // TODO: use constant for modid
+            "Flynn, Hell, Hohner_257, Samsara, scarf005", // TODO: load from modthespire.json
+            "A Mod of the poor blonde girl from Touhou Project",
+            settingsPanel
         )
-        val enableDeadBranchButton = ModLabeledToggleButton(
-            labelTextBranch,
-            350.0f, 600.0f,
-            Settings.CREAM_COLOR,
-            FontHelper.charDescFont,
-            isDeadBranchEnabled,
-            settingsPanel,
-            { },
-            buttonLambda
+        fun toggleButton(text: String, y: Float, configName: String, enabled: Boolean) =
+            ModLabeledToggleButton(text, 350.0f, y,
+                Settings.CREAM_COLOR, FontHelper.charDescFont, enabled, settingsPanel, {}) {
+                getConfig().run {
+                    setBool(configName, it.enabled)
+                    save()
+                }
+            }
+
+        val enableBlackCatButton = toggleButton(
+            "Enable Black Cat event when playing other characters?", 700.0f,
+            Config.CATEVENT.name, isCatEventEnabled
+        )
+        val enableDeadBranchButton = toggleButton(
+            "Don't replace Dead Branch?", 600.0f,
+            Config.REPLACEDEADBRANCH.name, isDeadBranchEnabled
         )
         settingsPanel.addUIElement(enableBlackCatButton)
         settingsPanel.addUIElement(enableDeadBranchButton)
         BaseMod.addEvent(Mushrooms_MRS.ID, Mushrooms_MRS::class.java, Exordium.ID)
         BaseMod.addEvent(OrinTheCat.ID, OrinTheCat::class.java, TheBeyond.ID)
+
 
         data class PotionInfo(
             val cls: Class<out AbstractPotion>,
@@ -246,14 +236,6 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
 
         BaseMod.addMonster(ORIN_ENCOUNTER, GetMonster { Orin() })
         BaseMod.addMonster(ZOMBIE_FAIRY_ENC, GetMonster { ZombieFairy() })
-        val badge = ImageMaster.loadImage(MOD_BADGE)
-        BaseMod.registerModBadge(
-            badge,
-            "MarisaContinued",
-            "Flynn , Hell , Hohner_257 , Samsara, scarf005",
-            "A Mod of the poor blonde girl from Touhou Project(",
-            settingsPanel
-        )
     }
 
     internal inner class Keywords {
@@ -324,10 +306,10 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
         var typhoonCounter = 0
 
         @JvmField
-        var isCatEventEnabled = false
+        var isCatEventEnabled: Boolean = false
 
         @JvmField
-        var isDeadBranchEnabled = false
+        var isDeadBranchEnabled: Boolean = false
 
         /** TODO: it does lots of stuff I cannot understand, split it into multiple parts */
         fun isAmplified(card: AbstractCard, cost: Int): Boolean {

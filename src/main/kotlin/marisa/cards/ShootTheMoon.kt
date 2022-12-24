@@ -33,6 +33,8 @@ class ShootTheMoon : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
+        val isAmplified = isAmplified(AMP)
+
         val buffs = m.powers
             .filter { it.type == AbstractPower.PowerType.BUFF }
             .filterNot { it.ID == FadingPower.POWER_ID }
@@ -41,11 +43,11 @@ class ShootTheMoon : AmplifiedAttack(
         val toRemove: List<AbstractGameAction> = when {
             m.type == AbstractMonster.EnemyType.BOSS -> emptyList()
             buffs.isEmpty() -> emptyList()
-            isAmplified(AMP) -> buffs.map { RemoveSpecificPowerAction(m, p, it) }
+            isAmplified -> buffs.map { RemoveSpecificPowerAction(m, p, it) }
             else -> listOf(RemoveSpecificPowerAction(m, p, buffs.random()))
         }
 
-        val harm = if (isAmplified(AMP)) block else damage
+        val harm = if (isAmplified) block else damage
         addToBot(
             DamageAction(m, DamageInfo(p, harm, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL)
         )

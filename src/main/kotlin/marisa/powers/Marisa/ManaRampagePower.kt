@@ -1,7 +1,6 @@
 package marisa.powers.Marisa
 
 import com.badlogic.gdx.graphics.Texture
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
@@ -12,6 +11,7 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.RemoveSelfAction
 
 class ManaRampagePower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -50,14 +50,14 @@ class ManaRampagePower(owner: AbstractCreature?, amount: Int) : AbstractPower() 
             AbstractDungeon.actionManager.cardQueue.add(CardQueueItem(tmp, m, card.energyOnUse))
         }
         AbstractDungeon.actionManager
-            .addToBottom(RemoveSpecificPowerAction(owner, owner, this))
+            .addToBottom(RemoveSelfAction())
     }
 
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (!isPlayer) return
 
         AbstractDungeon.actionManager
-            .addToBottom(RemoveSpecificPowerAction(owner, owner, this))
+            .addToBottom(RemoveSelfAction())
     }
 
     companion object {

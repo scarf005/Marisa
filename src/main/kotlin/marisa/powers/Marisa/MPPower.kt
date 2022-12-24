@@ -1,11 +1,11 @@
 package marisa.powers.Marisa
 
 import com.badlogic.gdx.graphics.Texture
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.RemoveSelfAction
 import kotlin.math.pow
 
 class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
@@ -31,7 +31,7 @@ class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (isPlayer) {
-            addToBot(RemoveSpecificPowerAction(owner, owner, this))
+            addToBot(RemoveSelfAction())
         }
     } /*
     @Override

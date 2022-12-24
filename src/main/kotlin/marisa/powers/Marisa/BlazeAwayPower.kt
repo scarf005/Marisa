@@ -2,7 +2,6 @@ package marisa.powers.Marisa
 
 import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.core.AbstractCreature
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
+import marisa.RemoveSelfAction
 
 class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -37,7 +37,7 @@ class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         )
         MarisaContinued.logger.info("BlazeWayPower : removing power")
         addToBot(
-            RemoveSpecificPowerAction(owner, owner, this)
+            RemoveSelfAction()
         )
         MarisaContinued.logger.info("BlazeWayPower : all done")
     }
@@ -49,7 +49,7 @@ class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (isPlayer) {
             addToBot(
-                RemoveSpecificPowerAction(owner, owner, this)
+                RemoveSelfAction()
             )
         }
     }

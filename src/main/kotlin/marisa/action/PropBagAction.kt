@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.relics.*
 import marisa.MarisaContinued
 import marisa.powers.Marisa.PropBagPower
+import marisa.random
 import marisa.relics.AmplifyWand
 
 class PropBagAction : AbstractGameAction() {

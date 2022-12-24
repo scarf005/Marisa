@@ -14,7 +14,9 @@ import marisa.cards.derivations.Exhaustion_MRS
 import marisa.relics.SimpleLauncher
 import kotlin.math.pow
 
-class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class ChargeUpPower(
+    owner: AbstractCreature?, amount: Int
+) : AbstractPower() {
     private var cnt: Int
     private var stc = 0
 
@@ -22,11 +24,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         name = NAME
         ID = POWER_ID
         this.owner = owner
-        if (isExhausted()) {
-            this.amount = 0
-        } else {
-            this.amount = amount
-        }
+        this.amount = if (isExhausted()) 0 else amount
         type = PowerType.BUFF
         updateDescription()
         img = Texture("img/powers/generator.png")
@@ -52,7 +50,7 @@ class ChargeUpPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     override fun updateDescription() {
         description = if (cnt > 0) {
             """${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]},${DESCRIPTIONS[2]}${
-                Math.pow(2.0, cnt.toDouble()).toInt()
+                2.0.pow(cnt.toDouble()).toInt()
             }${DESCRIPTIONS[3]}"""
         } else {
             """${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]}."""

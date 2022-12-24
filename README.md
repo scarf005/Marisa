@@ -1,4 +1,4 @@
-![](docs/repoTemplate/RepoTemplate.png)
+[![](docs/repoTemplate/RepoTemplate.png)][workshop]
 
 <div align="center">
   <img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" />
@@ -91,3 +91,4 @@ License under [`src/main/kotlin/marisa`](./src/main/kotlin/marisa/):
 [original-credit]: https://github.com/lf201014/STS_ThMod_MRS#credits
 [sts]: https://store.steampowered.com/app/646570/Slay_the_Spire/
 [marisa]: https://en.touhouwiki.net/wiki/Kirisame_Marisa
+[workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404

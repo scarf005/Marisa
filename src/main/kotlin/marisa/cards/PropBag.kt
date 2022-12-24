@@ -1,13 +1,12 @@
 package marisa.cards
 
-import marisa.action.PropBagAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.PropBagAction
+import marisa.patches.AbstractCardEnum
 
 class PropBag : CustomCard(
     ID,
@@ -27,13 +26,8 @@ class PropBag : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        for (i in 0 until magicNumber) {
-            AbstractDungeon.actionManager.addToBottom(
-                PropBagAction()
-            )
-        }
-    }
+    override fun use(p: AbstractPlayer, unused: AbstractMonster?) =
+        repeat(magicNumber) { addToBot(PropBagAction()) }
 
     override fun makeCopy(): AbstractCard = PropBag()
 

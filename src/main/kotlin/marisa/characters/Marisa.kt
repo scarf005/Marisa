@@ -165,7 +165,8 @@ class Marisa(name: String) :
         energyOrb.updateOrb(orbCount)
     }
 
-    override fun getOrb() = AtlasRegion(ImageMaster.loadImage(MarisaContinued.CARD_ENERGY_ORB), 0, 0, 24, 24)
+    override fun getOrb() =
+        AtlasRegion(ImageMaster.loadImage(MarisaContinued.CARD_ENERGY_ORB), 0, 0, 24, 24)
 
     override fun getSlashAttackColor(): Color = MarisaContinued.STARLIGHT
 
@@ -191,19 +192,13 @@ class Marisa(name: String) :
         super.damage(info)
     }
 
-    override fun applyPreCombatLogic() {
-        super.applyPreCombatLogic()
-        MarisaContinued.typhoonCounter = 0
-        MarisaContinued.logger.info(
-            """Marisa : applyPreCombatLogic : I just reset the god damn typhoon counter ! current counter : ${MarisaContinued.typhoonCounter}"""
-        )
-    }
-
     companion object {
         val logger: Logger = LogManager.getLogger(MarisaContinued::class.java.name)
         private const val ENERGY_PER_TURN = 3 // how much energy you get every turn
-        private const val MARISA_SHOULDER_2 = "img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
-        private const val MARISA_SHOULDER_1 = "img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2
+        private const val MARISA_SHOULDER_2 =
+            "img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
+        private const val MARISA_SHOULDER_1 =
+            "img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2
         private const val MARISA_CORPSE = "img/char/Marisa/fallen.png" // dead corpse
 
         private const val MARISA_SKELETON_ATLAS =
@@ -224,7 +219,8 @@ class Marisa(name: String) :
             "img/UI/EPanel/layer1d.png"
         )
         private const val ORB_VFX = "img/UI/energyBlueVFX.png"
-        private val LAYER_SPEED = floatArrayOf(-40.0f, -32.0f, 20.0f, -20.0f, 0.0f, -10.0f, -8.0f, 5.0f, -5.0f, 0.0f)
+        private val LAYER_SPEED =
+            floatArrayOf(-40.0f, -32.0f, 20.0f, -20.0f, 0.0f, -10.0f, -8.0f, 5.0f, -5.0f, 0.0f)
 
         private const val STARTING_HP = 75
         private const val MAX_HP = 75

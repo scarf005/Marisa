@@ -2,6 +2,7 @@ package marisa.cards
 
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.MultiCardPreview
 import com.megacrit.cardcrawl.cards.AbstractCard
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import marisa.MarisaContinued
 
 /**
@@ -18,3 +19,6 @@ fun AbstractCard.multiplePreviews(cards: List<AbstractCard>) {
     MultiCardPreview.clear(this)
     MultiCardPreview.add(this, *cards.toTypedArray())
 }
+
+fun allGameCards() =
+    AbstractDungeon.player.run { discardPile.group + drawPile.group + hand.group }

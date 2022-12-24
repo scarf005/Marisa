@@ -1,13 +1,12 @@
 package marisa.cards
 
-import marisa.action.StarDustReverieAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.StarDustReverieAction
+import marisa.patches.AbstractCardEnum
 
 class StarDustReverie : CustomCard(
     ID,
@@ -25,7 +24,7 @@ class StarDustReverie : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             StarDustReverieAction(upgraded)
         )
     }

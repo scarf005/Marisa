@@ -32,7 +32,7 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         if (!p.hand.isEmpty) {
             flash()
             for (c in p.hand.group) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ExhaustSpecificCardAction(c, p.hand)
                 )
             }
@@ -42,7 +42,7 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     override fun onExhaust(card: AbstractCard) {
         val apply = card is Burn
         if (apply) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ApplyPowerAction(p, p, StrengthPower(p, amount), amount)
             )
         }
@@ -53,7 +53,11 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         ExhaustDiscard()
     }
 
-    override fun onApplyPower(power: AbstractPower, target: AbstractCreature, source: AbstractCreature) {
+    override fun onApplyPower(
+        power: AbstractPower,
+        target: AbstractCreature,
+        source: AbstractCreature
+    ) {
         //ThMod.logger.info("SuperNovaPower : onApplyPower : ExhaustDiscard");
         ExhaustDiscard()
     }

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 
 class Exhaustion_MRS : CustomCard(
@@ -27,7 +26,7 @@ class Exhaustion_MRS : CustomCard(
         if (p.hasRelic("Medical Kit")) {
 //            useMedicalKit(p)
         } else {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 UseCardAction(this)
             )
         }

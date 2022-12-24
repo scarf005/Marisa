@@ -30,7 +30,7 @@ class ShroomBrew : AbstractPotion(
 
     override fun use(target: AbstractCreature) {
         if (AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 FungusSplashAction(target)
             )
         }

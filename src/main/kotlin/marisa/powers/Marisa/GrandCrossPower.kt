@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 
 class GrandCrossPower(owner: AbstractCreature?) : AbstractPower() {
@@ -20,7 +19,7 @@ class GrandCrossPower(owner: AbstractCreature?) : AbstractPower() {
 
     override fun stackPower(stackAmount: Int) {}
     override fun atEndOfTurn(isPlayer: Boolean) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RemoveSpecificPowerAction(owner, owner, this)
         )
     }

@@ -56,12 +56,12 @@ class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : Ab
             )
             //fairy.usePreBattleAction();
             if (ModHelper.isModEnabled("Lethality")) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(target, target, StrengthPower(target, 3), 3)
                 )
             }
             if (ModHelper.isModEnabled("Time Dilation")) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(target, target, SlowPower(target, 0))
                 )
             }

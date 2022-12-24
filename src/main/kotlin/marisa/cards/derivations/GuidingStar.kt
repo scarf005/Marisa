@@ -1,6 +1,5 @@
 package marisa.cards.derivations
 
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
@@ -11,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
 
 class GuidingStar : CustomCard(
     ID,
@@ -34,7 +34,7 @@ class GuidingStar : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInDrawPileAction(
                 makeStatEquivalentCopy(),
                 1,
@@ -43,24 +43,17 @@ class GuidingStar : CustomCard(
             )
         )
         if (AbstractDungeon.player.discardPile.size() > 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 EmptyDeckShuffleAction()
             )
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ShuffleAction(AbstractDungeon.player.drawPile, false)
             )
         }
-        /*
-		p.drawPile.shuffle();
-
-		for (AbstractRelic r : p.relics) {
-			r.onShuffle();
-	    }
-	    */
     }
 
     override fun triggerAtStartOfTurn() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             GainEnergyAction(1)
         )
     }

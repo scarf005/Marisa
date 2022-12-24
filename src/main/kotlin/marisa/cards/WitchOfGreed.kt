@@ -34,7 +34,7 @@ class WitchOfGreed : CustomCard(
     public void use(AbstractPlayer p, AbstractMonster m) {
 
       if (ThMod.Amplified(this, AMP)) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             new ApplyPowerAction(
                 p,
                 p,
@@ -44,7 +44,7 @@ class WitchOfGreed : CustomCard(
 
       ThMod.logger.info("WitchOfGreed : Applying power : gold ;");
 
-      AbstractDungeon.actionManager.addToBottom(
+      addToBot(
           new ApplyPowerAction(
               p,
               p,
@@ -57,7 +57,7 @@ class WitchOfGreed : CustomCard(
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) {
             AbstractDungeon.getCurrRoom().addGoldToRewards(magicNumber)
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ApplyPowerAction(
                     p,
                     p,
@@ -68,7 +68,7 @@ class WitchOfGreed : CustomCard(
             if (isAmplified(AMP)) {
                 val po = AbstractDungeon.returnRandomPotion()
                 AbstractDungeon.getCurrRoom().addPotionToRewards(po)
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(
                         p,
                         p,

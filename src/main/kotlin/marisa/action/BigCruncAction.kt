@@ -53,10 +53,10 @@ class BigCruncAction(upgraded: Boolean) : AbstractGameAction() {
                     + " ; res : " + res
         )
         if (res > 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 GainEnergyAction(res)
             )
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 DrawCardAction(source, res)
             )
         }

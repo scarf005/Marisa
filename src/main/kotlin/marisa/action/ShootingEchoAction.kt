@@ -31,7 +31,7 @@ class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() 
                 MarisaContinued.logger.info("ShootingEchoAction : player hand size is 1")
                 val c = player.hand.topCard
                 if (c is Burn) {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         DiscardToHandAction(card)
                     )
                 }
@@ -50,7 +50,7 @@ class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() 
             for (c in AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 if (c is Burn) {
                     /*
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 new DiscardToHandAction(card)
             );
             */

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.cards.derivations.Spark
 import marisa.patches.AbstractCardEnum
@@ -30,7 +29,7 @@ class JA : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAction(
                 m,
                 DamageInfo(p, damage, damageTypeForTurn),

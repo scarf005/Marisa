@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaContinued
 import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
 
@@ -55,7 +54,7 @@ class BlazingStar : AmplifiedAttack(
         if (isAmplified(AMP)) {
             block *= 2
         }
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAction(
                 m,
                 DamageInfo(p, block, damageTypeForTurn),

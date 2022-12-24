@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 
 class OrrerysSunPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
@@ -21,10 +20,10 @@ class OrrerysSunPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     override fun onSpecificTrigger() {
         flash()
         /*
-    AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null,
+    addToBot(new DamageAllEnemiesAction(null,
         DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS,
         AbstractGameAction.AttackEffect.FIRE));
-        */AbstractDungeon.actionManager.addToBottom(
+        */addToBot(
             GainBlockAction(owner, owner, amount)
         )
     }

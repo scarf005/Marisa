@@ -11,8 +11,8 @@ import marisa.MarisaContinued
 import marisa.cards.derivations.GuidingStar
 
 class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
-    private val p: AbstractPlayer
-    var Gain: Boolean
+    private val p: AbstractPlayer = AbstractDungeon.player
+    var gain: Boolean = false
 
     init {
         MarisaContinued.logger.info("PolarisUniquePower : Init")
@@ -21,8 +21,6 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
         type = PowerType.BUFF
         updateDescription()
         img = Texture("img/powers/transmute.png")
-        p = AbstractDungeon.player
-        Gain = false
         this.owner = owner
         MarisaContinued.logger.info("PolarisUniquePower : Done initing")
     }
@@ -33,17 +31,13 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
 
     override fun atStartOfTurnPostDraw() {
         MarisaContinued.logger.info("PolarisUniquePower : Checking")
-        for (c in p.drawPile.group) {
-            if (c is GuidingStar) {
-                Gain = true
-            }
-        }
-        MarisaContinued.logger.info("PolarisUniquePower : Result : $Gain")
-        if (Gain) {
+        gain = p.drawPile.group.any { it is GuidingStar }
+        MarisaContinued.logger.info("PolarisUniquePower : Result : $gain")
+        if (gain) {
             flash()
-            AbstractDungeon.actionManager.addToBottom(GainEnergyAction(1))
+            addToBot(GainEnergyAction(1))
         }
-        Gain = false
+        gain = false
         MarisaContinued.logger.info("PolarisUniquePower : Done Checking")
     }
 

@@ -47,7 +47,7 @@ class StarDustReverieAction(upgraded: Boolean) : AbstractGameAction() {
             MarisaContinued.logger.info(
                 """StarDustReverieAction : checking : Exhaust : ${c.exhaust} ; Ethereal : ${c.isEthereal} ; Upgraded : ${c.upgraded}"""
             )
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 MakeTempCardInHandAction(c, 1)
             )
         }

@@ -17,7 +17,7 @@ class BigShroomBag : CustomRelic(
     override fun makeCopy(): AbstractRelic = BigShroomBag()
 
     override fun onEquip() {
-        AbstractDungeon.player.loseRelic("ShroomBag")
+        AbstractDungeon.player.loseRelic(ShroomBag.ID)
     }
 
     companion object {

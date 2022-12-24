@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.actions.common.HealAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.addToBot
 import marisa.relics.BigShroomBag
 import marisa.relics.ShroomBag
 
@@ -36,14 +36,10 @@ class ParasitePatch {
             }
 
             r.flash()
-            AbstractDungeon.actionManager.addToBottom(
-                RelicAboveCreatureAction(p, r)
-            )
             instance.exhaust = true
-            AbstractDungeon.actionManager.addToBottom(
-                HealAction(p, p, healAmt)
-            )
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
+                RelicAboveCreatureAction(p, r),
+                HealAction(p, p, healAmt),
                 DrawCardAction(p, draw)
             )
             return SpireReturn.Return<Any?>(null)
@@ -59,7 +55,10 @@ class ParasitePatch {
             p: AbstractPlayer,
             unused: AbstractMonster?
         ): SpireReturn<Boolean> {
-            return if (instance.cardID == "Parasite" && (p.hasRelic(ShroomBag.ID) || p.hasRelic(BigShroomBag.ID))) {
+            return if (instance.cardID == "Parasite" && (p.hasRelic(ShroomBag.ID) || p.hasRelic(
+                    BigShroomBag.ID
+                ))
+            ) {
                 SpireReturn.Return(true)
             } else SpireReturn.Continue()
         }

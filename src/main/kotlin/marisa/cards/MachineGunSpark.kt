@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
-import marisa.patches.CardTagEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -9,8 +7,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
+import marisa.patches.CardTagEnum
 
 class MachineGunSpark : CustomCard(
     ID,
@@ -33,7 +32,7 @@ class MachineGunSpark : CustomCard(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         for (i in 0 until magicNumber) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 DamageAction(
                     m,
                     DamageInfo(p, damage, damageTypeForTurn),

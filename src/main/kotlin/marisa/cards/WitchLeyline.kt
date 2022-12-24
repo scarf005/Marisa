@@ -1,6 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.animations.VFXAction
@@ -11,9 +10,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect
+import marisa.patches.AbstractCardEnum
 
 class WitchLeyline : CustomCard(
     ID,
@@ -33,19 +32,19 @@ class WitchLeyline : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             VFXAction(
                 ThrowDaggerEffect(m.hb.cX, m.hb.cY)
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAction(
                 m,
                 DamageInfo(p, damage, damageTypeForTurn),
                 AttackEffect.SLASH_DIAGONAL
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(Burn(), magicNumber)
         )
     }

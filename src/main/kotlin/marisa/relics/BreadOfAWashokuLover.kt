@@ -40,17 +40,17 @@ class BreadOfAWashokuLover : CustomRelic(
         if (card.type == CardType.CURSE || card.type == CardType.STATUS) {
             counter++
             flash()
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 RelicAboveCreatureAction(AbstractDungeon.player, this)
             )
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 HealAction(AbstractDungeon.player, AbstractDungeon.player, 1)
             )
         }
         if (counter >= 13) {
             MarisaContinued.logger.info("BreadOfAWashokuLover : onExhaust : Using Up")
             flash()
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 RelicAboveCreatureAction(AbstractDungeon.player, this)
             )
             img = ImageMaster.loadImage(USED_IMG)

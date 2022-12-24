@@ -32,7 +32,7 @@ class OpenUniverseAction(draw: Int, private val upgraded: Boolean) : AbstractGam
                 card.upgrade()
             }
             MarisaContinued.logger.info("OpenUniverseAction : adding : " + card.cardID)
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 MakeTempCardInDrawPileAction(card, 1, true, true)
             )
         }
@@ -42,7 +42,7 @@ class OpenUniverseAction(draw: Int, private val upgraded: Boolean) : AbstractGam
             r.onShuffle()
         }
         MarisaContinued.logger.info("OpenUniverseAction : drawing")
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DrawCardAction(p, draw)
         )
         MarisaContinued.logger.info("OpenUniverseAction : done")

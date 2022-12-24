@@ -22,11 +22,11 @@ class HandmadeGrimoire : CustomRelic(
         val cnt = AbstractDungeon.player.masterDeck.size() / 15
         flash()
         if (cnt > 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 RelicAboveCreatureAction(AbstractDungeon.player, this)
             )
             AbstractDungeon.player.gainEnergy(cnt)
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 DrawCardAction(AbstractDungeon.player, cnt)
             )
         }

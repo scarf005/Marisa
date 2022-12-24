@@ -6,10 +6,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower
-import marisa.MarisaContinued
 import marisa.patches.AbstractCardEnum
 
 class AsteroidBelt : CustomCard(
@@ -28,11 +26,11 @@ class AsteroidBelt : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             GainBlockAction(p, p, block)
         )
         if (isAmplified(AMP)) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ApplyPowerAction(
                     p,
                     p,

@@ -32,7 +32,7 @@ class OccultationAction : AbstractGameAction() {
 
             //cnt++;
         }
-        //AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, cnt));
+        //addToBot(new GainBlockAction(p, p, cnt));
         isDone = true
     }
 }

@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import kotlin.math.pow
 
@@ -32,38 +31,38 @@ class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (isPlayer) {
-            AbstractDungeon.actionManager.addToBottom(RemoveSpecificPowerAction(owner, owner, this))
+            addToBot(RemoveSpecificPowerAction(owner, owner, this))
         }
     } /*
-	@Override
-	public void onDrawOrDiscard() {
-		ThMod.logger.info("MPPower : onDrawOrDiscard : DiscardNoneAttack");
-		DiscardNoneAttack();
-	}
+    @Override
+    public void onDrawOrDiscard() {
+        ThMod.logger.info("MPPower : onDrawOrDiscard : DiscardNoneAttack");
+        DiscardNoneAttack();
+    }
 
-	@Override
-	public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-		ThMod.logger.info("MPPower : onApplyPower : DiscardNoneAttack");
-		DiscardNoneAttack();
-	}
-	@Override
-	public void onInitialApplication() {
-		ThMod.logger.info("MPPower : onInitialApplication : DiscardNoneAttack");
-		DiscardNoneAttack();
-	}
+    @Override
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        ThMod.logger.info("MPPower : onApplyPower : DiscardNoneAttack");
+        DiscardNoneAttack();
+    }
+    @Override
+    public void onInitialApplication() {
+        ThMod.logger.info("MPPower : onInitialApplication : DiscardNoneAttack");
+        DiscardNoneAttack();
+    }
 
-	private void DiscardNoneAttack() {
-		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-			if (c.type != CardType.ATTACK) {
-				AbstractDungeon.actionManager.addToBottom(
-						new DiscardSpecificCardAction(c)
-					);
-			}
-		}
-	}
+    private void DiscardNoneAttack() {
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c.type != CardType.ATTACK) {
+                addToBot(
+                        new DiscardSpecificCardAction(c)
+                    );
+            }
+        }
+    }
 
 
-	*/
+    */
 
     companion object {
         const val POWER_ID = "MPPower"

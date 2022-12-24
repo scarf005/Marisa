@@ -18,7 +18,7 @@ class BlackFlareStarAction(block: Int) : AbstractGameAction() {
     override fun update() {
         if (duration == 0.5f) {
             AbstractDungeon.handCardSelectScreen.open("Discard", 99, true, true)
-            AbstractDungeon.actionManager.addToBottom(WaitAction(0.25f))
+            addToBot(WaitAction(0.25f))
             tickDuration()
             return
         }

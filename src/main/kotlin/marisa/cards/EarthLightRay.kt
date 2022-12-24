@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.actions.common.HealAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaContinued
 import marisa.action.DiscToHandRandAction
 import marisa.action.DiscardPileToHandAction
 import marisa.patches.AbstractCardEnum
@@ -36,17 +34,17 @@ class EarthLightRay : CustomCard(
         if (!p.discardPile.isEmpty) {
             if (isAmplified(AMP)) {
                 if (upgraded && !p.discardPile.isEmpty) {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         DiscardPileToHandAction(1)
                     )
                 } else {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         DiscToHandRandAction()
                     )
                 }
             }
         }
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             HealAction(p, p, magicNumber)
         )
     }

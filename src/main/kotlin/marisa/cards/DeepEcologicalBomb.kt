@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaContinued
 import marisa.action.WasteBombAction
 import marisa.patches.AbstractCardEnum
 
@@ -33,7 +32,7 @@ class DeepEcologicalBomb : CustomCard(
         if (isAmplified(AMP)) {
             num++
         }
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             WasteBombAction(
                 AbstractDungeon.getMonsters().getRandomMonster(true),
                 damage,

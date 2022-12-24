@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 
 class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
@@ -27,7 +26,7 @@ class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
     override fun stackPower(amount: Int) {}
     override fun onInflictDamage(info: DamageInfo, damageAmount: Int, target: AbstractCreature) {
         if (damageAmount > 0 && info.type != DamageType.THORNS) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 MakeTempCardInDiscardAction(Burn(), 1)
             )
         }

@@ -11,7 +11,11 @@ import com.megacrit.cardcrawl.powers.StrengthPower
 import marisa.monsters.ZombieFairy
 import marisa.powers.monsters.LimboContactPower
 
-class SpawnFairyAction @JvmOverloads constructor(x: Float, y: Float, private val targetSlot: Int = -99) :
+class SpawnFairyAction @JvmOverloads constructor(
+    x: Float,
+    y: Float,
+    private val targetSlot: Int = -99
+) :
     AbstractGameAction() {
     private var used = false
     private val m = ZombieFairy(x, y)
@@ -29,15 +33,18 @@ class SpawnFairyAction @JvmOverloads constructor(x: Float, y: Float, private val
         if (!used) {
             m.init()
             m.applyPowers()
-            AbstractDungeon.getCurrRoom().monsters.addMonster(if (targetSlot < 0) 0 else targetSlot, m)
+            AbstractDungeon.getCurrRoom().monsters.addMonster(
+                if (targetSlot < 0) 0 else targetSlot,
+                m
+            )
             m.showHealthBar()
             if (ModHelper.isModEnabled("Lethality")) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(m, m, StrengthPower(m, 3), 3)
                 )
             }
             if (ModHelper.isModEnabled("Time Dilation")) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(m, m, SlowPower(m, 0))
                 )
             }

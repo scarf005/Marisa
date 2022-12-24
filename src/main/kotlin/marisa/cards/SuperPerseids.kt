@@ -41,7 +41,7 @@ class SuperPerseids : CustomCard(
         + "; : upgraded : " + this.upgraded
     );
     AbstractPlayer p = AbstractDungeon.player;
-    AbstractDungeon.actionManager.addToBottom(
+    addToBot(
         new ApplyPowerAction(
             p,
             p,
@@ -49,7 +49,7 @@ class SuperPerseids : CustomCard(
             this.magicNumber
         )
     );
-    */AbstractDungeon.actionManager.addToBottom(
+    */addToBot(
             GainEnergyAction(1)
         )
     }
@@ -64,7 +64,7 @@ class SuperPerseids : CustomCard(
                     + "; upgraded : " + upgraded
                     + "; damage : " + damage
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageRandomEnemyAction(
                 DamageInfo(
                     AbstractDungeon.player,

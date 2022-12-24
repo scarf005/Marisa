@@ -74,7 +74,7 @@ class WasteBombAction(private val target: AbstractCreature?, dmg: Int, numTimes:
             }
             this.target.damage(info)
             if (!this.target.isDeadOrEscaped && !this.target.isDying) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(
                         this.target,
                         AbstractDungeon.player,

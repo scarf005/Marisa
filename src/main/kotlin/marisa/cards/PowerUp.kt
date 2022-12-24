@@ -1,13 +1,12 @@
 package marisa.cards
 
-import marisa.action.DamageUpAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.DamageUpAction
+import marisa.patches.AbstractCardEnum
 
 class PowerUp : CustomCard(
     ID,
@@ -26,7 +25,7 @@ class PowerUp : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageUpAction(magicNumber)
         )
     }

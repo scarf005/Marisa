@@ -43,12 +43,12 @@ class SummonFairyAction(monster: AbstractMonster?) : AbstractGameAction() {
                         m.addPower(StrengthPower(m, 1))
                     }
                     if (ModHelper.isModEnabled("Lethality")) {
-                        AbstractDungeon.actionManager.addToBottom(
+                        addToBot(
                             ApplyPowerAction(m, m, StrengthPower(m, 3), 3)
                         )
                     }
                     if (ModHelper.isModEnabled("Time Dilation")) {
-                        AbstractDungeon.actionManager.addToBottom(
+                        addToBot(
                             ApplyPowerAction(m, m, SlowPower(m, 0))
                         )
                     }
@@ -81,7 +81,10 @@ class SummonFairyAction(monster: AbstractMonster?) : AbstractGameAction() {
         private const val pos3X = -250.0f
         private const val pos3Y = 310.0f
         private val COORDINATE = arrayOf(
-            floatArrayOf(pos0X, pos0Y), floatArrayOf(pos1X, pos1Y), floatArrayOf(pos2X, pos2Y), floatArrayOf(
+            floatArrayOf(pos0X, pos0Y),
+            floatArrayOf(pos1X, pos1Y),
+            floatArrayOf(pos2X, pos2Y),
+            floatArrayOf(
                 pos3X, pos3Y
             )
         )

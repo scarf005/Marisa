@@ -1,6 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -11,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
 
 class MysteriousBeam : CustomCard(
     ID,
@@ -49,13 +49,13 @@ class MysteriousBeam : CustomCard(
         if (upgraded) {
             c.upgrade()
         }
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(c, true)
         )
         c.applyPowers()
         baseDamage += c.damage
         calculateCardDamage(m)
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAction(
                 m,
                 DamageInfo(

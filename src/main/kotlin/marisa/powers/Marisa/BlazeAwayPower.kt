@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
@@ -33,11 +32,11 @@ class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         val c = card.makeStatEquivalentCopy()
         c.costForTurn = 0
         MarisaContinued.logger.info("BlazeWayPower : adding " + amount + " : " + c.cardID)
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(c, amount)
         )
         MarisaContinued.logger.info("BlazeWayPower : removing power")
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RemoveSpecificPowerAction(owner, owner, this)
         )
         MarisaContinued.logger.info("BlazeWayPower : all done")
@@ -49,7 +48,7 @@ class BlazeAwayPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
 
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (isPlayer) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 RemoveSpecificPowerAction(owner, owner, this)
             )
         }

@@ -1,6 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -11,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
 
 class GravityBeat : CustomCard(
     ID,
@@ -48,7 +48,7 @@ class GravityBeat : CustomCard(
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
 
         /*
-    AbstractDungeon.actionManager.addToBottom(
+    addToBot(
         new DamageAllEnemiesAction(
             p,
             this.multiDamage,
@@ -58,7 +58,7 @@ class GravityBeat : CustomCard(
     );
     if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
       for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             new ApplyPowerAction(
                 mo,
                 p,

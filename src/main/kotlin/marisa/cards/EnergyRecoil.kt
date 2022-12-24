@@ -1,6 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -8,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.ChargeUpPower
 
 class EnergyRecoil : CustomCard(
@@ -55,7 +55,7 @@ class EnergyRecoil : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (block > 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 GainBlockAction(p, p, block)
             )
         }

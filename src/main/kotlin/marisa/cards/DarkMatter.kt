@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.DarkMatterPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
@@ -12,6 +10,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
+import marisa.powers.Marisa.DarkMatterPower
 
 //import com.megacrit.cardcrawl.core.Settings;
 //import com.megacrit.cardcrawl.relics.AbstractRelic;
@@ -35,7 +35,7 @@ class DarkMatter : CustomCard(
 
     override fun triggerOnExhaust() {
         val p = AbstractDungeon.player
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             GainBlockAction(p, p, block)
         )
     }
@@ -53,7 +53,7 @@ class DarkMatter : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInDrawPileAction(
                 makeStatEquivalentCopy(),
                 1,
@@ -61,7 +61,7 @@ class DarkMatter : CustomCard(
                 true
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInDrawPileAction(
                 makeStatEquivalentCopy(),
                 1,
@@ -69,10 +69,10 @@ class DarkMatter : CustomCard(
                 true
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DrawCardAction(p, 1)
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             ApplyPowerAction(
                 p,
                 p,
@@ -80,10 +80,10 @@ class DarkMatter : CustomCard(
             )
         )
         /*
-		p.drawPile.shuffle();
-	    for (AbstractRelic r : p.relics)
-	        r.onShuffle();
-	  */
+        p.drawPile.shuffle();
+        for (AbstractRelic r : p.relics)
+            r.onShuffle();
+      */
     }
 
     override fun makeCopy(): AbstractCard = DarkMatter()

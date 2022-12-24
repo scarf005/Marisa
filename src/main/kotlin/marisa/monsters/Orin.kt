@@ -120,10 +120,10 @@ class Orin : AbstractMonster(
         when (nextMove.toInt()) {
             1 -> {
                 //catBite
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     WaitAction(0.3f)
                 )
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     VFXAction(
                         BiteEffect(
                             p.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale,
@@ -132,12 +132,12 @@ class Orin : AbstractMonster(
                         ), 0.1f
                     )
                 )
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     DamageAction(
                         p, damage[0], AttackEffect.NONE
                     )
                 )
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     VFXAction(
                         BiteEffect(
                             p.hb.cX + MathUtils.random(-50.0f, 50.0f) * Settings.scale,
@@ -146,7 +146,7 @@ class Orin : AbstractMonster(
                         ), 0.1f
                     )
                 )
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     DamageAction(
                         p, damage[0], AttackEffect.NONE
                     )
@@ -154,7 +154,7 @@ class Orin : AbstractMonster(
             }
 
             2 ->         //buff
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(
                         this, this, StrengthPower(this, strength), strength
                     )
@@ -163,34 +163,34 @@ class Orin : AbstractMonster(
             3 -> {
                 //hell fire
                 //missing vfx
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     VFXAction(
                         this,
                         IntenseZoomEffect(hb.cX, hb.cY, true), 0.05f, true
                     )
                 )
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ChangeStateAction(this, "TRANSFORM")
                 )
             }
 
             4 -> {
                 //doubleTap
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     DamageAction(
                         p, damage[2], AttackEffect.SLASH_DIAGONAL
                     )
                 )
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     DamageAction(
                         p, damage[2], AttackEffect.SLASH_DIAGONAL
                     )
                 )
                 /*
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             new GainBlockAction(this, this, this.blc)
         );
-        */AbstractDungeon.actionManager.addToBottom(
+        */addToBot(
                     ApplyPowerAction(
                         p,
                         this,
@@ -208,7 +208,7 @@ class Orin : AbstractMonster(
             {
                 var i = 0
                 while (i < 4) {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         DamageAction(
                             p, damage[4], AttackEffect.FIRE
                         )
@@ -219,7 +219,7 @@ class Orin : AbstractMonster(
 
             6 ->         //debuff
                 //missing vfx
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     OrinsDebuffAction(wraith, this)
                 )
 
@@ -227,7 +227,7 @@ class Orin : AbstractMonster(
             {
                 var i = 0
                 while (i < SUMMON_FIRST) {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         SummonFairyAction(this)
                     )
                     i++
@@ -238,7 +238,7 @@ class Orin : AbstractMonster(
             {
                 var i = 0
                 while (i < SUMMON) {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         SummonFairyAction(this)
                     )
                     i++
@@ -250,14 +250,14 @@ class Orin : AbstractMonster(
                 //missing vfx
                 var i = 0
                 while (i < 6) {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         DamageAction(
                             p, damage[3], AttackEffect.FIRE
                         )
                     )
                     i++
                 }
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     RemoveSpecificPowerAction(
                         p, this, "Wraith"
                     )
@@ -270,7 +270,7 @@ class Orin : AbstractMonster(
                         + " should never be called."
             )
         }
-        AbstractDungeon.actionManager.addToBottom(RollMoveAction(this))
+        addToBot(RollMoveAction(this))
     }
 
     private fun setDoubleTapAction() {
@@ -466,7 +466,7 @@ class Orin : AbstractMonster(
             att = false
             setMove(3.toByte(), Intent.UNKNOWN)
             createIntent()
-            //AbstractDungeon.actionManager.addToBottom(new ShoutAction(this, DIALOG[0]));
+            //addToBot(new ShoutAction(this, DIALOG[0]));
             setMove(3.toByte(), Intent.UNKNOWN)
             applyPowers()
             //this.firstTurn = true;
@@ -491,14 +491,14 @@ class Orin : AbstractMonster(
             //this.state.setAnimation(0, "Idle_2", true);
             halfDead = false
             form1 = false
-            AbstractDungeon.actionManager.addToBottom(HealAction(this, this, maxHealth))
-            AbstractDungeon.actionManager.addToBottom(CanLoseAction())
+            addToBot(HealAction(this, this, maxHealth))
+            addToBot(CanLoseAction())
             loadAnimation(MODEL_HUMANOID_ATLAS, MODEL_HUMANOID_JSON, 3.0f)
             val e = state.setAnimation(0, "Idle", true)
             e.time = e.endTime * MathUtils.random()
             updateHitbox(0.0f, -30.0f, 220.0f, 350.0f)
             for (i in 0 until SUMMON_FIRST) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     SummonFairyAction(this)
                 )
             }

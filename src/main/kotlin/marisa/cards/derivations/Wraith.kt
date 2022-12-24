@@ -1,6 +1,5 @@
 package marisa.cards.derivations
 
-import marisa.powers.monsters.WraithPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.powers.monsters.WraithPower
 
 //public class Wraith
 class Wraith : CustomCard(
@@ -37,7 +37,7 @@ class Wraith : CustomCard(
     }
 
     override fun triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             SetDontTriggerAction(this, false)
         )
     }

@@ -24,7 +24,7 @@ class WraithPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         addToBot(ExhaustAction(1, true, false, false))
         amount--
         if (amount <= 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, this)
             )
         }

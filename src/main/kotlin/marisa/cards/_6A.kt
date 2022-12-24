@@ -1,14 +1,13 @@
 package marisa.cards
 
-import marisa.action._6AAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action._6AAction
+import marisa.patches.AbstractCardEnum
 
 class _6A : CustomCard(
     ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK,
@@ -21,7 +20,7 @@ class _6A : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             _6AAction(
                 m,
                 DamageInfo(p, damage, damageTypeForTurn)

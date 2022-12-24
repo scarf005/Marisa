@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaContinued
 import marisa.action.RobberyDamageAction
 import marisa.patches.AbstractCardEnum
 
@@ -29,7 +27,7 @@ class Robbery : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RobberyDamageAction(
                 m,
                 DamageInfo(p, damage, damageTypeForTurn),

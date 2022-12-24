@@ -44,11 +44,9 @@ import java.util.*
 
 @SpireInitializer
 class MarisaContinued :
-    PostInitializeSubscriber, PostDungeonInitializeSubscriber,
-    PostExhaustSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber, PostBattleSubscriber,
+    PostInitializeSubscriber, PostEnergyRechargeSubscriber, PostBattleSubscriber,
     EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber,
-    EditCardsSubscriber, EditRelicsSubscriber,
-    OnCardUseSubscriber, OnPowersModifiedSubscriber {
+    EditCardsSubscriber, EditRelicsSubscriber, OnCardUseSubscriber {
     private enum class Config { CATEVENT, REPLACEDEADBRANCH }
 
     private val defaultConfig = Properties().apply {
@@ -102,10 +100,6 @@ class MarisaContinued :
         }
     }
 
-    override fun receivePostExhaust(c: AbstractCard) {
-        // TODO Auto-generated method stub
-    }
-
     override fun receivePostBattle(r: AbstractRoom) {
         typhoonCounter = 0
         logger.info("ThMod : PostBattle ; typhoon-counter reset")
@@ -134,18 +128,6 @@ class MarisaContinued :
                 AbstractDungeon.actionManager.addToBottom(GainEnergyAction(1))
                 it.flash()
             }
-    }
-
-    override fun receivePowersModified() {
-        // TODO Auto-generated method stub
-    }
-
-    override fun receivePostDungeonInitialize() {
-        // TODO Auto-generated method stub
-    }
-
-    override fun receivePostDraw(arg0: AbstractCard) {
-        // TODO Auto-generated method stub
     }
 
     override fun receiveEditKeywords() = logger.runInfo("custom keywords") {

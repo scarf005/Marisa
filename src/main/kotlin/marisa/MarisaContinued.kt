@@ -101,9 +101,7 @@ class MarisaContinued :
 
     override fun receiveCardUsed(card: AbstractCard) {
         logger.info("""ThMod : Card used : ${card.cardID} ; cost : ${card.costForTurn}""")
-        if (card.retain) {
-            card.retain = false
-        }
+        card.retain = false
         if (card.hasTag(CardTagEnum.SPARK)) {
             AbstractDungeon.actionManager.addToTop(SparkCostAction())
         }

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.powers.FadingPower
 import com.megacrit.cardcrawl.powers.ShiftingPower
 import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
+import marisa.random
 
 class ShootTheMoon : AmplifiedAttack(
     ID,
@@ -45,7 +46,9 @@ class ShootTheMoon : AmplifiedAttack(
         }
 
         val harm = if (isAmplified(AMP)) block else damage
-        addToBot(DamageAction(m, DamageInfo(p, harm, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL))
+        addToBot(
+            DamageAction(m, DamageInfo(p, harm, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL)
+        )
         toRemove.forEach { addToBot(it) }
     }
 

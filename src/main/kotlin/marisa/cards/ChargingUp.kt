@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.ChargeUpPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -9,6 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
+import marisa.powers.Marisa.ChargeUpPower
 
 class ChargingUp : CustomCard(
     ID,
@@ -29,17 +29,8 @@ class ChargingUp : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         val stack = magicNumber
-        /*
-			if (ThMod.Amplified(this.costForTurn+AMP, AMP)) {
-				stack = stack * 2 - 1;
-			}
-			*/AbstractDungeon.actionManager.addToBottom(
-            ApplyPowerAction(
-                p,
-                p,
-                ChargeUpPower(p, stack),
-                stack
-            )
+        AbstractDungeon.actionManager.addToBottom(
+            ApplyPowerAction(p, p, ChargeUpPower(p, stack), stack)
         )
     }
 

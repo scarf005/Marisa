@@ -158,8 +158,7 @@ class MarisaContinued :
         // TODO Auto-generated method stub
     }
 
-    override fun receiveEditKeywords() {
-        logger.info("Setting up custom keywords")
+    override fun receiveEditKeywords() = logger.runInfo("custom keywords") {
         val gson = Gson()
         val keywordsPath = "localization/${language}/keywords.json"
         val keywords = gson.fromJson(loadJson(keywordsPath), Keywords::class.java)
@@ -167,7 +166,6 @@ class MarisaContinued :
             logger.info("""Loading keyword : ${key.NAMES[0]}""")
             BaseMod.addKeyword(key.NAMES, key.DESCRIPTION)
         }
-        logger.info("Keywords setting finished.")
     }
 
     override fun receiveEditStrings() {
@@ -180,12 +178,26 @@ class MarisaContinued :
         )
             .map { it to it.simpleName.removeSuffix("Strings").lowercase() + "s" }
             .forEach { (cls, kind) ->
-                loadJson("localization/$language/$kind.json")
-                    .also { BaseMod.loadCustomStrings(cls, it) }
+                BaseMod.loadCustomStrings(cls, loadFile(kind))
             }
 
         logger.info("done editing strings")
     }
+
+    fun loadFile(
+        name: String,
+        fallback: Settings.GameLanguage = Settings.GameLanguage.ENG
+    ): String {
+        val file = Gdx.files.internal("localization/$language/$name.json")
+        val fallbackFile = Gdx.files.internal("localization/${fallback.name}/$name.json")
+
+        val toLoad = if (file.exists()) file else run {
+            logger.warn("No localization file for $language, using fallback $fallback")
+            fallbackFile
+        }
+        return toLoad.readString(StandardCharsets.UTF_8.toString())
+    }
+
 
     override fun receivePostInitialize() {
         logger.info("Adding badge, configs,event and potion")
@@ -261,6 +273,8 @@ class MarisaContinued :
     )
 
     companion object {
+        val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)
+
         @Suppress("MemberVisibilityCanBePrivate")
         lateinit var instance: MarisaContinued
 
@@ -269,9 +283,6 @@ class MarisaContinued :
         fun initialize() {
             instance = MarisaContinued()
         }
-
-
-        val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)
 
         private const val ORIN_ENCOUNTER = "Orin"
         private const val ZOMBIE_FAIRY_ENC = "ZombieFairy"

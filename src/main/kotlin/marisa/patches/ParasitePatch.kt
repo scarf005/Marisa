@@ -38,11 +38,9 @@ class ParasitePatch {
             r.flash()
             instance.exhaust = true
             addToBot(
-                listOf(
-                    RelicAboveCreatureAction(p, r),
-                    HealAction(p, p, healAmt),
-                    DrawCardAction(p, draw)
-                )
+                RelicAboveCreatureAction(p, r),
+                HealAction(p, p, healAmt),
+                DrawCardAction(p, draw)
             )
             return SpireReturn.Return<Any?>(null)
         }

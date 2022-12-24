@@ -20,7 +20,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.localization.*
 import com.megacrit.cardcrawl.potions.AbstractPotion
-import com.megacrit.cardcrawl.rooms.AbstractRoom
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.action.SparkCostAction
 import marisa.cards.*
@@ -44,7 +43,7 @@ import java.util.*
 
 @SpireInitializer
 class MarisaContinued :
-    PostInitializeSubscriber, PostEnergyRechargeSubscriber, PostBattleSubscriber,
+    PostInitializeSubscriber, PostEnergyRechargeSubscriber,
     EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber,
     EditCardsSubscriber, EditRelicsSubscriber, OnCardUseSubscriber {
     private enum class Config { CATEVENT, REPLACEDEADBRANCH }
@@ -100,17 +99,8 @@ class MarisaContinued :
         }
     }
 
-    override fun receivePostBattle(r: AbstractRoom) {
-        typhoonCounter = 0
-        logger.info("ThMod : PostBattle ; typhoon-counter reset")
-    }
-
     override fun receiveCardUsed(card: AbstractCard) {
         logger.info("""ThMod : Card used : ${card.cardID} ; cost : ${card.costForTurn}""")
-        if (card.costForTurn == 0 || card.costForTurn <= -2 || card.costForTurn == -1 && AbstractDungeon.player.energy.energy <= 0) {
-            typhoonCounter++
-            logger.info("typhoon-counter increased , now :$typhoonCounter")
-        }
         if (card.retain) {
             card.retain = false
         }
@@ -252,8 +242,6 @@ class MarisaContinued :
         const val CARD_ENERGY_ORB = "img/UI/energyOrb.png"
         private const val MY_CHARACTER_BUTTON = "img/charSelect/MarisaButton.png"
         private const val MARISA_PORTRAIT = "img/charSelect/marisaPortrait.jpg"
-
-        var typhoonCounter = 0
 
         @JvmField
         var isCatEventEnabled: Boolean = false

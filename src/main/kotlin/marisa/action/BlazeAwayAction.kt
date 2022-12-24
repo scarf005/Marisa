@@ -5,28 +5,16 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.cards.CardQueueItem
-import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import marisa.MarisaContinued
 
-//public class BlazeAwayAction {
-class BlazeAwayAction(card: AbstractCard) : AbstractGameAction() {
-    private lateinit var card: AbstractCard
-    var p: AbstractPlayer
+class BlazeAwayAction(val card: AbstractCard) : AbstractGameAction() {
 
     init {
-        duration = Settings.ACTION_DUR_FAST
-        p = AbstractDungeon.player
-        if (card.type == CardType.ATTACK) {
-            this.card = card
-        } else {
-            isDone = true
-        }
-        MarisaContinued.logger.info(
-            "BlazeAwayAction : Initialize complete ; card : " +
-                    card.name
-        )
+        duration = if (Settings.FAST_MODE) Settings.ACTION_DUR_FASTER else Settings.ACTION_DUR_MED
+        isDone = card.type != CardType.ATTACK
+        MarisaContinued.logger.info("BlazeAwayAction : Initialize complete ; card : ${card.name}")
     }
 
     override fun update() {
@@ -48,15 +36,11 @@ class BlazeAwayAction(card: AbstractCard) : AbstractGameAction() {
             """BlazeAwayAction : card : ${card.cardID} ; target : ${target.id}"""
         )
         card.applyPowers()
-        AbstractDungeon.actionManager.currentAction = null
-        AbstractDungeon.actionManager.addToTop(this)
-        AbstractDungeon.actionManager.cardQueue.add(
-            CardQueueItem(card, target)
-        )
-        if (!Settings.FAST_MODE) {
-            AbstractDungeon.actionManager.addToTop(WaitAction(Settings.ACTION_DUR_MED))
-        } else {
-            AbstractDungeon.actionManager.addToTop(WaitAction(Settings.ACTION_DUR_FASTER))
+        AbstractDungeon.actionManager.run {
+            currentAction = null
+            addToTop(this@BlazeAwayAction)
+            cardQueue.add(CardQueueItem(card, target))
+            addToTop(WaitAction(duration))
         }
         isDone = true
     }

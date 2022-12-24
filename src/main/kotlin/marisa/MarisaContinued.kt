@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.core.Settings
-import com.megacrit.cardcrawl.core.Settings.GameLanguage
+import com.megacrit.cardcrawl.core.Settings.language
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.dungeons.Exordium
 import com.megacrit.cardcrawl.dungeons.TheBeyond
@@ -161,7 +161,7 @@ class MarisaContinued :
     override fun receiveEditKeywords() {
         logger.info("Setting up custom keywords")
         val gson = Gson()
-        val keywordsPath = "localization/keywords-$langName.json"
+        val keywordsPath = "localization/${language}/keywords.json"
         val keywords = gson.fromJson(loadJson(keywordsPath), Keywords::class.java)
         keywords.keywords.forEach { key ->
             logger.info("""Loading keyword : ${key.NAMES[0]}""")
@@ -172,7 +172,7 @@ class MarisaContinued :
 
     override fun receiveEditStrings() {
         logger.info("start editing strings")
-        logger.info("lang : $langName")
+        logger.info("lang : $language")
 
         listOf(
             RelicStrings::class.java, CardStrings::class.java, PowerStrings::class.java,
@@ -180,7 +180,7 @@ class MarisaContinued :
         )
             .map { it to it.simpleName.removeSuffix("Strings").lowercase() + "s" }
             .forEach { (cls, kind) ->
-                Gdx.files.internal("localization/$kind-$langName.json")
+                Gdx.files.internal("localization/$language/$kind.json")
                     .readString(StandardCharsets.UTF_8.toString())
                     .also { BaseMod.loadCustomStrings(cls, it) }
             }
@@ -270,16 +270,6 @@ class MarisaContinued :
         fun initialize() {
             instance = MarisaContinued()
         }
-
-        private val langName
-            get() = when (Settings.language) {
-                GameLanguage.ZHT -> "zht"
-                GameLanguage.ZHS -> "zh"
-                GameLanguage.KOR -> "kr"
-                GameLanguage.JPN -> "jp"
-                GameLanguage.FRA -> "fr"
-                else -> "en"
-            }
 
 
         val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)

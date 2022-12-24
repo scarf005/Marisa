@@ -80,36 +80,29 @@ class MarisaContinued :
             }
     }
 
-    override fun receiveEditCharacters() {
-        logger.info("begin editing characters")
-        logger.info("""add ${ThModClassEnum.MARISA}""")
+    override fun receiveEditCharacters() = logger.runInfo("adding Marisa to characters") {
         BaseMod.addCharacter(
             Marisa("Marisa"),
             MY_CHARACTER_BUTTON,
             MARISA_PORTRAIT,
             ThModClassEnum.MARISA
         )
-        logger.info("done editing characters")
     }
 
-    override fun receiveEditRelics() {
-        logger.info("Begin editing relics.")
+    override fun receiveEditRelics() = logger.runInfo("add relics") {
         arrayOf(
             MiniHakkero(), BewitchedHakkero(), MagicBroom(), AmplifyWand(),
             ExperimentalFamiliar(), RampagingMagicTools(), BreadOfAWashokuLover(), SimpleLauncher(),
             HandmadeGrimoire(), ShroomBag(), SproutingBranch(), BigShroomBag()
         ).forEach { BaseMod.addRelicToCustomPool(it, AbstractCardEnum.MARISA_COLOR) }
         BaseMod.addRelic(CatCart(), RelicType.SHARED)
-        logger.info("Relics editing finished.")
     }
 
-    override fun receiveEditCards() {
-        logger.info("adding cards for MARISA")
+    override fun receiveEditCards() = logger.runInfo("add cards") {
         cardsToAdd().forEach { card ->
-            logger.info("""Adding card : ${card.name}""")
+            logger.info("""Adding card: ${card.name}""")
             BaseMod.addCard(card)
         }
-        logger.info("done editing cards")
     }
 
     override fun receivePostExhaust(c: AbstractCard) {
@@ -160,18 +153,14 @@ class MarisaContinued :
 
     override fun receiveEditKeywords() = logger.runInfo("custom keywords") {
         val gson = Gson()
-        val keywordsPath = "localization/${language}/keywords.json"
-        val keywords = gson.fromJson(loadJson(keywordsPath), Keywords::class.java)
+        val keywords = gson.fromJson(loadFile("keywords"), Keywords::class.java)
         keywords.keywords.forEach { key ->
             logger.info("""Loading keyword : ${key.NAMES[0]}""")
             BaseMod.addKeyword(key.NAMES, key.DESCRIPTION)
         }
     }
 
-    override fun receiveEditStrings() {
-        logger.info("start editing strings")
-        logger.info("lang : $language")
-
+    override fun receiveEditStrings() = logger.runInfo("localization") {
         listOf(
             RelicStrings::class.java, CardStrings::class.java, PowerStrings::class.java,
             PotionStrings::class.java, EventStrings::class.java
@@ -180,11 +169,9 @@ class MarisaContinued :
             .forEach { (cls, kind) ->
                 BaseMod.loadCustomStrings(cls, loadFile(kind))
             }
-
-        logger.info("done editing strings")
     }
 
-    fun loadFile(
+    private fun loadFile(
         name: String,
         fallback: Settings.GameLanguage = Settings.GameLanguage.ENG
     ): String {
@@ -199,9 +186,7 @@ class MarisaContinued :
     }
 
 
-    override fun receivePostInitialize() {
-        logger.info("Adding badge, configs,event and potion")
-
+    override fun receivePostInitialize() = logger.runInfo("badge, configs,event and potion") {
         val settingsPanel = ModPanel()
         BaseMod.registerModBadge(
             ImageMaster.loadImage(MOD_BADGE),
@@ -231,7 +216,6 @@ class MarisaContinued :
         settingsPanel.addUIElement(enableDeadBranchButton)
         BaseMod.addEvent(Mushrooms_MRS.ID, Mushrooms_MRS::class.java, Exordium.ID)
         BaseMod.addEvent(OrinTheCat.ID, OrinTheCat::class.java, TheBeyond.ID)
-
 
         data class PotionInfo(
             val cls: Class<out AbstractPotion>,
@@ -363,9 +347,6 @@ class MarisaContinued :
             )
             return res
         }
-
-        private fun loadJson(jsonPath: String): String =
-            Gdx.files.internal(jsonPath).readString(StandardCharsets.UTF_8.toString())
 
         @JvmStatic
         val randomMarisaCard: AbstractCard

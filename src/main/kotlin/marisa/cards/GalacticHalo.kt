@@ -27,16 +27,8 @@ class GalacticHalo : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        /*
-        addToBot(
-            new ApplyPowerAction(p , p ,
-                    new GalacticHaloPower(p,this.magicNumber), this.magicNumber)
-            );
-            */
         MarisaContinued.logger.info(
-            "GalacticHalo : use :"
-                    + " magicNumber : " + magicNumber
-                    + " baseMagicNumber : " + baseMagicNumber
+            """GalacticHalo : use : magicNumber : $magicNumber baseMagicNumber : $baseMagicNumber"""
         )
         addToBot(
             GainBlockAction(p, p, block)

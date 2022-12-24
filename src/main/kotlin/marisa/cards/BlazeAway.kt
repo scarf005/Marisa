@@ -31,12 +31,7 @@ class BlazeAway : CustomCard(
         .find { it.type == CardType.ATTACK }
 
     override fun applyPowers() {
-        val last = lastAttack()
-        rawDescription = if (last == null) {
-            """$DESCRIPTION${EXTENDED_DESCRIPTION[2]}"""
-        } else {
-            """$DESCRIPTION${EXTENDED_DESCRIPTION[0]}${last.name}${EXTENDED_DESCRIPTION[1]}"""
-        }
+        rawDescription = "$DESCRIPTION${desc.render(lastAttack())}"
         initializeDescription()
     }
 
@@ -46,23 +41,17 @@ class BlazeAway : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        val last = lastAttack()
-        if (last == null) {
-            MarisaContinued.logger.info("BlazeAway : error : last attack is null ")
-        } else {
+        lastAttack()?.let { last ->
             MarisaContinued.logger.info("""BlazeAway : last attack :${last.cardID}""")
             val card = last.makeStatEquivalentCopy()
-            if (card.costForTurn >= 0) {
-                card.setCostForTurn(0)
-            }
-            MarisaContinued.logger.info(
-                """BlazeAway : card :${card.cardID} ; baseD :${card.baseDamage} ; D : ${card.damage} ; baseB :${card.baseBlock} ; B : ${card.block} ; baseM :${card.baseMagicNumber} ; M : ${card.magicNumber} ; C : ${card.cost} ; CFT : ${card.costForTurn}"""
-            )
-            repeat((0 until magicNumber).count()) {
-                addToBot(
-                    BlazeAwayAction(card)
-                )
-            }
+                .also {
+                    MarisaContinued.logger.info(
+                        """BlazeAway: card :$cardID; 
+                            |baseD :$baseDamage; Damage: $damage; baseB :$baseBlock ; B : $block ; 
+                            |baseM :$baseMagicNumber ; M : $magicNumber ; C : $cost ; CFT : $costForTurn""".trimMargin()
+                    )
+                }
+            repeat(magicNumber) { addToBot(BlazeAwayAction(card)) }
         }
     }
 
@@ -86,7 +75,14 @@ class BlazeAway : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
+
+        private data class Description(val opening: String, val closing: String, val none: String) {
+            fun render(last: AbstractCard?) = last?.let { "$opening${it.name}$closing" } ?: none
+        }
+
+        private val desc = cardStrings.EXTENDED_DESCRIPTION.let {
+            Description(it[0], it[1], it[2])
+        }
         private const val COST = 1
         private const val NUM = 1
         private const val UPG_NUM = 1

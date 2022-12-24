@@ -21,10 +21,13 @@ class PropBagAction : AbstractGameAction() {
         logger.info("PropBagAction : Checking for relics")
 
         val relics = listOf(
-            MeatOnTheBone(), MummifiedHand(), LetterOpener(), Shuriken(),
-            GremlinHorn(), Sundial(), MercuryHourglass(), OrnamentalFan(),
-            Kunai(), BlueCandle(), AmplifyWand()
-        ).filterNot { p.hasRelic(it.relicId) }
+            MeatOnTheBone(), MummifiedHand(), BlueCandle(), AmplifyWand(),
+            GremlinHorn(), MercuryHourglass(), Sundial(),
+            // use atTurnStart to reset counter
+            LetterOpener(), Shuriken(), Kunai(), OrnamentalFan(),
+        )
+            .onEach(AbstractRelic::atTurnStart)
+            .filterNot { p.hasRelic(it.relicId) }
         // TODO: refactor with Arrow
 
         when (relics.size) {

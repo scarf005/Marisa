@@ -180,8 +180,7 @@ class MarisaContinued :
         )
             .map { it to it.simpleName.removeSuffix("Strings").lowercase() + "s" }
             .forEach { (cls, kind) ->
-                Gdx.files.internal("localization/$language/$kind.json")
-                    .readString(StandardCharsets.UTF_8.toString())
+                loadJson("localization/$language/$kind.json")
                     .also { BaseMod.loadCustomStrings(cls, it) }
             }
 

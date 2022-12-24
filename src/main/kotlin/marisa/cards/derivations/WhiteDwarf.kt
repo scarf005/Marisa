@@ -1,7 +1,5 @@
 package marisa.cards.derivations
 
-import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
@@ -12,6 +10,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.AmplifiedAttack
+import marisa.patches.AbstractCardEnum
 import kotlin.math.floor
 
 class WhiteDwarf : AmplifiedAttack(
@@ -59,14 +59,14 @@ class WhiteDwarf : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAction(
                 m,
                 DamageInfo(p, block, damageTypeForTurn),
                 AttackEffect.SLASH_DIAGONAL
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(Burn(), 2)
         )
     }

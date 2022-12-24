@@ -7,7 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.MarisaContinued
 
-class ManaRampageAction(amount: Int, upgraded: Boolean, freeToPlay: Boolean) : AbstractGameAction() {
+class ManaRampageAction(amount: Int, upgraded: Boolean, freeToPlay: Boolean) :
+    AbstractGameAction() {
     private val f2p: Boolean
     var p: AbstractPlayer
     var upgraded: Boolean
@@ -28,7 +29,7 @@ class ManaRampageAction(amount: Int, upgraded: Boolean, freeToPlay: Boolean) : A
 
     override fun update() {
         for (i in 0 until amount) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 PlayManaRampageCardAction(upgraded)
             )
         }

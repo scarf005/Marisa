@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.cards.derivations.Spark
 
@@ -20,7 +19,7 @@ class CasketOfStarPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
     }
 
     override fun onGainedBlock(blockAmount: Float) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(Spark(), amount)
         )
     }

@@ -1,13 +1,13 @@
 package marisa.cards
 
-import marisa.action.OrbitalAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.OrbitalAction
+import marisa.patches.AbstractCardEnum
 
 class Orbital : CustomCard(
     ID,
@@ -35,18 +35,18 @@ class Orbital : CustomCard(
     override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean = false
 
     override fun triggerOnExhaust() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             OrbitalAction()
         )
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 OrbitalAction()
             )
         }
     }
 
     override fun triggerWhenDrawn() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DrawCardAction(AbstractDungeon.player, DRAW)
         )
     }

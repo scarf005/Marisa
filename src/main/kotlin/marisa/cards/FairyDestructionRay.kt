@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaContinued
 import marisa.action.FairyDestrucCullingAction
 import marisa.patches.AbstractCardEnum
 
@@ -32,7 +31,7 @@ class FairyDestructionRay : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAllEnemiesAction(
                 p,
                 multiDamage,
@@ -42,7 +41,7 @@ class FairyDestructionRay : CustomCard(
         )
         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
             if (isAmplified(AMP)) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     FairyDestrucCullingAction(magicNumber)
                 )
             }

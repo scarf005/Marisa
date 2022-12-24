@@ -66,7 +66,7 @@ class CollectingQuirk : CustomCard(
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         getCounter()
         if (counter > 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 UnstableBombAction(
                     AbstractDungeon.getMonsters().getRandomMonster(true),
                     damage,

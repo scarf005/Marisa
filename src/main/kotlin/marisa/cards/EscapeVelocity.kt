@@ -1,15 +1,14 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.EscapeVelocityPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
+import marisa.powers.Marisa.EscapeVelocityPower
 
 class EscapeVelocity : CustomCard(
     ID,
@@ -29,7 +28,7 @@ class EscapeVelocity : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             ApplyPowerAction(
                 p,
                 p,

@@ -80,7 +80,7 @@ class OrinTheCat : AbstractEvent() {
                     screen = CurScreen.END
                     /*
               if (orin != null) {
-                AbstractDungeon.actionManager.addToBottom(new EscapeAction(orin));
+                addToBot(new EscapeAction(orin));
               }
               */roomEventText.updateBodyText(DESCRIPTIONS[2])
                     roomEventText.updateDialogOption(0, OPTIONS[3])
@@ -100,7 +100,7 @@ class OrinTheCat : AbstractEvent() {
                     screen = CurScreen.END
                     /*
               if (orin != null) {
-                AbstractDungeon.actionManager.addToBottom(new EscapeAction(orin));
+                addToBot(new EscapeAction(orin));
               }
               */roomEventText.updateBodyText(DESCRIPTIONS[4])
                     roomEventText.updateDialogOption(0, OPTIONS[3])

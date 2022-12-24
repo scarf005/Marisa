@@ -5,7 +5,8 @@ import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 
-class DamageRandomEnemyAction(private val info: DamageInfo, effect: AttackEffect?) : AbstractGameAction() {
+class DamageRandomEnemyAction(private val info: DamageInfo, effect: AttackEffect?) :
+    AbstractGameAction() {
     init {
         setValues(AbstractDungeon.getMonsters().getRandomMonster(true), info)
         actionType = ActionType.DAMAGE
@@ -18,7 +19,7 @@ class DamageRandomEnemyAction(private val info: DamageInfo, effect: AttackEffect
             isDone = true
             return
         }
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAction(target, info, attackEffect)
         )
         isDone = true

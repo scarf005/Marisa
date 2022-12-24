@@ -24,10 +24,10 @@ class SproutingBranch : CustomRelic(
     }
 
     override fun atBattleStart() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RelicAboveCreatureAction(AbstractDungeon.player, this)
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             ApplyPowerAction(
                 AbstractDungeon.player,
                 AbstractDungeon.player,

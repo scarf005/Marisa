@@ -17,65 +17,16 @@ class ShroomBag : CustomRelic(
 ) {
     override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
-    override fun makeCopy(): AbstractRelic {
-        if (AbstractDungeon.player != null) {
-            if (AbstractDungeon.player.hasRelic("ShroomBag")) {
-                return BigShroomBag()
-            }
-        }
-        return ShroomBag()
-    }
+    override fun makeCopy(): AbstractRelic =
+        if (AbstractDungeon.player.hasRelic(ID)) BigShroomBag() else ShroomBag()
 
     override fun onEquip() {
-        AbstractDungeon.effectList.add(
-            ShowCardAndObtainEffect(
-                Parasite(),
-                Settings.WIDTH / 2.0f,
-                Settings.HEIGHT / 2.0f
+        repeat(2) {
+            AbstractDungeon.effectList.add(
+                ShowCardAndObtainEffect(Parasite(), Settings.WIDTH / 2.0f, Settings.HEIGHT / 2.0f)
             )
-        )
-        AbstractDungeon.effectList.add(
-            ShowCardAndObtainEffect(
-                Parasite(),
-                Settings.WIDTH / 2.0f,
-                Settings.HEIGHT / 2.0f
-            )
-        )
-    } /*
-    @Override
-    public void onDrawOrDiscard() {
-    	ThMod.logger.info("ShroomBag : onDrawOrDiscard : replaceParasite");
-    	replaceParasite();
+        }
     }
-
-    @Override
-    public void onRefreshHand() {
-    	ThMod.logger.info("ShroomBag : onRefreshHand : replaceParasite");
-    	replaceParasite();
-    }
-
-    @Override
-    public void atTurnStartPostDraw() {
-    	ThMod.logger.info("ShroomBag : atTurnStartPostDraw : replaceParasite");
-    	replaceParasite();
-    }
-
-	private void replaceParasite() {
-		ArrayList<AbstractCard> temp = new ArrayList<AbstractCard>();
-		for (AbstractCard c : AbstractDungeon.player.hand.group) {
-			if (c instanceof Parasite) {
-				temp.add(c);
-			}
-		}
-		while (temp.size() > 0){
-	    	ThMod.logger.info("ShroomBag : replaceParasite : Replacing");
-			this.flash();
-			AbstractCard c = temp.remove(0);
-			AbstractDungeon.player.hand.removeCard(c);
-			AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(new Parasite_MRS(), 1));
-		}
-	}
-	*/
 
     companion object {
         const val ID = "ShroomBag"

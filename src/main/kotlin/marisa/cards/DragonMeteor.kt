@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.animations.VFXAction
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -13,6 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect
+import marisa.abstracts.AmplifiedAttack
+import marisa.patches.AbstractCardEnum
 
 class DragonMeteor : AmplifiedAttack(
     ID,
@@ -53,13 +53,13 @@ class DragonMeteor : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             VFXAction(
                 WeightyImpactEffect(m.hb.cX, m.hb.cY)
             )
         )
-        AbstractDungeon.actionManager.addToBottom(WaitAction(0.8f))
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(WaitAction(0.8f))
+        addToBot(
             DamageAction(
                 m,
                 DamageInfo(

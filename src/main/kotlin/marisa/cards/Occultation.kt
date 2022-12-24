@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.action.OccultationAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -9,6 +7,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.OccultationAction
+import marisa.patches.AbstractCardEnum
 
 class Occultation : CustomCard(
     ID,
@@ -43,16 +43,16 @@ class Occultation : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (!AbstractDungeon.player.drawPile.isEmpty) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 OccultationAction()
             )
         }
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             GainBlockAction(p, p, block)
         )
         /*
     if (this.upgraded) {
-      AbstractDungeon.actionManager.addToBottom(
+      addToBot(
           new GainBlockAction(p, p, this.block)
       );
     }

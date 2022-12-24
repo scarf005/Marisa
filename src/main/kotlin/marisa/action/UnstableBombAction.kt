@@ -9,7 +9,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect
 import marisa.MarisaContinued
 
-class UnstableBombAction(target: AbstractCreature?, private val min: Int, private val max: Int, numTimes: Int) :
+class UnstableBombAction(
+    target: AbstractCreature?,
+    private val min: Int,
+    private val max: Int,
+    numTimes: Int
+) :
     AbstractGameAction() {
     private val info: DamageInfo
     private var numTimes: Int
@@ -67,7 +72,7 @@ class UnstableBombAction(target: AbstractCreature?, private val min: Int, privat
             }
             target.damage(info)
             /*
-      AbstractDungeon.actionManager.addToBottom(
+      addToBot(
           new DamageAction(
               this.target,
               this.info,

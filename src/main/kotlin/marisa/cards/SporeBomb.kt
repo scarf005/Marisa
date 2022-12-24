@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.VulnerablePower
-import marisa.MarisaContinued
 import marisa.patches.AbstractCardEnum
 
 class SporeBomb : CustomCard(
@@ -30,7 +29,7 @@ class SporeBomb : CustomCard(
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         if (isAmplified(AMP)) {
             for (mo in AbstractDungeon.getCurrRoom().monsters.monsters) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(
                         mo,
                         p,
@@ -41,7 +40,7 @@ class SporeBomb : CustomCard(
                 )
             }
         } else {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ApplyPowerAction(
                     m,
                     p,

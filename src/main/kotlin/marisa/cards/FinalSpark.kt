@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
-import marisa.patches.CardTagEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.animations.VFXAction
@@ -11,10 +9,11 @@ import com.megacrit.cardcrawl.actions.utility.SFXAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect
 import marisa.cards.derivations.Spark
+import marisa.patches.AbstractCardEnum
+import marisa.patches.CardTagEnum
 
 class FinalSpark : CustomCard(
     ID,
@@ -42,15 +41,15 @@ class FinalSpark : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             SFXAction("ATTACK_HEAVY")
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             VFXAction(
                 MindblastEffect(p.dialogX, p.dialogY, false)
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DamageAllEnemiesAction(
                 p,
                 multiDamage,
@@ -59,7 +58,7 @@ class FinalSpark : CustomCard(
             )
         )
         if (!freeToPlayOnce) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 GainEnergyAction(-costForTurn)
             )
             freeToPlayOnce = true

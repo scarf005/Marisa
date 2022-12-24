@@ -20,10 +20,10 @@ class AmplifyWand : CustomRelic(
 
     override fun onTrigger() {
         flash()
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RelicAboveCreatureAction(AbstractDungeon.player, this)
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, BLOCK_AMT)
         )
     }

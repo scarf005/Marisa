@@ -28,7 +28,7 @@ class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
             val p = AbstractDungeon.player
             //if (damageAmount > 0)
             if (target === p) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     ApplyPowerAction(
                         p, this.owner, WraithPower(p, 1), 1
                     )
@@ -40,7 +40,7 @@ class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
     override fun onDeath() {
         super.onDeath()
         val p = AbstractDungeon.player
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             ApplyPowerAction(
                 p, null, WraithPower(p, 1), 1
             )
@@ -48,7 +48,7 @@ class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
         /*
     for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
       if (!m.isDeadOrEscaped()) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             new ApplyPowerAction(m, null, new StrengthPower(m, 1), 1)
         );
       }

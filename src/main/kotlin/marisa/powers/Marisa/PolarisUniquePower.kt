@@ -41,7 +41,7 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
         MarisaContinued.logger.info("PolarisUniquePower : Result : $Gain")
         if (Gain) {
             flash()
-            AbstractDungeon.actionManager.addToBottom(GainEnergyAction(1))
+            addToBot(GainEnergyAction(1))
         }
         Gain = false
         MarisaContinued.logger.info("PolarisUniquePower : Done Checking")

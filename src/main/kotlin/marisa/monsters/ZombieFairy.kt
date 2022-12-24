@@ -51,9 +51,9 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
                         |target dead or escaped : ${(p ?: return).isDeadOrEscaped}""".trimMargin()
                 )
                 if (turnNum >= POWER_UP) {
-                    repeat(3) { AbstractDungeon.actionManager.addToBottom(DamageAction(p, damage[1])) }
+                    repeat(3) { addToBot(DamageAction(p, damage[1])) }
                 } else {
-                    AbstractDungeon.actionManager.addToBottom(DamageAction(p, damage[1]))
+                    addToBot(DamageAction(p, damage[1]))
                 }
             }
 
@@ -61,7 +61,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
                 val block = block
 
                 if (!m.isDeadOrEscaped) {
-                    AbstractDungeon.actionManager.addToBottom(
+                    addToBot(
                         GainBlockAction(m, this, block)
                     )
 
@@ -72,7 +72,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
                 """ZombieFairy : takeTurn : Error : Action number $nextMove should never be called."""
             )
         }
-        AbstractDungeon.actionManager.addToBottom(RollMoveAction(this))
+        addToBot(RollMoveAction(this))
     }
 
     override fun usePreBattleAction() {

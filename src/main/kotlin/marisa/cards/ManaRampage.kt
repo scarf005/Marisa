@@ -1,14 +1,13 @@
 package marisa.cards
 
-import marisa.action.ManaRampageAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
+import marisa.action.ManaRampageAction
+import marisa.patches.AbstractCardEnum
 
 class ManaRampage : CustomCard(
     ID,
@@ -32,7 +31,7 @@ class ManaRampage : CustomCard(
             cnt += 2
         }
         if (cnt > 0) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ManaRampageAction(cnt, upgraded, freeToPlayOnce)
             )
         }

@@ -1,14 +1,13 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.EventHorizonPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.patches.AbstractCardEnum
+import marisa.powers.Marisa.EventHorizonPower
 
 class EventHorizon : CustomCard(
     ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER,
@@ -20,7 +19,7 @@ class EventHorizon : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             ApplyPowerAction(p, p, EventHorizonPower(p, magicNumber), magicNumber)
         )
     }

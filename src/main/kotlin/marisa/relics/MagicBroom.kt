@@ -27,10 +27,10 @@ class MagicBroom : CustomRelic(
             if (counter >= 3) {
                 counter = 0
                 flash()
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     RelicAboveCreatureAction(AbstractDungeon.player, this)
                 )
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     DrawCardAction(AbstractDungeon.player, 1)
                 )
             }

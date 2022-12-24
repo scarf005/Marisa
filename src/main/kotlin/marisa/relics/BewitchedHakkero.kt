@@ -48,7 +48,7 @@ class BewitchedHakkero : CustomRelic(
                 amt
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RelicAboveCreatureAction(AbstractDungeon.player, this)
         )
     } /*
@@ -59,7 +59,7 @@ class BewitchedHakkero : CustomRelic(
             (info.type == DamageType.NORMAL)
     ) {
       flash();
-      AbstractDungeon.actionManager.addToBottom(
+      addToBot(
           new ApplyPowerAction(
               AbstractDungeon.player,
               AbstractDungeon.player,
@@ -67,7 +67,7 @@ class BewitchedHakkero : CustomRelic(
               1
           )
       );
-      AbstractDungeon.actionManager.addToBottom(
+      addToBot(
           new RelicAboveCreatureAction(AbstractDungeon.player, this)
       );
     }
@@ -87,7 +87,7 @@ class BewitchedHakkero : CustomRelic(
             2
         )
     );
-    AbstractDungeon.actionManager.addToBottom(
+    addToBot(
         new RelicAboveCreatureAction(AbstractDungeon.player, this)
     );
   }

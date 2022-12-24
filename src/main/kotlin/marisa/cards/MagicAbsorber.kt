@@ -1,6 +1,5 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.patches.AbstractCardEnum
 
 class MagicAbsorber : CustomCard(
     ID,
@@ -30,7 +30,7 @@ class MagicAbsorber : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             GainBlockAction(p, p, block)
         )
         if (p.powers.isNotEmpty()) {
@@ -42,7 +42,7 @@ class MagicAbsorber : CustomCard(
             }
             if (pows.isNotEmpty()) {
                 val po = pows[AbstractDungeon.miscRng.random(0, pows.size - 1)]
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     RemoveSpecificPowerAction(p, p, po)
                 )
             }

@@ -7,10 +7,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect
-import marisa.MarisaContinued
 import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
 import marisa.patches.CardTagEnum
@@ -34,13 +32,13 @@ class MasterSpark : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             VFXAction(
                 MindblastEffect(p.dialogX, p.dialogY, false)
             )
         )
         if (isAmplified(AMP)) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 DamageAction(
                     m,
                     DamageInfo(p, block, damageTypeForTurn),
@@ -48,7 +46,7 @@ class MasterSpark : AmplifiedAttack(
                 )
             )
         } else {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 DamageAction(
                     m,
                     DamageInfo(p, damage, damageTypeForTurn),

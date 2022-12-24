@@ -21,19 +21,19 @@ class ExperimentalFamiliar : CustomRelic(
     override fun makeCopy(): AbstractRelic = ExperimentalFamiliar()
 
     override fun atTurnStartPostDraw() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RelicAboveCreatureAction(AbstractDungeon.player, this)
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(Spark(), 1)
         )
     }
 
     override fun atBattleStart() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             RelicAboveCreatureAction(AbstractDungeon.player, this)
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DiscoveryAction()
         )
     }

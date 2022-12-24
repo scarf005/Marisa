@@ -42,7 +42,7 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
         val p = AbstractDungeon.player
         if (!p.discardPile.isEmpty) {
             flash()
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 DiscToHandATKOnly(1)
             )
             cnt--

@@ -21,7 +21,7 @@ class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         )
         if (temp > counter) {
             flash()
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 GainEnergyAction(amount)
             )
         }
@@ -46,7 +46,11 @@ class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         checkDrawPile()
     }
 
-    override fun onApplyPower(power: AbstractPower, target: AbstractCreature, source: AbstractCreature) {
+    override fun onApplyPower(
+        power: AbstractPower,
+        target: AbstractCreature,
+        source: AbstractCreature
+    ) {
         MarisaContinued.logger.info("SatelIllusPower : onApplyPower : checkDrawPile")
         checkDrawPile()
     }

@@ -1,16 +1,15 @@
 package marisa.cards
 
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.CasketOfStarPlusPower
-import marisa.powers.Marisa.CasketOfStarPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.cards.derivations.Spark
+import marisa.patches.AbstractCardEnum
+import marisa.powers.Marisa.CasketOfStarPlusPower
+import marisa.powers.Marisa.CasketOfStarPower
 
 class CasketOfStar : CustomCard(
     ID,
@@ -29,7 +28,7 @@ class CasketOfStar : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (upgraded) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ApplyPowerAction(
                     p,
                     p,
@@ -38,7 +37,7 @@ class CasketOfStar : CustomCard(
                 )
             )
         } else {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ApplyPowerAction(
                     p,
                     p,

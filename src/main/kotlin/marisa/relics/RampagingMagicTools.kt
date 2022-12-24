@@ -50,10 +50,10 @@ class RampagingMagicTools : CustomRelic(
             else -> {}
         }
         if (pow != null) {
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 RelicAboveCreatureAction(AbstractDungeon.player, this)
             )
-            AbstractDungeon.actionManager.addToBottom(
+            addToBot(
                 ApplyPowerAction(p, p, pow, stc)
             )
         }

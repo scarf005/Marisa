@@ -1,13 +1,13 @@
 package marisa.cards
 
-import marisa.abstracts.AmplifiedAttack
-import marisa.action.UnstableBombAction
-import marisa.patches.AbstractCardEnum
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.AmplifiedAttack
+import marisa.action.UnstableBombAction
+import marisa.patches.AbstractCardEnum
 
 class UnstableBomb : AmplifiedAttack(
     ID,
@@ -27,7 +27,7 @@ class UnstableBomb : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             UnstableBombAction(
                 AbstractDungeon.getMonsters().getRandomMonster(true),
                 damage,

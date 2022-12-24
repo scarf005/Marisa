@@ -59,7 +59,7 @@ class BlazeAway : CustomCard(
                 """BlazeAway : card :${card.cardID} ; baseD :${card.baseDamage} ; D : ${card.damage} ; baseB :${card.baseBlock} ; B : ${card.block} ; baseM :${card.baseMagicNumber} ; M : ${card.magicNumber} ; C : ${card.cost} ; CFT : ${card.costForTurn}"""
             )
             repeat((0 until magicNumber).count()) {
-                AbstractDungeon.actionManager.addToBottom(
+                addToBot(
                     BlazeAwayAction(card)
                 )
             }

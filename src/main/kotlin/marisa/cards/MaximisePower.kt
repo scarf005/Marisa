@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.cards.derivations.Exhaustion_MRS
-import marisa.patches.AbstractCardEnum
-import marisa.powers.Marisa.MPPower
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
@@ -10,9 +7,11 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.cards.derivations.Exhaustion_MRS
+import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.ChargeUpPower
+import marisa.powers.Marisa.MPPower
 
 class MaximisePower : CustomCard(
     ID,
@@ -42,7 +41,7 @@ class MaximisePower : CustomCard(
                 power.amount = 0
             }
 
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             ApplyPowerAction(
                 p,
                 p,
@@ -50,7 +49,7 @@ class MaximisePower : CustomCard(
                 1
             )
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(
                 Exhaustion_MRS(),
                 1

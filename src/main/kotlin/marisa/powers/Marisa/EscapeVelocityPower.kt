@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 
 class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
@@ -21,10 +20,10 @@ class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower
     }
 
     override fun atStartOfTurnPostDraw() {
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             DrawCardAction(owner, amount * 2)
         )
-        AbstractDungeon.actionManager.addToBottom(
+        addToBot(
             MakeTempCardInHandAction(Burn(), amount)
         )
     }

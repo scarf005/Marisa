@@ -1,11 +1,15 @@
 ![](docs/repoTemplate/RepoTemplate.png)
 
 <div align="center">
-<img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" />
-<img src="https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white" />
-<img src="https://img.shields.io/github/v/release/scarf005/Marisa?style=for-the-badge" />
-<img src="https://img.shields.io/steam/subscriptions/2902980404?style=for-the-badge" />
-<h1>Marisa: Continued</h1>
+  <img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white" />
+  <a href="https://github.com/scarf005/Marisa/releases/latest">
+    <img src="https://img.shields.io/github/v/release/scarf005/Marisa?style=for-the-badge" />
+  </a>
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
+    <img src="https://img.shields.io/steam/subscriptions/2902980404?style=for-the-badge" />
+  </a>
+  <h1>Marisa: Continued</h1>
 </div>
 
 a [re-continued][original] mod for [**Slay the Spire**][sts], which adds **[Marisa Kirisame
@@ -58,12 +62,11 @@ subscribe [ModTheSpire][modthespire] and [BaseMod][basemod].
 #### Subscribe from Steam Workshop
 
 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
-<img src="docs/thumbnail/image.jpg" alt="steam workshop link" style="width: 20vw">
+  <img src="docs/thumbnail/image.jpg" alt="steam workshop link" style="width: 20vw">
 </a>
 
 #### Compile from source
 
-> warning
 > development environment is only tested on linux. may not work for other OS
 
 git clone repository `https://github.com/scarf005/Marisa.git`

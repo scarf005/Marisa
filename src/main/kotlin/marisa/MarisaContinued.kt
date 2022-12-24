@@ -4,7 +4,6 @@ import basemod.*
 import basemod.BaseMod.GetMonster
 import basemod.helpers.RelicType
 import basemod.interfaces.*
-import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.core.Settings
-import com.megacrit.cardcrawl.core.Settings.GameLanguage
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.dungeons.Exordium
 import com.megacrit.cardcrawl.dungeons.TheBeyond
@@ -42,14 +40,15 @@ import marisa.powers.Marisa.*
 import marisa.relics.*
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
-import java.nio.charset.StandardCharsets
 import java.util.*
 
 @SpireInitializer
-class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,
-    EditCharactersSubscriber,
-    PostInitializeSubscriber, EditRelicsSubscriber, EditCardsSubscriber, EditStringsSubscriber, OnCardUseSubscriber,
-    EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber {
+class MarisaContinued :
+    PostInitializeSubscriber, PostDungeonInitializeSubscriber,
+    PostExhaustSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber, PostBattleSubscriber,
+    EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber,
+    EditCardsSubscriber, EditRelicsSubscriber,
+    OnCardUseSubscriber, OnPowersModifiedSubscriber {
     private enum class Config { CATEVENT, REPLACEDEADBRANCH }
 
     private val defaultConfig = Properties().apply {
@@ -72,42 +71,35 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
                     color,
                     STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT,
                     ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC,
-                    ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT,
-                    CARD_ENERGY_ORB
+                    ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT,
+                    ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB
                 )
             }
     }
 
-    override fun receiveEditCharacters() {
-        logger.info("begin editing characters")
-        logger.info("""add ${ThModClassEnum.MARISA}""")
+    override fun receiveEditCharacters() = logger.runInfo("adding Marisa to characters") {
         BaseMod.addCharacter(
             Marisa("Marisa"),
             MY_CHARACTER_BUTTON,
             MARISA_PORTRAIT,
             ThModClassEnum.MARISA
         )
-        logger.info("done editing characters")
     }
 
-    override fun receiveEditRelics() {
-        logger.info("Begin editing relics.")
+    override fun receiveEditRelics() = logger.runInfo("add relics") {
         arrayOf(
             MiniHakkero(), BewitchedHakkero(), MagicBroom(), AmplifyWand(),
             ExperimentalFamiliar(), RampagingMagicTools(), BreadOfAWashokuLover(), SimpleLauncher(),
             HandmadeGrimoire(), ShroomBag(), SproutingBranch(), BigShroomBag()
         ).forEach { BaseMod.addRelicToCustomPool(it, AbstractCardEnum.MARISA_COLOR) }
         BaseMod.addRelic(CatCart(), RelicType.SHARED)
-        logger.info("Relics editing finished.")
     }
 
-    override fun receiveEditCards() {
-        logger.info("adding cards for MARISA")
+    override fun receiveEditCards() = logger.runInfo("add cards") {
         cardsToAdd().forEach { card ->
-            logger.info("""Adding card : ${card.name}""")
+            logger.info("""Adding card: ${card.name}""")
             BaseMod.addCard(card)
         }
-        logger.info("done editing cards")
     }
 
     override fun receivePostExhaust(c: AbstractCard) {
@@ -156,39 +148,27 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
         // TODO Auto-generated method stub
     }
 
-    override fun receiveEditKeywords() {
-        logger.info("Setting up custom keywords")
+    override fun receiveEditKeywords() = logger.runInfo("custom keywords") {
         val gson = Gson()
-        val keywordsPath = "localization/keywords-$langName.json"
-        val keywords = gson.fromJson(loadJson(keywordsPath), Keywords::class.java)
+        val keywords = gson.fromJson(localize("keywords"), Keywords::class.java)
         keywords.keywords.forEach { key ->
             logger.info("""Loading keyword : ${key.NAMES[0]}""")
             BaseMod.addKeyword(key.NAMES, key.DESCRIPTION)
         }
-        logger.info("Keywords setting finished.")
     }
 
-    override fun receiveEditStrings() {
-        logger.info("start editing strings")
-        logger.info("lang : $langName")
-
+    override fun receiveEditStrings() = logger.runInfo("localization") {
         listOf(
             RelicStrings::class.java, CardStrings::class.java, PowerStrings::class.java,
             PotionStrings::class.java, EventStrings::class.java
         )
             .map { it to it.simpleName.removeSuffix("Strings").lowercase() + "s" }
             .forEach { (cls, kind) ->
-                Gdx.files.internal("localization/$kind-$langName.json")
-                    .readString(StandardCharsets.UTF_8.toString())
-                    .also { BaseMod.loadCustomStrings(cls, it) }
+                BaseMod.loadCustomStrings(cls, localize(kind))
             }
-
-        logger.info("done editing strings")
     }
 
-    override fun receivePostInitialize() {
-        logger.info("Adding badge, configs,event and potion")
-
+    override fun receivePostInitialize() = logger.runInfo("badge, configs,event and potion") {
         val settingsPanel = ModPanel()
         BaseMod.registerModBadge(
             ImageMaster.loadImage(MOD_BADGE),
@@ -219,7 +199,6 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
         BaseMod.addEvent(Mushrooms_MRS.ID, Mushrooms_MRS::class.java, Exordium.ID)
         BaseMod.addEvent(OrinTheCat.ID, OrinTheCat::class.java, TheBeyond.ID)
 
-
         data class PotionInfo(
             val cls: Class<out AbstractPotion>,
             val liquid: Color,
@@ -244,22 +223,24 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
 
     private fun cardsToAdd() = listOf(
         Strike_MRS(), Defend_MRS(), MasterSpark(), UpSweep(), DoubleSpark(), NonDirectionalLaser(),
-        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), _6A(), UnstableBomb(), StarBarrage(),
-        ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(), MeteoricShower(),
+        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), _6A(), UnstableBomb(), JA(),
+        StarBarrage(), ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(),
         GravityBeat(), GrandCross(), DragonMeteor(), RefractionSpark(), Robbery(), ChargeUpSpray(),
-        AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(), JA(),
+        AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(),
         AbsoluteMagnitude(), TreasureHunter(), CollectingQuirk(), MilkyWay(), AsteroidBelt(),
         PowerUp(), SporeBomb(), IllusionStar(), EnergyRecoil(), GasGiant(), StarDustReverie(),
         MagicAbsorber(), Occultation(), EarthLightRay(), BlazeAway(), ChargingUp(), DarkMatter(),
         MagicChant(), OneTimeOff(), ManaConvection(), PropBag(), SprinkleStarSeal(), GalacticHalo(),
         SuperPerseids(), PulseMagic(), Orbital(), BigCrunch(), OpenUniverse(), StarlightTyphoon(),
-        MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), WitchOfGreed(),
+        MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), Wraith(),
         SatelliteIllusion(), OortCloud(), OrrerysSun(), EnergyFlow(), EventHorizon(), Singularity(),
         CasketOfStar(), EscapeVelocity(), MillisecondPulsars(), SuperNova(), Spark(), GuidingStar(),
-        BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), Wraith(),
+        BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), MeteoricShower(), WitchOfGreed(),
     )
 
     companion object {
+        val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)
+
         @Suppress("MemberVisibilityCanBePrivate")
         lateinit var instance: MarisaContinued
 
@@ -268,19 +249,6 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
         fun initialize() {
             instance = MarisaContinued()
         }
-
-        private val langName
-            get() = when (Settings.language) {
-                GameLanguage.ZHT -> "zht"
-                GameLanguage.ZHS -> "zh"
-                GameLanguage.KOR -> "kr"
-                GameLanguage.JPN -> "jp"
-                GameLanguage.FRA -> "fr"
-                else -> "en"
-            }
-
-
-        val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)
 
         private const val ORIN_ENCOUNTER = "Orin"
         private const val ZOMBIE_FAIRY_ENC = "ZombieFairy"
@@ -318,8 +286,9 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
             )
             val p = AbstractDungeon.player
 
-            fun isFree() = p.hasPower(MillisecondPulsarsPower.POWER_ID) || p.hasPower(PulseMagicPower.POWER_ID)
-                    || card.freeToPlayOnce || card.purgeOnUse
+            fun isFree() =
+                p.hasPower(MillisecondPulsarsPower.POWER_ID) || p.hasPower(PulseMagicPower.POWER_ID)
+                        || card.freeToPlayOnce || card.purgeOnUse
 
             fun canPay() = EnergyPanel.totalCount >= card.costForTurn + cost
 
@@ -360,9 +329,6 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
             )
             return res
         }
-
-        private fun loadJson(jsonPath: String): String =
-            Gdx.files.internal(jsonPath).readString(StandardCharsets.UTF_8.toString())
 
         @JvmStatic
         val randomMarisaCard: AbstractCard

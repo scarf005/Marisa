@@ -4,6 +4,7 @@ val modID = "MarisaContinued"
 val jarFile = "$buildDir/libs/${modID}.jar"
 val changelog = File("docs/changelog/changelog.md").readText()
 val changeBBCode = File("docs/changelog/changelog.bbcode").readText()
+val changeSts = File("docs/changelog/changelog.sts.txt").readText()
 
 val (gameDir, modTheSpireDir, basemodDir) = run {
     val homeDir = System.getProperty("user.home")!!
@@ -88,7 +89,7 @@ tasks.register("semver") {
         description = """
             |Adds Marisa (霧雨 魔理沙) from Touhou Project as a new playable character.
             |
-            |${changelog.replace("##", "*").replace("#", "")}
+            |${changeSts}
             """.trimMargin(),
         version = File("docs/changelog/version.txt").readText()
     )

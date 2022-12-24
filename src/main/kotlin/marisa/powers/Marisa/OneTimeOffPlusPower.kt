@@ -1,10 +1,10 @@
 package marisa.powers.Marisa
 
 import com.badlogic.gdx.graphics.Texture
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.RemoveSelfAction
 
 class OneTimeOffPlusPower(owner: AbstractCreature?) : AbstractPower() {
     init {
@@ -20,7 +20,7 @@ class OneTimeOffPlusPower(owner: AbstractCreature?) : AbstractPower() {
     override fun stackPower(stackAmount: Int) {}
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (isPlayer) {
-            addToBot(RemoveSpecificPowerAction(owner, owner, this))
+            addToBot(RemoveSelfAction())
         }
     }
 
@@ -30,8 +30,7 @@ class OneTimeOffPlusPower(owner: AbstractCreature?) : AbstractPower() {
 
     companion object {
         const val POWER_ID = "OneTimeOffPlusPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
+        private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME
         val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }

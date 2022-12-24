@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower
+import marisa.ApplyPowerToPlayerAction
 import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.OneTimeOffPlusPower
+import marisa.powers.Marisa.OneTimeOffPower
 
 class OneTimeOff : CustomCard(
     ID,
@@ -35,7 +37,8 @@ class OneTimeOff : CustomCard(
         addToBot(
             ApplyPowerAction(p, p, DrawCardNextTurnPower(p, magicNumber), magicNumber)
         )
-        addToBot(ApplyPowerAction(p, p, OneTimeOffPlusPower(p)))
+        val powerToAdd = if (upgraded) OneTimeOffPlusPower::class else OneTimeOffPower::class
+        addToBot(ApplyPowerToPlayerAction(powerToAdd))
     }
 
     override fun makeCopy(): AbstractCard = OneTimeOff()

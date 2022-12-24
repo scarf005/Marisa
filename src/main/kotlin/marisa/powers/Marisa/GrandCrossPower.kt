@@ -1,10 +1,10 @@
 package marisa.powers.Marisa
 
 import com.badlogic.gdx.graphics.Texture
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.RemoveSelfAction
 
 class GrandCrossPower(owner: AbstractCreature?) : AbstractPower() {
     init {
@@ -20,7 +20,7 @@ class GrandCrossPower(owner: AbstractCreature?) : AbstractPower() {
     override fun stackPower(stackAmount: Int) {}
     override fun atEndOfTurn(isPlayer: Boolean) {
         addToBot(
-            RemoveSpecificPowerAction(owner, owner, this)
+            RemoveSelfAction()
         )
     }
 

@@ -46,10 +46,12 @@ import java.nio.charset.StandardCharsets
 import java.util.*
 
 @SpireInitializer
-class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeonInitializeSubscriber,
-    EditCharactersSubscriber,
-    PostInitializeSubscriber, EditRelicsSubscriber, EditCardsSubscriber, EditStringsSubscriber, OnCardUseSubscriber,
-    EditKeywordsSubscriber, OnPowersModifiedSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber {
+class MarisaContinued :
+    PostInitializeSubscriber, PostDungeonInitializeSubscriber,
+    PostExhaustSubscriber, PostDrawSubscriber, PostEnergyRechargeSubscriber, PostBattleSubscriber,
+    EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber,
+    EditCardsSubscriber, EditRelicsSubscriber,
+    OnCardUseSubscriber, OnPowersModifiedSubscriber {
     private enum class Config { CATEVENT, REPLACEDEADBRANCH }
 
     private val defaultConfig = Properties().apply {
@@ -72,8 +74,8 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
                     color,
                     STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT, STARLIGHT,
                     ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC,
-                    ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT,
-                    CARD_ENERGY_ORB
+                    ATTACK_CC_PORTRAIT, SKILL_CC_PORTRAIT, POWER_CC_PORTRAIT,
+                    ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB
                 )
             }
     }
@@ -244,19 +246,19 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
 
     private fun cardsToAdd() = listOf(
         Strike_MRS(), Defend_MRS(), MasterSpark(), UpSweep(), DoubleSpark(), NonDirectionalLaser(),
-        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), _6A(), UnstableBomb(), StarBarrage(),
-        ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(), MeteoricShower(),
+        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), _6A(), UnstableBomb(), JA(),
+        StarBarrage(), ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(),
         GravityBeat(), GrandCross(), DragonMeteor(), RefractionSpark(), Robbery(), ChargeUpSpray(),
-        AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(), JA(),
+        AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(),
         AbsoluteMagnitude(), TreasureHunter(), CollectingQuirk(), MilkyWay(), AsteroidBelt(),
         PowerUp(), SporeBomb(), IllusionStar(), EnergyRecoil(), GasGiant(), StarDustReverie(),
         MagicAbsorber(), Occultation(), EarthLightRay(), BlazeAway(), ChargingUp(), DarkMatter(),
         MagicChant(), OneTimeOff(), ManaConvection(), PropBag(), SprinkleStarSeal(), GalacticHalo(),
         SuperPerseids(), PulseMagic(), Orbital(), BigCrunch(), OpenUniverse(), StarlightTyphoon(),
-        MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), WitchOfGreed(),
+        MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), Wraith(),
         SatelliteIllusion(), OortCloud(), OrrerysSun(), EnergyFlow(), EventHorizon(), Singularity(),
         CasketOfStar(), EscapeVelocity(), MillisecondPulsars(), SuperNova(), Spark(), GuidingStar(),
-        BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), Wraith(),
+        BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), MeteoricShower(), WitchOfGreed(),
     )
 
     companion object {
@@ -318,8 +320,9 @@ class MarisaContinued : PostExhaustSubscriber, PostBattleSubscriber, PostDungeon
             )
             val p = AbstractDungeon.player
 
-            fun isFree() = p.hasPower(MillisecondPulsarsPower.POWER_ID) || p.hasPower(PulseMagicPower.POWER_ID)
-                    || card.freeToPlayOnce || card.purgeOnUse
+            fun isFree() =
+                p.hasPower(MillisecondPulsarsPower.POWER_ID) || p.hasPower(PulseMagicPower.POWER_ID)
+                        || card.freeToPlayOnce || card.purgeOnUse
 
             fun canPay() = EnergyPanel.totalCount >= card.costForTurn + cost
 

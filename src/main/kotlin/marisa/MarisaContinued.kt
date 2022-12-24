@@ -4,7 +4,6 @@ import basemod.*
 import basemod.BaseMod.GetMonster
 import basemod.helpers.RelicType
 import basemod.interfaces.*
-import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.core.Settings
-import com.megacrit.cardcrawl.core.Settings.language
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.dungeons.Exordium
 import com.megacrit.cardcrawl.dungeons.TheBeyond
@@ -42,7 +40,6 @@ import marisa.powers.Marisa.*
 import marisa.relics.*
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
-import java.nio.charset.StandardCharsets
 import java.util.*
 
 @SpireInitializer
@@ -153,7 +150,7 @@ class MarisaContinued :
 
     override fun receiveEditKeywords() = logger.runInfo("custom keywords") {
         val gson = Gson()
-        val keywords = gson.fromJson(loadFile("keywords"), Keywords::class.java)
+        val keywords = gson.fromJson(localize("keywords"), Keywords::class.java)
         keywords.keywords.forEach { key ->
             logger.info("""Loading keyword : ${key.NAMES[0]}""")
             BaseMod.addKeyword(key.NAMES, key.DESCRIPTION)
@@ -167,24 +164,9 @@ class MarisaContinued :
         )
             .map { it to it.simpleName.removeSuffix("Strings").lowercase() + "s" }
             .forEach { (cls, kind) ->
-                BaseMod.loadCustomStrings(cls, loadFile(kind))
+                BaseMod.loadCustomStrings(cls, localize(kind))
             }
     }
-
-    private fun loadFile(
-        name: String,
-        fallback: Settings.GameLanguage = Settings.GameLanguage.ENG
-    ): String {
-        val file = Gdx.files.internal("localization/$language/$name.json")
-        val fallbackFile = Gdx.files.internal("localization/${fallback.name}/$name.json")
-
-        val toLoad = if (file.exists()) file else run {
-            logger.warn("No localization file for $language, using fallback $fallback")
-            fallbackFile
-        }
-        return toLoad.readString(StandardCharsets.UTF_8.toString())
-    }
-
 
     override fun receivePostInitialize() = logger.runInfo("badge, configs,event and potion") {
         val settingsPanel = ModPanel()

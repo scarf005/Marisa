@@ -94,7 +94,7 @@
     "EXTENDED_DESCRIPTION": [
       "(Gagnez !B! au total.)",
       ""
-      ]
+    ]
   },
   "OortCloud": {
     "NAME": "Nuage d'Oort",
@@ -123,8 +123,7 @@
   },
   "UltraShortWave": {
     "NAME": "Onde courte ultime",
-    "DESCRIPTION": "Gagnez !B!  [E] et !M! Charges. Augmente l'énergie et la charge de cette carte de 1 pour ce combat.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Gagnez !B!  [E] et !M! Charges. Augmente l'énergie et la charge de cette carte de 1 pour ce combat."
   },
   "MillisecondPulsars": {
     "NAME": "Pulsar",
@@ -133,23 +132,19 @@
   },
   "Spark": {
     "NAME": "Étincelle",
-    "DESCRIPTION": "Infligez !D! dégâts. NL Épuisement.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. NL Épuisement."
   },
   "UpSweep": {
     "NAME": "Balayage ascendant",
-    "DESCRIPTION": "Infligez !D! dégâts. Gagnez !M! Charge.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. Gagnez !M! Charge."
   },
   "GuidingStar": {
     "NAME": "Étoile guidante",
-    "DESCRIPTION": "Ajoutez une copie de cette carte à votre pioche. NL Mélangez les cartes de votre défausse à votre pioche. NL Épuisement.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Ajoutez une copie de cette carte à votre pioche. NL Mélangez les cartes de votre défausse à votre pioche. NL Épuisement."
   },
   "OrrerysSun": {
     "NAME": "Soleil planétaire",
-    "DESCRIPTION": "Quand une charge est consumée, infligez !M! dégâts à TOUS les ennemis.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Quand une charge est consumée, infligez !M! dégâts à TOUS les ennemis."
   },
   "ChargingUp": {
     "NAME": "Charge",
@@ -197,8 +192,7 @@
   },
   "SuperPerseids": {
     "NAME": "Super Perséides",
-    "DESCRIPTION": "Injouable. Quand cette carte est piochée, gagnez[E]. NL Si cette carte est épuisée, infligez !D! dégâts à un ennemi au hasard.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Injouable. Quand cette carte est piochée, gagnez[E]. NL Si cette carte est épuisée, infligez !D! dégâts à un ennemi au hasard."
   },
   "MysteriousBeam": {
     "NAME": "Rayon mystérieux",
@@ -212,18 +206,15 @@
   },
   "EnergyFlow": {
     "NAME": "Flux d'énergie",
-    "DESCRIPTION": "Gagnez !M! Charge à la fin de votre tour.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Gagnez !M! Charge à la fin de votre tour."
   },
   "PowerUp": {
     "NAME": "Amélioration!",
-    "DESCRIPTION": "TOUTES les Attaques dans votre main infligent !M! dégâts additionnels ce combat.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "TOUTES les Attaques dans votre main infligent !M! dégâts additionnels ce combat."
   },
   "WitchLeyline": {
     "NAME": "Ligne de sorcière",
-    "DESCRIPTION": "Infligez !D! dégâts. Ajoutez 2 brûlures à votre main.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. Ajoutez 2 brûlures à votre main."
   },
   "JA": {
     "NAME": "Échauffement !",
@@ -237,13 +228,11 @@
   },
   "DragonMeteor": {
     "NAME": "Météor draconique",
-    "DESCRIPTION": "Infligez !B! dégâts. NL Infligez !M! dégâts additionnels pour chaque carte épuisée ce combat.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !B! dégâts. NL Infligez !M! dégâts additionnels pour chaque carte épuisée ce combat."
   },
   "EventHorizon": {
     "NAME": "Horizon des événements",
-    "DESCRIPTION": "!M! fois par tour, lorsque vous enclenchez un effet Amplifier, vous pouvez mettre une carte Attaque de votre défausse dans votre main.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!M! fois par tour, lorsque vous enclenchez un effet Amplifier, vous pouvez mettre une carte Attaque de votre défausse dans votre main."
   },
   "PulseMagic": {
     "NAME": "Magie du pouls",
@@ -252,13 +241,11 @@
   },
   "DC": {
     "NAME": "66C",
-    "DESCRIPTION": "Inné. NL Infligez !D! dégâts. NL Infligez double dégâts s'il n'y a aucune carte dans votre défausse.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Inné. NL Infligez !D! dégâts. NL Infligez double dégâts s'il n'y a aucune carte dans votre défausse."
   },
   "Singularity": {
     "NAME": "Singularité",
-    "DESCRIPTION": "Lorsque vous jouez un carte qui coûte 0, augmentez les dégâts d'une carte au hasard dans votre main de !M!.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Lorsque vous jouez un carte qui coûte 0, augmentez les dégâts d'une carte au hasard dans votre main de !M!."
   },
   "SporeBomb": {
     "NAME": "Explosion de spore",
@@ -267,38 +254,31 @@
   },
   "FluorensentBeam": {
     "NAME": "Rayon fluorescent",
-    "DESCRIPTION": "TOUS les ennemis perdent !D! PV. NL Amplifier  [E]  [E]  : Infligez  !B! à la place.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "TOUS les ennemis perdent !D! PV. NL Amplifier  [E]  [E]  : Infligez  !B! à la place."
   },
   "WitchOfGreed": {
     "NAME": "Sorcière de la cupidité",
-    "DESCRIPTION": "À la fin du combat, gagnez !M! or. NL Amplifier [E] : Obtenez également une potion au hasard.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "À la fin du combat, gagnez !M! or. NL Amplifier [E] : Obtenez également une potion au hasard."
   },
   "TreasureHunter": {
     "NAME": "Chasseur de trésor",
-    "DESCRIPTION": "Infligez !D! dégâts. NL Si cela tue un ennemi qui n'est pas un sbire d'élite ou de boss, à la fin du combat obtenez une relique au hasard. NL Épuisement.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. NL Si cela tue un ennemi qui n'est pas un sbire d'élite ou de boss, à la fin du combat obtenez une relique au hasard. NL Épuisement."
   },
   "Robbery": {
     "NAME": "Vol",
-    "DESCRIPTION": "Infligez !D! dégâts. Gagnez autant d'or que de dégâts non bloqués. NL Épuisement. NL Amplifier [E] : Doublez l'or obtenu.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. Gagnez autant d'or que de dégâts non bloqués. NL Épuisement. NL Amplifier [E] : Doublez l'or obtenu."
   },
   "6A": {
     "NAME": "6A",
-    "DESCRIPTION": "Infligez !D! dégâts. Gagnez autant d'Armure que de dégâts infligés.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. Gagnez autant d'Armure que de dégâts infligés."
   },
   "CircumpolarStar": {
     "NAME": "Étoile circumpolaire",
-    "DESCRIPTION": "Gagnez !B! d'Armure. Piochez !M! carte(s). Augmente le coût de cette carte de 1 pour le combat.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Gagnez !B! d'Armure. Piochez !M! carte(s). Augmente le coût de cette carte de 1 pour le combat."
   },
   "RefractionSpark": {
     "NAME": "Étincelle de réfraction",
-    "DESCRIPTION": "Infligez !D! dégâts. Augmente les dégâts de TOUTES les cartes Étincelle dans votre main par les dégâts infligés. NL Amplifier  [E]  : Infligez !B! dégâts à la place.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. Augmente les dégâts de TOUTES les cartes Étincelle dans votre main par les dégâts infligés. NL Amplifier  [E]  : Infligez !B! dégâts à la place."
   },
   "MagicChant": {
     "NAME": "Chant magique",
@@ -307,8 +287,7 @@
   },
   "UnstableBomb": {
     "NAME": "Bombe instable",
-    "DESCRIPTION": "Infligez des dégâts aléatoires ( !D! à !B! ) à un ennemi au hasard 4 fois.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez des dégâts aléatoires ( !D! à !B! ) à un ennemi au hasard 4 fois."
   },
   "SuperNova": {
     "NAME": "Supernova",
@@ -324,15 +303,14 @@
     "NAME": "Matière noire",
     "DESCRIPTION": "Ne peut-être jouée qu'une seule fois par tour. NL Ajoutez 2 copies de cette carte à votre pioche. Piochez 1 carte. Lorsque cette carte est Épuisée, gagnez !B! d'Armure. NL Éthérée.",
     "UPGRADE_DESCRIPTION": "Ne peut-être jouée qu'une seule fois par tour. NL Ajoutez 2 copies de cette carte à votre pioche. Piochez 1 carte. Lorsque cette carte est Épuisée, gagnez !B! d'Armure. NL Éthérée.",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "Je ne peux pas jouer Matière noire à nouveau ce tour.",
       ""
     ]
   },
   "GasGiant": {
     "NAME": "Géante gazeuse",
-    "DESCRIPTION": "Gagnez !B! d'Armure. Ajoutez !M! brûlure à votre main.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Gagnez !B! d'Armure. Ajoutez !M! brûlure à votre main."
   },
   "CasketOfStar": {
     "NAME": "Cercueil d'étoiles",
@@ -341,27 +319,24 @@
   },
   "ChargeUpSpray": {
     "NAME": "Vaporisateur de charges",
-    "DESCRIPTION": "Infligez !D! dégâts. NL Si cette carte consomme des charges, gagnez [E] et piochez !M! cartes.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts. NL Si cette carte consomme des charges, gagnez [E] et piochez !M! cartes."
   },
   "EnergyRecoil": {
     "NAME": "Recul d'énergie",
     "DESCRIPTION": "Gagnez autant d'Armure que vous avez de charge.",
     "UPGRADE_DESCRIPTION": "Gagnez autant d'Armure que vous avez de charge+3.",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       " NL (Gagnez ",
       " d'Armure.)"
     ]
   },
   "GalacticHalo": {
     "NAME": "Halo galactique",
-    "DESCRIPTION": "Gagnez !B! d'Armure et !M! charge(s).",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Gagnez !B! d'Armure et !M! charge(s)."
   },
   "ManaConvection": {
     "NAME": "Convection de mana",
-    "DESCRIPTION": "Piochez !M! cartes. Épuisez 2 cartes. NL Si vous avez 8 charges ou plus, perdez 8 charges et gagnez [E]  [E]  .",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Piochez !M! cartes. Épuisez 2 cartes. NL Si vous avez 8 charges ou plus, perdez 8 charges et gagnez [E]  [E]  ."
   },
   "ManaRampage": {
     "NAME": "Déchainement de mana",
@@ -370,8 +345,7 @@
   },
   "StarBarrage": {
     "NAME": "Barrage d'étoiles",
-    "DESCRIPTION": "Infligez !D! dégâts !M! fois. NL Chaque fois que cette carte est jouée, elle inflige 1 dégât additionnel pour le combat.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts !M! fois. NL Chaque fois que cette carte est jouée, elle inflige 1 dégât additionnel pour le combat."
   },
   "AFriendsGift": {
     "NAME": "Un cadeau d'ami",
@@ -386,8 +360,7 @@
   "CollectingQuirk": {
     "NAME": "Collection bizarre",
     "DESCRIPTION": "Infligez !D! dégâts à un ennemi aléatoire pour chaque !M! relique en votre possession.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "(Inflige les dégâts !B! fois)",
       ""
     ]
@@ -405,8 +378,7 @@
   "BlackFlareStar": {
     "NAME": "Trou noir",
     "DESCRIPTION": "Peut seulement être jouée lorsque vous avez 4 cartes ou plus dans votre main. NL Défaussez n'importe quel nombre de cartes dans votre main et gagnez !B! d'Armure par carte défaussée.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "Je n'ai pas 4 cartes en main.",
       ""
     ]
@@ -415,20 +387,18 @@
     "NAME": "Naine blanche",
     "DESCRIPTION": "Peut seulement être jouée lorsque vous avez 4 cartes ou moins dans votre main. NL Infligez !B! dégâts (1.5 × la taille de votre défausse). Ajoutez 2 brûlures à votre main.",
     "UPGRADE_DESCRIPTION": "Peut seulement être jouée lorsque vous avez 4 cartes ou moins dans votre main. NL Infligez !B! dégâts (2 × la taille de votre défausse). Ajoutez 2 brûlures à votre main.",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "J'ai plus de 4 cartes en main.",
       ""
     ]
   },
   "FairyDestructionRay": {
     "NAME": "Rayon de destruction féérique",
-    "DESCRIPTION": "Infligez !D! dégâts à TOUS les ennemis. Amplifier [E]  [E] : Tuez instantanément ceux qui ont !M! ou moins PV.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Infligez !D! dégâts à TOUS les ennemis. Amplifier [E]  [E] : Tuez instantanément ceux qui ont !M! ou moins PV."
   },
   "Orbital": {
     "NAME": "Orbital",
-    "DESCRIPTION": "Injouable. Lorsque cette carte est piochée, piochez une carte. NL Si cette carte est Épuisée, placez !M! carte(s) parmis vos cartes épuisées dans votre main.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Injouable. Lorsque cette carte est piochée, piochez une carte. NL Si cette carte est Épuisée, placez !M! carte(s) parmis vos cartes épuisées dans votre main."
   },
   "SillyJoke": {
     "NAME": "Fantôme de mana",
@@ -437,52 +407,42 @@
   },
   "ExplosiveMarionette": {
     "NAME": "Marionnette explosive",
-    "DESCRIPTION": "Conservez. Infligez !D! dégâts. NL Amplifier [E] : Infligez le double de dégâts. Épuisement.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Conservez. Infligez !D! dégâts. NL Amplifier [E] : Infligez le double de dégâts. Épuisement."
   },
   "OpticalCamouflage": {
     "NAME": "Camouflage optique",
-    "DESCRIPTION": "Conservez. Gagnez !B! d'Armure. NL Amplifier [E] : Gagnez le double d'Armure. Épuisement.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Conservez. Gagnez !B! d'Armure. NL Amplifier [E] : Gagnez le double d'Armure. Épuisement."
   },
   "FiveColoredTalisman": {
     "NAME": "Talisman aux cinqs couleurs",
-    "DESCRIPTION": "Conservez. Ajoutez un pouvoir au hasard dans votre main au début du tour.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Conservez. Ajoutez un pouvoir au hasard dans votre main au début du tour."
   },
   "AlicesGift": {
     "NAME": "Cadeau d'Alice",
-    "DESCRIPTION": "Conservez. Infligez !D! dégâts. Épuisement. NL Amplifier [E]  [E] : Infligez le triple de dégâts.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Conservez. Infligez !D! dégâts. Épuisement. NL Amplifier [E]  [E] : Infligez le triple de dégâts."
   },
   "Exhaustion_MRS": {
     "NAME": "Plus de jus",
-    "DESCRIPTION": "Injouable. NL Lorsqu'en main, vous ne pouvez pas gagner ou consummer de charge.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Injouable. NL Lorsqu'en main, vous ne pouvez pas gagner ou consummer de charge."
   },
   "UltimateShortwave": {
     "NAME": "Ondes-courtes ultimes",
-    "DESCRIPTION": "Gagnez !B! [E] et !M! Charges. Augmentez la charge obtenue par cette carte de !D! et l'energie de 1 pour ce combat.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Gagnez !B! [E] et !M! Charges. Augmentez la charge obtenue par cette carte de !D! et l'energie de 1 pour ce combat."
   },
   "NebulaRing": {
     "NAME": "Anneau nébuleux",
-    "DESCRIPTION": "Gagnez !M! d'Armure plaquée lorsque vous perdez votre Armure à cause d'ennemis ou de cartes.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Gagnez !M! d'Armure plaquée lorsque vous perdez votre Armure à cause d'ennemis ou de cartes."
   },
   "SprinkleStarSeal": {
     "NAME": "Étoile de sceaux",
-    "DESCRIPTION": "Ajoutez 99 Faiblesse. NL Épuisement.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Ajoutez 99 Faiblesse. NL Épuisement."
   },
   "Wraith": {
     "NAME": "Spectre",
-    "DESCRIPTION": "Injouable. NL À la fin de votre tour, gagnez 1 Spectre .",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Injouable. NL À la fin de votre tour, gagnez 1 Spectre ."
   },
   "WWWWWWWWWWWWWW": {
     "NAME": "WWWWWWWWWWW",
-    "DESCRIPTION": "WWWWWWWWWWW",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "WWWWWWWWWWW"
   }
 }

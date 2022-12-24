@@ -123,8 +123,7 @@
   },
   "UltraShortWave": {
     "NAME": "アルティメットショートウェーブ",
-    "DESCRIPTION": "!B!  [E]  と !M! チャージ を得る。 このカードの [E] と チャージ の増加量を 1 増加する。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!B!  [E]  と !M! チャージ を得る。 このカードの [E] と チャージ の増加量を 1 増加する。"
   },
   "MillisecondPulsars": {
     "NAME": "ミリ秒パルサー",
@@ -133,23 +132,19 @@
   },
   "Spark": {
     "NAME": " スパーク ",
-    "DESCRIPTION": "!D! ダメージを与える。 NL 廃棄 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 NL 廃棄 。"
   },
   "UpSweep": {
     "NAME": "アップスウィープ",
-    "DESCRIPTION": "!D! ダメージを与える。 チャージ !M! を得る。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 チャージ !M! を得る。"
   },
   "GuidingStar": {
     "NAME": " ガイディングスター ",
-    "DESCRIPTION": "このカードの複製を山札に加える。 NL 捨て札すべてを山札に戻す。  NL 廃棄 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "このカードの複製を山札に加える。 NL 捨て札すべてを山札に戻す。  NL 廃棄 。"
   },
   "OrrerysSun": {
     "NAME": "オーレリーズサン",
-    "DESCRIPTION": " チャージ が使用されるたび、敵全体に !M! ダメージを与える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": " チャージ が使用されるたび、敵全体に !M! ダメージを与える。"
   },
   "ChargingUp": {
     "NAME": "チャージアップ",
@@ -197,8 +192,7 @@
   },
   "SuperPerseids": {
     "NAME": "スーパーペルセイド",
-    "DESCRIPTION": "使用不可 。 このカードを引いた時、  [E]  を得る。 NL このカードを廃棄した時、ランダムな敵に !D! ダメージを与える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "使用不可 。 このカードを引いた時、  [E]  を得る。 NL このカードを廃棄した時、ランダムな敵に !D! ダメージを与える。"
   },
   "MysteriousBeam": {
     "NAME": "ミステリアスビーム",
@@ -212,18 +206,15 @@
   },
   "EnergyFlow": {
     "NAME": "エナジーフロー",
-    "DESCRIPTION": "ターン終了時、チャージ !M! を得る",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "ターン終了時、チャージ !M! を得る"
   },
   "PowerUp": {
     "NAME": "アップグレード!",
-    "DESCRIPTION": "戦闘中 手札の全ての アタック は !M! の追加ダメージを与える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "戦闘中 手札の全ての アタック は !M! の追加ダメージを与える。"
   },
   "WitchLeyline": {
     "NAME": "ウィッチレイライン",
-    "DESCRIPTION": "!D! ダメージを与える。 手札に 火傷 を 2 枚加える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 手札に 火傷 を 2 枚加える。"
   },
   "JA": {
     "NAME": "ウォーミングアップ",
@@ -237,13 +228,11 @@
   },
   "DragonMeteor": {
     "NAME": "ドラゴンメテオ",
-    "DESCRIPTION": "!D! ダメージを与える。 NL 廃棄 したカード 1 枚ごとに、!M! の追加ダメージを与える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 NL 廃棄 したカード 1 枚ごとに、!M! の追加ダメージを与える。"
   },
   "EventHorizon": {
     "NAME": "イベントホライズン",
-    "DESCRIPTION": "1 ターン !M! 回、 増幅 効果 を使用した際に 捨て札の アタック 1 枚を手札に戻す。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "1 ターン !M! 回、 増幅 効果 を使用した際に 捨て札の アタック 1 枚を手札に戻す。"
   },
   "PulseMagic": {
     "NAME": "パルスマジック",
@@ -252,13 +241,11 @@
   },
   "DC": {
     "NAME": "66C",
-    "DESCRIPTION": "天賦 。 NL !D! ダメージを与える。 NL 捨て札にカードが無い場合、2 倍のダメージを与える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "天賦 。 NL !D! ダメージを与える。 NL 捨て札にカードが無い場合、2 倍のダメージを与える。"
   },
   "Singularity": {
     "NAME": "シンギュラリティ",
-    "DESCRIPTION": "コストが 0 のカードを使用するたび、手札のランダムな アタック のダメージを !M! 増加する。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "コストが 0 のカードを使用するたび、手札のランダムな アタック のダメージを !M! 増加する。"
   },
   "SporeBomb": {
     "NAME": "胞子爆弾",
@@ -267,38 +254,31 @@
   },
   "FluorensentBeam": {
     "NAME": "フローレンストビーム",
-    "DESCRIPTION": "敵全体はHPを !D! 失う。 NL 増幅  [E]  [E]  : 失うHPを !B! に",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "敵全体はHPを !D! 失う。 NL 増幅  [E]  [E]  : 失うHPを !B! に"
   },
   "WitchOfGreed": {
     "NAME": "魔女の強欲",
-    "DESCRIPTION": "戦闘終了時、 !M!ゴールドを得る。  NL  増幅  [E] : また、ランダムなポーションを入手する。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "戦闘終了時、 !M!ゴールドを得る。  NL  増幅  [E] : また、ランダムなポーションを入手する。"
   },
   "TreasureHunter": {
     "NAME": "トレジャーハンター",
-    "DESCRIPTION": "!D! ダメージを与える。 NL この攻撃で エリート や ボス を倒すと、戦闘終了時にランダムな レリック を 1 つ得る。 NL 廃棄 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 NL この攻撃で エリート や ボス を倒すと、戦闘終了時にランダムな レリック を 1 つ得る。 NL 廃棄 。"
   },
   "Robbery": {
     "NAME": "強盗",
-    "DESCRIPTION": "!D! ダメージを与える。 ブロックされなかったダメージに等しいゴールドを得る。 NL 廃棄 。 NL 増幅  [E] : ゴールドを2倍得る。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 ブロックされなかったダメージに等しいゴールドを得る。 NL 廃棄 。 NL 増幅  [E] : ゴールドを2倍得る。"
   },
   "6A": {
     "NAME": "6A",
-    "DESCRIPTION": "!D! ダメージを与える。 ダメージに等しい ブロック を得る。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 ダメージに等しい ブロック を得る。"
   },
   "CircumpolarStar": {
     "NAME": "ポーラスター",
-    "DESCRIPTION": "!B! ブロック を得る。 カードを !M! 枚引く。 この戦闘中、このカードの引く枚数を 1 増加する。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!B! ブロック を得る。 カードを !M! 枚引く。 この戦闘中、このカードの引く枚数を 1 増加する。"
   },
   "RefractionSpark": {
     "NAME": "リフレクションスパーク",
-    "DESCRIPTION": "!D! ダメージを与える。 手札の全ての、名前に「スパーク」の入ったカードのダメージを与えたダメージ分増加する。 NL 増幅  [E]  : 与えるダメージを !D! に増加",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 手札の全ての、名前に「スパーク」の入ったカードのダメージを与えたダメージ分増加する。 NL 増幅  [E]  : 与えるダメージを !D! に増加"
   },
   "MagicChant": {
     "NAME": "魔術詠唱",
@@ -307,8 +287,7 @@
   },
   "UnstableBomb": {
     "NAME": "産廃ボム",
-    "DESCRIPTION": "ランダムな敵にランダムなダメージ ( !D! to !B! ) を 4 回与える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "ランダムな敵にランダムなダメージ ( !D! to !B! ) を 4 回与える。"
   },
   "SuperNova": {
     "NAME": "スーパーノヴァ",
@@ -331,8 +310,7 @@
   },
   "GasGiant": {
     "NAME": "ガスジャイアント",
-    "DESCRIPTION": "!B! ブロック を得る。 火傷 を !M! 枚 手札に加える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!B! ブロック を得る。 火傷 を !M! 枚 手札に加える。"
   },
   "CasketOfStar": {
     "NAME": "星の器",
@@ -341,8 +319,7 @@
   },
   "ChargeUpSpray": {
     "NAME": "チャージ発射",
-    "DESCRIPTION": "!D! ダメージを与える。 NL このカードが チャージ を使用した場合,  [E]  を得て、カードを !M! 枚引く。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを与える。 NL このカードが チャージ を使用した場合,  [E]  を得て、カードを !M! 枚引く。"
   },
   "EnergyRecoil": {
     "NAME": "反動エネルギー",
@@ -355,13 +332,11 @@
   },
   "GalacticHalo": {
     "NAME": "ギャラクティックハロー",
-    "DESCRIPTION": "!B! ブロック を得る。 チャージ !M! を得る。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!B! ブロック を得る。 チャージ !M! を得る。"
   },
   "ManaConvection": {
     "NAME": "魔力対流",
-    "DESCRIPTION": "カードを !M! 枚引く。 カードを 2 枚 廃棄 する。 NL チャージが 8 以上の場合、チャージを 8 失い、  [E]  [E]  を得る。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "カードを !M! 枚引く。 カードを 2 枚 廃棄 する。 NL チャージが 8 以上の場合、チャージを 8 失い、  [E]  [E]  を得る。"
   },
   "ManaRampage": {
     "NAME": "魔力暴走",
@@ -370,8 +345,7 @@
   },
   "StarBarrage": {
     "NAME": "魔法星弾幕",
-    "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL このカードがプレイされるたび、 この戦闘中、 攻撃回数が 1 増加する。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL このカードがプレイされるたび、 この戦闘中、 攻撃回数が 1 増加する。"
   },
   "AFriendsGift": {
     "NAME": "友達の贈り物",
@@ -386,7 +360,6 @@
   "CollectingQuirk": {
     "NAME": "收集癖",
     "DESCRIPTION": "ランダムな敵に !D! ダメージを、レリック !M! 個につき 1 回与える ",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW",
     "EXTENDED_DESCRIPTION": [
       "(ダメージを !B! 回与える。)",
       ""
@@ -405,7 +378,6 @@
   "BlackFlareStar": {
     "NAME": "ブラックフレアスター",
     "DESCRIPTION": "手札が4枚以上の時のみプレイ可能。 NL 手札のカードを任意の枚数捨て、捨てた枚数の !B! 倍の ブロック を得る。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW",
     "EXTENDED_DESCRIPTION": [
       "手札が4枚以上無い。",
       ""
@@ -422,13 +394,11 @@
   },
   "FairyDestructionRay": {
     "NAME": "妖精尽滅光",
-    "DESCRIPTION": "敵全体に !D! ダメージを与える。 増幅  [E]  [E] : !M! 以下のHPの敵を即死させる。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "敵全体に !D! ダメージを与える。 増幅  [E]  [E] : !M! 以下のHPの敵を即死させる。"
   },
   "Orbital": {
     "NAME": "オービタル",
-    "DESCRIPTION": " 使用不可 。 このカードを引いた時、 カードを 1 枚引く。 NL このカードを 廃棄 した時、 廃棄 したカードから !M! 枚を手札に加える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": " 使用不可 。 このカードを引いた時、 カードを 1 枚引く。 NL このカードを 廃棄 した時、 廃棄 したカードから !M! 枚を手札に加える。"
   },
   "SillyJoke": {
     "NAME": "無限泡影",
@@ -437,52 +407,42 @@
   },
   "ExplosiveMarionette": {
     "NAME": "アーティフルサクリファイス",
-    "DESCRIPTION": " 保留 。 !D! ダメージを与える。 NL 増幅  [E] : 2 倍のダメージを与える。 廃棄 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": " 保留 。 !D! ダメージを与える。 NL 増幅  [E] : 2 倍のダメージを与える。 廃棄 。"
   },
   "OpticalCamouflage": {
     "NAME": "オプティカルカモフラージュ",
-    "DESCRIPTION": " 保留 。 !B! ブロック を得る。 NL 増幅  [E] : 2倍のブロックを得る。 廃棄 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": " 保留 。 !B! ブロック を得る。 NL 増幅  [E] : 2倍のブロックを得る。 廃棄 。"
   },
   "FiveColoredTalisman": {
     "NAME": "5色のタリスマン",
-    "DESCRIPTION": "保留 。 ターン開始時、ランダムな スキル を 手札に加える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "保留 。 ターン開始時、ランダムな スキル を 手札に加える。"
   },
   "AlicesGift": {
     "NAME": "アリスの贈り物",
-    "DESCRIPTION": " 保留 。 !D! ダメージを与える。 廃棄 。 NL 増幅  [E]  [E] : 3 倍のダメージを与える。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": " 保留 。 !D! ダメージを与える。 廃棄 。 NL 増幅  [E]  [E] : 3 倍のダメージを与える。"
   },
   "Exhaustion_MRS": {
     "NAME": "消耗",
-    "DESCRIPTION": "使用不可 。 NL 手札にある間、 チャージ を得たり消費する事が出来ない。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "使用不可 。 NL 手札にある間、 チャージ を得たり消費する事が出来ない。"
   },
   "UltimateShortwave": {
     "NAME": "アルティメットショートウェーブ",
-    "DESCRIPTION": "!B! [E] と !M! チャージ を得る。 戦闘中、このカードの チャージ 増加量を !D! 増加し、 エナジー増加量を 1 増やす。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "!B! [E] と !M! チャージ を得る。 戦闘中、このカードの チャージ 増加量を !D! 増加し、 エナジー増加量を 1 増やす。"
   },
   "NebulaRing": {
     "NAME": "ネビュラリング",
-    "DESCRIPTION": " ブロック を失うたび、 プレートアーマー !M! を得る。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": " ブロック を失うたび、 プレートアーマー !M! を得る。"
   },
   "SprinkleStarSeal": {
     "NAME": "スプリンクルスター封印",
-    "DESCRIPTION": " 脱力 99 を 与える。 NL 廃棄 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": " 脱力 99 を 与える。 NL 廃棄 。"
   },
   "Wraith": {
     "NAME": "Wraith",
-    "DESCRIPTION": "Unplayable. NL At the end of your turn, gain 1 Wraith .",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, gain 1 Wraith ."
   },
   "WWWWWWWWWWWWWW": {
     "NAME": "WWWWWWWWWWW",
-    "DESCRIPTION": "WWWWWWWWWWW",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "WWWWWWWWWWW"
   }
 }

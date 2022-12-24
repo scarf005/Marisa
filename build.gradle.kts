@@ -83,7 +83,7 @@ data class Config(
 val gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create()
 val configFile = file("src/main/resources/ModTheSpire.json")
 
-tasks.register("semver") {
+tasks.register("modthespire") {
     val config = ModTheSpire(
         modID,
         description = """
@@ -98,7 +98,7 @@ tasks.register("semver") {
 }
 
 tasks.jar {
-    dependsOn("semver")
+    dependsOn("modthespire")
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(sourceSets.main.get().output)
 }

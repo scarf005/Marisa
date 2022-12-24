@@ -40,8 +40,6 @@ class Acceleration : CustomCard(
     override fun upgrade() {
         if (!upgraded) {
             upgradeName()
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
             upgradeMagicNumber(AMP_UPG)
         }
     }
@@ -51,7 +49,6 @@ class Acceleration : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME: String? = cardStrings.NAME
         val DESCRIPTION: String? = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG: String? = cardStrings.UPGRADE_DESCRIPTION
         const val IMG_PATH = "img/cards/GuidingStar.png"
         private const val COST = 0
         private const val DRAW = 2

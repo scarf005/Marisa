@@ -131,8 +131,7 @@
   },
   "UltraShortWave": {
     "NAME": "極超短波",
-    "DESCRIPTION": "獲得 !B! [E] 與 !M! 層 蓄力 。使這張牌在本場戰鬥中 [E] 與 蓄力 獲得量+1",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "獲得 !B! [E] 與 !M! 層 蓄力 。使這張牌在本場戰鬥中 [E] 與 蓄力 獲得量+1"
   },
   "MillisecondPulsars": {
     "NAME": "毫秒脈衝星",
@@ -141,23 +140,19 @@
   },
   "Spark": {
     "NAME": "火花",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 消耗",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 消耗"
   },
   "UpSweep": {
     "NAME": "升龍帚",
-    "DESCRIPTION": "造成 !D! 點傷害，獲得 !M! 層 蓄力",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害，獲得 !M! 層 蓄力"
   },
   "GuidingStar": {
     "NAME": "引導星",
-    "DESCRIPTION": "保留 。 NL 若回合開始時此卡在你手中，獲得  [E]  。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "保留 。 NL 若回合開始時此卡在你手中，獲得  [E]  。"
   },
   "OrrerysSun": {
     "NAME": "太陽儀",
-    "DESCRIPTION": "每當使用掉 蓄力 的層數，獲得 !M! 點格擋",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "每當使用掉 蓄力 的層數，獲得 !M! 點格擋"
   },
   "ChargingUp": {
     "NAME": "魔炮準備",
@@ -205,8 +200,7 @@
   },
   "SuperPerseids": {
     "NAME": "超級英仙座",
-    "DESCRIPTION": "無法打出 。抽到這張牌時，獲得 [E] 。 NL 這張牌被 消耗 時，對隨機1名敵人造成 !D! 點傷害",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "無法打出 。抽到這張牌時，獲得 [E] 。 NL 這張牌被 消耗 時，對隨機1名敵人造成 !D! 點傷害"
   },
   "MysteriousBeam": {
     "NAME": "神秘光束",
@@ -220,18 +214,15 @@
   },
   "EnergyFlow": {
     "NAME": "能量湧動",
-    "DESCRIPTION": "在你的回合結束時，獲得 !M! 層 蓄力",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "在你的回合結束時，獲得 !M! 層 蓄力"
   },
   "PowerUp": {
     "NAME": "強化！",
-    "DESCRIPTION": "使手牌中所有攻擊牌在本場戰鬥中增加傷害 !M! 點",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "使手牌中所有攻擊牌在本場戰鬥中增加傷害 !M! 點"
   },
   "WitchLeyline": {
     "NAME": "魔女射線",
-    "DESCRIPTION": "造成 !D! 點傷害，增加 !M! 張 灼傷 到手牌",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害，增加 !M! 張 灼傷 到手牌"
   },
   "JA": {
     "NAME": "連段起手",
@@ -245,8 +236,7 @@
   },
   "DragonMeteor": {
     "NAME": "龍隕星",
-    "DESCRIPTION": "造成 !B! 點傷害。 NL 本場戰鬥中每 消耗 1張牌，此牌傷害增加 !M! ",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !B! 點傷害。 NL 本場戰鬥中每 消耗 1張牌，此牌傷害增加 !M! "
   },
   "PulseMagic": {
     "NAME": "脈衝魔術",
@@ -255,13 +245,11 @@
   },
   "DC": {
     "NAME": "迎頭痛擊",
-    "DESCRIPTION": "固有 。造成 !D! 點傷害。若棄牌堆沒有牌，造成2倍傷害",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "固有 。造成 !D! 點傷害。若棄牌堆沒有牌，造成2倍傷害"
   },
   "Singularity": {
     "NAME": "奇點",
-    "DESCRIPTION": "每打出1張耗能為0的牌時，手牌中1張隨機攻擊牌攻擊傷害增加 !M! 點",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "每打出1張耗能為0的牌時，手牌中1張隨機攻擊牌攻擊傷害增加 !M! 點"
   },
   "SporeBomb": {
     "NAME": "孢子炸彈",
@@ -270,38 +258,31 @@
   },
   "FluorensentBeam": {
     "NAME": "螢光射線",
-    "DESCRIPTION": "所有敵人失去 !D! 點生命。 NL 增幅 [E] [E] :改為失去 !B! 點",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "所有敵人失去 !D! 點生命。 NL 增幅 [E] [E] :改為失去 !B! 點"
   },
   "WitchOfGreed": {
     "NAME": "強欲魔女",
-    "DESCRIPTION": "戰鬥結束時，額外獲得 !M! 金幣。 NL 增幅 [E] :額外獲得1瓶隨機藥劑",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "戰鬥結束時，額外獲得 !M! 金幣。 NL 增幅 [E] :額外獲得1瓶隨機藥劑"
   },
   "TreasureHunter": {
     "NAME": "寶物獵手",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 若這張牌殺死一名是「精英」或「首領」的敵人，戰鬥獎勵增加1件隨機遺物。 NL 消耗",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 若這張牌殺死一名是「精英」或「首領」的敵人，戰鬥獎勵增加1件隨機遺物。 NL 消耗"
   },
   "Robbery": {
     "NAME": "強取豪奪",
-    "DESCRIPTION": "造成 !D! 點傷害。獲得未被 格擋 的攻擊傷害數量的金幣。 NL 消耗 。 NL 增幅 [E] :獲得2倍金幣",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害。獲得未被 格擋 的攻擊傷害數量的金幣。 NL 消耗 。 NL 增幅 [E] :獲得2倍金幣"
   },
   "6A": {
     "NAME": "尻擊",
-    "DESCRIPTION": "造成 !D! 點傷害，獲得造成傷害數量的 格擋",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害，獲得造成傷害數量的 格擋"
   },
   "CircumpolarStar": {
     "NAME": "拱極星",
-    "DESCRIPTION": "獲得 !B! 點 格擋 ，抽 !M! 張牌。使這張牌在本場戰鬥中抽牌數+1",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "獲得 !B! 點 格擋 ，抽 !M! 張牌。使這張牌在本場戰鬥中抽牌數+1"
   },
   "RefractionSpark": {
     "NAME": "折射火花",
-    "DESCRIPTION": "造成 !D! 點傷害，按照未被 格擋 的攻擊傷害增加名字中有「火花」的手牌的攻擊。 NL 增幅 [E] :傷害變為 !B! 點",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害，按照未被 格擋 的攻擊傷害增加名字中有「火花」的手牌的攻擊。 NL 增幅 [E] :傷害變為 !B! 點"
   },
   "MagicChant": {
     "NAME": "詠唱",
@@ -310,8 +291,7 @@
   },
   "UnstableBomb": {
     "NAME": "不穩定爆彈",
-    "DESCRIPTION": "對隨機敵人造成 !D! 到 !B! 點傷害 4次",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "對隨機敵人造成 !D! 到 !B! 點傷害 4次"
   },
   "SuperNova": {
     "NAME": "超新星",
@@ -333,8 +313,7 @@
   },
   "GasGiant": {
     "NAME": "氣態巨行星",
-    "DESCRIPTION": "獲得 !B! 點 格擋 ，增加 !M! 張 灼傷 到手牌",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "獲得 !B! 點 格擋 ，增加 !M! 張 灼傷 到手牌"
   },
   "CasketOfStar": {
     "NAME": "星之器",
@@ -343,27 +322,24 @@
   },
   "ChargeUpSpray": {
     "NAME": "蓄力噴射",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 若這張牌受到 蓄力 影響，獲得 [E] 並抽 !M! 張牌",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 若這張牌受到 蓄力 影響，獲得 [E] 並抽 !M! 張牌"
   },
   "EnergyRecoil": {
     "NAME": "能量反衝",
     "DESCRIPTION": "獲得等同於擁有的 蓄力 層數的 格擋",
     "UPGRADE_DESCRIPTION": "獲得等同於擁有的 蓄力 層數+3的 格擋",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "NL （獲得",
       "點 格擋 ）"
     ]
   },
   "GalacticHalo": {
     "NAME": "銀暈",
-    "DESCRIPTION": "獲得 !B! 點 格擋 ， !M! 層 蓄力",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "獲得 !B! 點 格擋 ， !M! 層 蓄力"
   },
   "ManaConvection": {
     "NAME": "魔力對流",
-    "DESCRIPTION": "消耗最多 !M! 張卡，每消耗一張獲得  [E]  。  消耗 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "消耗最多 !M! 張卡，每消耗一張獲得  [E]  。  消耗 。"
   },
   "ManaRampage": {
     "NAME": "魔力暴走",
@@ -372,13 +348,11 @@
   },
   "StarBarrage": {
     "NAME": "魔法星彈",
-    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。在本場戰鬥中，這張牌的傷害次數增加1",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。在本場戰鬥中，這張牌的傷害次數增加1"
   },
   "AFriendsGift": {
     "NAME": "友人之贈",
-    "DESCRIPTION": "無法打出 。抽到此牌時獲得效果",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "無法打出 。抽到此牌時獲得效果"
   },
   "BinaryStars": {
     "NAME": "雙星",
@@ -388,8 +362,7 @@
   "CollectingQuirk": {
     "NAME": "收集癖",
     "DESCRIPTION": "每擁有 !M! 個遺物，對隨機1名敵人造成 !D! 點傷害",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "(共 !B! 次)",
       ""
     ]
@@ -407,8 +380,7 @@
   "BlackFlareStar": {
     "NAME": "黑耀星",
     "DESCRIPTION": "手牌數大於等於 4 時才能打出。 NL 丟棄任意張牌，每丟棄1張獲得 !B! 格擋 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "手牌數小於 4",
       ""
     ]
@@ -417,20 +389,18 @@
     "NAME": "白矮星",
     "DESCRIPTION": "手牌數小於等於4時才能打出。 消耗 。 NL 造成 !B! 傷害 (棄牌堆牌數之1.5倍)。增加2張 灼傷 到手牌",
     "UPGRADE_DESCRIPTION": "手牌數小於等於4時才能打出。 消耗 。 NL 造成 !B! 傷害 (棄牌堆牌數之2倍)。增加2張 灼傷 到手牌",
-    "EXTENDED_DESCRIPTION":[
+    "EXTENDED_DESCRIPTION": [
       "手牌數大於 4",
       ""
     ]
   },
   "FairyDestructionRay": {
     "NAME": "妖精盡滅光",
-    "DESCRIPTION": "對所有敵人造成 !D! 傷害。 NL 增幅 [E] [E] :立即消滅生命值低於 !M! 的敵人",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "對所有敵人造成 !D! 傷害。 NL 增幅 [E] [E] :立即消滅生命值低於 !M! 的敵人"
   },
   "Orbital": {
     "NAME": "星軌",
-    "DESCRIPTION": "無法打出 。 抽到這張牌時，抽1張牌。 NL 當這張牌被 消耗 時，選擇 !M! 張已 消耗 的牌，將其放入手牌",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "無法打出 。 抽到這張牌時，抽1張牌。 NL 當這張牌被 消耗 時，選擇 !M! 張已 消耗 的牌，將其放入手牌"
   },
   "SillyJoke": {
     "NAME": "幻象泡影",
@@ -439,52 +409,42 @@
   },
   "ExplosiveMarionette": {
     "NAME": "人偶炸彈",
-    "DESCRIPTION": "保留 。造成 !D! 傷害。 NL 增幅 [E] : 造成2倍傷害。 消耗",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "保留 。造成 !D! 傷害。 NL 增幅 [E] : 造成2倍傷害。 消耗"
   },
   "OpticalCamouflage": {
     "NAME": "光學迷彩",
-    "DESCRIPTION": "保留 。獲得 !B! 格擋 。 NL 增幅 [E] : 獲得2倍 格擋 。 消耗",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "保留 。獲得 !B! 格擋 。 NL 增幅 [E] : 獲得2倍 格擋 。 消耗"
   },
   "FiveColoredTalisman": {
     "NAME": "五色魔符",
-    "DESCRIPTION": "保留 。在你的回合開始時，增加1張隨機技能牌到手牌",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "保留 。在你的回合開始時，增加1張隨機技能牌到手牌"
   },
   "AlicesGift": {
     "NAME": "友人之贈",
-    "DESCRIPTION": "保留 。造成 !D! 傷害。 消耗 。 NL 增幅 [E] [E] : 造成3倍傷害",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "保留 。造成 !D! 傷害。 消耗 。 NL 增幅 [E] [E] : 造成3倍傷害"
   },
   "Exhaustion_MRS": {
     "NAME": "力竭",
-    "DESCRIPTION": "無法打出 。 NL 在手牌中時，無法獲得或發動 蓄力",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "無法打出 。 NL 在手牌中時，無法獲得或發動 蓄力"
   },
   "UltimateShortwave": {
     "NAME": "極超短波",
-    "DESCRIPTION": "獲得 !B! [E] 與 !M! 層 蓄力 。在本場戰鬥中，這張牌的 蓄力 獲得量增加 !D! ， [E] 獲得量增加1",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "獲得 !B! [E] 與 !M! 層 蓄力 。在本場戰鬥中，這張牌的 蓄力 獲得量增加 !D! ， [E] 獲得量增加1"
   },
   "NebulaRing": {
     "NAME": "星雲環",
-    "DESCRIPTION": "每當你因敵人或卡牌損失 格擋 時，獲得 !M! 層 多層護甲",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "每當你因敵人或卡牌損失 格擋 時，獲得 !M! 層 多層護甲"
   },
   "SprinkleStarSeal": {
     "NAME": "灑星封印",
-    "DESCRIPTION": "給予99層 虛弱 。 NL 消耗",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "給予99層 虛弱 。 NL 消耗"
   },
   "Wraith": {
     "NAME": "怨靈",
-    "DESCRIPTION": "無法打出 。 NL 在你的回合結束時，獲得1層 怨靈",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWW"
+    "DESCRIPTION": "無法打出 。 NL 在你的回合結束時，獲得1層 怨靈"
   },
   "Acceleration": {
     "NAME": "加速",
-    "DESCRIPTION": "抽取你抽卡堆頂的 !B! 張卡。 NL 增幅 [E] : 抽取你抽卡堆頂的 !M! 張卡 ",
-    "UPGRADE_DESCRIPTION": "保留。 NL 抽 !M! 張卡。 NL 增幅 [E] : 抽 !M! 張卡 "
+    "DESCRIPTION": "抽取你抽卡堆頂的 !B! 張卡。 NL 增幅 [E] : 抽取你抽卡堆頂的 !M! 張卡 "
   }
 }

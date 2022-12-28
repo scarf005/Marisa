@@ -20,7 +20,7 @@ body:
       description: >
         To make reproducing bugs easier, please use basemod's
         **[Console](https://alexdriedger.github.io/SlayTheSpireModding/docs/console)**
-        command, surrouned with backtick (\`) for each steps.
+        command, surrounded with backtick (\`) for each steps.
         Screenshot or Videos are also welcome.
       placeholder: |
         1. Start a new game with Marisa.

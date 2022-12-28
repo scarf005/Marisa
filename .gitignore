@@ -44,3 +44,7 @@ gradle-app.setting
 
 # PID
 .attach_pid*
+
+# Krita temporary files
+*.kra~
+*.png~

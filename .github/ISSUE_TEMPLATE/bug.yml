@@ -38,7 +38,6 @@ body:
       label: Crash log
       description: If the game crashed, please paste the crash log here.
       placeholder: |
-        Game crashed.
         Version Info:
         - Java version (1.8.0_144)
         - Slay the Spire (12-18-2022)
@@ -46,7 +45,6 @@ body:
         Mod list:
         - basemod (5.47.0)
         - MarisaContinued (1.5.1)
-
         Cause:
         java.lang.StringIndexOutOfBoundsException: String index out of range: 1
           at java.lang.String.charAt(String.java:658)

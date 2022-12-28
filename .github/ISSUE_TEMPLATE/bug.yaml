@@ -6,7 +6,6 @@ assignees: ["scarf005"]
 
 body:
   - type: checkboxes
-    id: checks
     attributes:
       label: Thanks for reaching out!
       description: "please confirm that you're"

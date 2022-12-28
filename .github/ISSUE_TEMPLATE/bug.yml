@@ -5,15 +5,14 @@ labels: ["bug"]
 assignees: ["scarf005"]
 
 body:
-  - type: checkboxes
+  - type: markdown
     attributes:
-      label: Thanks for reaching out!
-      description: "please confirm that you're"
-      options:
-        - label: using consise title (e.g:`Amplified Shoot The Moon uses 3 energy instead of 2`)
-          required: true
-        - label: using the latest version of this mod
-          required: true
+      value: |
+        ## Thanks for reaching out!
+
+        please confirm that you're
+        - using consise title (e.g:`Amplified Shoot The Moon uses 3 energy instead of 2`).
+        - using the latest version of this mod.
 
   - type: textarea
     attributes:
@@ -21,9 +20,10 @@ body:
       description: >
         To make reproducing bugs easier, please use basemod's
         **[Console](https://alexdriedger.github.io/SlayTheSpireModding/docs/console)**
-        command(surrouned with backtick \`) for each steps.
+        command, surrouned with backtick (\`) for each steps.
+        Screenshot or Videos are also welcome.
       placeholder: |
-        1. Start a new game.
+        1. Start a new game with Marisa.
         2. `fight Lagavulin`
         3. `hand add ShootTheMoon 1 0`
         4. Use the generated ShootTheMoon card to attack Lagavulin.

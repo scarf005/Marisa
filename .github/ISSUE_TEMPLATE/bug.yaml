@@ -1,0 +1,38 @@
+name: Bug report
+description: Create a report to help us improve
+
+labels: ["bug"]
+assignees: ["scarf005"]
+
+body:
+  - type: checkboxes
+    attributes:
+      label: Thanks for reaching out!
+      description: "please confirm that you're"
+      options:
+        - label: using consise title (e.g:`Amplified Shoot The Moon uses 3 energy instead of 2`)
+          required: true
+        - label: using the latest version of this mod
+          required: true
+
+  - type: textarea
+    attributes:
+      label: How to reproduce
+      description: >
+        To make reproducing bugs easier, please use basemod's
+        **[Console](https://alexdriedger.github.io/SlayTheSpireModding/docs/console)**
+        command(surrouned with backtick \`) for each steps.
+      placeholder: |
+        1. Start a new game.
+        2. `fight Lagavulin`
+        3. `hand add ShootTheMoon 1 0`
+        4. Use the generated ShootTheMoon card to attack Lagavulin.
+
+        Despite card description (1 base cost + 1 amplify cost), it uses 3 energy.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Crash log
+      description: If the game crashed, please paste the crash log here.

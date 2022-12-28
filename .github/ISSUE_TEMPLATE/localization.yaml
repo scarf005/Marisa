@@ -1,0 +1,30 @@
+name: Localization
+description: Help us improve or fix wrong translations
+
+labels: ["localization"]
+
+body:
+  - type: dropdown
+    attributes:
+      label: Language
+      description: Which language will be affected?
+      multiple: true
+      options:
+        - English
+        - Simplified Chinese
+        - Traditional Chinese
+        - French
+        - Korean
+        - Others
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: Please describe the issue in detail.
+      placeholder: Orrerys Sun gives block but power text is attack
+
+  - type: checkboxes
+    attributes:
+      label: Are you interested in fixing this issue?
+      options:
+        - label: Yes, I will PR a fix

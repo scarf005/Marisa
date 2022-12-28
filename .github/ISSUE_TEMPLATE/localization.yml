@@ -16,15 +16,19 @@ body:
         - French
         - Korean
         - Others
+    validations:
+      required: true
 
   - type: textarea
     attributes:
       label: Summary
       description: Please describe the issue in detail.
       placeholder: Orrerys Sun gives block but power text is attack
+    validations:
+      required: true
 
   - type: checkboxes
     attributes:
       label: Are you interested in fixing this issue?
       options:
-        - label: Yes, I will PR a fix
+        - label: I am willing to PR a fix for this issue.

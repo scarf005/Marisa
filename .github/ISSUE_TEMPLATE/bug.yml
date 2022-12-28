@@ -13,6 +13,7 @@ body:
         please make sure that you're
         - using consise title (e.g:`Amplified Shoot The Moon uses 3 energy instead of 2`).
         - using the latest version of this mod.
+        - using minimal set of mods enabled to reproduce the bug.
 
   - type: textarea
     attributes:

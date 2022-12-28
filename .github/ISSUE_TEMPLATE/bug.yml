@@ -37,3 +37,25 @@ body:
     attributes:
       label: Crash log
       description: If the game crashed, please paste the crash log here.
+      placeholder: |
+        Game crashed.
+        Version Info:
+        - Java version (1.8.0_144)
+        - Slay the Spire (12-18-2022)
+        - ModTheSpire (3.30.0)
+        Mod list:
+        - basemod (5.47.0)
+        - MarisaContinued (1.5.1)
+
+        Cause:
+        java.lang.StringIndexOutOfBoundsException: String index out of range: 1
+          at java.lang.String.charAt(String.java:658)
+          at com.megacrit.cardcrawl.helpers.FontHelper.identifyColor(FontHelper.java:1218)
+          at com.megacrit.cardcrawl.helpers.FontHelper.renderSmartText(FontHelper.java:953)
+          at com.evacipated.cardcrawl.modthespire.patches.modsscreen.ModsScreen.renderModInfo(ModsScreen.java:354)
+          at com.evacipated.cardcrawl.modthespire.patches.modsscreen.ModsScreen.render(ModsScreen.java:221)
+          at com.evacipated.cardcrawl.modthespire.patches.modsscreen.ModsScreenUpdateRender$Render.Postfix(ModsScreenUpdateRender.java:32)
+          at com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen.render(MainMenuScreen.java:622)
+          at com.megacrit.cardcrawl.core.CardCrawlGame.render(CardCrawlGame.java:435)
+          at com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop(LwjglApplication.java:225)
+          at com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run(LwjglApplication.java:126)

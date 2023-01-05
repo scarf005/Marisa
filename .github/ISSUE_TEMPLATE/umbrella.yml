@@ -3,7 +3,7 @@ description: Tracks multiple issues in one place
 
 labels: ["umbrella"]
 assignees: ["scarf005"]
-title: ":umbrella: "
+title: ":open_umbrella: "
 
 body:
   - type: markdown

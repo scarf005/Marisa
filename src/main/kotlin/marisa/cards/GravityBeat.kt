@@ -45,21 +45,12 @@ class GravityBeat : CustomCard(
         }
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
+        fun damage() = DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_LIGHT)
 
-        for (i in 0 until magicNumber) {
-            if (!m.isDeadOrEscaped) {
-                addToBot(
-                    DamageAction(
-                        m,
-                        DamageInfo(p, damage, damageTypeForTurn),
-                        AttackEffect.BLUNT_LIGHT
-                    )
-                )
-            }
-            addToBot(
-                DrawCardAction(1)
-            )
+        repeat(magicNumber) {
+            m?.let { if (!it.isDeadOrEscaped) addToBot(damage()) }
+            addToBot(DrawCardAction(1))
         }
     }
 

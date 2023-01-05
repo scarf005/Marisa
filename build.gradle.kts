@@ -113,3 +113,9 @@ tasks.register<Copy>("move") {
     file("$gameDir/${modID}/config.json")
         .writeText(gson.toJson(Config(changeNote = changeBBCode)))
 }
+
+tasks.register("config") {
+    dependsOn(tasks.jar)
+    file("$gameDir/${modID}/config.json")
+        .writeText(gson.toJson(Config(changeNote = changeBBCode)))
+}

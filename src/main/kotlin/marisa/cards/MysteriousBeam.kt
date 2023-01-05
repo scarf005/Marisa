@@ -41,7 +41,7 @@ class MysteriousBeam : CustomCard(
         damage = tmp.toInt()
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         var c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()
         while (c is MysteriousBeam) {
             c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()
@@ -54,6 +54,8 @@ class MysteriousBeam : CustomCard(
         )
         c.applyPowers()
         baseDamage += c.damage
+
+        m ?: return
         calculateCardDamage(m)
         addToBot(
             DamageAction(

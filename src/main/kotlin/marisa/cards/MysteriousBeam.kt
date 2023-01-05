@@ -42,32 +42,17 @@ class MysteriousBeam : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        var c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()
-        while (c is MysteriousBeam) {
-            c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()
-        }
-        if (upgraded) {
-            c.upgrade()
-        }
-        addToBot(
-            MakeTempCardInHandAction(c, true)
-        )
-        c.applyPowers()
+        val c = generateSequence { AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy() }
+            .first { it !is MysteriousBeam }
+            .apply { if (upgraded) upgrade() }
+            .apply { applyPowers() }
+
+        addToBot(MakeTempCardInHandAction(c, true))
         baseDamage += c.damage
 
         m ?: return
         calculateCardDamage(m)
-        addToBot(
-            DamageAction(
-                m,
-                DamageInfo(
-                    p,
-                    damage,
-                    damageTypeForTurn
-                ),
-                AttackEffect.SLASH_DIAGONAL
-            )
-        )
+        addToBot(DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL))
     }
 
     override fun makeCopy(): AbstractCard = MysteriousBeam()

@@ -55,28 +55,14 @@ subscribe [ModTheSpire][modthespire] and [BaseMod][basemod].
 [modthespire]: https://steamcommunity.com/sharedfiles/filedetails/?l=koreana&id=1605060445
 [basemod]: https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019
 
-#### Subscribe from Steam Workshop
+<div align="center">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
+    <img src="docs/thumbnail/image.jpg" alt="steam workshop link" style="width: 20vw">
+    <p>Subscribe this mod from Steam Workshop</p>
+  </a>
+</div>
 
-<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
-  <img src="docs/thumbnail/image.jpg" alt="steam workshop link" style="width: 20vw">
-</a>
-
-#### Compile from source
-
-> **Warning** development environment is only tested on linux. may not work for other OS
-
-git clone repository `https://github.com/scarf005/Marisa.git`
-
-![](docs/ProjectStructure.png)
-
-setup java, kotlin, and gradle in your intellij. language version must be 8.
-
-```sh
-gradle -t toMods # install once
-./gradlew -t toMods --warning-mode all # dev mode: recompile on changes
-```
-
-run gradle task to copy jar into your steam mods folder.
+## [Contribute][contribute]
 
 ## [Credits][original-credit]
 
@@ -92,3 +78,4 @@ License under [`src/main/kotlin/marisa`](./src/main/kotlin/marisa/):
 [sts]: https://store.steampowered.com/app/646570/Slay_the_Spire/
 [marisa]: https://en.touhouwiki.net/wiki/Kirisame_Marisa
 [workshop]: https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404
+[contribute]: ./CONTRIBUTING.md

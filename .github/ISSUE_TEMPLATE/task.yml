@@ -8,7 +8,9 @@ body:
         ## Please use [discussion](https://github.com/scarf005/Marisa/discussions/categories/ideas) for feature requests
 
         this issue form is used for internal development.
-        also, please choose appropriate label.
+        also, please choose appropriate label between:
+
+        `build`, `docs`, `feat`, `refactor`, `test`
 
   - type: textarea
     attributes:
@@ -19,4 +21,3 @@ body:
 
     validations:
       required: true
-

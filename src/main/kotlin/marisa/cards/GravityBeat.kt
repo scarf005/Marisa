@@ -47,30 +47,6 @@ class GravityBeat : CustomCard(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster) {
 
-        /*
-    addToBot(
-        new DamageAllEnemiesAction(
-            p,
-            this.multiDamage,
-            this.damageTypeForTurn,
-            AttackEffect.SLASH_DIAGONAL
-        )
-    );
-    if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-      for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-        addToBot(
-            new ApplyPowerAction(
-                mo,
-                p,
-                new WeakPower(mo, this.magicNumber, false),
-                this.magicNumber,
-                true,
-                AttackEffect.NONE
-            )
-        );
-      }
-    }
-    */
         for (i in 0 until magicNumber) {
             if (!m.isDeadOrEscaped) {
                 addToBot(

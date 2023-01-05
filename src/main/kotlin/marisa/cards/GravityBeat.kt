@@ -76,9 +76,9 @@ class GravityBeat : CustomCard(
     companion object {
         const val ID = "GravityBeat"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val EX_DESC = cardStrings.EXTENDED_DESCRIPTION
+        val NAME: String = cardStrings.NAME
+        val DESCRIPTION: String = cardStrings.DESCRIPTION
+        val EX_DESC: Array<String> = cardStrings.EXTENDED_DESCRIPTION
         const val IMG_PATH = "img/cards/GravityBeat.png"
         private const val COST = 1
         private const val ATTACK_DMG = 6

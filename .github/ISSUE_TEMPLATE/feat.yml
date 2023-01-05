@@ -1,0 +1,22 @@
+name: (DEV) Task
+description: New task, choose appropriate label
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Please use [discussion](https://github.com/scarf005/Marisa/discussions/categories/ideas) for feature requests
+
+        this issue form is used for internal development.
+        also, please choose appropriate label.
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: Task description
+      placeholder: |
+        add Contributing.md
+
+    validations:
+      required: true
+

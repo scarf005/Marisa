@@ -1,0 +1,25 @@
+name: (DEV) Umbrella
+description: Tracks multiple issues in one place
+
+labels: ["umbrella"]
+assignees: ["scarf005"]
+title: ":umbrella: "
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Please use [discussion](https://github.com/scarf005/Marisa/discussions/categories/ideas) for feature requests
+
+        this issue form is used for internal development.
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: List of tasks to track
+      placeholder: |
+        - [ ] do A
+        - [ ] do B
+        - [x] do C
+    validations:
+      required: true

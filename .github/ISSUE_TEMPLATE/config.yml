@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Feature request
+  - name: Game Ideas
     url: https://github.com/scarf005/Marisa/discussions/categories/ideas
-    about: Please suggest new features here.
-  - name: Balance suggestion
+    about: Please suggest idea for new features here.
+  - name: Balance Suggestion
     url: https://github.com/scarf005/Marisa/discussions/categories/balance
     about: Please suggest balance changes here.
-  - name: Ask a question
+  - name: Ask a Question
     url: https://github.com/scarf005/Marisa/discussions/categories/q-a
     about: Please ask and answer questions here.

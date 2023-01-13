@@ -1,4 +1,4 @@
 {
   "deno.enable": true,
-  "conventionalCommits.scopes": ["github", "README", "l10n"]
+  "conventionalCommits.scopes": ["github", "README", "L10n"]
 }

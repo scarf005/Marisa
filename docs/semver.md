@@ -6,7 +6,7 @@ scopes:
 
 - `github`: changes related to repository (mostly [`.github`](/.github))
 - `README`: changes to [`README.md`](/README.md)
-- `l10n`: localization changes
+- `L10n`: localization changes
 
 ## major(`!`)
 
@@ -44,7 +44,7 @@ feat: decrease `Foo` energy cost
 - fix localization
 
 ```
-fix(l10n): missing `DESCRIPTION` on ENG/`Foo`
+fix(L10n): missing `DESCRIPTION` on ENG/`Foo`
 ```
 
 ## unversioned

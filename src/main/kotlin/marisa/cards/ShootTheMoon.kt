@@ -32,7 +32,8 @@ class ShootTheMoon : AmplifiedAttack(
         baseBlock = baseDamage + ampNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
+        m ?: return
         val isAmplified = isAmplified(AMP)
 
         val buffs = m.powers

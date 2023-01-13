@@ -52,7 +52,8 @@ class DragonMeteor : AmplifiedAttack(
         super.calculateCardDamage(mo)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
+        m ?: return
         addToBot(
             VFXAction(
                 WeightyImpactEffect(m.hb.cX, m.hb.cY)

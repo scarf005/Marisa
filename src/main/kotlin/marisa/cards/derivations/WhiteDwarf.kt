@@ -58,7 +58,7 @@ class WhiteDwarf : AmplifiedAttack(
         }
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         addToBot(
             DamageAction(
                 m,

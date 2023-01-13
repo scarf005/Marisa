@@ -31,7 +31,8 @@ class WitchLeyline : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
+        m ?: return
         addToBot(
             VFXAction(
                 ThrowDaggerEffect(m.hb.cX, m.hb.cY)

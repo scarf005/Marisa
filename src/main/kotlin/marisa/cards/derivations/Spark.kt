@@ -28,7 +28,7 @@ class Spark : CustomCard(
         tags.add(CardTagEnum.SPARK)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         addToBot(
             DamageAction(
                 m,

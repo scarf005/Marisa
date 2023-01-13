@@ -19,7 +19,7 @@ class _6A : CustomCard(
         baseDamage = ATTACK_DMG
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         addToBot(
             _6AAction(
                 m,

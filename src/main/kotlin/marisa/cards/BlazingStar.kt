@@ -50,7 +50,7 @@ class BlazingStar : AmplifiedAttack(
         super.calculateCardDamage(mo)
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         if (isAmplified(AMP)) {
             block *= 2
         }

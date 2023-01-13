@@ -38,7 +38,7 @@ class AlicesGift : CustomCard(
         retain = true
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         if (isAmplified(AMP)) {
             damage *= 3
         }

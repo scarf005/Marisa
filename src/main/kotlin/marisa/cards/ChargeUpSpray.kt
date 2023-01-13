@@ -34,7 +34,7 @@ class ChargeUpSpray : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         val cnt = if (p.hasRelic(SimpleLauncher.ID)) 6 else 8
 
         if (p.hasPower(ChargeUpPower.POWER_ID) && !p.hasPower(OneTimeOffPlusPower.POWER_ID)) {

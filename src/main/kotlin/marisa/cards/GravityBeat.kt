@@ -45,45 +45,12 @@ class GravityBeat : CustomCard(
         }
     }
 
-    override fun use(p: AbstractPlayer, m: AbstractMonster) {
+    override fun use(p: AbstractPlayer, m: AbstractMonster?) {
+        fun damage() = DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_LIGHT)
 
-        /*
-    addToBot(
-        new DamageAllEnemiesAction(
-            p,
-            this.multiDamage,
-            this.damageTypeForTurn,
-            AttackEffect.SLASH_DIAGONAL
-        )
-    );
-    if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-      for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-        addToBot(
-            new ApplyPowerAction(
-                mo,
-                p,
-                new WeakPower(mo, this.magicNumber, false),
-                this.magicNumber,
-                true,
-                AttackEffect.NONE
-            )
-        );
-      }
-    }
-    */
-        for (i in 0 until magicNumber) {
-            if (!m.isDeadOrEscaped) {
-                addToBot(
-                    DamageAction(
-                        m,
-                        DamageInfo(p, damage, damageTypeForTurn),
-                        AttackEffect.BLUNT_LIGHT
-                    )
-                )
-            }
-            addToBot(
-                DrawCardAction(1)
-            )
+        repeat(magicNumber) {
+            m?.let { if (!it.isDeadOrEscaped) addToBot(damage()) }
+            addToBot(DrawCardAction(1))
         }
     }
 
@@ -100,9 +67,9 @@ class GravityBeat : CustomCard(
     companion object {
         const val ID = "GravityBeat"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val EX_DESC = cardStrings.EXTENDED_DESCRIPTION
+        val NAME: String = cardStrings.NAME
+        val DESCRIPTION: String = cardStrings.DESCRIPTION
+        val EX_DESC: Array<String> = cardStrings.EXTENDED_DESCRIPTION
         const val IMG_PATH = "img/cards/GravityBeat.png"
         private const val COST = 1
         private const val ATTACK_DMG = 6

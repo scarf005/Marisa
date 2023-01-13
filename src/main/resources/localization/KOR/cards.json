@@ -34,8 +34,8 @@
   },
   "EarthLightRay": {
     "NAME": "어스라이트 레이",
-    "DESCRIPTION": "소멸. NL 체력을 !M! 회복합니다. 증폭 [E] : 버린 카드 더미에서 카드 1 장을 무작위로 가져옵니다.",
-    "UPGRADE_DESCRIPTION": "소멸. NL 체력을 !M! 회복합니다. 증폭 [E] : 버린 카드 더미에서 카드 1 장을 골라 가져옵니다."
+    "DESCRIPTION": "체력을 !M! 회복합니다. 증폭 [E] : 버린 카드 더미에서 카드 1 장을 무작위로 가져옵니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "체력을 !M! 회복합니다. 증폭 [E] : 버린 카드 더미에서 카드 1 장을 골라 가져옵니다. NL 소멸."
   },
   "EscapeVelocity": {
     "NAME": "탈출 속도",
@@ -60,16 +60,16 @@
   },
   "IllusionStar": {
     "NAME": "일루전 스타",
-    "DESCRIPTION": "소멸. NL 무작위 카드를 !M! 장 얻습니다. NL 손에 있는 카드 1 장을 선택해 뽑을 카드 더미의 맨 위에 놓습니다.",
+    "DESCRIPTION": "무작위 카드를 !M! 장 얻습니다. NL 손에 있는 카드 1 장을 선택해 뽑을 카드 더미의 맨 위에 놓습니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "무작위 카드를 !M! 장 얻습니다. NL 손에 있는 카드 1 장을 선택해 뽑을 카드 더미의 맨 위에 놓습니다."
   },
   "MachineGunSpark": {
     "NAME": "머신건 스파크",
-    "DESCRIPTION": "소멸. NL 피해를 !D! 만큼 !M! 번 줍니다."
+    "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 소멸."
   },
   "MagicAbsorber": {
     "NAME": "매직 앱소버",
-    "DESCRIPTION": "소멸. NL 방어도를 !B! 얻고 무작위 디버프를 하나 제거합니다."
+    "DESCRIPTION": "방어도를 !B! 얻고 무작위 디버프를 하나 제거합니다. NL 소멸."
   },
   "MasterSpark": {
     "NAME": "마스터 스파크",
@@ -110,8 +110,8 @@
   },
   "StarDustReverie": {
     "NAME": "스타더스트 래버리",
-    "DESCRIPTION": "소멸. NL 손에 있는 카드를 뽑을 카드 더미에 섞어 넣습니다. NL 넣은 갯수만큼 무작위 카드를 얻습니다.",
-    "UPGRADE_DESCRIPTION": "소멸. NL 손에 있는 카드를 뽑을 카드 더미에 섞어 넣습니다. NL 넣은 갯수만큼 강화된 무작위 카드를 얻습니다."
+    "DESCRIPTION": "손에 있는 카드를 뽑을 카드 더미에 섞어 넣습니다. NL 넣은 갯수만큼 무작위 카드를 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "손에 있는 카드를 뽑을 카드 더미에 섞어 넣습니다. NL 넣은 갯수만큼 강화된 무작위 카드를 얻습니다. NL 소멸."
   },
   "MillisecondPulsars": {
     "NAME": "밀리초 펄서",
@@ -120,7 +120,7 @@
   },
   "Spark": {
     "NAME": "스파크",
-    "DESCRIPTION": "소멸. NL 피해를 !D! 줍니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 소멸."
   },
   "UpSweep": {
     "NAME": "라이징 스윕",
@@ -136,7 +136,7 @@
   },
   "ChargingUp": {
     "NAME": "충전 완료!",
-    "DESCRIPTION": "소멸. NL 충전을 !M! 얻습니다."
+    "DESCRIPTION": "충전을 !M! 얻습니다. NL 소멸."
   },
   "LuminesStrike": {
     "NAME": "루미너스 스트라이크",
@@ -158,7 +158,7 @@
   },
   "MaximisePower": {
     "NAME": "최대 출력",
-    "DESCRIPTION": "소멸. NL 충전을 에너지로 변환합니다. NL 고갈을 1장 얻습니다. NL 이번 턴에 공격 카드의 피해가 2배가 됩니다.",
+    "DESCRIPTION": "충전을 에너지로 변환합니다. NL 고갈을 1장 얻습니다. NL 이번 턴에 공격 카드의 피해가 2배가 됩니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "충전을 에너지로 변환합니다. NL 고갈을 1장 얻습니다. NL 이번 턴에 공격 카드의 피해가 2배가 됩니다."
   },
   "StarlightTyphoon": {
@@ -236,11 +236,11 @@
   },
   "TreasureHunter": {
     "NAME": "보물 사냥꾼",
-    "DESCRIPTION": "소멸. NL 피해를 !D! 줍니다. NL 이 카드로 엘리트 몬스터나 보스 몬스터를 처치하면 전투가 끝난 뒤에 무작위 유물을 얻습니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드로 엘리트 몬스터나 보스 몬스터를 처치하면 전투가 끝난 뒤에 무작위 유물을 얻습니다. NL 소멸."
   },
   "Robbery": {
     "NAME": "도둑질",
-    "DESCRIPTION": "소멸. NL 피해를 !D! 줍니다. NL 막히지 않은 피해만큼 골드를 얻습니다. NL 증폭 [E] : 골드를 2배 얻습니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 막히지 않은 피해만큼 골드를 얻습니다. NL 증폭 [E] : 골드를 2배 얻습니다. NL 소멸."
   },
   "6A": {
     "NAME": "6A",
@@ -256,7 +256,7 @@
   },
   "MagicChant": {
     "NAME": "마법 노래",
-    "DESCRIPTION": "소멸. NL 뽑을 카드 더미에서 카드를 1 장 손에 추가하고 이번 전투동안 강화합니다."
+    "DESCRIPTION": "뽑을 카드 더미에서 카드를 1 장 손에 추가하고 이번 전투동안 강화합니다. NL 소멸."
   },
   "UnstableBomb": {
     "NAME": "불안정한 폭탄",
@@ -322,8 +322,8 @@
   },
   "BinaryStars": {
     "NAME": "쌍성",
-    "DESCRIPTION": "소멸. NL *흑섬광성 또는 *백색왜성 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다.",
-    "UPGRADE_DESCRIPTION": "소멸. NL *흑섬광성+ 또는 *백색왜성+ 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다."
+    "DESCRIPTION": "*흑섬광성 또는 *백색왜성 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "*흑섬광성+ 또는 *백색왜성+ 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다. NL 소멸."
   },
   "CollectingQuirk": {
     "NAME": "골동품 수집",
@@ -340,7 +340,7 @@
   },
   "BlackFlareStar": {
     "NAME": "흑섬광성",
-    "DESCRIPTION": "소멸. NL 카드가 4 장 이상일 때 사용할 수 있습니다. NL 원하는 만큼 카드를 버리고 버린 카드마다 방어도를 !B! 얻습니다.",
+    "DESCRIPTION": "카드가 4 장 이상일 때 사용할 수 있습니다. NL 원하는 만큼 카드를 버리고 버린 카드마다 방어도를 !B! 얻습니다. NL 소멸.",
     "EXTENDED_DESCRIPTION": [
       "적어도 내 손에 카드가 4장 필요해.",
       ""
@@ -348,8 +348,8 @@
   },
   "WhiteDwarf": {
     "NAME": "백색왜성",
-    "DESCRIPTION": "소멸. NL 카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !B! 줍니다. (버린 카드 더미의 2배) NL *화상 카드 2 장을 얻습니다.",
-    "UPGRADE_DESCRIPTION": "소멸. NL 카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !B! 줍니다. (버린 카드 더미의 3배) NL *화상 카드 2 장을 얻습니다.",
+    "DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !B! 줍니다. (버린 카드 더미의 2배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !B! 줍니다. (버린 카드 더미의 3배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
     "EXTENDED_DESCRIPTION": [
       "카드가 손에 너무 많아. 4장보다 적어야 가능해.",
       ""
@@ -378,7 +378,7 @@
   },
   "SprinkleStarSeal": {
     "NAME": "스프링클 스타 봉인",
-    "DESCRIPTION": "소멸. NL 약화를 99 부여합니다."
+    "DESCRIPTION": "약화를 99 부여합니다. NL 소멸."
   },
   "Wraith": {
     "NAME": "망령",

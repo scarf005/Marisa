@@ -1,0 +1,12 @@
+build:
+  - .github/**/*.yml
+  - .github/**/*.yaml
+
+  - "**/*.gradle.*"
+
+docs:
+  - "**/*.md"
+  - docs/**/*
+
+localization:
+  - src/main/resources/localization/**/*

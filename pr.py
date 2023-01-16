@@ -6,12 +6,35 @@ from subprocess import run
 from typing import Final, NewType
 
 
+def get_commit_titles():
+    return (
+        run(
+            "git log main..HEAD --pretty=format:%s".split(),
+            capture_output=True,
+            check=True,
+        )
+        .stdout.decode("utf-8")
+        .splitlines()
+    )
+
+
 def get_title() -> str:
     match sys.argv:
         case [_, title]:
             return title
         case _:
-            return input("Enter commit title: ")
+            if len(titles := get_commit_titles()) == 1:
+                return titles[0]
+            if (
+                result := input(
+                    "Enter commit title (empty to choose from existing commits): "
+                )
+            ) != "":
+                return result
+
+            for i, title in enumerate(titles):
+                print(f"[{i}] {title}")
+            return titles[int(input("Enter commit number: "))]
 
 
 commit_regex = re.compile(r"(?P<type>.+): (?P<subject>.*)")
@@ -46,7 +69,7 @@ BODY = f"""\
 
 {commits}"""
 
-print("will create PR with following body:\n", BODY)
+print(f"will create PR with \ntitle: {title}\nbody:\n{BODY}")
 try:
     input("Press any key to continue...")
 except KeyboardInterrupt:

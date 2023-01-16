@@ -91,7 +91,7 @@ tasks.register("modthespire") {
             |
             |${changeSts}
             """.trimMargin(),
-        version = File("docs/changelog/version.txt").readText()
+        version = File("docs/changelog/version.txt").readText().trim()
     )
 
     configFile.writeText(gson.toJson(config))

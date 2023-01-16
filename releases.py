@@ -19,7 +19,7 @@ from typer import Argument, Typer
 BASE = Path("docs/changelog")
 
 CHANGELOG = BASE / "changelog.md"
-VERSION = (BASE / "version.txt").read_text()
+VERSION = (BASE / "version.txt").read_text().strip()
 
 CHANGELOG_TEXT = CHANGELOG.read_text()
 
@@ -52,6 +52,18 @@ def verify_jar_version():
     expected = VERSION
     actual = modjson["version"]
     assert expected == actual, f"{expected = } {actual = }"
+
+
+def verify_changelog_version():
+    """Verify changelog.md"""
+    CONFIG = Path(
+        "/home/scarf/Documents/SlayTheSpire/MarisaContinued/config.json"
+    ).read_text()
+
+    assert VERSION in CONFIG
+    assert VERSION in (BASE / "changelog.bbcode").read_text()
+    assert VERSION in (BASE / "changelog.sts.txt").read_text()
+    assert VERSION in CHANGELOG_TEXT
 
 
 def run_command(command: list[str], *, cwd=Path()):
@@ -103,6 +115,7 @@ app = Typer()
 @app.command(context_settings=dict(help_option_names=["-h", "--help"]))
 def main(command: Command = Argument(..., help=__doc__)):
     verify_jar_version()
+    verify_changelog_version()
 
     fx = Command.to_func(command)
     # pylint: disable-next=not-an-iterable

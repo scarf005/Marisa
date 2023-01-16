@@ -40,6 +40,9 @@ commits: Final = run(
 
 BODY = f"""\
 ## Summary
+- fixes #
+
+## Changelog
 
 {commits}"""
 

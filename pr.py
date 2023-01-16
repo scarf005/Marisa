@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import re
 import sys
 from subprocess import run
@@ -38,6 +40,9 @@ commits: Final = run(
 
 BODY = f"""\
 ## Summary
+- fixes #
+
+## Changelog
 
 {commits}"""
 

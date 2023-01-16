@@ -83,8 +83,8 @@
   "OrrerysSunPower": {
     "NAME": "太陽儀",
     "DESCRIPTIONS": [
-      "每當使用掉 #y蓄力 層數，對所有敵人造成 #b",
-      " 點傷害"
+      "每當使用掉 #y蓄力 層數，获得 #b",
+      " 点 格挡."
     ]
   },
   "Charged": {

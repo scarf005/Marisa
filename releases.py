@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
+
 """
 github: publish to github releases using github cli interface.
 steam: publish to steam workshop using mod-uploader.jar
 """
 
 import json
-import re
 import sys
 import zipfile
 from concurrent.futures import ProcessPoolExecutor

@@ -104,12 +104,8 @@ tasks.jar {
 }
 
 
-tasks.register<Copy>("move") {
+tasks.register("changelog") {
     dependsOn(tasks.jar)
-    into("${gameDir}/${modID}")
-
-    from(jarFile) { into("content") }
-    from("docs/thumbnail/image.jpg")
     file("$gameDir/${modID}/config.json")
         .writeText(gson.toJson(Config(changeNote = changeBBCode)))
 }

@@ -64,8 +64,8 @@ def github():
         *"gh release create".split(),
         # fmt: off
         "--verify-tag", f"v{VERSION}",
-        "--title", f"'{TITLE}'",
-        "--notes", f"'{BODY}'",
+        "--title", TITLE,
+        "--notes", BODY,
         # fmt: on
         # artifacts
         f"{str(JAR).removesuffix('/')}#MarisaContinued-{VERSION}.jar",

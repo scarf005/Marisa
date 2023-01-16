@@ -83,8 +83,8 @@
   "OrrerysSunPower": {
     "NAME": "Soleil planétaire",
     "DESCRIPTIONS": [
-      "Lorsque vous consommez une #yCharge, infligez  #b",
-      " à TOUS les ennemis."
+      "Lorsque vous consommez une #yCharge, gagnez  #b",
+      " d'Armure."
     ]
   },
   "Charged": {

@@ -17,12 +17,8 @@ class PropBagAction : AbstractGameAction() {
     }
 
     private fun relicWithCounters() =
-        listOf(
-            LetterOpener(),
-            Shuriken(),
-            Kunai(),
-            OrnamentalFan()
-        ).onEach(AbstractRelic::atTurnStart)
+        listOf(LetterOpener(), Shuriken(), Kunai(), OrnamentalFan())
+            .onEach(AbstractRelic::atTurnStart)
 
     private fun relics() = listOf(
         MeatOnTheBone(), MummifiedHand(), BlueCandle(), AmplifyWand(),

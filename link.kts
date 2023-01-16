@@ -15,6 +15,9 @@ fun Path.inode(): Long = Files.getAttribute(this, "unix:ino") as Long
 fun Path.forceCreateLinkTo(to: Path) {
     val target = to / fileName
 
+    println("${this.inode()} :: $this")
+    println("${target.inode()} :: $target")
+
     when {
         target.exists() && target.inode() == inode() -> return
         target.exists() -> target.deleteExisting()

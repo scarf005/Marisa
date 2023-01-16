@@ -1,14 +1,14 @@
 """
 github: publish to github releases using github cli interface.
 steam: publish to steam workshop using mod-uploader.jar
-both: publish to both github and steam workshop.
 """
 
 import json
+import re
 import sys
 import zipfile
 from concurrent.futures import ProcessPoolExecutor
-from enum import StrEnum, auto
+from enum import StrEnum
 from pathlib import Path
 from subprocess import run
 from typing import Callable, TypeVar
@@ -32,6 +32,7 @@ T = TypeVar("T")
 
 
 def apply(x: Callable[[], T]) -> T:
+    print(f"Running {x.__name__}")
     return x()
 
 
@@ -80,26 +81,19 @@ def steam():
 
 
 class Command(StrEnum):
-    STEAM = auto()
-    GITHUB = auto()
-    BOTH = auto()
+    STEAM = steam
+    GITHUB = github
 
 
 app = Typer()
 
 
 @app.command(context_settings=dict(help_option_names=["-h", "--help"]))
-def main(command: Command = Argument(..., help=__doc__)):
+def main(commands: list[Command] = Argument(..., help=__doc__)):
     verify_jar_version()
 
-    match command:
-        case Command.STEAM:
-            steam()
-        case Command.GITHUB:
-            github()
-        case Command.BOTH:
-            with ProcessPoolExecutor(2) as executor:
-                executor.map(apply, [steam, github])  # type: ignore
+    with ProcessPoolExecutor() as executor:
+        executor.map(apply, set(commands))  # type: ignore
 
 
 if __name__ == "__main__":

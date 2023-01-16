@@ -9,10 +9,10 @@ import json
 import sys
 import zipfile
 from concurrent.futures import ProcessPoolExecutor
-from enum import StrEnum
+from enum import StrEnum, auto
 from pathlib import Path
 from subprocess import run
-from typing import Callable, TypeVar
+from typing import Callable, Self, TypeVar
 
 from typer import Argument, Typer
 
@@ -30,9 +30,10 @@ JAR = zipfile.Path("build/libs/MarisaContinued.jar")
 MODINFO = JAR / "ModTheSpire.json"
 
 T = TypeVar("T")
+Fn = Callable[[], T]
 
 
-def apply(x: Callable[[], T]) -> T:
+def apply(x: Fn[T]) -> T:
     print(f"Running {x.__name__}")
     return x()
 
@@ -55,7 +56,6 @@ def verify_jar_version():
 
 def run_command(command: list[str], *, cwd=Path()):
     print(" ".join(command))
-    wait()
     run(command, cwd=cwd, check=True)
 
 
@@ -82,19 +82,35 @@ def steam():
 
 
 class Command(StrEnum):
-    STEAM = steam
-    GITHUB = github
+    STEAM = auto()
+    GITHUB = auto()
+    BOTH = auto()
+
+    @classmethod
+    def to_func(cls, command: Self) -> list[Fn[None]]:
+        match command:
+            case cls.STEAM:
+                return [steam]
+            case cls.GITHUB:
+                return [github]
+            case cls.BOTH:
+                return [steam, github]
 
 
 app = Typer()
 
 
 @app.command(context_settings=dict(help_option_names=["-h", "--help"]))
-def main(commands: list[Command] = Argument(..., help=__doc__)):
+def main(command: Command = Argument(..., help=__doc__)):
     verify_jar_version()
 
+    fx = Command.to_func(command)
+    # pylint: disable-next=not-an-iterable
+    names = ", ".join(f.__name__ for f in fx)
+    print(f"Will run the following commands: {names}")
+    wait()
     with ProcessPoolExecutor() as executor:
-        executor.map(apply, set(commands))  # type: ignore
+        executor.map(apply, fx)  # type: ignore
 
 
 if __name__ == "__main__":

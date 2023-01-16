@@ -16,19 +16,22 @@ class PropBagAction : AbstractGameAction() {
         duration = Settings.ACTION_DUR_FAST
     }
 
+    private fun relicWithCounters() =
+        listOf(LetterOpener(), Shuriken(), Kunai(), OrnamentalFan())
+            .onEach(AbstractRelic::atTurnStart)
+
+    private fun relics() = listOf(
+        MeatOnTheBone(), MummifiedHand(), BlueCandle(), AmplifyWand(),
+        GremlinHorn(), MercuryHourglass(), Sundial(),
+    )
+
     override fun update() {
         val p = AbstractDungeon.player
         logger.info("PropBagAction : Checking for relics")
 
-        val relics = listOf(
-            MeatOnTheBone(), MummifiedHand(), BlueCandle(), AmplifyWand(),
-            GremlinHorn(), MercuryHourglass(), Sundial(),
-            // use atTurnStart to reset counter
-            LetterOpener(), Shuriken(), Kunai(), OrnamentalFan(),
-        )
-            .onEach(AbstractRelic::atTurnStart)
+        val relics = (relics() + relicWithCounters())
             .filterNot { p.hasRelic(it.relicId) }
-        // TODO: refactor with Arrow
+
 
         when (relics.size) {
             0 -> {

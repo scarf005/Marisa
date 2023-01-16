@@ -91,7 +91,7 @@ tasks.register("modthespire") {
             |
             |${changeSts}
             """.trimMargin(),
-        version = File("docs/changelog/version.txt").readText()
+        version = File("docs/changelog/version.txt").readText().trim()
     )
 
     configFile.writeText(gson.toJson(config))
@@ -104,12 +104,8 @@ tasks.jar {
 }
 
 
-tasks.register<Copy>("move") {
+tasks.register("changelog") {
     dependsOn(tasks.jar)
-    into("${gameDir}/${modID}")
-
-    from(jarFile) { into("content") }
-    from("docs/thumbnail/image.jpg")
     file("$gameDir/${modID}/config.json")
         .writeText(gson.toJson(Config(changeNote = changeBBCode)))
 }

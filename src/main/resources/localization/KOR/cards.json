@@ -322,8 +322,8 @@
   },
   "BinaryStars": {
     "NAME": "쌍성",
-    "DESCRIPTION": "*흑섬광성 또는 *백색왜성 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "*흑섬광성+ 또는 *백색왜성+ 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다. NL 소멸."
+    "DESCRIPTION": "*흑섬광성 또는 *백색왜성 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다.",
+    "UPGRADE_DESCRIPTION": "*흑섬광성+ 또는 *백색왜성+ 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다."
   },
   "CollectingQuirk": {
     "NAME": "골동품 수집",

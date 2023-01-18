@@ -9,12 +9,13 @@ import json
 import sys
 import zipfile
 from concurrent.futures import ProcessPoolExecutor
+from dataclasses import dataclass
 from enum import StrEnum, auto
 from pathlib import Path
 from subprocess import run
 from typing import Callable, Self, TypeVar
 
-from typer import Argument, Typer
+from typer import Argument, Option, Typer
 
 BASE = Path("docs/changelog")
 
@@ -29,13 +30,23 @@ BODY = "\n".join(CHANGELOG_TEXT.splitlines()[2:])
 JAR = zipfile.Path("build/libs/MarisaContinued.jar")
 MODINFO = JAR / "ModTheSpire.json"
 
+
+@dataclass
+class Context:
+    verify_tag: bool
+
+
 T = TypeVar("T")
-Fn = Callable[[], T]
+Fn = Callable[[Context], T]
 
 
-def apply(x: Fn[T]) -> T:
-    print(f"Running {x.__name__}")
-    return x()
+@dataclass
+class Runner:
+    ctx: Context
+
+    def __call__(self, x: Fn[T]) -> T:
+        print(f"Running {x.__name__}")
+        return x(self.ctx)
 
 
 def wait():
@@ -57,7 +68,7 @@ def verify_jar_version():
 def verify_changelog_version():
     """Verify changelog.md"""
     CONFIG = Path(
-        "/home/scarf/Documents/SlayTheSpire/MarisaContinued/config.json"
+        "/home/scarf/.steam/steam/steamapps/common/SlayTheSpire/MarisaContinued/config.json"
     ).read_text()
 
     assert VERSION in CONFIG
@@ -71,21 +82,22 @@ def run_command(command: list[str], *, cwd=Path()):
     run(command, cwd=cwd, check=True)
 
 
-def github():
-    COMMAND = [
-        *"gh release create".split(),
-        # fmt: off
-        "--verify-tag", f"v{VERSION}",
+def github(ctx: Context):
+    GH = "gh release create".split()
+    VERIFY = ["--verify-tag"] if ctx.verify_tag else []
+    ARTIFACT = f"{str(JAR).removesuffix('/')}#MarisaContinued-{VERSION}.jar"
+    # fmt: off
+    COMMAND = GH + VERIFY + [
         "--title", TITLE,
         "--notes", BODY,
-        # fmt: on
-        # artifacts
-        f"{str(JAR).removesuffix('/')}#MarisaContinued-{VERSION}.jar",
+        f"v{VERSION}",
+        ARTIFACT,
     ]
+    # fmt: on
     run_command(COMMAND)
 
 
-def steam():
+def steam(_: Context):
     STS = Path("/home/scarf/Documents/SlayTheSpire/")
     COMMAND = "java -jar mod-uploader.jar upload -w MarisaContinued/".split(
         " "
@@ -113,17 +125,22 @@ app = Typer()
 
 
 @app.command(context_settings=dict(help_option_names=["-h", "--help"]))
-def main(command: Command = Argument(..., help=__doc__)):
+def main(
+    command: Command = Argument(..., help=__doc__),
+    verify_tag: bool = Option(True, help="Enforce tags to be in origin"),
+):
     verify_jar_version()
     verify_changelog_version()
 
     fx = Command.to_func(command)
+    ctx = Context(verify_tag=verify_tag)
+    runner = Runner(ctx)
     # pylint: disable-next=not-an-iterable
     names = ", ".join(f.__name__ for f in fx)
     print(f"Will run the following commands: {names}")
     wait()
     with ProcessPoolExecutor() as executor:
-        executor.map(apply, fx)  # type: ignore
+        executor.map(runner, fx)
 
 
 if __name__ == "__main__":

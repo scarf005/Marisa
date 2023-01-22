@@ -38,7 +38,7 @@
     "NAME": "Outil magique déchaîné",
     "FLAVOR": "Cela fait si longtemps que personne ne les a utilisés. Qui sait ce qui pourrait se passer ? ",
     "DESCRIPTIONS": [
-      "Gagnez [E] au début de chaque tour. NL Applique un debuff/buff aléatoire ( #b2 #yFrêle , #b2 #yFaiblesse , #b2 #yVulnérabilité , #b3 #yPoison , #b8 #yCharge ) à vous même au début de chaque tour."
+      "Gagnez [E] au début de chaque tour. NL Applique un debuff/buff aléatoire ( #b1 #yFrêle , #b1 #yFaiblesse , #b1 #yVulnérabilité , #b2 #yPoison , #b8 #yCharge ) à vous même au début de chaque tour."
     ]
   },
   "ExperimentalFamiliar": {

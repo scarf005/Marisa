@@ -5,9 +5,14 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
-import com.megacrit.cardcrawl.powers.*
+import com.megacrit.cardcrawl.powers.FrailPower
+import com.megacrit.cardcrawl.powers.PoisonPower
+import com.megacrit.cardcrawl.powers.VulnerablePower
+import com.megacrit.cardcrawl.powers.WeakPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.p
 import marisa.powers.Marisa.ChargeUpPower
+import marisa.random
 
 class RampagingMagicTools : CustomRelic(
     ID,
@@ -28,43 +33,25 @@ class RampagingMagicTools : CustomRelic(
         AbstractDungeon.player.energy.energyMaster -= 1
     }
 
-    override fun atBattleStart() {
-        val rng = AbstractDungeon.miscRng.random(0, 4)
-        var pow: AbstractPower? = null
-        var stc = STACK
-        val p = AbstractDungeon.player
-        when (rng) {
-            0 -> pow = FrailPower(p, stc, false)
-            1 -> pow = WeakPower(p, stc, false)
-            2 -> pow = VulnerablePower(p, stc, false)
-            3 -> {
-                stc = STACK_POISON
-                pow = PoisonPower(p, p, stc)
-            }
+    private fun effects() = listOf(
+        FrailPower(p, STACK_DEBUFF, false),
+        WeakPower(p, STACK_DEBUFF, false),
+        VulnerablePower(p, STACK_DEBUFF, false),
+        PoisonPower(p, p, STACK_POISON),
+        ChargeUpPower(p, STACK_CHARGE),
+    )
 
-            4 -> {
-                stc = STCS_H
-                pow = ChargeUpPower(p, stc)
-            }
-
-            else -> {}
-        }
-        if (pow != null) {
-            addToBot(
-                RelicAboveCreatureAction(AbstractDungeon.player, this)
-            )
-            addToBot(
-                ApplyPowerAction(p, p, pow, stc)
-            )
-        }
-    }
+    override fun atBattleStart() = marisa.addToBot(
+        RelicAboveCreatureAction(p, this),
+        ApplyPowerAction(p, p, effects().random()),
+    )
 
     companion object {
         const val ID = "RampagingMagicTools"
         private const val IMG = "img/relics/RamTool.png"
         private const val IMG_OTL = "img/relics/outline/RamTool.png"
-        private const val STACK = 2
-        private const val STACK_POISON = 3
-        private const val STCS_H = 8
+        private const val STACK_DEBUFF = 1
+        private const val STACK_POISON = 2
+        private const val STACK_CHARGE = 8
     }
 }

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.powers.RegenPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import com.megacrit.cardcrawl.relics.DeadBranch
 import marisa.p
 
 class SproutingBranch : CustomRelic(
@@ -21,7 +22,7 @@ class SproutingBranch : CustomRelic(
     override fun makeCopy(): AbstractRelic = SproutingBranch()
 
     override fun onEquip() {
-        AbstractDungeon.rareRelicPool.remove("Dead Branch")
+        AbstractDungeon.rareRelicPool.remove(DeadBranch.ID)
     }
 
     override fun atBattleStart() {

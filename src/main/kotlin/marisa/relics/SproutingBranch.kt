@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.powers.RegenPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import com.megacrit.cardcrawl.relics.DeadBranch
+import marisa.p
 
 class SproutingBranch : CustomRelic(
     ID,
@@ -20,20 +22,13 @@ class SproutingBranch : CustomRelic(
     override fun makeCopy(): AbstractRelic = SproutingBranch()
 
     override fun onEquip() {
-        AbstractDungeon.rareRelicPool.remove("Dead Branch")
+        AbstractDungeon.rareRelicPool.remove(DeadBranch.ID)
     }
 
     override fun atBattleStart() {
-        addToBot(
-            RelicAboveCreatureAction(AbstractDungeon.player, this)
-        )
-        addToBot(
-            ApplyPowerAction(
-                AbstractDungeon.player,
-                AbstractDungeon.player,
-                RegenPower(AbstractDungeon.player, 5),
-                5
-            )
+        marisa.addToBot(
+            RelicAboveCreatureAction(p, this),
+            ApplyPowerAction(p, p, RegenPower(p, REGEN)),
         )
     }
 
@@ -41,5 +36,6 @@ class SproutingBranch : CustomRelic(
         const val ID = "SproutingBranch"
         private const val IMG = "img/relics/sproutingBranch.png"
         private const val IMG_OTL = "img/relics/outline/sproutingBranch.png"
+        private const val REGEN = 4
     }
 }

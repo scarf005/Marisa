@@ -38,7 +38,7 @@
     "NAME": "Rampaging Magic Tool",
     "FLAVOR": "It's been so long since anyone last used them. Who knows what could happen?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of each turn. NL Apply a random debuff/buff ( #b2 #yFrail , #b2 #yWeak , #b2 #yVulnerable , #b3 #yPoison , #b8 #yCharge-up )to you at the start of each combat."
+      "Gain [E] at the start of each turn. NL Apply a random debuff/buff ( #b1 #yFrail , #b1 #yWeak , #b1 #yVulnerable , #b2 #yPoison , #b8 #yCharge-up )to you at the start of each combat."
     ]
   },
   "ExperimentalFamiliar": {

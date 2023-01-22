@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.powers.RegenPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.p
 
 class SproutingBranch : CustomRelic(
     ID,
@@ -24,15 +25,9 @@ class SproutingBranch : CustomRelic(
     }
 
     override fun atBattleStart() {
-        addToBot(
-            RelicAboveCreatureAction(AbstractDungeon.player, this)
-        )
-        addToBot(
-            ApplyPowerAction(
-                AbstractDungeon.player,
-                AbstractDungeon.player,
-                RegenPower(AbstractDungeon.player, REGEN),
-            )
+        marisa.addToBot(
+            RelicAboveCreatureAction(p, this),
+            ApplyPowerAction(p, p, RegenPower(p, REGEN)),
         )
     }
 

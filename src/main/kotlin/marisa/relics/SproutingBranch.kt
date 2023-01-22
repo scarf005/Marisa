@@ -31,8 +31,7 @@ class SproutingBranch : CustomRelic(
             ApplyPowerAction(
                 AbstractDungeon.player,
                 AbstractDungeon.player,
-                RegenPower(AbstractDungeon.player, 5),
-                5
+                RegenPower(AbstractDungeon.player, REGEN),
             )
         )
     }
@@ -41,5 +40,6 @@ class SproutingBranch : CustomRelic(
         const val ID = "SproutingBranch"
         private const val IMG = "img/relics/sproutingBranch.png"
         private const val IMG_OTL = "img/relics/outline/sproutingBranch.png"
+        private const val REGEN = 4
     }
 }

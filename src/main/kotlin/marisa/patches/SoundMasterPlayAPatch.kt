@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.core.Settings
 )
 object SoundMasterPlayAPatch {
     private val sounds = mapOf(
-        "SELECT_MRS" to load("se_pldead00.ogg")
+        "SELECT_MRS" to load("coin.ogg")
     )
 
     @JvmStatic

@@ -61,10 +61,6 @@ class BlazeAway : CustomCard(
         if (!upgraded) {
             upgradeMagicNumber(UPG_NUM)
             upgradeName()
-            //upgradeBaseCost(0);
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-            //this.exhaust = false;
         }
     }
 

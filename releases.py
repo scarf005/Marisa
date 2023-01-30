@@ -138,7 +138,10 @@ def main(
     print(f"Will run the following commands: {names}")
     wait()
     with ProcessPoolExecutor() as executor:
-        executor.map(runner, fx)
+        result = executor.map(runner, fx)
+
+        for r in result:
+            print(r)
 
 
 if __name__ == "__main__":

@@ -23,3 +23,8 @@ fun ApplyPowerToPlayerAction(powerClass: KClass<out AbstractPower>) =
 
 fun AbstractPower.RemoveSelfAction(): RemoveSpecificPowerAction =
     RemoveSpecificPowerAction(owner, owner, this)
+
+fun AbstractGameAction.updateContext(block: () -> Unit) {
+    block()
+    isDone = true
+}

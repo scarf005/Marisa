@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.CardQueueItem
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import marisa.MarisaContinued
+import marisa.updateContext
 
 class BlazeAwayAction(val card: AbstractCard) : AbstractGameAction() {
 
@@ -17,8 +18,8 @@ class BlazeAwayAction(val card: AbstractCard) : AbstractGameAction() {
         MarisaContinued.logger.info("BlazeAwayAction : Initialize complete ; card : ${card.name}")
     }
 
-    override fun update() {
-        val target = AbstractDungeon.getMonsters().getRandomMonster(true)
+    override fun update() = updateContext {
+        val target = AbstractDungeon.getMonsters().getRandomMonster(true) ?: return@updateContext
 
         AbstractDungeon.player.limbo.group.add(card)
         card.apply {
@@ -42,6 +43,5 @@ class BlazeAwayAction(val card: AbstractCard) : AbstractGameAction() {
             cardQueue.add(CardQueueItem(card, target))
             addToTop(WaitAction(duration))
         }
-        isDone = true
     }
 }

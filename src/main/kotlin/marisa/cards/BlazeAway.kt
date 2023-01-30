@@ -41,18 +41,18 @@ class BlazeAway : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        lastAttack()?.let { last ->
-            MarisaContinued.logger.info("""BlazeAway : last attack :${last.cardID}""")
-            val card = last.makeStatEquivalentCopy()
-                .also {
-                    MarisaContinued.logger.info(
-                        """BlazeAway: card :$cardID; 
+        val last = lastAttack() ?: return
+
+        MarisaContinued.logger.info("""BlazeAway : last attack :${last.cardID}""")
+        val card = last.makeStatEquivalentCopy()
+            .also {
+                MarisaContinued.logger.info(
+                    """BlazeAway: card :$cardID; 
                             |baseD :$baseDamage; Damage: $damage; baseB :$baseBlock ; B : $block ; 
                             |baseM :$baseMagicNumber ; M : $magicNumber ; C : $cost ; CFT : $costForTurn""".trimMargin()
-                    )
-                }
-            repeat(magicNumber) { addToBot(BlazeAwayAction(card)) }
-        }
+                )
+            }
+        repeat(magicNumber) { addToBot(BlazeAwayAction(card)) }
     }
 
     override fun makeCopy(): AbstractCard = BlazeAway()
@@ -61,10 +61,6 @@ class BlazeAway : CustomCard(
         if (!upgraded) {
             upgradeMagicNumber(UPG_NUM)
             upgradeName()
-            //upgradeBaseCost(0);
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-            //this.exhaust = false;
         }
     }
 

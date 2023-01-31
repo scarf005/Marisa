@@ -80,11 +80,14 @@ run gradle task to copy jar into your steam mods folder.
 
 ## [Credits][original-credit]
 
+See [lf201014/STS_ThMod_MRS#credits][original-credit] for details.
+
 ## License
 
-License under [`src/main/kotlin/marisa`](./src/main/kotlin/marisa/):
+- Source code: MIT License
+- Resources: CC-BY-NC-SA 4.0.
 
-[MIT](src/main/kotlin/marisa/LICENSE)
+See [LICENSE](LICENSE) for details.
 
 [original]: https://steamcommunity.com/sharedfiles/filedetails/?id=1614104912
 [original-github]: https://github.com/lf201014/STS_ThMod_MRS

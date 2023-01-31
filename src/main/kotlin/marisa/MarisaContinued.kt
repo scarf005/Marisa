@@ -300,9 +300,6 @@ class MarisaContinued :
 
         @JvmStatic
         val randomMarisaCard: AbstractCard
-            get() = when (AbstractDungeon.miscRng.random(0, 100)) {
-                15 -> GuidingStar()
-                else -> AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
-            }
+            get() = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
     }
 }

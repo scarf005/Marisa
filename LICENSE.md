@@ -24,7 +24,7 @@ Source code of this project is licensed under [MIT][mit].
 
 #### Images(`img/`)
 
-With the confirmation from former project lead (@lf201014), project resources are licensed under [CC BY-NC-SA 4.0][cc-by-nc-sa].
+With the confirmation from former project lead ([@lf201014](https:github.com/lf201014)), project resources are licensed under [CC BY-NC-SA 4.0][cc-by-nc-sa].
 
 Project resources includes, but not limited to:
 

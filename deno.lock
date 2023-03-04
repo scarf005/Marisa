@@ -24,9 +24,14 @@
   },
   "npm": {
     "specifiers": {
+      "iter-ops": "iter-ops@3.0.7",
       "to-json-schema": "to-json-schema@0.2.5"
     },
     "packages": {
+      "iter-ops@3.0.7": {
+        "integrity": "sha512-D1oYcUhixPfn3vgJ48SQyJQiMSx2XMb7dViEiBLsxiG7VShuyj86RudFhoIMxA6UZMByIt7bYnwHLK5IL5ZSWw==",
+        "dependencies": {}
+      },
       "lodash.isequal@4.5.0": {
         "integrity": "sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==",
         "dependencies": {}

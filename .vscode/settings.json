@@ -1,4 +1,13 @@
 {
   "deno.enable": true,
-  "conventionalCommits.scopes": ["github", "README", "L10n"]
+  "deno.lint": true,
+  "deno.config": "./deno.jsonc",
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "conventionalCommits.scopes": [
+    "github",
+    "README",
+    "L10n"
+  ]
 }

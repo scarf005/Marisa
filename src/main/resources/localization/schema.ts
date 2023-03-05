@@ -26,7 +26,7 @@ function writeJsonSchema(schemaCode: string, name: string) {
 
   return Deno.writeTextFile(
     file,
-    JSON.stringify(schema, null, 2),
+    JSON.stringify(schema, null, 2) + "\n",
   )
 }
 function writeZodCode(schemaCode: string, name: string) {

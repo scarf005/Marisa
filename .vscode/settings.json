@@ -9,5 +9,73 @@
     "github",
     "README",
     "L10n"
+  ],
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "src/main/resources/localization/ENG/keywords.json",
+        "src/main/resources/localization/FRA/keywords.json",
+        "src/main/resources/localization/JPN/keywords.json",
+        "src/main/resources/localization/KOR/keywords.json",
+        "src/main/resources/localization/ZHS/keywords.json",
+        "src/main/resources/localization/ZHT/keywords.json"
+      ],
+      "url": "./src/main/resources/localization/schemas/keywords.json"
+    },
+    {
+      "fileMatch": [
+        "src/main/resources/localization/ENG/events.json",
+        "src/main/resources/localization/FRA/events.json",
+        "src/main/resources/localization/JPN/events.json",
+        "src/main/resources/localization/KOR/events.json",
+        "src/main/resources/localization/ZHS/events.json",
+        "src/main/resources/localization/ZHT/events.json"
+      ],
+      "url": "./src/main/resources/localization/schemas/events.json"
+    },
+    {
+      "fileMatch": [
+        "src/main/resources/localization/ENG/cards.json",
+        "src/main/resources/localization/FRA/cards.json",
+        "src/main/resources/localization/JPN/cards.json",
+        "src/main/resources/localization/KOR/cards.json",
+        "src/main/resources/localization/ZHS/cards.json",
+        "src/main/resources/localization/ZHT/cards.json"
+      ],
+      "url": "./src/main/resources/localization/schemas/cards.json"
+    },
+    {
+      "fileMatch": [
+        "src/main/resources/localization/ENG/relics.json",
+        "src/main/resources/localization/FRA/relics.json",
+        "src/main/resources/localization/JPN/relics.json",
+        "src/main/resources/localization/KOR/relics.json",
+        "src/main/resources/localization/ZHS/relics.json",
+        "src/main/resources/localization/ZHT/relics.json"
+      ],
+      "url": "./src/main/resources/localization/schemas/relics.json"
+    },
+    {
+      "fileMatch": [
+        "src/main/resources/localization/ENG/powers.json",
+        "src/main/resources/localization/FRA/powers.json",
+        "src/main/resources/localization/JPN/powers.json",
+        "src/main/resources/localization/KOR/powers.json",
+        "src/main/resources/localization/ZHS/powers.json",
+        "src/main/resources/localization/ZHT/powers.json"
+      ],
+      "url": "./src/main/resources/localization/schemas/powers.json"
+    },
+    {
+      "fileMatch": [
+        "src/main/resources/localization/ENG/potions.json",
+        "src/main/resources/localization/FRA/potions.json",
+        "src/main/resources/localization/JPN/potions.json",
+        "src/main/resources/localization/KOR/potions.json",
+        "src/main/resources/localization/ZHS/potions.json",
+        "src/main/resources/localization/ZHT/potions.json"
+      ],
+      "url": "./src/main/resources/localization/schemas/potions.json"
+    }
   ]
 }

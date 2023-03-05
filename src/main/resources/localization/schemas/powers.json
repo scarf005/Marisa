@@ -1,0 +1,1104 @@
+{
+  "type": "object",
+  "properties": {
+    "DarkMatterPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "ExtraDraw": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "EventHorizonPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "IllusionStarPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "MilliPulsaPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "SatellIllusPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "TempStrength": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "TempStrengthLoss": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "ExtraEnergyPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "ChargeUpPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "PolarisUniquePower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "OrrerysSunPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "Charged": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "BlazeAwayPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "MPPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "EnergyFlowPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "PulseMagicPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "SingularityPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "WitchOfGreedGold": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "WitchOfGreedPotion": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "OneTimeOffPlusPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "OneTimeOffPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "SuperNovaPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "CasketOfStarPlusPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "CasketOfStarPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "GalacticHaloPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "ManaRampagePower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "PropBagPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "UltraShortWavePower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "DarkSparkPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "MagicChantPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "SatelIllusPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "GrandCrossPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "Diaspora": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "TalismanPower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "Wraith": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "Nebula": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "LimboContact": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "InfernoClaw": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "WWWWWWWWWWWWW": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "DarkMatterPower",
+    "ExtraDraw",
+    "EventHorizonPower",
+    "IllusionStarPower",
+    "MilliPulsaPower",
+    "SatellIllusPower",
+    "TempStrength",
+    "TempStrengthLoss",
+    "ExtraEnergyPower",
+    "ChargeUpPower",
+    "PolarisUniquePower",
+    "OrrerysSunPower",
+    "Charged",
+    "BlazeAwayPower",
+    "MPPower",
+    "EnergyFlowPower",
+    "PulseMagicPower",
+    "SingularityPower",
+    "WitchOfGreedGold",
+    "WitchOfGreedPotion",
+    "OneTimeOffPlusPower",
+    "OneTimeOffPower",
+    "SuperNovaPower",
+    "CasketOfStarPlusPower",
+    "CasketOfStarPower",
+    "GalacticHaloPower",
+    "ManaRampagePower",
+    "PropBagPower",
+    "UltraShortWavePower",
+    "DarkSparkPower",
+    "MagicChantPower",
+    "SatelIllusPower",
+    "GrandCrossPower",
+    "Diaspora",
+    "TalismanPower",
+    "Wraith",
+    "Nebula",
+    "LimboContact",
+    "InfernoClaw",
+    "WWWWWWWWWWWWW"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

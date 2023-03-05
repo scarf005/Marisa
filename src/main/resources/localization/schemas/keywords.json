@@ -1,0 +1,207 @@
+{
+  "type": "object",
+  "properties": {
+    "keywords": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "NAMES": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "DESCRIPTION": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "NAMES",
+            "DESCRIPTION"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "keywords"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

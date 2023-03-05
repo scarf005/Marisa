@@ -16,49 +16,49 @@
       "NAMES": [
         "力竭"
       ],
-      "DESCRIPTION":"力竭会使你无法获得或使用 蓄力"
+      "DESCRIPTION": "力竭会使你无法获得或使用 蓄力"
     },
     {
       "NAMES": [
         "火花"
       ],
-      "DESCRIPTION":"火花是费用为 #b0 并且会 消耗 的攻击牌"
+      "DESCRIPTION": "火花是费用为 #b0 并且会 消耗 的攻击牌"
     },
     {
       "NAMES": [
         "蓄力"
       ],
-      "DESCRIPTION":"每 #b8 层蓄力会使你的下一次攻击伤害翻一倍"
+      "DESCRIPTION": "每 #b8 层蓄力会使你的下一次攻击伤害翻一倍"
     },
     {
       "NAMES": [
         "增幅"
       ],
-      "DESCRIPTION":"当费用足够时，支付额外 [E] 发动其效果"
+      "DESCRIPTION": "当费用足够时，支付额外 [E] 发动其效果"
     },
     {
       "NAMES": [
         "黑耀星"
       ],
-      "DESCRIPTION":"黑耀星是通过丢弃手牌来获得护甲的 #b0 费技能牌。"
+      "DESCRIPTION": "黑耀星是通过丢弃手牌来获得护甲的 #b0 费技能牌。"
     },
     {
       "NAMES": [
         "白矮星"
       ],
-      "DESCRIPTION":"白矮星是根据你弃牌堆大小来造成伤害的 #b0 费攻击牌。"
+      "DESCRIPTION": "白矮星是根据你弃牌堆大小来造成伤害的 #b0 费攻击牌。"
     },
     {
       "NAMES": [
         "怨灵"
       ],
-      "DESCRIPTION":"怨灵是会在回合开始之后随机 #y消耗 掉你一张手牌的负面状态。"
+      "DESCRIPTION": "怨灵是会在回合开始之后随机 #y消耗 掉你一张手牌的负面状态。"
     },
     {
       "NAMES": [
         "WWWWWWWWWWWWWWWWWWW"
       ],
-      "DESCRIPTION":"WWWWWWWWWWWWWWWWWWWWW"
+      "DESCRIPTION": "WWWWWWWWWWWWWWWWWWWWW"
     }
   ]
 }

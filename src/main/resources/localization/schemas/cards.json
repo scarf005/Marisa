@@ -1,0 +1,1883 @@
+{
+  "type": "object",
+  "properties": {
+    "Strike_MRS": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Defend_MRS": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "AsteroidBelt": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "BigCrunch": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "BlazingStar": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "DarkSpark": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "DeepEcoloBomb": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "DoubleSpark": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "EarthLightRay": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "EscapeVelocity": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "FinalSpark": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "GrandCross": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "GravityBeat": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "IllusionStar": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MachineGunSpark": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MagicAbsorber": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MasterSpark": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MeteoricShower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MilkyWay": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "NonDirectionalLaser": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Occultation": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "OortCloud": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "PolarisUnique": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "SatelliteIllusion": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "ShootTheMoon": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "StarDustReverie": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "UltraShortWave": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MillisecondPulsars": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Spark": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "UpSweep": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "GuidingStar": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "OrrerysSun": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "ChargingUp": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "LuminesStrike": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "OpenUniverse": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "BlazeAway": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MaximisePower": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "StarlightTyphoon": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "StarlightTyphoon_D": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "SuperPerseids": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MysteriousBeam": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "ShootingEcho": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "EnergyFlow": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "PowerUp": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "WitchLeyline": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "JA": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "AbsoluteMagnitude": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "DragonMeteor": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "EventHorizon": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "PulseMagic": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "DC": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Singularity": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "SporeBomb": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "FluorensentBeam": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "WitchOfGreed": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "TreasureHunter": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Robbery": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "6A": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "CircumpolarStar": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "RefractionSpark": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "MagicChant": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "UnstableBomb": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "SuperNova": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "OneTimeOff": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "DarkMatter": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "GasGiant": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "CasketOfStar": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "ChargeUpSpray": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "EnergyRecoil": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "GalacticHalo": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "ManaConvection": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "ManaRampage": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "StarBarrage": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "AFriendsGift": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "BinaryStars": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "CollectingQuirk": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "FungusSplash": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "PropBag": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "BlackFlareStar": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "WhiteDwarf": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        },
+        "EXTENDED_DESCRIPTION": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION",
+        "EXTENDED_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "FairyDestructionRay": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Orbital": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "SillyJoke": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        },
+        "UPGRADE_DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION",
+        "UPGRADE_DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "ExplosiveMarionette": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "OpticalCamouflage": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "FiveColoredTalisman": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "AlicesGift": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Exhaustion_MRS": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "UltimateShortwave": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "NebulaRing": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "SprinkleStarSeal": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Wraith": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    },
+    "Acceleration": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "DESCRIPTION": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "NAME",
+        "DESCRIPTION"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "Strike_MRS",
+    "Defend_MRS",
+    "AsteroidBelt",
+    "BigCrunch",
+    "BlazingStar",
+    "DarkSpark",
+    "DeepEcoloBomb",
+    "DoubleSpark",
+    "EarthLightRay",
+    "EscapeVelocity",
+    "FinalSpark",
+    "GrandCross",
+    "GravityBeat",
+    "IllusionStar",
+    "MachineGunSpark",
+    "MagicAbsorber",
+    "MasterSpark",
+    "MeteoricShower",
+    "MilkyWay",
+    "NonDirectionalLaser",
+    "Occultation",
+    "OortCloud",
+    "PolarisUnique",
+    "SatelliteIllusion",
+    "ShootTheMoon",
+    "StarDustReverie",
+    "UltraShortWave",
+    "MillisecondPulsars",
+    "Spark",
+    "UpSweep",
+    "GuidingStar",
+    "OrrerysSun",
+    "ChargingUp",
+    "LuminesStrike",
+    "OpenUniverse",
+    "BlazeAway",
+    "MaximisePower",
+    "StarlightTyphoon",
+    "StarlightTyphoon_D",
+    "SuperPerseids",
+    "MysteriousBeam",
+    "ShootingEcho",
+    "EnergyFlow",
+    "PowerUp",
+    "WitchLeyline",
+    "JA",
+    "AbsoluteMagnitude",
+    "DragonMeteor",
+    "EventHorizon",
+    "PulseMagic",
+    "DC",
+    "Singularity",
+    "SporeBomb",
+    "FluorensentBeam",
+    "WitchOfGreed",
+    "TreasureHunter",
+    "Robbery",
+    "6A",
+    "CircumpolarStar",
+    "RefractionSpark",
+    "MagicChant",
+    "UnstableBomb",
+    "SuperNova",
+    "OneTimeOff",
+    "DarkMatter",
+    "GasGiant",
+    "CasketOfStar",
+    "ChargeUpSpray",
+    "EnergyRecoil",
+    "GalacticHalo",
+    "ManaConvection",
+    "ManaRampage",
+    "StarBarrage",
+    "AFriendsGift",
+    "BinaryStars",
+    "CollectingQuirk",
+    "FungusSplash",
+    "PropBag",
+    "BlackFlareStar",
+    "WhiteDwarf",
+    "FairyDestructionRay",
+    "Orbital",
+    "SillyJoke",
+    "ExplosiveMarionette",
+    "OpticalCamouflage",
+    "FiveColoredTalisman",
+    "AlicesGift",
+    "Exhaustion_MRS",
+    "UltimateShortwave",
+    "NebulaRing",
+    "SprinkleStarSeal",
+    "Wraith",
+    "Acceleration"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

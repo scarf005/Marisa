@@ -24,45 +24,54 @@
     },
     {
       "NAMES": [
-        "Exhaustion", "exhaustion"
+        "Exhaustion",
+        "exhaustion"
       ],
-      "DESCRIPTION":"Exhaustion prevent you from gaining or using Charge-Up ."
+      "DESCRIPTION": "Exhaustion prevent you from gaining or using Charge-Up ."
     },
     {
       "NAMES": [
-        "Spark", "spark"
+        "Spark",
+        "spark"
       ],
-      "DESCRIPTION":"Spark is an attack card costs #b0 energy and exhausts upon use."
+      "DESCRIPTION": "Spark is an attack card costs #b0 energy and exhausts upon use."
     },
     {
       "NAMES": [
-        "Charge-up", "charge-up", "chargeup", "ChargeUp"
+        "Charge-up",
+        "charge-up",
+        "chargeup",
+        "ChargeUp"
       ],
-      "DESCRIPTION":"For every #b8 stacks,double the damage of your next Attack."
+      "DESCRIPTION": "For every #b8 stacks,double the damage of your next Attack."
     },
     {
       "NAMES": [
-        "Black Flare Star","black flare star"
+        "Black Flare Star",
+        "black flare star"
       ],
-      "DESCRIPTION":"Black Flare Star is a skill card costs #b0 and grants you Block by discarding cards."
+      "DESCRIPTION": "Black Flare Star is a skill card costs #b0 and grants you Block by discarding cards."
     },
     {
       "NAMES": [
-        "White Dwarf","white dwarf"
+        "White Dwarf",
+        "white dwarf"
       ],
-      "DESCRIPTION":"White Dwarf is a attack card costs #b0 and deals damage depending on the size of your discard pile."
+      "DESCRIPTION": "White Dwarf is a attack card costs #b0 and deals damage depending on the size of your discard pile."
     },
     {
       "NAMES": [
-        "Wraith","wraith"
+        "Wraith",
+        "wraith"
       ],
-      "DESCRIPTION":"Wraith will exhaust a random card in your hand after the start of your turn."
+      "DESCRIPTION": "Wraith will exhaust a random card in your hand after the start of your turn."
     },
     {
       "NAMES": [
-        "WWWWWWWWWWWWWWWWWWW","WWWWWWWWWWWWWWWWW"
+        "WWWWWWWWWWWWWWWWWWW",
+        "WWWWWWWWWWWWWWWWW"
       ],
-      "DESCRIPTION":"WWWWWWWWWWWWWWWWWWWWW"
+      "DESCRIPTION": "WWWWWWWWWWWWWWWWWWWWW"
     }
   ]
 }

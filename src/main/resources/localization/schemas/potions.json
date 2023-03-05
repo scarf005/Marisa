@@ -81,39 +81,12 @@
         "DESCRIPTIONS"
       ],
       "additionalProperties": false
-    },
-    "WWWWWW": {
-      "type": "object",
-      "properties": {
-        "NAME": {
-          "type": "string"
-        },
-        "DESCRIPTIONS": {
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
-          "items": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "required": [
-        "NAME",
-        "DESCRIPTIONS"
-      ],
-      "additionalProperties": false
     }
   },
   "required": [
     "ShroomBrew",
     "BottledSpark",
-    "StarNLove",
-    "WWWWWW"
+    "StarNLove"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

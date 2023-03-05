@@ -437,12 +437,9 @@
         },
         "DESCRIPTIONS": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": [
-            {
-              "type": "string"
-            },
             {
               "type": "string"
             }
@@ -541,12 +538,9 @@
         },
         "DESCRIPTIONS": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": [
-            {
-              "type": "string"
-            },
             {
               "type": "string"
             }
@@ -567,12 +561,9 @@
         },
         "DESCRIPTIONS": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": [
-            {
-              "type": "string"
-            },
             {
               "type": "string"
             }
@@ -856,12 +847,9 @@
         },
         "DESCRIPTIONS": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": [
-            {
-              "type": "string"
-            },
             {
               "type": "string"
             }
@@ -934,12 +922,9 @@
         },
         "DESCRIPTIONS": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": [
-            {
-              "type": "string"
-            },
             {
               "type": "string"
             }
@@ -986,12 +971,9 @@
         },
         "DESCRIPTIONS": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": [
-            {
-              "type": "string"
-            },
             {
               "type": "string"
             }
@@ -1012,38 +994,9 @@
         },
         "DESCRIPTIONS": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
+          "minItems": 1,
+          "maxItems": 1,
           "items": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "required": [
-        "NAME",
-        "DESCRIPTIONS"
-      ],
-      "additionalProperties": false
-    },
-    "WWWWWWWWWWWWW": {
-      "type": "object",
-      "properties": {
-        "NAME": {
-          "type": "string"
-        },
-        "DESCRIPTIONS": {
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
-          "items": [
-            {
-              "type": "string"
-            },
             {
               "type": "string"
             }
@@ -1096,8 +1049,7 @@
     "Wraith",
     "Nebula",
     "LimboContact",
-    "InfernoClaw",
-    "WWWWWWWWWWWWW"
+    "InfernoClaw"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

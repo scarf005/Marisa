@@ -89,15 +89,11 @@
         },
         "DESCRIPTION": {
           "type": "string"
-        },
-        "UPGRADE_DESCRIPTION": {
-          "type": "string"
         }
       },
       "required": [
         "NAME",
-        "DESCRIPTION",
-        "UPGRADE_DESCRIPTION"
+        "DESCRIPTION"
       ],
       "additionalProperties": false
     },
@@ -469,15 +465,11 @@
         },
         "DESCRIPTION": {
           "type": "string"
-        },
-        "UPGRADE_DESCRIPTION": {
-          "type": "string"
         }
       },
       "required": [
         "NAME",
-        "DESCRIPTION",
-        "UPGRADE_DESCRIPTION"
+        "DESCRIPTION"
       ],
       "additionalProperties": false
     },

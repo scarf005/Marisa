@@ -21,8 +21,7 @@
   },
   "DarkSpark": {
     "NAME": "Étincelle sombre",
-    "DESCRIPTION": "Épuisez toutes les cartes de votre main (sauf Attaques). NL Infligez !D! dégâts à TOUS les ennemis.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": "Épuisez toutes les cartes de votre main (sauf Attaques). NL Infligez !D! dégâts à TOUS les ennemis."
   },
   "DeepEcoloBomb": {
     "NAME": "Bombe écologique",
@@ -113,8 +112,7 @@
   },
   "ShootTheMoon": {
     "NAME": "Viser la lune",
-    "DESCRIPTION": "Retirez un buff aléatoirement si votre ennemi n'est pas un boss. Infligez !D! dégâts. NL Amplifier  [E]  : Retirez TOUS les buffs et infligez !B! dégâts.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": "Retirez un buff aléatoirement si votre ennemi n'est pas un boss. Infligez !D! dégâts. NL Amplifier  [E]  : Retirez TOUS les buffs et infligez !B! dégâts."
   },
   "StarDustReverie": {
     "NAME": "Rêverie d'étoiles",
@@ -441,8 +439,8 @@
     "NAME": "Spectre",
     "DESCRIPTION": "Injouable. NL À la fin de votre tour, gagnez 1 Spectre ."
   },
-  "WWWWWWWWWWWWWW": {
-    "NAME": "WWWWWWWWWWW",
-    "DESCRIPTION": "WWWWWWWWWWW"
+  "Acceleration": {
+    "NAME": "Accélération",
+    "DESCRIPTION": "Tirez les !B! cartes supérieures de votre pioche. NL Amplifier  [E] : Piochez !M ! de plus."
   }
 }

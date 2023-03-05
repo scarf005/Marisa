@@ -67,7 +67,7 @@ export const schema = z.object({
   }).strict(),
   "PulseMagicPower": z.object({
     "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
+    "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
   "SingularityPower": z.object({
     "NAME": z.string(),
@@ -83,11 +83,11 @@ export const schema = z.object({
   }).strict(),
   "OneTimeOffPlusPower": z.object({
     "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
+    "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
   "OneTimeOffPower": z.object({
     "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
+    "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
   "SuperNovaPower": z.object({
     "NAME": z.string(),
@@ -131,7 +131,7 @@ export const schema = z.object({
   }).strict(),
   "GrandCrossPower": z.object({
     "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
+    "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
   "Diaspora": z.object({
     "NAME": z.string(),
@@ -143,7 +143,7 @@ export const schema = z.object({
   }).strict(),
   "Wraith": z.object({
     "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
+    "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
   "Nebula": z.object({
     "NAME": z.string(),
@@ -151,14 +151,10 @@ export const schema = z.object({
   }).strict(),
   "LimboContact": z.object({
     "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
+    "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
   "InfernoClaw": z.object({
     "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
-  }).strict(),
-  "WWWWWWWWWWWWW": z.object({
-    "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
+    "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
 }).strict().required()

@@ -435,33 +435,6 @@
         "DESCRIPTIONS"
       ],
       "additionalProperties": false
-    },
-    "WWWWWWWWWWWW": {
-      "type": "object",
-      "properties": {
-        "NAME": {
-          "type": "string"
-        },
-        "FLAVOR": {
-          "type": "string"
-        },
-        "DESCRIPTIONS": {
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 1,
-          "items": [
-            {
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "required": [
-        "NAME",
-        "FLAVOR",
-        "DESCRIPTIONS"
-      ],
-      "additionalProperties": false
     }
   },
   "required": [
@@ -480,8 +453,7 @@
     "SproutingBranch",
     "AmplifyWand",
     "CatCart",
-    "BigShroomBag",
-    "WWWWWWWWWWWW"
+    "BigShroomBag"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

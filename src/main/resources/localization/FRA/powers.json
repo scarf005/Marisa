@@ -118,8 +118,7 @@
   "PulseMagicPower": {
     "NAME": "Magie du pouls",
     "DESCRIPTIONS": [
-      "Vous n'avez pas à payer de [B]  pour activer les effets #yAmplifier ce tour-ci.",
-      "WWWWWWWWWWW"
+      "Vous n'avez pas à payer de [B]  pour activer les effets #yAmplifier ce tour-ci."
     ]
   },
   "SingularityPower": {
@@ -146,15 +145,13 @@
   "OneTimeOffPlusPower": {
     "NAME": "Temps d'arrêts",
     "DESCRIPTIONS": [
-      "Vous n'activerez pas d' #yAmplifier ou de #yCharge ce tour.",
-      "WWWWWWWWWWW"
+      "Vous n'activerez pas d' #yAmplifier ou de #yCharge ce tour."
     ]
   },
   "OneTimeOffPower": {
     "NAME": "Temps d'arrêts",
     "DESCRIPTIONS": [
-      "Vous n'activerez pas d' #yAmplifier ce tour.",
-      "WWWWWWWWWWW"
+      "Vous n'activerez pas d' #yAmplifier ce tour."
     ]
   },
   "SuperNovaPower": {
@@ -231,8 +228,7 @@
   "GrandCrossPower": {
     "NAME": "Amplifié",
     "DESCRIPTIONS": [
-      "Vous avez activé un effet #yAmplifier ce tour.",
-      "WWWWWWWWWWW"
+      "Vous avez activé un effet #yAmplifier ce tour."
     ]
   },
   "Diaspora": {
@@ -252,15 +248,13 @@
   "Wraith": {
     "NAME": "Spectre",
     "DESCRIPTIONS": [
-      "#yÉpuisez une carte aléatoire de votre main après le début de votre tour.",
-      "WWWWWWWWWWW"
+      "#yÉpuisez une carte aléatoire de votre main après le début de votre tour."
     ]
   },
   "LimboContact": {
     "NAME": "Contact mort-vivant",
     "DESCRIPTIONS": [
-      "Lorsque vous recevez des dégâts de cet ennemi, gagnez un de #yFantôme .",
-      "WWWWWWWWWWW"
+      "Lorsque vous recevez des dégâts de cet ennemi, gagnez un de #yFantôme ."
     ]
   },
   "Nebula": {
@@ -273,15 +267,7 @@
   "InfernoClaw": {
     "NAME": "Inferno Claw",
     "DESCRIPTIONS": [
-      "Chaque fois que cet ennemi vous inflige des dégats d'attaque, ajoutez une  #yBrûlure  dans votre pile.",
-      "WWWWWWWWWWW"
-    ]
-  },
-  "WWWWWWWWWWWWW": {
-    "NAME": "WWWWWWWWWWW",
-    "DESCRIPTIONS": [
-      "WWWWWWWWWWW",
-      "WWWWWWWWWWW"
+      "Chaque fois que cet ennemi vous inflige des dégats d'attaque, ajoutez une  #yBrûlure  dans votre pile."
     ]
   }
 }

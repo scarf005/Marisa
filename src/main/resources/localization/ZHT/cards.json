@@ -21,8 +21,7 @@
   },
   "DarkSpark": {
     "NAME": "暗色火花",
-    "DESCRIPTION": " 消耗 你抽牌堆頂 !M! 張卡，其中每有一張 攻擊 ，對所有敵人造成兩次 !D! 點傷害。",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": " 消耗 你抽牌堆頂 !M! 張卡，其中每有一張 攻擊 ，對所有敵人造成兩次 !D! 點傷害。"
   },
   "DeepEcoloBomb": {
     "NAME": "重生態炸彈",
@@ -121,8 +120,7 @@
   },
   "ShootTheMoon": {
     "NAME": "射月",
-    "DESCRIPTION": "造成 !D! 點傷害。若目標不是首領，移除其1個增益效果。 NL 增幅 [E] :傷害變為 !B! 點，移除其所有增益效果",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": "造成 !D! 點傷害。若目標不是首領，移除其1個增益效果。 NL 增幅 [E] :傷害變為 !B! 點，移除其所有增益效果"
   },
   "StarDustReverie": {
     "NAME": "星屑幻想",

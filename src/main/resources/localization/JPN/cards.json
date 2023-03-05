@@ -21,8 +21,7 @@
   },
   "DarkSpark": {
     "NAME": "ダークスパーク",
-    "DESCRIPTION": "「アタック」以外の手札を廃棄する。 NL 敵全体に二回 !D! ダメージを与える ",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": "「アタック」以外の手札を廃棄する。 NL 敵全体に二回 !D! ダメージを与える "
   },
   "DeepEcoloBomb": {
     "NAME": "ディープエコロジカルボム",
@@ -113,8 +112,7 @@
   },
   "ShootTheMoon": {
     "NAME": "シュート・ザ・ムーン",
-    "DESCRIPTION": "対象がボスでない場合、対象の バフ を 1 つ取り除く。 !D! ダメージを与える。 NL 増幅  [E]  : 全ての バフ を取り除き、 !B! ダメージを与える",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": "対象がボスでない場合、対象の バフ を 1 つ取り除く。 !D! ダメージを与える。 NL 増幅  [E]  : 全ての バフ を取り除き、 !B! ダメージを与える"
   },
   "StarDustReverie": {
     "NAME": "スターダストレヴァリエ",
@@ -440,9 +438,5 @@
   "Wraith": {
     "NAME": "Wraith",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, gain 1 Wraith ."
-  },
-  "WWWWWWWWWWWWWW": {
-    "NAME": "WWWWWWWWWWW",
-    "DESCRIPTION": "WWWWWWWWWWW"
   }
 }

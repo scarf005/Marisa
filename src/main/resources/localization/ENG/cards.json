@@ -21,8 +21,7 @@
   },
   "DarkSpark": {
     "NAME": "Dark Spark",
-    "DESCRIPTION": "Exhaust top !M! cards of your draw pile,deal !D! damage to ALL enemies for each Attack Exhausted.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": "Exhaust top !M! cards of your draw pile,deal !D! damage to ALL enemies for each Attack Exhausted."
   },
   "DeepEcoloBomb": {
     "NAME": "Deep Ecological Bomb",
@@ -117,8 +116,7 @@
   },
   "ShootTheMoon": {
     "NAME": "Shoot The Moon",
-    "DESCRIPTION": "Remove a random buff from your target if it is not a boss enemy. Deal !D! damage. NL Amplify  [E]  : Remove ALL buffs and deal !B! damage instead.",
-    "UPGRADE_DESCRIPTION": "WWWWWWWWWWWWWWWWWWW"
+    "DESCRIPTION": "Remove a random buff from your target if it is not a boss enemy. Deal !D! damage. NL Amplify  [E]  : Remove ALL buffs and deal !B! damage instead."
   },
   "StarDustReverie": {
     "NAME": "Stardust Reverie",

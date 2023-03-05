@@ -118,8 +118,7 @@
   "PulseMagicPower": {
     "NAME": "パルスマジック",
     "DESCRIPTIONS": [
-      "このターン、 #y増幅 効果に  [E]  は不要。",
-      "WWWWWWWWWWW"
+      "このターン、 #y増幅 効果に  [E]  は不要。"
     ]
   },
   "SingularityPower": {
@@ -146,15 +145,13 @@
   "OneTimeOffPlusPower": {
     "NAME": "1回休み",
     "DESCRIPTIONS": [
-      "このターン、 #y増幅 効果を使用したり、 #yチャージ を消費する事ができない。",
-      "WWWWWWWWWWW"
+      "このターン、 #y増幅 効果を使用したり、 #yチャージ を消費する事ができない。"
     ]
   },
   "OneTimeOffPower": {
     "NAME": "1回休み",
     "DESCRIPTIONS": [
-      "このターン、 #y増幅 効果を使用する事ができない。",
-      "WWWWWWWWWWW"
+      "このターン、 #y増幅 効果を使用する事ができない。"
     ]
   },
   "SuperNovaPower": {
@@ -231,8 +228,7 @@
   "GrandCrossPower": {
     "NAME": "グランドクロス",
     "DESCRIPTIONS": [
-      "このターン #y増幅 を使用しました",
-      "WWWWWWWWWWW"
+      "このターン #y増幅 を使用しました"
     ]
   },
   "Diaspora": {
@@ -252,15 +248,13 @@
   "Wraith": {
     "NAME": "レイス",
     "DESCRIPTIONS": [
-      "ターン開始時、 手札のランダムなカード #b1 枚を #y廃棄 する。",
-      "WWWWWWWWWWW"
+      "ターン開始時、 手札のランダムなカード #b1 枚を #y廃棄 する。"
     ]
   },
   "LimboContact": {
     "NAME": "アンデッドコンタクト",
     "DESCRIPTIONS": [
-      "この敵からダメージを受けるたび、 #yレイス 1 を得る。",
-      "WWWWWWWWWWW"
+      "この敵からダメージを受けるたび、 #yレイス 1 を得る。"
     ]
   },
   "Nebula": {
@@ -273,15 +267,7 @@
   "InfernoClaw": {
     "NAME": "Inferno Claw",
     "DESCRIPTIONS": [
-      "Whenever you receive attack damage from this enemy, add a #yBurn into your draw pile.",
-      "WWWWWWWWWWW"
-    ]
-  },
-  "WWWWWWWWWWWWW": {
-    "NAME": "WWWWWWWWWWW",
-    "DESCRIPTIONS": [
-      "WWWWWWWWWWW",
-      "WWWWWWWWWWW"
+      "Whenever you receive attack damage from this enemy, add a #yBurn into your draw pile."
     ]
   }
 }

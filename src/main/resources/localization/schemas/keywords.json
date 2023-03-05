@@ -3,28 +3,9 @@
   "properties": {
     "keywords": {
       "type": "array",
-      "minItems": 10,
-      "maxItems": 10,
+      "minItems": 9,
+      "maxItems": 9,
       "items": [
-        {
-          "type": "object",
-          "properties": {
-            "NAMES": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "DESCRIPTION": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "NAMES",
-            "DESCRIPTION"
-          ],
-          "additionalProperties": false
-        },
         {
           "type": "object",
           "properties": {

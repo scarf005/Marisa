@@ -110,58 +110,11 @@
         "OPTIONS"
       ],
       "additionalProperties": false
-    },
-    "WWWWWWWWWWWWWW": {
-      "type": "object",
-      "properties": {
-        "NAME": {
-          "type": "string"
-        },
-        "DESCRIPTIONS": {
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "items": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "OPTIONS": {
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "items": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "required": [
-        "NAME",
-        "DESCRIPTIONS",
-        "OPTIONS"
-      ],
-      "additionalProperties": false
     }
   },
   "required": [
     "Mushrooms_MRS",
-    "OrinTheCat",
-    "WWWWWWWWWWWWWW"
+    "OrinTheCat"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

@@ -11,11 +11,8 @@ export const schema = z.object({
     .strict(),
   "BlazingStar": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
-  "DarkSpark": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
+  "DarkSpark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+    .strict(),
   "DeepEcoloBomb": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
   "DoubleSpark": z.object({
@@ -91,11 +88,8 @@ export const schema = z.object({
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "ShootTheMoon": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
+  "ShootTheMoon": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+    .strict(),
   "StarDustReverie": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),

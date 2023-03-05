@@ -13,8 +13,4 @@ export const schema = z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "WWWWWW": z.object({
-    "NAME": z.string(),
-    "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
-  }).strict(),
 }).strict().required()

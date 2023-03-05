@@ -22,9 +22,5 @@ run `deno run -A validate.ts` to check if all localization files are valid using
 ### Vscode json schema generation
 running `deno run -A vscode.ts` will populate `settings.json` file with schema paths that will validate json files in vscode.
 
-## Deno tasks
-
-tasks in `deno.jsonc` runs the same but will watch changes in script and re-run.
-
 [json-schema]: https://json-schema.org
 [zod]: https://zod.dev

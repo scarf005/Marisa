@@ -118,8 +118,7 @@
   "PulseMagicPower": {
     "NAME": "Pulse Magic",
     "DESCRIPTIONS": [
-      "You don't need to pay  [E]  to activate #yAmplify effects this turn.",
-      "WWWWWWWWWWW"
+      "You don't need to pay  [E]  to activate #yAmplify effects this turn."
     ]
   },
   "SingularityPower": {
@@ -146,15 +145,13 @@
   "OneTimeOffPlusPower": {
     "NAME": "One Time Off",
     "DESCRIPTIONS": [
-      "You won't trigger #yAmplify and #yCharge-up this turn.",
-      "WWWWWWWWWWW"
+      "You won't trigger #yAmplify and #yCharge-up this turn."
     ]
   },
   "OneTimeOffPower": {
     "NAME": "One Time Off",
     "DESCRIPTIONS": [
-      "You won't trigger #yAmplify this turn.",
-      "WWWWWWWWWWW"
+      "You won't trigger #yAmplify this turn."
     ]
   },
   "SuperNovaPower": {
@@ -231,8 +228,7 @@
   "GrandCrossPower": {
     "NAME": "Amplified",
     "DESCRIPTIONS": [
-      "You have activated an #yAmplify effect this turn.",
-      "WWWWWWWWWWW"
+      "You have activated an #yAmplify effect this turn."
     ]
   },
   "Diaspora": {
@@ -252,8 +248,7 @@
   "Wraith": {
     "NAME": "Wraith",
     "DESCRIPTIONS": [
-      "#yExhaust a random card in your hand after the start of your turn.",
-      "WWWWWWWWWWW"
+      "#yExhaust a random card in your hand after the start of your turn."
     ]
   },
   "Nebula": {
@@ -266,22 +261,13 @@
   "LimboContact": {
     "NAME": "Undead Contact",
     "DESCRIPTIONS": [
-      "Whenever you are attacked by this enemy, gain a stack of #yWraith . NL On death,apply #b1 #yWraith to you.",
-      "WWWWWWWWWWW"
+      "Whenever you are attacked by this enemy, gain a stack of #yWraith . NL On death,apply #b1 #yWraith to you."
     ]
   },
   "InfernoClaw": {
     "NAME": "Inferno Claw",
     "DESCRIPTIONS": [
-      "Whenever you receive attack damage from this enemy, add a #yBurn into your draw pile.",
-      "WWWWWWWWWWW"
-    ]
-  },
-  "WWWWWWWWWWWWW": {
-    "NAME": "WWWWWWWWWWW",
-    "DESCRIPTIONS": [
-      "WWWWWWWWWWW",
-      "WWWWWWWWWWW"
+      "Whenever you receive attack damage from this enemy, add a #yBurn into your draw pile."
     ]
   }
 }

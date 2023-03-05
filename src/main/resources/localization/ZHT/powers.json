@@ -118,8 +118,7 @@
   "PulseMagicPower": {
     "NAME": "脈衝魔術",
     "DESCRIPTIONS": [
-      "本回合內不需要花費額外 [E] 來發動 #y增幅",
-      "WWWWWWWWWWW"
+      "本回合內不需要花費額外 [E] 來發動 #y增幅"
     ]
   },
   "SingularityPower": {
@@ -146,15 +145,13 @@
   "OneTimeOffPlusPower": {
     "NAME": "一回休",
     "DESCRIPTIONS": [
-      "本回合不能發動 #y增幅 和 #y蓄力",
-      "WWWWWWWWWWW"
+      "本回合不能發動 #y增幅 和 #y蓄力"
     ]
   },
   "OneTimeOffPower": {
     "NAME": "一回休",
     "DESCRIPTIONS": [
-      "本回合不能發動 #y增幅",
-      "WWWWWWWWWWW"
+      "本回合不能發動 #y增幅"
     ]
   },
   "SuperNovaPower": {
@@ -231,8 +228,7 @@
   "GrandCrossPower": {
     "NAME": "增幅",
     "DESCRIPTIONS": [
-      "本回合已發動了 #y增幅",
-      "WWWWWWWWWWW"
+      "本回合已發動了 #y增幅"
     ]
   },
   "Diaspora": {
@@ -259,15 +255,13 @@
   "Wraith": {
     "NAME": "怨靈",
     "DESCRIPTIONS": [
-      "在你的回合開始時， #y消耗 1張隨機手牌",
-      "WWWWWWWWWWW"
+      "在你的回合開始時， #y消耗 1張隨機手牌"
     ]
   },
   "LimboContact": {
     "NAME": "死靈之觸",
     "DESCRIPTIONS": [
-      "每當這名敵人攻擊你，你會獲得1層 #y怨靈 。 NL 在死亡時，給予你 #b1 層 #y怨靈",
-      "WWWWWWWWWWW"
+      "每當這名敵人攻擊你，你會獲得1層 #y怨靈 。 NL 在死亡時，給予你 #b1 層 #y怨靈"
     ]
   },
   "Nebula": {
@@ -280,15 +274,7 @@
   "InfernoClaw": {
     "NAME": "地獄之爪",
     "DESCRIPTIONS": [
-      "每當這名敵人對你造成傷害，將1張 #y灼傷 放入棄牌堆",
-      "WWWWWWWWWWW"
-    ]
-  },
-  "WWWWWWWWWWWWWWW": {
-    "NAME": "WWWWWWWWWWW",
-    "DESCRIPTIONS": [
-      "WWWWWWWWWWW",
-      "WWWWWWWWWWW"
+      "每當這名敵人對你造成傷害，將1張 #y灼傷 放入棄牌堆"
     ]
   }
 }

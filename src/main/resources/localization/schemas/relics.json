@@ -1,0 +1,488 @@
+{
+  "type": "object",
+  "properties": {
+    "MiniHakkero": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "BewitchedHakkero": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "MagicArmor": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "MagicBroom": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "AmpWand": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "RampagingMagicTools": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "ExperimentalFamiliar": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "BreadOfAWashokuLover": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "SimpleLauncher": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "HandmadeGrimoire": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "ShroomBag": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "Cape": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "SproutingBranch": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "AmplifyWand": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "CatCart": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "BigShroomBag": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    },
+    "WWWWWWWWWWWW": {
+      "type": "object",
+      "properties": {
+        "NAME": {
+          "type": "string"
+        },
+        "FLAVOR": {
+          "type": "string"
+        },
+        "DESCRIPTIONS": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "NAME",
+        "FLAVOR",
+        "DESCRIPTIONS"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "MiniHakkero",
+    "BewitchedHakkero",
+    "MagicArmor",
+    "MagicBroom",
+    "AmpWand",
+    "RampagingMagicTools",
+    "ExperimentalFamiliar",
+    "BreadOfAWashokuLover",
+    "SimpleLauncher",
+    "HandmadeGrimoire",
+    "ShroomBag",
+    "Cape",
+    "SproutingBranch",
+    "AmplifyWand",
+    "CatCart",
+    "BigShroomBag",
+    "WWWWWWWWWWWW"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

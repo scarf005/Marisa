@@ -1,9 +1,8 @@
 {
   "tasks": {
-    "dev": "deno run -A --watch",
-    "validate": "deno task dev validate.ts",
-    "schema": "deno task dev schema.ts",
-    "schema:vscode": "deno task dev vscode.ts",
+    "schema": "deno run -A schema.ts",
+    "schema:vscode": "deno run -A vscode.ts",
+    "validate": "deno run -A validate.ts",
     "fmt": "deno fmt schemas/"
   },
   "fmt": { "options": { "semiColons": false } }

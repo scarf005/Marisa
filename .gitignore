@@ -1,3 +1,7 @@
+# custom cache
+.cache
+
+
 /bin/
 /target/
 ModTheSpire.jar.lnk

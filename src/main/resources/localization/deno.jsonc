@@ -1,8 +1,10 @@
 {
   "tasks": {
-    "dev": "deno run --allow-read --allow-write --watch",
+    "dev": "deno run -A --watch",
     "validate": "deno task dev validate.ts",
-    "schema": "deno task dev schema.ts"
+    "schema": "deno task dev schema.ts",
+    "schema:vscode": "deno task dev vscode.ts",
+    "fmt": "deno fmt schemas/"
   },
   "fmt": { "options": { "semiColons": false } }
 }

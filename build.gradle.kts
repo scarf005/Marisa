@@ -80,10 +80,12 @@ data class Config(
     ),
 )
 
-val gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create()
+val gson: Gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create()
 val configFile = file("src/main/resources/ModTheSpire.json")
 
 tasks.register("modthespire") {
+    description = "Generates ModTheSpire.json"
+
     val config = ModTheSpire(
         modID,
         description = """
@@ -98,6 +100,8 @@ tasks.register("modthespire") {
 }
 
 tasks.jar {
+    description = "Builds the mod jar file."
+
     dependsOn("modthespire")
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(sourceSets.main.get().output)
@@ -105,6 +109,8 @@ tasks.jar {
 
 
 tasks.register("changelog") {
+    description = "Write changelog to steam workshop description"
+
     dependsOn(tasks.jar)
     file("$gameDir/${modID}/config.json")
         .writeText(gson.toJson(Config(changeNote = changeBBCode)))

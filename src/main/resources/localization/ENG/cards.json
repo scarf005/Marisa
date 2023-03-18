@@ -66,8 +66,7 @@
   },
   "MachineGunSpark": {
     "NAME": "Machine Gun Spark",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage 8 times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
   },
   "MagicAbsorber": {
     "NAME": "Magic Absorber",
@@ -75,8 +74,7 @@
   },
   "MasterSpark": {
     "NAME": "Master Spark",
-    "DESCRIPTION": "Deal !D! damage. NL Amplify  [E]  : Deal !B! damage instead.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Amplify  [E]  : Deal 9 more damage."
+    "DESCRIPTION": "Deal !D! damage. NL Amplify  [E]  : Deal !B! damage instead."
   },
   "MeteoricShower": {
     "NAME": "Meteonic Shower",

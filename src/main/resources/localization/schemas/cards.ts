@@ -47,18 +47,12 @@ export const schema = z.object({
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "MachineGunSpark": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
+  "MachineGunSpark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+    .strict(),
   "MagicAbsorber": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
-  "MasterSpark": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
+  "MasterSpark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+    .strict(),
   "MeteoricShower": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
   "MilkyWay": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })

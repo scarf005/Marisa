@@ -31,10 +31,18 @@ java {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+kotlin {
+    sourceSets.all {
+        languageSettings {
+            languageVersion = "2.0"
+        }
+    }
+}
+
 plugins {
     application
     java
-    kotlin("jvm") version "1.8.0-Beta"
+    kotlin("jvm") version "1.8.20-RC"
 }
 
 repositories {

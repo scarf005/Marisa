@@ -22,9 +22,13 @@ import com.megacrit.cardcrawl.helpers.ScreenShake
 import com.megacrit.cardcrawl.screens.CharSelectInfo
 import com.megacrit.cardcrawl.unlock.UnlockTracker
 import marisa.MarisaContinued
+import marisa.cards.Defend_MRS
 import marisa.cards.MasterSpark
+import marisa.cards.Strike_MRS
+import marisa.cards.UpSweep
 import marisa.patches.AbstractCardEnum
 import marisa.patches.ThModClassEnum
+import marisa.relics.MiniHakkero
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 
@@ -55,19 +59,21 @@ class Marisa(name: String) :
     }
 
     override fun getStartingDeck(): ArrayList<String> { // create starting deck
-        val strikes = Array(4) { "Strike_MRS" }
-        val defends = Array(4) { "Defend_MRS" }
-        val others = arrayOf("MasterSpark", "UpSweep")
+        val strikes = Array(4) { Strike_MRS.ID }
+        val defends = Array(4) { Defend_MRS.ID }
+        val others = arrayOf(MasterSpark.ID, UpSweep.ID)
+
         return (strikes + defends + others).toCollection(ArrayList())
     }
 
     override fun getStartingRelics(): ArrayList<String> { // starting relics
-        UnlockTracker.markRelicAsSeen("MiniHakkero")
-        return arrayListOf("MiniHakkero")
+        UnlockTracker.markRelicAsSeen(MiniHakkero.ID)
+        return arrayListOf(MiniHakkero.ID)
     }
 
     private data class LoadoutText(val title: String, val flavor: String)
 
+    // TODO(#142) extract into resources/{LANG}/UI.json
     private fun loadoutText(): LoadoutText = when (Settings.language) {
         GameLanguage.ZHS -> LoadoutText(
             title = """普通的魔法使""",

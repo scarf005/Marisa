@@ -53,14 +53,23 @@ dependencies {
     implementation(kotlin("reflect"))
     implementation(kotlin("stdlib-jdk8"))
 
-    compileOnly("com.google.code.gson:gson:2.10")
+    compileOnly("com.google.code.gson:gson:2.10.1")
     compileOnly(files("$gameDir/desktop-1.0.jar"))
     compileOnly(fileTree(modTheSpireDir))
     compileOnly(fileTree(basemodDir))
 }
 
 sourceSets {
-    main { kotlin.srcDir("src/main") }
+    main {
+        kotlin {
+            srcDir("src/main/kotlin")
+        }
+        resources {
+            srcDir("src/main/resources")
+            exclude("**/*.ts", "**/deno.*", "schemas/**")
+        }
+    }
+
 }
 
 @Suppress("PropertyName", "LongLine")
@@ -91,6 +100,10 @@ data class Config(
 val gson: Gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create()
 val configFile = file("src/main/resources/ModTheSpire.json")
 
+tasks.processResources {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
 tasks.register("modthespire") {
     description = "Generates ModTheSpire.json"
 
@@ -111,13 +124,12 @@ tasks.jar {
     description = "Builds the mod jar file."
 
     dependsOn("modthespire")
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     from(sourceSets.main.get().output)
 }
 
 
 tasks.register("changelog") {
-    description = "Write changelog to steam workshop description"
+description = "Write changelog to steam workshop description"
 
     dependsOn(tasks.jar)
     file("$gameDir/${modID}/config.json")

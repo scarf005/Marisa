@@ -27,7 +27,7 @@ class BlazeAwayAction(val card: AbstractCard) : AbstractGameAction() {
             current_y = Settings.HEIGHT / 2.0f
             target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale
             target_y = Settings.HEIGHT / 2.0f
-            freeToPlayOnce = true
+            costForTurn = 0
             purgeOnUse = true
             targetAngle = 0.0f
             drawScale = 0.12f

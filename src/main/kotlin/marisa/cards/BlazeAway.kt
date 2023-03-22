@@ -22,7 +22,7 @@ class BlazeAway : CustomCard(
     CardTarget.SELF
 ) {
     init {
-        magicNumber = NUM
+        magicNumber = USE_TIMES
         baseMagicNumber = magicNumber
     }
 
@@ -59,7 +59,7 @@ class BlazeAway : CustomCard(
 
     override fun upgrade() {
         if (!upgraded) {
-            upgradeMagicNumber(UPG_NUM)
+            upgradeMagicNumber(UPGRADE_USE_TIMES)
             upgradeName()
         }
     }
@@ -80,7 +80,7 @@ class BlazeAway : CustomCard(
             Description(it[0], it[1], it[2])
         }
         private const val COST = 1
-        private const val NUM = 1
-        private const val UPG_NUM = 1
+        private const val USE_TIMES = 1
+        private const val UPGRADE_USE_TIMES = 1
     }
 }

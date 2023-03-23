@@ -35,11 +35,10 @@ class OpenUniverse : CustomCard(
     override fun makeCopy(): AbstractCard = OpenUniverse()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_DRAW)
-            upgradeDamage(UPG_CHANCE)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_DRAW)
+        upgradeDamage(UPG_CHANCE)
     }
 
     companion object {

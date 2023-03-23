@@ -60,12 +60,11 @@ class AbsoluteMagnitude : AmplifiedAttack(
     override fun makeCopy(): AbstractCard = AbsoluteMagnitude()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            multiplier = ATK_MULT_UPG
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        multiplier = ATK_MULT_UPG
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

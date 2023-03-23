@@ -44,13 +44,12 @@ class OneTimeOff : CustomCard(
     override fun makeCopy(): AbstractCard = OneTimeOff()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBlock(UPGRADE_PLUS_BLOCK)
-            upgradeMagicNumber(UPGRADE_PLUS_DRAW)
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBlock(UPGRADE_PLUS_BLOCK)
+        upgradeMagicNumber(UPGRADE_PLUS_DRAW)
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

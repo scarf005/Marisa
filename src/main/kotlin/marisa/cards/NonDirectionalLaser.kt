@@ -1,7 +1,5 @@
 package marisa.cards
 
-import marisa.action.DamageRandomEnemyAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction
@@ -11,6 +9,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.DamageRandomEnemyAction
+import marisa.patches.AbstractCardEnum
 
 class NonDirectionalLaser : CustomCard(
     ID,
@@ -48,10 +48,9 @@ class NonDirectionalLaser : CustomCard(
     override fun makeCopy(): AbstractCard = NonDirectionalLaser()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
     }
 
     companion object {

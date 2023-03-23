@@ -51,11 +51,10 @@ class UpSweep : CustomCard(
     override fun makeCopy(): AbstractCard = UpSweep()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_CHG)
-            upgradeDamage(UPGRADE_PLUS_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_CHG)
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

@@ -42,11 +42,10 @@ class MilkyWay : CustomCard(
     override fun makeCopy(): AbstractCard = MilkyWay()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBlock(UPGRADE_PLUS_BLOCK)
-            upgradeMagicNumber(1)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBlock(UPGRADE_PLUS_BLOCK)
+        upgradeMagicNumber(1)
     }
 
     companion object {

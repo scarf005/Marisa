@@ -45,12 +45,11 @@ class ManaRampage : CustomCard(
     override fun makeCopy(): AbstractCard = ManaRampage()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(DMG_UP_PLUS)
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(DMG_UP_PLUS)
+        rawDescription = cardStrings.UPGRADE_DESCRIPTION
+        initializeDescription()
     }
 
     companion object {

@@ -32,12 +32,10 @@ class StarDustReverie : CustomCard(
     override fun makeCopy(): AbstractCard = StarDustReverie()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            //this.exhaust = false;
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

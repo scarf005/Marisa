@@ -39,10 +39,9 @@ class Singularity : CustomCard(
     override fun makeCopy(): AbstractCard = Singularity()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_STC)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_STC)
     }
 
     companion object {

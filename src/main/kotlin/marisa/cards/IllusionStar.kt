@@ -42,13 +42,9 @@ class IllusionStar : CustomCard(
     override fun makeCopy(): AbstractCard = IllusionStar()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_CARD_PRINT)
-            //this.exhaust = false;
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_CARD_PRINT)
     }
 
     companion object {

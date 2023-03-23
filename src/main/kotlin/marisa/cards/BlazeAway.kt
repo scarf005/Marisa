@@ -59,10 +59,9 @@ class BlazeAway : CustomCard(
     override fun makeCopy(): AbstractCard = BlazeAway()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeMagicNumber(UPGRADE_USE_TIMES)
-            upgradeName()
-        }
+        if (upgraded) return
+        upgradeMagicNumber(UPGRADE_USE_TIMES)
+        upgradeName()
     }
 
     companion object {

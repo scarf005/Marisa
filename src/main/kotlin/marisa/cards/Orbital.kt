@@ -26,10 +26,9 @@ class Orbital : CustomCard(
     }
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_DRAW)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_DRAW)
     }
 
     override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean = false

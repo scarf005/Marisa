@@ -46,7 +46,8 @@ class GravityBeat : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        fun damage() = DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_LIGHT)
+        fun damage() =
+            DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.BLUNT_LIGHT)
 
         repeat(magicNumber) {
             m?.let { if (!it.isDeadOrEscaped) addToBot(damage()) }
@@ -57,11 +58,10 @@ class GravityBeat : CustomCard(
     override fun makeCopy(): AbstractCard = GravityBeat()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(DIV_UPG)
-            upgradeDamage(UPGRADE_PLUS_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(DIV_UPG)
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

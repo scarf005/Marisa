@@ -60,10 +60,9 @@ class MaximisePower : CustomCard(
     override fun makeCopy(): AbstractCard = MaximisePower()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            updateCost(-1)
-        }
+        if (upgraded) return
+        upgradeName()
+        updateCost(-1)
     }
 
     companion object {

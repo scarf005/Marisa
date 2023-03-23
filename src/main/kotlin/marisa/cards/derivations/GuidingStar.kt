@@ -61,10 +61,9 @@ class GuidingStar : CustomCard(
     override fun makeCopy(): AbstractCard = GuidingStar()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBaseCost(UPG_COST)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBaseCost(UPG_COST)
     }
 
     companion object {

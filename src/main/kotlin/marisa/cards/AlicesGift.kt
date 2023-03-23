@@ -28,10 +28,9 @@ class AlicesGift : AmplifiableCard(
     }
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(ATK_UPG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(ATK_UPG)
     }
 
     override fun applyPowers() {

@@ -34,12 +34,11 @@ class MillisecondPulsars : CustomCard(
     override fun makeCopy(): AbstractCard = MillisecondPulsars()
 
     override fun upgrade() {
-        if (!upgraded) {
-            isInnate = true
-            upgradeName()
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        isInnate = true
+        upgradeName()
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

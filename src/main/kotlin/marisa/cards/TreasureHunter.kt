@@ -38,10 +38,9 @@ class TreasureHunter : CustomCard(
     override fun makeCopy(): AbstractCard = TreasureHunter()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

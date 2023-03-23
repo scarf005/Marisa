@@ -31,11 +31,9 @@ class _6A : CustomCard(
     override fun makeCopy(): AbstractCard = _6A()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-            //upgradeBaseCost(UPG_COST);
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

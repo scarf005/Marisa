@@ -64,11 +64,10 @@ class EnergyRecoil : CustomCard(
     override fun makeCopy(): AbstractCard = EnergyRecoil()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

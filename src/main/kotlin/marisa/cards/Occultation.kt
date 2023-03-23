@@ -62,14 +62,9 @@ class Occultation : CustomCard(
     override fun makeCopy(): AbstractCard = Occultation()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBaseCost(UPG_COST)
-            //this.rawDescription = (this.rawDescription + " NL Gain !B! block.");
-            //initializeDescription();
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBaseCost(UPG_COST)
     }
 
     companion object {

@@ -42,10 +42,9 @@ class Strike_MRS : CustomCard(
     override fun makeCopy(): AbstractCard = Strike_MRS()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

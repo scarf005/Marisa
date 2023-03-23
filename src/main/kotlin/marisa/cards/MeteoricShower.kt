@@ -43,10 +43,9 @@ class MeteoricShower : CustomCard(
     override fun makeCopy(): AbstractCard = MeteoricShower()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
     }
 
     companion object {

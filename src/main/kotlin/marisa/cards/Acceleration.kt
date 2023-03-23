@@ -38,10 +38,9 @@ class Acceleration : AmplifiableCard(
     override fun makeCopy(): AbstractCard = Acceleration()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(AMP_UPG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(AMP_UPG)
     }
 
     companion object {

@@ -34,10 +34,9 @@ class BigCrunch : CustomCard(
     override fun makeCopy(): AbstractCard = BigCrunch()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_DIV)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_DIV)
     }
 
     companion object {

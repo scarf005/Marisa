@@ -41,13 +41,9 @@ class EscapeVelocity : CustomCard(
     override fun makeCopy(): AbstractCard = EscapeVelocity()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBaseCost(1)
-            //this.isInnate = true;
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBaseCost(1)
     }
 
     companion object {

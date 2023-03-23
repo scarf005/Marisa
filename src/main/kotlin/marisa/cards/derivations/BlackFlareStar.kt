@@ -42,10 +42,9 @@ class BlackFlareStar : CustomCard(
     override fun makeCopy(): AbstractCard = BlackFlareStar()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBlock(UPG_BLC)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBlock(UPG_BLC)
     }
 
     companion object {

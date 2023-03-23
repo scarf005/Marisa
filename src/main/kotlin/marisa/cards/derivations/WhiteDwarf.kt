@@ -74,12 +74,11 @@ class WhiteDwarf : AmplifiedAttack(
     override fun makeCopy(): AbstractCard = WhiteDwarf()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            magn = MULTIPLIER_UPG
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        magn = MULTIPLIER_UPG
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

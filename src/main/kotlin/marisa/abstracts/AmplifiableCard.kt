@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireOverride
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.ApplyPowerToPlayerAction
+import marisa.MarisaContinued.Companion.logger
 import marisa.addToTop
 import marisa.p
 import marisa.powers.Marisa.*
@@ -37,6 +38,7 @@ abstract class AmplifiableCard(
             freeToPlayOnce -> true
             else -> false
         }
+
     private val canAmplify: Boolean
         get() = when {
             isAmplifyDisabled() -> false
@@ -74,11 +76,12 @@ abstract class AmplifiableCard(
     }
 
     fun tryAmplify(): Boolean {
-        costForTurn += additionalCostToPay
-
-        if (canAmplify) {
+        val isAmplified: Boolean = canAmplify
+        if (isAmplified) {
             applyAmplify()
         }
-        return canAmplify
+        costForTurn += additionalCostToPay
+        logger.info("$name: { isAmplified: $isAmplified, totalCost: $costForTurn }")
+        return isAmplified
     }
 }

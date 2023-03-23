@@ -44,13 +44,13 @@ class MasterSpark : AmplifiedAttack(
     override fun makeCopy(): AbstractCard = MasterSpark()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            ampNumber += UPG_AMP
-            block = baseDamage + ampNumber
-            isBlockModified = true
-        }
+        if (upgraded) return
+
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        ampNumber += UPG_AMP
+        block = baseDamage + ampNumber
+        isBlockModified = true
     }
 
     companion object {

@@ -4,24 +4,38 @@ import basemod.abstracts.CustomCard
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper
+import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.ApplyPowerToPlayerAction
 import marisa.MarisaContinued.Companion.logger
 import marisa.addToTop
-import marisa.p
 import marisa.powers.Marisa.*
 import marisa.relics.AmplifyWand
 
+/**
+ * returns nullable player, so it can be used in compendium.
+ *
+ * **warning**: it's not possible to use [marisa.p] property in compendium.
+ * see [issue](https://github.com/scarf005/Marisa/issues/162)
+ */
+private val p: AbstractPlayer? get() = AbstractDungeon.player
+
 private fun applyAmplify() {
     addToTop(ApplyPowerToPlayerAction(GrandCrossPower::class))
-    p.getPower(EventHorizonPower.POWER_ID)?.onSpecificTrigger()
-    p.getRelic(AmplifyWand.ID)?.onTrigger()
+    p?.getPower(EventHorizonPower.POWER_ID)?.onSpecificTrigger()
+    p?.getRelic(AmplifyWand.ID)?.onTrigger()
 }
 
-private fun isAmplifyDisabled() = when {
-    p.hasPower(OneTimeOffPower.POWER_ID) -> true
-    p.hasPower(OneTimeOffPlusPower.POWER_ID) -> true
-    else -> false
+
+private fun isAmplifyDisabled(): Boolean {
+    val player = p
+    return when {
+        player == null -> false
+        player.hasPower(OneTimeOffPower.POWER_ID) -> true
+        player.hasPower(OneTimeOffPlusPower.POWER_ID) -> true
+        else -> false
+    }
 }
 
 abstract class AmplifiableCard(
@@ -31,12 +45,16 @@ abstract class AmplifiableCard(
     var amplifyCost = 1
     private val actualCost get() = costForTurn + additionalCostToPay
     private val canPayAmplify get() = EnergyPanel.totalCount >= costForTurn + amplifyCost
-    private val isFreeAmplify
-        get() = when {
-            p.hasPower(MillisecondPulsarsPower.POWER_ID) -> true
-            p.hasPower(PulseMagicPower.POWER_ID) -> true
-            freeToPlayOnce -> true
-            else -> false
+    private val isFreeAmplify: Boolean
+        get() {
+            val player = p
+            return when {
+                player == null -> false
+                player.hasPower(MillisecondPulsarsPower.POWER_ID) -> true
+                player.hasPower(PulseMagicPower.POWER_ID) -> true
+                freeToPlayOnce -> true
+                else -> false
+            }
         }
 
     private val canAmplify: Boolean

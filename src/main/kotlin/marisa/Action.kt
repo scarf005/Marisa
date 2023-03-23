@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower
 import kotlin.reflect.KClass
 import kotlin.reflect.full.primaryConstructor
 
+/** mustn't be used in compendium, since player is null there */
 val p: AbstractPlayer get() = AbstractDungeon.player
 val monsters: ArrayList<AbstractMonster> get() = AbstractDungeon.getCurrRoom().monsters.monsters
 

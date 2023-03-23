@@ -28,12 +28,10 @@ class PulseMagic : AmplifiableCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        val action = if (tryAmplify()) {
-            ApplyPowerToPlayerAction(PulseMagicPower::class)
-        } else {
-            ApplyPowerAction(p, p, EnergizedBluePower(p, magicNumber), magicNumber)
+        if (tryAmplify()) {
+            addToBot(ApplyPowerToPlayerAction(PulseMagicPower::class))
         }
-        addToBot(action)
+        addToBot(ApplyPowerAction(p, p, EnergizedBluePower(p, magicNumber), magicNumber))
     }
 
     override fun makeCopy(): AbstractCard = PulseMagic()

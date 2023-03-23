@@ -11,13 +11,13 @@ import marisa.p
 import marisa.powers.Marisa.*
 import marisa.relics.AmplifyWand
 
-fun applyAmplify() {
+private fun applyAmplify() {
     addToTop(ApplyPowerToPlayerAction(GrandCrossPower::class))
     p.getPower(EventHorizonPower.POWER_ID)?.onSpecificTrigger()
     p.getRelic(AmplifyWand.ID)?.onTrigger()
 }
 
-fun isAmplifyDisabled() = when {
+private fun isAmplifyDisabled() = when {
     p.hasPower(OneTimeOffPower.POWER_ID) -> true
     p.hasPower(OneTimeOffPlusPower.POWER_ID) -> true
     else -> false
@@ -36,7 +36,6 @@ abstract class AmplifiableCard(
             p.hasPower(PulseMagicPower.POWER_ID) -> true
             freeToPlayOnce -> true
             else -> false
-//        purgeOnUse -> true
         }
     private val canAmplify: Boolean
         get() = when {
@@ -48,6 +47,7 @@ abstract class AmplifiableCard(
 
     private val additionalCostToPay
         get() = when {
+            isAmplifyDisabled() -> 0
             isFreeAmplify -> 0
             canPayAmplify -> amplifyCost
             else -> 0

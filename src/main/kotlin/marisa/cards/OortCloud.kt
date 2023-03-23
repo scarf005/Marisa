@@ -38,7 +38,7 @@ class OortCloud : AmplifiableCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        val armorValue = if (tryAmplify()) block else magicNumber
+        val armorValue = magicNumber + if (tryAmplify()) block else 0
         val action = ApplyPowerAction(p, p, PlatedArmorPower(p, armorValue), armorValue)
 
         addToBot(action)

@@ -34,7 +34,13 @@ const fmtErr = ({ from, fromIno, target, targetIno }: Fmt) =>
       ${brightRed(`${targetIno}`)} :: ${brightYellow(target)}
     `
 
-const inode = async (filePath: string) => (await Deno.stat(filePath)).ino!
+const inode = async (filePath: string) => {
+  try {
+    return (await Deno.lstat(filePath)).ino!
+  } catch {
+    return -1
+  }
+}
 
 const forceCreateLinkTo = async (from: string, to: string): Promise<void> => {
   const target = join(to, from.split("/").pop()!)
@@ -47,8 +53,11 @@ const forceCreateLinkTo = async (from: string, to: string): Promise<void> => {
 
   if (fromIno == targetIno) return
 
-  await Deno.remove(target)
-  await Deno.symlink(resolve(from), target)
+  try {
+    await Deno.remove(target)
+    // deno-lint-ignore no-empty
+  } catch {}
+  await Deno.link(resolve(from), target)
   console.log(magenta(`linked ${resolve(from)} -> ${target}`))
 }
 

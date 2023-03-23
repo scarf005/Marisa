@@ -52,8 +52,6 @@ class OortCloud : AmplifiableCard(
         upgradeName()
         upgradeMagicNumber(UPG_ARMOR)
         upgradeBlock(UPG_AMP)
-        //this.rawDescription = DESCRIPTION_UPG;
-        //initializeDescription();
     }
 
     companion object {

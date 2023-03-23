@@ -1,15 +1,15 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.AmplifiableCard
 import marisa.action.RobberyDamageAction
 import marisa.patches.AbstractCardEnum
 
-class Robbery : CustomCard(
+class Robbery : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -27,22 +27,18 @@ class Robbery : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        addToBot(
-            RobberyDamageAction(
-                m,
-                DamageInfo(p, damage, damageTypeForTurn),
-                isAmplified(AMP)
-            )
-        )
+        val action = RobberyDamageAction(m, DamageInfo(p, damage, damageTypeForTurn), tryAmplify())
+
+        addToBot(action)
     }
 
     override fun makeCopy(): AbstractCard = Robbery()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-        }
+        if (upgraded) return
+
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {
@@ -54,6 +50,5 @@ class Robbery : CustomCard(
         private const val COST = 1
         private const val ATTACK_DMG = 7
         private const val UPGRADE_PLUS_DMG = 3
-        private const val AMP = 1
     }
 }

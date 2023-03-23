@@ -1,15 +1,15 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.PlatedArmorPower
+import marisa.abstracts.AmplifiableCard
 import marisa.patches.AbstractCardEnum
 
-class OortCloud : CustomCard(
+class OortCloud : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -38,36 +38,22 @@ class OortCloud : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (isAmplified(AMP)) {
-            addToBot(
-                ApplyPowerAction(
-                    p,
-                    p,
-                    PlatedArmorPower(p, block),
-                    block
-                )
-            )
-        }
-        addToBot(
-            ApplyPowerAction(
-                p,
-                p,
-                PlatedArmorPower(p, magicNumber),
-                magicNumber
-            )
-        )
+        val armorValue = if (tryAmplify()) block else magicNumber
+        val action = ApplyPowerAction(p, p, PlatedArmorPower(p, armorValue), armorValue)
+
+        addToBot(action)
     }
 
     override fun makeCopy(): AbstractCard = OortCloud()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_ARMOR)
-            upgradeBlock(UPG_AMP)
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-        }
+        if (upgraded) return
+
+        upgradeName()
+        upgradeMagicNumber(UPG_ARMOR)
+        upgradeBlock(UPG_AMP)
+        //this.rawDescription = DESCRIPTION_UPG;
+        //initializeDescription();
     }
 
     companion object {
@@ -82,6 +68,5 @@ class OortCloud : CustomCard(
         private const val UPG_ARMOR = 1
         private const val AMP_ARMOR = 2
         private const val UPG_AMP = 1
-        private const val AMP = 1
     }
 }

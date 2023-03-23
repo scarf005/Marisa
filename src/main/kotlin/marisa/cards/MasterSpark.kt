@@ -32,28 +32,13 @@ class MasterSpark : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        addToBot(
-            VFXAction(
-                MindblastEffect(p.dialogX, p.dialogY, false)
-            )
+        val damageNumber = if (tryAmplify()) block else damage
+        val blast = VFXAction(MindblastEffect(p.dialogX, p.dialogY, false))
+        val action = DamageAction(
+            m, DamageInfo(p, damageNumber, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL
         )
-        if (isAmplified(AMP)) {
-            addToBot(
-                DamageAction(
-                    m,
-                    DamageInfo(p, block, damageTypeForTurn),
-                    AttackEffect.SLASH_DIAGONAL
-                )
-            )
-        } else {
-            addToBot(
-                DamageAction(
-                    m,
-                    DamageInfo(p, damage, damageTypeForTurn),
-                    AttackEffect.SLASH_DIAGONAL
-                )
-            )
-        }
+
+        marisa.addToBot(blast, action)
     }
 
     override fun makeCopy(): AbstractCard = MasterSpark()
@@ -79,6 +64,5 @@ class MasterSpark : AmplifiedAttack(
         private const val UPG_DMG = 3
         private const val AMP_DMG = 7
         private const val UPG_AMP = 2
-        private const val AMP = 1
     }
 }

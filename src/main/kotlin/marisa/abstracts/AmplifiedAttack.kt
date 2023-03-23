@@ -1,21 +1,21 @@
 package marisa.abstracts
 
-import basemod.abstracts.CustomCard
 import com.badlogic.gdx.math.MathUtils
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 
+
 abstract class AmplifiedAttack(
-    id: String?,
-    name: String?,
-    img: String?,
+    id: String,
+    name: String,
+    img: String,
     cost: Int,
-    rawDescription: String?,
-    type: CardType?,
-    color: CardColor?,
-    rarity: CardRarity?,
-    target: CardTarget?
-) : CustomCard(
+    rawDescription: String,
+    type: CardType,
+    color: CardColor,
+    rarity: CardRarity,
+    target: CardTarget,
+) : AmplifiableCard(
     id,
     name,
     img,
@@ -30,6 +30,7 @@ abstract class AmplifiedAttack(
     protected var ampNumber = 0
     protected lateinit var multiAmpDamage: IntArray
     protected var isException = false
+
     override fun applyPowers() {
         if (!isException) {
             damage = baseDamage

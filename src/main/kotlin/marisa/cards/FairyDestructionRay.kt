@@ -1,6 +1,5 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -8,10 +7,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.AmplifiableCard
 import marisa.action.FairyDestrucCullingAction
 import marisa.patches.AbstractCardEnum
 
-class FairyDestructionRay : CustomCard(
+class FairyDestructionRay : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -28,22 +28,18 @@ class FairyDestructionRay : CustomCard(
         baseDamage = damage
         baseMagicNumber = DIASPORA
         magicNumber = baseMagicNumber
+        amplifyCost = AMP
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         addToBot(
             DamageAllEnemiesAction(
-                p,
-                multiDamage,
-                damageTypeForTurn,
-                AttackEffect.SLASH_DIAGONAL
+                p, multiDamage, damageTypeForTurn, AttackEffect.SLASH_DIAGONAL
             )
         )
         if (!AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
-            if (isAmplified(AMP)) {
-                addToBot(
-                    FairyDestrucCullingAction(magicNumber)
-                )
+            if (tryAmplify()) {
+                addToBot(FairyDestrucCullingAction(magicNumber))
             }
         }
     }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.abstracts.AmplifiedAttack
+import marisa.p
 import marisa.patches.AbstractCardEnum
 
 class LuminesStrike : AmplifiedAttack(
@@ -32,21 +33,9 @@ class LuminesStrike : AmplifiedAttack(
     }
 
     override fun applyPowers() {
-        val player = AbstractDungeon.player
-        damage = player.hand.size() * baseMagicNumber + baseDamage
+        damage = p.hand.size() * baseMagicNumber + baseDamage
         block = EnergyPanel.totalCount * baseBlock + baseDamage
-        /*
-    ThMod.logger.info(
-        "LuminesStrike : applyPowers : player hand size :" +
-            player.hand.size() +
-            " ; damage : " +
-            damage +
-            " ; current energy : " +
-            EnergyPanel.totalCount +
-            " ; amplified : " +
-            block
-    );
-    */super.applyPowers()
+        super.applyPowers()
     }
 
     override fun calculateDamageDisplay(mo: AbstractMonster?) {
@@ -55,40 +44,17 @@ class LuminesStrike : AmplifiedAttack(
 
     override fun calculateCardDamage(mo: AbstractMonster?) {
         val player = AbstractDungeon.player
-        /*
-    ThMod.logger.info(
-        "LuminesStrike : calculateCardDamage : player hand size :" +
-            player.hand.size() +
-            " ; damage : " +
-            damage +
-            " ; current energy : " +
-            EnergyPanel.totalCount +
-            " ; amplified : " +
-            block
-    );
-    */damage = player.hand.size() * baseMagicNumber + baseDamage
+        damage = player.hand.size() * baseMagicNumber + baseDamage
         block = EnergyPanel.totalCount * baseBlock + baseDamage
         super.calculateCardDamage(mo)
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        if (isAmplified(AMP)) {
-            addToBot(
-                DamageAction(
-                    m,
-                    DamageInfo(p, block, damageTypeForTurn),
-                    AttackEffect.SLASH_DIAGONAL
-                )
-            )
-        } else {
-            addToBot(
-                DamageAction(
-                    m,
-                    DamageInfo(p, damage, damageTypeForTurn),
-                    AttackEffect.SLASH_DIAGONAL
-                )
-            )
-        }
+        val damageNumber = if (tryAmplify()) block else damage
+        val action = DamageAction(
+            m, DamageInfo(p, damageNumber, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL
+        )
+        addToBot(action)
     }
 
     override fun makeCopy(): AbstractCard = LuminesStrike()
@@ -115,6 +81,5 @@ class LuminesStrike : AmplifiedAttack(
         private const val D1 = 3
         private const val A0 = 4
         private const val A1 = 5
-        private const val AMP = 1
     }
 }

@@ -32,6 +32,7 @@ class BlazingStar : AmplifiedAttack(
         magicNumber = baseMagicNumber
         isException = true
         cardsToPreview = Burn()
+        amplifyCost = AMP
     }
 
     private fun burns() = AbstractDungeon.player.hand.group.filterIsInstance<Burn>().size
@@ -51,15 +52,11 @@ class BlazingStar : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        if (isAmplified(AMP)) {
+        if (tryAmplify()) {
             block *= 2
         }
         addToBot(
-            DamageAction(
-                m,
-                DamageInfo(p, block, damageTypeForTurn),
-                AttackEffect.FIRE
-            )
+            DamageAction(m, DamageInfo(p, block, damageTypeForTurn), AttackEffect.FIRE)
         )
     }
 

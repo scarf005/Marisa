@@ -8,7 +8,6 @@ import com.badlogic.gdx.graphics.Color
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.google.gson.Gson
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.core.Settings
@@ -20,7 +19,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.localization.*
 import com.megacrit.cardcrawl.potions.AbstractPotion
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.action.SparkCostAction
 import marisa.cards.*
 import marisa.cards.derivations.*
@@ -246,57 +244,6 @@ class MarisaContinued :
 
         @JvmField
         var isDeadBranchEnabled: Boolean = false
-
-        /** TODO: it does lots of stuff I cannot understand, split it into multiple parts */
-        fun isAmplified(card: AbstractCard, cost: Int): Boolean {
-            logger.info(
-                """ThMod.Amplified : card to check : ${card.cardID}; costForTurn : ${card.costForTurn}"""
-            )
-            val p = AbstractDungeon.player
-
-            fun isFree() =
-                p.hasPower(MillisecondPulsarsPower.POWER_ID) || p.hasPower(PulseMagicPower.POWER_ID)
-                        || card.freeToPlayOnce || card.purgeOnUse
-
-            fun canPay() = EnergyPanel.totalCount >= card.costForTurn + cost
-
-            if (p.hasPower(OneTimeOffPlusPower.POWER_ID) || p.hasPower(OneTimeOffPower.POWER_ID)) {
-                logger.info("ThMod.Amplified :OneTimeOff detected,returning false.")
-                return false
-            }
-
-            val res = when {
-                isFree() -> {
-                    logger.info(
-                        """ThMod.Amplified :Free Amplify tag detected,returning true : Milli :${
-                            p.hasPower(MillisecondPulsarsPower.POWER_ID)
-                        } ; 
-                        |Pulse :${p.hasPower(PulseMagicPower.POWER_ID)} ; 
-                        |Free2Play :${card.freeToPlayOnce} ; 
-                        |purge on use :${card.purgeOnUse}""".trimMargin()
-                    )
-                    true
-                }
-
-                canPay() -> {
-                    logger.info("ThMod.Amplified : Sufficient energy, adding and returning true;")
-                    card.costForTurn += cost
-                    true
-                }
-
-                else -> false
-            }
-
-            if (res) {
-                AbstractDungeon.actionManager.addToTop(ApplyPowerAction(p, p, GrandCrossPower(p)))
-                p.getPower(EventHorizonPower.POWER_ID)?.onSpecificTrigger()
-                p.getRelic(AmplifyWand.ID)?.onTrigger()
-            }
-            logger.info(
-                """ThMod.Amplified : card : ${card.cardID} ; Amplify : $res ; costForTurn : ${card.costForTurn}"""
-            )
-            return res
-        }
 
         @JvmStatic
         val randomMarisaCard: AbstractCard

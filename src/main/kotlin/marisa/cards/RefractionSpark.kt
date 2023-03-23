@@ -31,21 +31,10 @@ class RefractionSpark : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        if (isAmplified(AMP)) {
-            addToBot(
-                RefractionSparkAction(
-                    m,
-                    DamageInfo(p, block, damageTypeForTurn)
-                )
-            )
-        } else {
-            addToBot(
-                RefractionSparkAction(
-                    m,
-                    DamageInfo(p, damage, damageTypeForTurn)
-                )
-            )
-        }
+        val damageNumber = if (tryAmplify()) block else damage
+        val action = RefractionSparkAction(m, DamageInfo(p, damageNumber, damageTypeForTurn))
+
+        addToBot(action)
     }
 
     override fun makeCopy(): AbstractCard = RefractionSpark()
@@ -71,6 +60,5 @@ class RefractionSpark : AmplifiedAttack(
         private const val UPG_DMG = 1
         private const val AMP_DMG = 3
         private const val UPG_AMP = 1
-        private const val AMP = 1
     }
 }

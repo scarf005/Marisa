@@ -1,16 +1,16 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.VulnerablePower
+import marisa.abstracts.AmplifiableCard
+import marisa.monsters
 import marisa.patches.AbstractCardEnum
 
-class SporeBomb : CustomCard(
+class SporeBomb : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -26,30 +26,17 @@ class SporeBomb : CustomCard(
         magicNumber = baseMagicNumber
     }
 
+    private fun vulnerableAction(p: AbstractPlayer, m: AbstractMonster) =
+        ApplyPowerAction(m, p, VulnerablePower(m, magicNumber, false), magicNumber)
+
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        if (isAmplified(AMP)) {
-            for (mo in AbstractDungeon.getCurrRoom().monsters.monsters) {
-                addToBot(
-                    ApplyPowerAction(
-                        mo,
-                        p,
-                        VulnerablePower(mo, magicNumber, false),
-                        magicNumber,
-                        true
-                    )
-                )
-            }
-        } else {
-            addToBot(
-                ApplyPowerAction(
-                    m,
-                    p,
-                    VulnerablePower(m, magicNumber, false),
-                    magicNumber,
-                    true
-                )
-            )
+        val monsters = if (tryAmplify()) monsters else {
+            m ?: return
+            listOf(m)
         }
+        val actions = monsters.map { vulnerableAction(p, it) }
+
+        marisa.addToBot(actions)
     }
 
     override fun makeCopy(): AbstractCard = SporeBomb()
@@ -68,7 +55,6 @@ class SporeBomb : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = 0
-        private const val AMP = 1
         private const val STC = 2
         private const val UPG_STC = 1
     }

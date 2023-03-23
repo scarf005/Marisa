@@ -1,6 +1,5 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -8,9 +7,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower
+import marisa.abstracts.AmplifiableCard
 import marisa.patches.AbstractCardEnum
 
-class AsteroidBelt : CustomCard(
+class AsteroidBelt : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -23,21 +23,15 @@ class AsteroidBelt : CustomCard(
 ) {
     init {
         baseBlock = BLOCK_AMT
+        amplifyCost = AMP
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         addToBot(
             GainBlockAction(p, p, block)
         )
-        if (isAmplified(AMP)) {
-            addToBot(
-                ApplyPowerAction(
-                    p,
-                    p,
-                    NextTurnBlockPower(p, block),
-                    block
-                )
-            )
+        if (tryAmplify()) {
+            addToBot(ApplyPowerAction(p, p, NextTurnBlockPower(p, block), block))
         }
     }
 

@@ -1,15 +1,15 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.AmplifiableCard
 import marisa.patches.AbstractCardEnum
 
-class AlicesGift : CustomCard(
+class AlicesGift : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -24,6 +24,7 @@ class AlicesGift : CustomCard(
         baseDamage = ATK
         damage = baseDamage
         exhaust = true
+        amplifyCost = AMP
     }
 
     override fun upgrade() {
@@ -39,15 +40,11 @@ class AlicesGift : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        if (isAmplified(AMP)) {
+        if (tryAmplify()) {
             damage *= 3
         }
         addToBot(
-            DamageAction(
-                m,
-                DamageInfo(p, damage, damageTypeForTurn),
-                AttackEffect.FIRE
-            )
+            DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.FIRE)
         )
     }
 

@@ -1,16 +1,16 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.HealAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.AmplifiableCard
 import marisa.action.DiscToHandRandAction
 import marisa.action.DiscardPileToHandAction
 import marisa.patches.AbstractCardEnum
 
-class EarthLightRay : CustomCard(
+class EarthLightRay : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -21,7 +21,6 @@ class EarthLightRay : CustomCard(
     CardRarity.UNCOMMON,
     CardTarget.SELF
 ) {
-    private val AMP = 1
 
     init {
         magicNumber = HEAL_AMT
@@ -32,7 +31,7 @@ class EarthLightRay : CustomCard(
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
         if (!p.discardPile.isEmpty) {
-            if (isAmplified(AMP)) {
+            if (tryAmplify()) {
                 if (upgraded && !p.discardPile.isEmpty) {
                     addToBot(
                         DiscardPileToHandAction(1)
@@ -44,9 +43,7 @@ class EarthLightRay : CustomCard(
                 }
             }
         }
-        addToBot(
-            HealAction(p, p, magicNumber)
-        )
+        addToBot(HealAction(p, p, magicNumber))
     }
 
     override fun makeCopy(): AbstractCard = EarthLightRay()

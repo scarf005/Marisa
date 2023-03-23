@@ -1,16 +1,17 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.EnergizedBluePower
+import marisa.ApplyPowerToPlayerAction
+import marisa.abstracts.AmplifiableCard
 import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.PulseMagicPower
 
-class PulseMagic : CustomCard(
+class PulseMagic : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -26,30 +27,13 @@ class PulseMagic : CustomCard(
         magicNumber = baseMagicNumber
     }
 
-    /*
-    @Override
-    public void applyPowers() {
-      if (this.upgraded) {
-        this.retain = true;
-      }
-    }
-  */
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (isAmplified(AMP)) {
-            addToBot(
-                ApplyPowerAction(
-                    p, p, PulseMagicPower(p)
-                )
-            )
+        val action = if (tryAmplify()) {
+            ApplyPowerToPlayerAction(PulseMagicPower::class)
+        } else {
+            ApplyPowerAction(p, p, EnergizedBluePower(p, magicNumber), magicNumber)
         }
-        addToBot(
-            ApplyPowerAction(
-                p,
-                p,
-                EnergizedBluePower(p, magicNumber),
-                magicNumber
-            )
-        )
+        addToBot(action)
     }
 
     override fun makeCopy(): AbstractCard = PulseMagic()
@@ -73,6 +57,5 @@ class PulseMagic : CustomCard(
         private const val COST = 0
         private const val ENE = 1
         private const val UPG_ENE = 1
-        private const val AMP = 1
     }
 }

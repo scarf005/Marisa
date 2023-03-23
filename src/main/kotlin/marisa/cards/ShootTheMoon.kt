@@ -34,7 +34,7 @@ class ShootTheMoon : AmplifiedAttack(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         m ?: return
-        val isAmplified = isAmplified(AMP)
+        val isAmplified = tryAmplify()
 
         val buffs = m.powers
             .filter { it.type == AbstractPower.PowerType.BUFF }
@@ -78,6 +78,5 @@ class ShootTheMoon : AmplifiedAttack(
         private const val UPG_DMG = 3
         private const val AMP_DMG = 5
         private const val UPG_AMP = 2
-        private const val AMP = 1
     }
 }

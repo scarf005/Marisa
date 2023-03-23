@@ -1,15 +1,15 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.AmplifiableCard
 import marisa.action.WasteBombAction
 import marisa.patches.AbstractCardEnum
 
-class DeepEcologicalBomb : CustomCard(
+class DeepEcologicalBomb : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -24,14 +24,12 @@ class DeepEcologicalBomb : CustomCard(
         baseDamage = ATK_DMG
         baseMagicNumber = STC
         magicNumber = baseMagicNumber
+        amplifyCost = AMP
     }
 
     override fun calculateCardDamage(unused: AbstractMonster?) {}
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        var num = 1
-        if (isAmplified(AMP)) {
-            num++
-        }
+        val num = if (tryAmplify()) 2 else 1
         addToBot(
             WasteBombAction(
                 AbstractDungeon.getMonsters().getRandomMonster(true),

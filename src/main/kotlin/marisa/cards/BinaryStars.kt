@@ -1,18 +1,17 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.MarisaContinued
+import marisa.abstracts.AmplifiableCard
 import marisa.action.BinaryStarsAction
 import marisa.cards.derivations.BlackFlareStar
 import marisa.cards.derivations.WhiteDwarf
 import marisa.patches.AbstractCardEnum
 
-class BinaryStars : CustomCard(
+class BinaryStars : AmplifiableCard(
     ID,
     NAME,
     IMG_PATH,
@@ -24,12 +23,13 @@ class BinaryStars : CustomCard(
     CardTarget.SELF
 ) {
     init {
+        amplifyCost = AMP
         multiplePreviews(stars())
     }
 
     private fun stars() = listOf(WhiteDwarf(), BlackFlareStar()).map { followUpgrade(it) }
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (isAmplified(AMP)) {
+        if (tryAmplify()) {
             stars().forEach { addToBot(MakeTempCardInHandAction(it, 1)) }
         } else {
             addToBot(BinaryStarsAction(upgraded))

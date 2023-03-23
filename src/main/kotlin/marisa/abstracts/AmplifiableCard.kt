@@ -1,9 +1,11 @@
 package marisa.abstracts
 
 import basemod.abstracts.CustomCard
+import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import com.evacipated.cardcrawl.modthespire.lib.SpireOverride
+import com.evacipated.cardcrawl.modthespire.lib.SpireSuper
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.ApplyPowerToPlayerAction
-import marisa.MarisaContinued
 import marisa.addToTop
 import marisa.p
 import marisa.powers.Marisa.*
@@ -22,66 +24,61 @@ fun isAmplifyDisabled() = when {
 }
 
 abstract class AmplifiableCard(
-    id: String,
-    name: String,
-    img: String,
-    cost: Int,
-    rawDescription: String,
-    type: CardType,
-    color: CardColor,
-    rarity: CardRarity,
-    target: CardTarget,
-) : CustomCard(
-    id,
-    name,
-    img,
-    cost,
-    rawDescription,
-    type,
-    color,
-    rarity,
-    target
-) {
+    id: String, name: String, img: String, cost: Int, rawDescription: String,
+    type: CardType, color: CardColor, rarity: CardRarity, target: CardTarget,
+) : CustomCard(id, name, img, cost, rawDescription, type, color, rarity, target) {
     var amplifyCost = 1
-
-    fun isFreeAmplify(): Boolean = when {
-        p.hasPower(MillisecondPulsarsPower.POWER_ID) -> true
-        p.hasPower(PulseMagicPower.POWER_ID) -> true
-        freeToPlayOnce -> true
-        else -> false
+    private val actualCost get() = costForTurn + additionalCostToPay
+    private val canPayAmplify get() = EnergyPanel.totalCount >= costForTurn + amplifyCost
+    private val isFreeAmplify
+        get() = when {
+            p.hasPower(MillisecondPulsarsPower.POWER_ID) -> true
+            p.hasPower(PulseMagicPower.POWER_ID) -> true
+            freeToPlayOnce -> true
+            else -> false
 //        purgeOnUse -> true
+        }
+    private val canAmplify: Boolean
+        get() = when {
+            isAmplifyDisabled() -> false
+            isFreeAmplify -> true
+            canPayAmplify -> true
+            else -> false
+        }
+
+    private val additionalCostToPay
+        get() = when {
+            isFreeAmplify -> 0
+            canPayAmplify -> amplifyCost
+            else -> 0
+        }
+
+    @SpireOverride
+    protected fun renderEnergy(sb: SpriteBatch) {
+        val tmpCostModified = isCostModifiedForTurn
+        isCostModifiedForTurn = isCostModifiedForTurn || canAmplify
+        SpireSuper.call<SpriteBatch>(sb)
+        isCostModifiedForTurn = tmpCostModified
     }
 
+    @SpireOverride
+    protected fun getCost(): String = when (cost) {
+        -1 -> "X"
+        else -> actualCost.toString()
+    }
+
+
     override fun triggerOnGlowCheck() {
-        val color = if (canAmplify()) GOLD_BORDER_GLOW_COLOR else BLUE_BORDER_GLOW_COLOR
+        val color = if (canAmplify) GOLD_BORDER_GLOW_COLOR else BLUE_BORDER_GLOW_COLOR
         glowColor = color.cpy()
     }
 
-    fun canPayAmplify() = EnergyPanel.totalCount >= costForTurn + amplifyCost
-
-    fun canAmplify(): Boolean = when {
-        isAmplifyDisabled() -> false
-        isFreeAmplify() -> true
-        canPayAmplify() -> true
-        else -> false
-    }
-
-    fun additionalCostToPay() = when {
-        isFreeAmplify() -> 0
-        canPayAmplify() -> amplifyCost
-        else -> 0
-    }
-
     fun tryAmplify(): Boolean {
-        MarisaContinued.logger.info("""Card to be Amplified: ${cardID} with costForTurn : ${costForTurn}""")
+        costForTurn += additionalCostToPay
 
-        costForTurn += additionalCostToPay()
-
-        val res = canAmplify()
-        if (res) {
+        if (canAmplify) {
             applyAmplify()
         }
-        MarisaContinued.logger.info("""Amplified : card : $cardID; Amplify : $res ; costForTurn : $costForTurn""")
-        return res
+        return canAmplify
     }
 }

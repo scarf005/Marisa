@@ -1,15 +1,15 @@
 package marisa.cards
 
+import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.abstracts.AmplifiedAttack
 import marisa.action.UnstableBombAction
 import marisa.patches.AbstractCardEnum
 
-class UnstableBomb : AmplifiedAttack(
+class UnstableBomb : CustomCard(
     ID,
     NAME,
     IMG_PATH,
@@ -20,10 +20,12 @@ class UnstableBomb : AmplifiedAttack(
     CardRarity.COMMON,
     CardTarget.ALL_ENEMY
 ) {
+    private var num = DAMAGE_RANGE
+
     init {
-        baseDamage = ATK_DMG
-        ampNumber = AMP_DMG
-        baseBlock = baseDamage + ampNumber
+        baseDamage = DAMAGE
+        num = DAMAGE_RANGE
+        baseBlock = baseDamage + num
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
@@ -37,16 +39,15 @@ class UnstableBomb : AmplifiedAttack(
         )
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster?) {}
     override fun makeCopy(): AbstractCard = UnstableBomb()
 
     override fun upgrade() {
         if (upgraded) return
 
-        upgradeDamage(UPG_DMG)
+        upgradeDamage(UPG_DAMAGE)
         upgradeName()
-        ampNumber += UPG_AMP
-        baseBlock = baseDamage + ampNumber
+        num += UPG_DAMAGE_RANGE
+        baseBlock = baseDamage + num
         block = baseBlock
         isBlockModified = true
     }
@@ -58,9 +59,9 @@ class UnstableBomb : AmplifiedAttack(
         val DESCRIPTION = cardStrings.DESCRIPTION
         const val IMG_PATH = "img/cards/UnstableBomb.png"
         private const val COST = 1
-        private const val ATK_DMG = 1
-        private const val UPG_DMG = 1
-        private const val AMP_DMG = 3
-        private const val UPG_AMP = 0
+        private const val DAMAGE = 1
+        private const val DAMAGE_RANGE = 3
+        private const val UPG_DAMAGE = 1
+        private const val UPG_DAMAGE_RANGE = 0
     }
 }

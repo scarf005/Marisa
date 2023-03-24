@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.action._6AAction
+import marisa.action.`6AAction`
 import marisa.patches.AbstractCardEnum
 
 @Suppress("ClassName")
@@ -22,7 +22,7 @@ class `6A` : CustomCard(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         addToBot(
-            _6AAction(
+            `6AAction`(
                 m,
                 DamageInfo(p, damage, damageTypeForTurn)
             )

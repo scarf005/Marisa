@@ -7,7 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect
 
-class _6AAction(target: AbstractCreature?, private val info: DamageInfo) : AbstractGameAction() {
+@Suppress("ClassName")
+class `6AAction`(target: AbstractCreature?, private val info: DamageInfo) : AbstractGameAction() {
     init {
         setValues(target, info)
         actionType = ActionType.DAMAGE

@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.Color
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer
 import com.google.gson.Gson
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
@@ -21,8 +20,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.localization.*
 import com.megacrit.cardcrawl.potions.AbstractPotion
 import marisa.action.SparkCostAction
-import marisa.cards.*
-import marisa.cards.derivations.*
 import marisa.characters.Marisa
 import marisa.event.Mushrooms_MRS
 import marisa.event.OrinTheCat
@@ -42,9 +39,9 @@ import java.util.*
 
 @SpireInitializer
 class MarisaContinued :
-    PostInitializeSubscriber, PostEnergyRechargeSubscriber,
+    PostInitializeSubscriber, OnCardUseSubscriber,
     EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber,
-    EditCardsSubscriber, EditRelicsSubscriber, OnCardUseSubscriber {
+    EditCardsSubscriber, EditRelicsSubscriber {
     private enum class Config { CATEVENT, REPLACEDEADBRANCH }
 
     private val defaultConfig = Properties().apply {
@@ -104,17 +101,6 @@ class MarisaContinued :
         if (card.hasTag(CardTagEnum.SPARK)) {
             AbstractDungeon.actionManager.addToTop(SparkCostAction())
         }
-    }
-
-    override fun receivePostEnergyRecharge() {
-        if (AbstractDungeon.player.hand.isEmpty) return
-
-        AbstractDungeon.player.hand.group
-            .filterIsInstance<GuidingStar>()
-            .forEach {
-                AbstractDungeon.actionManager.addToBottom(GainEnergyAction(1))
-                it.flash()
-            }
     }
 
     override fun receiveEditKeywords() = logger.runInfo("custom keywords") {

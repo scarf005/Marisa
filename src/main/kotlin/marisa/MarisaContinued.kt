@@ -127,7 +127,7 @@ class MarisaContinued :
         val settingsPanel = ModPanel()
         BaseMod.registerModBadge(
             ImageMaster.loadImage(MOD_BADGE),
-            "MarisaContinued", // TODO: use constant for modid
+            MOD_ID,
             "Flynn, Hell, Hohner_257, Samsara, scarf005", // TODO: load from modthespire.json
             "A Mod of the poor blonde girl from Touhou Project",
             settingsPanel

@@ -47,11 +47,10 @@ class FairyDestructionRay : AmplifiableCard(
     override fun makeCopy(): AbstractCard = FairyDestructionRay()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-            upgradeMagicNumber(UPG_DIASPORA)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
+        upgradeMagicNumber(UPG_DIASPORA)
     }
 
     companion object {

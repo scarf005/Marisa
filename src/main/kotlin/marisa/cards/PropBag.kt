@@ -32,14 +32,11 @@ class PropBag : CustomCard(
     override fun makeCopy(): AbstractCard = PropBag()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            isInnate = true
-            //this.exhaust = false;
-            rawDescription = DESCRIPTION_UPG
-            //upgradeMagicNumber(PRODUCE_UPG);
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        isInnate = true
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

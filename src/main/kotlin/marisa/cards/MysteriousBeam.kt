@@ -42,7 +42,9 @@ class MysteriousBeam : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        val c = generateSequence { AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy() }
+        val c = generateSequence {
+            AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()
+        }
             .first { it !is MysteriousBeam }
             .apply { if (upgraded) upgrade() }
             .apply { applyPowers() }
@@ -52,17 +54,22 @@ class MysteriousBeam : CustomCard(
 
         m ?: return
         calculateCardDamage(m)
-        addToBot(DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL))
+        addToBot(
+            DamageAction(
+                m,
+                DamageInfo(p, damage, damageTypeForTurn),
+                AttackEffect.SLASH_DIAGONAL
+            )
+        )
     }
 
     override fun makeCopy(): AbstractCard = MysteriousBeam()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

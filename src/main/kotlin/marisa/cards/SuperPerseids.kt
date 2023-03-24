@@ -79,11 +79,10 @@ class SuperPerseids : CustomCard(
     override fun makeCopy(): AbstractCard = SuperPerseids()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            upgradeMagicNumber(UPG_STACK)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        upgradeMagicNumber(UPG_STACK)
     }
 
     companion object {

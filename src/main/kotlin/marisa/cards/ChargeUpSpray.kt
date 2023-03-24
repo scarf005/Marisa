@@ -59,11 +59,9 @@ class ChargeUpSpray : CustomCard(
     override fun makeCopy(): AbstractCard = ChargeUpSpray()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-            //upgradeMagicNumber(UPG_DRAW);
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

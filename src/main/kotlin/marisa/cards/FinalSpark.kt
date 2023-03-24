@@ -71,11 +71,10 @@ class FinalSpark : CustomCard(
     override fun makeCopy(): AbstractCard = FinalSpark()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

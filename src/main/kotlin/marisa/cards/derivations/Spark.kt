@@ -41,10 +41,9 @@ class Spark : CustomCard(
     override fun makeCopy(): AbstractCard = Spark()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

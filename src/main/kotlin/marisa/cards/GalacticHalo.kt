@@ -45,11 +45,10 @@ class GalacticHalo : CustomCard(
     override fun makeCopy(): AbstractCard = GalacticHalo()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_STC)
-            upgradeBlock(UPG_BLC)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_STC)
+        upgradeBlock(UPG_BLC)
     }
 
     companion object {

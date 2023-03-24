@@ -49,12 +49,11 @@ class EarthLightRay : AmplifiableCard(
     override fun makeCopy(): AbstractCard = EarthLightRay()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_HEAL)
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_HEAL)
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

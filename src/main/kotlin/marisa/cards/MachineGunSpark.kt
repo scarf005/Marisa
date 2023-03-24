@@ -46,10 +46,9 @@ class MachineGunSpark : CustomCard(
     override fun makeCopy(): AbstractCard = MachineGunSpark()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_CNT)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_CNT)
     }
 
     companion object {

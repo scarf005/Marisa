@@ -48,14 +48,10 @@ class SuperNova : CustomCard(
     override fun makeCopy(): AbstractCard = SuperNova()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            //upgradeBaseCost(2);
-            upgradeMagicNumber(STACK_UPG)
-            //this.isInnate = true;
-            //this.rawDescription = DESCRIPTION_UPG;
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(STACK_UPG)
+        initializeDescription()
     }
 
     companion object {

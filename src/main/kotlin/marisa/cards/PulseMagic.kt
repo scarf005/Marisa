@@ -37,12 +37,11 @@ class PulseMagic : AmplifiableCard(
     override fun makeCopy(): AbstractCard = PulseMagic()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_ENE)
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_ENE)
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

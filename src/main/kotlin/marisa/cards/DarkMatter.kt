@@ -89,12 +89,11 @@ class DarkMatter : CustomCard(
     override fun makeCopy(): AbstractCard = DarkMatter()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBlock(UPG_BLC)
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBlock(UPG_BLC)
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

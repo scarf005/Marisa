@@ -41,10 +41,9 @@ class SprinkleStarSeal : CustomCard(
     override fun makeCopy(): AbstractCard = SprinkleStarSeal()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBaseCost(UPG_COST)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBaseCost(UPG_COST)
     }
 
     companion object {

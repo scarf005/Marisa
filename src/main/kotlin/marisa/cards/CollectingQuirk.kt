@@ -98,12 +98,11 @@ class CollectingQuirk : CustomCard(
     }
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            baseMagicNumber = UPG_DIVIDER
-            magicNumber = baseMagicNumber
-            upgradedMagicNumber = true
-        }
+        if (upgraded) return
+        upgradeName()
+        baseMagicNumber = UPG_DIVIDER
+        magicNumber = baseMagicNumber
+        upgradedMagicNumber = true
     }
 
     private fun modifyBlock() {

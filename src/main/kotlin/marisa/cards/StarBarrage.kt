@@ -45,10 +45,9 @@ class StarBarrage : CustomCard(
     override fun makeCopy(): AbstractCard = StarBarrage()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

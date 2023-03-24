@@ -60,13 +60,12 @@ class LuminesStrike : AmplifiedAttack(
     override fun makeCopy(): AbstractCard = LuminesStrike()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            baseBlock = A1
-            baseMagicNumber = D1
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        baseBlock = A1
+        baseMagicNumber = D1
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

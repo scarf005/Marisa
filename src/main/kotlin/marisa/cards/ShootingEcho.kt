@@ -1,8 +1,5 @@
 package marisa.cards
 
-import marisa.action.RefreshHandAction
-import marisa.action.ShootingEchoAction
-import marisa.patches.AbstractCardEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -11,6 +8,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.RefreshHandAction
+import marisa.action.ShootingEchoAction
+import marisa.patches.AbstractCardEnum
 
 class ShootingEcho : CustomCard(
     ID,
@@ -46,12 +46,9 @@ class ShootingEcho : CustomCard(
     override fun makeCopy(): AbstractCard = ShootingEcho()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPGRADE_PLUS_DMG)
-            //this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            //initializeDescription();
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPGRADE_PLUS_DMG)
     }
 
     companion object {

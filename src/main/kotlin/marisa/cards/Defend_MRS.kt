@@ -35,10 +35,9 @@ class Defend_MRS : CustomCard(
 
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBlock(UPGRADE_PLUS_BLOCK)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBlock(UPGRADE_PLUS_BLOCK)
     }
 
     companion object {

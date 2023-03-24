@@ -63,14 +63,13 @@ class BlazingStar : AmplifiedAttack(
     override fun makeCopy(): AbstractCard = BlazingStar()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            upgradeMagicNumber(UPG_AMP)
-            baseBlock = baseDamage
-            block = baseBlock
-            isBlockModified = true
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        upgradeMagicNumber(UPG_AMP)
+        baseBlock = baseDamage
+        block = baseBlock
+        isBlockModified = true
     }
 
     companion object {

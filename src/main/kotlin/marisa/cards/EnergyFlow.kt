@@ -39,11 +39,10 @@ class EnergyFlow : CustomCard(
     override fun makeCopy(): AbstractCard = EnergyFlow()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeBaseCost(1)
-            upgradeMagicNumber(UPG_STC)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBaseCost(1)
+        upgradeMagicNumber(UPG_STC)
     }
 
     companion object {

@@ -32,14 +32,9 @@ class MagicChant : CustomCard(
     override fun makeCopy(): AbstractCard = MagicChant()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            //this.exhaust = false;
-            upgradeBaseCost(COST_UPG)
-            //upgradeMagicNumber(UPG_RTN);
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeBaseCost(COST_UPG)
     }
 
     companion object {

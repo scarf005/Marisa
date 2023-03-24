@@ -27,11 +27,11 @@ class UnstableBombAction(
         attackEffect = AttackEffect.FIRE
         duration = DURATION
         this.numTimes = numTimes
+
         if (target != null) {
             MarisaContinued.logger.info(
-                "UnstableBombAction : target : " + target.name
-                        + " damage : " + dmg
-                        + " times: " + this.numTimes
+                """UnstableBombAction : target: ${target.name}
+                    |damage : $dmg times: ${this.numTimes}""".trimMargin()
             )
         }
     }
@@ -71,15 +71,7 @@ class UnstableBombAction(
                 info.output = 0
             }
             target.damage(info)
-            /*
-      addToBot(
-          new DamageAction(
-              this.target,
-              this.info,
-              this.attackEffect
-          )
-      );
-      */if (numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
+            if (numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                 numTimes--
                 AbstractDungeon.actionManager.addToTop(
                     UnstableBombAction(

@@ -76,13 +76,9 @@ class DragonMeteor : AmplifiedAttack(
     override fun makeCopy(): AbstractCard = DragonMeteor()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            //upgradeDamage(UPG_DMG);
-            //this.block = this.baseBlock = this.baseDamage;
-            //this.isBlockModified = true;
-            upgradeMagicNumber(UPG_GAIN)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_GAIN)
     }
 
     companion object {

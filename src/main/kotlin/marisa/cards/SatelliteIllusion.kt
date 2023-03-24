@@ -34,12 +34,11 @@ class SatelliteIllusion : CustomCard(
     override fun makeCopy(): AbstractCard = SatelliteIllusion()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            isInnate = true
-            rawDescription = DESCRIPTION_UPG
-            initializeDescription()
-        }
+        if (upgraded) return
+        upgradeName()
+        isInnate = true
+        rawDescription = DESCRIPTION_UPG
+        initializeDescription()
     }
 
     companion object {

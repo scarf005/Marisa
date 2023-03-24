@@ -40,13 +40,12 @@ class RefractionSpark : AmplifiedAttack(
     override fun makeCopy(): AbstractCard = RefractionSpark()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            ampNumber += UPG_AMP
-            isBlockModified = true
-            block = baseDamage + ampNumber
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        ampNumber += UPG_AMP
+        isBlockModified = true
+        block = baseDamage + ampNumber
     }
 
     companion object {

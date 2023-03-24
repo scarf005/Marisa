@@ -36,12 +36,9 @@ class ChargingUp : CustomCard(
     override fun makeCopy(): AbstractCard = ChargingUp()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_STC)
-            //this.rawDescription = DESCRIPTION_UPG;
-            //initializeDescription();
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_STC)
     }
 
     companion object {

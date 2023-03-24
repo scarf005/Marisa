@@ -42,10 +42,9 @@ class SporeBomb : AmplifiableCard(
     override fun makeCopy(): AbstractCard = SporeBomb()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeMagicNumber(UPG_STC)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeMagicNumber(UPG_STC)
     }
 
     companion object {

@@ -51,10 +51,9 @@ class UltraShortWave : CustomCard(
     override fun makeCopy(): AbstractCard = UltraShortWave()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(GAIN_GROW)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(GAIN_GROW)
     }
 
     companion object {

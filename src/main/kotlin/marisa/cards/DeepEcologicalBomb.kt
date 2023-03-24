@@ -43,11 +43,10 @@ class DeepEcologicalBomb : AmplifiableCard(
     override fun makeCopy(): AbstractCard = DeepEcologicalBomb()
 
     override fun upgrade() {
-        if (!upgraded) {
-            upgradeName()
-            upgradeDamage(UPG_DMG)
-            upgradeMagicNumber(UPG_STC)
-        }
+        if (upgraded) return
+        upgradeName()
+        upgradeDamage(UPG_DMG)
+        upgradeMagicNumber(UPG_STC)
     }
 
     companion object {

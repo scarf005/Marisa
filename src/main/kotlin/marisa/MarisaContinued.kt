@@ -191,7 +191,7 @@ class MarisaContinued :
 
     private fun cardsToAdd() = listOf(
         Strike_MRS(), Defend_MRS(), MasterSpark(), UpSweep(), DoubleSpark(), NonDirectionalLaser(),
-        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), _6A(), UnstableBomb(), JA(),
+        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), `6A`(), UnstableBomb(), JA(),
         StarBarrage(), ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(),
         GravityBeat(), GrandCross(), DragonMeteor(), RefractionSpark(), Robbery(), ChargeUpSpray(),
         AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(),

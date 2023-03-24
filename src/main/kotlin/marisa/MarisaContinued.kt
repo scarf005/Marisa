@@ -2,6 +2,7 @@ package marisa
 
 import basemod.*
 import basemod.BaseMod.GetMonster
+import basemod.abstracts.CustomRelic
 import basemod.helpers.RelicType
 import basemod.interfaces.*
 import com.badlogic.gdx.graphics.Color
@@ -81,18 +82,18 @@ class MarisaContinued :
         )
     }
 
-    override fun receiveEditRelics() = logger.runInfo("add relics") {
-        arrayOf(
-            MiniHakkero(), BewitchedHakkero(), MagicBroom(), AmplifyWand(),
-            ExperimentalFamiliar(), RampagingMagicTools(), BreadOfAWashokuLover(), SimpleLauncher(),
-            HandmadeGrimoire(), ShroomBag(), SproutingBranch(), BigShroomBag()
-        ).forEach { BaseMod.addRelicToCustomPool(it, AbstractCardEnum.MARISA_COLOR) }
+    override fun receiveEditRelics() = logger.runInfo("adding relics") {
+        AutoAdd(MOD_ID).any(CustomRelic::class.java) { _, relic ->
+            logger.info("adding ${relic.name}")
+            BaseMod.addRelicToCustomPool(relic, AbstractCardEnum.MARISA_COLOR)
+        }
+
         BaseMod.addRelic(CatCart(), RelicType.SHARED)
     }
 
-    override fun receiveEditCards() = logger.runInfo("add cards") {
-        cardsToAdd().forEach { card ->
-            logger.info("""Adding card: ${card.name}""")
+    override fun receiveEditCards() = logger.runInfo("adding cards") {
+        AutoAdd(MOD_ID).any(AbstractCard::class.java) { _, card ->
+            logger.info("adding ${card.name}")
             BaseMod.addCard(card)
         }
     }
@@ -188,24 +189,6 @@ class MarisaContinued :
     internal inner class Keywords {
         lateinit var keywords: Array<Keyword>
     }
-
-    private fun cardsToAdd() = listOf(
-        Strike_MRS(), Defend_MRS(), MasterSpark(),
-//        UpSweep(), DoubleSpark(), NonDirectionalLaser(),
-//        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), `6A`(), UnstableBomb(), JA(),
-//        StarBarrage(), ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(),
-//        GravityBeat(), GrandCross(), DragonMeteor(), RefractionSpark(), Robbery(), ChargeUpSpray(),
-//        AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(),
-//        AbsoluteMagnitude(), TreasureHunter(), CollectingQuirk(), MilkyWay(), AsteroidBelt(),
-//        PowerUp(), SporeBomb(), IllusionStar(), EnergyRecoil(), GasGiant(), StarDustReverie(),
-//        MagicAbsorber(), Occultation(), EarthLightRay(), BlazeAway(), ChargingUp(), DarkMatter(),
-//        MagicChant(), OneTimeOff(), ManaConvection(), PropBag(), SprinkleStarSeal(), GalacticHalo(),
-//        SuperPerseids(), PulseMagic(), Orbital(), BigCrunch(), OpenUniverse(), StarlightTyphoon(),
-//        MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), Wraith(),
-//        SatelliteIllusion(), OortCloud(), OrrerysSun(), EnergyFlow(), EventHorizon(), Singularity(),
-//        CasketOfStar(), EscapeVelocity(), MillisecondPulsars(), SuperNova(), Spark(), GuidingStar(),
-//        BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), MeteoricShower(), WitchOfGreed(),
-    )
 
     companion object {
         val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)

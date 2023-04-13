@@ -11,10 +11,11 @@ body:
       multiple: true
       options:
         - English
+        - French
+        - Japanese
+        - Korean
         - Simplified Chinese
         - Traditional Chinese
-        - French
-        - Korean
         - Others
     validations:
       required: true

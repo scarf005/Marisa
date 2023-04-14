@@ -440,8 +440,8 @@
     "DESCRIPTION": " 脱力 99 を 与える。 NL 廃棄"
   },
   "Wraith": {
-    "NAME": "悪霊",
-    "DESCRIPTION": "使用不可 NL あなたのターン終了時に 悪霊 1 を得る。"
+    "NAME": "怨霊",
+    "DESCRIPTION": "使用不可 NL あなたのターン終了時に 怨霊 1 を得る。"
   },
   "Acceleration": {
     "NAME": "アクセラレーション",

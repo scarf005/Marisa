@@ -1,7 +1,6 @@
 # [Semantic Versioning](https://semver.org)
 
 feature: card, relic, potion, event, etc
-l18n: localization
 scopes:
 
 - `github`: changes related to repository (mostly [`.github`](/.github))
@@ -19,9 +18,11 @@ scopes:
 feat!: rework `Foo`
 
 Foo now does bar
-
+```
+```
 refactor!: change `ModId`
 ```
+
 
 ## minor(`feat`)
 
@@ -55,5 +56,7 @@ fix(L10n): missing `DESCRIPTION` on ENG/`Foo`
 
 ```
 docs(README): add links
+```
+```
 build(github): add gradle dependency
 ```

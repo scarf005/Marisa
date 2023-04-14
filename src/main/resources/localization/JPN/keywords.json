@@ -2,34 +2,58 @@
   "keywords": [
     {
       "NAMES": [
-        "消耗"
+        "増幅"
       ],
-      "DESCRIPTION": "消耗すると、 チャージ を得たり消費する事が出来ない。"
+      "DESCRIPTION": "[E] が十分にあるならば、追加の [E] を消費することで効果を発揮する。"
+    },
+    {
+      "NAMES": [
+        "真の魔術師"
+      ],
+      "DESCRIPTION": "おそらく、魔理沙はそうではないだろう。"
+    },
+    {
+      "NAMES": [
+        "is only shown to",
+        "Is Only Shown To"
+      ],
+      "DESCRIPTION": "Well...That means you may not able to see it..."
+    },
+    {
+      "NAMES": [
+        "疲労困憊"
+      ],
+      "DESCRIPTION": "疲労困憊状態ではチャージを溜めたり放出したりできない。"
     },
     {
       "NAMES": [
         "スパーク"
       ],
-      "DESCRIPTION": "スパークはコスト #b0 の アタック カード"
+      "DESCRIPTION": "スパーク は コスト #b0 のアタックカードで、プレイすると 廃棄 される。"
     },
     {
       "NAMES": [
         "チャージ"
       ],
-      "DESCRIPTION": "#b8 スタックごとに、与えるダメージが #b2 倍になる。"
+      "DESCRIPTION": "#b8 スタック毎に、次の1回の攻撃によるダメージを2倍にし、消費される。 (この効果は累積する)"
     },
     {
       "NAMES": [
-        "増幅"
+        "ブラックフレアスター"
       ],
-      "DESCRIPTION": "増幅に必要なエナジーを持っている場合、 [E] を消費し　増幅効果を得る"
+      "DESCRIPTION": "ブラックフレアスターは コスト #b0 でカードを捨てることでブロックを得るスキル。"
     },
     {
       "NAMES": [
-        "Wraith",
-        "wraith"
+        "ホワイトドワーフ"
       ],
-      "DESCRIPTION": "Wraith will exhaust a random card in your hand after the start of your turn."
+      "DESCRIPTION": "ホワイトドワーフは、コスト #b0 で自分の捨札の多さに応じてダメージを与えるアタック。"
+    },
+    {
+      "NAMES": [
+        "悪霊"
+      ],
+      "DESCRIPTION": "悪霊 はあなたのターン開始時にカードを1枚ランダムに 廃棄 する。"
     }
   ]
 }

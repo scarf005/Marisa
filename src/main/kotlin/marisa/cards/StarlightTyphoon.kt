@@ -1,5 +1,6 @@
 package marisa.cards
 
+import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -7,11 +8,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.MarisaContinued
-import marisa.abstracts.AmplifiedAttack
 import marisa.cards.derivations.Spark
 import marisa.patches.AbstractCardEnum
 
-class StarlightTyphoon : AmplifiedAttack(
+class StarlightTyphoon : CustomCard(
     ID,
     NAME,
     IMG_PATH,

@@ -1,12 +1,23 @@
 # [유의적 버전 관리](https://semver.org/lang/ko/)
 
+[![en][icon-en]][en]
+[![ja][icon-ja]][ja]
+[![ko][icon-ko]][ko]
+
+[en]: ./semver.md
+[icon-en]: https://img.shields.io/badge/lang-en-red?style=flat-square
+[ja]: ./semver.ja.md
+[icon-ja]: https://img.shields.io/badge/lang-ja-orange?style=flat-square
+[ko]: ./semver.ko.md
+[icon-ko]: https://img.shields.io/badge/lang-ko-yellow?style=flat-square
+
+
 기능: 카드, 유물, 물약, 이벤트 등등
-l18n: 현지화 (localization)
 변경 범위:
 
 - `github`: 저장소 자체에 관련된 변경 (주로 [`.github`](/.github))
 - `README`: [`README.md`](/README.md)에 관련된 변경
-- `L10n` 등등으로 변경 범위를 제한
+- `L10n`: 현지화(localization) 등등으로 변경 범위를 제한
 
 ## 주 버전(`!`)
 
@@ -19,7 +30,8 @@ l18n: 현지화 (localization)
 feat!: rework `Foo`
 
 Foo now does bar
-
+```
+```
 refactor!: change `ModId`
 ```
 
@@ -55,5 +67,7 @@ fix(L10n): missing `DESCRIPTION` on ENG/`Foo`
 
 ```
 docs(README): add links
+```
+```
 build(github): add gradle dependency
 ```

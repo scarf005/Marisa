@@ -1,3 +1,24 @@
 {
-  "fmt": { "options": { "semiColons": false } }
+  "tasks": {
+    "schema": "deno task --cwd localization/ schema",
+    "schema:vscode": "deno task --cwd localization/ schema:vscode",
+    "schema:validate": "deno task --cwd localization/ validate",
+    "schema:fmt": "deno task --cwd localization/ fmt"
+  },
+  "fmt": {
+    "options": { "semiColons": false },
+    "files": {
+      "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"]
+    }
+  },
+  "test": {
+    "files": {
+      "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"]
+    }
+  },
+  "bench": {
+    "files": {
+      "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"]
+    }
+  }
 }

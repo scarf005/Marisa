@@ -24,6 +24,7 @@ class BlazeAway : CustomCard(
     init {
         magicNumber = USE_TIMES
         baseMagicNumber = magicNumber
+        exhaust = true
     }
 
     private fun lastAttack() = AbstractDungeon.actionManager.cardsPlayedThisTurn

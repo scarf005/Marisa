@@ -2,7 +2,7 @@
   "DarkMatterPower": {
     "NAME": "ダークマター",
     "DESCRIPTIONS": [
-      "このターン  #yダークマター  をプレイすることはできない。",
+      "このターン #yダークマター をプレイすることはできない。",
       ""
     ]
   },
@@ -10,7 +10,7 @@
     "NAME": "エスケープベロシティ",
     "DESCRIPTIONS": [
       "ターン開始時、カード 2 #b",
-      " 枚を引き、 #y火傷  #b",
+      " 枚を引き、 #y火傷 #b",
       " 枚を手札に加える。"
     ]
   },
@@ -33,7 +33,7 @@
   "MilliPulsaPower": {
     "NAME": "ミリ秒パルサー",
     "DESCRIPTIONS": [
-      " #y増幅 効果の  [E]  が不要になる。",
+      " #y増幅 効果の [E] が不要になる。",
       ""
     ]
   },
@@ -59,7 +59,7 @@
     ]
   },
   "ExtraEnergyPower": {
-    "NAME": "余分なエネルギー",
+    "NAME": "余剰エナジー",
     "DESCRIPTIONS": [
       "毎ターン",
       " [E]を得る。"
@@ -83,14 +83,14 @@
   "OrrerysSunPower": {
     "NAME": "オーレリーズサン",
     "DESCRIPTIONS": [
-      "チャージ が使用されるたび、  #b",
+      "チャージ が使用されるたび、 #b",
       " ブロック を得る。"
     ]
   },
   "Charged": {
-    "NAME": "チャージ!",
+    "NAME": "チャージ完了!",
     "DESCRIPTIONS": [
-      "次の攻撃は、  #b",
+      "次の攻撃は、 #b",
       " 倍のダメージを与える。"
     ]
   },
@@ -104,7 +104,7 @@
   "MPPower": {
     "NAME": "マックスパワー",
     "DESCRIPTIONS": [
-      "このターン、与えるダメージ  #b",
+      "このターン、与えるダメージ #b",
       " 倍。"
     ]
   },
@@ -118,7 +118,7 @@
   "PulseMagicPower": {
     "NAME": "パルスマジック",
     "DESCRIPTIONS": [
-      "このターン、 #y増幅 効果に  [E]  は不要。"
+      "このターン、 #y増幅 の必要コストが無くなる。"
     ]
   },
   "SingularityPower": {
@@ -129,27 +129,27 @@
     ]
   },
   "WitchOfGreedGold": {
-    "NAME": "魔女の強欲",
+    "NAME": "強欲の魔女",
     "DESCRIPTIONS": [
-      "戦闘終了時、  #b",
+      "戦闘終了時、 #b",
       " ゴールドを得る。 "
     ]
   },
   "WitchOfGreedPotion": {
-    "NAME": "魔女の強欲",
+    "NAME": "強欲の魔女",
     "DESCRIPTIONS": [
-      "戦闘終了時、  #b",
+      "戦闘終了時、 #b",
       " ゴールドと、ランダムなポーションを得る。"
     ]
   },
   "OneTimeOffPlusPower": {
-    "NAME": "1回休み",
+    "NAME": "ちょっと一息",
     "DESCRIPTIONS": [
       "このターン、 #y増幅 効果を使用したり、 #yチャージ を消費する事ができない。"
     ]
   },
   "OneTimeOffPower": {
-    "NAME": "1回休み",
+    "NAME": "ちょっと一息",
     "DESCRIPTIONS": [
       "このターン、 #y増幅 効果を使用する事ができない。"
     ]
@@ -157,8 +157,8 @@
   "SuperNovaPower": {
     "NAME": "スーパーノヴァ",
     "DESCRIPTIONS": [
-      "#y火傷 を #y廃棄 するたび、 #y筋力  #b",
-      "#y呪い や #y状態異常 を #y廃棄 するたび、 #y筋力  #b",
+      "#y火傷 を #y廃棄 するたび、 #y筋力 #b",
+      "#y呪い や #y状態異常 を #y廃棄 するたび、 #y筋力 #b",
       "を得る。 #y火傷 によるダメージを受けなくなる。 . NL ターン終了時手札を #y廃棄 する。"
     ]
   },
@@ -193,7 +193,7 @@
   "PropBagPower": {
     "NAME": "携帯道具袋",
     "DESCRIPTIONS": [
-      "戦闘終了時、  #y",
+      "戦闘終了時、 #y",
       "を失う。"
     ]
   },
@@ -207,15 +207,15 @@
   "DarkSparkPower": {
     "NAME": "ダークスパーク",
     "DESCRIPTIONS": [
-      "このターン、名前に スパーク と付くカードをプレイするたび、  #b",
+      "このターン、名前に スパーク と付くカードをプレイするたび、 #b",
       " #yチャージ を付与する。"
     ]
   },
   "MagicChantPower": {
     "NAME": "魔術詠唱",
     "DESCRIPTIONS": [
-      "コストを削減  #b",
-      " 次のターン"
+      "次のターン中、コストを #b",
+      "減少させる。"
     ]
   },
   "SatelIllusPower": {
@@ -226,7 +226,7 @@
     ]
   },
   "GrandCrossPower": {
-    "NAME": "グランドクロス",
+    "NAME": "魔法増幅",
     "DESCRIPTIONS": [
       "このターン #y増幅 を使用しました"
     ]
@@ -246,7 +246,7 @@
     ]
   },
   "Wraith": {
-    "NAME": "レイス",
+    "NAME": "悪霊",
     "DESCRIPTIONS": [
       "ターン開始時、 手札のランダムなカード #b1 枚を #y廃棄 する。"
     ]
@@ -254,7 +254,7 @@
   "LimboContact": {
     "NAME": "アンデッドコンタクト",
     "DESCRIPTIONS": [
-      "この敵からダメージを受けるたび、 #yレイス 1 を得る。"
+      "この敵からダメージを受けるたび、 #y悪霊 1 を得る。"
     ]
   },
   "Nebula": {
@@ -265,9 +265,9 @@
     ]
   },
   "InfernoClaw": {
-    "NAME": "Inferno Claw",
+    "NAME": "煉獄の鉤爪",
     "DESCRIPTIONS": [
-      "Whenever you receive attack damage from this enemy, add a #yBurn into your draw pile."
+      "この敵から アタック ダメージを受けるたび、 山札に #y火傷 を追加する。"
     ]
   }
 }

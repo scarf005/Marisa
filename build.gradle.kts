@@ -117,7 +117,7 @@ tasks.register("modthespire") {
         version = File("docs/changelog/version.txt").readText().trim()
     )
 
-    configFile.writeText(gson.toJson(config))
+    configFile.writeText(gson.toJson(config) + "\n")
 }
 
 tasks.jar {
@@ -129,9 +129,9 @@ tasks.jar {
 
 
 tasks.register("changelog") {
-description = "Write changelog to steam workshop description"
+    description = "Write changelog to steam workshop description"
 
     dependsOn(tasks.jar)
     file("$gameDir/${modID}/config.json")
-        .writeText(gson.toJson(Config(changeNote = changeBBCode)))
+        .writeText(gson.toJson(Config(changeNote = changeBBCode)) + "\n")
 }

@@ -19,9 +19,13 @@ type JsonEntry = WalkEntry & { json: unknown }
 
 async function loadJson(entry: WalkEntry): Promise<JsonEntry> {
   const text = await Deno.readTextFile(entry.path)
-  const json = JSON.parse(text)
-
-  return { ...entry, json }
+  try {
+    const json = JSON.parse(text)
+    return { ...entry, json }
+  } catch (e) {
+    log.error(`when parsing ${entry.path}: ${e.message}`)
+    throw e
+  }
 }
 
 async function loadJsons(langCode: LangCode): Promise<JsonEntry[]> {

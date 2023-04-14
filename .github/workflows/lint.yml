@@ -1,0 +1,29 @@
+name: linting
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: denoland/setup-deno@v1
+
+      - name: fmt
+        continue-on-error: true
+        run: deno fmt --check
+
+      - name: lint
+        continue-on-error: true
+        run: deno lint
+
+      - name: validate schema
+        continue-on-error: true
+        run: deno task schema:validate
+
+      - name: json syntax check
+        uses: limitusus/json-syntax-check@v1
+        with:
+          pattern: "\\.json$"

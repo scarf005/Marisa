@@ -2,7 +2,11 @@
   "deno.enable": true,
   "deno.lint": true,
   "deno.config": "./deno.jsonc",
-  "[typescript]": {
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "[markdown]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "[jsonc]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "conventionalCommits.scopes": [

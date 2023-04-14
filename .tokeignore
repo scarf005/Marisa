@@ -1,2 +1,3 @@
 *.bat
 gradlew
+src/main/resources/localization/schemas/**

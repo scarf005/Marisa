@@ -25,6 +25,7 @@ class MiniHakkero : CustomRelic(
     override fun onUseCard(card: AbstractCard, action: UseCardAction) {
         val p = AbstractDungeon.player
 
+        flash()
         MarisaContinued.logger.info("""MiniHakkero : Applying ChargeUpPower for using card : ${card.cardID}""")
         addToTop(ApplyPowerAction(p, p, ChargeUpPower(p, 1), 1))
         addToBot(RelicAboveCreatureAction(p, this))

@@ -1,5 +1,16 @@
 # [Semantic Versioning](https://semver.org)
 
+[![en][icon-en]][en]
+[![ja][icon-ja]][ja]
+[![ko][icon-ko]][ko]
+
+[en]: ./semver.md
+[icon-en]: https://img.shields.io/badge/lang-en-red?style=flat-square
+[ja]: ./semver.ja.md
+[icon-ja]: https://img.shields.io/badge/lang-ja-orange?style=flat-square
+[ko]: ./semver.ko.md
+[icon-ko]: https://img.shields.io/badge/lang-ko-yellow?style=flat-square
+
 feature: card, relic, potion, event, etc
 scopes:
 
@@ -19,10 +30,10 @@ feat!: rework `Foo`
 
 Foo now does bar
 ```
+
 ```
 refactor!: change `ModId`
 ```
-
 
 ## minor(`feat`)
 
@@ -57,6 +68,7 @@ fix(L10n): missing `DESCRIPTION` on ENG/`Foo`
 ```
 docs(README): add links
 ```
+
 ```
 build(github): add gradle dependency
 ```

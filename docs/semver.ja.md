@@ -1,5 +1,17 @@
 # [セマンティック バージョニング](https://semver.org/lang/ja/)
 
+[![en][icon-en]][en]
+[![ja][icon-ja]][ja]
+[![ko][icon-ko]][ko]
+
+[en]: ./semver.md
+[icon-en]: https://img.shields.io/badge/lang-en-red?style=flat-square
+[ja]: ./semver.ja.md
+[icon-ja]: https://img.shields.io/badge/lang-ja-orange?style=flat-square
+[ko]: ./semver.ko.md
+[icon-ko]: https://img.shields.io/badge/lang-ko-yellow?style=flat-square
+
+
 機能：カード、アーティファクト、ポーション、イベントなど
 変更範囲：
 

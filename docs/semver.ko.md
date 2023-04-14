@@ -1,5 +1,17 @@
 # [유의적 버전 관리](https://semver.org/lang/ko/)
 
+[![en][icon-en]][en]
+[![ja][icon-ja]][ja]
+[![ko][icon-ko]][ko]
+
+[en]: ./semver.md
+[icon-en]: https://img.shields.io/badge/lang-en-red?style=flat-square
+[ja]: ./semver.ja.md
+[icon-ja]: https://img.shields.io/badge/lang-ja-orange?style=flat-square
+[ko]: ./semver.ko.md
+[icon-ko]: https://img.shields.io/badge/lang-ko-yellow?style=flat-square
+
+
 기능: 카드, 유물, 물약, 이벤트 등등
 변경 범위:
 

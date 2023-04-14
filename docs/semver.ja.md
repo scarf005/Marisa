@@ -1,8 +1,6 @@
 # [セマンティック バージョニング](https://semver.org/lang/ja/)
 
-[![en][icon-en]][en]
-[![ja][icon-ja]][ja]
-[![ko][icon-ko]][ko]
+[![en][icon-en]][en] [![ja][icon-ja]][ja] [![ko][icon-ko]][ko]
 
 [en]: ./semver.md
 [icon-en]: https://img.shields.io/badge/lang-en-red?style=flat-square
@@ -11,9 +9,7 @@
 [ko]: ./semver.ko.md
 [icon-ko]: https://img.shields.io/badge/lang-ko-yellow?style=flat-square
 
-
-機能：カード、アーティファクト、ポーション、イベントなど
-変更範囲：
+機能：カード、アーティファクト、ポーション、イベントなど 変更範囲：
 
 - `github`: リポジトリ自体に関連する変更（主に [`.github`](/.github))
 - `README`: [`README.md`](/README.md)に関連する変更
@@ -31,6 +27,7 @@ feat!: rework `Foo`
 
 Foo now does bar
 ```
+
 ```
 refactor!: change `ModId`
 ```
@@ -68,6 +65,7 @@ fix(L10n): missing `DESCRIPTION` on ENG/`Foo`
 ```
 docs(README): add links
 ```
+
 ```
 build(github): add gradle dependency
 ```

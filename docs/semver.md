@@ -1,8 +1,6 @@
 # [Semantic Versioning](https://semver.org)
 
-[![en][icon-en]][en]
-[![ja][icon-ja]][ja]
-[![ko][icon-ko]][ko]
+[![en][icon-en]][en] [![ja][icon-ja]][ja] [![ko][icon-ko]][ko]
 
 [en]: ./semver.md
 [icon-en]: https://img.shields.io/badge/lang-en-red?style=flat-square
@@ -11,8 +9,7 @@
 [ko]: ./semver.ko.md
 [icon-ko]: https://img.shields.io/badge/lang-ko-yellow?style=flat-square
 
-feature: card, relic, potion, event, etc
-scopes:
+feature: card, relic, potion, event, etc scopes:
 
 - `github`: changes related to repository (mostly [`.github`](/.github))
 - `README`: changes to [`README.md`](/README.md)

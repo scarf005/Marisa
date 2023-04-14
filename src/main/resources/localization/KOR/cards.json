@@ -202,8 +202,8 @@
   },
   "AbsoluteMagnitude": {
     "NAME": "절대 등급",
-    "DESCRIPTION": "충전의 2 배 만큼 피해를 줍니다. (피해를 !B! 줍니다.)",
-    "UPGRADE_DESCRIPTION": "충전의 3 배 만큼 피해를 줍니다. (피해를 !B! 줍니다.)"
+    "DESCRIPTION": "충전의 2 배 만큼 피해를 줍니다. (피해를 !D! 줍니다.)",
+    "UPGRADE_DESCRIPTION": "충전의 3 배 만큼 피해를 줍니다. (피해를 !D! 줍니다.)"
   },
   "DragonMeteor": {
     "NAME": "드래곤 미티어",
@@ -348,8 +348,8 @@
   },
   "WhiteDwarf": {
     "NAME": "백색왜성",
-    "DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !B! 줍니다. (버린 카드 더미의 2배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !B! 줍니다. (버린 카드 더미의 3배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
+    "DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !D! 줍니다. (버린 카드 더미의 2배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !D! 줍니다. (버린 카드 더미의 3배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
     "EXTENDED_DESCRIPTION": [
       "카드가 손에 너무 많아. 4장보다 적어야 가능해.",
       ""

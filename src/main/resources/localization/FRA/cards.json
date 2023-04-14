@@ -225,8 +225,8 @@
   },
   "AbsoluteMagnitude": {
     "NAME": "Magnitude absolue",
-    "DESCRIPTION": "Infligez des dégâts égaux à 2 fois votre Charge (Infligez !B! dégâts).",
-    "UPGRADE_DESCRIPTION": "Infligez des dégâts égaux à 3 fois votre Charge (Infligez !B! dégâts)."
+    "DESCRIPTION": "Infligez des dégâts égaux à 2 fois votre Charge (Infligez !D! dégâts).",
+    "UPGRADE_DESCRIPTION": "Infligez des dégâts égaux à 3 fois votre Charge (Infligez !D! dégâts)."
   },
   "DragonMeteor": {
     "NAME": "Météor draconique",
@@ -387,8 +387,8 @@
   },
   "WhiteDwarf": {
     "NAME": "Naine blanche",
-    "DESCRIPTION": "Peut seulement être jouée lorsque vous avez 4 cartes ou moins dans votre main. NL Infligez !B! dégâts (1.5 × la taille de votre défausse). Ajoutez 2 brûlures à votre main.",
-    "UPGRADE_DESCRIPTION": "Peut seulement être jouée lorsque vous avez 4 cartes ou moins dans votre main. NL Infligez !B! dégâts (2 × la taille de votre défausse). Ajoutez 2 brûlures à votre main.",
+    "DESCRIPTION": "Peut seulement être jouée lorsque vous avez 4 cartes ou moins dans votre main. NL Infligez !D! dégâts (1.5 × la taille de votre défausse). Ajoutez 2 brûlures à votre main.",
+    "UPGRADE_DESCRIPTION": "Peut seulement être jouée lorsque vous avez 4 cartes ou moins dans votre main. NL Infligez !D! dégâts (2 × la taille de votre défausse). Ajoutez 2 brûlures à votre main.",
     "EXTENDED_DESCRIPTION": [
       "J'ai plus de 4 cartes en main.",
       ""

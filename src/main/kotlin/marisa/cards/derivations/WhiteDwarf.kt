@@ -1,5 +1,6 @@
 package marisa.cards.derivations
 
+import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
@@ -8,13 +9,11 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.abstracts.AmplifiedAttack
+import marisa.p
 import marisa.patches.AbstractCardEnum
-import kotlin.math.floor
 
-class WhiteDwarf : AmplifiedAttack(
+class WhiteDwarf : CustomCard(
     ID,
     NAME,
     IMG_PATH,
@@ -25,28 +24,23 @@ class WhiteDwarf : AmplifiedAttack(
     CardRarity.SPECIAL,
     CardTarget.ENEMY
 ) {
-    private var magn = MULTIPLIER
+    private var multiplier = MULTIPLIER
 
     init {
-        damage = ATTACK_DMG
-        baseDamage = damage
+        baseDamage = 0
         exhaust = true
     }
 
+    private fun damageImpl() = p.discardPile.size() * multiplier
+
     override fun applyPowers() {
-        val player = AbstractDungeon.player
-        ampNumber = floor((player.discardPile.size() * magn).toDouble()).toInt()
+        baseDamage = damageImpl()
         super.applyPowers()
     }
 
     override fun calculateDamageDisplay(mo: AbstractMonster?) {
+        baseDamage = damageImpl()
         calculateCardDamage(mo)
-    }
-
-    override fun calculateCardDamage(mo: AbstractMonster?) {
-        val player = AbstractDungeon.player
-        ampNumber = floor((player.discardPile.size() * magn).toDouble()).toInt()
-        super.calculateCardDamage(mo)
     }
 
     override fun canUse(p: AbstractPlayer, unused: AbstractMonster?): Boolean {
@@ -59,15 +53,9 @@ class WhiteDwarf : AmplifiedAttack(
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
-        addToBot(
-            DamageAction(
-                m,
-                DamageInfo(p, block, damageTypeForTurn),
-                AttackEffect.SLASH_DIAGONAL
-            )
-        )
-        addToBot(
-            MakeTempCardInHandAction(Burn(), 2)
+        marisa.addToBot(
+            DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL),
+            MakeTempCardInHandAction(Burn(), 2),
         )
     }
 
@@ -76,7 +64,7 @@ class WhiteDwarf : AmplifiedAttack(
     override fun upgrade() {
         if (upgraded) return
         upgradeName()
-        magn = MULTIPLIER_UPG
+        multiplier = MULTIPLIER_UPG
         rawDescription = DESCRIPTION_UPG
         initializeDescription()
     }
@@ -90,9 +78,8 @@ class WhiteDwarf : AmplifiedAttack(
         private val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
         const val IMG_PATH = "img/cards/Marisa/WhiteDwarf.png"
         private const val COST = 0
-        private const val ATTACK_DMG = 0
         private const val HAND_REQ = 4
-        private const val MULTIPLIER = 2f
-        private const val MULTIPLIER_UPG = 3f
+        private const val MULTIPLIER = 2
+        private const val MULTIPLIER_UPG = 3
     }
 }

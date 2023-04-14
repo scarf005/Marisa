@@ -1,5 +1,6 @@
 package marisa.cards
 
+import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -8,11 +9,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.abstracts.AmplifiedAttack
 import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.ChargeUpPower
 
-class AbsoluteMagnitude : AmplifiedAttack(
+class AbsoluteMagnitude : CustomCard(
     ID,
     NAME,
     IMG_PATH,
@@ -23,37 +23,30 @@ class AbsoluteMagnitude : AmplifiedAttack(
     CardRarity.RARE,
     CardTarget.ENEMY
 ) {
-    private var multiplier: Float
+    private var multiplier: Int
 
     init {
         baseDamage = 0
-        damage = baseDamage
         multiplier = ATK_MULT
-        baseBlock = 0
-        block = baseBlock
     }
 
     override fun applyPowers() {
         val p = AbstractDungeon.player
         if (p.hasPower(ChargeUpPower.POWER_ID)) {
-            ampNumber = (p.getPower(ChargeUpPower.POWER_ID).amount * multiplier).toInt()
+            baseDamage = p.getPower(ChargeUpPower.POWER_ID).amount * multiplier
+            isDamageModified = true
         }
         super.applyPowers()
-        isBlockModified = true
     }
 
     override fun onMoveToDiscard() {
-        ampNumber = 0
+        baseDamage = 0
         super.applyPowers()
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         addToBot(
-            DamageAction(
-                m,
-                DamageInfo(p, block, damageTypeForTurn),
-                AttackEffect.SLASH_DIAGONAL
-            )
+            DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL)
         )
     }
 
@@ -75,7 +68,7 @@ class AbsoluteMagnitude : AmplifiedAttack(
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
         const val IMG_PATH = "img/cards/absMagni.png"
         private const val COST = 2
-        private const val ATK_MULT = 2f
-        private const val ATK_MULT_UPG = 3f
+        private const val ATK_MULT = 2
+        private const val ATK_MULT_UPG = 3
     }
 }

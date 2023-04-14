@@ -202,8 +202,8 @@
   },
   "AbsoluteMagnitude": {
     "NAME": "절대 등급",
-    "DESCRIPTION": "충전의 2 배 만큼 피해를 줍니다. (피해를 !B! 줍니다.)",
-    "UPGRADE_DESCRIPTION": "충전의 3 배 만큼 피해를 줍니다. (피해를 !B! 줍니다.)"
+    "DESCRIPTION": "충전의 2 배 만큼 피해를 줍니다. (피해를 !D! 줍니다.)",
+    "UPGRADE_DESCRIPTION": "충전의 3 배 만큼 피해를 줍니다. (피해를 !D! 줍니다.)"
   },
   "DragonMeteor": {
     "NAME": "드래곤 미티어",

@@ -225,8 +225,8 @@
   },
   "AbsoluteMagnitude": {
     "NAME": "Magnitude absolue",
-    "DESCRIPTION": "Infligez des dégâts égaux à 2 fois votre Charge (Infligez !B! dégâts).",
-    "UPGRADE_DESCRIPTION": "Infligez des dégâts égaux à 3 fois votre Charge (Infligez !B! dégâts)."
+    "DESCRIPTION": "Infligez des dégâts égaux à 2 fois votre Charge (Infligez !D! dégâts).",
+    "UPGRADE_DESCRIPTION": "Infligez des dégâts égaux à 3 fois votre Charge (Infligez !D! dégâts)."
   },
   "DragonMeteor": {
     "NAME": "Météor draconique",

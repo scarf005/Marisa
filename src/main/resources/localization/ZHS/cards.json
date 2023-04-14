@@ -229,8 +229,8 @@
   },
   "AbsoluteMagnitude": {
     "NAME": "绝对星等",
-    "DESCRIPTION": "造成 !B! 点伤害( 2 × 你的 蓄力 层数)。",
-    "UPGRADE_DESCRIPTION": "造成 !B! 点伤害( 3 × 你的 蓄力 层数)。"
+    "DESCRIPTION": "造成 !D! 点伤害( 2 × 你的 蓄力 层数)。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害( 3 × 你的 蓄力 层数)。"
   },
   "DragonMeteor": {
     "NAME": "龙陨星",

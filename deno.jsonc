@@ -3,7 +3,8 @@
     "schema": "deno task --cwd localization/ schema",
     "schema:vscode": "deno task --cwd localization/ schema:vscode",
     "schema:validate": "deno task --cwd localization/ validate",
-    "schema:fmt": "deno task --cwd localization/ fmt"
+    "schema:fmt": "deno task --cwd localization/ fmt",
+    "link": "deno run --allow-read --allow-write --allow-env ./scripts/link/mod.ts"
   },
   "fmt": {
     "options": { "semiColons": false },

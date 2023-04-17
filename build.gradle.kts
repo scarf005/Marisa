@@ -127,11 +127,17 @@ tasks.jar {
     from(sourceSets.main.get().output)
 }
 
+tasks.register("hardlink") {
+    description = "Creates hard link for release on steam directory."
+    exec {
+        commandLine("deno", "task", "--quiet", "link", "--quiet")
+    }
+}
 
 tasks.register("changelog") {
     description = "Write changelog to steam workshop description"
 
-    dependsOn(tasks.jar)
+    dependsOn("hardlink", tasks.jar)
     file("$gameDir/${modID}/config.json")
         .writeText(gson.toJson(Config(changeNote = changeBBCode)) + "\n")
 }

@@ -57,6 +57,10 @@ def wait():
         sys.exit(0)
 
 
+def verify_hard_links():
+    run_command(["deno", "task", "--quiet", "link", "--check", "--quiet"])
+
+
 def verify_jar_version():
     """Verify modjson.json"""
     text = MODINFO.read_text()
@@ -127,6 +131,7 @@ def main(
     command: Command = Argument(..., help=__doc__),
     verify_tag: bool = Option(True, help="Enforce tags to be in origin"),
 ):
+    verify_hard_links()
     verify_jar_version()
     verify_changelog_version()
 

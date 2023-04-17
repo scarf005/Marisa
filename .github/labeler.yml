@@ -3,6 +3,8 @@ build:
   - .github/**/*.yaml
 
   - "**/*.gradle.*"
+  - "**/*.ts"
+  - "deno.*"
 
 docs:
   - "**/*.md"

@@ -4,7 +4,7 @@ import {
   brightGreen,
   brightRed,
   brightYellow,
-} from "https://deno.land/std@0.177.0/fmt/colors.ts"
+} from "https://deno.land/std@0.183.0/fmt/colors.ts"
 
 import cardsEng from "./ENG/cards.json" assert { type: "json" }
 import cardsFra from "./FRA/cards.json" assert { type: "json" }

@@ -40,7 +40,6 @@ class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() 
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             MarisaContinued.logger.info("ShootingEchoAction: hand card select screen")
-            card.returnToHand = false
             assert(AbstractDungeon.handCardSelectScreen.selectedCards.size() == 1)
             exhaustMaybeBurn(AbstractDungeon.handCardSelectScreen.selectedCards.topCard)
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true

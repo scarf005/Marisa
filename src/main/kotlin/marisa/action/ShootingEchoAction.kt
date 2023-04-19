@@ -46,9 +46,9 @@ class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() 
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()
             AbstractDungeon.gridSelectScreen.selectedCards.clear()
             AbstractDungeon.player.hand.refreshHandLayout()
-            return
+            tickDuration()
         }
-        tickDuration()
+        isDone = true
     }
 
     companion object {

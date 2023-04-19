@@ -16,51 +16,44 @@ class ShootingEchoAction(private val card: AbstractCard) : AbstractGameAction() 
         actionType = ActionType.EXHAUST
     }
 
+    private fun exhaustMaybeBurn(toExhaust: AbstractCard?) {
+        if (toExhaust is Burn) {
+            addToBot(DiscardToHandAction(card))
+        }
+        p.hand.moveToExhaustPile(toExhaust)
+        isDone = true
+    }
+
     override fun update() {
         if (duration == Settings.ACTION_DUR_FAST) {
             if (p.hand.isEmpty) {
                 isDone = true
-                return
-            }
-            if (p.hand.size() == 1) {
-                MarisaContinued.logger.info("ShootingEchoAction : player hand size is 1")
-                val c = p.hand.topCard
-                if (c is Burn) {
-                    addToBot(
-                        DiscardToHandAction(card)
-                    )
-                }
-                p.hand.moveToExhaustPile(c)
-                isDone = true
-                return
+            } else if (p.hand.size() == 1) {
+                MarisaContinued.logger.info("ShootingEchoAction: player hand size is 1")
+                exhaustMaybeBurn(p.hand.topCard)
             } else {
-                MarisaContinued.logger.info("ShootingEchoAction : opening hand card select")
+                MarisaContinued.logger.info("ShootingEchoAction: opening hand card select")
                 AbstractDungeon.handCardSelectScreen.open(TEXT, 1, false, false)
+                tickDuration()
             }
-            tickDuration()
             return
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+            MarisaContinued.logger.info("ShootingEchoAction: hand card select screen")
             card.returnToHand = false
-            for (c in AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                if (c is Burn) {
-                    card.returnToHand = true
-                }
-                p.hand.moveToExhaustPile(c)
-            }
+            assert(AbstractDungeon.handCardSelectScreen.selectedCards.size() == 1)
+            exhaustMaybeBurn(AbstractDungeon.handCardSelectScreen.selectedCards.topCard)
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()
             AbstractDungeon.gridSelectScreen.selectedCards.clear()
             AbstractDungeon.player.hand.refreshHandLayout()
-            isDone = true
             return
         }
         tickDuration()
     }
 
     companion object {
-        private val uiStrings = CardCrawlGame.languagePack
-            .getUIString("ExhaustAction")
-        val TEXT = uiStrings.TEXT[0]
+        private val uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustAction")
+        val TEXT: String = uiStrings.TEXT[0]
     }
 }

@@ -20,6 +20,13 @@ a [re-continued][original] mod for [**Slay the Spire**][sts], which adds
 
 ## New features
 
+### Better UI for amplifiable cards
+
+https://user-images.githubusercontent.com/54838975/233419957-b16aaee0-948b-4af9-bb73-ddf3d91027b9.mp4
+
+- **cards glow gold** for amplifiable cards.
+- **amplified cost** will be shown on the card in **green** color.
+
 ### Previews for generated cards
 
 <div align="center">

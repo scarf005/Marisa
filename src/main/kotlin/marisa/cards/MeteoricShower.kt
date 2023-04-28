@@ -46,7 +46,7 @@ class MeteoricShower : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/meteonic.png"
+        const val IMG_PATH = "img/cards/meteoric.png"
         private const val COST = -1
         private const val ATK_DMG = 3
         private const val UPG_DMG = 1

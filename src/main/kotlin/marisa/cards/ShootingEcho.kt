@@ -29,11 +29,7 @@ class ShootingEcho : CustomCard(
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         addToTop(
-            DamageAction(
-                m,
-                DamageInfo(p, damage, damageTypeForTurn),
-                AttackEffect.FIRE
-            )
+            DamageAction(m, DamageInfo(p, damage, damageTypeForTurn), AttackEffect.FIRE)
         )
         addToBot(
             ShootingEchoAction(this)

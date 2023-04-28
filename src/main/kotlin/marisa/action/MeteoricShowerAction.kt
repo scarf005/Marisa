@@ -8,11 +8,11 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 
-class MeteoricShowerAction(number: Int, damage: Int, freeToPlay: Boolean) : AbstractGameAction() {
+class MeteoricShowerAction(number: Int, damage: Int, val freeToPlay: Boolean) :
+    AbstractGameAction() {
     private val p: AbstractPlayer
     private val num: Int
     private val dmg: Int
-    private val f2p: Boolean
 
     init {
         actionType = ActionType.CARD_MANIPULATION
@@ -20,7 +20,6 @@ class MeteoricShowerAction(number: Int, damage: Int, freeToPlay: Boolean) : Abst
         duration = Settings.ACTION_DUR_FAST
         num = number
         dmg = damage
-        f2p = freeToPlay
     }
 
     override fun update() {
@@ -48,7 +47,7 @@ class MeteoricShowerAction(number: Int, damage: Int, freeToPlay: Boolean) : Abst
             AbstractDungeon.gridSelectScreen.selectedCards.clear()
             AbstractDungeon.player.hand.refreshHandLayout()
         }
-        if (!f2p) {
+        if (!freeToPlay) {
             p.energy.use(EnergyPanel.totalCount)
         }
         tickDuration()

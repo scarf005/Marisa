@@ -25,9 +25,7 @@ class PowerUp : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        addToBot(
-            DamageUpAction(magicNumber)
-        )
+        addToBot(DamageUpAction(magicNumber))
     }
 
     override fun makeCopy(): AbstractCard = PowerUp()

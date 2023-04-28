@@ -44,16 +44,7 @@ class MeteoricShowerAction(number: Int, damage: Int, freeToPlay: Boolean) : Abst
             }
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()
-            if (cnt > 0) {
-                AbstractDungeon.actionManager.addToTop(
-                    UnstableBombAction(
-                        AbstractDungeon.getMonsters().getRandomMonster(true),
-                        dmg,
-                        dmg,
-                        cnt
-                    )
-                )
-            }
+            addToTop(RandomDamageAction(cnt) { dmg })
             AbstractDungeon.gridSelectScreen.selectedCards.clear()
             AbstractDungeon.player.hand.refreshHandLayout()
         }

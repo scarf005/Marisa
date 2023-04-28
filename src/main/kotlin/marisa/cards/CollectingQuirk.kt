@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.relics.Circlet
 import com.megacrit.cardcrawl.relics.RedCirclet
 import marisa.MarisaContinued
-import marisa.action.UnstableBombAction
+import marisa.action.RandomDamageAction
 import marisa.patches.AbstractCardEnum
 
 class CollectingQuirk : CustomCard(
@@ -64,17 +64,7 @@ class CollectingQuirk : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        getCounter()
-        if (counter > 0) {
-            addToBot(
-                UnstableBombAction(
-                    AbstractDungeon.getMonsters().getRandomMonster(true),
-                    damage,
-                    damage,
-                    counter
-                )
-            )
-        }
+        addToBot(RandomDamageAction(counter) { damage })
     }
 
     override fun onMoveToDiscard() {

@@ -2,3 +2,5 @@
 
 # Validate the PR title and all commit messages
 titleAndCommits: true
+
+scopes: [github, README, L10n]

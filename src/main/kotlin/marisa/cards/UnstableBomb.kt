@@ -4,9 +4,8 @@ import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.action.UnstableBombAction
+import marisa.action.RandomDamageAction
 import marisa.patches.AbstractCardEnum
 
 class UnstableBomb : CustomCard(
@@ -20,23 +19,29 @@ class UnstableBomb : CustomCard(
     CardRarity.COMMON,
     CardTarget.ALL_ENEMY
 ) {
-    private var num = DAMAGE_RANGE
+    private var damageMaxAdded = DAMAGE_MAX_ADDED
+    private val maxDamage get() = baseDamage + damageMaxAdded
+    private val damageRange get() = (baseDamage..maxDamage)
+
+    private fun setMaxDamageDisplay() {
+        if (baseBlock > maxDamage)
+            isBlockModified = true
+        baseBlock = maxDamage
+    }
 
     init {
-        baseDamage = DAMAGE
-        num = DAMAGE_RANGE
-        baseBlock = baseDamage + num
+        damageMaxAdded = DAMAGE_MAX_ADDED
+        baseDamage = DAMAGE_BASE
+        setMaxDamageDisplay()
+    }
+
+    override fun applyPowers() {
+        super.applyPowers()
+        setMaxDamageDisplay()
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        addToBot(
-            UnstableBombAction(
-                AbstractDungeon.getMonsters().getRandomMonster(true),
-                damage,
-                block,
-                4
-            )
-        )
+        addToBot(RandomDamageAction(4) { damageRange.random() })
     }
 
     override fun makeCopy(): AbstractCard = UnstableBomb()
@@ -45,11 +50,8 @@ class UnstableBomb : CustomCard(
         if (upgraded) return
 
         upgradeDamage(UPG_DAMAGE)
+        setMaxDamageDisplay()
         upgradeName()
-        num += UPG_DAMAGE_RANGE
-        baseBlock = baseDamage + num
-        block = baseBlock
-        isBlockModified = true
     }
 
     companion object {
@@ -59,9 +61,8 @@ class UnstableBomb : CustomCard(
         val DESCRIPTION = cardStrings.DESCRIPTION
         const val IMG_PATH = "img/cards/UnstableBomb.png"
         private const val COST = 1
-        private const val DAMAGE = 1
-        private const val DAMAGE_RANGE = 3
+        private const val DAMAGE_BASE = 1
+        private const val DAMAGE_MAX_ADDED = 2
         private const val UPG_DAMAGE = 1
-        private const val UPG_DAMAGE_RANGE = 0
     }
 }

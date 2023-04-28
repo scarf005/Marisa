@@ -39,3 +39,8 @@ fun AbstractGameAction.updateContext(block: () -> Unit) {
     block()
     isDone = true
 }
+
+fun AbstractGameAction.runThenDone(fn: (AbstractGameAction) -> Unit) {
+    fn(this)
+    isDone = true
+}

@@ -5,9 +5,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import com.megacrit.cardcrawl.relics.ChemicalX
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.action.MeteoricShowerAction
 import marisa.patches.AbstractCardEnum
+
+
+private fun Boolean.toInt() = if (this) 1 else 0
 
 class MeteoricShower : CustomCard(
     ID,
@@ -24,20 +28,9 @@ class MeteoricShower : CustomCard(
         baseDamage = ATK_DMG
     }
 
-    override fun calculateCardDamage(unused: AbstractMonster?) {}
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        var cnt = EnergyPanel.totalCount + 1
-        if (p.hasRelic("Chemical X")) {
-            cnt += 2
-        }
-        addToBot(
-            MeteoricShowerAction(cnt, damage, freeToPlayOnce)
-        )
-        /*
-    if (!this.freeToPlayOnce) {
-      p.energy.use(EnergyPanel.totalCount);
-    }
-    */
+        val cnt = EnergyPanel.totalCount + 1 + p.hasRelic(ChemicalX.ID).toInt() * 2
+        addToBot(MeteoricShowerAction(cnt, damage, freeToPlayOnce))
     }
 
     override fun makeCopy(): AbstractCard = MeteoricShower()

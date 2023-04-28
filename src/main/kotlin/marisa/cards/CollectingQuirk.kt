@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.relics.Circlet
 import com.megacrit.cardcrawl.relics.RedCirclet
 import marisa.MarisaContinued
-import marisa.action.UnstableBombAction
+import marisa.action.RandomDamageAction
 import marisa.patches.AbstractCardEnum
 
 class CollectingQuirk : CustomCard(
@@ -23,35 +23,40 @@ class CollectingQuirk : CustomCard(
     CardRarity.RARE,
     CardTarget.ALL_ENEMY
 ) {
-    private var counter: Int
-
     init {
         baseDamage = ATK_DMG
         baseMagicNumber = DIVIDER
         magicNumber = baseMagicNumber
         baseBlock = 0
         block = baseBlock
-        counter = 0
     }
+
+    private val counter: Int
+        get() {
+            val p = AbstractDungeon.player
+            var divider = DIVIDER
+            if (upgraded) {
+                divider = UPG_DIVIDER
+            }
+            var counter = p.relics.size
+            p.getRelic(Circlet.ID)?.let { counter += it.counter - 1 }
+            p.getRelic(RedCirclet.ID)?.let { counter += it.counter - 1 }
+
+            counter /= divider
+            return counter
+        }
 
     override fun applyPowers() {
         super.applyPowers()
-        getCounter()
         modifyBlock()
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
         MarisaContinued.logger.info(
-            "CollectingQuirk : applyPowers : damage :"
-                    + damage
-                    + " ; counter : " + counter
-                    + " ; block :" + block
-                    + " ; magic number :" + magicNumber
+            """CollectingQuirk : applyPowers : damage :$damage ; counter : ${counter}; block :$block ; magic number :$magicNumber"""
         )
     }
 
     override fun calculateCardDamage(unused: AbstractMonster?) {
-        //super.calculateCardDamage(mo);
-        getCounter()
         modifyBlock()
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
@@ -64,17 +69,7 @@ class CollectingQuirk : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        getCounter()
-        if (counter > 0) {
-            addToBot(
-                UnstableBombAction(
-                    AbstractDungeon.getMonsters().getRandomMonster(true),
-                    damage,
-                    damage,
-                    counter
-                )
-            )
-        }
+        addToBot(RandomDamageAction(counter) { damage })
     }
 
     override fun onMoveToDiscard() {
@@ -83,19 +78,6 @@ class CollectingQuirk : CustomCard(
     }
 
     override fun makeCopy(): AbstractCard = CollectingQuirk()
-
-    private fun getCounter() {
-        val p = AbstractDungeon.player
-        var divider = DIVIDER
-        if (upgraded) {
-            divider = UPG_DIVIDER
-        }
-        counter = p.relics.size
-        p.getRelic(Circlet.ID)?.let { counter += it.counter - 1 }
-        p.getRelic(RedCirclet.ID)?.let { counter += it.counter - 1 }
-
-        counter /= divider
-    }
 
     override fun upgrade() {
         if (upgraded) return

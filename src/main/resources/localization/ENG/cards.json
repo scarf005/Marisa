@@ -163,8 +163,7 @@
   },
   "BlazeAway": {
     "NAME": "Blaze Away",
-    "DESCRIPTION": "Play the last Attack you played this turn !M! time(s).",
-    "UPGRADE_DESCRIPTION": "Add 2 copies of the last Attack you played this turn to your hand. NL They cost 0 this turn.",
+    "DESCRIPTION": "Play the last Attack you played this turn !M! time(s). NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL (Last Attack : ",
       " ).",

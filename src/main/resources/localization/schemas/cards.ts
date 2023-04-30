@@ -121,7 +121,6 @@ export const schema = z.object({
   "BlazeAway": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string(), z.string()]),
   }).strict(),
   "MaximisePower": z.object({

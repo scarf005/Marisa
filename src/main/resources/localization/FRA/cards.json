@@ -165,8 +165,7 @@
   },
   "BlazeAway": {
     "NAME": "Flambée",
-    "DESCRIPTION": "Ajoutez une copie de la dernière Attaque jouée ce tour dans votre main. NL Elle coûte 0 ce tour. ",
-    "UPGRADE_DESCRIPTION": "Ajoutez 2 copies de la dernière Attaque jouée ce tour dans votre main. NL Elle coûte 0 ce tour.",
+    "DESCRIPTION": "Ajoutez une copie de la dernière Attaque jouée ce tour dans votre main. NL Elle coûte 0 ce tour. NL Épuisement.",
     "EXTENDED_DESCRIPTION": [
       " NL (Dernière attaque : ",
       " ).",

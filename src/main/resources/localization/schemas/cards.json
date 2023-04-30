@@ -654,9 +654,6 @@
         "DESCRIPTION": {
           "type": "string"
         },
-        "UPGRADE_DESCRIPTION": {
-          "type": "string"
-        },
         "EXTENDED_DESCRIPTION": {
           "type": "array",
           "minItems": 3,
@@ -677,7 +674,6 @@
       "required": [
         "NAME",
         "DESCRIPTION",
-        "UPGRADE_DESCRIPTION",
         "EXTENDED_DESCRIPTION"
       ],
       "additionalProperties": false

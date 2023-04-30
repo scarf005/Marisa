@@ -9,6 +9,10 @@
   "[jsonc]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
+  "search.exclude": {
+    "localization/": true,
+    "src/main/resources/localization/schemas": true
+  },
   "conventionalCommits.scopes": [
     "github",
     "README",

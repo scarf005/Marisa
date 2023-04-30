@@ -49,8 +49,8 @@ class BlazeAway : CustomCard(
 
         with(lastCard) {
             MarisaContinued.logger.info(
-                """BlazeAway: card :$cardID; 
-                        |baseD: $baseDamage; Damage: $damage; baseB :$baseBlock ; B: $block ; 
+                """BlazeAway: card :$cardID;
+                        |baseD: $baseDamage; Damage: $damage; baseB :$baseBlock ; B: $block ;
                         |baseM: $baseMagicNumber ; M : $magicNumber ; C : $cost ; CFT: $costForTurn""".trimMargin()
             )
         }
@@ -71,7 +71,6 @@ class BlazeAway : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
 
         private data class Description(val opening: String, val closing: String, val none: String) {
             fun render(last: AbstractCard?) = last?.let { "$opening${it.name}$closing" } ?: none

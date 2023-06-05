@@ -89,8 +89,8 @@ git clone repository `https://github.com/scarf005/Marisa.git`
 setup java, kotlin, and gradle in your intellij. language version must be 8.
 
 ```sh
-gradle -t toMods # install once
-./gradlew -t toMods --warning-mode all # dev mode: recompile on changes
+gradle changelog # install once
+./gradlew -t changelog --warning-mode all # dev mode: recompile on changes
 ```
 
 run gradle task to copy jar into your steam mods folder.

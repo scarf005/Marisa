@@ -1,13 +1,21 @@
-[![](docs/repoTemplate/RepoTemplate.png)][workshop]
+[![Banner image depicting Kirisame Marisa and the title 'Marisa: Continued'](docs/repoTemplate/RepoTemplate.png)][workshop]
 
 <div align="center">
-  <img src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" />
-  <img src="https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white" />
+  <img alt="Kotlin Badge"
+    src="https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" />
+  <img alt="Gradle Badge"
+    src="https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white" />
   <a href="https://github.com/scarf005/Marisa/releases/latest">
-    <img src="https://img.shields.io/github/v/release/scarf005/Marisa?style=for-the-badge" />
+    <img alt="Latest Release Version Badge"
+      src="https://img.shields.io/github/v/release/scarf005/Marisa?style=for-the-badge" />
   </a>
   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
-    <img src="https://img.shields.io/steam/subscriptions/2902980404?style=for-the-badge" />
+    <img alt="Steam Views Badge"
+      src="https://img.shields.io/steam/views/2902980404?style=for-the-badge">
+  </a>
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
+    <img alt="Subscriptions Badge"
+      src="https://img.shields.io/steam/subscriptions/2902980404?style=for-the-badge" />
   </a>
   <h1>Marisa: Continued</h1>
 </div>
@@ -30,9 +38,9 @@ https://user-images.githubusercontent.com/54838975/233419957-b16aaee0-948b-4af9-
 ### Previews for generated cards
 
 <div align="center">
-  <img src="docs/preview/01.png" width="32%" />
-  <img src="docs/preview/02.png" width="32%" />
-  <img src="docs/preview/03.png" width="32%" />
+  <img src="docs/preview/01.png" width="32%" alt="Double Spark" />
+  <img src="docs/preview/02.png" width="32%" alt="Binary Stars+" />
+  <img src="docs/preview/03.png" width="32%" alt="Max Power" />
 </div>
 
 ## Content and Gameplay
@@ -63,10 +71,10 @@ subscribe [ModTheSpire][modthespire] and [BaseMod][basemod].
 [modthespire]: https://steamcommunity.com/sharedfiles/filedetails/?l=koreana&id=1605060445
 [basemod]: https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019
 
-#### Subscribe from Steam Workshop
+#### [Subscribe from Steam Workshop][workshop]
 
 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
-  <img src="docs/thumbnail/image.jpg" alt="steam workshop link" style="width: 20vw">
+  <img alt="Link to Steam Workshop displaying Project Thumbnail" src="docs/thumbnail/image.jpg" style="width: 20vw">
 </a>
 
 #### Compile from source
@@ -76,13 +84,13 @@ subscribe [ModTheSpire][modthespire] and [BaseMod][basemod].
 
 git clone repository `https://github.com/scarf005/Marisa.git`
 
-![](docs/ProjectStructure.png)
+![Intellij's Project Structure window, with its Language Level set to 8 and SDK to openjdk-17](docs/ProjectStructure.png)
 
 setup java, kotlin, and gradle in your intellij. language version must be 8.
 
 ```sh
-gradle -t toMods # install once
-./gradlew -t toMods --warning-mode all # dev mode: recompile on changes
+gradle changelog # install once
+./gradlew -t changelog --warning-mode all # dev mode: recompile on changes
 ```
 
 run gradle task to copy jar into your steam mods folder.

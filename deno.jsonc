@@ -6,20 +6,7 @@
     "schema:fmt": "deno task --cwd localization/ fmt",
     "link": "deno run --allow-read --allow-write --allow-env ./scripts/link/mod.ts"
   },
-  "fmt": {
-    "options": { "semiColons": false },
-    "files": {
-      "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"]
-    }
-  },
-  "test": {
-    "files": {
-      "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"]
-    }
-  },
-  "bench": {
-    "files": {
-      "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"]
-    }
-  }
+  "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"],
+  "fmt": { "options": { "semiColons": false } },
+  "compilerOptions": { "exactOptionalPropertyTypes": true }
 }

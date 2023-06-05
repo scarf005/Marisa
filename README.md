@@ -11,6 +11,10 @@
   </a>
   <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
     <img alt="Steam Views Badge"
+      src="https://img.shields.io/steam/views/2902980404?style=for-the-badge">
+  </a>
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2902980404">
+    <img alt="Subscriptions Badge"
       src="https://img.shields.io/steam/subscriptions/2902980404?style=for-the-badge" />
   </a>
   <h1>Marisa: Continued</h1>

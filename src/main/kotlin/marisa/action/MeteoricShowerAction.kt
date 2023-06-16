@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
+import marisa.fx.MeteoricShowerEffect
 
 class MeteoricShowerAction(number: Int, damage: Int, val freeToPlay: Boolean) :
     AbstractGameAction() {
@@ -43,7 +44,8 @@ class MeteoricShowerAction(number: Int, damage: Int, val freeToPlay: Boolean) :
             }
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()
-            addToTop(RandomDamageAction(cnt) { dmg })
+            addToBot(MeteoricShowerEffect.toVfx(cnt))
+            addToBot(RandomDamageAction(cnt) { dmg })
             AbstractDungeon.gridSelectScreen.selectedCards.clear()
             AbstractDungeon.player.hand.refreshHandLayout()
         }

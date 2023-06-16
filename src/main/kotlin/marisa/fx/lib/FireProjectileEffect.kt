@@ -6,9 +6,10 @@ import com.badlogic.gdx.graphics.Texture
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.MathUtils
 import com.badlogic.gdx.math.Vector2
-import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.core.CardCrawlGame.sound
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon.effectsQueue
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect
 import com.megacrit.cardcrawl.vfx.combat.IceShatterEffect
 import marisa.fx.MeteoricShowerEffect
@@ -18,46 +19,31 @@ const val PROJECTILE_IMPACT_SOUND_KEY = "ORB_FROST_EVOKE"
 class FireProjectileEffect : AbstractGameEffect() {
     private lateinit var projectile: ProjectileData
     private var waitTimer = 0f
+    // to give the illusion of depth, we don't want to have every projectile hit the floor at exactly the same spot
     private var floorY = AbstractDungeon.floorY + MathUtils.random(-200.0f, 50.0f) * Settings.scale
     private var monsterX = 0f
     override fun update() {
         waitTimer -= Gdx.graphics.deltaTime
         if (!(waitTimer > 0.0f)) {
-            projectile!!.x += projectile!!.vX * Gdx.graphics.deltaTime
-            projectile!!.y -= projectile!!.vY * Gdx.graphics.deltaTime
-            if (projectile!!.shouldImpactFloor) {
-                checkFloorCollision()
-            }
-            if (projectile!!.shouldImpactWall) {
-                checkWallCollision()
-            }
-            if (projectile!!.shouldAccelerate) {
-                checkAccelerate()
-            }
+            projectile.x += projectile.vX * Gdx.graphics.deltaTime
+            projectile.y -= projectile.vY * Gdx.graphics.deltaTime
+
+            if (projectile.shouldImpactFloor) { checkFloorCollision() }
+            if (projectile.shouldImpactWall) { checkWallCollision() }
+            if (projectile.shouldAccelerate) { checkAccelerate() }
         }
     }
 
     private fun checkWallCollision() {
-        val hittingWall = projectile!!.x > monsterX
+        val hittingWall = projectile.x > monsterX
         if (hittingWall) {
             impact()
             isDone = true
         }
     }
 
-    private fun checkAccelerate() {
-        if (projectile!!.accelerationXFactor > 1.0f && projectile!!.x > projectile!!.accelerationX * Settings.scale) {
-            projectile!!.vX *= projectile!!.accelerationXFactor
-            projectile!!.shouldAccelerate = false
-        }
-        if (projectile!!.accelerationYFactor > 1.0f && projectile!!.y < projectile!!.accelerationY * Settings.scale) {
-            projectile!!.vY *= projectile!!.accelerationYFactor
-            projectile!!.shouldAccelerate = false
-        }
-    }
-
     private fun checkFloorCollision() {
-        val hittingTheFloor = projectile!!.y < floorY
+        val hittingTheFloor = projectile.y < floorY
         if (hittingTheFloor) {
             impact()
             isDone = true
@@ -67,31 +53,60 @@ class FireProjectileEffect : AbstractGameEffect() {
     private fun impact() {
         var pitch = 0.8f
         pitch += MathUtils.random(-0.2f, 0.2f) // 80
-        CardCrawlGame.sound.playA(PROJECTILE_IMPACT_SOUND_KEY, pitch)
+        sound.playA(PROJECTILE_IMPACT_SOUND_KEY, pitch)
         for (i in 0..3) {
-            AbstractDungeon.effectsQueue.add(IceShatterEffect(projectile!!.x, projectile!!.y))
+            effectsQueue.add(IceShatterEffect(projectile.x, projectile.y))
+        }
+    }
+
+    // Acceleration is a mode where a projectile proceeds at its initial speed until it crosses a
+    // threshold coordinate line ('accelerationX/Y'). Its velocity is then multiplied by the corresponding scalar
+    // ('accelerationX/YFactor'). We only need to check acceleration if it doesn't equal 1.
+    // This is an extremely limited form of conditional velocity that could be improved,
+    // but is also extremely simple + works for now
+    private fun checkAccelerate() {
+        when {
+            projectile.accelerationXFactor != 1.0f && projectile.accelerationYFactor != 1.0f -> {
+                if(projectile.x > projectile.accelerationX * Settings.scale && projectile.y < projectile.accelerationY * Settings.scale) {
+                    projectile.vX *= projectile.accelerationXFactor
+                    projectile.vY *= projectile.accelerationYFactor
+                    projectile.shouldAccelerate = false
+                }
+            }
+            projectile.accelerationXFactor != 1.0f -> {
+                if(projectile.x > projectile.accelerationX * Settings.scale) {
+                    projectile.vX *= projectile.accelerationXFactor
+                    projectile.shouldAccelerate = false
+                }
+            }
+            projectile.accelerationYFactor != 1.0f -> {
+                if(projectile.y < projectile.accelerationY * Settings.scale) {
+                    projectile.vY *= projectile.accelerationYFactor
+                    projectile.shouldAccelerate = false
+                }
+            }
         }
     }
 
     override fun render(spriteBatch: SpriteBatch) {
         if (waitTimer < 0.0f) {
             spriteBatch.setBlendFunction(770, 1)
-            spriteBatch.color = projectile!!.color
+            spriteBatch.color = projectile.color
             spriteBatch.draw(
-                projectile!!.texture,
-                projectile!!.x,
-                projectile!!.y,
+                projectile.texture,
+                projectile.x,
+                projectile.y,
                 48.0f,
                 48.0f,
-                projectile!!.width,
-                projectile!!.height,
-                projectile!!.scale,
-                projectile!!.scale,
-                projectile!!.rotation,
+                projectile.width,
+                projectile.height,
+                projectile.scale,
+                projectile.scale,
+                projectile.rotation,
                 0,
                 0,
-                projectile!!.texture!!.width,
-                projectile!!.texture!!.height,
+                projectile.texture!!.width,
+                projectile.texture!!.height,
                 false,
                 false
             )
@@ -119,13 +134,16 @@ class FireProjectileEffect : AbstractGameEffect() {
         var shouldImpactFloor = false
         @JvmField
         var shouldImpactWall = false
+        // see [checkAccelerate]
         @JvmField
         var shouldAccelerate = false
         @JvmField
         var accelerationX = -1.0f
+        @JvmField
         var accelerationY = (Settings.HEIGHT * 2).toFloat()
         @JvmField
         var accelerationXFactor = 1f
+        @JvmField
         var accelerationYFactor = 1f
         @JvmField
         var scale = 0f
@@ -147,8 +165,7 @@ class FireProjectileEffect : AbstractGameEffect() {
         }
 
         fun fastMode() {
-            val fastMode = Settings.FAST_MODE
-            if (fastMode) {
+            if (Settings.FAST_MODE) {
                 vX *= 2f
                 vY *= 2f
             }
@@ -158,7 +175,7 @@ class FireProjectileEffect : AbstractGameEffect() {
             width *= Settings.scale
             height *= Settings.scale
             scale *= Settings.scale
-            x = x * Settings.scale
+            x *= Settings.scale
             vX *= scale
             vX *= Settings.scale
             vY *= Settings.scale
@@ -171,7 +188,7 @@ class FireProjectileEffect : AbstractGameEffect() {
         }
     }
 
-    fun createMeteoricShowerProjectileData(img: Texture, relicCount: Int, flipped: Boolean, scale: Float): ProjectileData {
+    fun createCollectingQuirkProjectileData(img: Texture, relicCount: Int, flipped: Boolean, scale: Float): ProjectileData {
         val data = ProjectileData()
         data.texture = img
         data.width = 128f
@@ -222,7 +239,7 @@ class FireProjectileEffect : AbstractGameEffect() {
     companion object {
         fun CollectingQuirkProjectile(img: Texture, relicCount: Int, flipped: Boolean, x: Float): FireProjectileEffect =
             FireProjectileEffect().apply {
-                projectile = createMeteoricShowerProjectileData(img, relicCount, flipped, scale)
+                projectile = createCollectingQuirkProjectileData(img, relicCount, flipped, scale)
                 monsterX = x + MathUtils.random(-100.0f, 100.0f) * Settings.scale
                 waitTimer = MathUtils.random(0.0f, 0.5f)
                 renderBehind = MathUtils.randomBoolean()

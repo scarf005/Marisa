@@ -18,28 +18,25 @@ import marisa.fx.lib.FireProjectileEffect.Companion.MeteoricShowerProjectile
 import marisa.fx.lib.SOUND_EFFECT_KEY
 import marisa.fx.lib.VfxGameEffect
 
+private const val MAX_VFX_PROJECTILES = 50
+
 class MeteoricShowerEffect(
     private val numHits: Int,
     private val flipped: Boolean,
     private val monsterX: Float
 ) : VfxGameEffect() {
-    private var timer = 0.1f
-    private val origDuration = if (Settings.FAST_MODE) 2.0f else 0.5f
     private var starCounter = 0
 
     init {
-        duration = origDuration
+        duration = if (Settings.FAST_MODE) 2.0f else 0.5f
     }
 
     override fun update() {
-        if (duration == origDuration) {
-            sound.playA(SOUND_EFFECT_KEY, -0.25f - numHits.toFloat() / 200.0f)
-            screenShake.shake(ScreenShake.ShakeIntensity.HIGH, ScreenShake.ShakeDur.MED, true)
-            effectsQueue.add(BorderLongFlashEffect(Color.SKY))
-        }
+        if (isFirstUpdate()) { start() }
+
         duration -= Gdx.graphics.deltaTime
         timer -= Gdx.graphics.deltaTime
-        if (starCounter < numHits.coerceAtMost(50) && timer < 0.0f) {
+        if (starCounter < numHits.coerceAtMost(MAX_VFX_PROJECTILES) && timer < 0.0f) {
             timer += 0.03f
             effectsQueue.add(MeteoricShowerProjectile(numHits, flipped, monsterX))
             starCounter += 1
@@ -47,6 +44,13 @@ class MeteoricShowerEffect(
         if (duration < 0.0f) {
             isDone = true
         }
+    }
+
+    override fun start() {
+        sound.playA(SOUND_EFFECT_KEY, -0.25f - numHits.toFloat() / 200.0f)
+        screenShake.shake(ScreenShake.ShakeIntensity.HIGH, ScreenShake.ShakeDur.MED, true)
+        effectsQueue.add(BorderLongFlashEffect(Color.SKY))
+        hasStarted = true
     }
 
     override fun render(spriteBatch: SpriteBatch) {}

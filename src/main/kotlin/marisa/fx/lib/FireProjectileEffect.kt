@@ -134,7 +134,7 @@ class FireProjectileEffect : AbstractGameEffect() {
         var shouldImpactFloor = false
         @JvmField
         var shouldImpactWall = false
-        // see [checkAccelerate]
+        /** see [checkAccelerate] */
         @JvmField
         var shouldAccelerate = false
         @JvmField

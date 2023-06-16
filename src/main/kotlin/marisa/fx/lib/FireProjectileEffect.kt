@@ -61,7 +61,7 @@ class FireProjectileEffect : AbstractGameEffect() {
 
     // Acceleration is a mode where a projectile proceeds at its initial speed until it crosses a
     // threshold coordinate line ('accelerationX/Y'). Its velocity is then multiplied by the corresponding scalar
-    // ('accelerationX/YFactor'). We only need to check acceleration if it doesn't equal 1.
+    // ('accelerationX/YFactor'). We only need to check acceleration if the scalar doesn't equal 1.
     // This is an extremely limited form of conditional velocity that could be improved,
     // but is also extremely simple + works for now
     private fun checkAccelerate() {

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.relics.Circlet
 import com.megacrit.cardcrawl.relics.RedCirclet
 import marisa.MarisaContinued
 import marisa.action.RandomDamageAction
+import marisa.fx.CollectingQuirkEffect
 import marisa.patches.AbstractCardEnum
 
 class CollectingQuirk : CustomCard(
@@ -69,6 +70,7 @@ class CollectingQuirk : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
+        addToBot(CollectingQuirkEffect.toVfx())
         addToBot(RandomDamageAction(counter) { damage })
     }
 

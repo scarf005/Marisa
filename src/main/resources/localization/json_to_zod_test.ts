@@ -1,16 +1,12 @@
+import { assert, assertThrows } from "https://deno.land/std@0.178.0/testing/asserts.ts"
 import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
 
 import { jsonToZod } from "./json_to_zod.ts"
-import {
-  assert,
-  assertThrows,
-} from "https://deno.land/std@0.178.0/testing/asserts.ts"
 
 const cardEng = {
   "GravityBeat": {
     "NAME": "Gravity Beat",
-    "DESCRIPTION":
-      "Deal !D! damage and draw a card for every !B! cards in your master deck.",
+    "DESCRIPTION": "Deal !D! damage and draw a card for every !B! cards in your master deck.",
     "EXTENDED_DESCRIPTION": [
       " NL (",
       " time(s)).",

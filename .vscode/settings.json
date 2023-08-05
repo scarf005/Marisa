@@ -85,5 +85,8 @@
       ],
       "url": "./src/main/resources/localization/schemas/potions.json"
     }
-  ]
+  ],
+  "explorer.autoRevealExclude": {
+    "src/main/kotlin": true
+  }
 }

@@ -1,14 +1,12 @@
 import { WalkEntry } from "https://deno.land/std@0.178.0/fs/walk.ts"
-import { jsonToZodCode } from "./json_to_zod.ts"
 import * as log from "https://deno.land/std@0.178.0/log/mod.ts"
 import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
-import { zodToJsonSchema } from "npm:zod-to-json-schema"
-import { tsFormatter } from "./dprint.ts"
+import { zodToJsonSchema } from "npm:zod-to-json-schema@3.21.3"
 import { jsons } from "./common.ts"
+import { tsFormatter } from "./dprint.ts"
+import { jsonToZodCode } from "./json_to_zod.ts"
 
-const baseCwd = Deno.cwd().endsWith("localization")
-  ? "."
-  : "./src/main/resources/localization"
+const baseCwd = Deno.cwd().endsWith("localization") ? "." : "./src/main/resources/localization"
 const basePath = `${baseCwd}/schemas`
 console.log(basePath)
 await Deno.mkdir(basePath, { recursive: true })

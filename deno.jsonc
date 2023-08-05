@@ -1,12 +1,13 @@
 {
   "tasks": {
-    "schema": "deno task --cwd localization/ schema",
-    "schema:vscode": "deno task --cwd localization/ schema:vscode",
-    "schema:validate": "deno task --cwd localization/ validate",
-    "schema:fmt": "deno task --cwd localization/ fmt",
+    "l10n": "deno task --cwd localization/",
     "link": "deno run --allow-read --allow-write --allow-env ./scripts/link/mod.ts"
   },
   "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"],
-  "fmt": { "options": { "semiColons": false } },
+  "fmt": {
+    "semiColons": false,
+    "lineWidth": 100,
+    "proseWrap": "never"
+  },
   "compilerOptions": { "exactOptionalPropertyTypes": true }
 }

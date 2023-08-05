@@ -10,19 +10,37 @@ body:
       value: |
         ## Thanks for reaching out!
 
-        please make sure that you're
-        - using consise title (e.g:`Amplified Shoot The Moon uses 3 energy instead of 2`).
+        Please make sure that you're
+
+        - using concise title (e.g:`Amplified Shoot The Moon uses 3 energy instead of 2`).
         - using the latest version of this mod.
         - using minimal set of mods enabled to reproduce the bug.
+
+        ## Console
+
+        To make reproducing bugs easier, please use basemod's **[Console](https://alexdriedger.github.io/SlayTheSpireModding/docs/console)** command, surrounded with backtick (`` ` ``) for each steps.
+
+        ### How to enable and use console
+
+        ![mods](https://user-images.githubusercontent.com/54838975/233089827-1382b9f7-74ea-4261-b020-0605964cc784.png)
+
+        1. Visit `Mods` in the main menu.
+
+        ![basemod](https://user-images.githubusercontent.com/54838975/233089870-e4f712dd-318c-4abc-9518-380cd448b206.png)
+
+        2. Click `BaseMod`.
+        3. Click `Enable dev console` and `Enable Autocompletion`.
+
+        ![console usage example](https://github-production-user-asset-6210df.s3.amazonaws.com/54838975/258566362-aee9fd69-4ace-4482-b345-2fc8b87ab1c2.png)
+
+        4. Open console using (`` ` ``) key (the key right below ESC key which also has `~`).
+        5. Use console command to reproduce the bug.
+
 
   - type: textarea
     attributes:
       label: How to reproduce
-      description: >
-        To make reproducing bugs easier, please use basemod's
-        **[Console](https://alexdriedger.github.io/SlayTheSpireModding/docs/console)**
-        command, surrounded with backtick (\`) for each steps.
-        Screenshot or Videos are also welcome.
+      description: Console steps that reliably reproduce the bug. Screenshot or Videos are also welcome.
       placeholder: |
         1. Start a new game with Marisa.
         2. `fight Lagavulin`
@@ -30,6 +48,21 @@ body:
         4. Use the generated ShootTheMoon card to attack Lagavulin.
 
         Despite card description (1 base cost + 1 amplify cost), it uses 3 energy.
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Game language
+      description: Which language were you using in the game?
+      multiple: false
+      options:
+        - English (ENG)
+        - French (FRA)
+        - Japanese (JPN)
+        - Korean (KOR)
+        - Simplified Chinese (ZHS)
+        - Traditional Chinese (ZHT)
     validations:
       required: true
 

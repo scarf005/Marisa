@@ -3,10 +3,7 @@ import { asyncIterableToArray } from "https://deno.land/x/replicache@v10.0.0-bet
 import { jsons, LangCode, langCodes } from "./common.ts"
 import { parse } from "https://deno.land/std@0.178.0/path/mod.ts"
 import * as log from "https://deno.land/std@0.178.0/log/mod.ts"
-import {
-  Command,
-  EnumType,
-} from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
+import { Command, EnumType } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
 import { ZodIssue } from "https://deno.land/x/zod@v3.20.5/mod.ts"
 
 const schemasPromise = (await asyncIterableToArray(walk("schemas")))

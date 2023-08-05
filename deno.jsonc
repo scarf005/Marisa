@@ -4,6 +4,10 @@
     "link": "deno run --allow-read --allow-write --allow-env ./scripts/link/mod.ts"
   },
   "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"],
-  "fmt": { "options": { "semiColons": false } },
+  "fmt": {
+    "semiColons": false,
+    "lineWidth": 100,
+    "proseWrap": "never"
+  },
   "compilerOptions": { "exactOptionalPropertyTypes": true }
 }

@@ -60,7 +60,6 @@ class OortCloud : AmplifiableCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
         private const val COST = 1
         private const val ARMOR_GAIN = 4
         private const val UPG_ARMOR = 1

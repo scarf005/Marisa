@@ -66,8 +66,7 @@
   },
   "MachineGunSpark": {
     "NAME": "マシンガンスパーク",
-    "DESCRIPTION": "!D! ダメージを !M! 回与える NL 廃棄",
-    "UPGRADE_DESCRIPTION": "!D! ダメージを !M! 回与える NL 廃棄"
+    "DESCRIPTION": "!D! ダメージを !M! 回与える NL 廃棄"
   },
   "MagicAbsorber": {
     "NAME": "マジックアブソーバー",
@@ -75,8 +74,7 @@
   },
   "MasterSpark": {
     "NAME": "マスタースパーク",
-    "DESCRIPTION": "!D! ダメージを与える。 NL 増幅 [E] : !B! ダメージを与える。",
-    "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 NL 増幅 [E] : !B! ダメージを与える。"
+    "DESCRIPTION": "!D! ダメージを与える。 NL 増幅 [E] : !B! ダメージを与える。"
   },
   "MeteoricShower": {
     "NAME": "メテオニックシャワー",
@@ -101,8 +99,7 @@
   },
   "OortCloud": {
     "NAME": "オールトクラウド",
-    "DESCRIPTION": " プレートアーマー !M! を得る。 NL 増幅 [E] : 追加で プレートアーマー !B! を得る。",
-    "UPGRADE_DESCRIPTION": " プレートアーマー !M! を得る。 NL 増幅 [E] : 追加で プレートアーマー !B! を得る。"
+    "DESCRIPTION": " プレートアーマー !M! を得る。 NL 増幅 [E] : 追加で プレートアーマー !B! を得る。"
   },
   "PolarisUnique": {
     "NAME": "ポラリスユニーク",

@@ -66,8 +66,7 @@
   },
   "MachineGunSpark": {
     "NAME": "Mitraille d'étincelles",
-    "DESCRIPTION": "Infligez !D! dégâts !M! fois. NL Épuisement.",
-    "UPGRADE_DESCRIPTION": "Infligez !D! dégâts 8 fois. NL Épuisement."
+    "DESCRIPTION": "Infligez !D! dégâts !M! fois. NL Épuisement."
   },
   "MagicAbsorber": {
     "NAME": "Absorbeur de magie",
@@ -75,8 +74,7 @@
   },
   "MasterSpark": {
     "NAME": "Étincelle de maître",
-    "DESCRIPTION": "Infligez !D! dégâts. NL Amplifier  [E]  : Infligez !B! à la place.",
-    "UPGRADE_DESCRIPTION": "Infligez !D! dégâts. NL Amplifier  [E]  : Infligez 9 dégâts en plus."
+    "DESCRIPTION": "Infligez !D! dégâts. NL Amplifier  [E]  : Infligez !B! à la place."
   },
   "MeteoricShower": {
     "NAME": "Douche métonique",
@@ -101,8 +99,7 @@
   },
   "OortCloud": {
     "NAME": "Nuage d'Oort",
-    "DESCRIPTION": "Gagnez !M! d'Armure plaquée. NL Amplifier  [E]  : Gagnez !B! d'Armure plaquée en plus.",
-    "UPGRADE_DESCRIPTION": "Gagnez !M! d'Armure plaquée. NL Amplifier  [E]  : Gagnez 3 d'Armure plaquée en plus."
+    "DESCRIPTION": "Gagnez !M! d'Armure plaquée. NL Amplifier  [E]  : Gagnez !B! d'Armure plaquée en plus."
   },
   "PolarisUnique": {
     "NAME": "Polaris Unique",

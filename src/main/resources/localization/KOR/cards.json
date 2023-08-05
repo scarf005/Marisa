@@ -39,7 +39,8 @@
   },
   "EscapeVelocity": {
     "NAME": "탈출 속도",
-    "DESCRIPTION": "턴이 시작할 때 카드를 2 장 더 뽑고 *화상 카드를 1 장 얻습니다."
+    "DESCRIPTION": "턴이 시작할 때 카드를 2 장 더 뽑고 *화상 카드를 1 장 얻습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. 턴이 시작할 때 카드를 2 장 더 뽑고 *화상 카드를 1 장 얻습니다."
   },
   "FinalSpark": {
     "NAME": "파이널 스파크",

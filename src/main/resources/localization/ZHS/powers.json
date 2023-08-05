@@ -238,13 +238,6 @@
       " 则会被立即杀死。"
     ]
   },
-  "GiftOfLife": {
-    "NAME": "生命恩赐",
-    "DESCRIPTIONS": [
-      "在回合结束时恢复 #b",
-      " 点生命值。"
-    ]
-  },
   "TalismanPower": {
     "NAME": "五色魔符",
     "DESCRIPTIONS": [

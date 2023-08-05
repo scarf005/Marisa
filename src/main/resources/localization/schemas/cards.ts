@@ -67,11 +67,8 @@ export const schema = z.object({
     "UPGRADE_DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "OortCloud": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
+  "OortCloud": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+    .strict(),
   "PolarisUnique": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),

@@ -99,8 +99,7 @@
   },
   "OortCloud": {
     "NAME": "OortCloud",
-    "DESCRIPTION": "Gain !M! Plated Armor. NL Amplify  [E]  : Gain !B! more Plated Armor.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Plated Armor. NL Amplify  [E]  : Gain 3 more Plated Armor."
+    "DESCRIPTION": "Gain !M! Plated Armor. NL Amplify  [E]  : Gain !B! more Plated Armor."
   },
   "PolarisUnique": {
     "NAME": "Polaris Unique",

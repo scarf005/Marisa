@@ -70,8 +70,7 @@
   },
   "MachineGunSpark": {
     "NAME": "機槍火花",
-    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 消耗 ",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害8次"
+    "DESCRIPTION": "造成 !D! 點傷害 !M! 次。 NL 消耗 "
   },
   "MagicAbsorber": {
     "NAME": "魔法吸收器",
@@ -79,8 +78,7 @@
   },
   "MasterSpark": {
     "NAME": "極限火花",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 增幅  [E]  :傷害變為 !B! 點",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害。 NL 增幅  [E]  :傷害增加 9 點"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 增幅  [E]  :傷害變為 !B! 點"
   },
   "MeteoricShower": {
     "NAME": "流星雨",
@@ -105,8 +103,7 @@
   },
   "OortCloud": {
     "NAME": "奧爾特雲",
-    "DESCRIPTION": "獲得 !M! 層多層護甲。 NL 增幅  [E] :獲得額外 !B! 層",
-    "UPGRADE_DESCRIPTION": "獲得 !M! 層 多層護甲。 NL 增幅 [E] :獲得額外3層"
+    "DESCRIPTION": "獲得 !M! 層多層護甲。 NL 增幅  [E] :獲得額外 !B! 層"
   },
   "PolarisUnique": {
     "NAME": "唯一的北極星",

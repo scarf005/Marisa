@@ -70,8 +70,7 @@
   },
   "MachineGunSpark": {
     "NAME": "机枪火花",
-    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害8次。"
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 消耗 。"
   },
   "MagicAbsorber": {
     "NAME": "魔法吸收器",
@@ -79,8 +78,7 @@
   },
   "MasterSpark": {
     "NAME": "极限火花",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 增幅  [E]  :伤害变为 !B! 点。",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Amplify  [E]  :add 9 to base damage."
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 增幅  [E]  :伤害变为 !B! 点。"
   },
   "MeteoricShower": {
     "NAME": "流星雨",
@@ -105,8 +103,7 @@
   },
   "OortCloud": {
     "NAME": "奥尔特云",
-    "DESCRIPTION": "获得 !M! 层多层护甲。 NL 增幅  [E]  :获得额外 !B! 层。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 层多层护甲。 NL 增幅  [E]  :获得额外3层。"
+    "DESCRIPTION": "获得 !M! 层多层护甲。 NL 增幅  [E]  :获得额外 !B! 层。"
   },
   "PolarisUnique": {
     "NAME": "唯一的北极星",
@@ -336,8 +333,7 @@
   },
   "ManaConvection": {
     "NAME": "魔力对流",
-    "DESCRIPTION": "消耗最多 !M! 张卡，每消耗一张获得  [E]  。  消耗 。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张卡，然后消耗2张卡。 NL 如果你的 蓄力 层数大于或等于8层，则消耗6层蓄力，获得  [E]  [E] 。"
+    "DESCRIPTION": "消耗最多 !M! 张卡，每消耗一张获得  [E]  。  消耗 。"
   },
   "ManaRampage": {
     "NAME": "魔力暴走",

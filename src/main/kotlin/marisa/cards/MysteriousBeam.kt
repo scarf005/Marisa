@@ -27,26 +27,12 @@ class MysteriousBeam : CustomCard(
         baseDamage = 0
     }
 
-    override fun calculateCardDamage(mo: AbstractMonster) {
-        var tmp = baseDamage.toFloat()
-        for (p in mo.powers) {
-            tmp = p.atDamageReceive(tmp, damageTypeForTurn)
-        }
-        for (p in mo.powers) {
-            tmp = p.atDamageFinalReceive(tmp, damageTypeForTurn)
-            if (baseDamage != tmp.toInt()) {
-                isDamageModified = true
-            }
-        }
-        damage = tmp.toInt()
-    }
-
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
         val c = generateSequence {
             AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()
         }
             .first { it !is MysteriousBeam }
-            .apply { if (upgraded) upgrade() }
+            .apply { if (this@MysteriousBeam.upgraded) upgrade() }
             .apply { applyPowers() }
 
         addToBot(MakeTempCardInHandAction(c, true))

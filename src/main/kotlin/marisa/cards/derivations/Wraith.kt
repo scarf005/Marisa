@@ -59,6 +59,6 @@ class Wraith : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = -2
-        private const val imgUrl = "img/cards/wraith.png"
+        private const val imgUrl = "marisa/img/cards/wraith.png"
     }
 }

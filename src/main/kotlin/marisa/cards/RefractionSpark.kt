@@ -53,7 +53,7 @@ class RefractionSpark : AmplifiedAttack(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/Refraction.png"
+        const val IMG_PATH = "marisa/img/cards/Refraction.png"
         private const val COST = 1
         private const val ATK_DMG = 4
         private const val UPG_DMG = 1

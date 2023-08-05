@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch
 import com.megacrit.cardcrawl.audio.Sfx
 import com.megacrit.cardcrawl.audio.SoundMaster
 import com.megacrit.cardcrawl.core.Settings
+import marisa.modName
 
 @SpirePatch(
     cls = "com.megacrit.cardcrawl.audio.SoundMaster",
@@ -24,5 +25,5 @@ object SoundMasterPlayAPatch {
         return 0L
     }
 
-    private fun load(filename: String): Sfx = Sfx("audio/sound/$filename", false)
+    private fun load(filename: String): Sfx = Sfx("$modName/audio/sound/$filename", false)
 }

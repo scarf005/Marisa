@@ -77,7 +77,7 @@ class BlazingStar : AmplifiedAttack(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/BlazingStar.png"
+        const val IMG_PATH = "marisa/img/cards/BlazingStar.png"
         private const val COST = 2
         private const val ATK_DMG = 16
         private const val UPG_DMG = 4

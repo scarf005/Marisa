@@ -53,7 +53,7 @@ class ShootingEcho : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/echo.png"
+        const val IMG_PATH = "marisa/img/cards/echo.png"
         private const val COST = 1
         private const val ATTACK_DMG = 10
         private const val UPGRADE_PLUS_DMG = 4

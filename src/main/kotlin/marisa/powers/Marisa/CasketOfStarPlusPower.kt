@@ -16,7 +16,7 @@ class CasketOfStarPlusPower(owner: AbstractCreature?, amount: Int) : AbstractPow
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/energyNext.png")
+        img = Texture("marisa/img/powers/energyNext.png")
     }
 
     override fun onGainedBlock(blockAmount: Float) {

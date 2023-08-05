@@ -8,7 +8,7 @@ export const projectRoot = await new Deno.Command("git", {
   .output()
   .then((x) => new TextDecoder().decode(x.stdout).trim())
 
-export const localization = "src/main/resources/localization"
+export const localization = "src/main/resources/marisa/localization"
 
 export const localizationPath = `${projectRoot}/${localization}`
 

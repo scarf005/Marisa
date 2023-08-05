@@ -49,7 +49,7 @@ class OrrerysSun : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/Orrey.png"
+        const val IMG_PATH = "marisa/img/cards/Orrey.png"
         private const val COST = 1
         private const val STACKS = 6
         private const val UPG_STC = 3

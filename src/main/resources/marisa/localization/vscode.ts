@@ -17,5 +17,5 @@ if (import.meta.main) {
   const schemas = names.map(schemaSettingsGen)
   const newSettings = { ...settings, "json.schemas": schemas }
 
-  await Deno.writeTextFile(settingsFile, JSON.stringify(newSettings, null, 2))
+  await Deno.writeTextFile(settingsFile, JSON.stringify(newSettings, null, 2) + "\n")
 }

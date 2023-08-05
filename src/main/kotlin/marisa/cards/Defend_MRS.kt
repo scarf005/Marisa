@@ -42,7 +42,7 @@ class Defend_MRS : CustomCard(
 
     companion object {
         const val ID = "Defend_MRS"
-        const val IMG_PATH = "img/cards/Defend_MRS.png"
+        const val IMG_PATH = "marisa/img/cards/Defend_MRS.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

@@ -65,7 +65,7 @@ class DoubleSpark : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/DoubleSpark.png"
+        const val IMG_PATH = "marisa/img/cards/DoubleSpark.png"
         private const val COST = 1
         private const val ATK_DMG = 6
         private const val UPG_DMG = 2

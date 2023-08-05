@@ -22,7 +22,7 @@ class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower()
         IdOffset++
         amount = -1
         type = PowerType.BUFF
-        img = Texture("img/powers/diminish.png")
+        img = Texture("marisa/img/powers/diminish.png")
         this.r = r
         p = AbstractDungeon.player
         rName = r.name

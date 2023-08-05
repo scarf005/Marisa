@@ -11,16 +11,17 @@ src
 └── main
     ├── kotlin
     └── resources
-        ├── audio
-        ├── img
-        └── localization
+        └── marisa
+            ├── audio
+            ├── img
+            └── localization
 ```
 
 ## Source Code(`src/main/kotlin/`)
 
 Source code of this project is licensed under [MIT][mit].
 
-## Resources(`src/main/resources/`)
+## Resources(`src/main/resources/marisa`)
 
 #### Images(`img/`)
 

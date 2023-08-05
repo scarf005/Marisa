@@ -13,7 +13,7 @@ class MillisecondPulsarsPower(owner: AbstractCreature?) : AbstractPower() {
         amount = -1
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/steadyPulse.png")
+        img = Texture("marisa/img/powers/steadyPulse.png")
     }
 
     override fun stackPower(stackAmount: Int) {}

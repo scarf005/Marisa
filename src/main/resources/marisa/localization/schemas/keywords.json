@@ -3,47 +3,9 @@
   "properties": {
     "keywords": {
       "type": "array",
-      "minItems": 9,
-      "maxItems": 9,
+      "minItems": 7,
+      "maxItems": 7,
       "items": [
-        {
-          "type": "object",
-          "properties": {
-            "NAMES": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "DESCRIPTION": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "NAMES",
-            "DESCRIPTION"
-          ],
-          "additionalProperties": false
-        },
-        {
-          "type": "object",
-          "properties": {
-            "NAMES": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "DESCRIPTION": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "NAMES",
-            "DESCRIPTION"
-          ],
-          "additionalProperties": false
-        },
         {
           "type": "object",
           "properties": {

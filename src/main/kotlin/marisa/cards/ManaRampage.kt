@@ -54,7 +54,7 @@ class ManaRampage : CustomCard(
 
     companion object {
         const val ID = "ManaRampage"
-        const val IMG_PATH = "img/cards/ManaRampage.png"
+        const val IMG_PATH = "marisa/img/cards/ManaRampage.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

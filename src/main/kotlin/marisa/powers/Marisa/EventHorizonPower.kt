@@ -17,7 +17,7 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
         this.owner = owner
         this.amount = amount
         type = PowerType.BUFF
-        img = Texture("img/powers/eventHorizon.png")
+        img = Texture("marisa/img/powers/eventHorizon.png")
         cnt = amount
         updateDescription()
     }

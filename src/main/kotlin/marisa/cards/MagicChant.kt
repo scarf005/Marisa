@@ -39,7 +39,7 @@ class MagicChant : CustomCard(
 
     companion object {
         const val ID = "MagicChant"
-        const val IMG_PATH = "img/cards/Chant.png"
+        const val IMG_PATH = "marisa/img/cards/Chant.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

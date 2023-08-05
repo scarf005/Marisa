@@ -3,7 +3,7 @@
     "l10n": "deno task --cwd localization/",
     "link": "deno run --allow-read --allow-write --allow-env ./scripts/link/mod.ts"
   },
-  "exclude": ["src/main/kotlin/", "src/main/resources/img", "build/"],
+  "exclude": ["src/main/kotlin/", "src/main/resources/marisa/img", "build/"],
   "fmt": {
     "semiColons": false,
     "lineWidth": 100,

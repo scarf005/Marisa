@@ -30,8 +30,8 @@ class AmplifyWand : CustomRelic(
 
     companion object {
         const val ID = "AmplifyWand"
-        private const val IMG = "img/relics/AmplifyWand_s.png"
-        private const val IMG_OTL = "img/relics/outline/AmplifyWand_s.png"
+        private const val IMG = "marisa/img/relics/AmplifyWand_s.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/AmplifyWand_s.png"
         private const val BLOCK_AMT = 4
     }
 }

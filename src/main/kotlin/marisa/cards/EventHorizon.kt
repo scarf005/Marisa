@@ -34,7 +34,7 @@ class EventHorizon : CustomCard(
 
     companion object {
         const val ID = "EventHorizon"
-        const val IMG_PATH = "img/cards/EventHorizon.png"
+        const val IMG_PATH = "marisa/img/cards/EventHorizon.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

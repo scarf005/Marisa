@@ -67,7 +67,7 @@ class BlazeAway : CustomCard(
 
     companion object {
         const val ID = "BlazeAway"
-        const val IMG_PATH = "img/cards/blazeAway.png"
+        const val IMG_PATH = "marisa/img/cards/blazeAway.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

@@ -14,7 +14,7 @@ class GrandCrossPower(owner: AbstractCreature?) : AbstractPower() {
         amount = -1
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/systems.png")
+        img = Texture("marisa/img/powers/systems.png")
     }
 
     override fun stackPower(stackAmount: Int) {}

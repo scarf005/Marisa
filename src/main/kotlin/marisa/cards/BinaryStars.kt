@@ -49,7 +49,7 @@ class BinaryStars : AmplifiableCard(
 
     companion object {
         const val ID = "BinaryStars"
-        const val IMG_PATH = "img/cards/binaryStar.png"
+        const val IMG_PATH = "marisa/img/cards/binaryStar.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

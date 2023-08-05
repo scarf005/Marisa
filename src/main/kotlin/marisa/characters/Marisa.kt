@@ -202,29 +202,29 @@ class Marisa(name: String) :
         val logger: Logger = LogManager.getLogger(MarisaContinued::class.java.name)
         private const val ENERGY_PER_TURN = 3 // how much energy you get every turn
         private const val MARISA_SHOULDER_2 =
-            "img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
+            "marisa/img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
         private const val MARISA_SHOULDER_1 =
-            "img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2
-        private const val MARISA_CORPSE = "img/char/Marisa/fallen.png" // dead corpse
+            "marisa/img/char/Marisa/shoulder1.png" // shoulder1 / shoulder_2
+        private const val MARISA_CORPSE = "marisa/img/char/Marisa/fallen.png" // dead corpse
 
         private const val MARISA_SKELETON_ATLAS =
-            "img/char/Marisa/MarisaModelv3.atlas" // Marisa_v0 / MarisaModel_v02 /MarisaModelv3
-        private const val MARISA_SKELETON_JSON = "img/char/Marisa/MarisaModelv3.json"
+            "marisa/img/char/Marisa/MarisaModelv3.atlas" // Marisa_v0 / MarisaModel_v02 /MarisaModelv3
+        private const val MARISA_SKELETON_JSON = "marisa/img/char/Marisa/MarisaModelv3.json"
         private const val MARISA_ANIMATION = "Idle" // Sprite / Idle
         private val ORB_TEXTURES = arrayOf(
-            "img/UI/EPanel/layer5.png",
-            "img/UI/EPanel/layer4.png",
-            "img/UI/EPanel/layer3.png",
-            "img/UI/EPanel/layer2.png",
-            "img/UI/EPanel/layer1.png",
-            "img/UI/EPanel/layer0.png",
-            "img/UI/EPanel/layer5d.png",
-            "img/UI/EPanel/layer4d.png",
-            "img/UI/EPanel/layer3d.png",
-            "img/UI/EPanel/layer2d.png",
-            "img/UI/EPanel/layer1d.png"
+            "marisa/img/UI/EPanel/layer5.png",
+            "marisa/img/UI/EPanel/layer4.png",
+            "marisa/img/UI/EPanel/layer3.png",
+            "marisa/img/UI/EPanel/layer2.png",
+            "marisa/img/UI/EPanel/layer1.png",
+            "marisa/img/UI/EPanel/layer0.png",
+            "marisa/img/UI/EPanel/layer5d.png",
+            "marisa/img/UI/EPanel/layer4d.png",
+            "marisa/img/UI/EPanel/layer3d.png",
+            "marisa/img/UI/EPanel/layer2d.png",
+            "marisa/img/UI/EPanel/layer1d.png"
         )
-        private const val ORB_VFX = "img/UI/energyBlueVFX.png"
+        private const val ORB_VFX = "marisa/img/UI/energyBlueVFX.png"
         private val LAYER_SPEED =
             floatArrayOf(-40.0f, -32.0f, 20.0f, -20.0f, 0.0f, -10.0f, -8.0f, 5.0f, -5.0f, 0.0f)
 

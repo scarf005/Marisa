@@ -16,7 +16,7 @@ class TempStrengthLoss(owner: AbstractCreature?, amount: Int) : AbstractPower() 
         this.amount = amount
         type = PowerType.DEBUFF
         updateDescription()
-        img = Texture("img/powers/dance.png")
+        img = Texture("marisa/img/powers/dance.png")
     }
 
     override fun atDamageGive(damage: Float, type: DamageType): Float {

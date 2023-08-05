@@ -56,7 +56,7 @@ class GalacticHalo : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/halo.png"
+        const val IMG_PATH = "marisa/img/cards/halo.png"
         private const val COST = 2
         private const val STC = 2
         private const val UPG_STC = 1

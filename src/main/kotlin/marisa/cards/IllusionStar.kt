@@ -53,7 +53,7 @@ class IllusionStar : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/IllusionStar_V2.png"
+        const val IMG_PATH = "marisa/img/cards/IllusionStar_V2.png"
         private const val COST = 0
         private const val CARD_PRINT = 2
         private const val UPG_CARD_PRINT = 1

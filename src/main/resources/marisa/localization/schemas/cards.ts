@@ -288,11 +288,6 @@ export const schema = z.object({
   }).strict(),
   "Orbital": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
-  "SillyJoke": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
   "ExplosiveMarionette": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),

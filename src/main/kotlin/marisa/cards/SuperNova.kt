@@ -60,7 +60,7 @@ class SuperNova : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/SuperNova.png"
+        const val IMG_PATH = "marisa/img/cards/SuperNova.png"
         private const val COST = 2
         private const val STACK = 1
         private const val STACK_UPG = 1

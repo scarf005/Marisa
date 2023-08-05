@@ -14,7 +14,7 @@ class EnergyFlowPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         type = PowerType.BUFF
         this.amount = amount
         updateDescription()
-        img = Texture("img/powers/electricField.png")
+        img = Texture("marisa/img/powers/electricField.png")
     }
 
     override fun atEndOfTurn(isPlayer: Boolean) {

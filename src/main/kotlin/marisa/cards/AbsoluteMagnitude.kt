@@ -66,7 +66,7 @@ class AbsoluteMagnitude : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/absMagni.png"
+        const val IMG_PATH = "marisa/img/cards/absMagni.png"
         private const val COST = 2
         private const val ATK_MULT = 2
         private const val ATK_MULT_UPG = 3

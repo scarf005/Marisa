@@ -32,7 +32,9 @@ class MeteoricShowerEffect(
     }
 
     override fun update() {
-        if (isFirstUpdate()) { start() }
+        if (isFirstUpdate()) {
+            start()
+        }
 
         duration -= Gdx.graphics.deltaTime
         timer -= Gdx.graphics.deltaTime
@@ -57,9 +59,11 @@ class MeteoricShowerEffect(
     override fun dispose() {}
 
     companion object {
-        private const val METEORIC_SHOWER_PROJECTILE_TEXPATH = "img/vfx/star_128.png"
+        private const val METEORIC_SHOWER_PROJECTILE_TEXPATH = "marisa/img/vfx/star_128.png"
+
         @JvmField
-        val METEORIC_SHOWER_PROJECTILE: Texture = ImageMaster.loadImage(METEORIC_SHOWER_PROJECTILE_TEXPATH)
+        val METEORIC_SHOWER_PROJECTILE: Texture =
+            ImageMaster.loadImage(METEORIC_SHOWER_PROJECTILE_TEXPATH)
 
         fun toVfx(numHits: Int): VFXAction {
             val duration = if (Settings.FAST_MODE) 0.5f else 1.0f
@@ -68,7 +72,10 @@ class MeteoricShowerEffect(
                 .mapToDouble { m: AbstractMonster -> m.drawX.toDouble() }.average()
                 .orElse(Settings.WIDTH.toDouble())
                 .toFloat()
-            return VFXAction(MeteoricShowerEffect(numHits, monsters.shouldFlipVfx(), avgX), duration)
+            return VFXAction(
+                MeteoricShowerEffect(numHits, monsters.shouldFlipVfx(), avgX),
+                duration
+            )
         }
     }
 }

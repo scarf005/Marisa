@@ -41,7 +41,7 @@ class PropBag : CustomCard(
 
     companion object {
         const val ID = "PropBag"
-        const val IMG_PATH = "img/cards/PropBag.png"
+        const val IMG_PATH = "marisa/img/cards/PropBag.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

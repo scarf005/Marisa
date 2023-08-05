@@ -14,7 +14,7 @@ class DarkMatterPower(owner: AbstractCreature?) : AbstractPower() {
         amount = -1
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/darkness.png")
+        img = Texture("marisa/img/powers/darkness.png")
     }
 
     override fun stackPower(stackAmount: Int) {}

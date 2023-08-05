@@ -1,7 +1,9 @@
 package marisa
 
-import basemod.*
+import basemod.BaseMod
 import basemod.BaseMod.GetMonster
+import basemod.ModLabeledToggleButton
+import basemod.ModPanel
 import basemod.helpers.RelicType
 import basemod.interfaces.*
 import com.badlogic.gdx.graphics.Color
@@ -33,7 +35,6 @@ import marisa.patches.ThModClassEnum
 import marisa.potions.BottledSpark
 import marisa.potions.ShroomBrew
 import marisa.potions.StarNLove
-import marisa.powers.Marisa.*
 import marisa.relics.*
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
@@ -223,21 +224,21 @@ class MarisaContinued :
         //        private const val ORIN_ENCOUNTER_ZHS = """阿燐"""
         //        private const val ZOMBIE_FAIRY_ENC_ZHS = """僵尸妖精"""
 
-        private const val MOD_BADGE = "img/UI/badge.png"
+        private const val MOD_BADGE = "marisa/img/UI/badge.png"
 
         //card backgrounds
-        private const val ATTACK_CC = "img/512/bg_attack_MRS_s.png"
-        private const val SKILL_CC = "img/512/bg_skill_MRS_s.png"
-        private const val POWER_CC = "img/512/bg_power_MRS_s.png"
-        private const val ENERGY_ORB_CC = "img/512/cardOrb.png"
-        private const val ATTACK_CC_PORTRAIT = "img/1024/bg_attack_MRS.png"
-        private const val SKILL_CC_PORTRAIT = "img/1024/bg_skill_MRS.png"
-        private const val POWER_CC_PORTRAIT = "img/1024/bg_power_MRS.png"
-        private const val ENERGY_ORB_CC_PORTRAIT = "img/1024/cardOrb.png"
+        private const val ATTACK_CC = "marisa/img/512/bg_attack_MRS_s.png"
+        private const val SKILL_CC = "marisa/img/512/bg_skill_MRS_s.png"
+        private const val POWER_CC = "marisa/img/512/bg_power_MRS_s.png"
+        private const val ENERGY_ORB_CC = "marisa/img/512/cardOrb.png"
+        private const val ATTACK_CC_PORTRAIT = "marisa/img/1024/bg_attack_MRS.png"
+        private const val SKILL_CC_PORTRAIT = "marisa/img/1024/bg_skill_MRS.png"
+        private const val POWER_CC_PORTRAIT = "marisa/img/1024/bg_power_MRS.png"
+        private const val ENERGY_ORB_CC_PORTRAIT = "marisa/img/1024/cardOrb.png"
         val STARLIGHT: Color = CardHelper.getColor(0, 10, 125)
-        const val CARD_ENERGY_ORB = "img/UI/energyOrb.png"
-        private const val MY_CHARACTER_BUTTON = "img/charSelect/MarisaButton.png"
-        private const val MARISA_PORTRAIT = "img/charSelect/marisaPortrait.jpg"
+        const val CARD_ENERGY_ORB = "marisa/img/UI/energyOrb.png"
+        private const val MY_CHARACTER_BUTTON = "marisa/img/charSelect/MarisaButton.png"
+        private const val MARISA_PORTRAIT = "marisa/img/charSelect/marisaPortrait.jpg"
 
         @JvmField
         var isCatEventEnabled: Boolean = false

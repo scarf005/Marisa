@@ -41,7 +41,7 @@ class ManaConvection : CustomCard(
 
     companion object {
         const val ID = "ManaConvection"
-        const val IMG_PATH = "img/cards/ManaConvection.png"
+        const val IMG_PATH = "marisa/img/cards/ManaConvection.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

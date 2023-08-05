@@ -41,8 +41,8 @@ class CatCart : CustomRelic(
 
     companion object {
         const val ID = "CatCart"
-        private const val IMG = "img/relics/CatCart.png"
-        private const val IMG_OTL = "img/relics/outline/CatCart.png"
+        private const val IMG = "marisa/img/relics/CatCart.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/CatCart.png"
         private const val HEAL_PER_CHARGE = 4
     }
 }

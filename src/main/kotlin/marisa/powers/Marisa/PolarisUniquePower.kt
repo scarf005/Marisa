@@ -20,7 +20,7 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
         ID = POWER_ID
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/transmute.png")
+        img = Texture("marisa/img/powers/transmute.png")
         this.owner = owner
         MarisaContinued.logger.info("PolarisUniquePower : Done initing")
     }

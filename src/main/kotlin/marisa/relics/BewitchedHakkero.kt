@@ -51,51 +51,11 @@ class BewitchedHakkero : CustomRelic(
         addToBot(
             RelicAboveCreatureAction(AbstractDungeon.player, this)
         )
-    } /*
-  @Override
-  public int onAttacked(DamageInfo info, int damageAmount) {
-    if (
-        (AbstractDungeon.getCurrRoom().phase == RoomPhase.COMBAT) &&
-            (info.type == DamageType.NORMAL)
-    ) {
-      flash();
-      addToBot(
-          new ApplyPowerAction(
-              AbstractDungeon.player,
-              AbstractDungeon.player,
-              new ChargeUpPower(AbstractDungeon.player, 1),
-              1
-          )
-      );
-      addToBot(
-          new RelicAboveCreatureAction(AbstractDungeon.player, this)
-      );
     }
-    return damageAmount;
-  }
-*/
 
-    /*
-  @Override
-  public void atTurnStartPostDraw() {
-    flash();
-    AbstractDungeon.actionManager.addToTop(
-        new ApplyPowerAction(
-            AbstractDungeon.player,
-            AbstractDungeon.player,
-            new ChargeUpPower(AbstractDungeon.player, 1),
-            2
-        )
-    );
-    addToBot(
-        new RelicAboveCreatureAction(AbstractDungeon.player, this)
-    );
-  }
-
-  */
     companion object {
         const val ID = "BewitchedHakkero"
-        private const val IMG = "img/relics/Hakkero_1_s.png"
-        private const val IMG_OTL = "img/relics/outline/Hakkero_1_s.png"
+        private const val IMG = "marisa/img/relics/Hakkero_1_s.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/Hakkero_1_s.png"
     }
 }

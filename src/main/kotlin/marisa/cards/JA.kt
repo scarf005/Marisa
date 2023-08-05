@@ -59,7 +59,7 @@ class JA : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/JA.png"
+        const val IMG_PATH = "marisa/img/cards/JA.png"
         private const val COST = 2
         private const val ATK_DMG = 1
     }

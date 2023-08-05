@@ -17,7 +17,7 @@ class Cape : CustomRelic(
 
     companion object {
         const val ID = "MarisaContinued:Cape"
-        private const val IMG = "img/relics/test7.png"
-        private const val IMG_OTL = "img/relics/outline/test7.png"
+        private const val IMG = "marisa/img/relics/test7.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/test7.png"
     }
 }

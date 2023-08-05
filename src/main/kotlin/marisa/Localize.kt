@@ -8,7 +8,8 @@ fun localize(
     name: String,
     fallback: Settings.GameLanguage = Settings.GameLanguage.ENG
 ): String {
-    fun Settings.GameLanguage.toFile() = Gdx.files.internal("localization/$this/$name.json")
+    fun Settings.GameLanguage.toFile() =
+        Gdx.files.internal("$modName/localization/$this/$name.json")
 
     val file = Settings.language.toFile()
     val fallbackFile = fallback.toFile()

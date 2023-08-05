@@ -399,11 +399,6 @@
     "NAME": "Orbital",
     "DESCRIPTION": " Unplayable. When this card is drawn, draw 1 card. NL If this card is Exhausted, place !M! card(s) from your exhaust pile into your hand."
   },
-  "SillyJoke": {
-    "NAME": "Mana Phantom",
-    "DESCRIPTION": "Cast a Magic that is only shown to true Magicians. NL Exhaust. NL Ethereal.",
-    "UPGRADE_DESCRIPTION": "Cast a splendid Magic that is only shown to true Magicians. NL Exhaust. NL Ethereal."
-  },
   "ExplosiveMarionette": {
     "NAME": "Explosive Marionette",
     "DESCRIPTION": " Retain. Deal !D! damage. NL Amplify [E] : Deal double damage. Exhaust."

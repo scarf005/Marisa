@@ -401,11 +401,6 @@
     "NAME": "オービタル",
     "DESCRIPTION": " 使用不可 NL このカードを引いた時、 カードを 1 枚引く。 NL このカードを 廃棄 した時、 廃棄 したカードから !M! 枚を手札に加える。"
   },
-  "SillyJoke": {
-    "NAME": "魔力の幻影",
-    "DESCRIPTION": "真の魔術師にしか見せられない魔術を詠唱する。 NL 廃棄 NL エセリアル 。",
-    "UPGRADE_DESCRIPTION": "真の魔術師にしか見せられない素晴らしい魔術を詠唱する。 NL 廃棄 NL エセリアル 。"
-  },
   "ExplosiveMarionette": {
     "NAME": "アーティフルサクリファイス",
     "DESCRIPTION": " 保留 NL !D! ダメージを与える。 NL 増幅 [E] : 2 倍のダメージを与える。 NL 廃棄"

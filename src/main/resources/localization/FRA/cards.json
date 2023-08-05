@@ -401,11 +401,6 @@
     "NAME": "Orbital",
     "DESCRIPTION": "Injouable. Lorsque cette carte est piochée, piochez une carte. NL Si cette carte est Épuisée, placez !M! carte(s) parmis vos cartes épuisées dans votre main."
   },
-  "SillyJoke": {
-    "NAME": "Fantôme de mana",
-    "DESCRIPTION": "Incantez une magie qui ne peut-être vue que par les véritables magiciens. NL Épuisement. NL Éthérée.",
-    "UPGRADE_DESCRIPTION": "Incantez une magie magnifique qui ne peut-être vue que par les véritables magiciens. NL Épuisement. NL Éthérée."
-  },
   "ExplosiveMarionette": {
     "NAME": "Marionnette explosive",
     "DESCRIPTION": "Conservez. Infligez !D! dégâts. NL Amplifier [E] : Infligez le double de dégâts. Épuisement."

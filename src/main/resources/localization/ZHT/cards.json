@@ -399,11 +399,6 @@
     "NAME": "星軌",
     "DESCRIPTION": "無法打出 。 抽到這張牌時，抽1張牌。 NL 當這張牌被 消耗 時，選擇 !M! 張已 消耗 的牌，將其放入手牌"
   },
-  "SillyJoke": {
-    "NAME": "幻象泡影",
-    "DESCRIPTION": "施展一個只有 真正的魔法使 才能看到 的華麗魔法。 NL 消耗 。 NL 虛無",
-    "UPGRADE_DESCRIPTION": "施展一個只有 真正的魔法使 才能看到 的超級華麗魔法。 NL 消耗 。 NL 虛無"
-  },
   "ExplosiveMarionette": {
     "NAME": "人偶炸彈",
     "DESCRIPTION": "保留 。造成 !D! 傷害。 NL 增幅 [E] : 造成2倍傷害。 消耗"

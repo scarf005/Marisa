@@ -1582,26 +1582,6 @@
       ],
       "additionalProperties": false
     },
-    "SillyJoke": {
-      "type": "object",
-      "properties": {
-        "NAME": {
-          "type": "string"
-        },
-        "DESCRIPTION": {
-          "type": "string"
-        },
-        "UPGRADE_DESCRIPTION": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "NAME",
-        "DESCRIPTION",
-        "UPGRADE_DESCRIPTION"
-      ],
-      "additionalProperties": false
-    },
     "ExplosiveMarionette": {
       "type": "object",
       "properties": {
@@ -1846,7 +1826,6 @@
     "WhiteDwarf",
     "FairyDestructionRay",
     "Orbital",
-    "SillyJoke",
     "ExplosiveMarionette",
     "OpticalCamouflage",
     "FiveColoredTalisman",

@@ -1,4 +1,3 @@
-// deno-lint-ignore-file ban-types
 import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
 
 type parseFn = (obj: unknown, seen: object[]) => string
@@ -51,8 +50,7 @@ export function jsonToZodCode(obj: unknown) {
             const options = obj
               .map((obj) => parse(obj, seen))
               .reduce(
-                (acc: string[], curr: string) =>
-                  acc.includes(curr) ? acc : [...acc, curr],
+                (acc: string[], curr: string) => acc.includes(curr) ? acc : [...acc, curr],
                 [],
               )
             if (options.length === 1) {

@@ -1,4 +1,4 @@
 * text=auto eol=lf
 
 *.bat linguist-vendored
-src/main/resources/localization/schemas/** linguist-vendored
+src/main/resources/marisa/localization/schemas/** linguist-vendored

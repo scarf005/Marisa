@@ -1,7 +1,9 @@
 package marisa
 
-import basemod.*
+import basemod.BaseMod
 import basemod.BaseMod.GetMonster
+import basemod.ModLabeledToggleButton
+import basemod.ModPanel
 import basemod.helpers.RelicType
 import basemod.interfaces.*
 import com.badlogic.gdx.graphics.Color
@@ -33,7 +35,6 @@ import marisa.patches.ThModClassEnum
 import marisa.potions.BottledSpark
 import marisa.potions.ShroomBrew
 import marisa.potions.StarNLove
-import marisa.powers.Marisa.*
 import marisa.relics.*
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger

@@ -58,7 +58,7 @@ class FairyDestructionRay : AmplifiableCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/FairysBane.png"
+        const val IMG_PATH = "marisa/img/cards/FairysBane.png"
         private const val COST = 0
         private const val AMP = 2
         private const val ATTACK_DMG = 5

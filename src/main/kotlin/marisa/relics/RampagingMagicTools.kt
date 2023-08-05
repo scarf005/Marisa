@@ -48,8 +48,8 @@ class RampagingMagicTools : CustomRelic(
 
     companion object {
         const val ID = "RampagingMagicTools"
-        private const val IMG = "img/relics/RamTool.png"
-        private const val IMG_OTL = "img/relics/outline/RamTool.png"
+        private const val IMG = "marisa/img/relics/RamTool.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/RamTool.png"
         private const val STACK_DEBUFF = 1
         private const val STACK_POISON = 2
         private const val STACK_CHARGE = 8

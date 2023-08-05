@@ -53,7 +53,7 @@ class BlackFlareStar : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
-        const val IMG_PATH = "img/cards/Marisa/BlackFlareStar.png"
+        const val IMG_PATH = "marisa/img/cards/Marisa/BlackFlareStar.png"
         private const val COST = 0
         private const val BLC_AMT = 4
         private const val UPG_BLC = 2

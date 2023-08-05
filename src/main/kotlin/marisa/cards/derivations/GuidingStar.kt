@@ -71,7 +71,7 @@ class GuidingStar : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/GuidingStar.png"
+        const val IMG_PATH = "marisa/img/cards/GuidingStar.png"
         private const val COST = 1
         private const val UPG_COST = 0
     }

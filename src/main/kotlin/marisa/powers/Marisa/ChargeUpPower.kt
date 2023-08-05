@@ -27,7 +27,7 @@ class ChargeUpPower(
         this.amount = if (isExhausted()) 0 else amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/generator.png")
+        img = Texture("marisa/img/powers/generator.png")
         divider
         cnt = this.amount / stc
     }

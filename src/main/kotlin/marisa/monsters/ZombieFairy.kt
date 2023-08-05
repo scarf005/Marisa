@@ -154,7 +154,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
         private const val POWER_UP = 3
         private const val STR = 1
         private const val STR_UPG = 2
-        private const val MODEL_ATLAS = "img/monsters/ZombieFairy/ZombieFairy.atlas"
-        private const val MODEL_JSON = "img/monsters/ZombieFairy/ZombieFairy.json"
+        private const val MODEL_ATLAS = "marisa/img/monsters/ZombieFairy/ZombieFairy.atlas"
+        private const val MODEL_JSON = "marisa/img/monsters/ZombieFairy/ZombieFairy.json"
     }
 }

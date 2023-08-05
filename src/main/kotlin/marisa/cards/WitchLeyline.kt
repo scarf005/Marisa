@@ -63,7 +63,7 @@ class WitchLeyline : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/leyline.png"
+        const val IMG_PATH = "marisa/img/cards/leyline.png"
         private const val COST = 0
         private const val ATTACK_DMG = 10
         private const val UPGRADE_PLUS_DMG = 4

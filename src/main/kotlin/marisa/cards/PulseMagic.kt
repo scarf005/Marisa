@@ -50,7 +50,7 @@ class PulseMagic : AmplifiableCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/pulseMagic.png"
+        const val IMG_PATH = "marisa/img/cards/pulseMagic.png"
         private const val COST = 0
         private const val ENE = 1
         private const val UPG_ENE = 1

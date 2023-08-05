@@ -47,7 +47,7 @@ class SatelliteIllusion : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/SatelliteIllusion.png"
+        const val IMG_PATH = "marisa/img/cards/SatelliteIllusion.png"
         private const val COST = 2
     }
 }

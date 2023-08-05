@@ -16,7 +16,7 @@ class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
         this.owner = owner
         amount = -1
         updateDescription()
-        img = Texture("img/powers/thrillseeker.png")
+        img = Texture("marisa/img/powers/thrillseeker.png")
     }
 
     override fun updateDescription() {

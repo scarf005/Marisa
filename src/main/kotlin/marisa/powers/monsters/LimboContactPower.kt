@@ -15,7 +15,7 @@ class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
         this.owner = owner
         amount = -1
         updateDescription()
-        img = Texture("img/powers/poison.png")
+        img = Texture("marisa/img/powers/poison.png")
     }
 
     override fun updateDescription() {

@@ -16,7 +16,7 @@ class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/drawCardRed.png")
+        img = Texture("marisa/img/powers/drawCardRed.png")
     }
 
     override fun atStartOfTurnPostDraw() {

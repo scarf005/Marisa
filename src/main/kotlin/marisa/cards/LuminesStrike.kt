@@ -74,7 +74,7 @@ class LuminesStrike : AmplifiedAttack(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/LumiStrike.png"
+        const val IMG_PATH = "marisa/img/cards/LumiStrike.png"
         private const val COST = 0
         private const val D0 = 2
         private const val D1 = 3

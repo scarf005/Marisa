@@ -87,7 +87,7 @@ class SuperPerseids : CustomCard(
 
     companion object {
         const val ID = "SuperPerseids"
-        const val IMG_PATH = "img/cards/SuperPerseids.png"
+        const val IMG_PATH = "marisa/img/cards/SuperPerseids.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

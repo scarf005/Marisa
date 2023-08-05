@@ -56,7 +56,7 @@ class MachineGunSpark : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/MachineGunSpark.png"
+        const val IMG_PATH = "marisa/img/cards/MachineGunSpark.png"
         private const val COST = 1
         private const val ATTACK_DMG = 1
         private const val CNT = 6

@@ -62,8 +62,8 @@ class BreadOfAWashokuLover : CustomRelic(
 
     companion object {
         const val ID = "BreadOfAWashokuLover"
-        private const val IMG = "img/relics/bread_s.png"
-        private const val IMG_OTL = "img/relics/outline/bread_s.png"
-        private const val USED_IMG = "img/relics/usedBread_s.png"
+        private const val IMG = "marisa/img/relics/bread_s.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/bread_s.png"
+        private const val USED_IMG = "marisa/img/relics/usedBread_s.png"
     }
 }

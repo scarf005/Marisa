@@ -48,7 +48,7 @@ class Acceleration : AmplifiableCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME: String = cardStrings.NAME
         val DESCRIPTION: String = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/GuidingStar.png"
+        const val IMG_PATH = "marisa/img/cards/GuidingStar.png"
         private const val COST = 0
         private const val DRAW = 2
 

@@ -59,7 +59,7 @@ class MagicAbsorber : CustomCard(
 
     companion object {
         const val ID = "MagicAbsorber"
-        const val IMG_PATH = "img/cards/MagicAbsorber.png"
+        const val IMG_PATH = "marisa/img/cards/MagicAbsorber.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

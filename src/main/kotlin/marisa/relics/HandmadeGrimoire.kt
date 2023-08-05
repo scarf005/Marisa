@@ -34,7 +34,7 @@ class HandmadeGrimoire : CustomRelic(
 
     companion object {
         const val ID = "HandmadeGrimoire"
-        private const val IMG = "img/relics/Grimoire.png"
-        private const val IMG_OTL = "img/relics/outline/Grimoire.png"
+        private const val IMG = "marisa/img/relics/Grimoire.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/Grimoire.png"
     }
 }

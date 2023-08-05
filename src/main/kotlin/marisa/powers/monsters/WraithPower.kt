@@ -15,7 +15,7 @@ class WraithPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         this.owner = owner
         type = PowerType.DEBUFF
         updateDescription()
-        img = Texture("img/powers/exhaustion.png")
+        img = Texture("marisa/img/powers/exhaustion.png")
         this.amount = amount
     }
 

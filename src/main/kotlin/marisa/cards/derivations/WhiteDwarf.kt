@@ -76,7 +76,7 @@ class WhiteDwarf : CustomCard(
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
         private val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
-        const val IMG_PATH = "img/cards/Marisa/WhiteDwarf.png"
+        const val IMG_PATH = "marisa/img/cards/Marisa/WhiteDwarf.png"
         private const val COST = 0
         private const val HAND_REQ = 4
         private const val MULTIPLIER = 2

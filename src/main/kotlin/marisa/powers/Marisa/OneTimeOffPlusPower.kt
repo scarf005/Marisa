@@ -14,7 +14,7 @@ class OneTimeOffPlusPower(owner: AbstractCreature?) : AbstractPower() {
         amount = -1
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/darkEmbrace.png")
+        img = Texture("marisa/img/powers/darkEmbrace.png")
     }
 
     override fun stackPower(stackAmount: Int) {}

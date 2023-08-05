@@ -71,7 +71,7 @@ class MaximisePower : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/maxPower.png"
+        const val IMG_PATH = "marisa/img/cards/maxPower.png"
         private const val COST = 3
     }
 }

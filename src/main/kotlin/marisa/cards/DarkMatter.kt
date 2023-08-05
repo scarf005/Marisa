@@ -102,7 +102,7 @@ class DarkMatter : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/DarkMatter.png"
+        const val IMG_PATH = "marisa/img/cards/DarkMatter.png"
         private const val COST = 0
         private const val BLC_GAIN = 5
         private const val UPG_BLC = 2

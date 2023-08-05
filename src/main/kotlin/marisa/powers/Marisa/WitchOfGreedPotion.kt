@@ -13,7 +13,7 @@ class WitchOfGreedPotion(owner: AbstractCreature?, amount: Int) : AbstractPower(
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/potion.png")
+        img = Texture("marisa/img/powers/potion.png")
     }
 
     /*

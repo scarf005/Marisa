@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster
 class Exhaustion_MRS : CustomCard(
     ID,
     NAME,
-    "img/cards/exhaustion.png",
+    "marisa/img/cards/exhaustion.png",
     COST,
     DESCRIPTION,
     CardType.STATUS,

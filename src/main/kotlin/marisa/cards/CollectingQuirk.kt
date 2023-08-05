@@ -107,7 +107,7 @@ class CollectingQuirk : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         private val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
-        const val IMG_PATH = "img/cards/collec.png"
+        const val IMG_PATH = "marisa/img/cards/collec.png"
         private const val COST = 2
         private const val DIVIDER = 4
         private const val UPG_DIVIDER = 3

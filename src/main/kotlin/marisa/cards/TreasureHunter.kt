@@ -48,7 +48,7 @@ class TreasureHunter : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/TreasureHunter.png"
+        const val IMG_PATH = "marisa/img/cards/TreasureHunter.png"
         private const val COST = 2
         private const val ATTACK_DMG = 12
         private const val UPGRADE_PLUS_DMG = 5

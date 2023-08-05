@@ -582,10 +582,10 @@ class Orin : AbstractMonster(
 
         //private static final int BLOCK = 8;
         private const val BLOCK_UPG = 12
-        private const val tempImgUrl = "img/monsters/Orin/Orin_.png"
-        private const val MODEL_HUMANOID_ATLAS = "img/monsters/Orin/Orin.atlas"
-        private const val MODEL_HUMANOID_JSON = "img/monsters/Orin/Orin.json"
-        private const val MODEL_CAT_ATLAS = "img/monsters/Orin/rincat.atlas"
-        private const val MODEL_CAT_JSON = "img/monsters/Orin/rincat.json"
+        private const val tempImgUrl = "marisa/img/monsters/Orin/Orin_.png"
+        private const val MODEL_HUMANOID_ATLAS = "marisa/img/monsters/Orin/Orin.atlas"
+        private const val MODEL_HUMANOID_JSON = "marisa/img/monsters/Orin/Orin.json"
+        private const val MODEL_CAT_ATLAS = "marisa/img/monsters/Orin/rincat.atlas"
+        private const val MODEL_CAT_JSON = "marisa/img/monsters/Orin/rincat.json"
     }
 }

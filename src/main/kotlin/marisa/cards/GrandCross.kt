@@ -65,7 +65,7 @@ class GrandCross : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/GrandCross.png"
+        const val IMG_PATH = "marisa/img/cards/GrandCross.png"
         private const val COST = 2
         private const val ATTACK_DMG = 13
         private const val UPGRADE_PLUS_DMG = 5

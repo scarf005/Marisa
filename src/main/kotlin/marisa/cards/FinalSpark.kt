@@ -83,7 +83,7 @@ class FinalSpark : CustomCard(
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "img/cards/FinalSpark.png"
+        const val IMG_PATH = "marisa/img/cards/FinalSpark.png"
         private const val COST = 7
         private const val ATK_DMG = 40
     }

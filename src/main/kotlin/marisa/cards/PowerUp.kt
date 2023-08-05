@@ -38,7 +38,7 @@ class PowerUp : CustomCard(
 
     companion object {
         const val ID = "PowerUp"
-        const val IMG_PATH = "img/cards/PowerUp.png"
+        const val IMG_PATH = "marisa/img/cards/PowerUp.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

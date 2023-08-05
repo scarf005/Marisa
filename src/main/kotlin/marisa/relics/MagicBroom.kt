@@ -43,7 +43,7 @@ class MagicBroom : CustomRelic(
 
     companion object {
         const val ID = "MagicBroom"
-        private const val IMG = "img/relics/Broom_s.png"
-        private const val IMG_OTL = "img/relics/outline/Broom_s.png"
+        private const val IMG = "marisa/img/relics/Broom_s.png"
+        private const val IMG_OTL = "marisa/img/relics/outline/Broom_s.png"
     }
 }

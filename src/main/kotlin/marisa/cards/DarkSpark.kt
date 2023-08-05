@@ -1,13 +1,13 @@
 package marisa.cards
 
-import marisa.action.DarkSparkAction
-import marisa.patches.AbstractCardEnum
-import marisa.patches.CardTagEnum
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.action.DarkSparkAction
+import marisa.patches.AbstractCardEnum
+import marisa.patches.CardTagEnum
 
 class DarkSpark : CustomCard(
     ID,
@@ -49,7 +49,7 @@ class DarkSpark : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/darkSpark.png"
+        const val IMG_PATH = "marisa/img/cards/darkSpark.png"
         private const val COST = 2
         private const val ATK_DMG = 7
 

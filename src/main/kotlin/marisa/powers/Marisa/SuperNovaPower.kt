@@ -24,7 +24,7 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/impulse.png")
+        img = Texture("marisa/img/powers/impulse.png")
         p = AbstractDungeon.player
     }
 

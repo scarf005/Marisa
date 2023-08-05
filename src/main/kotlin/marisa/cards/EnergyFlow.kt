@@ -50,7 +50,7 @@ class EnergyFlow : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/EneFlow.png"
+        const val IMG_PATH = "marisa/img/cards/EneFlow.png"
         private const val COST = 1
         private const val STC = 2
         private const val UPG_STC = 1

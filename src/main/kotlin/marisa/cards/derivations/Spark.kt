@@ -51,7 +51,7 @@ class Spark : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/Spark.png"
+        const val IMG_PATH = "marisa/img/cards/Spark.png"
         private const val COST = 0
         private const val ATTACK_DMG = 4
         private const val UPGRADE_PLUS_DMG = 2

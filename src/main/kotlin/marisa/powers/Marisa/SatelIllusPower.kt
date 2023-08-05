@@ -37,7 +37,7 @@ class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("img/powers/satelIllu.png")
+        img = Texture("marisa/img/powers/satelIllu.png")
         counter = AbstractDungeon.player.drawPile.size()
     }
 

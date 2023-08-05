@@ -70,7 +70,7 @@ class GravityBeat : CustomCard(
         val NAME: String = cardStrings.NAME
         val DESCRIPTION: String = cardStrings.DESCRIPTION
         val EX_DESC: Array<String> = cardStrings.EXTENDED_DESCRIPTION
-        const val IMG_PATH = "img/cards/GravityBeat.png"
+        const val IMG_PATH = "marisa/img/cards/GravityBeat.png"
         private const val COST = 1
         private const val ATTACK_DMG = 6
         private const val UPGRADE_PLUS_DMG = 2

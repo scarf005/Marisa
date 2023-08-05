@@ -55,7 +55,7 @@ class StarBarrage : CustomCard(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/StarBarrage.png"
+        const val IMG_PATH = "marisa/img/cards/StarBarrage.png"
         private const val COST = 1
         private const val ATK_DMG = 7
         private const val UPGRADE_PLUS_DMG = 3

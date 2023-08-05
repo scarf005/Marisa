@@ -58,7 +58,7 @@ class MasterSpark : AmplifiedAttack(
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "img/cards/MasterSpark.png"
+        const val IMG_PATH = "marisa/img/cards/MasterSpark.png"
         private const val COST = 1
         private const val ATK_DMG = 8
         private const val UPG_DMG = 3

@@ -138,7 +138,7 @@ class Marisa(name: String) :
         else -> "The Ordinary Magician"
     }
 
-    override fun getCardTrailColor(): Color = MarisaContinued.STARLIGHT
+    override fun getCardTrailColor(): Color = MarisaContinued.STARLIGHT.cpy()
 
     override fun getAscensionMaxHPLoss(): Int = ASCENSION_MAX_HP_LOSS
 
@@ -165,7 +165,7 @@ class Marisa(name: String) :
 
     override fun getVampireText(): String = Vampires.DESCRIPTIONS[1]
 
-    override fun getCardRenderColor(): Color = MarisaContinued.STARLIGHT
+    override fun getCardRenderColor(): Color = MarisaContinued.STARLIGHT.cpy()
 
     override fun updateOrb(orbCount: Int) {
         energyOrb.updateOrb(orbCount)
@@ -174,7 +174,7 @@ class Marisa(name: String) :
     override fun getOrb() =
         AtlasRegion(ImageMaster.loadImage(MarisaContinued.CARD_ENERGY_ORB), 0, 0, 24, 24)
 
-    override fun getSlashAttackColor(): Color = MarisaContinued.STARLIGHT
+    override fun getSlashAttackColor(): Color = MarisaContinued.STARLIGHT.cpy()
 
     override fun getSpireHeartSlashEffect(): Array<AttackEffect> {
         return arrayOf(

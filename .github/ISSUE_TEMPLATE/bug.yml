@@ -51,6 +51,21 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    attributes:
+      label: Game language
+      description: Which language were you using in the game?
+      multiple: false
+      options:
+        - English (ENG)
+        - French (FRA)
+        - Japanese (JPN)
+        - Korean (KOR)
+        - Simplified Chinese (ZHS)
+        - Traditional Chinese (ZHT)
+    validations:
+      required: true
+
   - type: textarea
     attributes:
       label: Crash log

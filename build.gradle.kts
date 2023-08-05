@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.com.google.gson.Gson
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 val modID = "MarisaContinued"
 val jarFile = "$buildDir/libs/${modID}.jar"
@@ -10,7 +11,8 @@ val (gameDir, modTheSpireDir, basemodDir) = run {
     val homeDir = System.getProperty("user.home")!!
     val steamDir = "$homeDir/.local/share/Steam/steamapps"
     val workShopDir = "$steamDir/workshop/content/Slay the Spire"
-    val (mod, base) = 1605060445 to 1605833019
+    val mod = 1605060445
+    val base = 1605833019
     Triple(
         "$steamDir/common/SlayTheSpire",
         "$workShopDir/$mod",
@@ -37,16 +39,20 @@ kotlin {
             languageVersion = "2.0"
         }
     }
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_1_8)
+    }
 }
 
 plugins {
     application
     java
-    kotlin("jvm") version "1.8.20-RC"
+    kotlin("jvm") version "1.9.0"
 }
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {

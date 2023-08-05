@@ -87,7 +87,10 @@ class MarisaContinued :
             MiniHakkero(), BewitchedHakkero(), MagicBroom(), AmplifyWand(),
             ExperimentalFamiliar(), RampagingMagicTools(), BreadOfAWashokuLover(), SimpleLauncher(),
             HandmadeGrimoire(), ShroomBag(), SproutingBranch(), BigShroomBag()
-        ).forEach { BaseMod.addRelicToCustomPool(it, AbstractCardEnum.MARISA_COLOR) }
+        ).forEach { relic ->
+            logger.info("""Adding relic: ${relic.name}""")
+            BaseMod.addRelicToCustomPool(relic, AbstractCardEnum.MARISA_COLOR)
+        }
         BaseMod.addRelic(CatCart(), RelicType.SHARED)
     }
 
@@ -235,7 +238,7 @@ class MarisaContinued :
         private const val SKILL_CC_PORTRAIT = "marisa/img/1024/bg_skill_MRS.png"
         private const val POWER_CC_PORTRAIT = "marisa/img/1024/bg_power_MRS.png"
         private const val ENERGY_ORB_CC_PORTRAIT = "marisa/img/1024/cardOrb.png"
-        val STARLIGHT: Color = CardHelper.getColor(0, 10, 125)
+        val STARLIGHT: Color = CardHelper.getColor(20, 84, 181)
         const val CARD_ENERGY_ORB = "marisa/img/UI/energyOrb.png"
         private const val MY_CHARACTER_BUTTON = "marisa/img/charSelect/MarisaButton.png"
         private const val MARISA_PORTRAIT = "marisa/img/charSelect/marisaPortrait.jpg"

@@ -6,7 +6,9 @@ import { jsons } from "./common.ts"
 import { tsFormatter } from "./dprint.ts"
 import { jsonToZodCode } from "./json_to_zod.ts"
 
-const baseCwd = Deno.cwd().endsWith("localization") ? "." : "./src/main/resources/marisa/localization"
+const baseCwd = Deno.cwd().endsWith("localization")
+  ? "."
+  : "./src/main/resources/marisa/localization"
 const basePath = `${baseCwd}/schemas`
 console.log(basePath)
 await Deno.mkdir(basePath, { recursive: true })

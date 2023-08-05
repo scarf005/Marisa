@@ -21,7 +21,7 @@ jobs:
 
       - name: validate schema
         continue-on-error: true
-        run: deno task schema:validate
+        run: deno task l10n validate
 
       - name: json syntax check
         uses: limitusus/json-syntax-check@v1

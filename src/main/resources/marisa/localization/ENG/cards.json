@@ -437,6 +437,6 @@
   },
   "Acceleration": {
     "NAME": "Acceleration",
-    "DESCRIPTION": "Draw top !B! cards in your draw pile. NL Amplify  [E] : Draw !M! more."
+    "DESCRIPTION": "Draw !B! cards. NL Amplify  [E] : Draw !M! more."
   }
 }

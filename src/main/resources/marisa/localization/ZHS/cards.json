@@ -297,7 +297,7 @@
   },
   "OneTimeOff": {
     "NAME": "一回休",
-    "DESCRIPTION": "获得 !B! 点 格挡  ，这回合你将不能发动 增幅 和 蓄力 效果。 NL 下回合抽 !M! 张牌。",
+    "DESCRIPTION": "获得 !B! 点 格挡  ，这回合你将不能发动 增幅 效果。 NL 下回合抽 !M! 张牌。",
     "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡  ，这回合你将不能发动 增幅 和 蓄力 效果。 NL 下回合抽 !M! 张牌。"
   },
   "DarkMatter": {

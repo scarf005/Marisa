@@ -1,29 +1,27 @@
 package marisa.action
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction
-import com.megacrit.cardcrawl.cards.status.Burn
-import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
+import com.megacrit.cardcrawl.relics.ChemicalX
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
+import marisa.countRelic
+import marisa.exhaustBurns
 import marisa.fx.MeteoricShowerEffect
+import marisa.p
 
-class MeteoricShowerAction(number: Int, damage: Int, val freeToPlay: Boolean) :
+
+class MeteoricShowerAction(val energyOnUse: Int, val dmg: Int, val freeToPlay: Boolean) :
     AbstractGameAction() {
-    private val p: AbstractPlayer
-    private val num: Int
-    private val dmg: Int
-
     init {
         actionType = ActionType.CARD_MANIPULATION
-        p = AbstractDungeon.player
         duration = Settings.ACTION_DUR_FAST
-        num = number
-        dmg = damage
     }
 
     override fun update() {
+        val num = energyOnUse + 1 + countRelic(ChemicalX.ID) * 2
+
         if (duration == Settings.ACTION_DUR_FAST) {
             if (p.hand.isEmpty) {
                 isDone = true
@@ -34,14 +32,8 @@ class MeteoricShowerAction(number: Int, damage: Int, val freeToPlay: Boolean) :
             return
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            var cnt = 0
-            for (c in AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                cnt += 2
-                if (c is Burn) {
-                    cnt++
-                }
-                p.hand.moveToExhaustPile(c)
-            }
+            val cnt =
+                2 * AbstractDungeon.handCardSelectScreen.selectedCards.group.exhaustBurns()
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()
             addToBot(MeteoricShowerEffect.toVfx(cnt))

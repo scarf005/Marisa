@@ -1,6 +1,6 @@
 # https://github.com/Ezard/semantic-prs#configuration
 
-# Validate the PR title and all commit messages
-titleAndCommits: true
+# Validate the PR title only
+titleOnly: true
 
 scopes: [github, README, L10n]

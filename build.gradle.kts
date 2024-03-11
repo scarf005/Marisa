@@ -7,18 +7,24 @@ val changelog = File("docs/changelog/changelog.md").readText()
 val changeBBCode = File("docs/changelog/changelog.bbcode").readText()
 val changeSts = File("docs/changelog/changelog.sts.txt").readText()
 
-val (gameDir, modTheSpireDir, basemodDir) = run {
-    val homeDir = System.getProperty("user.home")!!
-    val steamDir = "$homeDir/.local/share/Steam/steamapps"
-    val workShopDir = "$steamDir/workshop/content/Slay the Spire"
-    val mod = 1605060445
-    val base = 1605833019
-    Triple(
-        "$steamDir/common/SlayTheSpire",
-        "$workShopDir/$mod",
-        "$workShopDir/$base",
-    )
-}
+val userSteamDir = property("userSteamDir") ?: throw error("userSteamDir is not set")
+val gameDir = "$userSteamDir/common/SlayTheSpire"
+
+/** [store link](https://store.steampowered.com/app/646570/Slay_the_Spire/) */
+val gameSteamId = 646570
+
+/** [workshop link](https://steamcommunity.com/sharedfiles/filedetails?id=1605833019) */
+val baseModId = 1605833019
+
+/** [workshop link](https://steamcommunity.com/sharedfiles/filedetails?id=1605060445) */
+val modTheSpireId = 1605060445
+
+/** [workshop link](https://steamcommunity.com/sharedfiles/filedetails?id=2902980404) */
+val marisaModId = 2902980404
+
+val workShopDir = project.properties["workshopDir"] ?: "$userSteamDir/workshop/content/$gameSteamId"
+val modTheSpireDir = "$workShopDir/$modTheSpireId"
+val basemodDir = "$workShopDir/$baseModId"
 
 buildscript {
     repositories { mavenCentral() }
@@ -47,7 +53,7 @@ kotlin {
 plugins {
     application
     java
-    kotlin("jvm") version "1.9.0"
+    kotlin("jvm") version "1.9.23"
 }
 
 repositories {
@@ -75,7 +81,6 @@ sourceSets {
             exclude("**/*.ts", "**/deno.*", "schemas/**")
         }
     }
-
 }
 
 @Suppress("PropertyName", "LongLine")

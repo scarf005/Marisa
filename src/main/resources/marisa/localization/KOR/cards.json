@@ -373,8 +373,7 @@
   },
   "UltimateShortwave": {
     "NAME": "얼티밋 쇼트웨이브",
-    "DESCRIPTION": "[E] 를 !B! 얻고 충전을 !M! 얻습니다. NL 이 카드의 효과를 1 씩 증가시킵니다.",
-    "UPGRADE_DESCRIPTION": "[E] 를 !B! 얻고 충전을 !M! 얻습니다. NL 이 카드의 효과를 대부분 1 씩 증가시킵니다. 충전은 추가 증가량이 있습니다."
+    "DESCRIPTION": "[E] 를 !B! 얻고 충전을 !M! 얻습니다. NL 이 카드를 사용해 얻는 충전을 !D!, 에너지를 1 증가시킵니다."
   },
   "SprinkleStarSeal": {
     "NAME": "스프링클 스타 봉인",

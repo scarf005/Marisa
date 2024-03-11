@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.action.ManaRampageAction
 import marisa.patches.AbstractCardEnum
 
@@ -26,20 +25,7 @@ class ManaRampage : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        var cnt = EnergyPanel.totalCount
-        if (p.hasRelic("Chemical X")) {
-            cnt += 2
-        }
-        if (cnt > 0) {
-            addToBot(
-                ManaRampageAction(cnt, upgraded, freeToPlayOnce)
-            )
-        }
-        /*
-    if (!this.freeToPlayOnce) {
-      p.energy.use(EnergyPanel.totalCount);
-    }
-    */
+        addToBot(ManaRampageAction(energyOnUse, upgraded, freeToPlayOnce))
     }
 
     override fun makeCopy(): AbstractCard = ManaRampage()

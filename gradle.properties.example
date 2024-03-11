@@ -3,5 +3,3 @@ org.gradle.parallel=true
 kotlin.experimental.tryK2=true
 # fill in your steam directory ending with '/steamapps'
 userSteamDir=
-# default: "$userSteamDir/workshop/content/$gameSteamId"
-workshopDir=

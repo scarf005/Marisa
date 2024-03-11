@@ -22,9 +22,18 @@ val modTheSpireId = 1605060445
 /** [workshop link](https://steamcommunity.com/sharedfiles/filedetails?id=2902980404) */
 val marisaModId = 2902980404
 
-val workShopDir = project.properties["workshopDir"] ?: "$userSteamDir/workshop/content/$gameSteamId"
+val workShopDir = "$userSteamDir/workshop/content/$gameSteamId"
 val modTheSpireDir = "$workShopDir/$modTheSpireId"
 val basemodDir = "$workShopDir/$baseModId"
+
+println(
+    """
+        userSteamDir: $userSteamDir
+        gameDir: $gameDir
+        basemodDir: $basemodDir
+        modTheSpireDir: $modTheSpireDir
+    """.trimIndent()
+)
 
 buildscript {
     repositories { mavenCentral() }
@@ -136,6 +145,7 @@ tasks.jar {
 
     dependsOn("modthespire")
     from(sourceSets.main.get().output)
+    println("built jar!")
 }
 
 tasks.register("hardlink") {

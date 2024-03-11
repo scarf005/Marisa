@@ -93,6 +93,15 @@ git clone repository `https://github.com/scarf005/Marisa.git`
 
 setup java, kotlin, and gradle in your intellij. language version must be 8.
 
+```
+# fill in your steam directory ending with '/steamapps'
+userSteamDir=/home/scarf/.local/share/Steam/steamapps
+# default: "$userSteamDir/workshop/content/$gameSteamId"
+workshopDir=
+```
+
+copy `gradle.properties.example` to `gradle.properties` and provide path to your steam directory.
+
 ```sh
 gradle changelog # install once
 ./gradlew -t changelog --warning-mode all # dev mode: recompile on changes

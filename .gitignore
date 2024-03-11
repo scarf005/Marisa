@@ -1,3 +1,7 @@
+# gradle.properties
+# use gradle.properties.example to fill in paths
+gradle.properties
+
 # custom cache
 .cache
 

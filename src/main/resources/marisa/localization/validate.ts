@@ -1,9 +1,9 @@
-import { walk, WalkEntry } from "https://deno.land/std@0.219.0/fs/walk.ts"
+import { walk, WalkEntry } from "$std/fs/walk.ts"
 import { asyncIterableToArray } from "https://deno.land/x/replicache@v10.0.0-beta.0/async-iterable-to-array.ts"
 import { jsons, LangCode, langCodes } from "./common.ts"
-import { parse } from "https://deno.land/std@0.219.0/path/mod.ts"
-import { Command, EnumType } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts"
-import { ZodIssue } from "https://deno.land/x/zod@v3.20.5/mod.ts"
+import { parse } from "$std/path/mod.ts"
+import { Command, EnumType } from "$cliffy/command/mod.ts"
+import { ZodIssue } from "$zod/mod.ts"
 
 const schemasPromise = (await asyncIterableToArray(walk("schemas")))
   .filter((x) => x.isFile && x.name.endsWith(".ts"))

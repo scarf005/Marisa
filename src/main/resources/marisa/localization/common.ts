@@ -1,4 +1,4 @@
-import { walk } from "https://deno.land/std@0.219.0/fs/walk.ts"
+import { walk } from "$std/fs/walk.ts"
 import { asyncIterableToArray } from "https://deno.land/x/replicache@v10.0.0-beta.0/async-iterable-to-array.ts"
 export const langCodes = ["ENG", "FRA", "JPN", "KOR", "ZHS", "ZHT"] as const
 export type LangCode = typeof langCodes[number]

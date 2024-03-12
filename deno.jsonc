@@ -9,5 +9,6 @@
     "lineWidth": 100,
     "proseWrap": "never"
   },
+  "importMap": "./import_map.json",
   "compilerOptions": { "exactOptionalPropertyTypes": true }
 }

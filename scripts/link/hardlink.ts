@@ -1,11 +1,11 @@
-import { brightRed, magenta } from "https://deno.land/std@0.219.0/fmt/colors.ts"
-import { join, resolve } from "https://deno.land/std@0.219.0/path/mod.ts"
+import { brightRed, magenta } from "$std/fmt/colors.ts"
+import { join, resolve } from "$std/path/mod.ts"
 
 import promiseObject from "https://deno.land/x/promise_object@v0.10.0/index.ts"
 
 import { match, P } from "npm:ts-pattern"
 
-import { parse } from "https://deno.land/std@0.219.0/path/mod.ts"
+import { parse } from "$std/path/mod.ts"
 import { hardlink, inode } from "./inode.ts"
 import { fmt, Logger } from "./logger.ts"
 import { noop } from "./noop.ts"

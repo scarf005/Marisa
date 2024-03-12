@@ -1,5 +1,5 @@
-import { WalkEntry } from "https://deno.land/std@0.219.0/fs/walk.ts"
-import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
+import { WalkEntry } from "$std/fs/walk.ts"
+import { z } from "$zod/mod.ts"
 import { zodToJsonSchema } from "npm:zod-to-json-schema@3.21.3"
 import { jsons } from "./common.ts"
 import { tsFormatter } from "./dprint.ts"
@@ -31,7 +31,7 @@ function writeJsonSchema(schemaCode: string, name: string) {
 function writeZodCode(schemaCode: string, name: string) {
   const file = `${name}.ts`
   const rawCode = `
-    import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
+    import { z } from "$zod/mod.ts"
 
     export const schema = ${schemaCode}
   `

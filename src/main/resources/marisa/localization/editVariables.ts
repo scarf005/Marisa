@@ -1,13 +1,13 @@
-import { brightGreen, brightRed, brightYellow } from "https://deno.land/std@0.183.0/fmt/colors.ts"
-import { Command } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
+import { brightGreen, brightRed, brightYellow } from "$std/fmt/colors.ts"
+import { Command } from "$cliffy/command/mod.ts"
 import type { Entry } from "npm:type-fest"
 
-import cardsEng from "./ENG/cards.json" assert { type: "json" }
-import cardsFra from "./FRA/cards.json" assert { type: "json" }
-import cardsJpn from "./JPN/cards.json" assert { type: "json" }
-import cardsKor from "./KOR/cards.json" assert { type: "json" }
-import cardsZhs from "./ZHS/cards.json" assert { type: "json" }
-import cardsZht from "./ZHT/cards.json" assert { type: "json" }
+import cardsEng from "./ENG/cards.json" with { type: "json" }
+import cardsFra from "./FRA/cards.json" with { type: "json" }
+import cardsJpn from "./JPN/cards.json" with { type: "json" }
+import cardsKor from "./KOR/cards.json" with { type: "json" }
+import cardsZhs from "./ZHS/cards.json" with { type: "json" }
+import cardsZht from "./ZHT/cards.json" with { type: "json" }
 
 const cardsJson = [
   { path: "./ENG/cards.json", cards: cardsEng },

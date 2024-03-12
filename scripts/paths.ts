@@ -1,6 +1,6 @@
-import { resolve } from "https://deno.land/std@0.183.0/path/mod.ts"
-import { fromFileUrl } from "https://deno.land/std@0.183.0/path/mod.ts"
-import { dirname } from "https://deno.land/std@0.183.0/path/win32.ts"
+import { resolve } from "$std/path/mod.ts"
+import { fromFileUrl } from "$std/path/mod.ts"
+import { dirname } from "$std/path/dirname.ts"
 
 import { c, p } from "https://deno.land/x/copb@v1.0.1/mod.ts"
 

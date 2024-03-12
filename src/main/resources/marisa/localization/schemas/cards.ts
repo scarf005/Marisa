@@ -1,4 +1,4 @@
-import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
+import { z } from "$zod/mod.ts"
 
 export const schema = z.object({
   "Strike_MRS": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })

@@ -1,5 +1,4 @@
-import * as log from "https://deno.land/std@0.178.0/log/mod.ts"
-import { join } from "https://deno.land/std@0.178.0/path/mod.ts"
+import { join } from "$std/path/mod.ts"
 import { createFromBuffer, GlobalConfiguration } from "https://deno.land/x/dprint@0.2.0/mod.ts"
 import { projectRoot } from "./common.ts"
 
@@ -20,7 +19,7 @@ async function loadWasm(path: string, name: string) {
     const { body } = await fetch(`https://plugins.dprint.dev/${wasm}`)
 
     if (!body) {
-      log.error(`dprint :: failed to download plugin`)
+      console.error(`dprint :: failed to download plugin`)
       throw new Error("dprint :: failed to download plugin")
     }
     return body
@@ -33,14 +32,14 @@ async function loadWasm(path: string, name: string) {
   try {
     return await loadWasmFile()
   } catch {
-    log.warning(`dprint :: plugin not found in ${cachePath}`)
-    log.warning(`dprint :: downloading ${name}`)
+    console.warn(`dprint :: plugin not found in ${cachePath}`)
+    console.warn(`dprint :: downloading ${name}`)
     const body = await downloadWasm()
 
-    log.warning(`dprint :: plugin downloaded, caching at ${path}`)
+    console.warn(`dprint :: plugin downloaded, caching at ${path}`)
     await saveWasm(body)
 
-    log.warning(`dprint :: loading plugin`)
+    console.warn(`dprint :: loading plugin`)
     return await loadWasmFile()
   }
 }
@@ -50,4 +49,4 @@ export const tsFormatter = await loadWasm(cachePath, wasm)
 const after = performance.now()
 
 tsFormatter.setConfig(globalConfig, { semiColons: "asi" })
-log.info(`dprint :: plugin loaded in ${(after - before).toPrecision(2)}ms`)
+console.log(`dprint :: plugin loaded in ${(after - before).toPrecision(2)}ms`)

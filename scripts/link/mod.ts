@@ -1,8 +1,7 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write --allow-env
 
-import { join } from "https://deno.land/std@0.183.0/path/mod.ts"
-
-import { Command } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
+import { join } from "$std/path/mod.ts"
+import { Command } from "$cliffy/command/mod.ts"
 
 import { image, jar, mod } from "../paths.ts"
 import { noop } from "./noop.ts"

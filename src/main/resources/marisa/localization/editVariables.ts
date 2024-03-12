@@ -1,5 +1,5 @@
 import { brightGreen, brightRed, brightYellow } from "https://deno.land/std@0.219.0/fmt/colors.ts"
-import { Command } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
+import { Command } from "https://deno.land/x/cliffy@v1.0.0-rc.3/command/mod.ts"
 import type { Entry } from "npm:type-fest"
 
 import cardsEng from "./ENG/cards.json" with { type: "json" }

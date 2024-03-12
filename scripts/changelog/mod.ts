@@ -3,6 +3,9 @@ import { typedRegEx } from "https://deno.land/x/typed_regex@0.2.0/mod.ts"
 import type { RegExCaptureResult } from "https://deno.land/x/typed_regex@0.2.0/type_parser.ts"
 
 import { renderBBCode } from "./render_bbcode.ts"
+import { getNextVersion } from "./semver.ts"
+import { renderMarkdown } from "./render_markdown.ts"
+import { renderStS } from "./render_sts.ts"
 
 export type Commit = RegExCaptureResult<typeof re>
 export type Sections = Record<string, Commit[]>
@@ -33,17 +36,13 @@ export const getSections = (commits: Commit[]): Sections => ({
 if (import.meta.main) {
   const [latestTag] = await getTags()
   const commits = await getCommits({ from: latestTag, to: "main" }).then(parseCommits)
+  const option = {
+    version: getNextVersion(latestTag, commits),
+    date: new Date().toISOString().split("T")[0],
+    sections: getSections(commits),
+  }
 
-  const sections: Sections = getSections(commits)
-
-  console.log(latestTag)
-  console.log(sections)
-  console.log(commits)
-  console.log(
-    renderBBCode({
-      version: "v1.0.0",
-      date: new Date().toISOString().split("T")[0],
-      sections,
-    }),
-  )
+  for (const render of [renderBBCode, renderMarkdown, renderStS]) {
+    console.log(render(option), "\n")
+  }
 }

@@ -6,7 +6,7 @@ import { renderBBCode } from "./render_bbcode.ts"
 export const exampleCommits = parseCommits([
   "feat: asdf (#1234)",
   "feat!: test (#123)",
-  "fix(L10n): language stuff (#415)",
+  "fix(L10n): `language` stuff (#415)",
 ])
 const exampleSections = getSections(exampleCommits)
 
@@ -30,7 +30,7 @@ Deno.test("parseCommits() correctly parse commits", () => {
       type: "fix",
       scopes: "L10n",
       breaking: undefined,
-      subject: "language stuff",
+      subject: "`language` stuff",
       pr: "415",
     },
   ])
@@ -55,7 +55,7 @@ Deno.test("renderBBCode() outputs identical text", () =>
 
       [h2]Fixes[/h2]
       [list]
-          [*] language stuff ([url=https://github.com/scarf005/marisa/pull/415]#415[/url])
+          [*] [i]language[/i] stuff ([url=https://github.com/scarf005/marisa/pull/415]#415[/url])
       [/list]
   `,
   ))

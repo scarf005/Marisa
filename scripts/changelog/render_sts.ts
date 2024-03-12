@@ -3,15 +3,18 @@ import { Commit } from "./mod.ts"
 import { ChangelogRenderer, renderSections, SectionFormatter } from "./render.ts"
 
 const fmtCommit = (x: Commit) =>
-  `    [*] ${x.subject} ([url=https://github.com/scarf005/marisa/pull/${x.pr}]#${x.pr}[/url])`
+  `- ${x.subject}`
     .replace(/`([^`]+)`/g, "[i]$1[/i]")
+    .replace(/\(#(\d+)\)/g, "")
 
 const fmtSection: SectionFormatter = ([section, commits]) =>
-  `[h2]${section}[/h2]\n` + "[list]\n" + commits.map(fmtCommit).join("\n") + "\n[/list]"
+  `* ${section}\n\n` + commits.map(fmtCommit).join("\n")
 
-export const renderBBCode: ChangelogRenderer = ({ version, date, sections }) =>
+export const renderStS: ChangelogRenderer = ({ version, date, sections }) =>
   outdent`
-    [h1]${version} (${date})[/h1]
+    What's new in ${version} (${date})
 
     ${renderSections({ fmtSection, sections })}
+
+    please visit https://github.com/scarf005/Marisa/releases/latest for more info
   `

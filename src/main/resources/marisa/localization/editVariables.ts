@@ -1,4 +1,4 @@
-import { brightGreen, brightRed, brightYellow } from "https://deno.land/std@0.183.0/fmt/colors.ts"
+import { brightGreen, brightRed, brightYellow } from "https://deno.land/std@0.219.0/fmt/colors.ts"
 import { Command } from "https://deno.land/x/cliffy@v0.25.7/command/mod.ts"
 import type { Entry } from "npm:type-fest"
 

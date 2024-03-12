@@ -1,4 +1,4 @@
-import { assert, assertThrows } from "https://deno.land/std@0.178.0/testing/asserts.ts"
+import { assert, assertThrows } from "https://deno.land/std@0.219.0/testing/asserts.ts"
 import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
 
 import { jsonToZod } from "./json_to_zod.ts"

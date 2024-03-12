@@ -1,5 +1,4 @@
-import { WalkEntry } from "https://deno.land/std@0.178.0/fs/walk.ts"
-import * as log from "https://deno.land/std@0.178.0/log/mod.ts"
+import { WalkEntry } from "https://deno.land/std@0.219.0/fs/walk.ts"
 import { z } from "https://deno.land/x/zod@v3.20.5/mod.ts"
 import { zodToJsonSchema } from "npm:zod-to-json-schema@3.21.3"
 import { jsons } from "./common.ts"
@@ -22,7 +21,7 @@ function writeJsonSchema(schemaCode: string, name: string) {
   delete schema["$ref"]
 
   const file = `${name}.json`
-  log.info(`write  :: ${file}`)
+  console.log(`write  :: ${file}`)
 
   return Deno.writeTextFile(
     file,
@@ -37,12 +36,12 @@ function writeZodCode(schemaCode: string, name: string) {
     export const schema = ${schemaCode}
   `
   const code = tsFormatter.formatText(file, rawCode)
-  log.info(`write  :: ${file}`)
+  console.log(`write  :: ${file}`)
   return Deno.writeTextFile(file, code)
 }
 
 async function schemaGen({ path, name }: WalkEntry) {
-  log.info(`read   :: ${path}`)
+  console.log(`read   :: ${path}`)
   const file = await Deno.readTextFile(path)
   const json = JSON.parse(file)
   const schemaCode = jsonToZodCode(json)
@@ -63,5 +62,5 @@ if (import.meta.main) {
   const before = performance.now()
   await main()
   const after = performance.now()
-  log.info(`Took ${Number((after - before).toPrecision(2))}ms`)
+  console.log(`Took ${Number((after - before).toPrecision(2))}ms`)
 }

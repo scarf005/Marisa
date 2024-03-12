@@ -1,4 +1,4 @@
-import { resolve } from "https://deno.land/std@0.183.0/path/mod.ts"
+import { resolve } from "https://deno.land/std@0.219.0/path/mod.ts"
 
 import * as TE from "https://deno.land/x/fun@v2.0.0-alpha.10/async_either.ts"
 import { c, p } from "https://deno.land/x/copb@v1.0.1/mod.ts"

@@ -1,6 +1,6 @@
 import { join } from "$std/path/join.ts"
 import $ from "$dax/mod.ts"
-import { steam as SteamPath } from "./scripts/paths.ts"
+import { steam as SteamPath } from "./paths.ts"
 
 export const basePath = "docs/changelog"
 

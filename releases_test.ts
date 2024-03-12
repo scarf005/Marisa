@@ -1,6 +1,6 @@
 import { join } from "$std/path/join.ts"
 import { basePath, changelogPath, jarPath, stsPath, version } from "./releases.ts"
-import { verifyHardLink } from "./scripts/link/mod.ts"
+import { verifyHardLink } from "./link/mod.ts"
 import { assertEquals } from "$std/assert/assert_equals.ts"
 import { assertStringIncludes } from "$std/assert/assert_string_includes.ts"
 import { readZip } from "https://deno.land/x/jszip@0.11.0/mod.ts"

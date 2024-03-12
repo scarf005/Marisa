@@ -6,6 +6,9 @@
   "[markdown]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
+  "[typescript]": {
+    "editor.indentSize": 2
+  },
   "[jsonc]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
   },

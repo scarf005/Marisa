@@ -1,7 +1,6 @@
 import { join } from "https://deno.land/std@0.219.0/path/join.ts"
-import { verifyHardLink } from "./scripts/link/mod.ts"
 import { steam as SteamPath } from "./scripts/paths.ts"
-import $ from "https://deno.land/x/dax/mod.ts"
+import $ from "https://deno.land/x/dax@0.39.2/mod.ts"
 
 export const basePath = "docs/changelog"
 

@@ -36,13 +36,39 @@ export const getSections = (commits: Commit[]): Sections => ({
 if (import.meta.main) {
   const [latestTag] = await getTags()
   const commits = await getCommits({ from: latestTag, to: "main" }).then(parseCommits)
+  if (commits.length === 0) {
+    console.log("No new commits")
+    Deno.exit(0)
+  }
+
   const option = {
     version: getNextVersion(latestTag, commits),
     date: new Date().toISOString().split("T")[0],
     sections: getSections(commits),
   }
 
-  for (const render of [renderBBCode, renderMarkdown, renderStS]) {
-    console.log(render(option), "\n")
+  const files = {
+    bbcode: renderBBCode,
+    md: renderMarkdown,
+    "sts.txt": renderStS,
+  }
+
+  const changelogPath = `${import.meta.dirname}/../docs/changelog`
+
+  const writes = Object.entries(files)
+    .map(([ext, render]) => [ext, render(option)])
+    .map(([ext, text]) => {
+      if (ext === "md") console.log(text)
+      return Deno.writeTextFile(`${changelogPath}/changelog.${ext}`, text)
+    })
+    .concat(Deno.writeTextFile(`${changelogPath}/version.txt`, option.version.replace("v", "")))
+
+  await Promise.all(writes)
+
+  switch (Deno.args[0]) {
+    case "nextversion": {
+      await $`git tag ${option.version}`
+      console.log(await getTags())
+    }
   }
 }

@@ -2,10 +2,11 @@ import { outdent } from "$dax/src/deps.ts"
 import { Commit } from "./mod.ts"
 import { ChangelogRenderer, renderSections, SectionFormatter } from "./render.ts"
 
-const fmtCommit = (x: Commit) =>
+export const fmtCommit = (x: Commit) =>
   `- ${x.subject}`
-    .replace(/`([^`]+)`/g, "[i]$1[/i]")
+    .replace(/`([^`]+)`/g, "[$1]")
     .replace(/\(#(\d+)\)/g, "")
+    .trim()
 
 const fmtSection: SectionFormatter = ([section, commits]) =>
   `* ${section}\n\n` + commits.map(fmtCommit).join("\n")

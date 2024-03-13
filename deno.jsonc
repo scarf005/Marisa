@@ -1,7 +1,8 @@
 {
   "tasks": {
     "l10n": "deno task --cwd localization/",
-    "link": "deno run --allow-read --allow-write --allow-env ./scripts/link/mod.ts"
+    "link": "deno run --allow-read --allow-write --allow-env ./link/mod.ts",
+    "changelog": "deno run -A ./changelog/mod.ts"
   },
   "exclude": ["src/main/kotlin/", "src/main/resources/marisa/img", "build/"],
   "fmt": {

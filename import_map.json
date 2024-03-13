@@ -2,6 +2,7 @@
   "imports": {
     "$std/": "https://deno.land/std@0.219.0/",
     "$cliffy/": "https://deno.land/x/cliffy@v1.0.0-rc.3/",
-    "$zod/": "https://deno.land/x/zod@v3.20.5/"
+    "$zod/": "https://deno.land/x/zod@v3.20.5/",
+    "$dax/": "https://deno.land/x/dax@0.39.2/"
   }
 }

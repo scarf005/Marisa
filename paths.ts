@@ -1,11 +1,6 @@
 import { resolve } from "$std/path/mod.ts"
-import { fromFileUrl } from "$std/path/mod.ts"
-import { dirname } from "$std/path/dirname.ts"
 
-import { c, p } from "https://deno.land/x/copb@v1.0.1/mod.ts"
-
-export const scripts = c(p(fromFileUrl)(dirname))(import.meta.url)
-export const root = resolve(scripts, "..")
+export const root = import.meta.dirname!
 export const jar = resolve(root, "build", "libs", "MarisaContinued.jar")
 export const image = resolve("docs", "thumbnail", "image.jpg")
 

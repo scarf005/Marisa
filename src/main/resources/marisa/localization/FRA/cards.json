@@ -229,7 +229,7 @@
   },
   "DragonMeteor": {
     "NAME": "Météor draconique",
-    "DESCRIPTION": "Infligez !B! dégâts. NL Infligez !M! dégâts additionnels pour chaque carte épuisée ce combat."
+    "DESCRIPTION": "Infligez !D! dégâts. NL Infligez !M! dégâts additionnels pour chaque carte épuisée ce combat."
   },
   "EventHorizon": {
     "NAME": "Horizon des événements",

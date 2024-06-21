@@ -233,7 +233,7 @@
   },
   "DragonMeteor": {
     "NAME": "龙陨星",
-    "DESCRIPTION": "造成 !B! 点伤害。 NL 你的消耗区每有一张卡，此卡伤害增加 !M! 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你的消耗区每有一张卡，此卡伤害增加 !M! 。"
   },
   "PulseMagic": {
     "NAME": "脉冲魔术",

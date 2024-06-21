@@ -233,7 +233,7 @@
   },
   "DragonMeteor": {
     "NAME": "龍隕星",
-    "DESCRIPTION": "造成 !B! 點傷害。 NL 本場戰鬥中每 消耗 1張牌，此牌傷害增加 !M! "
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 本場戰鬥中每 消耗 1張牌，此牌傷害增加 !M! "
   },
   "PulseMagic": {
     "NAME": "脈衝魔術",

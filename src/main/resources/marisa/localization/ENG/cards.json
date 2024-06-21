@@ -227,7 +227,7 @@
   },
   "DragonMeteor": {
     "NAME": "Dragon Meteor",
-    "DESCRIPTION": "Deal !B! damage. NL Deals an additional !M! damage for each card in your exhaust pile."
+    "DESCRIPTION": "Deal !D! damage. NL Deals an additional !M! damage for each card in your exhaust pile."
   },
   "EventHorizon": {
     "NAME": "Event Horizon",

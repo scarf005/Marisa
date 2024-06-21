@@ -49,10 +49,10 @@ class ShootTheMoon : AmplifiedAttack(
         }
 
         val harm = if (isAmplified) block else damage
+        toRemove.forEach { addToBot(it) }
         addToBot(
             DamageAction(m, DamageInfo(p, harm, damageTypeForTurn), AttackEffect.SLASH_DIAGONAL)
         )
-        toRemove.forEach { addToBot(it) }
     }
 
     override fun makeCopy(): AbstractCard = ShootTheMoon()

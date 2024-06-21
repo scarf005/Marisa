@@ -1,5 +1,6 @@
 package marisa.cards
 
+import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.animations.VFXAction
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -8,13 +9,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect
-import marisa.abstracts.AmplifiedAttack
+import marisa.p
 import marisa.patches.AbstractCardEnum
 
-class DragonMeteor : AmplifiedAttack(
+class DragonMeteor : CustomCard(
     ID,
     NAME,
     IMG_PATH,
@@ -32,24 +32,24 @@ class DragonMeteor : AmplifiedAttack(
         block = baseBlock
         baseMagicNumber = DMG_GAIN
         magicNumber = baseMagicNumber
-        isException = true
     }
+
+    private fun calculatedDamage(): Int = baseDamage + p.exhaustPile.size() * magicNumber
 
     override fun applyPowers() {
-        block = baseDamage + AbstractDungeon.player.exhaustPile.size() * magicNumber
+        val realBaseDamage = baseDamage
+        baseDamage = calculatedDamage()
         super.applyPowers()
-        if (block == baseDamage) {
-            isBlockModified = false
-        }
-    }
-
-    override fun calculateDamageDisplay(mo: AbstractMonster?) {
-        calculateCardDamage(mo)
+        baseDamage = realBaseDamage
+        isDamageModified = damage != realBaseDamage
     }
 
     override fun calculateCardDamage(mo: AbstractMonster?) {
-        block = baseDamage + AbstractDungeon.player.exhaustPile.size() * magicNumber
+        val realBaseDamage = baseDamage
+        baseDamage = calculatedDamage()
         super.calculateCardDamage(mo)
+        baseDamage = realBaseDamage
+        isDamageModified = damage != realBaseDamage
     }
 
     override fun use(p: AbstractPlayer, m: AbstractMonster?) {
@@ -64,8 +64,7 @@ class DragonMeteor : AmplifiedAttack(
             DamageAction(
                 m,
                 DamageInfo(
-                    p,
-                    block,
+                    p, damage,
                     damageTypeForTurn
                 ),
                 AttackEffect.FIRE

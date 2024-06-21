@@ -207,7 +207,7 @@
   },
   "DragonMeteor": {
     "NAME": "드래곤 미티어",
-    "DESCRIPTION": "피해를 !B! 줍니다. NL 소멸된 카드마다 !M! 만큼 추가 피해를 줍니다."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 소멸된 카드마다 !M! 만큼 추가 피해를 줍니다."
   },
   "EventHorizon": {
     "NAME": "사건의 지평선",

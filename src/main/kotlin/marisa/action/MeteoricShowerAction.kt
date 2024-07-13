@@ -7,10 +7,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.relics.ChemicalX
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.countRelic
-import marisa.exhaustBurns
 import marisa.fx.MeteoricShowerEffect
 import marisa.p
-
+import marisa.withCardsBurned
 
 class MeteoricShowerAction(val energyOnUse: Int, val dmg: Int, val freeToPlay: Boolean) :
     AbstractGameAction() {
@@ -32,8 +31,9 @@ class MeteoricShowerAction(val energyOnUse: Int, val dmg: Int, val freeToPlay: B
             return
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            val cnt =
-                2 * AbstractDungeon.handCardSelectScreen.selectedCards.group.exhaustBurns()
+            val (regular, burns) = AbstractDungeon.handCardSelectScreen.selectedCards.group.withCardsBurned()
+            val cnt = regular.size * 3 + burns.size * 2
+
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()
             addToBot(MeteoricShowerEffect.toVfx(cnt))

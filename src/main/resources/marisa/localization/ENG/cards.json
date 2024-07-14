@@ -413,7 +413,7 @@
   },
   "AlicesGift": {
     "NAME": "Alice's Gift",
-    "DESCRIPTION": " Retain. Deal !D! Damage. Exhaust. NL Amplify [E]  [E] : Deal triple damage."
+    "DESCRIPTION": " Retain. Deal !D! Damage. NL Amplify [E]  [E] : Deal triple damage. NL Exhaust."
   },
   "Exhaustion_MRS": {
     "NAME": "Exhaustion",

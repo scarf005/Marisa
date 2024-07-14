@@ -217,8 +217,8 @@
   },
   "JA": {
     "NAME": "Warming Up",
-    "DESCRIPTION": "Deal !D! damage. Add a Rising Sweep, a Spark and a Witch Leyline to your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a Rising Sweep, a Spark and a Witch Leyline to your hand and Upgrade them."
+    "DESCRIPTION": "Deal !D! damage. Add a *Rising *Sweep, a *Spark and a *Witch *Leyline to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. Add a *Rising *Sweep+, a *Spark+ and a *Witch *Leyline+."
   },
   "AbsoluteMagnitude": {
     "NAME": "Absolute Magnitude",
@@ -281,7 +281,7 @@
   },
   "MagicChant": {
     "NAME": "Magic Chant",
-    "DESCRIPTION": "Choose a card in your draw pile,add it to your hand and upgrade it. NL Exhaust .",
+    "DESCRIPTION": "Choose a card in your draw pile,add it to your hand and upgrade it. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Choose a card in your draw pile,add it to your hand and upgrade it."
   },
   "UnstableBomb": {
@@ -335,7 +335,7 @@
   },
   "ManaConvection": {
     "NAME": "Mana Convection",
-    "DESCRIPTION": "Exhaust up to !M! cards,gain  [E]  for each card exhausted. NL Exhaust ."
+    "DESCRIPTION": "Exhaust up to !M! cards,gain  [E]  for each card exhausted. NL Exhaust."
   },
   "ManaRampage": {
     "NAME": "Mana Rampage",
@@ -376,7 +376,7 @@
   },
   "BlackFlareStar": {
     "NAME": "Black Flare Star",
-    "DESCRIPTION": "Can only be played when you have 4 or more cards in your hand. Exhaust . NL Discard any number of cards from your hand and gain !B! Block for each.",
+    "DESCRIPTION": "Can only be played when you have 4 or more cards in your hand. Exhaust. NL Discard any number of cards from your hand and gain !B! Block for each.",
     "EXTENDED_DESCRIPTION": [
       "I don't have 4 cards in my hand.",
       ""
@@ -384,8 +384,8 @@
   },
   "WhiteDwarf": {
     "NAME": "White Dwarf",
-    "DESCRIPTION": "Can only be played when you have 4 or less cards in your hand. Exhaust . NL Deal !D! damage (2 × size of your discard pile). Add 2 Burns to your hand.",
-    "UPGRADE_DESCRIPTION": "Can only be played when you have 4 or less cards in your hand. Exhaust . NL Deal !D! damage (3 × size of your discard pile). Add 2 Burns to your hand.",
+    "DESCRIPTION": "Can only be played when you have 4 or less cards in your hand. Exhaust. NL Deal !D! damage (2 × size of your discard pile). Add 2 Burns to your hand.",
+    "UPGRADE_DESCRIPTION": "Can only be played when you have 4 or less cards in your hand. Exhaust. NL Deal !D! damage (3 × size of your discard pile). Add 2 Burns to your hand.",
     "EXTENDED_DESCRIPTION": [
       "I have more than 4 cards in my hand.",
       ""
@@ -413,7 +413,7 @@
   },
   "AlicesGift": {
     "NAME": "Alice's Gift",
-    "DESCRIPTION": " Retain. Deal !D! Damage. Exhaust . NL Amplify [E]  [E] : Deal triple damage."
+    "DESCRIPTION": " Retain. Deal !D! Damage. NL Amplify [E]  [E] : Deal triple damage. NL Exhaust."
   },
   "Exhaustion_MRS": {
     "NAME": "Exhaustion",

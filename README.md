@@ -22,13 +22,13 @@
 
 a [re-continued][original] mod for [**Slay the Spire**][sts], which adds **[Marisa Kirisame][marisa]** from Touhou Project as a playable character.
 
-> **Note**
+> [!NOTE]
 >
 > _**Marisa:** Continued_ is a fork of [STS_ThMod_MRS][original-github] mod. Credits goes to the original authors.
 
-> **Warning**
+> [!WARNING]
 >
-> Due to life issues, this project is **currently not recieving active maintenance**. While I will review PRs as soon as possible, please note that I may not be able to dedicate much time on this project. Consequently, issues may not be addressed in a timely manner. I apologize for the inconvenience.
+> Due to IRL issues, this project is **currently not recieving active maintenance**. While I will review PRs as soon as possible, please note that I may not be able to dedicate much time on this project. Consequently, issues may not be addressed in a timely manner. I apologize for the inconvenience.
 
 ## New features
 

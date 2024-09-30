@@ -36,6 +36,13 @@ body:
         4. Open console using (`` ` ``) key (the key right below ESC key which also has `~`).
         5. Use console command to reproduce the bug.
 
+  - type: input
+    attribues:
+      label: Mod version
+      description: Please make sure the bug is reproducible in latest version of the mod.
+      placeholder: x.x.x
+    validations:
+      required: true
 
   - type: textarea
     attributes:

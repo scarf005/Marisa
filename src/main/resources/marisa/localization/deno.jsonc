@@ -3,6 +3,5 @@
     "schema": "deno run -A schema.ts",
     "schema:vscode": "deno run -A vscode.ts",
     "validate": "deno run -A validate.ts"
-  },
-  "importMap": "../../../../../import_map.json"
+  }
 }

@@ -1,4 +1,4 @@
-import { brightGreen, brightRed, brightYellow } from "$std/fmt/colors.ts"
+import { brightGreen, brightRed, brightYellow } from "@std/fmt/colors"
 import { Command } from "$cliffy/command/mod.ts"
 import type { Entry } from "npm:type-fest"
 

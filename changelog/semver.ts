@@ -1,7 +1,7 @@
-import type { SemVer } from "$std/semver/types.ts"
+import type { SemVer } from "@std/semver"
 import type { Commit } from "./mod.ts"
 
-import { format, increment, parse } from "$std/semver/mod.ts"
+import { format, increment, parse } from "@std/semver"
 
 const increaseBy = (commit: Commit): "major" | "minor" | "patch" =>
   commit.breaking ? "major" : commit.type === "feat" ? "minor" : "patch"

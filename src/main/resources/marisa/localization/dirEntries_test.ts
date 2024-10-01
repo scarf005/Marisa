@@ -1,4 +1,4 @@
-import { assertEquals } from "$std/assert/assert_equals.ts"
+import { assertEquals } from "@std/assert"
 import { dirEntries } from "./dirEntries.ts"
 
 Deno.test(async function testDirEntries() {

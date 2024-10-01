@@ -1,4 +1,4 @@
-import { outdent } from "$dax/src/deps.ts"
+import { outdent } from "./vendor/outdent.ts"
 import { Commit } from "./mod.ts"
 import { ChangelogRenderer, renderSections, SectionFormatter } from "./render.ts"
 

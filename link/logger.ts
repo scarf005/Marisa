@@ -1,4 +1,4 @@
-import { brightGreen, brightRed, brightYellow } from "$std/fmt/colors.ts"
+import { brightGreen, brightRed, brightYellow } from "@std/fmt/colors"
 
 import { c, p } from "https://deno.land/x/copb@v1.0.1/mod.ts"
 

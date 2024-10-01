@@ -1,4 +1,4 @@
-import $ from "$dax/mod.ts"
+import $ from "@david/dax"
 import { typedRegEx } from "https://deno.land/x/typed_regex@0.2.0/mod.ts"
 import type { RegExCaptureResult } from "https://deno.land/x/typed_regex@0.2.0/type_parser.ts"
 

@@ -1,4 +1,4 @@
-import { join } from "$std/path/mod.ts"
+import { join } from "@std/path"
 import { createFromBuffer, GlobalConfiguration } from "https://deno.land/x/dprint@0.2.0/mod.ts"
 import { projectRoot } from "./common.ts"
 

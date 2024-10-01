@@ -1,4 +1,4 @@
-import { assertEquals } from "$std/assert/assert_equals.ts"
+import { assertEquals } from "@std/assert"
 import { Commit } from "./mod.ts"
 import { fmtCommit } from "./render_sts.ts"
 

@@ -1,7 +1,7 @@
-import { walk, WalkEntry } from "$std/fs/walk.ts"
+import { walk, WalkEntry } from "@std/fs"
 import { asyncIterableToArray } from "https://deno.land/x/replicache@v10.0.0-beta.0/async-iterable-to-array.ts"
 import { jsons, LangCode, langCodes } from "./common.ts"
-import { parse } from "$std/path/mod.ts"
+import { parse } from "@std/path"
 import { Command, EnumType } from "$cliffy/command/mod.ts"
 import { ZodIssue } from "$zod/mod.ts"
 

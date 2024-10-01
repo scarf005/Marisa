@@ -1,4 +1,4 @@
-import { assertEquals } from "$std/assert/assert_equals.ts"
+import { assertEquals } from "@std/assert"
 import { getSections, parseCommits } from "./mod.ts"
 
 export const exampleCommits = parseCommits([

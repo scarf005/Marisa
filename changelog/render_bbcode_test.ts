@@ -1,4 +1,4 @@
-import { assertEquals } from "$std/assert/assert_equals.ts"
+import { assertEquals } from "@std/assert"
 import { outdent } from "$dax/src/deps.ts"
 import { renderBBCode } from "./render_bbcode.ts"
 import { exampleSections } from "./changelog_test.ts"

@@ -1,8 +1,7 @@
-import { join } from "$std/path/join.ts"
+import { join } from "@std/path"
 import { basePath, changelogPath, jarPath, stsPath, version } from "./releases.ts"
 import { verifyHardLink } from "./link/mod.ts"
-import { assertEquals } from "$std/assert/assert_equals.ts"
-import { assertStringIncludes } from "$std/assert/assert_string_includes.ts"
+import { assertEquals, assertStringIncludes } from "@std/assert"
 import { readZip } from "https://deno.land/x/jszip@0.11.0/mod.ts"
 
 Deno.test("hardlinks are verified", async () => {

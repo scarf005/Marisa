@@ -1,4 +1,4 @@
-import { WalkEntry } from "$std/fs/walk.ts"
+import { WalkEntry } from "@std/fs"
 import { z } from "$zod/mod.ts"
 import { zodToJsonSchema } from "npm:zod-to-json-schema@3.21.3"
 import { jsons } from "./common.ts"

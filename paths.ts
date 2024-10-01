@@ -1,4 +1,4 @@
-import { resolve } from "$std/path/mod.ts"
+import { resolve } from "@std/path"
 
 export const root = import.meta.dirname!
 export const jar = resolve(root, "build", "libs", "MarisaContinued.jar")

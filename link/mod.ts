@@ -1,6 +1,6 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write --allow-env
 
-import { join } from "$std/path/mod.ts"
+import { join } from "@std/path"
 import { Command } from "$cliffy/command/mod.ts"
 
 import { image, jar, mod } from "../paths.ts"

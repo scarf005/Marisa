@@ -1,5 +1,5 @@
-import { assertObjectMatch } from "$std/assert/assert_object_match.ts"
-import { assertEquals } from "$std/assert/assert_equals.ts"
+import { assertObjectMatch } from "@std/assert"
+import { assertEquals } from "@std/assert"
 import { getNextVersion, increaseVersion } from "./semver.ts"
 
 const major = { type: "fix", breaking: "!", subject: "big stuff", pr: "123", scopes: undefined }

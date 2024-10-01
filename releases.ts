@@ -1,4 +1,4 @@
-import { join } from "$std/path/join.ts"
+import { join } from "@std/path"
 import $ from "$dax/mod.ts"
 import { steam as SteamPath } from "./paths.ts"
 

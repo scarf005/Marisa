@@ -1,5 +1,5 @@
-import { assertThrows } from "$std/assert/assert_throws.ts"
-import { assert } from "$std/assert/assert.ts"
+import { assertThrows } from "@std/assert"
+import { assert } from "@std/assert"
 import { z } from "$zod/mod.ts"
 
 import { jsonToZod } from "./json_to_zod.ts"

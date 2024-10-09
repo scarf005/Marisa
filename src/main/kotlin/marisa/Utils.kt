@@ -1,7 +1,7 @@
 package marisa
 
 import com.megacrit.cardcrawl.cards.AbstractCard
-import com.megacrit.cardcrawl.cards.status.Burn
+import util.partitionByType
 
 fun countRelic(id: String): Int {
     if (!p.hasRelic(id)) {
@@ -12,27 +12,10 @@ fun countRelic(id: String): Int {
     return 1
 }
 
-inline fun <T, reified U : T> Iterable<T>.partitionByType(): Pair<List<T>, List<U>> {
-    val first = ArrayList<T>()
-    val second = ArrayList<U>()
-    for (element in this) {
-        if (element is U) second.add(element)
-        else first.add(element)
-    }
-    return Pair(first, second)
-}
+fun AbstractCard.exhaust() = this.also { p.hand.moveToExhaustPile(it) }
 
 /**
- * Exhaust all [Burn] cards in the [Iterable] and return the number of [Burn] cards exhausted.
+ * Partition the [Iterable] into two lists, one containing all [AbstractCard]s and the other containing all given types.
  */
-fun Iterable<Burn>.exhaustBurns() = onEach { p.hand.moveToExhaustPile(it) }
-
-/**
- * Partition the [Iterable] into two lists, one containing all [AbstractCard]s and the other containing all [Burn]s.
- * Burns are automatically exhausted.
- */
-fun Iterable<AbstractCard>.withCardsBurned(): Pair<List<AbstractCard>, List<Burn>> {
-    val (regular, burns) = this.partitionByType<AbstractCard, Burn>()
-    burns.exhaustBurns()
-    return Pair(regular, burns)
-}
+inline fun <reified T : AbstractCard> Iterable<AbstractCard>.partitionByType(): Pair<List<T>, List<AbstractCard>> =
+    partitionByType<T, AbstractCard>()

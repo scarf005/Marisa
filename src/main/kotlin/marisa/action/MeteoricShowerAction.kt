@@ -1,15 +1,17 @@
 package marisa.action
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction
+import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.relics.ChemicalX
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.countRelic
+import marisa.exhaust
 import marisa.fx.MeteoricShowerEffect
 import marisa.p
-import marisa.withCardsBurned
+import marisa.partitionByType
 
 class MeteoricShowerAction(val energyOnUse: Int, val dmg: Int, val freeToPlay: Boolean) :
     AbstractGameAction() {
@@ -31,11 +33,14 @@ class MeteoricShowerAction(val energyOnUse: Int, val dmg: Int, val freeToPlay: B
             return
         }
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            val (regular, burns) = AbstractDungeon.handCardSelectScreen.selectedCards.group.withCardsBurned()
-            val cnt = regular.size * 3 + burns.size * 2
+            val cards = AbstractDungeon.handCardSelectScreen.selectedCards.group
+            val (burns, regular) = cards.partitionByType<Burn>()
+            val cnt = regular.size * 2 + burns.size * 3
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true
-            AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()
+            cards.forEach { it.exhaust() }
+            cards.clear()
+
             addToBot(MeteoricShowerEffect.toVfx(cnt))
             addToBot(RandomDamageAction(cnt) { dmg })
             AbstractDungeon.gridSelectScreen.selectedCards.clear()
@@ -48,8 +53,7 @@ class MeteoricShowerAction(val energyOnUse: Int, val dmg: Int, val freeToPlay: B
     }
 
     companion object {
-        private val uiStrings = CardCrawlGame.languagePack
-            .getUIString("ExhaustAction")
+        private val uiStrings = CardCrawlGame.languagePack.getUIString("ExhaustAction")
         val TEXT = uiStrings.TEXT
     }
 }

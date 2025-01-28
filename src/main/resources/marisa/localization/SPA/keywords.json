@@ -1,0 +1,55 @@
+{
+  "keywords": [
+    {
+      "NAMES": [
+        "amplify",
+        "Amplify"
+      ],
+      "DESCRIPTION": "Paga energía adicional para su efecto cuando tengas suficiente  [E] ."
+    },
+    {
+      "NAMES": [
+        "Exhaustion",
+        "exhaustion"
+      ],
+      "DESCRIPTION": "El agotamiento te impide ganar o usar Carga."
+    },
+    {
+      "NAMES": [
+        "Spark",
+        "spark"
+      ],
+      "DESCRIPTION": "Chispa es una carta de ataque que cuesta #b0 energía y se agota al usarse."
+    },
+    {
+      "NAMES": [
+        "Charge-up",
+        "charge-up",
+        "chargeup",
+        "ChargeUp"
+      ],
+      "DESCRIPTION": "Por cada #b8 acumulacion, dobla el daño de tu siguiente ataque."
+    },
+    {
+      "NAMES": [
+        "Black Flare Star",
+        "black flare star"
+      ],
+      "DESCRIPTION": "Estrella de Llamarada Negra es una carta de habilidad que cuesta #b0 y te otorga Bloqueo al descartar cartas."
+    },
+    {
+      "NAMES": [
+        "White Dwarf",
+        "white dwarf"
+      ],
+      "DESCRIPTION": "Enana Blanca es una carta de ataque que cuesta #b0 y causa daño dependiendo del tamaño de tu pila de descartes."
+    },
+    {
+      "NAMES": [
+        "Wraith",
+        "wraith"
+      ],
+      "DESCRIPTION": "Espectro agotará una carta aleatoria en tu mano al comienzo de tu turno."
+    }
+  ]
+}

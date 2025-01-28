@@ -1,0 +1,115 @@
+{
+  "MiniHakkero": {
+    "NAME": "Mini-Hakkero",
+    "FLAVOR": "Un mini Horno de Ocho Trigramas, un regalo de Rinosuke cuando Marisa dejó a sus padres.",
+    "DESCRIPTIONS": [
+      "Cada vez que juegues una carta, gana #b1  #yCarga ."
+    ]
+  },
+  "BewitchedHakkero": {
+    "NAME": "Hakkero Hechizado",
+    "FLAVOR": "Su poder de fuego está en un nuevo nivel, pero ¿está bien usar una herramienta hechizada?",
+    "DESCRIPTIONS": [
+      "Reemplaza #rMini-Hakkero . NL Cada vez que juegues una carta, gana #b1 #yCarga . NL gana 1 más si es una carta #yChispa ."
+    ]
+  },
+  "MagicArmor": {
+    "NAME": "Escudo de Magia Negra",
+    "FLAVOR": "De hecho, no sé qué demonios es esto, pero como el Diseñador lo puso en el Plan, aquí está.-programador",
+    "DESCRIPTIONS": [
+      "Cada vez que robes un Estado o Maldición, gana 5 Bloqueo."
+    ]
+  },
+  "MagicBroom": {
+    "NAME": "Escoba Mágica",
+    "FLAVOR": "Marisa siempre viaja en su escoba voladora.",
+    "DESCRIPTIONS": [
+      "Cada vez que juegues #b3 cartas que cuesten 0, roba 1 carta."
+    ]
+  },
+  "AmpWand": {
+    "NAME": "Varita Amplificadora",
+    "FLAVOR": "Una varita que parece no usarse con frecuencia.",
+    "DESCRIPTIONS": [
+      "Cada vez que actives 3 efectos de #yAmplificar , gana [E]  [E] ."
+    ]
+  },
+  "RampagingMagicTools": {
+    "NAME": "Herramienta Mágica Descontrolada",
+    "FLAVOR": "Ha pasado tanto tiempo desde que alguien las usó por última vez. ¿Quién sabe qué podría pasar?",
+    "DESCRIPTIONS": [
+      "Gana [E] al comienzo de cada turno. NL Aplica un debilitamiento/buff aleatorio ( #b1 #yFrágil , #b1 #yDébil , #b1 #yVulnerable , #b2 #yVeneno , #b8 #yCarga ) al comienzo de cada combate."
+    ]
+  },
+  "ExperimentalFamiliar": {
+    "NAME": "Familiar Experimental",
+    "FLAVOR": "Un Familiar parece ser solo un orbe brillante. No muy poderoso, pero seguramente te ayudará mucho.",
+    "DESCRIPTIONS": [
+      "Al comienzo de cada turno, agrega 1 #yChispa a tu mano. NL Al comienzo del combate, puedes elegir #b1 de #b3 cartas aleatorias. Cuesta 0 este turno."
+    ]
+  },
+  "BreadOfAWashokuLover": {
+    "NAME": "Pan de un Amante del Washoku",
+    "FLAVOR": "\"¿Puedes recordar cuántas rebanadas de pan has comido hasta ahora?\"\"Trece. Prefiero la comida japonesa.\"",
+    "DESCRIPTIONS": [
+      "Cura 1 hp cada vez que agotes un #yEstado o una #yMaldición. NL Cuando se active 13 veces, ganas #b13 HP máximos, y esta reliquia deja de funcionar."
+    ]
+  },
+  "SimpleLauncher": {
+    "NAME": "Lanzador Simple",
+    "FLAVOR": "Una linterna es una linterna, no importa cómo se llame...",
+    "DESCRIPTIONS": [
+      "Reduce tu valor de umbral de consumo de #yCarga de #b8 a #b6 ."
+    ]
+  },
+  "HandmadeGrimoire": {
+    "NAME": "Grimorio Hecho a Mano",
+    "FLAVOR": "Un cuaderno lleno de registros de experimentos y recetas de materiales mágicos; así es como Marisa desarrolla sus Magias.",
+    "DESCRIPTIONS": [
+      "Al comienzo de la batalla, por cada 15 cartas en tu mazo principal, gana [E] y roba una carta."
+    ]
+  },
+  "ShroomBag": {
+    "NAME": "Bolsa de Hongos",
+    "FLAVOR": "Todas las brujas tienen un entusiasmo anormal por los hongos... ¿O es solo Marisa...?",
+    "DESCRIPTIONS": [
+      "Al obtenerla, obtén 2 #yParásito. Las cartas de Parásito ahora se pueden jugar. Jugar un #yParásito curará #b2 HP y robará una carta, luego se agota."
+    ]
+  },
+  "Cape": {
+    "NAME": "Capa",
+    "FLAVOR": "Marisa siempre toma lo que quiere, y esta capa seguramente la ayudará a hacerlo.",
+    "DESCRIPTIONS": [
+      "Cada vez que entres a una sala de tienda, gana algunas recompensas de combate aleatorias.",
+      " uso(s) restantes. NL Puedes tomar el primer artículo de una tienda gratis."
+    ]
+  },
+  "SproutingBranch": {
+    "NAME": "Rama Brotante",
+    "FLAVOR": "La rama muerta cobra vida en la mano de Marisa, qué poético.",
+    "DESCRIPTIONS": [
+      "Al comienzo del combate, gana #b4 #yRegeneración ."
+    ]
+  },
+  "AmplifyWand": {
+    "NAME": "Varita de Amplificación",
+    "FLAVOR": "Una varita que parece no usarse con frecuencia.",
+    "DESCRIPTIONS": [
+      "Cada vez que actives un efecto de #yAmplificar , gana #b4  #yBloqueo ."
+    ]
+  },
+  "CatCart": {
+    "NAME": "Carrito de Gato",
+    "FLAVOR": "Cuando caigas en batalla, tus leales gatitos te devolverán a la vida con esto.",
+    "DESCRIPTIONS": [
+      "Gana 1 carga cuando subas un piso. Cuando vayas a morir, consume todas las cargas y cura #g4 hp por cada una de ellas."
+    ]
+  },
+  "BigShroomBag": {
+    "NAME": "Bolsa de Hongos Grande",
+    "FLAVOR": "Una versión grande de la bolsa de hongos.",
+    "DESCRIPTIONS": [
+      "Reemplaza #rBolsa #rde #rHongos . NL Las cartas de Parásito ahora se pueden jugar. Jugar un #yParásito curará #b3 HP y robará #b2 cartas, luego se agota."
+    ]
+  }
+}

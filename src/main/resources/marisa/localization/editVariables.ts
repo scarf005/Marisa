@@ -1,5 +1,5 @@
 import { brightGreen, brightRed, brightYellow } from "@std/fmt/colors"
-import { Command } from "$cliffy/command/mod.ts"
+import { Command } from "@cliffy/command"
 import type { Entry } from "npm:type-fest"
 
 import cardsEng from "./ENG/cards.json" with { type: "json" }

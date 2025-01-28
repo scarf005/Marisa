@@ -1,7 +1,7 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write --allow-env
 
 import { join } from "@std/path"
-import { Command } from "$cliffy/command/mod.ts"
+import { Command } from "@cliffy/command"
 
 import { image, jar, mod } from "../paths.ts"
 import { noop } from "./noop.ts"

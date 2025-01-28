@@ -1,7 +1,7 @@
 import { walk, WalkEntry } from "@std/fs"
 import { jsons, LangCode, langCodes } from "./common.ts"
 import { parse } from "@std/path"
-import { Command, EnumType } from "$cliffy/command/mod.ts"
+import { Command, EnumType } from "@cliffy/command"
 import { ZodIssue } from "$zod/mod.ts"
 
 const schemasPromise = (await Array.fromAsync(walk("schemas")))

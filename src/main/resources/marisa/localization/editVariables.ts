@@ -8,6 +8,7 @@ import cardsJpn from "./JPN/cards.json" with { type: "json" }
 import cardsKor from "./KOR/cards.json" with { type: "json" }
 import cardsZhs from "./ZHS/cards.json" with { type: "json" }
 import cardsZht from "./ZHT/cards.json" with { type: "json" }
+import cardsSpa from "./SPA/cards.json" with { type: "json" }
 
 const cardsJson = [
   { path: "./ENG/cards.json", cards: cardsEng },
@@ -16,6 +17,7 @@ const cardsJson = [
   { path: "./KOR/cards.json", cards: cardsKor },
   { path: "./ZHS/cards.json", cards: cardsZhs },
   { path: "./ZHT/cards.json", cards: cardsZht },
+  { path: "./SPA/cards.json", cards: cardsSpa },
 ]
 
 type Card = {

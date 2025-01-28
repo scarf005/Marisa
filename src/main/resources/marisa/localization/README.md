@@ -8,6 +8,7 @@ directories below are named after the language code used in the game.
 - `KOR`: Korean
 - `ZHS`: Simplified Chinese
 - `ZHT`: Traditional Chinese
+- `SPA`: Spanish
 
 ## Validation
 

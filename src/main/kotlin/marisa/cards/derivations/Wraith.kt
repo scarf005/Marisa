@@ -55,7 +55,7 @@ class Wraith : CustomCard(
 
     companion object {
         const val ID = "Wraith"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings("Wraith")
+        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = -2

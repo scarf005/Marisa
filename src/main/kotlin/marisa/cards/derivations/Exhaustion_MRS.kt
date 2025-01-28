@@ -38,7 +38,7 @@ class Exhaustion_MRS : CustomCard(
 
     companion object {
         const val ID = "Exhaustion_MRS"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings("Exhaustion_MRS")
+        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = -2

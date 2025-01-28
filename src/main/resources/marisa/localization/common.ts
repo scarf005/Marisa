@@ -1,5 +1,5 @@
 import { walk } from "@std/fs"
-import { asyncIterableToArray } from "https://deno.land/x/replicache@v10.0.0-beta.0/async-iterable-to-array.ts"
+
 export const langCodes = ["ENG", "FRA", "JPN", "KOR", "ZHS", "ZHT"] as const
 export type LangCode = typeof langCodes[number]
 export const projectRoot = await new Deno.Command("git", {
@@ -12,7 +12,6 @@ export const localization = "src/main/resources/marisa/localization"
 
 export const localizationPath = `${projectRoot}/${localization}`
 
-export async function jsons(name: LangCode) {
-  return (await asyncIterableToArray(walk(name)))
+export const jsons = async (name: LangCode) =>
+  (await Array.fromAsync(walk(name)))
     .filter((x) => x.isFile && x.name.endsWith(".json"))
-}

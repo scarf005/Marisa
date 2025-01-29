@@ -60,7 +60,7 @@ class DoubleSpark : CustomCard(
     }
 
     companion object {
-        const val ID = "DoubleSpark"
+        const val ID = "marisa:DoubleSpark"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

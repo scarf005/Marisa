@@ -71,7 +71,7 @@ class EnergyRecoil : CustomCard(
     }
 
     companion object {
-        const val ID = "EnergyRecoil"
+        const val ID = "marisa:EnergyRecoil"
         const val IMG_PATH = "marisa/img/cards/recoil.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

@@ -57,7 +57,7 @@ class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "LimboContact"
+        const val POWER_ID = "marisa:LimboContact"
         private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME
         val DESCRIPTIONS = powerStrings.DESCRIPTIONS

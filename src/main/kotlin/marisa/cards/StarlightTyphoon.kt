@@ -55,7 +55,7 @@ class StarlightTyphoon : CustomCard(
     }
 
     companion object {
-        const val ID = "StarlightTyphoon"
+        const val ID = "marisa:StarlightTyphoon"
         const val IMG_PATH = "marisa/img/cards/typhoon.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

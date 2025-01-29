@@ -78,7 +78,7 @@ class FinalSpark : CustomCard(
     }
 
     companion object {
-        const val ID = "FinalSpark"
+        const val ID = "marisa:FinalSpark"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

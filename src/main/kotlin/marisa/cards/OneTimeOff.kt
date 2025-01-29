@@ -53,7 +53,7 @@ class OneTimeOff : CustomCard(
     }
 
     companion object {
-        const val ID = "OneTimeOff"
+        const val ID = "marisa:OneTimeOff"
         const val IMG_PATH = "marisa/img/cards/MoraleDelpletion.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

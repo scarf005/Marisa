@@ -97,7 +97,7 @@ class DarkMatter : CustomCard(
     }
 
     companion object {
-        const val ID = "DarkMatter"
+        const val ID = "marisa:DarkMatter"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

@@ -47,7 +47,7 @@ class RampagingMagicTools : CustomRelic(
     )
 
     companion object {
-        const val ID = "RampagingMagicTools"
+        const val ID = "marisa:RampagingMagicTools"
         private const val IMG = "marisa/img/relics/RamTool.png"
         private const val IMG_OTL = "marisa/img/relics/outline/RamTool.png"
         private const val STACK_DEBUFF = 1

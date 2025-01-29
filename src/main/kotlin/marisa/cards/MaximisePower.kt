@@ -66,7 +66,7 @@ class MaximisePower : CustomCard(
     }
 
     companion object {
-        const val ID = "MaximisePower"
+        const val ID = "marisa:MaximisePower"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

@@ -29,7 +29,7 @@ class GrandCrossPower(owner: AbstractCreature?) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "GrandCrossPower"
+        const val POWER_ID = "marisa:GrandCrossPower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

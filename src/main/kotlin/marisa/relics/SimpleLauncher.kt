@@ -18,7 +18,7 @@ class SimpleLauncher : CustomRelic(
     override fun makeCopy(): AbstractRelic = SimpleLauncher()
 
     companion object {
-        const val ID = "SimpleLauncher"
+        const val ID = "marisa:SimpleLauncher"
         private const val IMG = "marisa/img/relics/FlashLight.png"
         private const val IMG_OTL = "marisa/img/relics/outline/FlashLight.png"
         private const val PRICE = 300

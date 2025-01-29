@@ -35,7 +35,7 @@ class WraithPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "Wraith"
+        const val POWER_ID = "marisa:Wraith"
         private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME
         val DESCRIPTIONS = powerStrings.DESCRIPTIONS

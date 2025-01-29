@@ -122,7 +122,7 @@ class Mushrooms_MRS : AbstractEvent() {
         private val logger = LogManager.getLogger(
             Mushrooms::class.java.name
         )
-        const val ID = "Mushrooms_MRS"
+        const val ID = "marisa:Mushrooms_MRS"
         private val eventStrings: EventStrings = CardCrawlGame.languagePack.getEventString("Mushrooms_MRS")
         val NAME: String? = eventStrings.NAME
         val DESCRIPTIONS: Array<String> = eventStrings.DESCRIPTIONS

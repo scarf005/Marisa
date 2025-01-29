@@ -49,7 +49,7 @@ class GasGiant : CustomCard(
     }
 
     companion object {
-        const val ID = "GasGiant"
+        const val ID = "marisa:GasGiant"
         const val IMG_PATH = "marisa/img/cards/Jupiter.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

@@ -48,7 +48,7 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "PolarisUniquePower"
+        const val POWER_ID = "marisa:PolarisUniquePower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

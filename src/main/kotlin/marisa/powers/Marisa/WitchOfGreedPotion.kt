@@ -32,7 +32,7 @@ class WitchOfGreedPotion(owner: AbstractCreature?, amount: Int) : AbstractPower(
     }
 
     companion object {
-        const val POWER_ID = "WitchOfGreedPotion"
+        const val POWER_ID = "marisa:WitchOfGreedPotion"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

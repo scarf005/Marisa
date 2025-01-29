@@ -55,7 +55,7 @@ class UnstableBomb : CustomCard(
     }
 
     companion object {
-        const val ID = "UnstableBomb"
+        const val ID = "marisa:UnstableBomb"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

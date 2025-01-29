@@ -57,7 +57,7 @@ class EarthLightRay : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "EarthLightRay"
+        const val ID = "marisa:EarthLightRay"
         const val IMG_PATH = "marisa/img/cards/EarthLightRay.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

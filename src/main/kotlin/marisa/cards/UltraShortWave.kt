@@ -57,7 +57,7 @@ class UltraShortWave : CustomCard(
     }
 
     companion object {
-        const val ID = "UltimateShortwave"
+        const val ID = "marisa:UltimateShortwave"
         const val IMG_PATH = "marisa/img/cards/ShortWave.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

@@ -37,7 +37,7 @@ class Exhaustion_MRS : CustomCard(
     override fun upgrade() {}
 
     companion object {
-        const val ID = "Exhaustion_MRS"
+        const val ID = "marisa:Exhaustion_MRS"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

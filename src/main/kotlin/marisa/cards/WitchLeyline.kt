@@ -59,7 +59,7 @@ class WitchLeyline : CustomCard(
     }
 
     companion object {
-        const val ID = "WitchLeyline"
+        const val ID = "marisa:WitchLeyline"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

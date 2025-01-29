@@ -45,9 +45,9 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
         when (nextMove.toInt()) {
             1 -> {
                 logger.info(
-                    """ZombieFairy : take Turn : Attack : turnNum : $turnNum ; damage : ${damage[0].base} ; 
-                        |ActionCancel check: ; target null : ${p == null} ; source null : ${damage[0].owner != null} ; 
-                        |source dying : ${damage[0].owner.isDying} ; 
+                    """ZombieFairy : take Turn : Attack : turnNum : $turnNum ; damage : ${damage[0].base} ;
+                        |ActionCancel check: ; target null : ${p == null} ; source null : ${damage[0].owner != null} ;
+                        |source dying : ${damage[0].owner.isDying} ;
                         |target dead or escaped : ${(p ?: return).isDeadOrEscaped}""".trimMargin()
                 )
                 if (turnNum >= POWER_UP) {
@@ -137,7 +137,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
 
     companion object {
         private val logger = MarisaContinued.logger
-        const val ID = "ZombieFairy"
+        const val ID = "marisa:ZombieFairy"
         const val NAME = "Zombie Fairy"
         private const val HP = 12
         private const val HP_ = 16

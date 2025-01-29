@@ -46,7 +46,7 @@ class EnergyFlow : CustomCard(
     }
 
     companion object {
-        const val ID = "EnergyFlow"
+        const val ID = "marisa:EnergyFlow"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

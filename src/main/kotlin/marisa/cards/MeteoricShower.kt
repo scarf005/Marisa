@@ -37,7 +37,7 @@ class MeteoricShower : CustomCard(
     }
 
     companion object {
-        const val ID = "MeteoricShower"
+        const val ID = "marisa:MeteoricShower"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

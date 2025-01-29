@@ -16,7 +16,7 @@ class Cape : CustomRelic(
     override fun makeCopy(): AbstractRelic = Cape()
 
     companion object {
-        const val ID = "MarisaContinued:Cape"
+        const val ID = "marisa:MarisaContinued:Cape"
         private const val IMG = "marisa/img/relics/test7.png"
         private const val IMG_OTL = "marisa/img/relics/outline/test7.png"
     }

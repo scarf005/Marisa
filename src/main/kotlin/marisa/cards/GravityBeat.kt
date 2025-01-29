@@ -65,7 +65,7 @@ class GravityBeat : CustomCard(
     }
 
     companion object {
-        const val ID = "GravityBeat"
+        const val ID = "marisa:GravityBeat"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME: String = cardStrings.NAME
         val DESCRIPTION: String = cardStrings.DESCRIPTION

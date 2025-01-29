@@ -145,7 +145,7 @@ class OrinTheCat : AbstractEvent() {
     }
 
     companion object {
-        const val ID = "OrinTheCat"
+        const val ID = "marisa:OrinTheCat"
         private val eventStrings = CardCrawlGame.languagePack.getEventString(ID)
         val NAME = eventStrings.NAME!!
         private val DESCRIPTIONS = eventStrings.DESCRIPTIONS

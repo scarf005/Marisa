@@ -42,7 +42,7 @@ class SatelliteIllusion : CustomCard(
     }
 
     companion object {
-        const val ID = "SatelliteIllusion"
+        const val ID = "marisa:SatelliteIllusion"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

@@ -45,7 +45,7 @@ class PulseMagic : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "PulseMagic"
+        const val ID = "marisa:PulseMagic"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

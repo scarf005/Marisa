@@ -50,7 +50,7 @@ class DeepEcologicalBomb : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "DeepEcoloBomb"
+        const val ID = "marisa:DeepEcoloBomb"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

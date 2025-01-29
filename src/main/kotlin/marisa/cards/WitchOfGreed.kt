@@ -58,7 +58,7 @@ class WitchOfGreed : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "WitchOfGreed"
+        const val ID = "marisa:WitchOfGreed"
         const val IMG_PATH = "marisa/img/cards/Greed.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

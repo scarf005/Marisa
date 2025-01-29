@@ -551,7 +551,7 @@ class Orin : AbstractMonster(
 
     companion object {
         private val logger = MarisaContinued.logger
-        const val ID = "Orin"
+        const val ID = "marisa:Orin"
         const val NAME = "Orin"
         private const val STAGE_1_HP = 68
         private const val S_1_HP = 82

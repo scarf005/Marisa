@@ -68,7 +68,7 @@ class Occultation : CustomCard(
     }
 
     companion object {
-        const val ID = "Occultation"
+        const val ID = "marisa:Occultation"
         const val IMG_PATH = "marisa/img/cards/occultation.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

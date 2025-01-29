@@ -49,7 +49,7 @@ class RefractionSpark : AmplifiedAttack(
     }
 
     companion object {
-        const val ID = "RefractionSpark"
+        const val ID = "marisa:RefractionSpark"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

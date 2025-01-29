@@ -48,7 +48,7 @@ class SporeBomb : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "SporeBomb"
+        const val ID = "marisa:SporeBomb"
         const val IMG_PATH = "marisa/img/cards/SporeCrump.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

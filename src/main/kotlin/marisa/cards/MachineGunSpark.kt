@@ -52,7 +52,7 @@ class MachineGunSpark : CustomCard(
     }
 
     companion object {
-        const val ID = "MachineGunSpark"
+        const val ID = "marisa:MachineGunSpark"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

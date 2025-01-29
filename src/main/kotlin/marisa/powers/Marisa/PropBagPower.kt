@@ -44,7 +44,7 @@ class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower()
     }
 
     companion object {
-        const val POWER_ID = "PropBagPower"
+        const val POWER_ID = "marisa:PropBagPower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

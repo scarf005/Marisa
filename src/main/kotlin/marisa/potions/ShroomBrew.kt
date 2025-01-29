@@ -41,7 +41,7 @@ class ShroomBrew : AbstractPotion(
     override fun getPotency(ascensionLevel: Int): Int = 1
 
     companion object {
-        const val POTION_ID = "ShroomBrew"
+        const val POTION_ID = "marisa:ShroomBrew"
         private val potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID)
         val NAME = potionStrings.NAME
         val DESCRIPTIONS = potionStrings.DESCRIPTIONS

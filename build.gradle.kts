@@ -122,6 +122,20 @@ val configFile = file("src/main/resources/ModTheSpire.json")
 
 tasks.processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    filteringCharset = "UTF-8"
+    val expansion: FileCopyDetails.() -> Unit = {
+        val tokens = project.extra.properties.entries
+            .filter { it.value is String }
+            .associate { "mod.${it.key}" to it.value }
+        filter(
+            ReplaceTokens::class,
+            "tokens" to tokens,
+            "beginToken" to "\${",
+            "endToken" to "}",
+        )
+    }
+    filesMatching("ModTheSpire.json", expansion)
+    filesMatching("${modID}Assets/**/*.json", expansion)
 }
 
 tasks.register("modthespire") {

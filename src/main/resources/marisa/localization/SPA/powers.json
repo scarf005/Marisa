@@ -1,0 +1,273 @@
+{
+  "DarkMatterPower": {
+    "NAME": "Dark Matter",
+    "DESCRIPTIONS": [
+      "Ya no puedes jugar #yDark #yMatter este turno.",
+      ""
+    ]
+  },
+  "ExtraDraw": {
+    "NAME": "Escape Velocity",
+    "DESCRIPTIONS": [
+      "Roba #b",
+      " más cartas y añade #b",
+      " #yBurn(s) a tu mano al inicio de cada turno."
+    ]
+  },
+  "EventHorizonPower": {
+    "NAME": "Event Horizon",
+    "DESCRIPTIONS": [
+      "Puedes poner un Ataque de tu pila de descarte en tu mano cuando activas un efecto Amplify, hasta #b",
+      " vez/veces cada turno.",
+      "( ",
+      " vez/veces restantes)"
+    ]
+  },
+  "IllusionStarPower": {
+    "NAME": "Illusion Star",
+    "DESCRIPTIONS": [
+      "Al inicio de tu turno, transforma #b",
+      " carta(s) de tu mano."
+    ]
+  },
+  "MilliPulsaPower": {
+    "NAME": "Millisecond Pulsars",
+    "DESCRIPTIONS": [
+      "Los efectos de #yAmplify ya no requieren energía extra [E] para activarse.",
+      ""
+    ]
+  },
+  "SatellIllusPower": {
+    "NAME": "Satellite Illusion",
+    "DESCRIPTIONS": [
+      "Cuando usas una carta que no está en tu mazo principal, roba #b",
+      " carta."
+    ]
+  },
+  "TempStrength": {
+    "NAME": "Temproy Strength",
+    "DESCRIPTIONS": [
+      "Tu próximo golpe inflige #b",
+      " daño adicional."
+    ]
+  },
+  "TempStrengthLoss": {
+    "NAME": "Temproy Strength Loss",
+    "DESCRIPTIONS": [
+      "El daño de esta criatura se reduce en #b",
+      " este turno."
+    ]
+  },
+  "ExtraEnergyPower": {
+    "NAME": "Extra Energy",
+    "DESCRIPTIONS": [
+      "Ganas ",
+      " energía adicional cada turno."
+    ]
+  },
+  "ChargeUpPower": {
+    "NAME": "Charge Up",
+    "DESCRIPTIONS": [
+      "Tienes #b",
+      " acumulaciones de #yCharge-up, ",
+      "lo que te otorga #b",
+      " veces más daño."
+    ]
+  },
+  "PolarisUniquePower": {
+    "NAME": "Guiding Star",
+    "DESCRIPTIONS": [
+      "Si #yGuidingStar está en tu pila de robo, obtén energía extra [E] al inicio de cada turno."
+    ]
+  },
+  "OrrerysSunPower": {
+    "NAME": "Orrerys Sun",
+    "DESCRIPTIONS": [
+      "Cada vez que consumes #yCharge-up, ganas #b",
+      " Bloqueos."
+    ]
+  },
+  "Charged": {
+    "NAME": "Charged!",
+    "DESCRIPTIONS": [
+      "Tu próximo golpe infligirá #b",
+      " veces más daño."
+    ]
+  },
+  "BlazeAwayPower": {
+    "NAME": "Blaze Away",
+    "DESCRIPTIONS": [
+      "Añadirá #b",
+      " copia(s) de la próxima carta de ataque que uses."
+    ]
+  },
+  "MPPower": {
+    "NAME": "Max Power",
+    "DESCRIPTIONS": [
+      "Tu daño se multiplica por #b",
+      " este turno."
+    ]
+  },
+  "EnergyFlowPower": {
+    "NAME": "Energy Flow",
+    "DESCRIPTIONS": [
+      "Al final de tu turno, gana #b",
+      " #yCharge-up."
+    ]
+  },
+  "PulseMagicPower": {
+    "NAME": "Pulse Magic",
+    "DESCRIPTIONS": [
+      "No necesitas pagar [E] para activar efectos #yAmplify este turno."
+    ]
+  },
+  "SingularityPower": {
+    "NAME": "Singularity",
+    "DESCRIPTIONS": [
+      "Cada vez que juegues una carta que cueste 0, un Ataque aleatorio en tu mano inflige #b",
+      " daño adicional en este combate."
+    ]
+  },
+  "WitchOfGreedGold": {
+    "NAME": "Witch Of Greed",
+    "DESCRIPTIONS": [
+      "Al final del combate, ganas #b",
+      " oro."
+    ]
+  },
+  "WitchOfGreedPotion": {
+    "NAME": "Witch Of Greed",
+    "DESCRIPTIONS": [
+      "Al final del combate, obtienes #b",
+      " poción aleatoria."
+    ]
+  },
+  "OneTimeOffPlusPower": {
+    "NAME": "One Time Off",
+    "DESCRIPTIONS": [
+      "No activarás #yAmplify ni #yCharge-up este turno."
+    ]
+  },
+  "OneTimeOffPower": {
+    "NAME": "One Time Off",
+    "DESCRIPTIONS": [
+      "No activarás #yAmplify este turno."
+    ]
+  },
+  "SuperNovaPower": {
+    "NAME": "SuperNova",
+    "DESCRIPTIONS": [
+      "Cuando #yExhaust una #yBurn, ganas #b",
+      "Cuando #yExhaust una #yCurse o un #Status, ganas #b",
+      " #yStrength. NL Ya no recibes daño de #yBurn. NL #yExhausta tu mano cuando tu turno termina."
+    ]
+  },
+  "CasketOfStarPlusPower": {
+    "NAME": "Casket Of Star",
+    "DESCRIPTIONS": [
+      "Añade #b",
+      " #yupgraded #ySpark a tu mano cada vez que ganes #yBloqueo."
+    ]
+  },
+  "CasketOfStarPower": {
+    "NAME": "Casket Of Star",
+    "DESCRIPTIONS": [
+      "Añade #b",
+      " #ySpark a tu mano cada vez que ganes #yBloqueo."
+    ]
+  },
+  "GalacticHaloPower": {
+    "NAME": "Galactic Halo",
+    "DESCRIPTIONS": [
+      "Al final de tu turno, gana #b",
+      " #yBloqueo por cada #yAtaque que jugaste este turno."
+    ]
+  },
+  "ManaRampagePower": {
+    "NAME": "Mana Rampage",
+    "DESCRIPTIONS": [
+      "Tu próximo #yAtaque se jugará #b",
+      " veces adicionales este turno."
+    ]
+  },
+  "PropBagPower": {
+    "NAME": "Portable Prop Bag",
+    "DESCRIPTIONS": [
+      "Cuando la batalla termine, perderás #y",
+      "."
+    ]
+  },
+  "UltraShortWavePower": {
+    "NAME": "Ultimate ShortWave",
+    "DESCRIPTIONS": [
+      "El efecto de tu #yUltimate #yShortWave se amplifica #b",
+      " veces."
+    ]
+  },
+  "DarkSparkPower": {
+    "NAME": "Dark Spark",
+    "DESCRIPTIONS": [
+      "Cada carta con 'Spark' en su nombre que juegues te otorgará #b",
+      " #yCharge-up adicional este turno."
+    ]
+  },
+  "MagicChantPower": {
+    "NAME": "Magic Chant",
+    "DESCRIPTIONS": [
+      "Reduce el coste de #b",
+      " el próximo turno."
+    ]
+  },
+  "SatelIllusPower": {
+    "NAME": "Satellite Illusion",
+    "DESCRIPTIONS": [
+      "Durante tu turno, cuando aumente el número de cartas en tu pila de robo, gana #b",
+      " [E]."
+    ]
+  },
+  "GrandCrossPower": {
+    "NAME": "Amplified",
+    "DESCRIPTIONS": [
+      "Has activado un efecto #yAmplify este turno."
+    ]
+  },
+  "Diaspora": {
+    "NAME": "Diaspora",
+    "DESCRIPTIONS": [
+      "Al final del turno, mata instantáneamente a esta criatura si su salud es menor que #b",
+      "."
+    ]
+  },
+  "TalismanPower": {
+    "NAME": "Five-Colored Talisman",
+    "DESCRIPTIONS": [
+      "Al inicio de tu turno, añade #b",
+      " habilidad #yaleatoria a tu mano."
+    ]
+  },
+  "Wraith": {
+    "NAME": "Wraith",
+    "DESCRIPTIONS": [
+      "#yExhausta una carta aleatoria de tu mano después del inicio de tu turno."
+    ]
+  },
+  "Nebula": {
+    "NAME": "Nebula",
+    "DESCRIPTIONS": [
+      "Gana ",
+      " Armadura Platinada cuando pierdas Bloqueo por enemigos o cartas."
+    ]
+  },
+  "LimboContact": {
+    "NAME": "Undead Contact",
+    "DESCRIPTIONS": [
+      "Cada vez que este enemigo te ataque, gana una acumulación de #yWraith. NL Al morir, aplica #b1 #yWraith a ti."
+    ]
+  },
+  "InfernoClaw": {
+    "NAME": "Inferno Claw",
+    "DESCRIPTIONS": [
+      "Cada vez que recibas daño de ataque de este enemigo, añade un #yBurn a tu pila de robo."
+    ]
+  }
+}

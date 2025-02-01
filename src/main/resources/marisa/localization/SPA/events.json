@@ -1,0 +1,34 @@
+{
+  "Mushrooms_MRS": {
+    "NAME": "Mushrooms",
+    "DESCRIPTIONS": [
+      "Cedes al deseo antinatural de comer. A medida que consumes hongo tras hongo, te sientes entrando en un trance y pierdes el conocimiento. Al despertar, te sientes muy extraño. NL Te #gcuras #b25% de tu HP, pero también quedas #rinfectado.",
+      "#r@¡Emboscado!!@ NL ¡Roedores infestados por los hongos aparecen de la nada!",
+      "Entras en un corredor lleno de #b~hipnotizantes~ #b~colores~ #b~de~ #b~hongos.~ NL Estos hongos no son como ningún otro que hayas visto antes. NL Quieres recolectar algunos, pero te sientes extrañamente impulsado a comer #b~uno...~"
+    ],
+    "OPTIONS": [
+      "[Recolectar] #rEnfurecer #ra #rlos #rHongos.",
+      "[Comer] #gCurarte #g",
+      " #gHP. #rConvertirte #ren #rMaldito #r- #rParásito.",
+      "[Luchar]",
+      "[Salir]"
+    ]
+  },
+  "OrinTheCat": {
+    "NAME": "BlackCat",
+    "DESCRIPTIONS": [
+      "Un #ygato #bnegro que aparece de la nada se detiene frente a ti, bloqueando tu camino. NL El gato apesta a #r~Muerte~ #r~y~ #r~Desgracia~, y cuando te mira, sientes un escalofrío en la espalda. NL Te maúlla, intentando atraer tu atención.",
+      "Parece que el gato no quiere dejarte ir así nomás. Mostró sus garras y colmillos y se abalanzó sobre ti...",
+      "El gato parece satisfecho y se fue corriendo, pero sientes que el olor de #r~Muerte~ #r~y~ #r~Desgracia~ permanece...",
+      "El gato saltó a tus brazos... Parece que tienes compañía ahora.",
+      "Al verte ignorarlo, el gato simplemente se fue."
+    ],
+    "OPTIONS": [
+      "[Acariciar al gato] #rConvertirte #ren #rMaldito #r- #rEspectro.",
+      "[Ignorar al gato] #gIntentar #girte #ginmediatamente.",
+      "[Luchar]",
+      "[Salir]",
+      "[Acariciar al gato]"
+    ]
+  }
+}

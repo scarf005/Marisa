@@ -1,6 +1,6 @@
 import { walk } from "@std/fs"
 
-export const langCodes = ["ENG", "FRA", "JPN", "KOR", "ZHS", "ZHT"] as const
+export const langCodes = ["ENG", "FRA", "JPN", "KOR", "ZHS", "ZHT", "SPA"] as const
 export type LangCode = typeof langCodes[number]
 export const projectRoot = await new Deno.Command("git", {
   args: ["rev-parse", "--show-toplevel"],

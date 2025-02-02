@@ -1,0 +1,442 @@
+{
+  "Strike_MRS": {
+    "NAME": "Simple Spark",
+    "DESCRIPTION": "¡Inflige !D! de daño."
+  },
+  "Defend_MRS": {
+    "NAME": "Defend",
+    "DESCRIPTION": "¡Gana !B! de Bloqueo."
+  },
+  "AsteroidBelt": {
+    "NAME": "Asteroid Belt",
+    "DESCRIPTION": "Gana !B! Bloqueo. NL Amplificar [E] : En el siguiente turno, gana !B! Bloqueo."
+  },
+  "BigCrunch": {
+    "NAME": "Big Crunch",
+    "DESCRIPTION": "Agota la mitad de las cartas en tu pila de descarte y en tu pila de robo. Gana  [E]  y roba 1 carta por cada !M! cartas agotadas. NL Agota."
+  },
+  "BlazingStar": {
+    "NAME": "Blazing Star",
+    "DESCRIPTION": "Inflige !B! daño. Inflige !M! daño adicional por cada Quemadura en tu mano. NL Amplificar  [E]  : Inflige el doble de daño."
+  },
+  "DarkSpark": {
+    "NAME": "Dark Spark",
+    "DESCRIPTION": "Agota las !M! cartas superiores de tu pila de robo, inflige !D! daño a TODOS los enemigos por cada Ataque agotado."
+  },
+  "DeepEcoloBomb": {
+    "NAME": "Deep Ecological Bomb",
+    "DESCRIPTION": "Inflige !D! daño a un enemigo aleatorio, luego reduce su Fuerza en !M! este turno. NL Amplificar  [E]  : Aplica este efecto nuevamente."
+  },
+  "DoubleSpark": {
+    "NAME": "Double Spark",
+    "DESCRIPTION": "Inflige !D! daño. Agrega 1 Chispa a tu mano.",
+    "UPGRADE_DESCRIPTION": "Inflige !D! daño. Agrega 1 Chispa Mejorada a tu mano."
+  },
+  "EarthLightRay": {
+    "NAME": "Earthlight Ray",
+    "DESCRIPTION": "Cura !M! HP. Agota. NL Amplificar  [E]  : Pon una carta aleatoria de tu pila de descarte en tu mano.",
+    "UPGRADE_DESCRIPTION": "Cura !M! HP. Agota. NL Amplificar  [E]  : Pon una carta de tu pila de descarte en tu mano."
+  },
+  "EscapeVelocity": {
+    "NAME": "Escape Velocity",
+    "DESCRIPTION": "Al inicio de cada turno, roba 2 cartas más y agrega una Quemadura a tu mano.",
+    "UPGRADE_DESCRIPTION": "Innato. Al inicio de cada turno, roba 2 cartas más y agrega una Quemadura a tu mano."
+  },
+  "FinalSpark": {
+    "NAME": "Final Spark",
+    "DESCRIPTION": "Cuesta 1 menos  [E]  por cada carta que contenga \"Chispa\" jugada en este combate. NL Inflige !D! daño a TODOS los enemigos. NL Restablece el costo de esta carta.",
+    "UPGRADE_DESCRIPTION": "Retén. NL Cuesta 1 menos  [E]  por cada carta que contenga \"Chispa\" jugada en este combate. NL Inflige !D! daño a TODOS los enemigos. NL Restablece el costo de esta carta."
+  },
+  "GrandCross": {
+    "NAME": "Grand Cross",
+    "DESCRIPTION": "Inflige !D! daño. NL Cuesta 0 si has activado un efecto de Amplificar este turno."
+  },
+  "GravityBeat": {
+    "NAME": "Gravity Beat",
+    "DESCRIPTION": "Inflige !D! daño y roba una carta por cada !B! cartas en tu mazo principal.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " vez(s))."
+    ]
+  },
+  "IllusionStar": {
+    "NAME": "Illusion Star",
+    "DESCRIPTION": "Agrega !M! cartas aleatorias a tu mano. Pon una carta de tu mano en la parte superior de tu pila de robo. NL Agota.",
+    "UPGRADE_DESCRIPTION": "Agrega !M! cartas aleatorias a tu mano. Pon una carta de tu mano en la parte superior de tu pila de robo."
+  },
+  "MachineGunSpark": {
+    "NAME": "Machine Gun Spark",
+    "DESCRIPTION": "Inflige !D! daño !M! veces. NL Agota."
+  },
+  "MagicAbsorber": {
+    "NAME": "Magic Absorber",
+    "DESCRIPTION": "Gana !B! Bloqueo. Elimina un debuff aleatorio de ti mismo. NL Agota."
+  },
+  "MasterSpark": {
+    "NAME": "Master Spark",
+    "DESCRIPTION": "Inflige !D! daño. NL Amplificar  [E]  : Inflige !B! daño en su lugar."
+  },
+  "MeteoricShower": {
+    "NAME": "Meteoric Shower",
+    "DESCRIPTION": "Agota hasta X + 1 cartas. NL Inflige !D! daño a un enemigo aleatorio 2 veces por cada carta que Agotaste, o 3 veces por cada Quemadura Agotada."
+  },
+  "MilkyWay": {
+    "NAME": "Milky Way",
+    "DESCRIPTION": "Gana !B! Bloqueo. Roba 1 carta. NL TODOS los Ataques en tu mano infligen !M! daño adicional en este combate."
+  },
+  "NonDirectionalLaser": {
+    "NAME": "Non-Directional Laser",
+    "DESCRIPTION": "Inflige !D! daño a TODOS los enemigos, luego inflige !D! daño a un enemigo aleatorio."
+  },
+  "Occultation": {
+    "NAME": "Occultation",
+    "DESCRIPTION": "Descarta tu pila de robo. Gana 1 Bloqueo por cada carta descartada.",
+    "UPGRADE_DESCRIPTION": "Descarta tu pila de robo. Gana 1 Bloqueo por cada carta descartada +3.",
+    "EXTENDED_DESCRIPTION": [
+      "(Gana !B! en total.)",
+      ""
+    ]
+  },
+  "OortCloud": {
+    "NAME": "OortCloud",
+    "DESCRIPTION": "Gana !M! Armadura Plated. NL Amplificar  [E]  : Gana !B! más Armadura Plated.",
+    "UPGRADE_DESCRIPTION": "Gana !M! Armadura Plated. NL Amplificar  [E]  : Gana 3 más Armadura Plated."
+  },
+  "PolarisUnique": {
+    "NAME": "Polaris Unique",
+    "DESCRIPTION": "Innato. Mezcla una Estrella Guiadora en tu pila de robo. Gana  [E]  al inicio de tu turno mientras esté en tu pila de robo (no se acumula).",
+    "UPGRADE_DESCRIPTION": "Innato. Mezcla una Estrella Guiadora en tu pila de robo. Gana  [E]  al inicio de tu turno mientras esté en tu pila de robo."
+  },
+  "SatelliteIllusion": {
+    "NAME": "Satellite Illusion",
+    "DESCRIPTION": "Gana  [E]  cuando el número de cartas en tu pila de robo aumenta durante tu turno.",
+    "UPGRADE_DESCRIPTION": "Innato. Gana  [E]  cuando el número de cartas en tu pila de robo aumenta durante tu turno."
+  },
+  "ShootTheMoon": {
+    "NAME": "Shoot The Moon",
+    "DESCRIPTION": "Elimina un buff aleatorio de tu objetivo si no es un enemigo jefe. Inflige !D! daño. NL Amplificar  [E]  : Elimina TODOS los buffs y inflige !B! daño en su lugar."
+  },
+  "StarDustReverie": {
+    "NAME": "Stardust Reverie",
+    "DESCRIPTION": "Mezcla tu mano en tu pila de robo, luego agrega la misma cantidad de cartas aleatorias a tu mano. NL Agota.",
+    "UPGRADE_DESCRIPTION": "Mezcla tu mano en tu pila de robo, luego agrega la misma cantidad de cartas aleatorias Mejoradas a tu mano. NL Agota."
+  },
+  "UltraShortWave": {
+    "NAME": "Ultimate Shortwave",
+    "DESCRIPTION": "Gana !B!  [E]  y !M! Carga. Aumenta la ganancia de energía y Carga de esta carta en 1 para este combate."
+  },
+  "MillisecondPulsars": {
+    "NAME": "Millisecond Pulsars",
+    "DESCRIPTION": "Los efectos de Amplificar no cuestan  [E]  este combate.",
+    "UPGRADE_DESCRIPTION": "Innato. NL Los efectos de Amplificar no cuestan  [E]  este combate."
+  },
+  "Spark": {
+    "NAME": "Spark",
+    "DESCRIPTION": "Inflige !D! daño. NL Agota."
+  },
+  "UpSweep": {
+    "NAME": "Rising Sweep",
+    "DESCRIPTION": "Inflige !D! daño. Gana !M! Carga."
+  },
+  "GuidingStar": {
+    "NAME": "Guiding Star",
+    "DESCRIPTION": "Retén. NL Si la carta está en tu mano al inicio del turno, gana  [E] ."
+  },
+  "OrrerysSun": {
+    "NAME": "Orrerys Sun",
+    "DESCRIPTION": "Siempre que se consuma Carga, gana !M! bloqueo."
+  },
+  "ChargingUp": {
+    "NAME": "Charging Up",
+    "DESCRIPTION": "Gana !M! Carga. NL Agota.",
+    "UPGRADE_DESCRIPTION": "Gana !M! Carga. NL Amplificar  [E]  : Gana 3 acumulaciones adicionales."
+  },
+  "LuminesStrike": {
+    "NAME": "Luminous Strike",
+    "DESCRIPTION": "Inflige daño igual a 2 veces el número de cartas en tu mano ( !D! daño). NL Amplificar  [E]  : Inflige !B! en su lugar.",
+    "UPGRADE_DESCRIPTION": "Inflige un daño igual a 3 veces el número de cartas en tu mano ( !D! daño). NL Amplificar [E] : Inflige un daño igual a 5 veces tu energía actual en su lugar ( !B! daño)."
+  },
+  "OpenUniverse": {
+    "NAME": "Open Universe",
+    "DESCRIPTION": "Mezcla 5 cartas aleatorias en tu pila de robo. Cada una tiene un !D! % de probabilidad de estar Mejorada. NL Roba !M! cartas.",
+    "UPGRADE_DESCRIPTION": "Mezcla 5 cartas aleatorias en tu pila de robo. Roba !M! cartas."
+  },
+  "BlazeAway": {
+    "NAME": "Blaze Away",
+    "DESCRIPTION": "Juega el último Ataque que jugaste este turno !M! vez(s). NL Agota.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Último Ataque : ",
+      " ).",
+      " NL (No has jugado un Ataque este turno.)"
+    ]
+  },
+  "MaximisePower": {
+    "NAME": "Max Power",
+    "DESCRIPTION": "Convierte tus acumulaciones de Carga en energía. Agrega 1 Agotamiento a tu mano. El daño de tus ataques se duplica este turno. NL Agota.",
+    "UPGRADE_DESCRIPTION": "Convierte tus acumulaciones de Carga en energía. Agrega 1 Agotamiento a tu mano. NL El daño de tus ataques se duplica este turno."
+  },
+  "StarlightTyphoon": {
+    "NAME": "Starlight Typhoon",
+    "DESCRIPTION": "Agota TODAS las cartas que no sean Ataques en tu mano. Agrega la misma cantidad de Chispas a tu mano.",
+    "UPGRADE_DESCRIPTION": "Agota TODAS las cartas que no sean Ataques en tu mano. Agrega la misma cantidad de Chispas Mejoradas a tu mano.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Inflige !B! de daño.)",
+      ""
+    ]
+  },
+  "StarlightTyphoon_D": {
+    "NAME": "Starlight Typhoon",
+    "DESCRIPTION": "Agota TODAS las cartas que no sean Ataques en tu mano. Agrega la misma cantidad de Chispas a tu mano.",
+    "UPGRADE_DESCRIPTION": "Agota TODAS las cartas que no sean Ataques en tu mano. Agrega la misma cantidad de Chispas Mejoradas a tu mano."
+  },
+  "SuperPerseids": {
+    "NAME": "Super Perseids",
+    "DESCRIPTION": "Injugable. Cuando robes esta carta, gana [E]. NL Si esta carta es Agotada, inflige !D! daño a un enemigo aleatorio."
+  },
+  "MysteriousBeam": {
+    "NAME": "Mysterious Beam",
+    "DESCRIPTION": "Agrega un Ataque aleatorio a tu mano. Inflige daño igual al daño de la carta agregada.",
+    "UPGRADE_DESCRIPTION": "Agrega un Ataque aleatorio mejorado a tu mano. Inflige daño igual al daño de la carta agregada."
+  },
+  "ShootingEcho": {
+    "NAME": "Shooting Echo",
+    "DESCRIPTION": "Inflige !D! daño. NL Agota una carta. NL Si la carta que agotas es Quemadura, devuelve esta carta a tu mano.",
+    "UPGRADE_DESCRIPTION": "Agota una carta. Agrega un Shooting Echo Mejorado a tu mano. NL Inflige !D! daño. NL Agota."
+  },
+  "EnergyFlow": {
+    "NAME": "Energy Flow",
+    "DESCRIPTION": "Gana !M! acumulaciones de Carga al final de tu turno."
+  },
+  "PowerUp": {
+    "NAME": "Upgrade!",
+    "DESCRIPTION": "TODOS los Ataques en tu mano infligen !M! de daño adicional en este combate."
+  },
+  "WitchLeyline": {
+    "NAME": "Witch Leyline",
+    "DESCRIPTION": "Inflige !D! daño. Agrega !M! Quemaduras a tu mano."
+  },
+  "JA": {
+    "NAME": "Warming Up",
+    "DESCRIPTION": "Inflige !D! daño. Agrega un *Rising *Sweep, una *Chispa y una *Witch *Leyline a tu mano.",
+    "UPGRADE_DESCRIPTION": "Inflige !D! daño. Agrega un *Rising *Sweep+, una *Chispa+ y una *Witch *Leyline+."
+  },
+  "AbsoluteMagnitude": {
+    "NAME": "Absolute Magnitude",
+    "DESCRIPTION": "Inflige daño igual a 2 veces tu acumulación de Carga (Inflige !D! de daño).",
+    "UPGRADE_DESCRIPTION": "Inflige daño igual a 3 veces tu acumulación de Carga (Inflige !D! de daño)."
+  },
+  "DragonMeteor": {
+    "NAME": "Dragon Meteor",
+    "DESCRIPTION": "Inflige !D! de daño. NL Inflige !M! de daño adicional por cada carta en tu pila de agotadas."
+  },
+  "EventHorizon": {
+    "NAME": "Event Horizon",
+    "DESCRIPTION": "!M! vez(s) por turno, cuando activas un efecto de Amplificar, puedes poner un Ataque de tu pila de descarte en tu mano."
+  },
+  "PulseMagic": {
+    "NAME": "Pulse Magic",
+    "DESCRIPTION": "En el siguiente turno, gana [E]. Amplificar [E] : Los efectos de Amplificar no cuestan [E] este turno.",
+    "UPGRADE_DESCRIPTION": "En el siguiente turno, gana [E] [E]. Amplificar [E] : Los efectos de Amplificar no cuestan [E] este turno."
+  },
+  "DC": {
+    "NAME": "66C",
+    "DESCRIPTION": "Innato. NL Inflige !D! daño. NL Inflige el doble de daño si no hay cartas en tu pila de descarte."
+  },
+  "Singularity": {
+    "NAME": "Singularity",
+    "DESCRIPTION": "Cada vez que juegas una carta que cueste 0, aumenta el daño de un Ataque aleatorio en tu mano en !M!."
+  },
+  "SporeBomb": {
+    "NAME": "Spore Crump",
+    "DESCRIPTION": "Aplica !M! Vulnerable a un enemigo. NL Amplificar [E] : Aplica !M! Vulnerable a TODOS los enemigos en su lugar.",
+    "UPGRADE_DESCRIPTION": "Aplica !M! Vulnerable a todos los enemigos. NL Amplificar [E] : 1 acumulación más."
+  },
+  "FluorensentBeam": {
+    "NAME": "Fluorensent Beam",
+    "DESCRIPTION": "TODOS los enemigos pierden !D! HP. NL Amplificar [E] [E] : Inflige !B! en su lugar."
+  },
+  "WitchOfGreed": {
+    "NAME": "Witch Of Greed",
+    "DESCRIPTION": "Al final del combate, gana !M! oro. NL Amplificar [E] : También obtén una poción aleatoria."
+  },
+  "TreasureHunter": {
+    "NAME": "TreasureHunter",
+    "DESCRIPTION": "Inflige !D! de daño. NL Si esto mata a un enemigo que no sea un minion en una sala de Élite o Jefe, al final del combate, obtén una reliquia aleatoria. NL Agota."
+  },
+  "Robbery": {
+    "NAME": "Robbery",
+    "DESCRIPTION": "Inflige !D! de daño. Gana oro igual al daño no bloqueado infligido. NL Agota. NL Amplificar [E] : Duplica el oro que obtienes."
+  },
+  "6A": {
+    "NAME": "6A",
+    "DESCRIPTION": "Inflige !D! de daño. Gana Bloqueo igual al daño no bloqueado infligido."
+  },
+  "CircumpolarStar": {
+    "NAME": "Circumpolar Star",
+    "DESCRIPTION": "Gana !B! Bloqueo. Roba !M! carta(s). Aumenta la cantidad de robo de esta carta en 1 durante este combate."
+  },
+  "RefractionSpark": {
+    "NAME": "Refraction Spark",
+    "DESCRIPTION": "Inflige !D! de daño. Aumenta el daño de TODAS las cartas de Sparks en tu mano por el daño no bloqueado infligido. NL Amplificar [E] : Inflige !B! de daño en su lugar."
+  },
+  "MagicChant": {
+    "NAME": "Magic Chant",
+    "DESCRIPTION": "Elige una carta de tu pila de robo, agrégala a tu mano y mejórala. NL Agota.",
+    "UPGRADE_DESCRIPTION": "Elige una carta de tu pila de robo, agrégala a tu mano y mejórala."
+  },
+  "UnstableBomb": {
+    "NAME": "Unstable Bomb",
+    "DESCRIPTION": "Inflige daño aleatorio ( !D! a !B! ) a un enemigo aleatorio 4 veces."
+  },
+  "SuperNova": {
+    "NAME": "Supernova",
+    "DESCRIPTION": "Ya no recibes daño por Quemaduras. Cada vez que Agotas una Quemadura, gana !M! Fuerza. NL Agota tu mano al final de cada turno.",
+    "UPGRADE_DESCRIPTION": "Innato. NL Ya no recibes daño por Quemaduras. Cada vez que Agotas una Quemadura, gana 1 Fuerza. NL Agota tu mano al final de cada turno."
+  },
+  "OneTimeOff": {
+    "NAME": "One Time Off",
+    "DESCRIPTION": "Gana !B! Bloqueo. No puedes activar efectos de Amplificar este turno. NL Roba !M! carta(s) el próximo turno.",
+    "UPGRADE_DESCRIPTION": "Gana !B! Bloqueo. No puedes activar efectos de Amplificar ni consumir Carga este turno. NL Roba !M! carta(s) el próximo turno."
+  },
+  "DarkMatter": {
+    "NAME": "Dark Matter",
+    "DESCRIPTION": "Solo puede jugarse una vez por turno. NL Baraja 2 copias de esta carta en tu pila de robo. Roba 1 carta. Cuando esta carta es Agotada, gana !B! Bloqueo. NL Etérea.",
+    "UPGRADE_DESCRIPTION": "Solo puede jugarse una vez por turno. NL Baraja 2 copias de esta carta en tu pila de robo. Roba 1 carta. Cuando esta carta es Agotada, gana !B! Bloqueo. NL Etérea.",
+    "EXTENDED_DESCRIPTION": [
+      "No puedo jugar Dark Matter nuevamente este turno.",
+      ""
+    ]
+  },
+  "GasGiant": {
+    "NAME": "Gas Giant",
+    "DESCRIPTION": "Gana !B! Bloqueo. Agrega !M! Quemadura a tu mano."
+  },
+  "CasketOfStar": {
+    "NAME": "Casket Of Star",
+    "DESCRIPTION": "Cada vez que ganas Bloqueo, agrega una Chispa a tu mano.",
+    "UPGRADE_DESCRIPTION": "Cada vez que ganas Bloqueo, agrega una Chispa Mejorada a tu mano."
+  },
+  "ChargeUpSpray": {
+    "NAME": "Charge-Up Spray",
+    "DESCRIPTION": "Inflige !D! de daño. NL Si esta carta consume Carga, gana [E] y roba !M! cartas."
+  },
+  "EnergyRecoil": {
+    "NAME": "Energy Recoil",
+    "DESCRIPTION": "Gana Bloqueo igual a tu Carga.",
+    "UPGRADE_DESCRIPTION": "Gana Bloqueo igual a tu Carga + 3.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gana ",
+      " Bloqueo.)"
+    ]
+  },
+  "GalacticHalo": {
+    "NAME": "Galactic Halo",
+    "DESCRIPTION": "Gana !B! Bloqueo y !M! Carga."
+  },
+  "ManaConvection": {
+    "NAME": "Mana Convection",
+    "DESCRIPTION": "Agota hasta !M! cartas, gana [E] por cada carta agotada. NL Agota."
+  },
+  "ManaRampage": {
+    "NAME": "Mana Rampage",
+    "DESCRIPTION": "Juega X ataques aleatorios.",
+    "UPGRADE_DESCRIPTION": "Juega X ataques mejorados aleatorios."
+  },
+  "StarBarrage": {
+    "NAME": "Star Barrage",
+    "DESCRIPTION": "Inflige !D! de daño !M! veces. NL Cada vez que esta carta se juega, inflige daño 1 vez más durante este combate."
+  },
+  "AFriendsGift": {
+    "NAME": "A Friend's Gift",
+    "DESCRIPTION": "Imjugable. Transfórmate en una carta aleatoria de tres cartas específicas.",
+    "UPGRADE_DESCRIPTION": "Conservar. Inflige !D! de daño. Aumenta el daño en 2 cuando comienza tu turno. Agota. NL Amplificar [E] : Inflige !B! de daño en su lugar, no se agota."
+  },
+  "BinaryStars": {
+    "NAME": "Binary Stars",
+    "DESCRIPTION": "Elige agregar a tu mano Black Flare Star o White Dwarf. NL Amplificar [E] : Agrega ambos a tu mano en su lugar.",
+    "UPGRADE_DESCRIPTION": "Elige agregar y mejorar Black Flare Star o White Dwarf a tu mano. NL Amplificar [E] : Agrega ambos a tu mano en su lugar."
+  },
+  "CollectingQuirk": {
+    "NAME": "Collecting Quirk",
+    "DESCRIPTION": "Inflige !D! de daño a un enemigo aleatorio por cada !M! Reliquias que tengas.",
+    "EXTENDED_DESCRIPTION": [
+      "(Inflige daño !B! vez/veces)",
+      ""
+    ]
+  },
+  "FungusSplash": {
+    "NAME": "Fungus Brew",
+    "DESCRIPTION": "Agota una carta. Lanza una poción a tu objetivo. NL El tipo de poción depende del tipo de carta que agotes. NL Agota.",
+    "UPGRADE_DESCRIPTION": "Agota una carta. Lanza una poción a tu objetivo. NL El tipo de poción depende del tipo de carta que agotes."
+  },
+  "PropBag": {
+    "NAME": "Portable Prop Bag",
+    "DESCRIPTION": "Obtén una reliquia aleatoria. NL Pierdes la reliquia cuando termina la batalla. NL Agota.",
+    "UPGRADE_DESCRIPTION": " Innato. NL Obtén una reliquia aleatoria. NL Pierdes la reliquia cuando termina la batalla. NL Agota."
+  },
+  "BlackFlareStar": {
+    "NAME": "Black Flare Star",
+    "DESCRIPTION": "Solo puede jugarse cuando tienes 4 o más cartas en tu mano. Agota. NL Descarta cualquier cantidad de cartas de tu mano y gana !B! Bloqueo por cada una.",
+    "EXTENDED_DESCRIPTION": [
+      "No tengo 4 cartas en mi mano.",
+      ""
+    ]
+  },
+  "WhiteDwarf": {
+    "NAME": "White Dwarf",
+    "DESCRIPTION": "Solo puede jugarse cuando tienes 4 o menos cartas en tu mano. Agota. NL Inflige !D! de daño (2 × el tamaño de tu pila de descarte). Agrega 2 Quemaduras a tu mano.",
+    "UPGRADE_DESCRIPTION": "Solo puede jugarse cuando tienes 4 o menos cartas en tu mano. Agota. NL Inflige !D! de daño (3 × el tamaño de tu pila de descarte). Agrega 2 Quemaduras a tu mano.",
+    "EXTENDED_DESCRIPTION": [
+      "Tengo más de 4 cartas en mi mano.",
+      ""
+    ]
+  },
+  "FairyDestructionRay": {
+    "NAME": "Fairy Destruction Ray",
+    "DESCRIPTION": "Inflige !D! de daño a todos los enemigos. Amplificar [E] [E] : Elimina instantáneamente a aquellos con !M! o menos HP."
+  },
+  "Orbital": {
+    "NAME": "Orbital",
+    "DESCRIPTION": "Imjugable. Cuando esta carta es robada, roba 1 carta. NL Si esta carta es Agotada, coloca !M! carta(s) de tu pila de agotadas en tu mano."
+  },
+  "ExplosiveMarionette": {
+    "NAME": "Explosive Marionette",
+    "DESCRIPTION": "Conservar. Inflige !D! de daño. NL Amplificar [E] : Inflige el doble de daño. Agota."
+  },
+  "OpticalCamouflage": {
+    "NAME": "Optical Camouflage",
+    "DESCRIPTION": "Conservar. Gana !B! Bloqueo. NL Amplificar [E] : Gana el doble de Bloqueo. Agota."
+  },
+  "FiveColoredTalisman": {
+    "NAME": "Five-Colored Talisman",
+    "DESCRIPTION": "Conservar. Agrega una habilidad aleatoria a tu mano al comienzo de tu turno."
+  },
+  "AlicesGift": {
+    "NAME": "Alice's Gift",
+    "DESCRIPTION": "Conservar. Inflige !D! de daño. NL Amplificar [E] [E] : Inflige el triple de daño. NL Agota."
+  },
+  "Exhaustion_MRS": {
+    "NAME": "Exhaustion",
+    "DESCRIPTION": "Imjugable. NL Mientras esté en tu mano, no puedes ganar o consumir Carga."
+  },
+  "UltimateShortwave": {
+    "NAME": "Ultimate Shortwave",
+    "DESCRIPTION": "Gana !B! [E] y !M! Carga. Aumenta la ganancia de Carga de esta carta en !D! y la ganancia de energía en 1 durante esta batalla."
+  },
+  "NebulaRing": {
+    "NAME": "Nebula Ring",
+    "DESCRIPTION": "Gana !M! Armadura Platinada cada vez que pierdes Bloqueo por enemigos o cartas."
+  },
+  "SprinkleStarSeal": {
+    "NAME": "Sprinkle Star Seal",
+    "DESCRIPTION": "Aplica 99 Débil. NL Agota."
+  },
+  "Wraith": {
+    "NAME": "Wraith",
+    "DESCRIPTION": "Imjugable. NL Al final de tu turno, gana 1 Wraith."
+  },
+  "Acceleration": {
+    "NAME": "Acceleration",
+    "DESCRIPTION": "Roba !B! cartas. NL Amplificar [E] : Roba !M! más."
+  }
+}

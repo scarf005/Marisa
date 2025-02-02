@@ -70,6 +70,7 @@ body:
         - Korean (KOR)
         - Simplified Chinese (ZHS)
         - Traditional Chinese (ZHT)
+        - Spanish (SPA)
     validations:
       required: true
 

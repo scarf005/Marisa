@@ -8,13 +8,13 @@ Deno.test(async function testDirEntries() {
     .map((x) => x.name)
     .map((x) => x.replace(".json", ""))
 
-  const expected = [
+  const expected = new Set([
     "keywords",
     "events",
     "cards",
     "relics",
     "powers",
     "potions",
-  ]
-  assertEquals(entries, expected)
+  ])
+  assertEquals(new Set(entries), expected)
 })

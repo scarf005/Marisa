@@ -14,7 +14,7 @@ function schemaSettingsGen(name: string) {
 if (import.meta.main) {
   const settingsFile = `${projectRoot}/.vscode/settings.json`
   const settings = JSON.parse(await Deno.readTextFile(settingsFile))
-  const schemas = names.map(schemaSettingsGen)
+  const schemas = names.map(schemaSettingsGen).toSorted((a, b) => a.url.localeCompare(b.url))
   const newSettings = { ...settings, "json.schemas": schemas }
 
   await Deno.writeTextFile(settingsFile, JSON.stringify(newSettings, null, 2) + "\n")

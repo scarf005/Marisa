@@ -24,15 +24,15 @@
   "json.schemas": [
     {
       "fileMatch": [
-        "src/main/resources/marisa/localization/ENG/keywords.json",
-        "src/main/resources/marisa/localization/FRA/keywords.json",
-        "src/main/resources/marisa/localization/JPN/keywords.json",
-        "src/main/resources/marisa/localization/KOR/keywords.json",
-        "src/main/resources/marisa/localization/ZHS/keywords.json",
-        "src/main/resources/marisa/localization/ZHT/keywords.json",
-        "src/main/resources/marisa/localization/SPA/keywords.json"
+        "src/main/resources/marisa/localization/ENG/cards.json",
+        "src/main/resources/marisa/localization/FRA/cards.json",
+        "src/main/resources/marisa/localization/JPN/cards.json",
+        "src/main/resources/marisa/localization/KOR/cards.json",
+        "src/main/resources/marisa/localization/ZHS/cards.json",
+        "src/main/resources/marisa/localization/ZHT/cards.json",
+        "src/main/resources/marisa/localization/SPA/cards.json"
       ],
-      "url": "./src/main/resources/marisa/localization/schemas/keywords.json"
+      "url": "./src/main/resources/marisa/localization/schemas/cards.json"
     },
     {
       "fileMatch": [
@@ -48,27 +48,27 @@
     },
     {
       "fileMatch": [
-        "src/main/resources/marisa/localization/ENG/cards.json",
-        "src/main/resources/marisa/localization/FRA/cards.json",
-        "src/main/resources/marisa/localization/JPN/cards.json",
-        "src/main/resources/marisa/localization/KOR/cards.json",
-        "src/main/resources/marisa/localization/ZHS/cards.json",
-        "src/main/resources/marisa/localization/ZHT/cards.json",
-        "src/main/resources/marisa/localization/SPA/cards.json"
+        "src/main/resources/marisa/localization/ENG/keywords.json",
+        "src/main/resources/marisa/localization/FRA/keywords.json",
+        "src/main/resources/marisa/localization/JPN/keywords.json",
+        "src/main/resources/marisa/localization/KOR/keywords.json",
+        "src/main/resources/marisa/localization/ZHS/keywords.json",
+        "src/main/resources/marisa/localization/ZHT/keywords.json",
+        "src/main/resources/marisa/localization/SPA/keywords.json"
       ],
-      "url": "./src/main/resources/marisa/localization/schemas/cards.json"
+      "url": "./src/main/resources/marisa/localization/schemas/keywords.json"
     },
     {
       "fileMatch": [
-        "src/main/resources/marisa/localization/ENG/relics.json",
-        "src/main/resources/marisa/localization/FRA/relics.json",
-        "src/main/resources/marisa/localization/JPN/relics.json",
-        "src/main/resources/marisa/localization/KOR/relics.json",
-        "src/main/resources/marisa/localization/ZHS/relics.json",
-        "src/main/resources/marisa/localization/ZHT/relics.json",
-        "src/main/resources/marisa/localization/SPA/relics.json"
+        "src/main/resources/marisa/localization/ENG/potions.json",
+        "src/main/resources/marisa/localization/FRA/potions.json",
+        "src/main/resources/marisa/localization/JPN/potions.json",
+        "src/main/resources/marisa/localization/KOR/potions.json",
+        "src/main/resources/marisa/localization/ZHS/potions.json",
+        "src/main/resources/marisa/localization/ZHT/potions.json",
+        "src/main/resources/marisa/localization/SPA/potions.json"
       ],
-      "url": "./src/main/resources/marisa/localization/schemas/relics.json"
+      "url": "./src/main/resources/marisa/localization/schemas/potions.json"
     },
     {
       "fileMatch": [
@@ -84,15 +84,15 @@
     },
     {
       "fileMatch": [
-        "src/main/resources/marisa/localization/ENG/potions.json",
-        "src/main/resources/marisa/localization/FRA/potions.json",
-        "src/main/resources/marisa/localization/JPN/potions.json",
-        "src/main/resources/marisa/localization/KOR/potions.json",
-        "src/main/resources/marisa/localization/ZHS/potions.json",
-        "src/main/resources/marisa/localization/ZHT/potions.json",
-        "src/main/resources/marisa/localization/SPA/potions.json"
+        "src/main/resources/marisa/localization/ENG/relics.json",
+        "src/main/resources/marisa/localization/FRA/relics.json",
+        "src/main/resources/marisa/localization/JPN/relics.json",
+        "src/main/resources/marisa/localization/KOR/relics.json",
+        "src/main/resources/marisa/localization/ZHS/relics.json",
+        "src/main/resources/marisa/localization/ZHT/relics.json",
+        "src/main/resources/marisa/localization/SPA/relics.json"
       ],
-      "url": "./src/main/resources/marisa/localization/schemas/potions.json"
+      "url": "./src/main/resources/marisa/localization/schemas/relics.json"
     }
   ],
   "explorer.autoRevealExclude": {

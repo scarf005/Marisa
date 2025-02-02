@@ -30,6 +30,10 @@ if (import.meta.main) {
     }
     case "steam": {
       await $`java -jar mod-uploader.jar upload -w MarisaContinued/`.cwd(stsPath)
+      break
+    }
+    default: {
+      console.log("Usage: releases.ts [github|steam]")
     }
   }
 }

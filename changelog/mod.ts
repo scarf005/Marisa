@@ -69,6 +69,10 @@ if (import.meta.main) {
     case "nextversion": {
       await $`git tag ${option.version}`
       console.log(await getTags())
+      break
+    }
+    default: {
+      console.log("Usage: changelog.ts [nextversion]")
     }
   }
 }

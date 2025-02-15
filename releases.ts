@@ -1,6 +1,6 @@
 import { join } from "@std/path"
 import $ from "@david/dax"
-import { steam as SteamPath } from "./paths.ts"
+import { modId, steam as SteamPath } from "./paths.ts"
 
 export const basePath = "docs/changelog"
 
@@ -11,7 +11,7 @@ const changelogText = await Deno.readTextFile(changelogPath)
 const title = changelogText.split("\n")[0].replace("# ", "")
 const body = changelogText.split("\n").slice(1).join("\n")
 
-export const jarPath = "build/libs/MarisaContinued.jar"
+export const jarPath = `build/libs/${modId}.jar`
 export const stsPath = join(SteamPath, "SlayTheSpire")
 
 const github = async () => {
@@ -29,7 +29,7 @@ if (import.meta.main) {
       break
     }
     case "steam": {
-      await $`java -jar mod-uploader.jar upload -w MarisaContinued/`.cwd(stsPath)
+      await $`java -jar mod-uploader.jar upload -w ${modId}/`.cwd(stsPath)
       break
     }
     default: {

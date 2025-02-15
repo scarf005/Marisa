@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.com.google.gson.Gson
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-val modID = "MarisaContinued"
+val modID = "marisa"
 val jarFile = "$buildDir/libs/${modID}.jar"
 val changelog = File("docs/changelog/changelog.md").readText()
 val changeBBCode = File("docs/changelog/changelog.bbcode").readText()

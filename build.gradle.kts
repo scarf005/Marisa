@@ -112,8 +112,17 @@ data class Config(
     val visibility: String = "public",
     val changeNote: String,
     val tags: List<String> = listOf(
-        "Touhou", "Character", "Marisa", "Kirisame Marisa",
-        "English", "Simplified Chinese", "Traditional Chinese", "French", "Korean", "Japanese", "Spanish - Spain"
+        "Touhou",
+        "Character",
+        "Marisa",
+        "Kirisame Marisa",
+        "English",
+        "Simplified Chinese",
+        "Traditional Chinese",
+        "French",
+        "Korean",
+        "Japanese",
+        "Spanish - Spain"
     ),
 )
 

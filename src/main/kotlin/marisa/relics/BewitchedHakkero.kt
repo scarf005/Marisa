@@ -54,7 +54,7 @@ class BewitchedHakkero : CustomRelic(
     }
 
     companion object {
-        const val ID = "BewitchedHakkero"
+        const val ID = "marisa:BewitchedHakkero"
         private const val IMG = "marisa/img/relics/Hakkero_1_s.png"
         private const val IMG_OTL = "marisa/img/relics/outline/Hakkero_1_s.png"
     }

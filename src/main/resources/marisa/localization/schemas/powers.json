@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "DarkMatterPower": {
+    "${modId}:DarkMatterPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -27,7 +27,7 @@
       ],
       "additionalProperties": false
     },
-    "ExtraDraw": {
+    "${modId}:ExtraDraw": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -56,7 +56,7 @@
       ],
       "additionalProperties": false
     },
-    "EventHorizonPower": {
+    "${modId}:EventHorizonPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -88,7 +88,7 @@
       ],
       "additionalProperties": false
     },
-    "IllusionStarPower": {
+    "${modId}:IllusionStarPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -114,7 +114,7 @@
       ],
       "additionalProperties": false
     },
-    "MilliPulsaPower": {
+    "${modId}:MilliPulsaPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -140,7 +140,7 @@
       ],
       "additionalProperties": false
     },
-    "SatellIllusPower": {
+    "${modId}:SatellIllusPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -166,7 +166,7 @@
       ],
       "additionalProperties": false
     },
-    "TempStrength": {
+    "${modId}:TempStrength": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -192,7 +192,7 @@
       ],
       "additionalProperties": false
     },
-    "TempStrengthLoss": {
+    "${modId}:TempStrengthLoss": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -218,7 +218,7 @@
       ],
       "additionalProperties": false
     },
-    "ExtraEnergyPower": {
+    "${modId}:ExtraEnergyPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -244,7 +244,7 @@
       ],
       "additionalProperties": false
     },
-    "ChargeUpPower": {
+    "${modId}:ChargeUpPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -276,7 +276,7 @@
       ],
       "additionalProperties": false
     },
-    "PolarisUniquePower": {
+    "${modId}:PolarisUniquePower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -299,7 +299,7 @@
       ],
       "additionalProperties": false
     },
-    "OrrerysSunPower": {
+    "${modId}:OrrerysSunPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -325,7 +325,7 @@
       ],
       "additionalProperties": false
     },
-    "Charged": {
+    "${modId}:Charged": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -351,7 +351,7 @@
       ],
       "additionalProperties": false
     },
-    "BlazeAwayPower": {
+    "${modId}:BlazeAwayPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -377,7 +377,7 @@
       ],
       "additionalProperties": false
     },
-    "MPPower": {
+    "${modId}:MPPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -403,7 +403,7 @@
       ],
       "additionalProperties": false
     },
-    "EnergyFlowPower": {
+    "${modId}:EnergyFlowPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -429,7 +429,7 @@
       ],
       "additionalProperties": false
     },
-    "PulseMagicPower": {
+    "${modId}:PulseMagicPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -452,7 +452,7 @@
       ],
       "additionalProperties": false
     },
-    "SingularityPower": {
+    "${modId}:SingularityPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -478,7 +478,7 @@
       ],
       "additionalProperties": false
     },
-    "WitchOfGreedGold": {
+    "${modId}:WitchOfGreedGold": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -504,7 +504,7 @@
       ],
       "additionalProperties": false
     },
-    "WitchOfGreedPotion": {
+    "${modId}:WitchOfGreedPotion": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -530,7 +530,7 @@
       ],
       "additionalProperties": false
     },
-    "OneTimeOffPlusPower": {
+    "${modId}:OneTimeOffPlusPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -553,7 +553,7 @@
       ],
       "additionalProperties": false
     },
-    "OneTimeOffPower": {
+    "${modId}:OneTimeOffPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -576,7 +576,7 @@
       ],
       "additionalProperties": false
     },
-    "SuperNovaPower": {
+    "${modId}:SuperNovaPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -605,7 +605,7 @@
       ],
       "additionalProperties": false
     },
-    "CasketOfStarPlusPower": {
+    "${modId}:CasketOfStarPlusPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -631,7 +631,7 @@
       ],
       "additionalProperties": false
     },
-    "CasketOfStarPower": {
+    "${modId}:CasketOfStarPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -657,7 +657,7 @@
       ],
       "additionalProperties": false
     },
-    "GalacticHaloPower": {
+    "${modId}:GalacticHaloPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -683,7 +683,7 @@
       ],
       "additionalProperties": false
     },
-    "ManaRampagePower": {
+    "${modId}:ManaRampagePower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -709,7 +709,7 @@
       ],
       "additionalProperties": false
     },
-    "PropBagPower": {
+    "${modId}:PropBagPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -735,7 +735,7 @@
       ],
       "additionalProperties": false
     },
-    "UltraShortWavePower": {
+    "${modId}:UltraShortWavePower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -761,7 +761,7 @@
       ],
       "additionalProperties": false
     },
-    "DarkSparkPower": {
+    "${modId}:DarkSparkPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -787,7 +787,7 @@
       ],
       "additionalProperties": false
     },
-    "MagicChantPower": {
+    "${modId}:MagicChantPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -813,7 +813,7 @@
       ],
       "additionalProperties": false
     },
-    "SatelIllusPower": {
+    "${modId}:SatelIllusPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -839,7 +839,7 @@
       ],
       "additionalProperties": false
     },
-    "GrandCrossPower": {
+    "${modId}:GrandCrossPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -862,7 +862,7 @@
       ],
       "additionalProperties": false
     },
-    "Diaspora": {
+    "${modId}:Diaspora": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -888,7 +888,7 @@
       ],
       "additionalProperties": false
     },
-    "TalismanPower": {
+    "${modId}:TalismanPower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -914,7 +914,7 @@
       ],
       "additionalProperties": false
     },
-    "Wraith": {
+    "${modId}:Wraith": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -937,7 +937,7 @@
       ],
       "additionalProperties": false
     },
-    "Nebula": {
+    "${modId}:Nebula": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -963,7 +963,7 @@
       ],
       "additionalProperties": false
     },
-    "LimboContact": {
+    "${modId}:LimboContact": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -986,7 +986,7 @@
       ],
       "additionalProperties": false
     },
-    "InfernoClaw": {
+    "${modId}:InfernoClaw": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1011,45 +1011,45 @@
     }
   },
   "required": [
-    "DarkMatterPower",
-    "ExtraDraw",
-    "EventHorizonPower",
-    "IllusionStarPower",
-    "MilliPulsaPower",
-    "SatellIllusPower",
-    "TempStrength",
-    "TempStrengthLoss",
-    "ExtraEnergyPower",
-    "ChargeUpPower",
-    "PolarisUniquePower",
-    "OrrerysSunPower",
-    "Charged",
-    "BlazeAwayPower",
-    "MPPower",
-    "EnergyFlowPower",
-    "PulseMagicPower",
-    "SingularityPower",
-    "WitchOfGreedGold",
-    "WitchOfGreedPotion",
-    "OneTimeOffPlusPower",
-    "OneTimeOffPower",
-    "SuperNovaPower",
-    "CasketOfStarPlusPower",
-    "CasketOfStarPower",
-    "GalacticHaloPower",
-    "ManaRampagePower",
-    "PropBagPower",
-    "UltraShortWavePower",
-    "DarkSparkPower",
-    "MagicChantPower",
-    "SatelIllusPower",
-    "GrandCrossPower",
-    "Diaspora",
-    "TalismanPower",
-    "Wraith",
-    "Nebula",
-    "LimboContact",
-    "InfernoClaw"
+    "${modId}:DarkMatterPower",
+    "${modId}:ExtraDraw",
+    "${modId}:EventHorizonPower",
+    "${modId}:IllusionStarPower",
+    "${modId}:MilliPulsaPower",
+    "${modId}:SatellIllusPower",
+    "${modId}:TempStrength",
+    "${modId}:TempStrengthLoss",
+    "${modId}:ExtraEnergyPower",
+    "${modId}:ChargeUpPower",
+    "${modId}:PolarisUniquePower",
+    "${modId}:OrrerysSunPower",
+    "${modId}:Charged",
+    "${modId}:BlazeAwayPower",
+    "${modId}:MPPower",
+    "${modId}:EnergyFlowPower",
+    "${modId}:PulseMagicPower",
+    "${modId}:SingularityPower",
+    "${modId}:WitchOfGreedGold",
+    "${modId}:WitchOfGreedPotion",
+    "${modId}:OneTimeOffPlusPower",
+    "${modId}:OneTimeOffPower",
+    "${modId}:SuperNovaPower",
+    "${modId}:CasketOfStarPlusPower",
+    "${modId}:CasketOfStarPower",
+    "${modId}:GalacticHaloPower",
+    "${modId}:ManaRampagePower",
+    "${modId}:PropBagPower",
+    "${modId}:UltraShortWavePower",
+    "${modId}:DarkSparkPower",
+    "${modId}:MagicChantPower",
+    "${modId}:SatelIllusPower",
+    "${modId}:GrandCrossPower",
+    "${modId}:Diaspora",
+    "${modId}:TalismanPower",
+    "${modId}:Wraith",
+    "${modId}:Nebula",
+    "${modId}:LimboContact",
+    "${modId}:InfernoClaw"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

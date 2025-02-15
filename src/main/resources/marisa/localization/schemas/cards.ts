@@ -1,321 +1,408 @@
 import { z } from "$zod/mod.ts"
 
 export const schema = z.object({
-  "Strike_MRS": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "Defend_MRS": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "AsteroidBelt": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "BigCrunch": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "BlazingStar": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "DarkSpark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "DeepEcoloBomb": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "DoubleSpark": z.object({
+  "${modId}:Strike_MRS": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:Defend_MRS": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:AsteroidBelt": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:BigCrunch": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:BlazingStar": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:DarkSpark": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:DeepEcoloBomb": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:DoubleSpark": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "EarthLightRay": z.object({
+  "${modId}:EarthLightRay": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "EscapeVelocity": z.object({
+  "${modId}:EscapeVelocity": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "FinalSpark": z.object({
+  "${modId}:FinalSpark": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "GrandCross": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "GravityBeat": z.object({
+  "${modId}:GrandCross": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:GravityBeat": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "IllusionStar": z.object({
+  "${modId}:IllusionStar": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "MachineGunSpark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "MagicAbsorber": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "MasterSpark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "MeteoricShower": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "MilkyWay": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "NonDirectionalLaser": z.object({
+  "${modId}:MachineGunSpark": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
   }).strict(),
-  "Occultation": z.object({
+  "${modId}:MagicAbsorber": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:MasterSpark": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:MeteoricShower": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:MilkyWay": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:NonDirectionalLaser": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:Occultation": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "OortCloud": z.object({
+  "${modId}:OortCloud": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "PolarisUnique": z.object({
+  "${modId}:PolarisUnique": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "SatelliteIllusion": z.object({
+  "${modId}:SatelliteIllusion": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "ShootTheMoon": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+  "${modId}:ShootTheMoon": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:StarDustReverie": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:UltraShortWave": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:MillisecondPulsars": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:Spark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
-  "StarDustReverie": z.object({
+  "${modId}:UpSweep": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:GuidingStar": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:OrrerysSun": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:ChargingUp": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "UltraShortWave": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "MillisecondPulsars": z.object({
+  "${modId}:LuminesStrike": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "Spark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() }).strict(),
-  "UpSweep": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "GuidingStar": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "OrrerysSun": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "ChargingUp": z.object({
+  "${modId}:OpenUniverse": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "LuminesStrike": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "OpenUniverse": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "BlazeAway": z.object({
+  "${modId}:BlazeAway": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string(), z.string()]),
   }).strict(),
-  "MaximisePower": z.object({
+  "${modId}:MaximisePower": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "StarlightTyphoon": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-    "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
-  }).strict(),
-  "StarlightTyphoon_D": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "SuperPerseids": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "MysteriousBeam": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "ShootingEcho": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "EnergyFlow": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "PowerUp": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "WitchLeyline": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "JA": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "AbsoluteMagnitude": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "DragonMeteor": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "EventHorizon": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "PulseMagic": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "DC": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() }).strict(),
-  "Singularity": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "SporeBomb": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "FluorensentBeam": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "WitchOfGreed": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "TreasureHunter": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "Robbery": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "6A": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() }).strict(),
-  "CircumpolarStar": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "RefractionSpark": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "MagicChant": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "UnstableBomb": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "SuperNova": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "OneTimeOff": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "DarkMatter": z.object({
+  "${modId}:StarlightTyphoon": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "GasGiant": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "CasketOfStar": z.object({
+  "${modId}:StarlightTyphoon_D": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "ChargeUpSpray": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+  "${modId}:SuperPerseids": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:MysteriousBeam": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:ShootingEcho": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:EnergyFlow": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:PowerUp": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:WitchLeyline": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:JA": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:AbsoluteMagnitude": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:DragonMeteor": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:EventHorizon": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:PulseMagic": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:DC": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
-  "EnergyRecoil": z.object({
+  "${modId}:Singularity": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:SporeBomb": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:FluorensentBeam": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:WitchOfGreed": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:TreasureHunter": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:Robbery": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:6A": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+    .strict(),
+  "${modId}:CircumpolarStar": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:RefractionSpark": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:MagicChant": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:UnstableBomb": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:SuperNova": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:OneTimeOff": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:DarkMatter": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "GalacticHalo": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "ManaConvection": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "ManaRampage": z.object({
+  "${modId}:GasGiant": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:CasketOfStar": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "StarBarrage": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "AFriendsGift": z.object({
+  "${modId}:ChargeUpSpray": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
   }).strict(),
-  "BinaryStars": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "CollectingQuirk": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
-  }).strict(),
-  "FungusSplash": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "PropBag": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "UPGRADE_DESCRIPTION": z.string(),
-  }).strict(),
-  "BlackFlareStar": z.object({
-    "NAME": z.string(),
-    "DESCRIPTION": z.string(),
-    "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
-  }).strict(),
-  "WhiteDwarf": z.object({
+  "${modId}:EnergyRecoil": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
     "UPGRADE_DESCRIPTION": z.string(),
     "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "FairyDestructionRay": z.object({
+  "${modId}:GalacticHalo": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
   }).strict(),
-  "Orbital": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "ExplosiveMarionette": z.object({
+  "${modId}:ManaConvection": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
   }).strict(),
-  "OpticalCamouflage": z.object({
+  "${modId}:ManaRampage": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:StarBarrage": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
   }).strict(),
-  "FiveColoredTalisman": z.object({
+  "${modId}:AFriendsGift": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:BinaryStars": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:CollectingQuirk": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
+  }).strict(),
+  "${modId}:FungusSplash": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:PropBag": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:BlackFlareStar": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
+  }).strict(),
+  "${modId}:WhiteDwarf": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+    "UPGRADE_DESCRIPTION": z.string(),
+    "EXTENDED_DESCRIPTION": z.tuple([z.string(), z.string()]),
+  }).strict(),
+  "${modId}:FairyDestructionRay": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
   }).strict(),
-  "AlicesGift": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "Exhaustion_MRS": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "UltimateShortwave": z.object({
+  "${modId}:Orbital": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
   }).strict(),
-  "NebulaRing": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
-  "SprinkleStarSeal": z.object({
+  "${modId}:ExplosiveMarionette": z.object({
     "NAME": z.string(),
     "DESCRIPTION": z.string(),
   }).strict(),
-  "Wraith": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
+  "${modId}:OpticalCamouflage": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:FiveColoredTalisman": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:AlicesGift": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:Exhaustion_MRS": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:UltimateShortwave": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:NebulaRing": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:SprinkleStarSeal": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
+  "${modId}:Wraith": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
     .strict(),
-  "Acceleration": z.object({ "NAME": z.string(), "DESCRIPTION": z.string() })
-    .strict(),
+  "${modId}:Acceleration": z.object({
+    "NAME": z.string(),
+    "DESCRIPTION": z.string(),
+  }).strict(),
 }).strict().required()

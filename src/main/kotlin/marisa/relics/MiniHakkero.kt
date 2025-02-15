@@ -30,7 +30,7 @@ class MiniHakkero : CustomRelic(
     }
 
     companion object {
-        const val ID = "MiniHakkero"
+        const val ID = "marisa:MiniHakkero"
         private const val IMG = "marisa/img/relics/Hakkero_s.png"
         private const val IMG_OTL = "marisa/img/relics/outline/Hakkero_s.png"
     }

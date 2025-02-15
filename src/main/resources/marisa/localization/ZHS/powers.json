@@ -1,12 +1,12 @@
 {
-  "DarkMatterPower": {
+  "${modId}:DarkMatterPower": {
     "NAME": "暗物质",
     "DESCRIPTIONS": [
       "这回合你不能再打出 #y暗物质 。",
       ""
     ]
   },
-  "ExtraDraw": {
+  "${modId}:ExtraDraw": {
     "NAME": "第二宇宙速度",
     "DESCRIPTIONS": [
       "回合开始时，额外抽 #b",
@@ -14,7 +14,7 @@
       " 张 #y灼伤 加入手牌。"
     ]
   },
-  "EventHorizonPower": {
+  "${modId}:EventHorizonPower": {
     "NAME": "黑洞边缘",
     "DESCRIPTIONS": [
       "当你发动 #y增幅 时，可以选一张弃牌堆的攻击卡加入手牌。本效果每回合只能发动 #b",
@@ -23,49 +23,49 @@
       "）"
     ]
   },
-  "IllusionStarPower": {
+  "${modId}:IllusionStarPower": {
     "NAME": "幻像之星",
     "DESCRIPTIONS": [
       "At the start of your turn , transform ",
       "card(s) of your hand."
     ]
   },
-  "MilliPulsaPower": {
+  "${modId}:MilliPulsaPower": {
     "NAME": "毫秒脉冲星",
     "DESCRIPTIONS": [
       "你不需要支付额外的能量来发动 #y增幅 。",
       ""
     ]
   },
-  "SatellIllusPower": {
+  "${modId}:SatellIllusPower": {
     "NAME": "卫星幻觉",
     "DESCRIPTIONS": [
       "每当你使用一张不在你卡组中的卡时，抽 #b",
       " 张卡。"
     ]
   },
-  "TempStrength": {
+  "${modId}:TempStrength": {
     "NAME": "Temproy Strength",
     "DESCRIPTIONS": [
       "Your next blow deals additional ",
       " damage."
     ]
   },
-  "TempStrengthLoss": {
+  "${modId}:TempStrengthLoss": {
     "NAME": "力量下降",
     "DESCRIPTIONS": [
       "这个生物的攻击力下降了 #b",
       " 点。"
     ]
   },
-  "ExtraEnergyPower": {
+  "${modId}:ExtraEnergyPower": {
     "NAME": "Extra Energy",
     "DESCRIPTIONS": [
       "Gain ",
       " energy in addition each turn."
     ]
   },
-  "ChargeUpPower": {
+  "${modId}:ChargeUpPower": {
     "NAME": " 蓄力 ",
     "DESCRIPTIONS": [
       "你现在有",
@@ -74,87 +74,87 @@
       " 倍伤害。"
     ]
   },
-  "PolarisUniquePower": {
+  "${modId}:PolarisUniquePower": {
     "NAME": "北极星",
     "DESCRIPTIONS": [
       "在回合开始时，如果 #y北极星 在你的抽卡堆里，则获得 #b1 点能量。"
     ]
   },
-  "OrrerysSunPower": {
+  "${modId}:OrrerysSunPower": {
     "NAME": "太阳仪",
     "DESCRIPTIONS": [
       "每次消耗 #y蓄力 层数，獲得 #b",
       " 點 格擋。"
     ]
   },
-  "Charged": {
+  "${modId}:Charged": {
     "NAME": "Charged!",
     "DESCRIPTIONS": [
       "Your next blow will do ",
       " times damage"
     ]
   },
-  "BlazeAwayPower": {
+  "${modId}:BlazeAwayPower": {
     "NAME": "Blaze Away",
     "DESCRIPTIONS": [
       "复制 #b",
       " 张你接下来使用的攻击牌到手牌。"
     ]
   },
-  "MPPower": {
+  "${modId}:MPPower": {
     "NAME": "火力全开！",
     "DESCRIPTIONS": [
       "你的本回合的攻击会造成 #b",
       " 倍伤害。"
     ]
   },
-  "EnergyFlowPower": {
+  "${modId}:EnergyFlowPower": {
     "NAME": "能量涌动",
     "DESCRIPTIONS": [
       "在你的回合结束时，获得 #b",
       " 层 #y蓄力 。"
     ]
   },
-  "PulseMagicPower": {
+  "${modId}:PulseMagicPower": {
     "NAME": "脉冲魔术",
     "DESCRIPTIONS": [
       "本回合内你不再需要支付额外能量来发动 #y增幅 效果。"
     ]
   },
-  "SingularityPower": {
+  "${modId}:SingularityPower": {
     "NAME": "奇点",
     "DESCRIPTIONS": [
       "每当你使用一张费用为 0 的卡时，使你手中一张随机攻击牌攻击力增加 #b",
       " 点。"
     ]
   },
-  "WitchOfGreedGold": {
+  "${modId}:WitchOfGreedGold": {
     "NAME": "强欲魔女",
     "DESCRIPTIONS": [
       "战斗结束时获得 #b",
       " 金币 。"
     ]
   },
-  "WitchOfGreedPotion": {
+  "${modId}:WitchOfGreedPotion": {
     "NAME": "强欲魔女",
     "DESCRIPTIONS": [
       "战斗结束时获得 #b",
       " 瓶随机药剂。"
     ]
   },
-  "OneTimeOffPlusPower": {
+  "${modId}:OneTimeOffPlusPower": {
     "NAME": "球形中~",
     "DESCRIPTIONS": [
       "这回合你将不再触发 #y增幅 和 #y蓄力 效果。"
     ]
   },
-  "OneTimeOffPower": {
+  "${modId}:OneTimeOffPower": {
     "NAME": "球形中~",
     "DESCRIPTIONS": [
       "这回合你将不再触发 #y增幅 效果。"
     ]
   },
-  "SuperNovaPower": {
+  "${modId}:SuperNovaPower": {
     "NAME": "超新星",
     "DESCRIPTIONS": [
       "你每 #y消耗 一张 #y灼伤 ，获得 #b",
@@ -162,116 +162,116 @@
       " 层 #y力量 。NL 你不再受到 #y灼伤 的伤害。 NL 在你的回合结束时， #y消耗 你所有的手牌"
     ]
   },
-  "CasketOfStarPlusPower": {
+  "${modId}:CasketOfStarPlusPower": {
     "NAME": "星之器",
     "DESCRIPTIONS": [
       "每当你获得 #y格挡 ，将 #b",
       " 张 #y升级 过的 #y火花 加入手牌。"
     ]
   },
-  "CasketOfStarPower": {
+  "${modId}:CasketOfStarPower": {
     "NAME": "星之器",
     "DESCRIPTIONS": [
       "每当你获得 #y格挡 ，将 #b",
       " 张 #y火花 加入手牌。"
     ]
   },
-  "GalacticHaloPower": {
+  "${modId}:GalacticHaloPower": {
     "NAME": "星晕",
     "DESCRIPTIONS": [
       "你每打出一张攻击牌，回合结束时获得 #b",
       "  #y格挡 。"
     ]
   },
-  "ManaRampagePower": {
+  "${modId}:ManaRampagePower": {
     "NAME": "魔力暴走",
     "DESCRIPTIONS": [
       "你的下一张攻击牌将被打出 #b",
       " 次。"
     ]
   },
-  "PropBagPower": {
+  "${modId}:PropBagPower": {
     "NAME": "便携道具包",
     "DESCRIPTIONS": [
       "战斗结束时，失去  #y",
       " 。"
     ]
   },
-  "UltraShortWavePower": {
+  "${modId}:UltraShortWavePower": {
     "NAME": "极超短波",
     "DESCRIPTIONS": [
       "你的 #y极超短波 的效果被加强了 #b",
       " 次。"
     ]
   },
-  "DarkSparkPower": {
+  "${modId}:DarkSparkPower": {
     "NAME": "暗色火花",
     "DESCRIPTIONS": [
       "这一回合，你打出的每一张名字有‘火花’的牌都会给你  #b",
       " 点额外的 #y蓄力 。"
     ]
   },
-  "MagicChantPower": {
+  "${modId}:MagicChantPower": {
     "NAME": "咏唱",
     "DESCRIPTIONS": [
       "下一回合，使 #y",
       " 的费用减1。"
     ]
   },
-  "SatelIllusPower": {
+  "${modId}:SatelIllusPower": {
     "NAME": "卫星幻觉",
     "DESCRIPTIONS": [
       "在你的回合内，当你抽卡堆里的卡牌数量增加时，获得  #b",
       " 点能量。"
     ]
   },
-  "GrandCrossPower": {
+  "${modId}:GrandCrossPower": {
     "NAME": "增幅",
     "DESCRIPTIONS": [
       "你在这回合已发动了 #y增幅 效果。"
     ]
   },
-  "Diaspora": {
+  "${modId}:Diaspora": {
     "NAME": "散灭",
     "DESCRIPTIONS": [
       "在其回合结束时，如果该生物的生命值低于 #b",
       " 则会被立即杀死。"
     ]
   },
-  "GiftOfLife": {
+  "${modId}:GiftOfLife": {
     "NAME": "生命恩赐",
     "DESCRIPTIONS": [
       "在回合结束时恢复 #b",
       " 点生命值。"
     ]
   },
-  "TalismanPower": {
+  "${modId}:TalismanPower": {
     "NAME": "五色魔符",
     "DESCRIPTIONS": [
       "在你的回合开始时，将 #b",
       " 张随机 #y技能 加入手牌。"
     ]
   },
-  "Wraith": {
+  "${modId}:Wraith": {
     "NAME": "怨灵",
     "DESCRIPTIONS": [
       "在你的回合开始后，随机 #y消耗 你的一张手牌。"
     ]
   },
-  "LimboContact": {
+  "${modId}:LimboContact": {
     "NAME": "死灵之触",
     "DESCRIPTIONS": [
       "每当这个敌人攻击你，你会获得一层 #y怨灵 。 NL 在死亡时，给与你 #b1 层 #y怨灵 。"
     ]
   },
-  "Nebula": {
+  "${modId}:Nebula": {
     "NAME": "星云",
     "DESCRIPTIONS": [
       "每当你因敌人或卡牌损失 格挡 ，获得 ",
       " 层 多层护甲 。"
     ]
   },
-  "InfernoClaw": {
+  "${modId}:InfernoClaw": {
     "NAME": "地狱之爪",
     "DESCRIPTIONS": [
       "每当这个敌人对你造成伤害，在你的弃牌堆里增加一张 #y灼伤 。"

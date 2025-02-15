@@ -73,7 +73,7 @@ class BlazingStar : AmplifiedAttack(
     }
 
     companion object {
-        const val ID = "BlazingStar"
+        const val ID = "marisa:BlazingStar"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

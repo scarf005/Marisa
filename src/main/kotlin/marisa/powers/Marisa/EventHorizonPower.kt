@@ -61,7 +61,7 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
     }
 
     companion object {
-        const val POWER_ID = "EventHorizonPower"
+        const val POWER_ID = "marisa:EventHorizonPower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

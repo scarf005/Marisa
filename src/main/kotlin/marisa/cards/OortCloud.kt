@@ -55,7 +55,7 @@ class OortCloud : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "OortCloud"
+        const val ID = "marisa:OortCloud"
         const val IMG_PATH = "marisa/img/cards/oort.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

@@ -1,57 +1,57 @@
 {
-  "Strike_MRS": {
+  "${modId}:Strike_MRS": {
     "NAME": "シンプルスパーク",
     "DESCRIPTION": "!D! ダメージを与える。"
   },
-  "Defend_MRS": {
+  "${modId}:Defend_MRS": {
     "NAME": "防御",
     "DESCRIPTION": "!B! ブロック を得る。"
   },
-  "AsteroidBelt": {
+  "${modId}:AsteroidBelt": {
     "NAME": "アステロイドベルト",
     "DESCRIPTION": "!B! ブロック を得る。 NL 増幅 [E] : 次のターン !B! ブロック を得る。"
   },
-  "BigCrunch": {
+  "${modId}:BigCrunch": {
     "NAME": "ビッグクランチ",
     "DESCRIPTION": "山札と捨て札の半分を廃棄する。廃棄したカード !M! 枚につき [E] を得て 1 枚カードを引く。 NL 廃棄"
   },
-  "BlazingStar": {
+  "${modId}:BlazingStar": {
     "NAME": "ブレイジングスター",
     "DESCRIPTION": "!D! ダメージを与える。 手札の 火傷 1 枚につき !M! の追加ダメージを与える。 NL 増幅 [E] : 2 倍のダメージを与える。 "
   },
-  "DarkSpark": {
+  "${modId}:DarkSpark": {
     "NAME": "ダークスパーク",
     "DESCRIPTION": "山札の上から !M! 枚、カードを 廃棄 する。 NL 廃棄 した アタック カード1枚につき1回、 敵全体に !D! ダメージを与える。"
   },
-  "DeepEcoloBomb": {
+  "${modId}:DeepEcoloBomb": {
     "NAME": "ディープエコロジカルボム",
     "DESCRIPTION": "ランダムな敵に !D! ダメージを与える。 このターン、筋力 !M! を失う。 NL 増幅 [E] : カードの効果を 2 度得る。"
   },
-  "DoubleSpark": {
+  "${modId}:DoubleSpark": {
     "NAME": "ダブルスパーク",
     "DESCRIPTION": "!D! ダメージを与える。 スパーク を 1 枚手札に加える。",
     "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 スパーク + を 1枚手札に加える。"
   },
-  "EarthLightRay": {
+  "${modId}:EarthLightRay": {
     "NAME": "アースライトレイ",
     "DESCRIPTION": "廃棄 NL HPを !M! 回復する。 NL 増幅 [E] : 捨て札からランダムなカードを手札に加える。",
     "UPGRADE_DESCRIPTION": "廃棄 NL HPを !M! 回復する。 増幅 [E] : 捨て札からカードを手札に加える。"
   },
-  "EscapeVelocity": {
+  "${modId}:EscapeVelocity": {
     "NAME": "エスケープベロシティ",
     "DESCRIPTION": "ターン開始時、カードを 2 枚引き、 火傷 を 1枚 手札 に加える。",
     "UPGRADE_DESCRIPTION": "天賦 NL ターン開始時、カードを 2 枚引き、 火傷 を 1枚 手札 に加える。"
   },
-  "FinalSpark": {
+  "${modId}:FinalSpark": {
     "NAME": "ファイナルスパーク",
     "DESCRIPTION": " 名前に「スパーク」と付くカードを 使用するたび このカードの コスト が 1 減少。 NL 敵全体に !D! ダメージを与える。 NL このカードのコストを元に戻す。",
     "UPGRADE_DESCRIPTION": "保留 NL 名前に「スパーク」と付くカードを 使用するたび このカードの コスト が 1 減少。 NL 敵全体に !D! ダメージを与える。 NL このカードのコストを元に戻す。"
   },
-  "GrandCross": {
+  "${modId}:GrandCross": {
     "NAME": "グランドクロス",
     "DESCRIPTION": "!D! ダメージを与える。 NL このターン 増幅 を行った場合、 このカードのコストは 0 "
   },
-  "GravityBeat": {
+  "${modId}:GravityBeat": {
     "NAME": "グラビティビート",
     "DESCRIPTION": "!D! ダメージを与え、デッキ !B! 枚につき 1枚カードを引く。",
     "EXTENDED_DESCRIPTION": [
@@ -59,38 +59,38 @@
       " 回)"
     ]
   },
-  "IllusionStar": {
+  "${modId}:IllusionStar": {
     "NAME": "イリュージョンスター",
     "DESCRIPTION": "!M! 枚の ランダム なカードを手札に加え、 手札のカードを 1 枚 山札の一番上に置く。 NL 廃棄",
     "UPGRADE_DESCRIPTION": "!M! 枚の ランダム なカードを手札に加え、 手札のカードを 1 枚 山札の一番上に置く。"
   },
-  "MachineGunSpark": {
+  "${modId}:MachineGunSpark": {
     "NAME": "マシンガンスパーク",
     "DESCRIPTION": "!D! ダメージを !M! 回与える NL 廃棄",
     "UPGRADE_DESCRIPTION": "!D! ダメージを !M! 回与える NL 廃棄"
   },
-  "MagicAbsorber": {
+  "${modId}:MagicAbsorber": {
     "NAME": "マジックアブソーバー",
     "DESCRIPTION": "!B! ブロック を得る。 ランダムな デバフ 1 つを 取り除く。 NL 廃棄"
   },
-  "MasterSpark": {
+  "${modId}:MasterSpark": {
     "NAME": "マスタースパーク",
     "DESCRIPTION": "!D! ダメージを与える。 NL 増幅 [E] : !B! ダメージを与える。",
     "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 NL 増幅 [E] : !B! ダメージを与える。"
   },
-  "MeteoricShower": {
+  "${modId}:MeteoricShower": {
     "NAME": "メテオニックシャワー",
     "DESCRIPTION": "カードを X + 1 枚まで廃棄する。 NL 廃棄したカード 1 枚につき 2 回 !D! ダメージを与える。 NL 火傷 を廃棄した場合は 3回 ダメージを与える。"
   },
-  "MilkyWay": {
+  "${modId}:MilkyWay": {
     "NAME": "ミルキーウェイ",
     "DESCRIPTION": "!B! ブロック を得る。 カードを 1 枚引く。 NL 手札の アタック は、この戦闘中 !M! の追加ダメージを与える。"
   },
-  "NonDirectionalLaser": {
+  "${modId}:NonDirectionalLaser": {
     "NAME": "ノンディクショナルレーザー",
     "DESCRIPTION": "敵全体に !D! ダメージを与え、更にランダムな敵1体に !D! ダメージを与える。"
   },
-  "Occultation": {
+  "${modId}:Occultation": {
     "NAME": "オカルテイション",
     "DESCRIPTION": "山札を全て捨てる。 捨てたカードの枚数の ブロック を得る。",
     "UPGRADE_DESCRIPTION": "山札を全て捨てる。 捨てたカードの枚数+ 3 の ブロック を得る。",
@@ -99,71 +99,71 @@
       ""
     ]
   },
-  "OortCloud": {
+  "${modId}:OortCloud": {
     "NAME": "オールトクラウド",
     "DESCRIPTION": " プレートアーマー !M! を得る。 NL 増幅 [E] : 追加で プレートアーマー !B! を得る。",
     "UPGRADE_DESCRIPTION": " プレートアーマー !M! を得る。 NL 増幅 [E] : 追加で プレートアーマー !B! を得る。"
   },
-  "PolarisUnique": {
+  "${modId}:PolarisUnique": {
     "NAME": "ポラリスユニーク",
     "DESCRIPTION": "天賦 NL ガイディングスター をデッキに加える。 そのカードが山札にある間、ターン開始時、 [E] を得る。",
     "UPGRADE_DESCRIPTION": "天賦 NL ガイディングスター をデッキに加える。 そのカードが山札にある間、ターン開始時、 [E] を得る。"
   },
-  "SatelliteIllusion": {
+  "${modId}:SatelliteIllusion": {
     "NAME": "サテライトイリュージョン",
     "DESCRIPTION": "プレイヤーのターン中、山札のカードが増加するたび [E] を得る。",
     "UPGRADE_DESCRIPTION": "天賦 NL プレイヤーのターン中、山札のカードが増加するたび [E] を得る。"
   },
-  "ShootTheMoon": {
+  "${modId}:ShootTheMoon": {
     "NAME": "シュート・ザ・ムーン",
     "DESCRIPTION": "対象がボスでない場合、対象の バフ を 1 つ取り除く。 !D! ダメージを与える。 NL 増幅 [E] : 全ての バフ を取り除き、 !B! ダメージを与える"
   },
-  "StarDustReverie": {
+  "${modId}:StarDustReverie": {
     "NAME": "スターダストレヴァリエ",
     "DESCRIPTION": "手札を山札に戻し、 複数の ランダムな カードを手札に加える。 NL 廃棄",
     "UPGRADE_DESCRIPTION": "手札を山札に戻し、 複数の ランダムな アップグレードした カードを手札に加える。 NL 廃棄"
   },
-  "UltraShortWave": {
+  "${modId}:UltraShortWave": {
     "NAME": "アルティメットショートウェーブ",
     "DESCRIPTION": "!B! [E] と !M! チャージ を得る。 このカードの [E] と チャージ の増加量を 1 増加する。"
   },
-  "MillisecondPulsars": {
+  "${modId}:MillisecondPulsars": {
     "NAME": "ミリ秒パルサー",
     "DESCRIPTION": "増幅 の [E] が不要になる。",
     "UPGRADE_DESCRIPTION": "天賦 NL 増幅 の [E] が不要になる。"
   },
-  "Spark": {
+  "${modId}:Spark": {
     "NAME": " スパーク ",
     "DESCRIPTION": "!D! ダメージを与える。 NL 廃棄"
   },
-  "UpSweep": {
+  "${modId}:UpSweep": {
     "NAME": "アップスウィープ",
     "DESCRIPTION": "!D! ダメージを与える。 チャージ !M! を得る。"
   },
-  "GuidingStar": {
+  "${modId}:GuidingStar": {
     "NAME": " ガイディングスター ",
     "DESCRIPTION": "保留 NL ターンの開始時に手札にこのカードが有る場合、 [E] を得る。"
   },
-  "OrrerysSun": {
+  "${modId}:OrrerysSun": {
     "NAME": "オーレリーズサン",
     "DESCRIPTION": " チャージ が使用されるたび、 !M! ブロックを得る。"
   },
-  "ChargingUp": {
+  "${modId}:ChargingUp": {
     "NAME": "チャージアップ",
     "DESCRIPTION": "チャージ !M! を得る。 NL 廃棄",
     "UPGRADE_DESCRIPTION": "チャージ !M! を得る。 NL 増幅 [E] : 追加で 3 スタック得る。"
   },
-  "LuminesStrike": {
+  "${modId}:LuminesStrike": {
     "NAME": "ルミネスストライク",
     "DESCRIPTION": "手札のカード枚数の 2 倍のダメージ( !D! ダメージ)を与える。 NL 増幅 [E] : 現在のエナジーの 4 倍 のダメージ( !B! ダメージ)を与える。 ",
     "UPGRADE_DESCRIPTION": "手札のカード枚数の 3 倍のダメージ( !D! ダメージ)を与える。 NL 増幅 [E] : 現在のエナジーの 5 倍 のダメージ( !B! ダメージ)を与える。"
   },
-  "OpenUniverse": {
+  "${modId}:OpenUniverse": {
     "NAME": "オープンユニバース",
     "DESCRIPTION": "ランダムなカード 5 枚を 山札 に加え、 カードを !M! 枚引く。 各カードは !D! %で アップグレード されたものが加えられる。",
     "UPGRADE_DESCRIPTION": "ランダムなカード 5 枚を 山札 に加え、 カードを !M! 枚引く。 各カードは !D! %で アップグレード されたものが加えられる。"
   },
-  "BlazeAway": {
+  "${modId}:BlazeAway": {
     "NAME": "ブレイズアウェイ",
     "DESCRIPTION": "このターン中、最後にプレイした アタック を !M! 回　プレイする。 NL 廃棄",
     "EXTENDED_DESCRIPTION": [
@@ -172,12 +172,12 @@
       " NL (このターン アタック をプレイしていない。)"
     ]
   },
-  "MaximisePower": {
+  "${modId}:MaximisePower": {
     "NAME": "マックスパワー",
     "DESCRIPTION": "チャージ スタックを [E] に変換する。 疲労困憊 を 1 枚手札に加える。 このターン与えるダメージが 2 倍になる。 NL 廃棄",
     "UPGRADE_DESCRIPTION": "チャージ スタックを [E] に変換する。 疲労困憊 を 1 枚手札に加える。 このターン与えるダメージが 2 倍になる。"
   },
-  "StarlightTyphoon": {
+  "${modId}:StarlightTyphoon": {
     "NAME": "スターライトタイフーン",
     "DESCRIPTION": "アタック 以外の手札を 廃棄 する。 この方法で 廃棄 したカードの枚数分の スパーク を手札に加える。",
     "UPGRADE_DESCRIPTION": " アタック 以外の手札を 廃棄 する。 この方法で 廃棄 したカードの枚数分の スパーク + を手札に加える。",
@@ -186,121 +186,121 @@
       ""
     ]
   },
-  "StarlightTyphoon_D": {
+  "${modId}:StarlightTyphoon_D": {
     "NAME": "スターライトタイフーン",
     "DESCRIPTION": "アタック 以外の手札を 廃棄 する。 この方法で 廃棄 したカードの枚数分の スパーク を手札に加える。",
     "UPGRADE_DESCRIPTION": "アタック 以外の手札を 廃棄 する。 この方法で 廃棄 したカードの枚数分の スパーク + を手札に加える。"
   },
-  "SuperPerseids": {
+  "${modId}:SuperPerseids": {
     "NAME": "スーパーペルセイド",
     "DESCRIPTION": "使用不可 NL このカードを引いた時、 [E] を得る。 NL このカードを廃棄した時、ランダムな敵に !D! ダメージを与える。"
   },
-  "MysteriousBeam": {
+  "${modId}:MysteriousBeam": {
     "NAME": "ミステリアスビーム",
     "DESCRIPTION": "手札にランダムな アタック を加える。 追加されたアタックのダメージと等しいのダメージを与える。",
     "UPGRADE_DESCRIPTION": "手札にランダムな アタック を加える。 追加されたアタックのダメージと等しいのダメージを与える。"
   },
-  "ShootingEcho": {
+  "${modId}:ShootingEcho": {
     "NAME": "シューティングエコー",
     "DESCRIPTION": "!D! ダメージを与える。 NL カードを1枚 廃棄 する。 NL 廃棄 したカードが 火傷 なら、このカードを手札に戻す。",
     "UPGRADE_DESCRIPTION": "カードを1枚 廃棄 する。 シューティングエコー + を 1 枚手札に加える。 NL !D! ダメージを与える。 NL 廃棄"
   },
-  "EnergyFlow": {
+  "${modId}:EnergyFlow": {
     "NAME": "エナジーフロー",
     "DESCRIPTION": "ターン終了時、チャージ !M! を得る"
   },
-  "PowerUp": {
+  "${modId}:PowerUp": {
     "NAME": "アップグレード!",
     "DESCRIPTION": "戦闘中 手札の全ての アタック は !M! の追加ダメージを与える。"
   },
-  "WitchLeyline": {
+  "${modId}:WitchLeyline": {
     "NAME": "ウィッチレイライン",
     "DESCRIPTION": "!D! ダメージを与える。 火傷 を !M! 枚手札に加える。"
   },
-  "JA": {
+  "${modId}:JA": {
     "NAME": "ウォーミングアップ",
     "DESCRIPTION": "!D! ダメージを与える。 手札に アップスウィープ と スパーク と ウィッチレイライン を加える。",
     "UPGRADE_DESCRIPTION": "!D! ダメージを与える。 手札に アップスウィープ + と スパーク + と ウィッチレイライン + を加える。"
   },
-  "AbsoluteMagnitude": {
+  "${modId}:AbsoluteMagnitude": {
     "NAME": "アブソリュートマグニチュード",
     "DESCRIPTION": "チャージ の 2 倍のダメージを与える。 (!D! ダメージを与える)。",
     "UPGRADE_DESCRIPTION": "チャージ の 3 倍のダメージを与える。 (!D! ダメージを与える)。"
   },
-  "DragonMeteor": {
+  "${modId}:DragonMeteor": {
     "NAME": "ドラゴンメテオ",
     "DESCRIPTION": "!D! ダメージを与える。 NL この戦闘中に廃棄したカードの数1枚につき、 !M! の追加ダメージを与える。"
   },
-  "EventHorizon": {
+  "${modId}:EventHorizon": {
     "NAME": "イベントホライズン",
     "DESCRIPTION": "1ターンに、 !M! 回 増幅 を行った時、 捨て札の アタック 1枚を手札に戻す。"
   },
-  "PulseMagic": {
+  "${modId}:PulseMagic": {
     "NAME": "パルスマジック",
     "DESCRIPTION": "次のターン、 [E] を得る。 増幅 [E] : このターン増幅の [E] が不要",
     "UPGRADE_DESCRIPTION": "次のターン、 [E] [E] を得る。 増幅 [E] : このターン増幅の [E] が不要"
   },
-  "DC": {
+  "${modId}:DC": {
     "NAME": "66C",
     "DESCRIPTION": "天賦 NL !D! ダメージを与える。 NL 捨て札にカードが無い場合、2 倍のダメージを与える。"
   },
-  "Singularity": {
+  "${modId}:Singularity": {
     "NAME": "シンギュラリティ",
     "DESCRIPTION": "コストが 0 のカードを使用するたび、手札のランダムな アタック のダメージを !M! 増加する。"
   },
-  "SporeBomb": {
+  "${modId}:SporeBomb": {
     "NAME": "胞子爆弾",
     "DESCRIPTION": "弱体 !M! を与える。 NL 増幅 [E] : 敵全体に 弱体 !M! を与える。",
     "UPGRADE_DESCRIPTION": "敵全体に 弱体 !M! を与える。 NL 増幅 [E] : 追加で 1 スタック与える。"
   },
-  "FluorensentBeam": {
+  "${modId}:FluorensentBeam": {
     "NAME": "フローレンセントビーム",
     "DESCRIPTION": "敵全体はHPを !D! 失う。 NL 増幅 [E] [E] : 代わりに !B! 失う。"
   },
-  "WitchOfGreed": {
+  "${modId}:WitchOfGreed": {
     "NAME": "強欲の魔女",
     "DESCRIPTION": "戦闘終了時、 !M!ゴールドを得る。 NL 増幅 [E] : 更に、ランダムなポーションも 1 つ入手する。"
   },
-  "TreasureHunter": {
+  "${modId}:TreasureHunter": {
     "NAME": "トレジャーハンター",
     "DESCRIPTION": "!D! ダメージを与える。 NL この攻撃で エリート や ボス を倒すと、戦闘終了時にランダムな レリック を 1 つ得る。 NL 廃棄"
   },
-  "Robbery": {
+  "${modId}:Robbery": {
     "NAME": "強盗",
     "DESCRIPTION": "!D! ダメージを与える。 ブロックされなかったダメージに等しいゴールドを得る。 NL 廃棄 NL 増幅 [E] : ゴールドを2倍得る。"
   },
-  "6A": {
+  "${modId}:6A": {
     "NAME": "6A",
     "DESCRIPTION": "!D! ダメージを与える。 ダメージに等しい ブロック を得る。"
   },
-  "CircumpolarStar": {
+  "${modId}:CircumpolarStar": {
     "NAME": "サーカムポーラスター",
     "DESCRIPTION": "!B! ブロック を得る。 カードを !M! 枚引く。 この戦闘中、このカードの引く枚数を 1 増加する。"
   },
-  "RefractionSpark": {
+  "${modId}:RefractionSpark": {
     "NAME": "リフレクションスパーク",
     "DESCRIPTION": "!D! ダメージを与える。 手札の全ての、名前に「スパーク」の入ったカードのダメージを与えたダメージ分増加する。 NL 増幅 [E] : 与えるダメージを !D! に増加"
   },
-  "MagicChant": {
+  "${modId}:MagicChant": {
     "NAME": "魔術詠唱",
     "DESCRIPTION": "山札のカードを 1枚選び、アップグレードして手札に加える。 NL 廃棄",
     "UPGRADE_DESCRIPTION": "山札のカードを 1枚選び、アップグレードして手札に加える。 "
   },
-  "UnstableBomb": {
+  "${modId}:UnstableBomb": {
     "NAME": "産廃ボム",
     "DESCRIPTION": "ランダムな敵にランダムなダメージ ( !D! ～ !B! ) を 4 回与える。"
   },
-  "SuperNova": {
+  "${modId}:SuperNova": {
     "NAME": "スーパーノヴァ",
     "DESCRIPTION": "火傷 によるダメージを受けなくなる。 火傷 を 廃棄 するたび, 筋力 !M! を得る。 NL ターン終了時、手札を 廃棄 する。",
     "UPGRADE_DESCRIPTION": "天賦 NL 火傷 によるダメージを受けなくなる。 火傷 を 廃棄 するたび, 筋力 !M! を得る。 NL ターン終了時、手札を 廃棄 する。"
   },
-  "OneTimeOff": {
+  "${modId}:OneTimeOff": {
     "NAME": "ちょっと一息",
     "DESCRIPTION": "!B! ブロック を得る。 このターン、 増幅 を行えない。 NL 次のターン、カードを !M! 枚引く。 ",
     "UPGRADE_DESCRIPTION": "!B! ブロック を得る。 このターン、 増幅 を行ったり、 チャージ を消費する事ができない。 NL 次のターン、カードを !M! 枚引く。"
   },
-  "DarkMatter": {
+  "${modId}:DarkMatter": {
     "NAME": "ダークマター",
     "DESCRIPTION": "1 ターンに 1 度しか プレイ 出来ない。 NL このカードの複製を 2 枚 山札に加える。 カードを 1 枚引く。 このカードを廃棄した時, !B! ブロック を得る。 NL エセリアル 。",
     "UPGRADE_DESCRIPTION": "1 ターンに 1 度しか プレイ 出来ない。 NL このカードの複製を 2 枚 山札に加える。 カードを 1 枚引く。 このカードを廃棄した時, !B! ブロック を得る。 NL エセリアル 。",
@@ -309,20 +309,20 @@
       ""
     ]
   },
-  "GasGiant": {
+  "${modId}:GasGiant": {
     "NAME": "ガスジャイアント",
     "DESCRIPTION": "!B! ブロック を得る。 火傷 を !M! 枚 手札に加える。"
   },
-  "CasketOfStar": {
+  "${modId}:CasketOfStar": {
     "NAME": "星の器",
     "DESCRIPTION": " ブロック を得るたび、 スパーク を 1 枚手札に加える。",
     "UPGRADE_DESCRIPTION": " ブロック を得るたび、 スパーク + を 1 枚手札に加える。"
   },
-  "ChargeUpSpray": {
+  "${modId}:ChargeUpSpray": {
     "NAME": "チャージ発射",
     "DESCRIPTION": "!D! ダメージを与える。 NL このカードが チャージ を使用した場合, [E] を得て、カードを !M! 枚引く。"
   },
-  "EnergyRecoil": {
+  "${modId}:EnergyRecoil": {
     "NAME": "エナジーリコイル",
     "DESCRIPTION": " チャージ と等しい量の ブロック を得る。",
     "UPGRADE_DESCRIPTION": " チャージ + 3  と等しい量 の ブロック を得る。",
@@ -331,34 +331,34 @@
       " ブロック を得る。 )"
     ]
   },
-  "GalacticHalo": {
+  "${modId}:GalacticHalo": {
     "NAME": "ギャラクティックハロー",
     "DESCRIPTION": "!B! ブロック を得る。 チャージ !M! を得る。"
   },
-  "ManaConvection": {
+  "${modId}:ManaConvection": {
     "NAME": "魔力対流",
     "DESCRIPTION": "最大 !M! 枚カードを 廃棄 し、 廃棄 したカード1枚につき、 [E] を得る。 NL 廃棄"
   },
-  "ManaRampage": {
+  "${modId}:ManaRampage": {
     "NAME": "魔力暴走",
     "DESCRIPTION": "ランダムな アタック を X 回 プレイ する。",
     "UPGRADE_DESCRIPTION": "ランダムな アップグレード 済みの アタック を X 回 プレイ する。"
   },
-  "StarBarrage": {
+  "${modId}:StarBarrage": {
     "NAME": "星屑の弾幕",
     "DESCRIPTION": "!D! ダメージを !M! 回与える。 NL このカードがプレイされるたび、 この戦闘中、 攻撃回数が 1 増加する。"
   },
-  "AFriendsGift": {
+  "${modId}:AFriendsGift": {
     "NAME": "友達の贈り物",
     "DESCRIPTION": "使用不可 NL 3 枚の 特殊なカードに 変化 する。",
     "UPGRADE_DESCRIPTION": "保留 NL !D! ダメージを与える。 ターン開始時、ダメージを 2 増加する。 廃棄 NL 増幅 [E] : !D! ダメージを与え、 廃棄 されない。"
   },
-  "BinaryStars": {
+  "${modId}:BinaryStars": {
     "NAME": "バイナリスター",
     "DESCRIPTION": "手札に ブラックフレアスター か ホワイトドワーフ を選んで加える。 廃棄 NL 増幅 [E] : 両方を加える。",
     "UPGRADE_DESCRIPTION": "手札に ブラックフレアスター + か ホワイトドワーフ + を選んで加える。 廃棄 NL 増幅 [E] : 両方を加える。"
   },
-  "CollectingQuirk": {
+  "${modId}:CollectingQuirk": {
     "NAME": "收集癖",
     "DESCRIPTION": "ランダムな敵に !D! ダメージを、レリック !M! 個につき 1 回与える ",
     "EXTENDED_DESCRIPTION": [
@@ -366,17 +366,17 @@
       ""
     ]
   },
-  "FungusSplash": {
+  "${modId}:FungusSplash": {
     "NAME": "キノコ酒",
     "DESCRIPTION": " 手札を 1 枚 廃棄 し、対象にポーションを投げる。 NL ポーションの種類は廃棄した カードによって異なる 。 NL 廃棄",
     "UPGRADE_DESCRIPTION": " 手札を 1 枚 廃棄 し、対象にポーションを投げる。 NL ポーションの種類は廃棄した カードによって異なる 。"
   },
-  "PropBag": {
+  "${modId}:PropBag": {
     "NAME": "携帯道具袋",
     "DESCRIPTION": "ランダムな レリックを 1つ取得する。 戦闘終了時、取得したレリックを失う。 NL 廃棄",
     "UPGRADE_DESCRIPTION": " 天賦 NL ランダムな レリックを 1つ取得する。 戦闘終了時、取得したレリックを失う。 NL 廃棄"
   },
-  "BlackFlareStar": {
+  "${modId}:BlackFlareStar": {
     "NAME": "ブラックフレアスター",
     "DESCRIPTION": "手札が4枚以上の時のみプレイ可能。 NL 手札のカードを任意の枚数捨て、捨てた枚数の !B! 倍の ブロック を得る。",
     "EXTENDED_DESCRIPTION": [
@@ -384,7 +384,7 @@
       ""
     ]
   },
-  "WhiteDwarf": {
+  "${modId}:WhiteDwarf": {
     "NAME": "ホワイトドワーフ",
     "DESCRIPTION": "手札が4枚以下の時のみプレイ可能。 NL 捨て札の2倍( !D! )のダメージを与える。手札に 火傷 を 2 枚加える。",
     "UPGRADE_DESCRIPTION": "手札が4枚以下の時のみプレイ可能。 NL 捨て札の3倍( !D! )のダメージを与える。手札に 火傷 を 2 枚加える。",
@@ -393,51 +393,51 @@
       ""
     ]
   },
-  "FairyDestructionRay": {
+  "${modId}:FairyDestructionRay": {
     "NAME": "妖精尽滅光",
     "DESCRIPTION": "敵全体に !D! ダメージを与える。 増幅 [E] [E] :HPが !M! 以下である敵を即死させる。"
   },
-  "Orbital": {
+  "${modId}:Orbital": {
     "NAME": "オービタル",
     "DESCRIPTION": " 使用不可 NL このカードを引いた時、 カードを 1 枚引く。 NL このカードを 廃棄 した時、 廃棄 したカードから !M! 枚を手札に加える。"
   },
-  "ExplosiveMarionette": {
+  "${modId}:ExplosiveMarionette": {
     "NAME": "アーティフルサクリファイス",
     "DESCRIPTION": " 保留 NL !D! ダメージを与える。 NL 増幅 [E] : 2 倍のダメージを与える。 NL 廃棄"
   },
-  "OpticalCamouflage": {
+  "${modId}:OpticalCamouflage": {
     "NAME": "オプティカルカモフラージュ",
     "DESCRIPTION": " 保留 NL !B! ブロック を得る。 NL 増幅 [E] : 2倍のブロックを得る。 NL 廃棄"
   },
-  "FiveColoredTalisman": {
+  "${modId}:FiveColoredTalisman": {
     "NAME": "5色のタリスマン",
     "DESCRIPTION": "保留 NL ターン開始時、ランダムな スキル を 手札に加える。"
   },
-  "AlicesGift": {
+  "${modId}:AlicesGift": {
     "NAME": "アリスの贈り物",
     "DESCRIPTION": " 保留 NL !D! ダメージを与える。 NL 廃棄 NL 増幅 [E] [E] : 3 倍のダメージを与える。"
   },
-  "Exhaustion_MRS": {
+  "${modId}:Exhaustion_MRS": {
     "NAME": "疲労困憊",
     "DESCRIPTION": "使用不可 NL 手札にある間、 チャージ を得たり消費する事が出来ない。"
   },
-  "UltimateShortwave": {
+  "${modId}:UltimateShortwave": {
     "NAME": "アルティメットショートウェーブ",
     "DESCRIPTION": "!B! [E] と !M! チャージ を得る。 戦闘中、このカードの チャージ 増加量を !D! 増加し、 エナジー増加量を 1 増やす。"
   },
-  "NebulaRing": {
+  "${modId}:NebulaRing": {
     "NAME": "ネビュラリング",
     "DESCRIPTION": " 敵の攻撃やカードの効果で ブロック を失うたび、 プレートアーマー !M! を得る。"
   },
-  "SprinkleStarSeal": {
+  "${modId}:SprinkleStarSeal": {
     "NAME": "スプリンクルスター封印",
     "DESCRIPTION": " 脱力 99 を 与える。 NL 廃棄"
   },
-  "Wraith": {
+  "${modId}:Wraith": {
     "NAME": "怨霊",
     "DESCRIPTION": "使用不可 NL あなたのターン終了時に 怨霊 1 を得る。"
   },
-  "Acceleration": {
+  "${modId}:Acceleration": {
     "NAME": "アクセラレーション",
     "DESCRIPTION": "山札の上から !B! 枚 カードを引く。 NL 増幅 [E] ：さらに !M! 枚引く。"
   }

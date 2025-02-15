@@ -81,7 +81,7 @@ class DragonMeteor : CustomCard(
     }
 
     companion object {
-        const val ID = "DragonMeteor"
+        const val ID = "marisa:DragonMeteor"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

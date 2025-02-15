@@ -34,7 +34,7 @@ class BottledSpark : AbstractPotion(
     override fun makeCopy(): AbstractPotion = BottledSpark()
 
     companion object {
-        const val POTION_ID = "BottledSpark"
+        const val POTION_ID = "marisa:BottledSpark"
         private val potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID)
         val NAME = potionStrings.NAME
         val DESCRIPTIONS = potionStrings.DESCRIPTIONS

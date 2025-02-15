@@ -3,6 +3,7 @@ import { basePath, changelogPath, jarPath, stsPath, version } from "./releases.t
 import { verifyHardLink } from "./link/mod.ts"
 import { assertEquals, assertStringIncludes } from "@std/assert"
 import { readZip } from "https://deno.land/x/jszip@0.11.0/mod.ts"
+import { modId } from "./paths.ts"
 
 Deno.test("hardlinks are verified", async () => {
   await verifyHardLink({ quiet: true, check: true })
@@ -17,7 +18,7 @@ Deno.test("modjson.json has correct version", async () => {
 
 Deno.test("changelog.md has correct version", async () => {
   const paths = [
-    join(stsPath, "MarisaContinued", "config.json"),
+    join(stsPath, modId, "config.json"),
     join(basePath, "changelog.bbcode"),
     join(basePath, "changelog.sts.txt"),
     changelogPath,

@@ -47,7 +47,7 @@ class EscapeVelocity : CustomCard(
     }
 
     companion object {
-        const val ID = "EscapeVelocity"
+        const val ID = "marisa:EscapeVelocity"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

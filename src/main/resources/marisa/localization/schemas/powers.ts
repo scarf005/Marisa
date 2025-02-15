@@ -1,159 +1,159 @@
 import { z } from "$zod/mod.ts"
 
 export const schema = z.object({
-  "DarkMatterPower": z.object({
+  "${modId}:DarkMatterPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "ExtraDraw": z.object({
+  "${modId}:ExtraDraw": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string(), z.string()]),
   }).strict(),
-  "EventHorizonPower": z.object({
+  "${modId}:EventHorizonPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string(), z.string(), z.string()]),
   }).strict(),
-  "IllusionStarPower": z.object({
+  "${modId}:IllusionStarPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "MilliPulsaPower": z.object({
+  "${modId}:MilliPulsaPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "SatellIllusPower": z.object({
+  "${modId}:SatellIllusPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "TempStrength": z.object({
+  "${modId}:TempStrength": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "TempStrengthLoss": z.object({
+  "${modId}:TempStrengthLoss": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "ExtraEnergyPower": z.object({
+  "${modId}:ExtraEnergyPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "ChargeUpPower": z.object({
+  "${modId}:ChargeUpPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string(), z.string(), z.string()]),
   }).strict(),
-  "PolarisUniquePower": z.object({
+  "${modId}:PolarisUniquePower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "OrrerysSunPower": z.object({
+  "${modId}:OrrerysSunPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "Charged": z.object({
+  "${modId}:Charged": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "BlazeAwayPower": z.object({
+  "${modId}:BlazeAwayPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "MPPower": z.object({
+  "${modId}:MPPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "EnergyFlowPower": z.object({
+  "${modId}:EnergyFlowPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "PulseMagicPower": z.object({
+  "${modId}:PulseMagicPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "SingularityPower": z.object({
+  "${modId}:SingularityPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "WitchOfGreedGold": z.object({
+  "${modId}:WitchOfGreedGold": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "WitchOfGreedPotion": z.object({
+  "${modId}:WitchOfGreedPotion": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "OneTimeOffPlusPower": z.object({
+  "${modId}:OneTimeOffPlusPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "OneTimeOffPower": z.object({
+  "${modId}:OneTimeOffPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "SuperNovaPower": z.object({
+  "${modId}:SuperNovaPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string(), z.string()]),
   }).strict(),
-  "CasketOfStarPlusPower": z.object({
+  "${modId}:CasketOfStarPlusPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "CasketOfStarPower": z.object({
+  "${modId}:CasketOfStarPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "GalacticHaloPower": z.object({
+  "${modId}:GalacticHaloPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "ManaRampagePower": z.object({
+  "${modId}:ManaRampagePower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "PropBagPower": z.object({
+  "${modId}:PropBagPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "UltraShortWavePower": z.object({
+  "${modId}:UltraShortWavePower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "DarkSparkPower": z.object({
+  "${modId}:DarkSparkPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "MagicChantPower": z.object({
+  "${modId}:MagicChantPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "SatelIllusPower": z.object({
+  "${modId}:SatelIllusPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "GrandCrossPower": z.object({
+  "${modId}:GrandCrossPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "Diaspora": z.object({
+  "${modId}:Diaspora": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "TalismanPower": z.object({
+  "${modId}:TalismanPower": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "Wraith": z.object({
+  "${modId}:Wraith": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "Nebula": z.object({
+  "${modId}:Nebula": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "LimboContact": z.object({
+  "${modId}:LimboContact": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "InfernoClaw": z.object({
+  "${modId}:InfernoClaw": z.object({
     "NAME": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),

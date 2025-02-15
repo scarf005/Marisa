@@ -150,7 +150,8 @@ class MarisaContinued :
             settingsPanel
         )
         fun toggleButton(text: String, y: Float, configName: String, enabled: Boolean) =
-            ModLabeledToggleButton(text, 350.0f, y,
+            ModLabeledToggleButton(
+                text, 350.0f, y,
                 Settings.CREAM_COLOR, FontHelper.charDescFont, enabled, settingsPanel, {}) {
                 getConfig().run {
                     setBool(configName, it.enabled)

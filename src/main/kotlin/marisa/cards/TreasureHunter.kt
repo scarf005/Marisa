@@ -44,7 +44,7 @@ class TreasureHunter : CustomCard(
     }
 
     companion object {
-        const val ID = "TreasureHunter"
+        const val ID = "marisa:TreasureHunter"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

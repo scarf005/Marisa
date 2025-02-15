@@ -1,7 +1,8 @@
+import org.apache.tools.ant.filters.ReplaceTokens
 import org.jetbrains.kotlin.com.google.gson.Gson
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-val modID = "MarisaContinued"
+val modID = "marisa"
 val jarFile = "$buildDir/libs/${modID}.jar"
 val changelog = File("docs/changelog/changelog.md").readText()
 val changeBBCode = File("docs/changelog/changelog.bbcode").readText()
@@ -112,16 +113,40 @@ data class Config(
     val visibility: String = "public",
     val changeNote: String,
     val tags: List<String> = listOf(
-        "Touhou", "Character", "Marisa", "Kirisame Marisa",
-        "English", "Simplified Chinese", "Traditional Chinese", "French", "Korean", "Japanese", "Spanish - Spain"
+        "Touhou",
+        "Character",
+        "Marisa",
+        "Kirisame Marisa",
+        "English",
+        "Simplified Chinese",
+        "Traditional Chinese",
+        "French",
+        "Korean",
+        "Japanese",
+        "Spanish - Spain"
     ),
 )
 
 val gson: Gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create()
 val configFile = file("src/main/resources/ModTheSpire.json")
 
+val tokens = project.extra.properties.entries
+    .filter { it.value is String }
+    .associate { "${it.key}" to it.value }
+
 tasks.processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    filteringCharset = "UTF-8"
+    val expansion: FileCopyDetails.() -> Unit = {
+        filter(
+            ReplaceTokens::class,
+            "tokens" to tokens,
+            "beginToken" to "\${",
+            "endToken" to "}",
+        )
+    }
+    filesMatching("ModTheSpire.json", expansion)
+    filesMatching("${modID}/localization/**/*.json", expansion)
 }
 
 tasks.register("modthespire") {

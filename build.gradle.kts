@@ -1,3 +1,4 @@
+import org.apache.tools.ant.filters.ReplaceTokens
 import org.jetbrains.kotlin.com.google.gson.Gson
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -129,13 +130,14 @@ data class Config(
 val gson: Gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().create()
 val configFile = file("src/main/resources/ModTheSpire.json")
 
+val tokens = project.extra.properties.entries
+    .filter { it.value is String }
+    .associate { "${it.key}" to it.value }
+
 tasks.processResources {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     filteringCharset = "UTF-8"
     val expansion: FileCopyDetails.() -> Unit = {
-        val tokens = project.extra.properties.entries
-            .filter { it.value is String }
-            .associate { "mod.${it.key}" to it.value }
         filter(
             ReplaceTokens::class,
             "tokens" to tokens,
@@ -144,7 +146,7 @@ tasks.processResources {
         )
     }
     filesMatching("ModTheSpire.json", expansion)
-    filesMatching("${modID}Assets/**/*.json", expansion)
+    filesMatching("${modID}/localization/**/*.json", expansion)
 }
 
 tasks.register("modthespire") {

@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.CorruptionPower
+import marisa.cards.Orbital
 
 class OrbitalAction : AbstractGameAction() {
     private val p: AbstractPlayer = AbstractDungeon.player
@@ -34,7 +35,7 @@ class OrbitalAction : AbstractGameAction() {
             }
             val car: AbstractCard
             if (p.exhaustPile.size() == 1) {
-                if (p.exhaustPile.group[0].cardID == "Orbital") {
+                if (p.exhaustPile.group[0].cardID == Orbital.ID) {
                     isDone = true
                     return
                 }
@@ -60,7 +61,7 @@ class OrbitalAction : AbstractGameAction() {
             c = p.exhaustPile.group.iterator()
             while (c.hasNext()) {
                 val derp = c.next()
-                if (derp.cardID == "Orbital") {
+                if (derp.cardID == Orbital.ID) {
                     c.remove()
                     orbitals.add(derp)
                 }

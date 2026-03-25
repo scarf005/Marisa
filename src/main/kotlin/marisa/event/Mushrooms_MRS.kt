@@ -55,10 +55,10 @@ class Mushrooms_MRS : AbstractEvent() {
                         } else {
                             AbstractDungeon.getCurrRoom().addGoldToRewards(AbstractDungeon.miscRng.random(20, 30))
                         }
-                        if (AbstractDungeon.player.hasRelic("ShroomBag")) {
+                        if (AbstractDungeon.player.hasRelic(ShroomBag.ID)) {
                             AbstractDungeon.getCurrRoom().addRelicToRewards(BigShroomBag())
                         } else {
-                            if (AbstractDungeon.player.hasRelic("BigShroomBag")) {
+                            if (AbstractDungeon.player.hasRelic(BigShroomBag.ID)) {
                                 if (AbstractDungeon.player.hasRelic("OddMushroom")) {
                                     AbstractDungeon.getCurrRoom().addRelicToRewards(Circlet())
                                 } else {

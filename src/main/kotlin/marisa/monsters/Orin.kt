@@ -258,9 +258,7 @@ class Orin : AbstractMonster(
                     i++
                 }
                 addToBot(
-                    RemoveSpecificPowerAction(
-                        p, this, "Wraith"
-                    )
+                    RemoveSpecificPowerAction(p, this, WraithPower.POWER_ID)
                 )
             }
 

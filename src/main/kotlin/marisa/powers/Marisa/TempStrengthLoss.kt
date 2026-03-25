@@ -28,7 +28,7 @@ class TempStrengthLoss(owner: AbstractCreature?, amount: Int) : AbstractPower() 
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (!isPlayer) {
             AbstractDungeon.actionManager
-                .addToBottom(RemoveSpecificPowerAction(owner, owner, "TempStrengthLoss"))
+                .addToBottom(RemoveSpecificPowerAction(owner, owner, POWER_ID))
         }
     }
 

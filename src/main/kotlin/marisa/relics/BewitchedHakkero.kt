@@ -24,7 +24,7 @@ class BewitchedHakkero : CustomRelic(
     override fun makeCopy(): AbstractRelic = BewitchedHakkero()
 
     override fun obtain() {
-        if (AbstractDungeon.player.hasRelic("MiniHakkero")) {
+        if (AbstractDungeon.player.hasRelic(MiniHakkero.ID)) {
             instantObtain(AbstractDungeon.player, 0, false)
         } else {
             super.obtain()

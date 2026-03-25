@@ -28,7 +28,7 @@ import marisa.powers.monsters.WraithPower
 
 class Orin : AbstractMonster(
     NAME,
-    "Orin",
+    ID,
     STAGE_1_HP,
     0.0f,
     -30.0f,

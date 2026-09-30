@@ -44,7 +44,7 @@ class AsteroidBelt : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "AsteroidBelt"
+        const val ID = "marisa:AsteroidBelt"
         const val IMG_PATH = "marisa/img/cards/Asteroid.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

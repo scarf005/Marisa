@@ -28,7 +28,7 @@ import marisa.powers.monsters.WraithPower
 
 class Orin : AbstractMonster(
     NAME,
-    "Orin",
+    ID,
     STAGE_1_HP,
     0.0f,
     -30.0f,
@@ -258,9 +258,7 @@ class Orin : AbstractMonster(
                     i++
                 }
                 addToBot(
-                    RemoveSpecificPowerAction(
-                        p, this, "Wraith"
-                    )
+                    RemoveSpecificPowerAction(p, this, WraithPower.POWER_ID)
                 )
             }
 
@@ -551,7 +549,7 @@ class Orin : AbstractMonster(
 
     companion object {
         private val logger = MarisaContinued.logger
-        const val ID = "Orin"
+        const val ID = "marisa:Orin"
         const val NAME = "Orin"
         private const val STAGE_1_HP = 68
         private const val S_1_HP = 82

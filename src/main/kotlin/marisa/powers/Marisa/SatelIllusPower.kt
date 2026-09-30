@@ -16,7 +16,7 @@ class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     fun checkDrawPile() {
         val temp = AbstractDungeon.player.drawPile.size()
         MarisaContinued.logger.info(
-            """SatelIllusPower : checkDrawPile : counter : $counter ; 
+            """SatelIllusPower : checkDrawPile : counter : $counter ;
                 |drawPile size $temp ; grant energy :${temp > counter}""".trimMargin()
         )
         if (temp > counter) {
@@ -80,7 +80,7 @@ class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "SatelIllusPower"
+        const val POWER_ID = "marisa:SatelIllusPower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

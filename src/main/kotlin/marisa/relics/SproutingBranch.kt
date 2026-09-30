@@ -33,7 +33,7 @@ class SproutingBranch : CustomRelic(
     }
 
     companion object {
-        const val ID = "SproutingBranch"
+        const val ID = "marisa:SproutingBranch"
         private const val IMG = "marisa/img/relics/sproutingBranch.png"
         private const val IMG_OTL = "marisa/img/relics/outline/sproutingBranch.png"
         private const val REGEN = 4

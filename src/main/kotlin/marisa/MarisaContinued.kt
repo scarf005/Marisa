@@ -150,7 +150,8 @@ class MarisaContinued :
             settingsPanel
         )
         fun toggleButton(text: String, y: Float, configName: String, enabled: Boolean) =
-            ModLabeledToggleButton(text, 350.0f, y,
+            ModLabeledToggleButton(
+                text, 350.0f, y,
                 Settings.CREAM_COLOR, FontHelper.charDescFont, enabled, settingsPanel, {}) {
                 getConfig().run {
                     setBool(configName, it.enabled)
@@ -173,16 +174,17 @@ class MarisaContinued :
 
         data class PotionInfo(
             val cls: Class<out AbstractPotion>,
+            val id: String,
             val liquid: Color,
             val hybrid: Color,
             val spot: Color
         )
         listOf(
-            PotionInfo(ShroomBrew::class.java, Color.NAVY.cpy(), Color.LIME.cpy(), Color.OLIVE),
-            PotionInfo(StarNLove::class.java, Color.BLUE.cpy(), Color.YELLOW.cpy(), Color.NAVY),
-            PotionInfo(BottledSpark::class.java, Color.BLUE.cpy(), Color.YELLOW.cpy(), Color.NAVY)
-        ).forEach { (cls, liquid, hybrid, spot) ->
-            BaseMod.addPotion(cls, liquid, hybrid, spot, cls.simpleName, ThModClassEnum.MARISA)
+            PotionInfo(ShroomBrew::class.java, ShroomBrew.POTION_ID, Color.NAVY.cpy(), Color.LIME.cpy(), Color.OLIVE),
+            PotionInfo(StarNLove::class.java, StarNLove.POTION_ID, Color.BLUE.cpy(), Color.YELLOW.cpy(), Color.NAVY),
+            PotionInfo(BottledSpark::class.java, BottledSpark.POTION_ID, Color.BLUE.cpy(), Color.YELLOW.cpy(), Color.NAVY)
+        ).forEach { (cls, id, liquid, hybrid, spot) ->
+            BaseMod.addPotion(cls, liquid, hybrid, spot, id, ThModClassEnum.MARISA)
         }
 
         BaseMod.addMonster(ORIN_ENCOUNTER, GetMonster { Orin() })

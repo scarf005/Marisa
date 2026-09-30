@@ -52,7 +52,7 @@ class GalacticHalo : CustomCard(
     }
 
     companion object {
-        const val ID = "GalacticHalo"
+        const val ID = "marisa:GalacticHalo"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

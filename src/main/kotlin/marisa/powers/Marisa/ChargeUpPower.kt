@@ -97,7 +97,7 @@ class ChargeUpPower(
         AbstractDungeon.player.hand.group.filterIsInstance<Exhaustion_MRS>().isNotEmpty()
 
     companion object {
-        const val POWER_ID = "ChargeUpPower"
+        const val POWER_ID = "marisa:ChargeUpPower"
         private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME
         val DESCRIPTIONS = powerStrings.DESCRIPTIONS

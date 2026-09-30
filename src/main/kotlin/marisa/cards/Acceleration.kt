@@ -44,7 +44,7 @@ class Acceleration : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "Acceleration"
+        const val ID = "marisa:Acceleration"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME: String = cardStrings.NAME
         val DESCRIPTION: String = cardStrings.DESCRIPTION

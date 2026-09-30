@@ -47,7 +47,7 @@ class SprinkleStarSeal : CustomCard(
     }
 
     companion object {
-        const val ID = "SprinkleStarSeal"
+        const val ID = "marisa:SprinkleStarSeal"
         const val IMG_PATH = "marisa/img/cards/sprinkleSeal.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

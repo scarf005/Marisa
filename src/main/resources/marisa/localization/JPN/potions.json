@@ -1,5 +1,5 @@
 {
-  "ShroomBrew": {
+  "${modId}:ShroomBrew": {
     "NAME": "キノコ茶",
     "DESCRIPTIONS": [
       " カードを 廃棄 する。 NL 廃棄した カードによって異なる 効果を発揮する。",
@@ -7,14 +7,14 @@
       "アタック : 恐怖ポーション NL スキル : 脱力ポーション  NL パワー : 毒ポーション  NL 状態異常 : 火炎ポーション ; NL 呪い : 煙玉 "
     ]
   },
-  "BottledSpark": {
+  "${modId}:BottledSpark": {
     "NAME": "星屑の小瓶",
     "DESCRIPTIONS": [
       " #b",
       " #yスパーク を手札に加える。"
     ]
   },
-  "StarNLove": {
+  "${modId}:StarNLove": {
     "NAME": "星屑と恋心",
     "DESCRIPTIONS": [
       "増幅 のための追加コストが不要になる。 #",

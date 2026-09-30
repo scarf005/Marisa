@@ -1,5 +1,5 @@
 {
-  "ShroomBrew": {
+  "${modId}:ShroomBrew": {
     "NAME": "Soupe de champignons",
     "DESCRIPTIONS": [
       "Épuisez une carte. NL L'effet de la potion est défini en fonction du type de carte épuisée.",

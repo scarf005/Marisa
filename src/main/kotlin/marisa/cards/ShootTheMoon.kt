@@ -68,7 +68,7 @@ class ShootTheMoon : AmplifiedAttack(
     }
 
     companion object {
-        const val ID = "ShootTheMoon"
+        const val ID = "marisa:ShootTheMoon"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

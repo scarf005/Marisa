@@ -1,82 +1,82 @@
 {
-  "MiniHakkero": {
+  "${modId}:MiniHakkero": {
     "NAME": "ミニ八卦炉",
     "FLAVOR": "霖之助からの贈り物。ミニ八卦炉は魔理沙が人里の両親の元から去るときに、霖之助が作ってくれたマジックアイテム。",
     "DESCRIPTIONS": [
       "カードをプレイするたび、 #yチャージ #b1 を得る。"
     ]
   },
-  "BewitchedHakkero": {
+  "${modId}:BewitchedHakkero": {
     "NAME": "妖器「ミニ八卦炉」",
     "FLAVOR": "妖器と化したミニ八卦炉はこれまでにない威力を出すが、安全かどうかは分からない……",
     "DESCRIPTIONS": [
       " #rミニ八卦炉 と置き換える。 NL カードをプレイするたび、 #yチャージ #b1 を得る。 NL それが #yスパーク カードなら、更に1増加する。"
     ]
   },
-  "MagicArmor": {
+  "${modId}:MagicArmor": {
     "NAME": "黒魔術の盾",
     "FLAVOR": "正直これが何か私は分からないが、デザイナーがプランに入れてたから実現しちゃった。 -プログラマー談",
     "DESCRIPTIONS": [
       "#y呪い や #y状態異常 を引くたび、 #b5 #yブロック を得る。"
     ]
   },
-  "MagicBroom": {
+  "${modId}:MagicBroom": {
     "NAME": "魔法の箒",
     "FLAVOR": "魔理沙が出かける時にはいつも使っている、彼女の空飛ぶ箒。",
     "DESCRIPTIONS": [
       "コストが #b0 のカードを #b3 枚プレイするたび、カードを #b1 枚引く"
     ]
   },
-  "AmpWand": {
+  "${modId}:AmpWand": {
     "NAME": "増幅の杖",
     "FLAVOR": "この杖はあまり使われていないようだ。",
     "DESCRIPTIONS": [
       "#y増幅 を 3回行うたびに、 [E] [E] を得る。"
     ]
   },
-  "RampagingMagicTools": {
+  "${modId}:RampagingMagicTools": {
     "NAME": "暴走する魔導器",
     "FLAVOR": "長い間使われていないようだ。何が起こるかは誰にも分からない。",
     "DESCRIPTIONS": [
       "ターン開始時、 [E] を得る。 NL 戦闘開始時、ランダムなバフ/デバフを得る。 ( #b1 #y脆弱化 , #b1 #y脱力 , #b1 #y弱体 , #b2 #y毒 , #b8 #yチャージ )"
     ]
   },
-  "ExperimentalFamiliar": {
+  "${modId}:ExperimentalFamiliar": {
     "NAME": "試作した使い魔",
     "FLAVOR": "輝く球体のような見た目の使い魔。 超強力ではないが、 確実に助けとなるだろう。",
     "DESCRIPTIONS": [
       "各ターンの開始時に、手札に #yスパーク を1枚加える。 NL 戦闘開始時、ランダムなカード #b3 枚の中から #b1 枚を選び手札に加える。 このターン、そのコストは #b0 "
     ]
   },
-  "BreadOfAWashokuLover": {
+  "${modId}:BreadOfAWashokuLover": {
     "NAME": "和食派のパン",
     "FLAVOR": "「あなたは今まで食べてきたパンの枚数を覚えてるの？」「１３枚。私は和食ですわ。」",
     "DESCRIPTIONS": [
       " #y状態異常 か #y呪い を廃棄する度、HPを #b1 回復する。 NL #b13 回効果を使用した時、最大HPが #b13 上昇し、効果を失う。"
     ]
   },
-  "SimpleLauncher": {
+  "${modId}:SimpleLauncher": {
     "NAME": "簡易発射装置",
     "FLAVOR": "これは懐中電灯、だれが何と言っても懐中電灯なんだ……",
     "DESCRIPTIONS": [
       "チャージの使用量を #b8 から #b6 に減らす。 "
     ]
   },
-  "HandmadeGrimoire": {
+  "${modId}:HandmadeGrimoire": {
     "NAME": "手作りグリモワール",
     "FLAVOR": "実験記録やマジックアイテムのレシピがぎっしり書かれたノート。 まさに、魔理沙の魔法研究書だ。",
     "DESCRIPTIONS": [
       "戦闘開始時、デッキのカード #b15 枚につき、 [E] を得てカードを #b1 枚引く。"
     ]
   },
-  "ShroomBag": {
+  "${modId}:ShroomBag": {
     "NAME": "キノコ鞄",
     "FLAVOR": "全ての魔女はきのこに異常な熱意を持っている… いや、魔理沙だけか？",
     "DESCRIPTIONS": [
       "獲得時、 #y寄生 #b2 枚を得る。 #y寄生 がプレイできるようになる。 NL #y寄生 をプレイすると、HPを #b2 回復し、カードを #b1 枚引く、 廃棄する。"
     ]
   },
-  "Cape": {
+  "${modId}:Cape": {
     "NAME": "盗賊のケープ",
     "FLAVOR": "魔理沙は自分が欲しい物は何でも借りていく。 NL これは良くその手助けとなる道具だ。",
     "DESCRIPTIONS": [
@@ -84,28 +84,28 @@
       " 回まで無料で手に入れることができる。"
     ]
   },
-  "SproutingBranch": {
+  "${modId}:SproutingBranch": {
     "NAME": "発芽した枝",
     "FLAVOR": "枯れたはずの枝を魔理沙は蘇らせた。まさに詩的な光景。",
     "DESCRIPTIONS": [
       "戦闘開始時、 #y再生 #b4 を得る。"
     ]
   },
-  "AmplifyWand": {
+  "${modId}:AmplifyWand": {
     "NAME": "増幅の杖",
     "FLAVOR": "この杖はあまり使われていないようだ。",
     "DESCRIPTIONS": [
       "#y増幅 を行うたび、 #b4 #yブロック を得る。"
     ]
   },
-  "CatCart": {
+  "${modId}:CatCart": {
     "NAME": "猫車",
     "FLAVOR": "戦場で倒れても、忠実な子猫たちがこれで生き返らせてくれる。",
     "DESCRIPTIONS": [
       "各ステージごとに 1回チャージされ、 死ぬとチャージをすべて消費して、 1チャージにつき HPを #g4 回復する。"
     ]
   },
-  "BigShroomBag": {
+  "${modId}:BigShroomBag": {
     "NAME": "大きなキノコ鞄",
     "FLAVOR": "キノコ鞄の大容量バージョン。",
     "DESCRIPTIONS": [

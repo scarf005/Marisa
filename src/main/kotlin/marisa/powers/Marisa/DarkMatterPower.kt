@@ -29,7 +29,7 @@ class DarkMatterPower(owner: AbstractCreature?) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "DarkMatterPower"
+        const val POWER_ID = "marisa:DarkMatterPower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

@@ -53,7 +53,7 @@ class Orbital : CustomCard(
     override fun use(arg0: AbstractPlayer, arg1: AbstractMonster?) {}
 
     companion object {
-        const val ID = "Orbital"
+        const val ID = "marisa:Orbital"
         const val IMG_PATH = "marisa/img/cards/Marisa/orbit.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

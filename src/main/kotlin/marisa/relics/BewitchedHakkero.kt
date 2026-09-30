@@ -24,7 +24,7 @@ class BewitchedHakkero : CustomRelic(
     override fun makeCopy(): AbstractRelic = BewitchedHakkero()
 
     override fun obtain() {
-        if (AbstractDungeon.player.hasRelic("MiniHakkero")) {
+        if (AbstractDungeon.player.hasRelic(MiniHakkero.ID)) {
             instantObtain(AbstractDungeon.player, 0, false)
         } else {
             super.obtain()
@@ -54,7 +54,7 @@ class BewitchedHakkero : CustomRelic(
     }
 
     companion object {
-        const val ID = "BewitchedHakkero"
+        const val ID = "marisa:BewitchedHakkero"
         private const val IMG = "marisa/img/relics/Hakkero_1_s.png"
         private const val IMG_OTL = "marisa/img/relics/outline/Hakkero_1_s.png"
     }

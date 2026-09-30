@@ -3,9 +3,8 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 val modID = "MarisaContinued"
 val jarFile = "$buildDir/libs/${modID}.jar"
-val changelog = File("docs/changelog/changelog.md").readText()
-val changeBBCode = File("docs/changelog/changelog.bbcode").readText()
-val changeSts = File("docs/changelog/changelog.sts.txt").readText()
+val changeBBCode by lazy { File("docs/changelog/changelog.bbcode").readText() }
+val changeSts by lazy { File("docs/changelog/changelog.sts.txt").readText() }
 
 val userSteamDir = property("userSteamDir") ?: throw error("userSteamDir is not set")
 val gameDir = "$userSteamDir/common/SlayTheSpire"
@@ -78,6 +77,21 @@ dependencies {
     compileOnly(files("$gameDir/desktop-1.0.jar"))
     compileOnly(fileTree(modTheSpireDir))
     compileOnly(fileTree(basemodDir))
+
+    testImplementation(platform("org.junit:junit-bom:5.10.2"))
+    testImplementation(kotlin("test-junit5"))
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation(files("$gameDir/desktop-1.0.jar"))
+    testImplementation(fileTree(modTheSpireDir))
+    testImplementation(fileTree(basemodDir))
+}
+
+tasks.test {
+    useJUnitPlatform()
+    workingDir(layout.buildDirectory.dir("test-workdir"))
+    doFirst {
+        workingDir.mkdirs()
+    }
 }
 
 sourceSets {
@@ -121,23 +135,26 @@ val gson: Gson = Gson().newBuilder().disableHtmlEscaping().setPrettyPrinting().c
 val configFile = file("src/main/resources/ModTheSpire.json")
 
 tasks.processResources {
+    mustRunAfter("modthespire")
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.register("modthespire") {
     description = "Generates ModTheSpire.json"
 
-    val config = ModTheSpire(
-        modID,
-        description = """
-            |Adds Marisa (霧雨 魔理沙) from Touhou Project as a new playable character.
-            |
-            |${changeSts}
-            """.trimMargin(),
-        version = File("docs/changelog/version.txt").readText().trim()
-    )
+    doLast {
+        val config = ModTheSpire(
+            modID,
+            description = """
+                |Adds Marisa (霧雨 魔理沙) from Touhou Project as a new playable character.
+                |
+                |${changeSts}
+                """.trimMargin(),
+            version = File("docs/changelog/version.txt").readText().trim()
+        )
 
-    configFile.writeText(gson.toJson(config) + "\n")
+        configFile.writeText(gson.toJson(config) + "\n")
+    }
 }
 
 tasks.jar {

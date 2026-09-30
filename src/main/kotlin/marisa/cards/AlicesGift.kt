@@ -48,7 +48,7 @@ class AlicesGift : AmplifiableCard(
     }
 
     companion object {
-        const val ID = "AlicesGift"
+        const val ID = "marisa:AlicesGift"
         const val IMG_PATH = "marisa/img/cards/GiftDoll_v2.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

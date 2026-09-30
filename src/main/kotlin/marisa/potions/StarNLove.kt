@@ -43,7 +43,7 @@ class StarNLove : AbstractPotion(
     override fun makeCopy(): AbstractPotion = StarNLove()
 
     companion object {
-        const val POTION_ID = "StarNLove"
+        const val POTION_ID = "marisa:StarNLove"
         private val potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID)
         val NAME = potionStrings.NAME
         val DESCRIPTIONS = potionStrings.DESCRIPTIONS

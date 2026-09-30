@@ -39,7 +39,7 @@ class StarDustReverie : CustomCard(
     }
 
     companion object {
-        const val ID = "StarDustReverie"
+        const val ID = "marisa:StarDustReverie"
         const val IMG_PATH = "marisa/img/cards/StarDustReverie.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

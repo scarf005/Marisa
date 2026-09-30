@@ -29,7 +29,7 @@ class CasketOfStarPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
     }
 
     companion object {
-        const val POWER_ID = "CasketOfStarPower"
+        const val POWER_ID = "marisa:CasketOfStarPower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

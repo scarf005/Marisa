@@ -59,7 +59,7 @@ class MysteriousBeam : CustomCard(
     }
 
     companion object {
-        const val ID = "MysteriousBeam"
+        const val ID = "marisa:MysteriousBeam"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

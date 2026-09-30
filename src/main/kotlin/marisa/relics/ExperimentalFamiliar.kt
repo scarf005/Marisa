@@ -39,7 +39,7 @@ class ExperimentalFamiliar : CustomRelic(
     }
 
     companion object {
-        const val ID = "ExperimentalFamiliar"
+        const val ID = "marisa:ExperimentalFamiliar"
         private const val IMG = "marisa/img/relics/ExpFami.png"
         private const val IMG_OTL = "marisa/img/relics/outline/ExpFami.png"
     }

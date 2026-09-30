@@ -1,56 +1,56 @@
 {
-  "Strike_MRS": {
+  "${modId}:Strike_MRS": {
     "NAME": "단순한 스파크",
     "DESCRIPTION": "피해를 !D! 줍니다."
   },
-  "Defend_MRS": {
+  "${modId}:Defend_MRS": {
     "NAME": "방어",
     "DESCRIPTION": "방어도를 !B! 얻습니다."
   },
-  "AsteroidBelt": {
+  "${modId}:AsteroidBelt": {
     "NAME": "소행성대",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL 증폭 [E] : 다음 턴에 방어도를 !B! 얻습니다."
   },
-  "BigCrunch": {
+  "${modId}:BigCrunch": {
     "NAME": "대함몰",
     "DESCRIPTION": "버린 카드 더미와 뽑을 카드 더미 각각의 반을 소멸시킵니다. NL 소멸시킨 카드 !M! 장마다 [E] 를 얻고 카드를 뽑습니다. NL 소멸."
   },
-  "BlazingStar": {
+  "${modId}:BlazingStar": {
     "NAME": "블레이징 스타",
     "DESCRIPTION": "피해를 !B! 줍니다. NL 손에 있는 *화상 카드마다 추가로 피해를 !M! 줍니다. NL 증폭 [E] : 2 배의 피해를 줍니다."
   },
-  "DarkSpark": {
+  "${modId}:DarkSpark": {
     "NAME": "다크 스파크",
     "DESCRIPTION": "뽑을 카드 더미 맨 위 !M! 장을 소멸시킵니다. NL 소멸된 공격 카드 수만큼 모든 적에게 피해를 !D! 줍니다."
   },
-  "DeepEcoloBomb": {
+  "${modId}:DeepEcoloBomb": {
     "NAME": "딥 이콜로지컬 봄",
     "DESCRIPTION": "무작위 적에게 피해를 !D! 주고 이번 턴에만 힘을 !M! 감소시킵니다. NL 증폭 [E] : 이 효과를 한 번 더 발동합니다."
   },
-  "DoubleSpark": {
+  "${modId}:DoubleSpark": {
     "NAME": "더블 스파크",
     "DESCRIPTION": "피해를 !D! 줍니다. NL *스파크 를 1 장 얻습니다.",
     "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL *스파크+ 를 1 장 얻습니다."
   },
-  "EarthLightRay": {
+  "${modId}:EarthLightRay": {
     "NAME": "어스라이트 레이",
     "DESCRIPTION": "체력을 !M! 회복합니다. 증폭 [E] : 버린 카드 더미에서 카드 1 장을 무작위로 가져옵니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "체력을 !M! 회복합니다. 증폭 [E] : 버린 카드 더미에서 카드 1 장을 골라 가져옵니다. NL 소멸."
   },
-  "EscapeVelocity": {
+  "${modId}:EscapeVelocity": {
     "NAME": "탈출 속도",
     "DESCRIPTION": "턴이 시작할 때 카드를 2 장 더 뽑고 *화상 카드를 1 장 얻습니다."
   },
-  "FinalSpark": {
+  "${modId}:FinalSpark": {
     "NAME": "파이널 스파크",
     "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다. NL 이름에 '스파크'가 포함된 카드를 사용할 때마다 비용이 [E] 감소합니다. NL 카드의 비용이 초기화됩니다.",
     "UPGRADE_DESCRIPTION": "보존. NL 모든 적에게 피해를 !D! 줍니다. NL 이름에 '스파크'가 포함된 카드를 사용할 때마다 비용이 [E] 감소합니다. NL 카드의 비용이 초기화됩니다."
   },
-  "GrandCross": {
+  "${modId}:GrandCross": {
     "NAME": "그랜드 크로스",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 이번 턴에 증폭을 발동했다면 비용이 0 이 됩니다."
   },
-  "GravityBeat": {
+  "${modId}:GravityBeat": {
     "NAME": "그래비티 비트",
     "DESCRIPTION": "내 덱의 카드 !B! 장마다 피해를 !D! 주고 카드를 1 장 뽑습니다.",
     "EXTENDED_DESCRIPTION": [
@@ -58,36 +58,36 @@
       " 번 발동합니다.)"
     ]
   },
-  "IllusionStar": {
+  "${modId}:IllusionStar": {
     "NAME": "일루전 스타",
     "DESCRIPTION": "무작위 카드를 !M! 장 얻습니다. NL 손에 있는 카드 1 장을 선택해 뽑을 카드 더미의 맨 위에 놓습니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "무작위 카드를 !M! 장 얻습니다. NL 손에 있는 카드 1 장을 선택해 뽑을 카드 더미의 맨 위에 놓습니다."
   },
-  "MachineGunSpark": {
+  "${modId}:MachineGunSpark": {
     "NAME": "머신건 스파크",
     "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 소멸."
   },
-  "MagicAbsorber": {
+  "${modId}:MagicAbsorber": {
     "NAME": "매직 앱소버",
     "DESCRIPTION": "방어도를 !B! 얻고 무작위 디버프를 하나 제거합니다. NL 소멸."
   },
-  "MasterSpark": {
+  "${modId}:MasterSpark": {
     "NAME": "마스터 스파크",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 증폭 [E] : 대신 피해를 !B! 줍니다."
   },
-  "MeteoricShower": {
+  "${modId}:MeteoricShower": {
     "NAME": "유성우",
     "DESCRIPTION": "카드를 X + 1 개 소멸시킵니다. NL 무작위 적에게 소멸된 카드 하나당 피해를 !D! 만큼 2 번 줍니다. NL *화상 카드가 소멸됐으면 피해를 3 번 줍니다."
   },
-  "MilkyWay": {
+  "${modId}:MilkyWay": {
     "NAME": "은하수",
     "DESCRIPTION": "방어도를 !B! 얻고 카드를 1 장 뽑습니다. NL 손에 있는 모든 공격 카드의 피해가 !M! 증가합니다."
   },
-  "NonDirectionalLaser": {
+  "${modId}:NonDirectionalLaser": {
     "NAME": "논 디렉셔널 레이저",
     "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다. NL 무작위 적에게 피해를 !D! 줍니다."
   },
-  "Occultation": {
+  "${modId}:Occultation": {
     "NAME": "엄폐",
     "DESCRIPTION": "뽑을 카드 더미를 버립니다. NL 버린 카드마다 방어도를 1 얻습니다.",
     "EXTENDED_DESCRIPTION": [
@@ -95,59 +95,59 @@
       ""
     ]
   },
-  "OortCloud": {
+  "${modId}:OortCloud": {
     "NAME": "오르트 구름",
     "DESCRIPTION": "판금 갑옷을 !M! 얻습니다. NL 증폭 [E] : 판금 갑옷을 !B! 추가로 얻습니다."
   },
-  "SatelliteIllusion": {
+  "${modId}:SatelliteIllusion": {
     "NAME": "새틀라이트 일루전",
     "DESCRIPTION": "내 턴 동안 뽑을 카드 더미의 카드 수가 증가하면 [E] 를 얻습니다.",
     "UPGRADE_DESCRIPTION": "선천성. NL 내 턴 동안 뽑을 카드 더미의 카드 수가 증가하면 [E] 를 얻습니다."
   },
-  "ShootTheMoon": {
+  "${modId}:ShootTheMoon": {
     "NAME": "슛 더 문",
     "DESCRIPTION": "보스가 아닌 적의 무작위 버프를 하나 제거하고 피해를 !D! 줍니다. NL 증폭 [E] : 대신 모든 버프를 제거하고 피해를 !B! 줍니다."
   },
-  "StarDustReverie": {
+  "${modId}:StarDustReverie": {
     "NAME": "스타더스트 래버리",
     "DESCRIPTION": "손에 있는 카드를 뽑을 카드 더미에 섞어 넣습니다. NL 넣은 갯수만큼 무작위 카드를 얻습니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "손에 있는 카드를 뽑을 카드 더미에 섞어 넣습니다. NL 넣은 갯수만큼 강화된 무작위 카드를 얻습니다. NL 소멸."
   },
-  "MillisecondPulsars": {
+  "${modId}:MillisecondPulsars": {
     "NAME": "밀리초 펄서",
     "DESCRIPTION": "증폭이 [E] 를 소모하지 않습니다.",
     "UPGRADE_DESCRIPTION": "선천성. NL 증폭이 [E] 를 소모하지 않습니다."
   },
-  "Spark": {
+  "${modId}:Spark": {
     "NAME": "스파크",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 소멸."
   },
-  "UpSweep": {
+  "${modId}:UpSweep": {
     "NAME": "라이징 스윕",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 충전을 !M! 얻습니다."
   },
-  "GuidingStar": {
+  "${modId}:GuidingStar": {
     "NAME": "안내별",
     "DESCRIPTION": "보존. NL 턴이 시작할 때 이 카드가 손에 있으면 [E] 를 얻습니다."
   },
-  "OrrerysSun": {
+  "${modId}:OrrerysSun": {
     "NAME": "오러리즈 선",
     "DESCRIPTION": "충전이 소모될 때마다 방어도를 !M! 얻습니다."
   },
-  "ChargingUp": {
+  "${modId}:ChargingUp": {
     "NAME": "충전 완료!",
     "DESCRIPTION": "충전을 !M! 얻습니다. NL 소멸."
   },
-  "LuminesStrike": {
+  "${modId}:LuminesStrike": {
     "NAME": "루미너스 스트라이크",
     "DESCRIPTION": "손에 있는 카드 수의 2 배만큼 피해를 줍니다. (현재 !D! 의 피해) NL 증폭 [E] : 대신 현재 에너지의 4 배만큼 피해를 줍니다. (현재 !B! 의 피해)",
     "UPGRADE_DESCRIPTION": "손에 있는 카드 수의 3 배만큼 피해를 줍니다. (현재 !D! 의 피해) NL 증폭 [E] : 대신 현재 에너지의 5 배만큼 피해를 줍니다. (현재 !B! 의 피해)"
   },
-  "OpenUniverse": {
+  "${modId}:OpenUniverse": {
     "NAME": "열린 우주",
     "DESCRIPTION": "뽑을 카드 더미에 무작위 카드 5 장을 섞어 넣습니다. NL 각각의 카드는 !D! %의 확률로 강화됩니다. NL 카드를 !M! 장 뽑습니다."
   },
-  "BlazeAway": {
+  "${modId}:BlazeAway": {
     "NAME": "블레이즈 어웨이",
     "DESCRIPTION": "이번 턴에 마지막으로 사용한 공격 카드를 !M! 회 사용합니다. NL 소멸.",
     "EXTENDED_DESCRIPTION": [
@@ -156,12 +156,12 @@
       " NL (사용한 공격 카드가 없습니다.)"
     ]
   },
-  "MaximisePower": {
+  "${modId}:MaximisePower": {
     "NAME": "최대 출력",
     "DESCRIPTION": "충전을 에너지로 변환합니다. NL 고갈을 1장 얻습니다. NL 이번 턴에 공격 카드의 피해가 2배가 됩니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "충전을 에너지로 변환합니다. NL 고갈을 1장 얻습니다. NL 이번 턴에 공격 카드의 피해가 2배가 됩니다."
   },
-  "StarlightTyphoon": {
+  "${modId}:StarlightTyphoon": {
     "NAME": "스타라이트 타이푼",
     "DESCRIPTION": "손에 있는 공격 카드를 제외한 모든 카드를 소멸시킵니다. NL 소멸시킨 카드 한 장당 *스파크 를 한 장씩 얻습니다.",
     "UPGRADE_DESCRIPTION": "손에 있는 공격 카드를 제외한 모든 카드를 소멸시킵니다. NL 소멸시킨 카드 한 장당 *스파크+ 를 한 장씩 얻습니다.",
@@ -170,109 +170,109 @@
       ""
     ]
   },
-  "SuperPerseids": {
+  "${modId}:SuperPerseids": {
     "NAME": "슈퍼 페르세이드",
     "DESCRIPTION": "사용불가. NL 이 카드를 뽑으면 [E] 를 얻습니다. 이 카드가 소멸되면 무작위 적에게 피해를 !D! 줍니다."
   },
-  "MysteriousBeam": {
+  "${modId}:MysteriousBeam": {
     "NAME": "미스터리어스 빔",
     "DESCRIPTION": "무작위 공격 카드를 1 장 얻고 그 카드의 피해만큼 피해를 줍니다.",
     "UPGRADE_DESCRIPTION": "강화된 무작위 공격 카드를 1 장 얻고 그 카드의 피해만큼 피해를 줍니다."
   },
-  "ShootingEcho": {
+  "${modId}:ShootingEcho": {
     "NAME": "슈팅 에코",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 1 장 소멸시킵니다. NL *화상 카드를 소멸시켰다면 이 카드를 손에 다시 추가합니다."
   },
-  "EnergyFlow": {
+  "${modId}:EnergyFlow": {
     "NAME": "에너지의 흐름",
     "DESCRIPTION": "턴이 끝날 때 충전을 !M! 얻습니다."
   },
-  "PowerUp": {
+  "${modId}:PowerUp": {
     "NAME": "강화!",
     "DESCRIPTION": "손에 있는 모든 공격 카드의 피해가 !M! 증가합니다."
   },
-  "WitchLeyline": {
+  "${modId}:WitchLeyline": {
     "NAME": "위치 레이 라인",
     "DESCRIPTION": "피해를 !D! 줍니다. NL *화상 카드를 !M! 장 얻습니다."
   },
-  "JA": {
+  "${modId}:JA": {
     "NAME": "준비 운동",
     "DESCRIPTION": "피해를 !D! 줍니다. NL *라이징 *스윕 , *스파크 , *위치 *레이 *라인 을 1 장씩 얻습니다.",
     "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL *라이징 *스윕+ , *스파크+ , *위치 *레이 *라인+ 을 1 장씩 얻습니다."
   },
-  "AbsoluteMagnitude": {
+  "${modId}:AbsoluteMagnitude": {
     "NAME": "절대 등급",
     "DESCRIPTION": "충전의 2 배 만큼 피해를 줍니다. (피해를 !D! 줍니다.)",
     "UPGRADE_DESCRIPTION": "충전의 3 배 만큼 피해를 줍니다. (피해를 !D! 줍니다.)"
   },
-  "DragonMeteor": {
+  "${modId}:DragonMeteor": {
     "NAME": "드래곤 미티어",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 소멸된 카드마다 !M! 만큼 추가 피해를 줍니다."
   },
-  "EventHorizon": {
+  "${modId}:EventHorizon": {
     "NAME": "사건의 지평선",
     "DESCRIPTION": "한 턴에 !M! 번, 증폭을 발동하면 버린 카드 더미에서 공격 카드를 가져옵니다."
   },
-  "PulseMagic": {
+  "${modId}:PulseMagic": {
     "NAME": "파동 마법",
     "DESCRIPTION": "다음 턴에 [E] 를 얻습니다. NL 증폭 [E] : 이번 턴에 증폭이 [E] 를 소모히지 않습니다.",
     "UPGRADE_DESCRIPTION": "다음 턴에 [E] [E] 를 얻습니다. NL 증폭 [E] : 이번 턴에 증폭이 [E] 를 소모하지 않습니다."
   },
-  "DC": {
+  "${modId}:DC": {
     "NAME": "66C",
     "DESCRIPTION": "선천성. NL 피해를 !D! 줍니다. NL 버린 카드 더미에 카드가 없을 경우 2 배의 피해를 줍니다."
   },
-  "Singularity": {
+  "${modId}:Singularity": {
     "NAME": "특이점",
     "DESCRIPTION": "비용이 0 인 카드를 사용할 때마다 손에 있는 무작위 공격 카드의 피해가 !M! 증가합니다."
   },
-  "SporeBomb": {
+  "${modId}:SporeBomb": {
     "NAME": "포자 폭탄",
     "DESCRIPTION": "적에게 취약을 !M! 부여합니다. NL 증폭 [E] : 대신 모든 적에게 취약을 !M! 부여합니다."
   },
-  "WitchOfGreed": {
+  "${modId}:WitchOfGreed": {
     "NAME": "욕심쟁이 마녀",
     "DESCRIPTION": "전투가 끝나면 골드를 !M! 얻습니다.  NL 증폭 [E] : 추가로 무작위 포션을 1개 얻습니다."
   },
-  "TreasureHunter": {
+  "${modId}:TreasureHunter": {
     "NAME": "보물 사냥꾼",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드로 엘리트 몬스터나 보스 몬스터를 처치하면 전투가 끝난 뒤에 무작위 유물을 얻습니다. NL 소멸."
   },
-  "Robbery": {
+  "${modId}:Robbery": {
     "NAME": "도둑질",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 막히지 않은 피해만큼 골드를 얻습니다. NL 증폭 [E] : 골드를 2배 얻습니다. NL 소멸."
   },
-  "6A": {
+  "${modId}:6A": {
     "NAME": "6A",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 막히지 않은 피해만큼 방어도를 얻습니다."
   },
-  "CircumpolarStar": {
+  "${modId}:CircumpolarStar": {
     "NAME": "주극성",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL 카드를 !M! 장 뽑습니다. NL 이 카드를 사용할 때마다 뽑는 카드 수가 1 증가합니다."
   },
-  "RefractionSpark": {
+  "${modId}:RefractionSpark": {
     "NAME": "리프랙션 스파크",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 손에 있는 이름에 '스파크'를 포함한 카드의 피해를 막히지 않은 피해만큼 증가시킵니다. NL 증폭 [E] : 대신 피해를 !B! 줍니다."
   },
-  "MagicChant": {
+  "${modId}:MagicChant": {
     "NAME": "마법 노래",
     "DESCRIPTION": "뽑을 카드 더미에서 카드를 1 장 손에 추가하고 이번 전투동안 강화합니다. NL 소멸."
   },
-  "UnstableBomb": {
+  "${modId}:UnstableBomb": {
     "NAME": "불안정한 폭탄",
     "DESCRIPTION": "무작위 적에게 피해를 !D! 에서 !B! 만큼 4 번 줍니다."
   },
-  "SuperNova": {
+  "${modId}:SuperNova": {
     "NAME": "초신성",
     "DESCRIPTION": "*화상 카드의 피해를 받지 않습니다. NL 화상 카드가 소멸될 때마다 힘을 !M! 얻습니다. NL 턴이 끝날 때 손에 있는 카드가 소멸됩니다.",
     "UPGRADE_DESCRIPTION": "선천성. NL *화상 카드의 피해를 받지 않습니다. NL 화상 카드가 소멸될 때마다 힘을 !M! 얻습니다. NL 턴이 끝날 때 손에 있는 카드가 소멸됩니다."
   },
-  "OneTimeOff": {
+  "${modId}:OneTimeOff": {
     "NAME": "잠깐의 휴식",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL 이번 턴에 증폭을 발동할 수 없습니다. NL 다음 턴에 카드를 !M! 장 뽑습니다.",
     "UPGRADE_DESCRIPTION": "방어도를 !B! 얻습니다. NL 이번 턴에 증폭을 발동하거나 충전을 소모할 수 없습니다. NL 다음 턴에 카드를 !M! 장 뽑습니다."
   },
-  "DarkMatter": {
+  "${modId}:DarkMatter": {
     "NAME": "암흑 물질",
     "DESCRIPTION": "휘발성. NL 한 턴에 한 번만 사용할 수 있습니다. NL 이 카드를 2 장 복사해 뽑을 카드 더미에 넣습니다. NL 카드를 1 장 뽑습니다. NL 이 카드가 소멸되면 방어도를 !B! 얻습니다.",
     "UPGRADE_DESCRIPTION": "휘발성. NL 한 턴에 한 번만 사용할 수 있습니다. NL 이 카드를 2 장 복사해 뽑을 카드 더미에 넣습니다. NL 카드를 1 장 뽑습니다. NL 이 카드가 소멸되면 방어도를 !B! 얻습니다.",
@@ -281,20 +281,20 @@
       ""
     ]
   },
-  "GasGiant": {
+  "${modId}:GasGiant": {
     "NAME": "거대 기체 행성",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL *화상 카드를 !M! 개 얻습니다."
   },
-  "CasketOfStar": {
+  "${modId}:CasketOfStar": {
     "NAME": "별이 담긴 상자",
     "DESCRIPTION": "방어도를 얻을 때마다 *스파크 를 얻습니다.",
     "UPGRADE_DESCRIPTION": "방어도를 얻을 때마다 *스파크+ 를 얻습니다."
   },
-  "ChargeUpSpray": {
+  "${modId}:ChargeUpSpray": {
     "NAME": "충전 스프레이",
     "DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드로 충전을 발동시키면 [E] 를 얻고 카드를 !M! 장 뽑습니다."
   },
-  "EnergyRecoil": {
+  "${modId}:EnergyRecoil": {
     "NAME": "에너지 반동",
     "DESCRIPTION": "현재의 충전만큼 방어도를 얻습니다.",
     "UPGRADE_DESCRIPTION": "현재의 충전 + 3 만큼 방어도를 얻습니다.",
@@ -303,29 +303,29 @@
       " 얻습니다.)"
     ]
   },
-  "GalacticHalo": {
+  "${modId}:GalacticHalo": {
     "NAME": "은하 헤일로",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL 충전을 !M! 얻습니다."
   },
-  "ManaConvection": {
+  "${modId}:ManaConvection": {
     "NAME": "마나 대류",
     "DESCRIPTION": "카드를 !M! 장까지 소멸시킵니다. NL 소멸된 수만큼 [E] 를 얻습니다. NL 소멸."
   },
-  "ManaRampage": {
+  "${modId}:ManaRampage": {
     "NAME": "마나 폭주",
     "DESCRIPTION": "X 만큼 무작위 공격 카드를 사용합니다.",
     "UPGRADE_DESCRIPTION": "X 만큼 강화된 무작위 공격 카드를 사용합니다."
   },
-  "StarBarrage": {
+  "${modId}:StarBarrage": {
     "NAME": "별세례",
     "DESCRIPTION": "피해를 !D! 만큼 !M! 번 줍니다. NL 이 카드를 사용할 때마다 공격 횟수가 1 증가합니다."
   },
-  "BinaryStars": {
+  "${modId}:BinaryStars": {
     "NAME": "쌍성",
     "DESCRIPTION": "*흑섬광성 또는 *백색왜성 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다.",
     "UPGRADE_DESCRIPTION": "*흑섬광성+ 또는 *백색왜성+ 카드를 선택해 얻습니다. NL 증폭 [E] : 두 카드를 모두 얻습니다."
   },
-  "CollectingQuirk": {
+  "${modId}:CollectingQuirk": {
     "NAME": "골동품 수집",
     "DESCRIPTION": "보유한 유물 !M! 개마다 무작위 적에게 피해를 !D! 줍니다.",
     "EXTENDED_DESCRIPTION": [
@@ -333,12 +333,12 @@
       ""
     ]
   },
-  "PropBag": {
+  "${modId}:PropBag": {
     "NAME": "휴대용 소도구 가방",
     "DESCRIPTION": "무작위 유물을 얻습니다. NL 유물은 전투가 끝나면 사라집니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "선천성. NL 무작위 유물을 얻습니다. NL 유물은 전투가 끝나면 사라집니다. NL 소멸."
   },
-  "BlackFlareStar": {
+  "${modId}:BlackFlareStar": {
     "NAME": "흑섬광성",
     "DESCRIPTION": "카드가 4 장 이상일 때 사용할 수 있습니다. NL 원하는 만큼 카드를 버리고 버린 카드마다 방어도를 !B! 얻습니다. NL 소멸.",
     "EXTENDED_DESCRIPTION": [
@@ -346,7 +346,7 @@
       ""
     ]
   },
-  "WhiteDwarf": {
+  "${modId}:WhiteDwarf": {
     "NAME": "백색왜성",
     "DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !D! 줍니다. (버린 카드 더미의 2배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
     "UPGRADE_DESCRIPTION": "카드가 4 장 이하일 때 사용할 수 있습니다. NL 피해를 !D! 줍니다. (버린 카드 더미의 3배) NL *화상 카드 2 장을 얻습니다. NL 소멸.",
@@ -355,35 +355,35 @@
       ""
     ]
   },
-  "FairyDestructionRay": {
+  "${modId}:FairyDestructionRay": {
     "NAME": "요정 파괴 광선",
     "DESCRIPTION": "모든 적에게 피해를 !D! 줍니다. NL 증폭 [E] [E] : 체력이 !M! 이하인 적을 처치합니다."
   },
-  "Orbital": {
+  "${modId}:Orbital": {
     "NAME": "궤도",
     "DESCRIPTION": "사용불가. NL 이 카드를 뽑으면 카드를 1 장 뽑습니다. 이 카드가 소멸되면 소멸된 카드를 !M! 개 가져옵니다."
   },
-  "AlicesGift": {
+  "${modId}:AlicesGift": {
     "NAME": "앨리스의 선물",
     "DESCRIPTION": "보존. NL 피해를 !D! 줍니다. NL 증폭 [E] [E] : 3 배의 피해를 줍니다. NL 소멸."
   },
-  "Exhaustion_MRS": {
+  "${modId}:Exhaustion_MRS": {
     "NAME": "고갈",
     "DESCRIPTION": "사용불가. NL 이 카드가 손에 있으면 충전을 얻거나 소모할 수 없습니다."
   },
-  "UltimateShortwave": {
+  "${modId}:UltimateShortwave": {
     "NAME": "얼티밋 쇼트웨이브",
     "DESCRIPTION": "[E] 를 !B! 얻고 충전을 !M! 얻습니다. NL 이 카드를 사용해 얻는 충전을 !D!, 에너지를 1 증가시킵니다."
   },
-  "SprinkleStarSeal": {
+  "${modId}:SprinkleStarSeal": {
     "NAME": "스프링클 스타 봉인",
     "DESCRIPTION": "약화를 99 부여합니다. NL 소멸."
   },
-  "Wraith": {
+  "${modId}:Wraith": {
     "NAME": "망령",
     "DESCRIPTION": "사용불가. NL 턴이 끝날 때 망령을 1 얻습니다."
   },
-  "Acceleration": {
+  "${modId}:Acceleration": {
     "NAME": "가속",
     "DESCRIPTION": "카드를 !B! 장 뽑습니다. NL 증폭 [E] : 카드를 !M! 장 더 뽑습니다."
   }

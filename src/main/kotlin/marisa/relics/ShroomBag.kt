@@ -29,7 +29,7 @@ class ShroomBag : CustomRelic(
     }
 
     companion object {
-        const val ID = "ShroomBag"
+        const val ID = "marisa:ShroomBag"
         private const val IMG = "marisa/img/relics/ShroomBag.png"
         private const val IMG_OTL = "marisa/img/relics/outline/ShroomBag.png"
     }

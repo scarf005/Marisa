@@ -48,7 +48,7 @@ class Strike_MRS : CustomCard(
     }
 
     companion object {
-        const val ID = "Strike_MRS"
+        const val ID = "marisa:Strike_MRS"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

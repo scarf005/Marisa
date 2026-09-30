@@ -1,12 +1,12 @@
 {
-  "DarkMatterPower": {
+  "${modId}:DarkMatterPower": {
     "NAME": "ダークマター",
     "DESCRIPTIONS": [
       "このターン #yダークマター をプレイすることはできない。",
       ""
     ]
   },
-  "ExtraDraw": {
+  "${modId}:ExtraDraw": {
     "NAME": "エスケープベロシティ",
     "DESCRIPTIONS": [
       "ターン開始時、カード 2 #b",
@@ -14,7 +14,7 @@
       " 枚を手札に加える。"
     ]
   },
-  "EventHorizonPower": {
+  "${modId}:EventHorizonPower": {
     "NAME": "イベントホライズン",
     "DESCRIPTIONS": [
       "1 ターンに #b",
@@ -23,49 +23,49 @@
       " )"
     ]
   },
-  "IllusionStarPower": {
+  "${modId}:IllusionStarPower": {
     "NAME": "イリュージョンスター",
     "DESCRIPTIONS": [
       "ターン開始時、 手札の #b",
       " 枚のカードを 変化 する。."
     ]
   },
-  "MilliPulsaPower": {
+  "${modId}:MilliPulsaPower": {
     "NAME": "ミリ秒パルサー",
     "DESCRIPTIONS": [
       " #y増幅 効果の [E] が不要になる。",
       ""
     ]
   },
-  "SatellIllusPower": {
+  "${modId}:SatellIllusPower": {
     "NAME": "サテライトイリュージョン",
     "DESCRIPTIONS": [
       "デッキに存在しないカードをプレイするたび、 カードを #b",
       " 枚引く。"
     ]
   },
-  "TempStrength": {
+  "${modId}:TempStrength": {
     "NAME": "一時的な筋力",
     "DESCRIPTIONS": [
       "次に与えるダメージに #b",
       " を追加。"
     ]
   },
-  "TempStrengthLoss": {
+  "${modId}:TempStrengthLoss": {
     "NAME": "一時的な筋力喪失",
     "DESCRIPTIONS": [
       "このターンの 与えるダメージが #b",
       " 低下。"
     ]
   },
-  "ExtraEnergyPower": {
+  "${modId}:ExtraEnergyPower": {
     "NAME": "余剰エナジー",
     "DESCRIPTIONS": [
       "毎ターン",
       " [E]を得る。"
     ]
   },
-  "ChargeUpPower": {
+  "${modId}:ChargeUpPower": {
     "NAME": "チャージ",
     "DESCRIPTIONS": [
       "#b",
@@ -74,87 +74,87 @@
       " 倍のダメージを与える。"
     ]
   },
-  "PolarisUniquePower": {
+  "${modId}:PolarisUniquePower": {
     "NAME": "ガイディングスター",
     "DESCRIPTIONS": [
       " #yガイディングスター が山札にある場合, ターン開始時に [E] を得る。"
     ]
   },
-  "OrrerysSunPower": {
+  "${modId}:OrrerysSunPower": {
     "NAME": "オーレリーズサン",
     "DESCRIPTIONS": [
       "チャージ が使用されるたび、 #b",
       " ブロック を得る。"
     ]
   },
-  "Charged": {
+  "${modId}:Charged": {
     "NAME": "チャージ完了!",
     "DESCRIPTIONS": [
       "次の攻撃は、 #b",
       " 倍のダメージを与える。"
     ]
   },
-  "BlazeAwayPower": {
+  "${modId}:BlazeAwayPower": {
     "NAME": "ブレイズアウェイ",
     "DESCRIPTIONS": [
       "次に使用する アタック の複製 #b",
       " 枚を手札に加える。"
     ]
   },
-  "MPPower": {
+  "${modId}:MPPower": {
     "NAME": "マックスパワー",
     "DESCRIPTIONS": [
       "このターン、与えるダメージ #b",
       " 倍。"
     ]
   },
-  "EnergyFlowPower": {
+  "${modId}:EnergyFlowPower": {
     "NAME": "エナジーフロー",
     "DESCRIPTIONS": [
       "ターン終了時、 #yチャージ #b",
       " を得る"
     ]
   },
-  "PulseMagicPower": {
+  "${modId}:PulseMagicPower": {
     "NAME": "パルスマジック",
     "DESCRIPTIONS": [
       "このターン、 #y増幅 の必要コストが無くなる。"
     ]
   },
-  "SingularityPower": {
+  "${modId}:SingularityPower": {
     "NAME": "シンギュラリティ",
     "DESCRIPTIONS": [
       "コストが #b0 のカードを使用するたび、手札のランダムな #yアタック のダメージを #b",
       " 増加する。"
     ]
   },
-  "WitchOfGreedGold": {
+  "${modId}:WitchOfGreedGold": {
     "NAME": "強欲の魔女",
     "DESCRIPTIONS": [
       "戦闘終了時、 #b",
       " ゴールドを得る。 "
     ]
   },
-  "WitchOfGreedPotion": {
+  "${modId}:WitchOfGreedPotion": {
     "NAME": "強欲の魔女",
     "DESCRIPTIONS": [
       "戦闘終了時、 #b",
       " ゴールドと、ランダムなポーションを得る。"
     ]
   },
-  "OneTimeOffPlusPower": {
+  "${modId}:OneTimeOffPlusPower": {
     "NAME": "ちょっと一息",
     "DESCRIPTIONS": [
       "このターン、 #y増幅 効果を使用したり、 #yチャージ を消費する事ができない。"
     ]
   },
-  "OneTimeOffPower": {
+  "${modId}:OneTimeOffPower": {
     "NAME": "ちょっと一息",
     "DESCRIPTIONS": [
       "このターン、 #y増幅 効果を使用する事ができない。"
     ]
   },
-  "SuperNovaPower": {
+  "${modId}:SuperNovaPower": {
     "NAME": "スーパーノヴァ",
     "DESCRIPTIONS": [
       "#y火傷 を #y廃棄 するたび、 #y筋力 #b",
@@ -162,109 +162,109 @@
       "を得る。 #y火傷 によるダメージを受けなくなる。 . NL ターン終了時手札を #y廃棄 する。"
     ]
   },
-  "CasketOfStarPlusPower": {
+  "${modId}:CasketOfStarPlusPower": {
     "NAME": "星の器",
     "DESCRIPTIONS": [
       " #yブロック を得るたび、 #yスパーク #y+ を #b",
       " 枚手札に加える。"
     ]
   },
-  "CasketOfStarPower": {
+  "${modId}:CasketOfStarPower": {
     "NAME": "星の器",
     "DESCRIPTIONS": [
       " #yブロック を得るたび、 #yスパーク を #b",
       " 枚手札に加える。"
     ]
   },
-  "GalacticHaloPower": {
+  "${modId}:GalacticHaloPower": {
     "NAME": "ギャラクティックハロー",
     "DESCRIPTIONS": [
       " このターンにプレイした #yアタック の枚数分 #b",
       " #yブロック を得る。"
     ]
   },
-  "ManaRampagePower": {
+  "${modId}:ManaRampagePower": {
     "NAME": "魔力暴走",
     "DESCRIPTIONS": [
       "次にプレイする #yアタック を、 #b",
       " 回プレイする。 ."
     ]
   },
-  "PropBagPower": {
+  "${modId}:PropBagPower": {
     "NAME": "携帯道具袋",
     "DESCRIPTIONS": [
       "戦闘終了時、 #y",
       "を失う。"
     ]
   },
-  "UltraShortWavePower": {
+  "${modId}:UltraShortWavePower": {
     "NAME": "アルティメットショートウェーブ",
     "DESCRIPTIONS": [
       "アルティメットショートウェーブの効果が #b",
       " 回 #y増幅 された。"
     ]
   },
-  "DarkSparkPower": {
+  "${modId}:DarkSparkPower": {
     "NAME": "ダークスパーク",
     "DESCRIPTIONS": [
       "このターン、名前に スパーク と付くカードをプレイするたび、 #b",
       " #yチャージ を付与する。"
     ]
   },
-  "MagicChantPower": {
+  "${modId}:MagicChantPower": {
     "NAME": "魔術詠唱",
     "DESCRIPTIONS": [
       "次のターン中、コストを #b",
       "減少させる。"
     ]
   },
-  "SatelIllusPower": {
+  "${modId}:SatelIllusPower": {
     "NAME": "サテライトイリュージョン",
     "DESCRIPTIONS": [
       "プレイヤーのターン中、山札のカードが増加するたび #b",
       " [E] を得る。"
     ]
   },
-  "GrandCrossPower": {
+  "${modId}:GrandCrossPower": {
     "NAME": "魔法増幅",
     "DESCRIPTIONS": [
       "このターン #y増幅 を使用しました"
     ]
   },
-  "Diaspora": {
+  "${modId}:Diaspora": {
     "NAME": "ディアスポラ",
     "DESCRIPTIONS": [
       "ターン終了時に、体力が #b",
       "以下の時、即死する。"
     ]
   },
-  "TalismanPower": {
+  "${modId}:TalismanPower": {
     "NAME": "5色のタリスマン",
     "DESCRIPTIONS": [
       "ターン開始時、 #b",
       " ランダムな #yスキル を手札に加える。"
     ]
   },
-  "Wraith": {
+  "${modId}:Wraith": {
     "NAME": "怨霊",
     "DESCRIPTIONS": [
       "ターン開始時、 手札のランダムなカード #b1 枚を #y廃棄 する。"
     ]
   },
-  "LimboContact": {
+  "${modId}:LimboContact": {
     "NAME": "アンデッドコンタクト",
     "DESCRIPTIONS": [
       "この敵からダメージを受けるたび、 #y悪霊 1 を得る。"
     ]
   },
-  "Nebula": {
+  "${modId}:Nebula": {
     "NAME": "ネビュラ",
     "DESCRIPTIONS": [
       "ブロック を失うたび、 プレートアーマー ",
       " を得る。"
     ]
   },
-  "InfernoClaw": {
+  "${modId}:InfernoClaw": {
     "NAME": "煉獄の鉤爪",
     "DESCRIPTIONS": [
       "この敵から アタック ダメージを受けるたび、 山札に #y火傷 を追加する。"

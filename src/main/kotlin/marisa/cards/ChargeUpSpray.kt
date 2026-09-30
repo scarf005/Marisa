@@ -65,7 +65,7 @@ class ChargeUpSpray : CustomCard(
     }
 
     companion object {
-        const val ID = "ChargeUpSpray"
+        const val ID = "marisa:ChargeUpSpray"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

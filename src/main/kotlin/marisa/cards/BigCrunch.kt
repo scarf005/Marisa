@@ -40,7 +40,7 @@ class BigCrunch : CustomCard(
     }
 
     companion object {
-        const val ID = "BigCrunch"
+        const val ID = "marisa:BigCrunch"
         const val IMG_PATH = "marisa/img/cards/BigCrunch.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

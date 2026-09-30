@@ -1,5 +1,5 @@
 {
-  "ShroomBrew": {
+  "${modId}:ShroomBrew": {
     "NAME": "Breba de Hongos",
     "DESCRIPTIONS": [
       " Agota una carta. NL El efecto de esta poción depende del tipo de carta que agotes.",
@@ -7,14 +7,14 @@
       "Ataque : Poción de Miedo ; NL Habilidad : Poción de Debilidad ; NL Poder : Poción de Veneno ; NL Estado : Poción de Fuego ; NL Maldición : Bomba de Humo."
     ]
   },
-  "BottledSpark": {
+  "${modId}:BottledSpark": {
     "NAME": "Chispa Embotellada",
     "DESCRIPTIONS": [
       "Agrega #b",
       " #yChispa a tu mano."
     ]
   },
-  "StarNLove": {
+  "${modId}:StarNLove": {
     "NAME": "Estrella y Amor",
     "DESCRIPTIONS": [
       "No necesitas pagar Coste adicional por el efecto de Amplificar. Gana #",

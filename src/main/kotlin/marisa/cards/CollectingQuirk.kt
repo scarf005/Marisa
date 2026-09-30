@@ -62,9 +62,9 @@ class CollectingQuirk : CustomCard(
         rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
         initializeDescription()
         MarisaContinued.logger.info(
-            """CollectingQuirk : applyPowers : damage :$damage ; 
-                |counter : $counter ; 
-                |block :$block ; 
+            """CollectingQuirk : applyPowers : damage :$damage ;
+                |counter : $counter ;
+                |block :$block ;
                 |magic number :$magicNumber""".trimMargin()
         )
     }
@@ -102,7 +102,7 @@ class CollectingQuirk : CustomCard(
     }
 
     companion object {
-        const val ID = "CollectingQuirk"
+        const val ID = "marisa:CollectingQuirk"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

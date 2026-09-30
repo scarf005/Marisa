@@ -49,7 +49,7 @@ class MilkyWay : CustomCard(
     }
 
     companion object {
-        const val ID = "MilkyWay"
+        const val ID = "marisa:MilkyWay"
         const val IMG_PATH = "marisa/img/cards/MilkWay.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

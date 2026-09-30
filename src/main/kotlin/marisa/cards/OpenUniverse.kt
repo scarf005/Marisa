@@ -42,7 +42,7 @@ class OpenUniverse : CustomCard(
     }
 
     companion object {
-        const val ID = "OpenUniverse"
+        const val ID = "marisa:OpenUniverse"
         const val IMG_PATH = "marisa/img/cards/openUni.png"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME

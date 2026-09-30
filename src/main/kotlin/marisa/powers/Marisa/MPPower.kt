@@ -65,7 +65,7 @@ class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     */
 
     companion object {
-        const val POWER_ID = "MPPower"
+        const val POWER_ID = "marisa:MPPower"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

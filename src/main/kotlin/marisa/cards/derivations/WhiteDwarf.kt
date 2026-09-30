@@ -70,7 +70,7 @@ class WhiteDwarf : CustomCard(
     }
 
     companion object {
-        const val ID = "WhiteDwarf"
+        const val ID = "marisa:WhiteDwarf"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

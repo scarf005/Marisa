@@ -1,0 +1,50 @@
+marisa:CasketOfStarPlusPower
+  name=Casket Of Star | type=BUFF | amount=3 | description=Add  #b3 #yupgraded #ySpark to your hand whenever you gain #yBlock .
+marisa:CasketOfStarPower
+  name=Casket Of Star | type=BUFF | amount=3 | description=Add  #b3 #ySpark to your hand whenever you gain #yBlock .
+marisa:ChargeUpPower
+  name=Charge Up | type=BUFF | amount=3 | description=You have  #b3 stacks of #yCharge-up .
+marisa:DarkMatterPower
+  name=Dark Matter | type=BUFF | amount=-1 | description=You can no longer play #yDark #yMatter this turn.
+marisa:EnergyFlowPower
+  name=Energy Flow | type=BUFF | amount=3 | description=At the end of your turn, gain  #b3 #yCharge-up .
+marisa:ExtraDraw
+  name=Escape Velocity | type=BUFF | amount=3 | description=Draw #b6 more cards and add #b3 #yBurn(s) to your hand at each start of your turn.
+marisa:EventHorizonPower
+  name=Event Horizon | type=BUFF | amount=3 | description=You can put an Attack from your discard pile into your hand whenever you activate an Amplify effect, up to #b3 time(s) each turn.( 3 time(s) left)
+marisa:GrandCrossPower
+  name=Amplified | type=BUFF | amount=-1 | description=You have activated an #yAmplify effect this turn.
+marisa:MPPower
+  name=Max Power | type=BUFF | amount=3 | description=Your damage is multipled by  #b8.0 this turn.
+marisa:MilliPulsaPower
+  name=Millisecond Pulsars | type=BUFF | amount=-1 | description= #yAmplify effects no longer need extra  [E]  to activate.
+marisa:OneTimeOffPlusPower
+  name=One Time Off | type=BUFF | amount=-1 | description=You won't trigger #yAmplify and #yCharge-up this turn.
+marisa:OneTimeOffPower
+  name=One Time Off | type=BUFF | amount=-1 | description=You won't trigger #yAmplify this turn.
+marisa:OrrerysSunPower
+  name=Orrerys Sun | type=BUFF | amount=3 | description=Whenever you consume #yCharge-up, gain  #b3 Blocks.
+marisa:PolarisUniquePower
+  name=Guiding Star | type=BUFF | amount=-1 | description=If #yGuidingStar is in your draw pile, gain extra [E] at the start of each turn,.
+marisa:PropBagPower0
+  name=Portable Prop Bagr | type=BUFF | amount=-1 | description=When the battle ends,you'll lose  #yMini-Hakkero.
+marisa:PulseMagicPower
+  name=Pulse Magic | type=BUFF | amount=-1 | description=You don't need to pay  [E]  to activate #yAmplify effects this turn.
+marisa:SatelIllusPower
+  name=Satellite Illusion | type=BUFF | amount=3 | description=During your turn,when the number of cards in your draw pile increases, gain  #b3 [E] .
+marisa:SingularityPower
+  name=Singualrity | type=BUFF | amount=3 | description=Whenever you play a card that costs 0 , a random #yAttack in your hand deals #b3 additional damage this combat.
+marisa:SuperNovaPower
+  name=SuperNova | type=BUFF | amount=3 | description=When you #yExhaust a #yBurn ,Gain  #b3 #yStrength . NL You no longer take damage from #yBurn . NL #yExhaust you hand when your turn ends.
+marisa:TempStrengthLoss
+  name=Temproy Strength Loss | type=DEBUFF | amount=3 | description=The damage of this creature is lowered by  #b3 this turn.
+marisa:WitchOfGreedGold
+  name=Witch Of Greed | type=BUFF | amount=3 | description=At the end of combat, gain  #b3 gold .
+marisa:WitchOfGreedPotion
+  name=Witch Of Greed | type=BUFF | amount=3 | description=At the end of combat, obtain  #b3 random potion.
+marisa:InfernoClaw
+  name=Inferno Claw | type=BUFF | amount=-1 | description=Whenever you receive attack damage from this enemy, add a #yBurn into your draw pile.
+marisa:LimboContact
+  name=Undead Contact | type=BUFF | amount=-1 | description=Whenever you are attacked by this enemy, gain a stack of #yWraith . NL On death,apply #b1 #yWraith to you.
+marisa:Wraith
+  name=Wraith | type=DEBUFF | amount=3 | description=#yExhaust a random card in your hand after the start of your turn.

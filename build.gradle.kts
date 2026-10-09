@@ -87,9 +87,53 @@ dependencies {
     testImplementation(fileTree(basemodDir))
 }
 
+val gameJava = "$gameDir/jre/bin/java"
+val patchedGame = layout.buildDirectory.dir("patched")
+
+val testModInfo by tasks.registering {
+    description = "Writes a ModTheSpire.json for tests that does not need the generated changelog."
+    val info = layout.buildDirectory.file("test-mod-info/ModTheSpire.json")
+    outputs.file(info)
+    doLast { info.get().asFile.writeText(gson.toJson(ModTheSpire(modID, version = "0.0.0"))) }
+}
+
+val testModJar by tasks.registering(Jar::class) {
+    description = "Builds the mod jar that tests load."
+    archiveFileName.set("$modID.jar")
+    destinationDirectory.set(layout.buildDirectory.dir("test-mod"))
+    from(sourceSets.main.get().output) { exclude("ModTheSpire.json") }
+    from(testModInfo)
+}
+
+val testMods = files("$basemodDir/BaseMod.jar", testModJar)
+
+val patchGame by tasks.registering(JavaExec::class) {
+    description = "Writes the game classes as BaseMod and this mod patch them, for tests."
+    executable = gameJava
+    mainClass.set("marisa.testing.PatchGameKt")
+    workingDir(layout.buildDirectory)
+    classpath = sourceSets.test.get().output.classesDirs +
+        files("$modTheSpireDir/ModTheSpire.jar", "$gameDir/desktop-1.0.jar") +
+        configurations.testRuntimeClasspath.get().filter { it.name.startsWith("kotlin-stdlib") || it.name.startsWith("annotations") }
+    inputs.files(testMods)
+    outputs.dir(patchedGame)
+    argumentProviders.add { listOf(patchedGame.get().asFile.path, "$gameDir/desktop-1.0.jar") + testMods.map { it.path } }
+}
+
 tasks.test {
+    dependsOn(patchGame)
+    executable = gameJava
+    // The game runs without -ea.
+    enableAssertions = false
+    classpath = patchedGame.get().files("desktop-1.0.jar", "corepatches.jar") + classpath
     useJUnitPlatform()
     workingDir(layout.buildDirectory.dir("test-workdir"))
+    // ModTheSpire and the game write configs and preferences under these.
+    systemProperty("user.home", layout.buildDirectory.dir("test-workdir").get().asFile.path)
+    systemProperty("snapshots", file("src/test/snapshots").absolutePath)
+    inputs.files(testMods)
+    jvmArgumentProviders.add { listOf("-Dmods=" + testMods.joinToString(File.pathSeparator)) }
+    inputs.dir("src/test/snapshots")
     doFirst {
         workingDir.mkdirs()
     }

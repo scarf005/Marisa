@@ -1,0 +1,28 @@
+marisa:AmplifyWand
+  name=Amplification Wand | tier=UNCOMMON | counter=-1 | copy=AmplifyWand | description=Whenever you activate an #yAmplify effect, gain #b4  #yblock .
+marisa:BewitchedHakkero
+  name=Bewitched Hakkero | tier=BOSS | counter=-1 | copy=BewitchedHakkero | description=Replaces #rMini-Hakkero . NL Whenever you play a card , gain #b1 #yCharge-up . NL gain 1 more if it is a #ySpark card.
+marisa:BigShroomBag
+  name=Big Shroom Bag | tier=SPECIAL | counter=-1 | copy=BigShroomBag | description=Replaces #rShroom #rBag . NL Parasite cards can now be played. Playing a #yParasite will heal #b3 HP and draw #b2 card, then Exhausts it.
+marisa:BreadOfAWashokuLover
+  name=Bread Of A Washoku Lover | tier=UNCOMMON | counter=-1 | copy=BreadOfAWashokuLover | description=Heal 1 hp whenever you exhaust a #yStatus or a #yCurse. NL When triggered 13 times, you gain #b13 max HP,and this relic no longer works.
+marisa:Cape
+  name=Cape | tier=RARE | counter=-1 | copy=Cape | description=Whenever you enter a shop room,earn some random combat rewards.
+marisa:CatCart
+  name=Cat Cart | tier=SPECIAL | counter=0 | copy=CatCart | description=Gain 1 charge when you climb a floor.When you would die,consume all charges and heal #g4 hp for each of them.
+marisa:ExperimentalFamiliar
+  name=Experimental Familiar | tier=BOSS | counter=-1 | copy=ExperimentalFamiliar | description=At the start of each turn, add 1 #ySpark to your hand. NL At the start of combat, you can choose #b1 from #b3 random cards. It costs 0 this turn.
+marisa:HandmadeGrimoire
+  name=Handmade Grimoire | tier=UNCOMMON | counter=-1 | copy=HandmadeGrimoire | description=At the start of battle, for every 15 cards in your master deck, gain [E] and draw a card.
+marisa:MagicBroom
+  name=Magic Broom | tier=RARE | counter=-1 | copy=MagicBroom | description=Every time you play #b3 cards that cost 0, draw 1 card.
+marisa:MiniHakkero
+  name=Mini-Hakkero | tier=STARTER | counter=-1 | copy=MiniHakkero | description=Whenever you play a card, gain #b1  #yCharge-up .
+marisa:RampagingMagicTools
+  name=Rampaging Magic Tool | tier=BOSS | counter=-1 | copy=RampagingMagicTools | description=Gain [E] at the start of each turn. NL Apply a random debuff/buff ( #b1 #yFrail , #b1 #yWeak , #b1 #yVulnerable , #b2 #yPoison , #b8 #yCharge-up )to you at the start of each combat.
+marisa:ShroomBag
+  name=Shroom Bag | tier=COMMON | counter=-1 | copy=ShroomBag | description=Upon pickup, obtain 2 #yParasite. Parasite cards can now be played. Playing a #yParasite will heal #b2 HP and draw a card, then Exhausts it.
+marisa:SimpleLauncher
+  name=Simple Launcher | tier=SHOP | counter=-1 | copy=SimpleLauncher | description=Reduce your #yCharge-up consumption threshold value from #b8 to #b6 .
+marisa:SproutingBranch
+  name=Sprouting Branch | tier=SPECIAL | counter=-1 | copy=SproutingBranch | description=At the start of combat, gain #b4 #yRegen .

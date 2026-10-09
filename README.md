@@ -123,7 +123,7 @@ deno task test
 
 This excludes `releases_test.ts`, which checks a locally installed release and its hard links.
 
-Kotlin tests require JDK 17 and the game, BaseMod, and ModTheSpire JARs under the Steam library configured in `gradle.properties`:
+Kotlin tests require JDK 17 for Gradle and the game (with its bundled `jre/`), BaseMod, and ModTheSpire under the Steam library configured in `gradle.properties`:
 
 ```sh
 ./gradlew test
@@ -131,7 +131,13 @@ Kotlin tests require JDK 17 and the game, BaseMod, and ModTheSpire JARs under th
 
 Tests do not require the generated `docs/changelog/` files. Packaging and publishing still require them.
 
-Gradle compiles the full mod before running the JUnit tests for type partitioning, resource paths, and seeded game RNG selection. These tests do not launch the game or validate gameplay. The report is written to `build/reports/tests/test/index.html`.
+`patchGame` applies the ModTheSpire patches of BaseMod and this mod to the game classes, then the tests boot that patched game headlessly on the game's own JRE and play cards in a first-act fight. Configs and preferences go to `build/test-workdir/`. The report is written to `build/reports/tests/test/index.html`.
+
+Snapshots in `src/test/snapshots/` record every card, relic, potion and power, and what each card does when played. After an intended change, review and rewrite them with:
+
+```sh
+UPDATE_SNAPSHOTS=1 ./gradlew test
+```
 
 ## [Credits][original-credit]
 

@@ -228,7 +228,7 @@ class Marisa(name: String) :
         )
         private const val ORB_VFX = "marisa/img/UI/energyBlueVFX.png"
         private val LAYER_SPEED =
-            floatArrayOf(-40.0f, -32.0f, 20.0f, -20.0f, 0.0f, -10.0f, -8.0f, 5.0f, -5.0f, 0.0f)
+            floatArrayOf(-40.0f, -32.0f, 20.0f, -20.0f, 0.0f)
 
         private const val STARTING_HP = 75
         private const val MAX_HP = 75

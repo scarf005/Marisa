@@ -1,12 +1,12 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
 import marisa.action.DiscToHandATKOnly
+import marisa.texture
 
 class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     private var cnt: Int
@@ -17,7 +17,7 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
         this.owner = owner
         this.amount = amount
         type = PowerType.BUFF
-        img = Texture("marisa/img/powers/eventHorizon.png")
+        img = texture("marisa/img/powers/eventHorizon.png")
         cnt = amount
         updateDescription()
     }

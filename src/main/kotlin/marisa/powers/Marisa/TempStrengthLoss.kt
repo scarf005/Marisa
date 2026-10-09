@@ -1,12 +1,12 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.texture
 
 class TempStrengthLoss(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -16,7 +16,7 @@ class TempStrengthLoss(owner: AbstractCreature?, amount: Int) : AbstractPower() 
         this.amount = amount
         type = PowerType.DEBUFF
         updateDescription()
-        img = Texture("marisa/img/powers/dance.png")
+        img = texture("marisa/img/powers/dance.png")
     }
 
     override fun atDamageGive(damage: Float, type: DamageType): Float {

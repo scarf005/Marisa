@@ -171,8 +171,7 @@ class Marisa(name: String) :
         energyOrb.updateOrb(orbCount)
     }
 
-    override fun getOrb() =
-        AtlasRegion(ImageMaster.loadImage(MarisaContinued.CARD_ENERGY_ORB), 0, 0, 24, 24)
+    override fun getOrb() = ORB
 
     override fun getSlashAttackColor(): Color = MarisaContinued.STARLIGHT.cpy()
 
@@ -201,6 +200,9 @@ class Marisa(name: String) :
     companion object {
         val logger: Logger = LogManager.getLogger(MarisaContinued::class.java.name)
         private const val ENERGY_PER_TURN = 3 // how much energy you get every turn
+        private val ORB by lazy {
+            AtlasRegion(ImageMaster.loadImage(MarisaContinued.CARD_ENERGY_ORB), 0, 0, 24, 24)
+        }
         private const val MARISA_SHOULDER_2 =
             "marisa/img/char/Marisa/shoulder2.png" // shoulder2 / shoulder_1
         private const val MARISA_SHOULDER_1 =

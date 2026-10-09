@@ -3,11 +3,12 @@ package marisa.relics
 import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.texture
 
 class Cape : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.RARE,
     LandingSound.MAGICAL
 ) {

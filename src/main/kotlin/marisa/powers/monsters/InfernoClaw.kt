@@ -1,6 +1,5 @@
 package marisa.powers.monsters
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
@@ -8,6 +7,7 @@ import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.texture
 
 class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
     init {
@@ -16,7 +16,7 @@ class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
         this.owner = owner
         amount = -1
         updateDescription()
-        img = Texture("marisa/img/powers/thrillseeker.png")
+        img = texture("marisa/img/powers/thrillseeker.png")
     }
 
     override fun updateDescription() {

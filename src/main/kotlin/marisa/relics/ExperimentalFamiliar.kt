@@ -8,11 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.cards.derivations.Spark
+import marisa.texture
 
 class ExperimentalFamiliar : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.BOSS,
     LandingSound.FLAT
 ) {

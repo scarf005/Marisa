@@ -106,6 +106,12 @@ class Mushrooms_MRS : AbstractEvent() {
         )
     }
 
+    override fun dispose() {
+        super.dispose()
+        bgImg.dispose()
+        fgImg.dispose()
+    }
+
     init {
         roomEventText.clear()
         body = DESCRIPTIONS[2]

@@ -1,6 +1,5 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
+import marisa.texture
 
 class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     private var counter: Int
@@ -37,7 +37,7 @@ class SatelIllusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/satelIllu.png")
+        img = texture("marisa/img/powers/satelIllu.png")
         counter = AbstractDungeon.player.drawPile.size()
     }
 

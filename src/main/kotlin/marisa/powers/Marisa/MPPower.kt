@@ -1,11 +1,11 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.RemoveSelfAction
+import marisa.texture
 import kotlin.math.pow
 
 class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
@@ -16,7 +16,7 @@ class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/doubleDamage.png")
+        img = texture("marisa/img/powers/doubleDamage.png")
     }
 
     override fun atDamageFinalGive(damage: Float, type: DamageType): Float {

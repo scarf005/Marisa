@@ -6,11 +6,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import com.megacrit.cardcrawl.rooms.AbstractRoom
+import marisa.texture
 
 class CatCart : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.SPECIAL,
     LandingSound.FLAT
 ) {

@@ -1,17 +1,17 @@
 package marisa.relics
 
 import basemod.abstracts.CustomRelic
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.cards.curses.Parasite
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect
+import marisa.texture
 
 class ShroomBag : CustomRelic(
     ID,
-    Texture(IMG),
-    Texture(IMG_OTL),
+    texture(IMG),
+    texture(IMG_OTL),
     RelicTier.COMMON,
     LandingSound.FLAT
 ) {

@@ -1,9 +1,9 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.texture
 
 class MillisecondPulsarsPower(owner: AbstractCreature?) : AbstractPower() {
     init {
@@ -13,7 +13,7 @@ class MillisecondPulsarsPower(owner: AbstractCreature?) : AbstractPower() {
         amount = -1
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/steadyPulse.png")
+        img = texture("marisa/img/powers/steadyPulse.png")
     }
 
     override fun stackPower(stackAmount: Int) {}

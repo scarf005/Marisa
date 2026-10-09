@@ -11,11 +11,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.MarisaContinued
 import marisa.patches.CardTagEnum
 import marisa.powers.Marisa.ChargeUpPower
+import marisa.texture
 
 class BewitchedHakkero : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.BOSS,
     LandingSound.MAGICAL
 ) {

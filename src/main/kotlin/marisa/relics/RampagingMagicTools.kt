@@ -13,11 +13,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.p
 import marisa.powers.Marisa.ChargeUpPower
 import marisa.random
+import marisa.texture
 
 class RampagingMagicTools : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.BOSS,
     LandingSound.FLAT
 ) {

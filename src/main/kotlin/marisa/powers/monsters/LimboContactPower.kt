@@ -1,12 +1,12 @@
 package marisa.powers.monsters
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.texture
 
 class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
     init {
@@ -15,7 +15,7 @@ class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
         this.owner = owner
         amount = -1
         updateDescription()
-        img = Texture("marisa/img/powers/poison.png")
+        img = texture("marisa/img/powers/poison.png")
     }
 
     override fun updateDescription() {

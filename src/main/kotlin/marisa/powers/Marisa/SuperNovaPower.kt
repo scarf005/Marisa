@@ -1,6 +1,5 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
@@ -13,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.powers.StrengthPower
 import marisa.MarisaContinued
+import marisa.texture
 
 class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     private val p: AbstractPlayer
@@ -24,7 +24,7 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/impulse.png")
+        img = texture("marisa/img/powers/impulse.png")
         p = AbstractDungeon.player
     }
 

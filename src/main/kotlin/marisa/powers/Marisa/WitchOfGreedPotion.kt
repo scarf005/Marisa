@@ -1,9 +1,9 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.texture
 
 class WitchOfGreedPotion(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -13,7 +13,7 @@ class WitchOfGreedPotion(owner: AbstractCreature?, amount: Int) : AbstractPower(
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/potion.png")
+        img = texture("marisa/img/powers/potion.png")
     }
 
     /*

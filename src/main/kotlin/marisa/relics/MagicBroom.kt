@@ -8,9 +8,10 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.texture
 
 class MagicBroom : CustomRelic(
-    ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.RARE,
+    ID, texture(IMG, ImageMaster::loadImage), texture(IMG_OTL, ImageMaster::loadImage), RelicTier.RARE,
     LandingSound.FLAT
 ) {
     override fun getUpdatedDescription(): String = DESCRIPTIONS[0]

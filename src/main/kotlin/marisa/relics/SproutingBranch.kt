@@ -9,11 +9,12 @@ import com.megacrit.cardcrawl.powers.RegenPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import com.megacrit.cardcrawl.relics.DeadBranch
 import marisa.p
+import marisa.texture
 
 class SproutingBranch : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.SPECIAL,
     LandingSound.FLAT
 ) {

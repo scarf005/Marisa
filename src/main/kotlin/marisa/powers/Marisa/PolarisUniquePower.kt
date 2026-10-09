@@ -1,6 +1,5 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.AbstractCreature
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
 import marisa.cards.derivations.GuidingStar
+import marisa.texture
 
 class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
     private val p: AbstractPlayer = AbstractDungeon.player
@@ -20,7 +20,7 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
         ID = POWER_ID
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/transmute.png")
+        img = texture("marisa/img/powers/transmute.png")
         this.owner = owner
         MarisaContinued.logger.info("PolarisUniquePower : Done initing")
     }

@@ -1,6 +1,5 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.MarisaContinued
+import marisa.texture
 
 class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower() {
     private val r: AbstractRelic
@@ -22,7 +22,7 @@ class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower()
         IdOffset++
         amount = -1
         type = PowerType.BUFF
-        img = Texture("marisa/img/powers/diminish.png")
+        img = texture("marisa/img/powers/diminish.png")
         this.r = r
         p = AbstractDungeon.player
         rName = r.name

@@ -1,10 +1,10 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.texture
 
 class EnergyFlowPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -14,7 +14,7 @@ class EnergyFlowPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         type = PowerType.BUFF
         this.amount = amount
         updateDescription()
-        img = Texture("marisa/img/powers/electricField.png")
+        img = texture("marisa/img/powers/electricField.png")
     }
 
     override fun atEndOfTurn(isPlayer: Boolean) {

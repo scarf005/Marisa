@@ -1,6 +1,5 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
+import marisa.texture
 
 class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -18,7 +18,7 @@ class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() 
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/singularity.png")
+        img = texture("marisa/img/powers/singularity.png")
     }
 
     override fun updateDescription() {

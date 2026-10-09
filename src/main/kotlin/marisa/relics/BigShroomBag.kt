@@ -1,14 +1,14 @@
 package marisa.relics
 
 import basemod.abstracts.CustomRelic
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.texture
 
 class BigShroomBag : CustomRelic(
     ID,
-    Texture(IMG),
-    Texture(IMG_OTL),
+    texture(IMG),
+    texture(IMG_OTL),
     RelicTier.SPECIAL,
     LandingSound.FLAT
 ) {

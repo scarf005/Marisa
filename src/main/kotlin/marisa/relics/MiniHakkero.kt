@@ -9,11 +9,12 @@ import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.MarisaContinued
 import marisa.powers.Marisa.ChargeUpPower
+import marisa.texture
 
 class MiniHakkero : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.STARTER,
     LandingSound.MAGICAL
 ) {

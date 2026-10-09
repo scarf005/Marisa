@@ -1,6 +1,5 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
@@ -12,6 +11,7 @@ import marisa.MarisaContinued
 import marisa.action.ConsumeChargeUpAction
 import marisa.cards.derivations.Exhaustion_MRS
 import marisa.relics.SimpleLauncher
+import marisa.texture
 import kotlin.math.pow
 
 class ChargeUpPower(
@@ -27,7 +27,7 @@ class ChargeUpPower(
         this.amount = if (isExhausted()) 0 else amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/generator.png")
+        img = texture("marisa/img/powers/generator.png")
         divider
         cnt = this.amount / stc
     }

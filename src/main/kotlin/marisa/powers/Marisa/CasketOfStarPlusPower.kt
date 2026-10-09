@@ -1,12 +1,12 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.cards.derivations.Spark
 import marisa.cards.upgraded
+import marisa.texture
 
 class CasketOfStarPlusPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -16,7 +16,7 @@ class CasketOfStarPlusPower(owner: AbstractCreature?, amount: Int) : AbstractPow
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/energyNext.png")
+        img = texture("marisa/img/powers/energyNext.png")
     }
 
     override fun onGainedBlock(blockAmount: Float) {

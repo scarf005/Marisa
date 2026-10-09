@@ -1,12 +1,12 @@
 package marisa.powers.Marisa
 
-import com.badlogic.gdx.graphics.Texture
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.texture
 
 class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     init {
@@ -16,7 +16,7 @@ class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower
         this.amount = amount
         type = PowerType.BUFF
         updateDescription()
-        img = Texture("marisa/img/powers/drawCardRed.png")
+        img = texture("marisa/img/powers/drawCardRed.png")
     }
 
     override fun atStartOfTurnPostDraw() {

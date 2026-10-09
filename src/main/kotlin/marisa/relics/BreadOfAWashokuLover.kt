@@ -9,11 +9,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.MarisaContinued
+import marisa.texture
 
 class BreadOfAWashokuLover : CustomRelic(
     ID,
-    ImageMaster.loadImage(IMG),
-    ImageMaster.loadImage(IMG_OTL),
+    texture(IMG, ImageMaster::loadImage),
+    texture(IMG_OTL, ImageMaster::loadImage),
     RelicTier.UNCOMMON,
     LandingSound.FLAT
 ) {
@@ -53,7 +54,7 @@ class BreadOfAWashokuLover : CustomRelic(
             addToBot(
                 RelicAboveCreatureAction(AbstractDungeon.player, this)
             )
-            img = ImageMaster.loadImage(USED_IMG)
+            img = texture(USED_IMG, ImageMaster::loadImage)
             AbstractDungeon.player.increaseMaxHp(13, true)
             usedUp()
             counter = -2

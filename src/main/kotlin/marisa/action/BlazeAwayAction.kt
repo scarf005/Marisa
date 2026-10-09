@@ -19,7 +19,7 @@ class BlazeAwayAction(val card: AbstractCard) : AbstractGameAction() {
     }
 
     override fun update() = updateContext {
-        val target = AbstractDungeon.getMonsters().getRandomMonster(true) ?: return@updateContext
+        val target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng) ?: return@updateContext
 
         AbstractDungeon.player.limbo.group.add(card)
         card.apply {

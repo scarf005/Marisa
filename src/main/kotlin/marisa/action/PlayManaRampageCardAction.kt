@@ -18,7 +18,7 @@ class PlayManaRampageCardAction internal constructor(upgraded: Boolean) : Abstra
     }
 
     override fun update() {
-        target = AbstractDungeon.getMonsters().getRandomMonster(true)
+        target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng)
         val card = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.ATTACK).makeCopy()
         if (upgraded) {
             card.upgrade()

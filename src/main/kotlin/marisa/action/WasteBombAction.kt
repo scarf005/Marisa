@@ -81,7 +81,7 @@ class WasteBombAction(private val target: AbstractCreature?, dmg: Int, numTimes:
                 num--
                 AbstractDungeon.actionManager.addToTop(
                     WasteBombAction(
-                        AbstractDungeon.getMonsters().getRandomMonster(true),
+                        AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng),
                         damage,
                         num,
                         stacks

@@ -32,7 +32,7 @@ class DeepEcologicalBomb : AmplifiableCard(
         val num = if (tryAmplify()) 2 else 1
         addToBot(
             WasteBombAction(
-                AbstractDungeon.getMonsters().getRandomMonster(true),
+                AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng),
                 damage,
                 num,
                 magicNumber

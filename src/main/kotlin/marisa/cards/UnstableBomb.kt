@@ -4,6 +4,7 @@ import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.CardCrawlGame
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.action.RandomDamageAction
 import marisa.patches.AbstractCardEnum
@@ -21,7 +22,6 @@ class UnstableBomb : CustomCard(
 ) {
     private var damageMaxAdded = DAMAGE_MAX_ADDED
     private val maxDamage get() = baseDamage + damageMaxAdded
-    private val damageRange get() = (baseDamage..maxDamage)
 
     private fun setMaxDamageDisplay() {
         if (baseBlock > maxDamage)
@@ -41,7 +41,7 @@ class UnstableBomb : CustomCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        addToBot(RandomDamageAction(4) { damageRange.random() })
+        addToBot(RandomDamageAction(4) { AbstractDungeon.cardRandomRng.random(baseDamage, maxDamage) })
     }
 
     override fun makeCopy(): AbstractCard = UnstableBomb()

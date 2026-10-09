@@ -17,7 +17,7 @@ class RandomDamageAction(
     private fun doAttack() {
         marisa.addToTop(
             DamageAction(
-                AbstractDungeon.getMonsters().getRandomMonster(true),
+                AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng),
                 DamageInfo(p, getDamage()),
                 AttackEffect.FIRE
             ),

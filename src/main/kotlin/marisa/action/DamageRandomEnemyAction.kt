@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 class DamageRandomEnemyAction(private val info: DamageInfo, effect: AttackEffect?) :
     AbstractGameAction() {
     init {
-        setValues(AbstractDungeon.getMonsters().getRandomMonster(true), info)
+        setValues(AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng), info)
         actionType = ActionType.DAMAGE
         attackEffect = effect
         duration = 0.1f

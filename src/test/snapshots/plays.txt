@@ -280,23 +280,23 @@ marisa:DarkSpark CHARGED
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS] discard=[marisa:Strike_MRS, marisa:DarkSpark] exhaust=[marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Strike_MRS]
 marisa:DeepEcoloBomb BASE
   player hp=75/75 block=0 powers=[marisa:GrandCrossPower(-1)] energy=1 gold=99 potions=[]
-  Cultist hp=45/52 block=0 powers=[marisa:TempStrengthLoss(2)]
-  JawWorm hp=33/40 block=0 powers=[marisa:TempStrengthLoss(2)]
+  Cultist hp=38/52 block=0 powers=[marisa:TempStrengthLoss(4)]
+  JawWorm hp=40/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:DeepEcoloBomb] exhaust=[]
 marisa:DeepEcoloBomb UPGRADED
   player hp=75/75 block=0 powers=[marisa:GrandCrossPower(-1)] energy=1 gold=99 potions=[]
-  Cultist hp=43/52 block=0 powers=[marisa:TempStrengthLoss(3)]
-  JawWorm hp=31/40 block=0 powers=[marisa:TempStrengthLoss(3)]
+  Cultist hp=34/52 block=0 powers=[marisa:TempStrengthLoss(6)]
+  JawWorm hp=40/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:DeepEcoloBomb+] exhaust=[]
 marisa:DeepEcoloBomb AMPLIFY_ENERGY
   player hp=75/75 block=0 powers=[marisa:GrandCrossPower(-1)] energy=3 gold=99 potions=[]
-  Cultist hp=52/52 block=0 powers=[]
-  JawWorm hp=26/40 block=0 powers=[marisa:TempStrengthLoss(4)]
+  Cultist hp=38/52 block=0 powers=[marisa:TempStrengthLoss(4)]
+  JawWorm hp=40/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:DeepEcoloBomb] exhaust=[]
 marisa:DeepEcoloBomb CHARGED
   player hp=75/75 block=0 powers=[marisa:ChargeUpPower(0), marisa:GrandCrossPower(-1)] energy=1 gold=99 potions=[]
-  Cultist hp=38/52 block=0 powers=[marisa:TempStrengthLoss(2)]
-  JawWorm hp=26/40 block=0 powers=[marisa:TempStrengthLoss(2)]
+  Cultist hp=24/52 block=0 powers=[marisa:TempStrengthLoss(4)]
+  JawWorm hp=40/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:DeepEcoloBomb] exhaust=[]
 marisa:Defend_MRS BASE
   player hp=75/75 block=5 powers=[] energy=2 gold=99 potions=[]
@@ -659,20 +659,20 @@ marisa:ManaConvection CHARGED
   JawWorm hp=40/40 block=0 powers=[]
   hand=[] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS] exhaust=[marisa:Spark, marisa:Defend_MRS, marisa:ManaConvection]
 marisa:ManaRampage BASE
-  player hp=75/75 block=5 powers=[] energy=0 gold=99 potions=[]
-  Cultist hp=39/52 block=0 powers=[]
-  JawWorm hp=40/40 block=0 powers=[]
-  hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:ManaRampage] exhaust=[]
-marisa:ManaRampage UPGRADED
-  player hp=75/75 block=7 powers=[] energy=0 gold=99 potions=[]
-  Cultist hp=45/52 block=0 powers=[]
-  JawWorm hp=29/40 block=0 powers=[]
-  hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:ManaRampage+] exhaust=[]
-marisa:ManaRampage CHARGED
-  player hp=75/75 block=10 powers=[marisa:ChargeUpPower(0)] energy=0 gold=99 potions=[]
+  player hp=75/75 block=0 powers=[marisa:GrandCrossPower(-1)] energy=0 gold=99 potions=[]
   Cultist hp=34/52 block=0 powers=[]
-  JawWorm hp=40/40 block=0 powers=[]
-  hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:ManaRampage] exhaust=[]
+  JawWorm hp=0/40 block=0 powers=[]
+  hand=[marisa:Spark, marisa:Defend_MRS, Burn] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:ManaRampage] exhaust=[]
+marisa:ManaRampage UPGRADED
+  player hp=75/75 block=0 powers=[marisa:GrandCrossPower(-1)] energy=0 gold=99 potions=[]
+  Cultist hp=27/52 block=0 powers=[]
+  JawWorm hp=0/40 block=0 powers=[]
+  hand=[marisa:Spark, marisa:Defend_MRS, Burn] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:ManaRampage+] exhaust=[]
+marisa:ManaRampage CHARGED
+  player hp=75/75 block=0 powers=[marisa:ChargeUpPower(0), marisa:GrandCrossPower(-1)] energy=0 gold=99 potions=[]
+  Cultist hp=26/52 block=0 powers=[]
+  JawWorm hp=0/40 block=0 powers=[]
+  hand=[marisa:Spark, marisa:Defend_MRS, Burn] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:ManaRampage] exhaust=[]
 marisa:MasterSpark BASE
   player hp=75/75 block=0 powers=[marisa:GrandCrossPower(-1)] energy=1 gold=99 potions=[]
   Cultist hp=37/52 block=0 powers=[]
@@ -710,18 +710,18 @@ marisa:MaximisePower CHARGED
   hand=[marisa:Spark, marisa:Defend_MRS, marisa:Exhaustion_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS] exhaust=[marisa:MaximisePower]
 marisa:MeteoricShower BASE
   player hp=75/75 block=0 powers=[] energy=0 gold=99 potions=[]
-  Cultist hp=49/52 block=0 powers=[]
-  JawWorm hp=31/40 block=0 powers=[]
+  Cultist hp=40/52 block=0 powers=[]
+  JawWorm hp=40/40 block=0 powers=[]
   hand=[] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:MeteoricShower] exhaust=[marisa:Spark, marisa:Defend_MRS]
 marisa:MeteoricShower UPGRADED
   player hp=75/75 block=0 powers=[] energy=0 gold=99 potions=[]
-  Cultist hp=44/52 block=0 powers=[]
-  JawWorm hp=32/40 block=0 powers=[]
+  Cultist hp=36/52 block=0 powers=[]
+  JawWorm hp=40/40 block=0 powers=[]
   hand=[] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:MeteoricShower+] exhaust=[marisa:Spark, marisa:Defend_MRS]
 marisa:MeteoricShower CHARGED
   player hp=75/75 block=0 powers=[marisa:ChargeUpPower(0)] energy=0 gold=99 potions=[]
-  Cultist hp=40/52 block=0 powers=[]
-  JawWorm hp=28/40 block=0 powers=[]
+  Cultist hp=28/52 block=0 powers=[]
+  JawWorm hp=40/40 block=0 powers=[]
   hand=[] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:MeteoricShower] exhaust=[marisa:Spark, marisa:Defend_MRS]
 marisa:MilkyWay BASE
   player hp=75/75 block=5 powers=[] energy=2 gold=99 potions=[]
@@ -775,13 +775,13 @@ marisa:NonDirectionalLaser BASE
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:NonDirectionalLaser] exhaust=[]
 marisa:NonDirectionalLaser UPGRADED
   player hp=75/75 block=0 powers=[] energy=2 gold=99 potions=[]
-  Cultist hp=45/52 block=0 powers=[]
-  JawWorm hp=26/40 block=0 powers=[]
+  Cultist hp=38/52 block=0 powers=[]
+  JawWorm hp=33/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:NonDirectionalLaser+] exhaust=[]
 marisa:NonDirectionalLaser CHARGED
   player hp=75/75 block=0 powers=[marisa:ChargeUpPower(0)] energy=2 gold=99 potions=[]
-  Cultist hp=42/52 block=0 powers=[]
-  JawWorm hp=20/40 block=0 powers=[]
+  Cultist hp=32/52 block=0 powers=[]
+  JawWorm hp=30/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:NonDirectionalLaser] exhaust=[]
 marisa:Occultation BASE
   player hp=75/75 block=8 powers=[] energy=1 gold=99 potions=[]
@@ -1205,18 +1205,18 @@ marisa:UltimateShortwave CHARGED
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:UltimateShortwave] exhaust=[]
 marisa:UnstableBomb BASE
   player hp=75/75 block=0 powers=[] energy=2 gold=99 potions=[]
-  Cultist hp=49/52 block=0 powers=[]
-  JawWorm hp=35/40 block=0 powers=[]
+  Cultist hp=45/52 block=0 powers=[]
+  JawWorm hp=38/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:UnstableBomb] exhaust=[]
 marisa:UnstableBomb UPGRADED
   player hp=75/75 block=0 powers=[] energy=2 gold=99 potions=[]
-  Cultist hp=50/52 block=0 powers=[]
-  JawWorm hp=28/40 block=0 powers=[]
+  Cultist hp=42/52 block=0 powers=[]
+  JawWorm hp=37/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:UnstableBomb+] exhaust=[]
 marisa:UnstableBomb CHARGED
   player hp=75/75 block=0 powers=[marisa:ChargeUpPower(0)] energy=2 gold=99 potions=[]
-  Cultist hp=49/52 block=0 powers=[]
-  JawWorm hp=36/40 block=0 powers=[]
+  Cultist hp=45/52 block=0 powers=[]
+  JawWorm hp=38/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:UnstableBomb] exhaust=[]
 marisa:UpSweep BASE
   player hp=75/75 block=0 powers=[marisa:ChargeUpPower(1)] energy=3 gold=99 potions=[]

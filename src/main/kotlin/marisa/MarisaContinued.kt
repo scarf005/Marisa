@@ -83,11 +83,7 @@ class MarisaContinued :
     }
 
     override fun receiveEditRelics() = logger.runInfo("add relics") {
-        arrayOf(
-            MiniHakkero(), BewitchedHakkero(), MagicBroom(), AmplifyWand(),
-            ExperimentalFamiliar(), RampagingMagicTools(), BreadOfAWashokuLover(), SimpleLauncher(),
-            HandmadeGrimoire(), ShroomBag(), SproutingBranch(), BigShroomBag()
-        ).forEach { relic ->
+        relics().forEach { relic ->
             logger.info("""Adding relic: ${relic.name}""")
             BaseMod.addRelicToCustomPool(relic, AbstractCardEnum.MARISA_COLOR)
         }
@@ -95,7 +91,7 @@ class MarisaContinued :
     }
 
     override fun receiveEditCards() = logger.runInfo("add cards") {
-        cardsToAdd().forEach { card ->
+        cards().forEach { card ->
             logger.info("""Adding card: ${card.name}""")
             BaseMod.addCard(card)
         }
@@ -195,24 +191,30 @@ class MarisaContinued :
         lateinit var keywords: Array<Keyword>
     }
 
-    private fun cardsToAdd() = listOf(
-        Strike_MRS(), Defend_MRS(), MasterSpark(), UpSweep(), DoubleSpark(), NonDirectionalLaser(),
-        LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), `6A`(), UnstableBomb(), JA(),
-        StarBarrage(), ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(),
-        GravityBeat(), GrandCross(), DragonMeteor(), RefractionSpark(), Robbery(), ChargeUpSpray(),
-        AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(),
-        AbsoluteMagnitude(), TreasureHunter(), CollectingQuirk(), MilkyWay(), AsteroidBelt(),
-        PowerUp(), SporeBomb(), IllusionStar(), EnergyRecoil(), GasGiant(), StarDustReverie(),
-        MagicAbsorber(), Occultation(), EarthLightRay(), BlazeAway(), ChargingUp(), DarkMatter(),
-        MagicChant(), OneTimeOff(), ManaConvection(), PropBag(), SprinkleStarSeal(), GalacticHalo(),
-        SuperPerseids(), PulseMagic(), Orbital(), BigCrunch(), OpenUniverse(), StarlightTyphoon(),
-        MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), Wraith(),
-        SatelliteIllusion(), OortCloud(), OrrerysSun(), EnergyFlow(), EventHorizon(), Singularity(),
-        CasketOfStar(), EscapeVelocity(), MillisecondPulsars(), SuperNova(), Spark(), GuidingStar(),
-        BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), MeteoricShower(), WitchOfGreed(),
-    )
-
     companion object {
+        internal fun cards() = listOf(
+            Strike_MRS(), Defend_MRS(), MasterSpark(), UpSweep(), DoubleSpark(), NonDirectionalLaser(),
+            LuminesStrike(), MysteriousBeam(), WitchLeyline(), DC(), `6A`(), UnstableBomb(), JA(),
+            StarBarrage(), ShootingEcho(), MachineGunSpark(), DarkSpark(), DeepEcologicalBomb(),
+            GravityBeat(), GrandCross(), DragonMeteor(), RefractionSpark(), Robbery(), ChargeUpSpray(),
+            AlicesGift(), FairyDestructionRay(), BlazingStar(), ShootTheMoon(), FinalSpark(),
+            AbsoluteMagnitude(), TreasureHunter(), CollectingQuirk(), MilkyWay(), AsteroidBelt(),
+            PowerUp(), SporeBomb(), IllusionStar(), EnergyRecoil(), GasGiant(), StarDustReverie(),
+            MagicAbsorber(), Occultation(), EarthLightRay(), BlazeAway(), ChargingUp(), DarkMatter(),
+            MagicChant(), OneTimeOff(), ManaConvection(), PropBag(), SprinkleStarSeal(), GalacticHalo(),
+            SuperPerseids(), PulseMagic(), Orbital(), BigCrunch(), OpenUniverse(), StarlightTyphoon(),
+            MaximisePower(), UltraShortWave(), ManaRampage(), BinaryStars(), Acceleration(), Wraith(),
+            SatelliteIllusion(), OortCloud(), OrrerysSun(), EnergyFlow(), EventHorizon(), Singularity(),
+            CasketOfStar(), EscapeVelocity(), MillisecondPulsars(), SuperNova(), Spark(), GuidingStar(),
+            BlackFlareStar(), WhiteDwarf(), Exhaustion_MRS(), MeteoricShower(), WitchOfGreed(),
+        )
+
+        internal fun relics() = listOf(
+            MiniHakkero(), BewitchedHakkero(), MagicBroom(), AmplifyWand(),
+            ExperimentalFamiliar(), RampagingMagicTools(), BreadOfAWashokuLover(), SimpleLauncher(),
+            HandmadeGrimoire(), ShroomBag(), SproutingBranch(), BigShroomBag()
+        )
+
         val logger: Logger = LogManager.getLogger(Marisa::class.simpleName)
 
         @Suppress("MemberVisibilityCanBePrivate")

@@ -5,6 +5,7 @@ import marisa.cards.Defend_MRS
 import marisa.cards.Strike_MRS
 import marisa.cards.derivations.Exhaustion_MRS
 import marisa.powers.Marisa.ChargeUpPower
+import marisa.powers.Marisa.OneTimeOffPlusPower
 import marisa.relics.SimpleLauncher
 import marisa.testing.Combat
 import kotlin.test.Test
@@ -80,6 +81,14 @@ class ChargeUpPowerTest {
         player.hand.addToTop(Exhaustion_MRS())
         gain(8)
         assertEquals(8, stacks())
+        assertEquals(6, damageOf(Strike_MRS()))
+        assertEquals(8, stacks())
+    }
+
+    @Test
+    fun `upgraded One Time Off keeps stacks from doubling damage`() {
+        gain(8)
+        combat.applyToPlayer(OneTimeOffPlusPower(player))
         assertEquals(6, damageOf(Strike_MRS()))
         assertEquals(8, stacks())
     }

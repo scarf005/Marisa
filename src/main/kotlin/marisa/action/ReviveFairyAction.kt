@@ -16,15 +16,11 @@ import marisa.MarisaContinued
 import marisa.monsters.ZombieFairy
 import marisa.powers.monsters.LimboContactPower
 
-//public class ReviveFairyAction {
 class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : AbstractGameAction() {
     init {
         this.setValues(target, source, 0)
         actionType = ActionType.SPECIAL
-        /*
-    target.addPower(new LimboContactPower(target));
-    target.addPower(new FlightPower(target, 99));
-    */if (AbstractDungeon.player.hasRelic("Philosopher's Stone")) {
+        if (AbstractDungeon.player.hasRelic("Philosopher's Stone")) {
             target.addPower(StrengthPower(target, 1))
             AbstractDungeon.onModifyPower()
         }
@@ -41,7 +37,6 @@ class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : Ab
             fairy.tint = TintEffect()
             fairy.tintFadeOutCalled = false
             fairy.isDead = false
-            //this.target.powers.clear();
             fairy.revive()
             fairy.turnNum = 0
             MarisaContinued.logger.info("ReviveFairyAction : applying powers;")
@@ -54,7 +49,6 @@ class ReviveFairyAction(target: AbstractMonster, source: AbstractCreature?) : Ab
             AbstractDungeon.actionManager.addToTop(
                 ApplyPowerAction(target, target, FlightPower(fairy, 99))
             )
-            //fairy.usePreBattleAction();
             if (ModHelper.isModEnabled("Lethality")) {
                 addToBot(
                     ApplyPowerAction(target, target, StrengthPower(target, 3), 3)

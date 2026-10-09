@@ -9,7 +9,6 @@ import marisa.action._6AAction
 
 @Suppress("ClassName")
 class `6A` : MarisaCard(ID, "6A", COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY) {
-    //private static final int UPG_COST = 0;
     init {
         baseDamage = ATTACK_DMG
     }
@@ -29,7 +28,6 @@ class `6A` : MarisaCard(ID, "6A", COST, CardType.ATTACK, CardRarity.COMMON, Card
         if (!upgraded) {
             upgradeName()
             upgradeDamage(UPGRADE_PLUS_DMG)
-            //upgradeBaseCost(UPG_COST);
         }
     }
 

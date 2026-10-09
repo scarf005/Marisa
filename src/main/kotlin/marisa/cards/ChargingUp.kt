@@ -34,7 +34,6 @@ class ChargingUp : MarisaCard(ID, "ChargingUp", COST, CardType.SKILL, CardRarity
         private const val COST = 1
         private const val STC = 5
 
-        //private static final int AMP = 1;
         private const val UPG_STC = 3
     }
 }

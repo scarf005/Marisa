@@ -38,13 +38,6 @@ class Occultation : MarisaCard(ID, "occultation", COST, CardType.SKILL, CardRari
         addToBot(
             GainBlockAction(p, p, block)
         )
-        /*
-    if (this.upgraded) {
-      addToBot(
-          new GainBlockAction(p, p, this.block)
-      );
-    }
-    */
     }
 
     override fun makeCopy(): AbstractCard = Occultation()

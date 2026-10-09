@@ -67,7 +67,6 @@ class SummonFairyAction(monster: AbstractMonster?) : AbstractGameAction() {
                 SpawnFairyAction(COORDINATE[count][0], COORDINATE[count][1])
             )
         }
-        //AbstractDungeon.actionManager.addToTop(new FairyWraithAction());
         isDone = true
     }
 

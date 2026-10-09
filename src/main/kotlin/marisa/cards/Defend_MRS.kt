@@ -8,7 +8,6 @@ import marisa.abstracts.MarisaCard
 
 class Defend_MRS : MarisaCard(ID, "Defend_MRS", COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF) {
     init {
-        //this.tags.add(BaseModCardTags.BASIC_DEFEND);
         tags.add(CardTags.STARTER_DEFEND)
         baseBlock = BLOCK_AMT
     }

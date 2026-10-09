@@ -9,7 +9,6 @@ import marisa.action.PropBagAction
 class PropBag : MarisaCard(ID, "PropBag", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         exhaust = true
-        //this.isInnate = true;
         baseMagicNumber = PRODUCE
         magicNumber = baseMagicNumber
     }
@@ -31,6 +30,5 @@ class PropBag : MarisaCard(ID, "PropBag", COST, CardType.SKILL, CardRarity.UNCOM
         const val ID = "marisa:PropBag"
         private const val COST = 0
         private const val PRODUCE = 1
-//        private const val PRODUCE_UPG = 1
     }
 }

@@ -24,20 +24,7 @@ class SuperPerseids : MarisaCard(ID, "SuperPerseids", COST, CardType.SKILL, Card
 
     override fun triggerWhenDrawn() {
         applyPowers()
-        /*
-    ThMod.logger.info("SuperPerseids : triggerWhenDrawn : Granting Charge-up "
-        + "; : upgraded : " + this.upgraded
-    );
-    AbstractPlayer p = AbstractDungeon.player;
-    addToBot(
-        new ApplyPowerAction(
-            p,
-            p,
-            new ChargeUpPower(p,this.magicNumber),
-            this.magicNumber
-        )
-    );
-    */addToBot(
+        addToBot(
             GainEnergyAction(1)
         )
     }

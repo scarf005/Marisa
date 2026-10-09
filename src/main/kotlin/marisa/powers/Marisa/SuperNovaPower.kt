@@ -42,7 +42,6 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_
     }
 
     override fun onDrawOrDiscard() {
-        //ThMod.logger.info("SuperNovaPower : onDrawOrDiscard : ExhaustDiscard");
         ExhaustDiscard()
     }
 
@@ -51,12 +50,10 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_
         target: AbstractCreature,
         source: AbstractCreature
     ) {
-        //ThMod.logger.info("SuperNovaPower : onApplyPower : ExhaustDiscard");
         ExhaustDiscard()
     }
 
     override fun onInitialApplication() {
-        //ThMod.logger.info("SuperNovaPower : onInitialApplication : ExhaustDiscard");
         ExhaustDiscard()
     }
 

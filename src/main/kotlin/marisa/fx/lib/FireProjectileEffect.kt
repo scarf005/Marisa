@@ -154,7 +154,6 @@ class FireProjectileEffect : AbstractGameEffect() {
         @JvmField
         var rotation = 0f
 
-        //rotate((float) relicCount, flipped, data);
         fun rotate(relicCount: Float, flipped: Boolean, data: ProjectileData) {
             val rotation = Vector2(data.vX, data.vY)
             if (flipped) {

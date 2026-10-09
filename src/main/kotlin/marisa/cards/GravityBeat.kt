@@ -13,12 +13,10 @@ import marisa.abstracts.MarisaCard
 class GravityBeat : MarisaCard(ID, "GravityBeat", COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY) {
     init {
 
-        //this.isMultiDamage = true;
         damage = ATTACK_DMG
         baseDamage = damage
         block = DIVIDER
         baseBlock = block
-        //this.magicNumber = this.baseMagicNumber = WK;
     }
 
     override fun applyPowers() {

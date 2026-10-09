@@ -38,14 +38,6 @@ class Orin : AbstractMonster(
     -20.0f,
     -10.0f
 ) /* implements BaseMod.GetMonster */ {
-    /*
-  public static final String[] MOVES = {
-      ""
-  };
-  public static final String[] DIALOG = {
-      ""
-  };
-  */
     private var form1 = true
     private var att = true
     private var firstTurn = true
@@ -70,8 +62,6 @@ class Orin : AbstractMonster(
         } else {
             setHp(STAGE_1_HP)
         }
-        //this.doubleTap = DOUBLE_TAP;
-        //this.blc = BLOCK;
         wraith = WRAITH
         if (AbstractDungeon.ascensionLevel >= 3) {
             catTap = CAT_TAP_A
@@ -186,11 +176,7 @@ class Orin : AbstractMonster(
                         p, damage[2], AttackEffect.SLASH_DIAGONAL
                     )
                 )
-                /*
-        addToBot(
-            new GainBlockAction(this, this, this.blc)
-        );
-        */addToBot(
+                addToBot(
                     ApplyPowerAction(
                         p,
                         this,
@@ -300,11 +286,7 @@ class Orin : AbstractMonster(
 
     private fun setSummonAction() {
         logger.info("Orin : setSummonAction : firstTurn : ")
-        /*
-    if (this.firstTurn) {
-      setMove((byte) 7, Intent.UNKNOWN);
-    } else
-    */run { setMove(8.toByte(), Intent.UNKNOWN) }
+        run { setMove(8.toByte(), Intent.UNKNOWN) }
     }
 
     private fun setExecuteAction() {
@@ -362,13 +344,7 @@ class Orin : AbstractMonster(
                     setMultiAttackAction()
                 }
             }
-            /*
-      if (this.firstTurn) {
-        setBuffAction();
-        this.firstTurn = false;
-        return;
-      }
-      */if (turnCount >= 4) {
+            if (turnCount >= 4) {
                 setMultiAttackAction()
                 return
             }
@@ -380,12 +356,7 @@ class Orin : AbstractMonster(
         } else {
             val fairyCount = fairyCount()
             MarisaContinued.logger.info("Orin : getMove : fairyCount : $fairyCount")
-            /*
-      if (this.firstTurn) {
-        setSummonAction();
-        return;
-      }
-      */if (canExecute()) {
+            if (canExecute()) {
                 setExecuteAction()
                 return
             }
@@ -451,11 +422,7 @@ class Orin : AbstractMonster(
             if (AbstractDungeon.getCurrRoom().cannotLose) {
                 halfDead = true
             }
-            /*
-      for (AbstractPower p : this.powers) {
-        p.onDeath();
-      }
-      */for (r in AbstractDungeon.player.relics) {
+            for (r in AbstractDungeon.player.relics) {
                 r.onMonsterDeath(this)
             }
             AbstractDungeon.actionManager.addToTop(
@@ -464,10 +431,8 @@ class Orin : AbstractMonster(
             att = false
             setMove(3.toByte(), Intent.UNKNOWN)
             createIntent()
-            //addToBot(new ShoutAction(this, DIALOG[0]));
             setMove(3.toByte(), Intent.UNKNOWN)
             applyPowers()
-            //this.firstTurn = true;
         }
     }
 
@@ -486,7 +451,6 @@ class Orin : AbstractMonster(
             if (ModHelper.isModEnabled("MonsterHunter")) {
                 currentHealth = (currentHealth * 1.5f).toInt()
             }
-            //this.state.setAnimation(0, "Idle_2", true);
             halfDead = false
             form1 = false
             addToBot(HealAction(this, this, maxHealth))
@@ -509,16 +473,6 @@ class Orin : AbstractMonster(
                     )
                 }
             }
-            /*
-      case "ATTACK_1":
-        this.state.setAnimation(0, "Attack_1", false);
-        this.state.addAnimation(0, "Idle_1", true, 0.0F);
-        break;
-      case "ATTACK_2":
-        this.state.setAnimation(0, "Attack_2", false);
-        this.state.addAnimation(0, "Idle_2", true, 0.0F);
-        break;
-        */
         }
     }
 
@@ -567,7 +521,6 @@ class Orin : AbstractMonster(
         private const val WEAK_A = 2
         private const val WRAITH = 2
 
-        //private static final int WRAITH_A = 2;
         private const val SUMMON = 2
         private const val SUMMON_FIRST = 4
         private const val SUMMON_THRESHOLD = 2
@@ -578,7 +531,6 @@ class Orin : AbstractMonster(
         private const val QUAD_DMG = 3
         private const val QUAD_DMG_A = 4
 
-        //private static final int BLOCK = 8;
         private const val BLOCK_UPG = 12
         private const val tempImgUrl = "marisa/img/monsters/Orin/Orin_.png"
         private const val MODEL_HUMANOID_ATLAS = "marisa/img/monsters/Orin/Orin.atlas"

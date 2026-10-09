@@ -15,13 +15,7 @@ class Exhaustion_MRS : MarisaCard(
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        if (p.hasRelic("Medical Kit")) {
-//            useMedicalKit(p)
-        } else {
-            addToBot(
-                UseCardAction(this)
-            )
-        }
+        if (!p.hasRelic("Medical Kit")) addToBot(UseCardAction(this))
     }
 
     override fun makeCopy(): AbstractCard = Exhaustion_MRS()

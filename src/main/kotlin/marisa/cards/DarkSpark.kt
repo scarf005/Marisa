@@ -36,7 +36,6 @@ class DarkSpark : MarisaCard(ID, "darkSpark", COST, CardType.ATTACK, CardRarity.
         private const val COST = 2
         private const val ATK_DMG = 7
 
-        //private static final int UPG_DMG = 3;
         private const val EXHAUST_COUNT = 5
         private const val COUNT_UPG = 3
     }

@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.MarisaCard
 import marisa.action.OpenUniverseAction
 
-//import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 class OpenUniverse : MarisaCard(ID, "openUni", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         baseMagicNumber = DRAW

@@ -21,7 +21,6 @@ class OccultationAction : AbstractGameAction() {
             return
         }
         val cards = AbstractDungeon.player.drawPile.group
-        //int cnt = 0;
         MarisaContinued.logger.info("Draw pile:" + cards.size)
         while (!p.drawPile.isEmpty) {
             val c = p.drawPile.topCard
@@ -30,9 +29,7 @@ class OccultationAction : AbstractGameAction() {
             c.triggerOnManualDiscard()
             p.drawPile.removeCard(c)
 
-            //cnt++;
         }
-        //addToBot(new GainBlockAction(p, p, cnt));
         isDone = true
     }
 }

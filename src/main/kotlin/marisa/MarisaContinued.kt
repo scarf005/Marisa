@@ -228,8 +228,6 @@ class MarisaContinued :
 
         private const val ORIN_ENCOUNTER = "Orin"
         private const val ZOMBIE_FAIRY_ENC = "ZombieFairy"
-        //        private const val ORIN_ENCOUNTER_ZHS = """阿燐"""
-        //        private const val ZOMBIE_FAIRY_ENC_ZHS = """僵尸妖精"""
 
         private const val MOD_BADGE = "marisa/img/UI/badge.png"
 

@@ -8,16 +8,6 @@ class WitchOfGreedGold(owner: AbstractCreature?, amount: Int) : MarisaPower(POWE
         updateDescription()
     }
 
-    /*
-  public void onVictory() {
-    AbstractPlayer p = AbstractDungeon.player;
-    for (int i = 0; i < this.amount; i++) {
-      AbstractDungeon.effectList.add(
-          new GainPennyEffect(p, p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY, true)
-      );
-    }
-  }
-*/
     override fun updateDescription() {
         description = descriptions[0] + amount + descriptions[1]
     }

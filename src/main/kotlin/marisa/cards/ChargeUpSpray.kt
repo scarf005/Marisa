@@ -15,7 +15,6 @@ import marisa.powers.Marisa.OneTimeOffPlusPower
 import marisa.relics.SimpleLauncher
 
 class ChargeUpSpray : MarisaCard(ID, "ChargeUpSpray", COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY) {
-    //private static final int UPG_DRAW = 0;
     init {
         baseDamage = ATTACK_DMG
         baseMagicNumber = DRAW

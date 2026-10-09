@@ -11,7 +11,6 @@ import marisa.patches.CardTagEnum
 
 class Strike_MRS : MarisaCard(ID, "SimpleSpark", COST, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY) {
     init {
-        //this.tags.add(BaseModCardTags.BASIC_STRIKE);
         tags.add(CardTags.STARTER_STRIKE)
         tags.add(CardTagEnum.SPARK)
         baseDamage = ATTACK_DMG

@@ -11,11 +11,7 @@ class OrrerysSunPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER
 
     override fun onSpecificTrigger() {
         flash()
-        /*
-    addToBot(new DamageAllEnemiesAction(null,
-        DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS,
-        AbstractGameAction.AttackEffect.FIRE));
-        */addToBot(
+        addToBot(
             GainBlockAction(owner, owner, amount)
         )
     }

@@ -11,9 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.DarkMatterPower
 
-//import com.megacrit.cardcrawl.core.Settings;
-//import com.megacrit.cardcrawl.relics.AbstractRelic;
-//import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 class DarkMatter : MarisaCard(ID, "DarkMatter", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         isEthereal = true
@@ -67,11 +64,6 @@ class DarkMatter : MarisaCard(ID, "DarkMatter", COST, CardType.SKILL, CardRarity
                 DarkMatterPower(p)
             )
         )
-        /*
-        p.drawPile.shuffle();
-        for (AbstractRelic r : p.relics)
-            r.onShuffle();
-      */
     }
 
     override fun makeCopy(): AbstractCard = DarkMatter()

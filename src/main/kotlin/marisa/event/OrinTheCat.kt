@@ -23,13 +23,6 @@ class OrinTheCat : AbstractEvent() {
     }
 
     init {
-        /*
-    initializeImage(
-        "images/events/sphereClosed.png",
-        1120.0F * Settings.scale,
-        AbstractDungeon.floorY - 50.0F * Settings.scale
-    );
-*/
         roomEventText.clear()
         body = INTRO_MSG
         satori = AbstractDungeon.player.name == "Komeiji"
@@ -78,11 +71,7 @@ class OrinTheCat : AbstractEvent() {
                 } else {
                     MarisaContinued.logger.info("OrinTheCat : INTRO : Skipping fight!")
                     screen = CurScreen.END
-                    /*
-              if (orin != null) {
-                addToBot(new EscapeAction(orin));
-              }
-              */roomEventText.updateBodyText(DESCRIPTIONS[2])
+                    roomEventText.updateBodyText(DESCRIPTIONS[2])
                     roomEventText.updateDialogOption(0, OPTIONS[3])
                     roomEventText.clearRemainingOptions()
                     AbstractDungeon.effectList.add(
@@ -98,11 +87,7 @@ class OrinTheCat : AbstractEvent() {
 
                 1 -> if (satori) {
                     screen = CurScreen.END
-                    /*
-              if (orin != null) {
-                addToBot(new EscapeAction(orin));
-              }
-              */roomEventText.updateBodyText(DESCRIPTIONS[4])
+                    roomEventText.updateBodyText(DESCRIPTIONS[4])
                     roomEventText.updateDialogOption(0, OPTIONS[3])
                     roomEventText.clearRemainingOptions()
                     logMetricIgnored(ID)
@@ -131,7 +116,6 @@ class OrinTheCat : AbstractEvent() {
                     currRoom.addRelicToRewards(CatCart())
                 }
                 AbstractDungeon.getCurrRoom().eliteTrigger = true
-                //this.img = ImageMaster.loadImage("images/events/sphereOpen.png");
                 MarisaContinued.logger.info("OrinTheCat : PreCombat : Entering combat")
                 enterCombat()
                 AbstractDungeon.lastCombatMetricKey = "Orin"

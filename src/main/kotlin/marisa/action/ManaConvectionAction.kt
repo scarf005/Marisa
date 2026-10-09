@@ -32,11 +32,7 @@ class ManaConvectionAction(number: Int) : AbstractGameAction() {
             var cnt = 0
             for (c in AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 cnt += 1
-                /*
-        if ((c instanceof Burn)) {
-          cnt++;
-        }
-        */p.hand.moveToExhaustPile(c)
+                p.hand.moveToExhaustPile(c)
             }
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true
             AbstractDungeon.handCardSelectScreen.selectedCards.group.clear()

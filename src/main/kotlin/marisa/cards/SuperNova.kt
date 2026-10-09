@@ -10,19 +10,12 @@ import marisa.powers.Marisa.SuperNovaPower
 
 class SuperNova : MarisaCard(ID, "SuperNova", COST, CardType.POWER, CardRarity.RARE, CardTarget.SELF) {
     init {
-        //this.tags.add(BaseModCardTags.FORM);
         baseMagicNumber = STACK
         magicNumber = baseMagicNumber
         cardsToPreview = Burn()
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        /*
-    if ((this.upgraded) && (p.hasPower(SuperNovaPower.POWER_ID))) {
-      SuperNovaPower po = (SuperNovaPower) p.getPower("SuperNovaPower");
-      po.upgraded = true;
-    }
-    */
         addToBot(
             ApplyPowerAction(
                 p,

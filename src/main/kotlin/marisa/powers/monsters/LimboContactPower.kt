@@ -19,7 +19,6 @@ class LimboContactPower(owner: AbstractCreature?) : MarisaPower(POWER_ID, owner,
     override fun onAttack(info: DamageInfo, damageAmount: Int, target: AbstractCreature) {
         run {
             val p = AbstractDungeon.player
-            //if (damageAmount > 0)
             if (target === p) {
                 addToBot(
                     ApplyPowerAction(
@@ -38,15 +37,6 @@ class LimboContactPower(owner: AbstractCreature?) : MarisaPower(POWER_ID, owner,
                 p, null, WraithPower(p, 1), 1
             )
         )
-        /*
-    for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-      if (!m.isDeadOrEscaped()) {
-        addToBot(
-            new ApplyPowerAction(m, null, new StrengthPower(m, 1), 1)
-        );
-      }
-    }
-    */
     }
 
     companion object {

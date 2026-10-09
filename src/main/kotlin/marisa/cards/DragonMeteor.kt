@@ -73,7 +73,6 @@ class DragonMeteor : MarisaCard(ID, "DragonMeteor", COST, CardType.ATTACK, CardR
         private const val COST = 2
         private const val ATK_DMG = 14
 
-        //private static final int UPG_DMG = 6;
         private const val DMG_GAIN = 1
         private const val UPG_GAIN = 1
     }

@@ -37,10 +37,9 @@ class DarkSpark : CustomCard(
     override fun makeCopy(): AbstractCard = DarkSpark()
 
     override fun upgrade() {
-        //upgradeDamage(UPG_DMG);
+        if (upgraded) return
         upgradeName()
         upgradeMagicNumber(COUNT_UPG)
-        upgraded = true
         initializeDescription()
     }
 

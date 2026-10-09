@@ -439,6 +439,6 @@
   },
   "${modId}:Acceleration": {
     "NAME": "Accélération",
-    "DESCRIPTION": "Tirez les !B! cartes supérieures de votre pioche. NL Amplifier  [E] : Piochez !M ! de plus."
+    "DESCRIPTION": "Tirez les !B! cartes supérieures de votre pioche. NL Amplifier  [E] : Piochez !M! de plus."
   }
 }

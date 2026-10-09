@@ -2,27 +2,20 @@ package marisa.powers.Marisa
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.MarisaContinued
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower() {
+class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : MarisaPower(POWER_ID, owner, -1, "diminish") {
     private val r: AbstractRelic
     private val p: AbstractPlayer
     private val rName: String
 
     init {
-        name = NAME
         ID = POWER_ID + IdOffset
-        this.owner = owner
         IdOffset++
-        amount = -1
-        type = PowerType.BUFF
-        img = texture("marisa/img/powers/diminish.png")
         this.r = r
         p = AbstractDungeon.player
         rName = r.name
@@ -40,15 +33,11 @@ class PropBagPower(owner: AbstractCreature?, r: AbstractRelic) : AbstractPower()
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + rName + DESCRIPTIONS[1]
+        description = descriptions[0] + rName + descriptions[1]
     }
 
     companion object {
         const val POWER_ID = "marisa:PropBagPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
         private var IdOffset = 0
     }
 }

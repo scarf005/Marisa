@@ -2,19 +2,11 @@ package marisa.powers.Marisa
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class OrrerysSunPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class OrrerysSunPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "riposte") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = amount
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/riposte.png")
     }
 
     override fun onSpecificTrigger() {
@@ -29,14 +21,10 @@ class OrrerysSunPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
+        description = descriptions[0] + amount + descriptions[1]
     }
 
     companion object {
         const val POWER_ID = "marisa:OrrerysSunPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

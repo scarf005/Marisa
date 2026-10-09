@@ -5,22 +5,15 @@ import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
+class InfernoClaw(owner: AbstractCreature?) : MarisaPower(POWER_ID, owner, -1, "thrillseeker") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        amount = -1
         updateDescription()
-        img = texture("marisa/img/powers/thrillseeker.png")
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0]
+        description = descriptions[0]
     }
 
     override fun stackPower(amount: Int) {}
@@ -34,8 +27,5 @@ class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
 
     companion object {
         const val POWER_ID = "marisa:InfernoClaw"
-        private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

@@ -4,19 +4,11 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "drawCardRed") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = amount
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/drawCardRed.png")
     }
 
     override fun atStartOfTurnPostDraw() {
@@ -29,15 +21,11 @@ class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower
     }
 
     override fun updateDescription() {
-        description = (DESCRIPTIONS[0] + amount * 2 + DESCRIPTIONS[1] + amount
-                + DESCRIPTIONS[2])
+        description = (descriptions[0] + amount * 2 + descriptions[1] + amount
+                + descriptions[2])
     }
 
     companion object {
         const val POWER_ID = "marisa:ExtraDraw"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

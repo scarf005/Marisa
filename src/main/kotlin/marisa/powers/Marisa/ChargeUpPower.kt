@@ -4,32 +4,26 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
+import marisa.abstracts.MarisaPower
 import marisa.action.ConsumeChargeUpAction
 import marisa.cards.derivations.Exhaustion_MRS
 import marisa.relics.SimpleLauncher
-import marisa.texture
 import kotlin.math.pow
+
+private fun isExhausted() = AbstractDungeon.player.hand.group.any { it is Exhaustion_MRS }
 
 class ChargeUpPower(
     owner: AbstractCreature?, amount: Int
-) : AbstractPower() {
+) : MarisaPower(POWER_ID, owner, if (isExhausted()) 0 else amount, "generator") {
     /** Stacks per doubling of attack damage. */
     private val threshold get() = if (AbstractDungeon.player.hasRelic(SimpleLauncher.ID)) IMPR_STACK else ACT_STACK
     private val doublings get() = amount / threshold
     private val multiplier get() = 2.0.pow(doublings)
 
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = if (isExhausted()) 0 else amount
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/generator.png")
     }
 
     override fun stackPower(stackAmount: Int) {
@@ -40,9 +34,9 @@ class ChargeUpPower(
 
     override fun updateDescription() {
         description = if (doublings > 0) {
-            "${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]},${DESCRIPTIONS[2]}${multiplier.toInt()}${DESCRIPTIONS[3]}"
+            "${descriptions[0]}$amount${descriptions[1]},${descriptions[2]}${multiplier.toInt()}${descriptions[3]}"
         } else {
-            "${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]}."
+            "${descriptions[0]}$amount${descriptions[1]}."
         }
     }
 
@@ -60,13 +54,9 @@ class ChargeUpPower(
     override fun atDamageFinalGive(damage: Float, type: DamageType): Float =
         if (isCharged && type == DamageType.NORMAL) (damage * multiplier).toFloat() else damage
 
-    private fun isExhausted() = AbstractDungeon.player.hand.group.any { it is Exhaustion_MRS }
 
     companion object {
         const val POWER_ID = "marisa:ChargeUpPower"
-        private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
         private const val ACT_STACK = 8
         private const val IMPR_STACK = 6
     }

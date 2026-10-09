@@ -2,19 +2,11 @@ package marisa.powers.Marisa
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class EnergyFlowPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class EnergyFlowPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "electricField") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        type = PowerType.BUFF
-        this.amount = amount
         updateDescription()
-        img = texture("marisa/img/powers/electricField.png")
     }
 
     override fun atEndOfTurn(isPlayer: Boolean) {
@@ -30,14 +22,10 @@ class EnergyFlowPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
+        description = descriptions[0] + amount + descriptions[1]
     }
 
     companion object {
         const val POWER_ID = "marisa:EnergyFlowPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

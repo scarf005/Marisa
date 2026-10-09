@@ -1,23 +1,15 @@
 package marisa.powers.Marisa
 
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
+import marisa.abstracts.MarisaPower
 import marisa.action.DiscToHandATKOnly
-import marisa.texture
 
-class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class EventHorizonPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "eventHorizon") {
     private var cnt: Int
 
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = amount
-        type = PowerType.BUFF
-        img = texture("marisa/img/powers/eventHorizon.png")
         cnt = amount
         updateDescription()
     }
@@ -52,19 +44,15 @@ class EventHorizonPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
     }
 
     override fun updateDescription() {
-        description = (DESCRIPTIONS[0]
+        description = (descriptions[0]
                 + amount
-                + DESCRIPTIONS[1]
-                + DESCRIPTIONS[2]
+                + descriptions[1]
+                + descriptions[2]
                 + cnt
-                + DESCRIPTIONS[3])
+                + descriptions[3])
     }
 
     companion object {
         const val POWER_ID = "marisa:EventHorizonPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

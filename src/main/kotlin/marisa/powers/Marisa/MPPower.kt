@@ -2,21 +2,14 @@ package marisa.powers.Marisa
 
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.RemoveSelfAction
-import marisa.texture
+import marisa.abstracts.MarisaPower
 import kotlin.math.pow
 
-class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class MPPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "doubleDamage") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = amount
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/doubleDamage.png")
     }
 
     override fun atDamageFinalGive(damage: Float, type: DamageType): Float {
@@ -26,7 +19,7 @@ class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + 2.0.pow(amount.toDouble()) + DESCRIPTIONS[1]
+        description = descriptions[0] + 2.0.pow(amount.toDouble()) + descriptions[1]
     }
 
     override fun atEndOfTurn(isPlayer: Boolean) {
@@ -61,14 +54,9 @@ class MPPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
         }
     }
 
-
     */
 
     companion object {
         const val POWER_ID = "marisa:MPPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

@@ -3,25 +3,18 @@ package marisa.powers.Marisa
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
+import marisa.abstracts.MarisaPower
 import marisa.cards.derivations.GuidingStar
-import marisa.texture
 
-class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
+class PolarisUniquePower(owner: AbstractCreature?) : MarisaPower(POWER_ID, owner, -1, "transmute") {
     private val p: AbstractPlayer = AbstractDungeon.player
     var gain: Boolean = false
 
     init {
         MarisaContinued.logger.info("PolarisUniquePower : Init")
-        name = NAME
-        ID = POWER_ID
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/transmute.png")
-        this.owner = owner
         MarisaContinued.logger.info("PolarisUniquePower : Done initing")
     }
 
@@ -43,15 +36,11 @@ class PolarisUniquePower(owner: AbstractCreature?) : AbstractPower() {
 
     override fun updateDescription() {
         MarisaContinued.logger.info("PolarisUniquePower : updating Description")
-        description = DESCRIPTIONS[0]
+        description = descriptions[0]
         MarisaContinued.logger.info("PolarisUniquePower : Done updating Description")
     }
 
     companion object {
         const val POWER_ID = "marisa:PolarisUniquePower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

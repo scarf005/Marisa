@@ -2,20 +2,12 @@ package marisa.powers.Marisa
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.powers.AbstractPower
+import marisa.abstracts.MarisaPower
 import marisa.cards.derivations.Spark
-import marisa.texture
 
-class CasketOfStarPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class CasketOfStarPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "energyNext") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = amount
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/energyNext.png")
     }
 
     override fun onGainedBlock(blockAmount: Float) {
@@ -25,14 +17,10 @@ class CasketOfStarPower(owner: AbstractCreature?, amount: Int) : AbstractPower()
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
+        description = descriptions[0] + amount + descriptions[1]
     }
 
     companion object {
         const val POWER_ID = "marisa:CasketOfStarPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

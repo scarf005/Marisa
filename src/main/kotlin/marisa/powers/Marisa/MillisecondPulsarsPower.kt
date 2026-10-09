@@ -1,31 +1,19 @@
 package marisa.powers.Marisa
 
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
-import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class MillisecondPulsarsPower(owner: AbstractCreature?) : AbstractPower() {
+class MillisecondPulsarsPower(owner: AbstractCreature?) : MarisaPower(POWER_ID, owner, -1, "steadyPulse") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        amount = -1
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/steadyPulse.png")
     }
 
     override fun stackPower(stackAmount: Int) {}
     override fun updateDescription() {
-        description = DESCRIPTIONS[0]
+        description = descriptions[0]
     }
 
     companion object {
         const val POWER_ID = "marisa:MilliPulsaPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

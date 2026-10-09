@@ -3,20 +3,15 @@ package marisa.powers.monsters
 import com.megacrit.cardcrawl.actions.common.ExhaustAction
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.texture
+import com.megacrit.cardcrawl.powers.AbstractPower.PowerType
+import marisa.abstracts.MarisaPower
 
-class WraithPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class WraithPower(
+    owner: AbstractCreature?, amount: Int
+) : MarisaPower(POWER_ID, owner, amount, "exhaustion", PowerType.DEBUFF) {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        type = PowerType.DEBUFF
         updateDescription()
-        img = texture("marisa/img/powers/exhaustion.png")
-        this.amount = amount
     }
 
     override fun atStartOfTurnPostDraw() {
@@ -31,13 +26,10 @@ class WraithPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0]
+        description = descriptions[0]
     }
 
     companion object {
         const val POWER_ID = "marisa:Wraith"
-        private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

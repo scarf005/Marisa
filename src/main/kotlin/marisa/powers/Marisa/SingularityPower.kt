@@ -4,25 +4,17 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.powers.AbstractPower
 import marisa.MarisaContinued
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class SingularityPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "singularity") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = amount
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/singularity.png")
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1]
+        description = descriptions[0] + amount + descriptions[1]
     }
 
     override fun onAfterUseCard(card: AbstractCard, action: UseCardAction) {
@@ -55,9 +47,5 @@ class SingularityPower(owner: AbstractCreature?, amount: Int) : AbstractPower() 
 
     companion object {
         const val POWER_ID = "marisa:SingularityPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

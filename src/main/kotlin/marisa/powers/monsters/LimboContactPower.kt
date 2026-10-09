@@ -3,23 +3,16 @@ package marisa.powers.monsters
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.powers.AbstractPower
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
+class LimboContactPower(owner: AbstractCreature?) : MarisaPower(POWER_ID, owner, -1, "poison") {
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        amount = -1
         updateDescription()
-        img = texture("marisa/img/powers/poison.png")
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0]
+        description = descriptions[0]
     }
 
     override fun stackPower(amount: Int) {}
@@ -58,8 +51,5 @@ class LimboContactPower(owner: AbstractCreature?) : AbstractPower() {
 
     companion object {
         const val POWER_ID = "marisa:LimboContact"
-        private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

@@ -7,24 +7,17 @@ import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.core.AbstractCreature
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.powers.StrengthPower
 import marisa.MarisaContinued
-import marisa.texture
+import marisa.abstracts.MarisaPower
 
-class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
+class SuperNovaPower(owner: AbstractCreature?, amount: Int) : MarisaPower(POWER_ID, owner, amount, "impulse") {
     private val p: AbstractPlayer
 
     init {
-        name = NAME
-        ID = POWER_ID
-        this.owner = owner
-        this.amount = amount
-        type = PowerType.BUFF
         updateDescription()
-        img = texture("marisa/img/powers/impulse.png")
         p = AbstractDungeon.player
     }
 
@@ -85,14 +78,10 @@ class SuperNovaPower(owner: AbstractCreature?, amount: Int) : AbstractPower() {
     }
 
     override fun updateDescription() {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2]
+        description = descriptions[0] + amount + descriptions[2]
     }
 
     companion object {
         const val POWER_ID = "marisa:SuperNovaPower"
-        private val powerStrings = CardCrawlGame.languagePack
-            .getPowerStrings(POWER_ID)
-        val NAME = powerStrings.NAME
-        val DESCRIPTIONS = powerStrings.DESCRIPTIONS
     }
 }

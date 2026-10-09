@@ -113,6 +113,26 @@ gradle changelog # install once
 
 run gradle task to copy jar into your steam mods folder.
 
+### Tests
+
+Run the Deno changelog and localization unit tests from the repository root:
+
+```sh
+deno task test
+```
+
+This excludes `releases_test.ts`, which checks a locally installed release and its hard links.
+
+Kotlin tests require JDK 17 and the game, BaseMod, and ModTheSpire JARs under the Steam library configured in `gradle.properties`:
+
+```sh
+./gradlew test
+```
+
+Tests do not require the generated `docs/changelog/` files. Packaging and publishing still require them.
+
+Gradle compiles the full mod before running the JUnit tests for type partitioning, resource paths, and seeded game RNG selection. These tests do not launch the game or validate gameplay. The report is written to `build/reports/tests/test/index.html`.
+
 ## [Credits][original-credit]
 
 See [lf201014/STS_ThMod_MRS#credits][original-credit] for details.

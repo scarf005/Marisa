@@ -3,22 +3,10 @@ package marisa.cards
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.AmplifiableCard
-import marisa.patches.AbstractCardEnum
 
-class Acceleration : AmplifiableCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.COMMON,
-    CardTarget.SELF
-) {
+class Acceleration : AmplifiableCard(ID, "GuidingStar", COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF) {
     init {
         baseMagicNumber = AMP
         magicNumber = baseMagicNumber
@@ -45,10 +33,6 @@ class Acceleration : AmplifiableCard(
 
     companion object {
         const val ID = "marisa:Acceleration"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME: String = cardStrings.NAME
-        val DESCRIPTION: String = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/GuidingStar.png"
         private const val COST = 0
         private const val DRAW = 2
 

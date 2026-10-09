@@ -1,25 +1,13 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.OrrerysSunPower
 
-class OrrerysSun : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.POWER,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.SELF
-) {
+class OrrerysSun : MarisaCard(ID, "Orrey", COST, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         magicNumber = STACKS
         baseMagicNumber = magicNumber
@@ -46,10 +34,6 @@ class OrrerysSun : CustomCard(
 
     companion object {
         const val ID = "marisa:OrrerysSun"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/Orrey.png"
         private const val COST = 1
         private const val STACKS = 6
         private const val UPG_STC = 3

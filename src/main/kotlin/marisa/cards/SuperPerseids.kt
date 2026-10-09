@@ -1,6 +1,5 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
@@ -8,23 +7,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.MarisaContinued
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 
-class SuperPerseids : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.SELF
-) {
+class SuperPerseids : MarisaCard(ID, "SuperPerseids", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         baseDamage = DMG
         damage = baseDamage
@@ -87,10 +75,6 @@ class SuperPerseids : CustomCard(
 
     companion object {
         const val ID = "marisa:SuperPerseids"
-        const val IMG_PATH = "marisa/img/cards/SuperPerseids.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = -2
         private const val DMG = 16
         private const val UPG_DMG = 8

@@ -7,24 +7,15 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.powers.FadingPower
 import com.megacrit.cardcrawl.powers.ShiftingPower
 import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
 import marisa.random
 
 class ShootTheMoon : AmplifiedAttack(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION, CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.ENEMY
+    ID, "ShootTheMoon_v1", COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY,
 ) {
     init {
         baseDamage = ATK_DMG
@@ -69,10 +60,6 @@ class ShootTheMoon : AmplifiedAttack(
 
     companion object {
         const val ID = "marisa:ShootTheMoon"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/ShootTheMoon_v1.png"
         private const val COST = 1
         private const val ATK_DMG = 8
         private const val UPG_DMG = 3

@@ -4,23 +4,13 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.AmplifiableCard
 import marisa.action.FairyDestrucCullingAction
-import marisa.patches.AbstractCardEnum
 
 class FairyDestructionRay : AmplifiableCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.ALL_ENEMY
+    ID, "FairysBane", COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY,
 ) {
     init {
         isMultiDamage = true
@@ -55,10 +45,6 @@ class FairyDestructionRay : AmplifiableCard(
 
     companion object {
         const val ID = "marisa:FairyDestructionRay"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/FairysBane.png"
         private const val COST = 0
         private const val AMP = 2
         private const val ATTACK_DMG = 5

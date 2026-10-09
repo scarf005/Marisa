@@ -1,28 +1,16 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.ChargeUpPower
 
-class UpSweep : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.BASIC,
-    CardTarget.ENEMY
-) {
+class UpSweep : MarisaCard(ID, "UpSweep", COST, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY) {
     init {
         damage = ATTACK_DMG
         baseDamage = damage
@@ -59,10 +47,6 @@ class UpSweep : CustomCard(
 
     companion object {
         const val ID = "marisa:UpSweep"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/UpSweep.png"
         private const val COST = 0
         private const val ATTACK_DMG = 4
         private const val UPGRADE_PLUS_DMG = 1

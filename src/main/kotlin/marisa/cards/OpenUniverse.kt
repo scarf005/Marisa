@@ -1,22 +1,13 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 import marisa.action.OpenUniverseAction
-import marisa.patches.AbstractCardEnum
 
 //import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-class OpenUniverse : CustomCard(
-    ID, NAME, IMG_PATH,
-    COST, DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.SELF
-) {
+class OpenUniverse : MarisaCard(ID, "openUni", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         baseMagicNumber = DRAW
         magicNumber = baseMagicNumber
@@ -43,11 +34,6 @@ class OpenUniverse : CustomCard(
 
     companion object {
         const val ID = "marisa:OpenUniverse"
-        const val IMG_PATH = "marisa/img/cards/openUni.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
         private const val COST = 1
         private const val DRAW = 2
         private const val UPG_DRAW = 1

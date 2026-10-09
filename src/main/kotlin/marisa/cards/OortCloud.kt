@@ -3,23 +3,11 @@ package marisa.cards
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.PlatedArmorPower
 import marisa.abstracts.AmplifiableCard
-import marisa.patches.AbstractCardEnum
 
-class OortCloud : AmplifiableCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.POWER,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.SELF
-) {
+class OortCloud : AmplifiableCard(ID, "oort", COST, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         baseMagicNumber = ARMOR_GAIN
         magicNumber = baseMagicNumber
@@ -56,11 +44,6 @@ class OortCloud : AmplifiableCard(
 
     companion object {
         const val ID = "marisa:OortCloud"
-        const val IMG_PATH = "marisa/img/cards/oort.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
         private const val COST = 1
         private const val ARMOR_GAIN = 4
         private const val UPG_ARMOR = 1

@@ -1,26 +1,14 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.SuperNovaPower
 
-class SuperNova : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.POWER,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.RARE,
-    CardTarget.SELF
-) {
+class SuperNova : MarisaCard(ID, "SuperNova", COST, CardType.POWER, CardRarity.RARE, CardTarget.SELF) {
     init {
         //this.tags.add(BaseModCardTags.FORM);
         baseMagicNumber = STACK
@@ -56,11 +44,6 @@ class SuperNova : CustomCard(
 
     companion object {
         const val ID = "marisa:SuperNova"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/SuperNova.png"
         private const val COST = 2
         private const val STACK = 1
         private const val STACK_UPG = 1

@@ -1,23 +1,15 @@
 package marisa.cards.derivations
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 import marisa.action.BlackFlareStarAction
 import marisa.patches.AbstractCardEnum
 
-class BlackFlareStar : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_DERIVATIONS,
-    CardRarity.SPECIAL,
-    CardTarget.SELF
+class BlackFlareStar : MarisaCard(
+    ID, "Marisa/BlackFlareStar", COST, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF,
+    color = AbstractCardEnum.MARISA_DERIVATIONS,
 ) {
     init {
         baseBlock = BLC_AMT
@@ -28,7 +20,7 @@ class BlackFlareStar : CustomCard(
         return if (p.hand.size() >= HAND_REQ) {
             true
         } else {
-            cantUseMessage = EXTENDED_DESCRIPTION[0]
+            cantUseMessage = strings.EXTENDED_DESCRIPTION[0]
             false
         }
     }
@@ -49,11 +41,6 @@ class BlackFlareStar : CustomCard(
 
     companion object {
         const val ID = "marisa:BlackFlareStar"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/Marisa/BlackFlareStar.png"
         private const val COST = 0
         private const val BLC_AMT = 4
         private const val UPG_BLC = 2

@@ -1,24 +1,12 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 
-class Defend_MRS : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.BASIC,
-    CardTarget.SELF
-) {
+class Defend_MRS : MarisaCard(ID, "Defend_MRS", COST, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF) {
     init {
         //this.tags.add(BaseModCardTags.BASIC_DEFEND);
         tags.add(CardTags.STARTER_DEFEND)
@@ -33,7 +21,6 @@ class Defend_MRS : CustomCard(
 
     override fun makeCopy(): AbstractCard = Defend_MRS()
 
-
     override fun upgrade() {
         if (upgraded) return
         upgradeName()
@@ -42,10 +29,6 @@ class Defend_MRS : CustomCard(
 
     companion object {
         const val ID = "marisa:Defend_MRS"
-        const val IMG_PATH = "marisa/img/cards/Defend_MRS.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = 1
         private const val BLOCK_AMT = 5
         private const val UPGRADE_PLUS_BLOCK = 3

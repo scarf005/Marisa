@@ -3,24 +3,12 @@ package marisa.cards
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.VulnerablePower
 import marisa.abstracts.AmplifiableCard
 import marisa.monsters
-import marisa.patches.AbstractCardEnum
 
-class SporeBomb : AmplifiableCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.COMMON,
-    CardTarget.ENEMY
-) {
+class SporeBomb : AmplifiableCard(ID, "SporeCrump", COST, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY) {
     init {
         baseMagicNumber = STC
         magicNumber = baseMagicNumber
@@ -49,10 +37,6 @@ class SporeBomb : AmplifiableCard(
 
     companion object {
         const val ID = "marisa:SporeBomb"
-        const val IMG_PATH = "marisa/img/cards/SporeCrump.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = 0
         private const val STC = 2
         private const val UPG_STC = 1

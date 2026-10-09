@@ -1,24 +1,12 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 import marisa.action.ManaRampageAction
-import marisa.patches.AbstractCardEnum
 
-class ManaRampage : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.RARE,
-    CardTarget.ALL_ENEMY
-) {
+class ManaRampage : MarisaCard(ID, "ManaRampage", COST, CardType.SKILL, CardRarity.RARE, CardTarget.ALL_ENEMY) {
     init {
         baseMagicNumber = DMG_UP
         magicNumber = baseMagicNumber
@@ -34,17 +22,12 @@ class ManaRampage : CustomCard(
         if (upgraded) return
         upgradeName()
         upgradeMagicNumber(DMG_UP_PLUS)
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION
+        rawDescription = strings.UPGRADE_DESCRIPTION
         initializeDescription()
     }
 
     companion object {
         const val ID = "marisa:ManaRampage"
-        const val IMG_PATH = "marisa/img/cards/ManaRampage.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
         private const val COST = -1
         private const val DMG_UP = 2
         private const val DMG_UP_PLUS = 1

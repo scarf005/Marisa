@@ -3,27 +3,15 @@ package marisa.cards
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.rooms.AbstractRoom.RoomPhase
 import marisa.MarisaContinued
 import marisa.abstracts.AmplifiableCard
-import marisa.patches.AbstractCardEnum
 import marisa.powers.Marisa.WitchOfGreedGold
 import marisa.powers.Marisa.WitchOfGreedPotion
 
-class WitchOfGreed : AmplifiableCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.POWER,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.COMMON,
-    CardTarget.SELF
-) {
+class WitchOfGreed : AmplifiableCard(ID, "Greed", COST, CardType.POWER, CardRarity.COMMON, CardTarget.SELF) {
     init {
         magicNumber = STC
         baseMagicNumber = magicNumber
@@ -59,10 +47,6 @@ class WitchOfGreed : AmplifiableCard(
 
     companion object {
         const val ID = "marisa:WitchOfGreed"
-        const val IMG_PATH = "marisa/img/cards/Greed.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = 1
         private const val STC = 15
         private const val UPG_STC = 10

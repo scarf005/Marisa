@@ -1,6 +1,5 @@
 package marisa.cards.derivations
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
@@ -8,21 +7,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 import marisa.p
 import marisa.patches.AbstractCardEnum
 
-class WhiteDwarf : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_DERIVATIONS,
-    CardRarity.SPECIAL,
-    CardTarget.ENEMY
+class WhiteDwarf : MarisaCard(
+    ID, "Marisa/WhiteDwarf", COST, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY,
+    color = AbstractCardEnum.MARISA_DERIVATIONS,
 ) {
     private var multiplier = MULTIPLIER
 
@@ -47,7 +39,7 @@ class WhiteDwarf : CustomCard(
         return if (p.hand.size() <= HAND_REQ) {
             true
         } else {
-            cantUseMessage = EXTENDED_DESCRIPTION[0]
+            cantUseMessage = strings.EXTENDED_DESCRIPTION[0]
             false
         }
     }
@@ -65,18 +57,12 @@ class WhiteDwarf : CustomCard(
         if (upgraded) return
         upgradeName()
         multiplier = MULTIPLIER_UPG
-        rawDescription = DESCRIPTION_UPG
+        rawDescription = strings.UPGRADE_DESCRIPTION
         initializeDescription()
     }
 
     companion object {
         const val ID = "marisa:WhiteDwarf"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        private val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/Marisa/WhiteDwarf.png"
         private const val COST = 0
         private const val HAND_REQ = 4
         private const val MULTIPLIER = 2

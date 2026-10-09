@@ -1,25 +1,13 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 import marisa.action.OrbitalAction
-import marisa.patches.AbstractCardEnum
 
-class Orbital : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.SELF
-) {
+class Orbital : MarisaCard(ID, "Marisa/orbit", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         baseMagicNumber = DRAW
         magicNumber = baseMagicNumber
@@ -54,10 +42,6 @@ class Orbital : CustomCard(
 
     companion object {
         const val ID = "marisa:Orbital"
-        const val IMG_PATH = "marisa/img/cards/Marisa/orbit.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = -2
         private const val UPG_DRAW = 1
         private const val DRAW = 1

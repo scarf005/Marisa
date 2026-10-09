@@ -1,32 +1,20 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.DarkMatterPower
 
 //import com.megacrit.cardcrawl.core.Settings;
 //import com.megacrit.cardcrawl.relics.AbstractRelic;
 //import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
-class DarkMatter : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.SELF
-) {
+class DarkMatter : MarisaCard(ID, "DarkMatter", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         isEthereal = true
         baseBlock = BLC_GAIN
@@ -46,7 +34,7 @@ class DarkMatter : CustomCard(
             return false
         }
         if (p.hasPower(DarkMatterPower.POWER_ID)) {
-            cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0]
+            cantUseMessage = strings.EXTENDED_DESCRIPTION[0]
             return false
         }
         return true
@@ -92,17 +80,12 @@ class DarkMatter : CustomCard(
         if (upgraded) return
         upgradeName()
         upgradeBlock(UPG_BLC)
-        rawDescription = DESCRIPTION_UPG
+        rawDescription = strings.UPGRADE_DESCRIPTION
         initializeDescription()
     }
 
     companion object {
         const val ID = "marisa:DarkMatter"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/DarkMatter.png"
         private const val COST = 0
         private const val BLC_GAIN = 5
         private const val UPG_BLC = 2

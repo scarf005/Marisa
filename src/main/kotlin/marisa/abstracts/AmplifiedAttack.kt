@@ -4,28 +4,9 @@ import com.badlogic.gdx.math.MathUtils
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 
-
 abstract class AmplifiedAttack(
-    id: String,
-    name: String,
-    img: String,
-    cost: Int,
-    rawDescription: String,
-    type: CardType,
-    color: CardColor,
-    rarity: CardRarity,
-    target: CardTarget,
-) : AmplifiableCard(
-    id,
-    name,
-    img,
-    cost,
-    rawDescription,
-    type,
-    color,
-    rarity,
-    target
-) {
+    id: String, image: String, cost: Int, type: CardType, rarity: CardRarity, target: CardTarget,
+) : AmplifiableCard(id, image, cost, type, rarity, target) {
     private var ampDamage = -1
     protected var ampNumber = 0
     protected lateinit var multiAmpDamage: IntArray

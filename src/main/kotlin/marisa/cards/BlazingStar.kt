@@ -6,23 +6,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.cards.status.Burn
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
 
-class BlazingStar : AmplifiedAttack(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.RARE,
-    CardTarget.ENEMY
-) {
+class BlazingStar : AmplifiedAttack(ID, "BlazingStar", COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY) {
     init {
         baseDamage = ATK_DMG
         damage = baseDamage
@@ -74,10 +62,6 @@ class BlazingStar : AmplifiedAttack(
 
     companion object {
         const val ID = "marisa:BlazingStar"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/BlazingStar.png"
         private const val COST = 2
         private const val ATK_DMG = 16
         private const val UPG_DMG = 4

@@ -1,6 +1,5 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.animations.VFXAction
 import com.megacrit.cardcrawl.actions.common.DamageAction
@@ -8,23 +7,12 @@ import com.megacrit.cardcrawl.actions.utility.WaitAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect
+import marisa.abstracts.MarisaCard
 import marisa.p
-import marisa.patches.AbstractCardEnum
 
-class DragonMeteor : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.ENEMY
-) {
+class DragonMeteor : MarisaCard(ID, "DragonMeteor", COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY) {
     init {
         baseDamage = ATK_DMG
         damage = baseDamage
@@ -82,10 +70,6 @@ class DragonMeteor : CustomCard(
 
     companion object {
         const val ID = "marisa:DragonMeteor"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/DragonMeteor.png"
         private const val COST = 2
         private const val ATK_DMG = 14
 

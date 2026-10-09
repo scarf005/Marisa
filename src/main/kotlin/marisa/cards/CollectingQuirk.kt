@@ -1,29 +1,17 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.relics.Circlet
 import com.megacrit.cardcrawl.relics.RedCirclet
 import marisa.MarisaContinued
+import marisa.abstracts.MarisaCard
 import marisa.action.RandomDamageAction
 import marisa.fx.CollectingQuirkEffect
-import marisa.patches.AbstractCardEnum
 
-class CollectingQuirk : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.RARE,
-    CardTarget.ALL_ENEMY
-) {
+class CollectingQuirk : MarisaCard(ID, "collec", COST, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY) {
     init {
         baseDamage = ATK_DMG
         baseMagicNumber = DIVIDER
@@ -50,7 +38,7 @@ class CollectingQuirk : CustomCard(
     override fun applyPowers() {
         super.applyPowers()
         modifyBlock()
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
+        rawDescription = strings.DESCRIPTION + strings.EXTENDED_DESCRIPTION[0]
         initializeDescription()
         MarisaContinued.logger.info(
             """CollectingQuirk : applyPowers : damage :$damage ; counter : ${counter}; block :$block ; magic number :$magicNumber"""
@@ -59,7 +47,7 @@ class CollectingQuirk : CustomCard(
 
     override fun calculateCardDamage(unused: AbstractMonster?) {
         modifyBlock()
-        rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0]
+        rawDescription = strings.DESCRIPTION + strings.EXTENDED_DESCRIPTION[0]
         initializeDescription()
         MarisaContinued.logger.info(
             """CollectingQuirk : applyPowers : damage :$damage ;
@@ -75,7 +63,7 @@ class CollectingQuirk : CustomCard(
     }
 
     override fun onMoveToDiscard() {
-        rawDescription = DESCRIPTION
+        rawDescription = strings.DESCRIPTION
         initializeDescription()
     }
 
@@ -103,11 +91,6 @@ class CollectingQuirk : CustomCard(
 
     companion object {
         const val ID = "marisa:CollectingQuirk"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        private val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/collec.png"
         private const val COST = 2
         private const val DIVIDER = 4
         private const val UPG_DIVIDER = 3

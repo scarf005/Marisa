@@ -1,22 +1,14 @@
 package marisa.cards.derivations
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 
-class Exhaustion_MRS : CustomCard(
-    ID,
-    NAME,
-    "marisa/img/cards/exhaustion.png",
-    COST,
-    DESCRIPTION,
-    CardType.STATUS,
-    CardColor.COLORLESS,
-    CardRarity.SPECIAL,
-    CardTarget.NONE
+class Exhaustion_MRS : MarisaCard(
+    ID, "exhaustion", COST, CardType.STATUS, CardRarity.SPECIAL, CardTarget.NONE,
+    color = CardColor.COLORLESS,
 ) {
     init {
         exhaust = true
@@ -38,9 +30,6 @@ class Exhaustion_MRS : CustomCard(
 
     companion object {
         const val ID = "marisa:Exhaustion_MRS"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = -2
     }
 }

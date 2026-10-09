@@ -1,24 +1,15 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.MarisaContinued
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.ChargeUpPower
 
-class GalacticHalo : CustomCard(
-    ID, NAME, IMG_PATH,
-    COST, DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.COMMON,
-    CardTarget.SELF
-) {
+class GalacticHalo : MarisaCard(ID, "halo", COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF) {
     init {
         baseMagicNumber = STC
         magicNumber = baseMagicNumber
@@ -53,10 +44,6 @@ class GalacticHalo : CustomCard(
 
     companion object {
         const val ID = "marisa:GalacticHalo"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/halo.png"
         private const val COST = 2
         private const val STC = 2
         private const val UPG_STC = 1

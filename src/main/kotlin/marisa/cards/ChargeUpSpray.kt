@@ -1,6 +1,5 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
@@ -8,25 +7,14 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.ChargeUpPower
 import marisa.powers.Marisa.OneTimeOffPlusPower
 import marisa.relics.SimpleLauncher
 
-class ChargeUpSpray : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.ENEMY
-) {
+class ChargeUpSpray : MarisaCard(ID, "ChargeUpSpray", COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY) {
     //private static final int UPG_DRAW = 0;
     init {
         baseDamage = ATTACK_DMG
@@ -66,10 +54,6 @@ class ChargeUpSpray : CustomCard(
 
     companion object {
         const val ID = "marisa:ChargeUpSpray"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/ChargeUpSpray.png"
         private const val COST = 1
         private const val ATTACK_DMG = 8
         private const val UPGRADE_PLUS_DMG = 4

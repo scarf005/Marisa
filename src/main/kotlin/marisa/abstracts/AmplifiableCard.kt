@@ -1,6 +1,5 @@
 package marisa.abstracts
 
-import basemod.abstracts.CustomCard
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper
@@ -39,9 +38,8 @@ private fun isAmplifyDisabled(): Boolean {
 }
 
 abstract class AmplifiableCard(
-    id: String, name: String, img: String, cost: Int, rawDescription: String,
-    type: CardType, color: CardColor, rarity: CardRarity, target: CardTarget,
-) : CustomCard(id, name, img, cost, rawDescription, type, color, rarity, target) {
+    id: String, image: String, cost: Int, type: CardType, rarity: CardRarity, target: CardTarget,
+) : MarisaCard(id, image, cost, type, rarity, target) {
     var amplifyCost = 1
     private val actualCost get() = costForTurn + additionalCostToPay
     private val canPayAmplify get() = EnergyPanel.totalCount >= costForTurn + amplifyCost

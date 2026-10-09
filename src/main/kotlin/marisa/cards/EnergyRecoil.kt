@@ -1,26 +1,14 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.ChargeUpPower
 
-class EnergyRecoil : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.SELF
-) {
+class EnergyRecoil : MarisaCard(ID, "recoil", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         block = 0
         baseBlock = block
@@ -34,11 +22,11 @@ class EnergyRecoil : CustomCard(
             super.applyPowers()
         }
         if (block > 0) {
-            val extendString = EXTENDED_DESCRIPTION[0] + block + EXTENDED_DESCRIPTION[1]
+            val extendString = strings.EXTENDED_DESCRIPTION[0] + block + strings.EXTENDED_DESCRIPTION[1]
             rawDescription = if (upgraded) {
-                DESCRIPTION_UPG + extendString
+                strings.UPGRADE_DESCRIPTION + extendString
             } else {
-                DESCRIPTION + extendString
+                strings.DESCRIPTION + extendString
             }
             initializeDescription()
         }
@@ -46,9 +34,9 @@ class EnergyRecoil : CustomCard(
 
     override fun onMoveToDiscard() {
         rawDescription = if (upgraded) {
-            DESCRIPTION_UPG
+            strings.UPGRADE_DESCRIPTION
         } else {
-            DESCRIPTION
+            strings.DESCRIPTION
         }
         initializeDescription()
     }
@@ -66,18 +54,12 @@ class EnergyRecoil : CustomCard(
     override fun upgrade() {
         if (upgraded) return
         upgradeName()
-        rawDescription = DESCRIPTION_UPG
+        rawDescription = strings.UPGRADE_DESCRIPTION
         initializeDescription()
     }
 
     companion object {
         const val ID = "marisa:EnergyRecoil"
-        const val IMG_PATH = "marisa/img/cards/recoil.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        val DESCRIPTION_UPG = cardStrings.UPGRADE_DESCRIPTION
-        private val EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION
         private const val COST = 1
     }
 }

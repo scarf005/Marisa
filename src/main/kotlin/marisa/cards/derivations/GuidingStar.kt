@@ -1,27 +1,19 @@
 package marisa.cards.derivations
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction
 import com.megacrit.cardcrawl.actions.common.ShuffleAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 import marisa.patches.AbstractCardEnum
 
-class GuidingStar : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_DERIVATIONS,
-    CardRarity.SPECIAL,
-    CardTarget.SELF
+class GuidingStar : MarisaCard(
+    ID, "GuidingStar", COST, CardType.SKILL, CardRarity.SPECIAL, CardTarget.SELF,
+    color = AbstractCardEnum.MARISA_DERIVATIONS,
 ) {
     init {
         exhaust = true
@@ -68,10 +60,6 @@ class GuidingStar : CustomCard(
 
     companion object {
         const val ID = "marisa:GuidingStar"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/GuidingStar.png"
         private const val COST = 1
         private const val UPG_COST = 0
     }

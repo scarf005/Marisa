@@ -6,24 +6,12 @@ import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect
 import marisa.abstracts.AmplifiedAttack
-import marisa.patches.AbstractCardEnum
 import marisa.patches.CardTagEnum
 
-class MasterSpark : AmplifiedAttack(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.BASIC,
-    CardTarget.ENEMY
-) {
+class MasterSpark : AmplifiedAttack(ID, "MasterSpark", COST, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY) {
     init {
         baseDamage = ATK_DMG
         ampNumber = AMP_DMG
@@ -55,10 +43,6 @@ class MasterSpark : AmplifiedAttack(
 
     companion object {
         const val ID = "marisa:MasterSpark"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/MasterSpark.png"
         private const val COST = 1
         private const val ATK_DMG = 8
         private const val UPG_DMG = 3

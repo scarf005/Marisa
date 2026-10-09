@@ -4,23 +4,11 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.GainBlockAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.NextTurnBlockPower
 import marisa.abstracts.AmplifiableCard
-import marisa.patches.AbstractCardEnum
 
-class AsteroidBelt : AmplifiableCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.COMMON,
-    CardTarget.SELF
-) {
+class AsteroidBelt : AmplifiableCard(ID, "Asteroid", COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF) {
     init {
         baseBlock = BLOCK_AMT
         amplifyCost = AMP
@@ -45,10 +33,6 @@ class AsteroidBelt : AmplifiableCard(
 
     companion object {
         const val ID = "marisa:AsteroidBelt"
-        const val IMG_PATH = "marisa/img/cards/Asteroid.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = 1
         private const val BLOCK_AMT = 8
         private const val UPGRADE_PLUS_BLOCK = 3

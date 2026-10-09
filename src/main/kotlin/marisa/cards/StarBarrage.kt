@@ -1,26 +1,14 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect
 import com.megacrit.cardcrawl.actions.common.DamageAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 
-class StarBarrage : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.ENEMY
-) {
+class StarBarrage : MarisaCard(ID, "StarBarrage", COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY) {
     init {
         baseDamage = ATK_DMG
         baseMagicNumber = TAP
@@ -52,10 +40,6 @@ class StarBarrage : CustomCard(
 
     companion object {
         const val ID = "marisa:StarBarrage"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/StarBarrage.png"
         private const val COST = 1
         private const val ATK_DMG = 7
         private const val UPGRADE_PLUS_DMG = 3

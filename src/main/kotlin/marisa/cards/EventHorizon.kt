@@ -1,18 +1,13 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
-import marisa.patches.AbstractCardEnum
+import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.EventHorizonPower
 
-class EventHorizon : CustomCard(
-    ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER,
-    AbstractCardEnum.MARISA_COLOR, CardRarity.UNCOMMON, CardTarget.SELF
-) {
+class EventHorizon : MarisaCard(ID, "EventHorizon", COST, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
         baseMagicNumber = STC_GAIN
         magicNumber = baseMagicNumber
@@ -34,10 +29,6 @@ class EventHorizon : CustomCard(
 
     companion object {
         const val ID = "marisa:EventHorizon"
-        const val IMG_PATH = "marisa/img/cards/EventHorizon.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = 1
         private const val STC_GAIN = 1
         private const val UPG_STC = 1

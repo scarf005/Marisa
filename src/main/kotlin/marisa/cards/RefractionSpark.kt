@@ -3,24 +3,14 @@ package marisa.cards
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.DamageInfo
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.AmplifiedAttack
 import marisa.action.RefractionSparkAction
 import marisa.cards.derivations.Spark
-import marisa.patches.AbstractCardEnum
 import marisa.patches.CardTagEnum
 
 class RefractionSpark : AmplifiedAttack(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.ATTACK,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.UNCOMMON,
-    CardTarget.ENEMY
+    ID, "Refraction", COST, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY,
 ) {
     init {
         baseDamage = ATK_DMG
@@ -50,10 +40,6 @@ class RefractionSpark : AmplifiedAttack(
 
     companion object {
         const val ID = "marisa:RefractionSpark"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
-        const val IMG_PATH = "marisa/img/cards/Refraction.png"
         private const val COST = 1
         private const val ATK_DMG = 4
         private const val UPG_DMG = 1

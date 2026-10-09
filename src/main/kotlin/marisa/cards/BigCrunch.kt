@@ -1,24 +1,12 @@
 package marisa.cards
 
-import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
-import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.abstracts.MarisaCard
 import marisa.action.BigCruncAction
-import marisa.patches.AbstractCardEnum
 
-class BigCrunch : CustomCard(
-    ID,
-    NAME,
-    IMG_PATH,
-    COST,
-    DESCRIPTION,
-    CardType.SKILL,
-    AbstractCardEnum.MARISA_COLOR,
-    CardRarity.RARE,
-    CardTarget.SELF
-) {
+class BigCrunch : MarisaCard(ID, "BigCrunch", COST, CardType.SKILL, CardRarity.RARE, CardTarget.SELF) {
     init {
         exhaust = true
         baseMagicNumber = DIV
@@ -41,10 +29,6 @@ class BigCrunch : CustomCard(
 
     companion object {
         const val ID = "marisa:BigCrunch"
-        const val IMG_PATH = "marisa/img/cards/BigCrunch.png"
-        private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
-        val NAME = cardStrings.NAME
-        val DESCRIPTION = cardStrings.DESCRIPTION
         private const val COST = 0
         private const val DIV = 5
         private const val UPG_DIV = -1

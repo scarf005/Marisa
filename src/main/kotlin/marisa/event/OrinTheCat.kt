@@ -36,7 +36,7 @@ class OrinTheCat : AbstractEvent() {
         if (satori) {
             roomEventText.addDialogOption(OPTIONS[4])
         } else {
-            roomEventText.addDialogOption(OPTIONS[0], CardLibrary.getCopy("Wraith"))
+            roomEventText.addDialogOption(OPTIONS[0], CardLibrary.getCopy(Wraith.ID))
         }
         roomEventText.addDialogOption(OPTIONS[1])
         hasDialog = true
@@ -122,7 +122,7 @@ class OrinTheCat : AbstractEvent() {
                 MarisaContinued.logger.info("OrinTheCat : PreCombat : Adding Reward")
                 val currRoom = AbstractDungeon.getCurrRoom()
                 currRoom.rewards.clear()
-                if (!AbstractDungeon.player.hasRelic("CatCart")) {
+                if (!AbstractDungeon.player.hasRelic(CatCart.ID)) {
                     if (Settings.isDailyRun) {
                         currRoom.addGoldToRewards(AbstractDungeon.miscRng.random(50))
                     } else {

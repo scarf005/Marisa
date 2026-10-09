@@ -45,7 +45,7 @@ class Singularity : CustomCard(
     }
 
     companion object {
-        const val ID = "Singularity"
+        const val ID = "marisa:Singularity"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

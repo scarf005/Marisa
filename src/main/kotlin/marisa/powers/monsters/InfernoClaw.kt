@@ -33,7 +33,7 @@ class InfernoClaw(owner: AbstractCreature?) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "InfernoClaw"
+        const val POWER_ID = "marisa:InfernoClaw"
         private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME
         val DESCRIPTIONS = powerStrings.DESCRIPTIONS

@@ -1,82 +1,82 @@
 import { z } from "$zod/mod.ts"
 
 export const schema = z.object({
-  "MiniHakkero": z.object({
+  "${modId}:MiniHakkero": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "BewitchedHakkero": z.object({
+  "${modId}:BewitchedHakkero": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "MagicArmor": z.object({
+  "${modId}:MagicArmor": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "MagicBroom": z.object({
+  "${modId}:MagicBroom": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "AmpWand": z.object({
+  "${modId}:AmpWand": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "RampagingMagicTools": z.object({
+  "${modId}:RampagingMagicTools": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "ExperimentalFamiliar": z.object({
+  "${modId}:ExperimentalFamiliar": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "BreadOfAWashokuLover": z.object({
+  "${modId}:BreadOfAWashokuLover": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "SimpleLauncher": z.object({
+  "${modId}:SimpleLauncher": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "HandmadeGrimoire": z.object({
+  "${modId}:HandmadeGrimoire": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "ShroomBag": z.object({
+  "${modId}:ShroomBag": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "Cape": z.object({
+  "${modId}:Cape": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string(), z.string()]),
   }).strict(),
-  "SproutingBranch": z.object({
+  "${modId}:SproutingBranch": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "AmplifyWand": z.object({
+  "${modId}:AmplifyWand": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "CatCart": z.object({
+  "${modId}:CatCart": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),
   }).strict(),
-  "BigShroomBag": z.object({
+  "${modId}:BigShroomBag": z.object({
     "NAME": z.string(),
     "FLAVOR": z.string(),
     "DESCRIPTIONS": z.tuple([z.string()]),

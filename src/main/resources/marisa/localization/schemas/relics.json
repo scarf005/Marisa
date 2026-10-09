@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "MiniHakkero": {
+    "${modId}:MiniHakkero": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -28,7 +28,7 @@
       ],
       "additionalProperties": false
     },
-    "BewitchedHakkero": {
+    "${modId}:BewitchedHakkero": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -55,7 +55,7 @@
       ],
       "additionalProperties": false
     },
-    "MagicArmor": {
+    "${modId}:MagicArmor": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -82,7 +82,7 @@
       ],
       "additionalProperties": false
     },
-    "MagicBroom": {
+    "${modId}:MagicBroom": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -109,7 +109,7 @@
       ],
       "additionalProperties": false
     },
-    "AmpWand": {
+    "${modId}:AmpWand": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -136,7 +136,7 @@
       ],
       "additionalProperties": false
     },
-    "RampagingMagicTools": {
+    "${modId}:RampagingMagicTools": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -163,7 +163,7 @@
       ],
       "additionalProperties": false
     },
-    "ExperimentalFamiliar": {
+    "${modId}:ExperimentalFamiliar": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -190,7 +190,7 @@
       ],
       "additionalProperties": false
     },
-    "BreadOfAWashokuLover": {
+    "${modId}:BreadOfAWashokuLover": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -217,7 +217,7 @@
       ],
       "additionalProperties": false
     },
-    "SimpleLauncher": {
+    "${modId}:SimpleLauncher": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -244,7 +244,7 @@
       ],
       "additionalProperties": false
     },
-    "HandmadeGrimoire": {
+    "${modId}:HandmadeGrimoire": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -271,7 +271,7 @@
       ],
       "additionalProperties": false
     },
-    "ShroomBag": {
+    "${modId}:ShroomBag": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -298,7 +298,7 @@
       ],
       "additionalProperties": false
     },
-    "Cape": {
+    "${modId}:Cape": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -328,7 +328,7 @@
       ],
       "additionalProperties": false
     },
-    "SproutingBranch": {
+    "${modId}:SproutingBranch": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -355,7 +355,7 @@
       ],
       "additionalProperties": false
     },
-    "AmplifyWand": {
+    "${modId}:AmplifyWand": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -382,7 +382,7 @@
       ],
       "additionalProperties": false
     },
-    "CatCart": {
+    "${modId}:CatCart": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -409,7 +409,7 @@
       ],
       "additionalProperties": false
     },
-    "BigShroomBag": {
+    "${modId}:BigShroomBag": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -438,22 +438,22 @@
     }
   },
   "required": [
-    "MiniHakkero",
-    "BewitchedHakkero",
-    "MagicArmor",
-    "MagicBroom",
-    "AmpWand",
-    "RampagingMagicTools",
-    "ExperimentalFamiliar",
-    "BreadOfAWashokuLover",
-    "SimpleLauncher",
-    "HandmadeGrimoire",
-    "ShroomBag",
-    "Cape",
-    "SproutingBranch",
-    "AmplifyWand",
-    "CatCart",
-    "BigShroomBag"
+    "${modId}:MiniHakkero",
+    "${modId}:BewitchedHakkero",
+    "${modId}:MagicArmor",
+    "${modId}:MagicBroom",
+    "${modId}:AmpWand",
+    "${modId}:RampagingMagicTools",
+    "${modId}:ExperimentalFamiliar",
+    "${modId}:BreadOfAWashokuLover",
+    "${modId}:SimpleLauncher",
+    "${modId}:HandmadeGrimoire",
+    "${modId}:ShroomBag",
+    "${modId}:Cape",
+    "${modId}:SproutingBranch",
+    "${modId}:AmplifyWand",
+    "${modId}:CatCart",
+    "${modId}:BigShroomBag"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

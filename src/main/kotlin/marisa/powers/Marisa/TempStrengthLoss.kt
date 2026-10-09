@@ -28,7 +28,7 @@ class TempStrengthLoss(owner: AbstractCreature?, amount: Int) : AbstractPower() 
     override fun atEndOfTurn(isPlayer: Boolean) {
         if (!isPlayer) {
             AbstractDungeon.actionManager
-                .addToBottom(RemoveSpecificPowerAction(owner, owner, "TempStrengthLoss"))
+                .addToBottom(RemoveSpecificPowerAction(owner, owner, POWER_ID))
         }
     }
 
@@ -37,7 +37,7 @@ class TempStrengthLoss(owner: AbstractCreature?, amount: Int) : AbstractPower() 
     }
 
     companion object {
-        const val POWER_ID = "TempStrengthLoss"
+        const val POWER_ID = "marisa:TempStrengthLoss"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

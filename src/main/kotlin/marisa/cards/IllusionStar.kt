@@ -48,7 +48,7 @@ class IllusionStar : CustomCard(
     }
 
     companion object {
-        const val ID = "IllusionStar"
+        const val ID = "marisa:IllusionStar"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

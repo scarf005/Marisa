@@ -29,7 +29,7 @@ class OneTimeOffPower(owner: AbstractCreature?) : AbstractPower() {
     }
 
     companion object {
-        const val POWER_ID = "OneTimeOffPower"
+        const val POWER_ID = "marisa:OneTimeOffPower"
         private val powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME
         val DESCRIPTIONS = powerStrings.DESCRIPTIONS

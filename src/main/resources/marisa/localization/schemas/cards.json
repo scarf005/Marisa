@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "Strike_MRS": {
+    "${modId}:Strike_MRS": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -17,7 +17,7 @@
       ],
       "additionalProperties": false
     },
-    "Defend_MRS": {
+    "${modId}:Defend_MRS": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -33,7 +33,7 @@
       ],
       "additionalProperties": false
     },
-    "AsteroidBelt": {
+    "${modId}:AsteroidBelt": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -49,7 +49,7 @@
       ],
       "additionalProperties": false
     },
-    "BigCrunch": {
+    "${modId}:BigCrunch": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -65,7 +65,7 @@
       ],
       "additionalProperties": false
     },
-    "BlazingStar": {
+    "${modId}:BlazingStar": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -81,7 +81,7 @@
       ],
       "additionalProperties": false
     },
-    "DarkSpark": {
+    "${modId}:DarkSpark": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -97,7 +97,7 @@
       ],
       "additionalProperties": false
     },
-    "DeepEcoloBomb": {
+    "${modId}:DeepEcoloBomb": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -113,7 +113,7 @@
       ],
       "additionalProperties": false
     },
-    "DoubleSpark": {
+    "${modId}:DoubleSpark": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -133,7 +133,7 @@
       ],
       "additionalProperties": false
     },
-    "EarthLightRay": {
+    "${modId}:EarthLightRay": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -153,7 +153,7 @@
       ],
       "additionalProperties": false
     },
-    "EscapeVelocity": {
+    "${modId}:EscapeVelocity": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -173,7 +173,7 @@
       ],
       "additionalProperties": false
     },
-    "FinalSpark": {
+    "${modId}:FinalSpark": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -193,7 +193,7 @@
       ],
       "additionalProperties": false
     },
-    "GrandCross": {
+    "${modId}:GrandCross": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -209,7 +209,7 @@
       ],
       "additionalProperties": false
     },
-    "GravityBeat": {
+    "${modId}:GravityBeat": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -239,7 +239,7 @@
       ],
       "additionalProperties": false
     },
-    "IllusionStar": {
+    "${modId}:IllusionStar": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -259,7 +259,7 @@
       ],
       "additionalProperties": false
     },
-    "MachineGunSpark": {
+    "${modId}:MachineGunSpark": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -275,7 +275,7 @@
       ],
       "additionalProperties": false
     },
-    "MagicAbsorber": {
+    "${modId}:MagicAbsorber": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -291,7 +291,7 @@
       ],
       "additionalProperties": false
     },
-    "MasterSpark": {
+    "${modId}:MasterSpark": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -307,7 +307,7 @@
       ],
       "additionalProperties": false
     },
-    "MeteoricShower": {
+    "${modId}:MeteoricShower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -323,7 +323,7 @@
       ],
       "additionalProperties": false
     },
-    "MilkyWay": {
+    "${modId}:MilkyWay": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -339,7 +339,7 @@
       ],
       "additionalProperties": false
     },
-    "NonDirectionalLaser": {
+    "${modId}:NonDirectionalLaser": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -355,7 +355,7 @@
       ],
       "additionalProperties": false
     },
-    "Occultation": {
+    "${modId}:Occultation": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -389,7 +389,7 @@
       ],
       "additionalProperties": false
     },
-    "OortCloud": {
+    "${modId}:OortCloud": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -409,7 +409,7 @@
       ],
       "additionalProperties": false
     },
-    "PolarisUnique": {
+    "${modId}:PolarisUnique": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -429,7 +429,7 @@
       ],
       "additionalProperties": false
     },
-    "SatelliteIllusion": {
+    "${modId}:SatelliteIllusion": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -449,7 +449,7 @@
       ],
       "additionalProperties": false
     },
-    "ShootTheMoon": {
+    "${modId}:ShootTheMoon": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -465,7 +465,7 @@
       ],
       "additionalProperties": false
     },
-    "StarDustReverie": {
+    "${modId}:StarDustReverie": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -485,7 +485,7 @@
       ],
       "additionalProperties": false
     },
-    "UltraShortWave": {
+    "${modId}:UltraShortWave": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -501,7 +501,7 @@
       ],
       "additionalProperties": false
     },
-    "MillisecondPulsars": {
+    "${modId}:MillisecondPulsars": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -521,7 +521,7 @@
       ],
       "additionalProperties": false
     },
-    "Spark": {
+    "${modId}:Spark": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -537,7 +537,7 @@
       ],
       "additionalProperties": false
     },
-    "UpSweep": {
+    "${modId}:UpSweep": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -553,7 +553,7 @@
       ],
       "additionalProperties": false
     },
-    "GuidingStar": {
+    "${modId}:GuidingStar": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -569,7 +569,7 @@
       ],
       "additionalProperties": false
     },
-    "OrrerysSun": {
+    "${modId}:OrrerysSun": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -585,7 +585,7 @@
       ],
       "additionalProperties": false
     },
-    "ChargingUp": {
+    "${modId}:ChargingUp": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -605,7 +605,7 @@
       ],
       "additionalProperties": false
     },
-    "LuminesStrike": {
+    "${modId}:LuminesStrike": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -625,7 +625,7 @@
       ],
       "additionalProperties": false
     },
-    "OpenUniverse": {
+    "${modId}:OpenUniverse": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -645,7 +645,7 @@
       ],
       "additionalProperties": false
     },
-    "BlazeAway": {
+    "${modId}:BlazeAway": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -678,7 +678,7 @@
       ],
       "additionalProperties": false
     },
-    "MaximisePower": {
+    "${modId}:MaximisePower": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -698,7 +698,7 @@
       ],
       "additionalProperties": false
     },
-    "StarlightTyphoon": {
+    "${modId}:StarlightTyphoon": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -732,7 +732,7 @@
       ],
       "additionalProperties": false
     },
-    "StarlightTyphoon_D": {
+    "${modId}:StarlightTyphoon_D": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -752,7 +752,7 @@
       ],
       "additionalProperties": false
     },
-    "SuperPerseids": {
+    "${modId}:SuperPerseids": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -768,7 +768,7 @@
       ],
       "additionalProperties": false
     },
-    "MysteriousBeam": {
+    "${modId}:MysteriousBeam": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -788,7 +788,7 @@
       ],
       "additionalProperties": false
     },
-    "ShootingEcho": {
+    "${modId}:ShootingEcho": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -808,7 +808,7 @@
       ],
       "additionalProperties": false
     },
-    "EnergyFlow": {
+    "${modId}:EnergyFlow": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -824,7 +824,7 @@
       ],
       "additionalProperties": false
     },
-    "PowerUp": {
+    "${modId}:PowerUp": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -840,7 +840,7 @@
       ],
       "additionalProperties": false
     },
-    "WitchLeyline": {
+    "${modId}:WitchLeyline": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -856,7 +856,7 @@
       ],
       "additionalProperties": false
     },
-    "JA": {
+    "${modId}:JA": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -876,7 +876,7 @@
       ],
       "additionalProperties": false
     },
-    "AbsoluteMagnitude": {
+    "${modId}:AbsoluteMagnitude": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -896,7 +896,7 @@
       ],
       "additionalProperties": false
     },
-    "DragonMeteor": {
+    "${modId}:DragonMeteor": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -912,7 +912,7 @@
       ],
       "additionalProperties": false
     },
-    "EventHorizon": {
+    "${modId}:EventHorizon": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -928,7 +928,7 @@
       ],
       "additionalProperties": false
     },
-    "PulseMagic": {
+    "${modId}:PulseMagic": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -948,7 +948,7 @@
       ],
       "additionalProperties": false
     },
-    "DC": {
+    "${modId}:DC": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -964,7 +964,7 @@
       ],
       "additionalProperties": false
     },
-    "Singularity": {
+    "${modId}:Singularity": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -980,7 +980,7 @@
       ],
       "additionalProperties": false
     },
-    "SporeBomb": {
+    "${modId}:SporeBomb": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1000,7 +1000,7 @@
       ],
       "additionalProperties": false
     },
-    "FluorensentBeam": {
+    "${modId}:FluorensentBeam": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1016,7 +1016,7 @@
       ],
       "additionalProperties": false
     },
-    "WitchOfGreed": {
+    "${modId}:WitchOfGreed": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1032,7 +1032,7 @@
       ],
       "additionalProperties": false
     },
-    "TreasureHunter": {
+    "${modId}:TreasureHunter": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1048,7 +1048,7 @@
       ],
       "additionalProperties": false
     },
-    "Robbery": {
+    "${modId}:Robbery": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1064,7 +1064,7 @@
       ],
       "additionalProperties": false
     },
-    "6A": {
+    "${modId}:6A": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1080,7 +1080,7 @@
       ],
       "additionalProperties": false
     },
-    "CircumpolarStar": {
+    "${modId}:CircumpolarStar": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1096,7 +1096,7 @@
       ],
       "additionalProperties": false
     },
-    "RefractionSpark": {
+    "${modId}:RefractionSpark": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1112,7 +1112,7 @@
       ],
       "additionalProperties": false
     },
-    "MagicChant": {
+    "${modId}:MagicChant": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1132,7 +1132,7 @@
       ],
       "additionalProperties": false
     },
-    "UnstableBomb": {
+    "${modId}:UnstableBomb": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1148,7 +1148,7 @@
       ],
       "additionalProperties": false
     },
-    "SuperNova": {
+    "${modId}:SuperNova": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1168,7 +1168,7 @@
       ],
       "additionalProperties": false
     },
-    "OneTimeOff": {
+    "${modId}:OneTimeOff": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1188,7 +1188,7 @@
       ],
       "additionalProperties": false
     },
-    "DarkMatter": {
+    "${modId}:DarkMatter": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1222,7 +1222,7 @@
       ],
       "additionalProperties": false
     },
-    "GasGiant": {
+    "${modId}:GasGiant": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1238,7 +1238,7 @@
       ],
       "additionalProperties": false
     },
-    "CasketOfStar": {
+    "${modId}:CasketOfStar": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1258,7 +1258,7 @@
       ],
       "additionalProperties": false
     },
-    "ChargeUpSpray": {
+    "${modId}:ChargeUpSpray": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1274,7 +1274,7 @@
       ],
       "additionalProperties": false
     },
-    "EnergyRecoil": {
+    "${modId}:EnergyRecoil": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1308,7 +1308,7 @@
       ],
       "additionalProperties": false
     },
-    "GalacticHalo": {
+    "${modId}:GalacticHalo": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1324,7 +1324,7 @@
       ],
       "additionalProperties": false
     },
-    "ManaConvection": {
+    "${modId}:ManaConvection": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1340,7 +1340,7 @@
       ],
       "additionalProperties": false
     },
-    "ManaRampage": {
+    "${modId}:ManaRampage": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1360,7 +1360,7 @@
       ],
       "additionalProperties": false
     },
-    "StarBarrage": {
+    "${modId}:StarBarrage": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1376,7 +1376,7 @@
       ],
       "additionalProperties": false
     },
-    "AFriendsGift": {
+    "${modId}:AFriendsGift": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1396,7 +1396,7 @@
       ],
       "additionalProperties": false
     },
-    "BinaryStars": {
+    "${modId}:BinaryStars": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1416,7 +1416,7 @@
       ],
       "additionalProperties": false
     },
-    "CollectingQuirk": {
+    "${modId}:CollectingQuirk": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1446,7 +1446,7 @@
       ],
       "additionalProperties": false
     },
-    "FungusSplash": {
+    "${modId}:FungusSplash": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1466,7 +1466,7 @@
       ],
       "additionalProperties": false
     },
-    "PropBag": {
+    "${modId}:PropBag": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1486,7 +1486,7 @@
       ],
       "additionalProperties": false
     },
-    "BlackFlareStar": {
+    "${modId}:BlackFlareStar": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1516,7 +1516,7 @@
       ],
       "additionalProperties": false
     },
-    "WhiteDwarf": {
+    "${modId}:WhiteDwarf": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1550,7 +1550,7 @@
       ],
       "additionalProperties": false
     },
-    "FairyDestructionRay": {
+    "${modId}:FairyDestructionRay": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1566,7 +1566,7 @@
       ],
       "additionalProperties": false
     },
-    "Orbital": {
+    "${modId}:Orbital": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1582,7 +1582,7 @@
       ],
       "additionalProperties": false
     },
-    "ExplosiveMarionette": {
+    "${modId}:ExplosiveMarionette": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1598,7 +1598,7 @@
       ],
       "additionalProperties": false
     },
-    "OpticalCamouflage": {
+    "${modId}:OpticalCamouflage": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1614,7 +1614,7 @@
       ],
       "additionalProperties": false
     },
-    "FiveColoredTalisman": {
+    "${modId}:FiveColoredTalisman": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1630,7 +1630,7 @@
       ],
       "additionalProperties": false
     },
-    "AlicesGift": {
+    "${modId}:AlicesGift": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1646,7 +1646,7 @@
       ],
       "additionalProperties": false
     },
-    "Exhaustion_MRS": {
+    "${modId}:Exhaustion_MRS": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1662,7 +1662,7 @@
       ],
       "additionalProperties": false
     },
-    "UltimateShortwave": {
+    "${modId}:UltimateShortwave": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1678,7 +1678,7 @@
       ],
       "additionalProperties": false
     },
-    "NebulaRing": {
+    "${modId}:NebulaRing": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1694,7 +1694,7 @@
       ],
       "additionalProperties": false
     },
-    "SprinkleStarSeal": {
+    "${modId}:SprinkleStarSeal": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1710,7 +1710,7 @@
       ],
       "additionalProperties": false
     },
-    "Wraith": {
+    "${modId}:Wraith": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1726,7 +1726,7 @@
       ],
       "additionalProperties": false
     },
-    "Acceleration": {
+    "${modId}:Acceleration": {
       "type": "object",
       "properties": {
         "NAME": {
@@ -1744,98 +1744,98 @@
     }
   },
   "required": [
-    "Strike_MRS",
-    "Defend_MRS",
-    "AsteroidBelt",
-    "BigCrunch",
-    "BlazingStar",
-    "DarkSpark",
-    "DeepEcoloBomb",
-    "DoubleSpark",
-    "EarthLightRay",
-    "EscapeVelocity",
-    "FinalSpark",
-    "GrandCross",
-    "GravityBeat",
-    "IllusionStar",
-    "MachineGunSpark",
-    "MagicAbsorber",
-    "MasterSpark",
-    "MeteoricShower",
-    "MilkyWay",
-    "NonDirectionalLaser",
-    "Occultation",
-    "OortCloud",
-    "PolarisUnique",
-    "SatelliteIllusion",
-    "ShootTheMoon",
-    "StarDustReverie",
-    "UltraShortWave",
-    "MillisecondPulsars",
-    "Spark",
-    "UpSweep",
-    "GuidingStar",
-    "OrrerysSun",
-    "ChargingUp",
-    "LuminesStrike",
-    "OpenUniverse",
-    "BlazeAway",
-    "MaximisePower",
-    "StarlightTyphoon",
-    "StarlightTyphoon_D",
-    "SuperPerseids",
-    "MysteriousBeam",
-    "ShootingEcho",
-    "EnergyFlow",
-    "PowerUp",
-    "WitchLeyline",
-    "JA",
-    "AbsoluteMagnitude",
-    "DragonMeteor",
-    "EventHorizon",
-    "PulseMagic",
-    "DC",
-    "Singularity",
-    "SporeBomb",
-    "FluorensentBeam",
-    "WitchOfGreed",
-    "TreasureHunter",
-    "Robbery",
-    "6A",
-    "CircumpolarStar",
-    "RefractionSpark",
-    "MagicChant",
-    "UnstableBomb",
-    "SuperNova",
-    "OneTimeOff",
-    "DarkMatter",
-    "GasGiant",
-    "CasketOfStar",
-    "ChargeUpSpray",
-    "EnergyRecoil",
-    "GalacticHalo",
-    "ManaConvection",
-    "ManaRampage",
-    "StarBarrage",
-    "AFriendsGift",
-    "BinaryStars",
-    "CollectingQuirk",
-    "FungusSplash",
-    "PropBag",
-    "BlackFlareStar",
-    "WhiteDwarf",
-    "FairyDestructionRay",
-    "Orbital",
-    "ExplosiveMarionette",
-    "OpticalCamouflage",
-    "FiveColoredTalisman",
-    "AlicesGift",
-    "Exhaustion_MRS",
-    "UltimateShortwave",
-    "NebulaRing",
-    "SprinkleStarSeal",
-    "Wraith",
-    "Acceleration"
+    "${modId}:Strike_MRS",
+    "${modId}:Defend_MRS",
+    "${modId}:AsteroidBelt",
+    "${modId}:BigCrunch",
+    "${modId}:BlazingStar",
+    "${modId}:DarkSpark",
+    "${modId}:DeepEcoloBomb",
+    "${modId}:DoubleSpark",
+    "${modId}:EarthLightRay",
+    "${modId}:EscapeVelocity",
+    "${modId}:FinalSpark",
+    "${modId}:GrandCross",
+    "${modId}:GravityBeat",
+    "${modId}:IllusionStar",
+    "${modId}:MachineGunSpark",
+    "${modId}:MagicAbsorber",
+    "${modId}:MasterSpark",
+    "${modId}:MeteoricShower",
+    "${modId}:MilkyWay",
+    "${modId}:NonDirectionalLaser",
+    "${modId}:Occultation",
+    "${modId}:OortCloud",
+    "${modId}:PolarisUnique",
+    "${modId}:SatelliteIllusion",
+    "${modId}:ShootTheMoon",
+    "${modId}:StarDustReverie",
+    "${modId}:UltraShortWave",
+    "${modId}:MillisecondPulsars",
+    "${modId}:Spark",
+    "${modId}:UpSweep",
+    "${modId}:GuidingStar",
+    "${modId}:OrrerysSun",
+    "${modId}:ChargingUp",
+    "${modId}:LuminesStrike",
+    "${modId}:OpenUniverse",
+    "${modId}:BlazeAway",
+    "${modId}:MaximisePower",
+    "${modId}:StarlightTyphoon",
+    "${modId}:StarlightTyphoon_D",
+    "${modId}:SuperPerseids",
+    "${modId}:MysteriousBeam",
+    "${modId}:ShootingEcho",
+    "${modId}:EnergyFlow",
+    "${modId}:PowerUp",
+    "${modId}:WitchLeyline",
+    "${modId}:JA",
+    "${modId}:AbsoluteMagnitude",
+    "${modId}:DragonMeteor",
+    "${modId}:EventHorizon",
+    "${modId}:PulseMagic",
+    "${modId}:DC",
+    "${modId}:Singularity",
+    "${modId}:SporeBomb",
+    "${modId}:FluorensentBeam",
+    "${modId}:WitchOfGreed",
+    "${modId}:TreasureHunter",
+    "${modId}:Robbery",
+    "${modId}:6A",
+    "${modId}:CircumpolarStar",
+    "${modId}:RefractionSpark",
+    "${modId}:MagicChant",
+    "${modId}:UnstableBomb",
+    "${modId}:SuperNova",
+    "${modId}:OneTimeOff",
+    "${modId}:DarkMatter",
+    "${modId}:GasGiant",
+    "${modId}:CasketOfStar",
+    "${modId}:ChargeUpSpray",
+    "${modId}:EnergyRecoil",
+    "${modId}:GalacticHalo",
+    "${modId}:ManaConvection",
+    "${modId}:ManaRampage",
+    "${modId}:StarBarrage",
+    "${modId}:AFriendsGift",
+    "${modId}:BinaryStars",
+    "${modId}:CollectingQuirk",
+    "${modId}:FungusSplash",
+    "${modId}:PropBag",
+    "${modId}:BlackFlareStar",
+    "${modId}:WhiteDwarf",
+    "${modId}:FairyDestructionRay",
+    "${modId}:Orbital",
+    "${modId}:ExplosiveMarionette",
+    "${modId}:OpticalCamouflage",
+    "${modId}:FiveColoredTalisman",
+    "${modId}:AlicesGift",
+    "${modId}:Exhaustion_MRS",
+    "${modId}:UltimateShortwave",
+    "${modId}:NebulaRing",
+    "${modId}:SprinkleStarSeal",
+    "${modId}:Wraith",
+    "${modId}:Acceleration"
   ],
   "additionalProperties": false,
   "$schema": "http://json-schema.org/draft-07/schema#"

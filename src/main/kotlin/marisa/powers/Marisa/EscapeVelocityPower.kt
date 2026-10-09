@@ -34,7 +34,7 @@ class EscapeVelocityPower(owner: AbstractCreature?, amount: Int) : AbstractPower
     }
 
     companion object {
-        const val POWER_ID = "ExtraDraw"
+        const val POWER_ID = "marisa:ExtraDraw"
         private val powerStrings = CardCrawlGame.languagePack
             .getPowerStrings(POWER_ID)
         val NAME = powerStrings.NAME

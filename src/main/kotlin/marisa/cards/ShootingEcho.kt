@@ -48,7 +48,7 @@ class ShootingEcho : CustomCard(
     }
 
     companion object {
-        const val ID = "ShootingEcho"
+        const val ID = "marisa:ShootingEcho"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

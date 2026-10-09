@@ -69,7 +69,7 @@ class LuminesStrike : AmplifiedAttack(
     }
 
     companion object {
-        const val ID = "LuminesStrike"
+        const val ID = "marisa:LuminesStrike"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

@@ -54,7 +54,7 @@ class MasterSpark : AmplifiedAttack(
     }
 
     companion object {
-        const val ID = "MasterSpark"
+        const val ID = "marisa:MasterSpark"
         private val cardStrings = CardCrawlGame.languagePack.getCardStrings(ID)
         val NAME = cardStrings.NAME
         val DESCRIPTION = cardStrings.DESCRIPTION

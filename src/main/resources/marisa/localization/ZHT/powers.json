@@ -1,12 +1,12 @@
 {
-  "DarkMatterPower": {
+  "${modId}:DarkMatterPower": {
     "NAME": "暗物質",
     "DESCRIPTIONS": [
       "本回合不能再打出 #y暗物質",
       ""
     ]
   },
-  "ExtraDraw": {
+  "${modId}:ExtraDraw": {
     "NAME": "第二宇宙速度",
     "DESCRIPTIONS": [
       "在每回合開始時，額外抽 #b",
@@ -14,7 +14,7 @@
       " 張 #y灼傷 到手牌"
     ]
   },
-  "EventHorizonPower": {
+  "${modId}:EventHorizonPower": {
     "NAME": "黑洞邊緣",
     "DESCRIPTIONS": [
       "當發動 #y增幅 時，選擇1張棄牌堆的牌加入手牌。每回合只能發動 #b",
@@ -23,49 +23,49 @@
       "）"
     ]
   },
-  "IllusionStarPower": {
+  "${modId}:IllusionStarPower": {
     "NAME": "幻像之星",
     "DESCRIPTIONS": [
       "在你的回合開始時， 變化 ",
       "張手牌"
     ]
   },
-  "MilliPulsaPower": {
+  "${modId}:MilliPulsaPower": {
     "NAME": "毫秒脈衝星",
     "DESCRIPTIONS": [
       "不需要花費額外 [E] 來發動 #y增幅 ",
       ""
     ]
   },
-  "SatellIllusPower": {
+  "${modId}:SatellIllusPower": {
     "NAME": "衛星幻覺",
     "DESCRIPTIONS": [
       "每使用1張不在牌組中的牌時，抽 #b",
       " 張牌"
     ]
   },
-  "TempStrength": {
+  "${modId}:TempStrength": {
     "NAME": "Temproy Strength",
     "DESCRIPTIONS": [
       "Your next blow deals additional ",
       " damage."
     ]
   },
-  "TempStrengthLoss": {
+  "${modId}:TempStrengthLoss": {
     "NAME": "力量下降",
     "DESCRIPTIONS": [
       "這個生物的攻擊力下降了 #b",
       " 點"
     ]
   },
-  "ExtraEnergyPower": {
+  "${modId}:ExtraEnergyPower": {
     "NAME": "額外能量",
     "DESCRIPTIONS": [
       "每回合獲得 ",
       " 額外能量"
     ]
   },
-  "ChargeUpPower": {
+  "${modId}:ChargeUpPower": {
     "NAME": "蓄力",
     "DESCRIPTIONS": [
       "現在有",
@@ -74,87 +74,87 @@
       " 倍傷害"
     ]
   },
-  "PolarisUniquePower": {
+  "${modId}:PolarisUniquePower": {
     "NAME": "北極星",
     "DESCRIPTIONS": [
       "在回合開始時，如果 #y引導星 在抽牌堆裡，則獲得 [E]"
     ]
   },
-  "OrrerysSunPower": {
+  "${modId}:OrrerysSunPower": {
     "NAME": "太陽儀",
     "DESCRIPTIONS": [
       "每當使用掉 #y蓄力 層數，获得 #b",
       " 点 格挡."
     ]
   },
-  "Charged": {
+  "${modId}:Charged": {
     "NAME": "蓄力完成！",
     "DESCRIPTIONS": [
       "你的下一次攻擊造成 ",
       " 倍傷害"
     ]
   },
-  "BlazeAwayPower": {
+  "${modId}:BlazeAwayPower": {
     "NAME": "Blaze Away",
     "DESCRIPTIONS": [
       "複製 #b",
       " 張接下來使用的攻擊牌到手牌"
     ]
   },
-  "MPPower": {
+  "${modId}:MPPower": {
     "NAME": "火力全開！",
     "DESCRIPTIONS": [
       "本回合的攻擊會造成 #b",
       " 倍傷害"
     ]
   },
-  "EnergyFlowPower": {
+  "${modId}:EnergyFlowPower": {
     "NAME": "能量湧動",
     "DESCRIPTIONS": [
       "在你的回合結束時，獲得 #b",
       " 層 #y蓄力"
     ]
   },
-  "PulseMagicPower": {
+  "${modId}:PulseMagicPower": {
     "NAME": "脈衝魔術",
     "DESCRIPTIONS": [
       "本回合內不需要花費額外 [E] 來發動 #y增幅"
     ]
   },
-  "SingularityPower": {
+  "${modId}:SingularityPower": {
     "NAME": "奇點",
     "DESCRIPTIONS": [
       "每打出1張耗能為0的牌時，手牌內1張隨機攻擊牌攻擊力增加 #b",
       " 點"
     ]
   },
-  "WitchOfGreedGold": {
+  "${modId}:WitchOfGreedGold": {
     "NAME": "強欲魔女",
     "DESCRIPTIONS": [
       "戰鬥結束時獲得 #b",
       " 金幣"
     ]
   },
-  "WitchOfGreedPotion": {
+  "${modId}:WitchOfGreedPotion": {
     "NAME": "強欲魔女",
     "DESCRIPTIONS": [
       "戰鬥結束時獲得 #b",
       " 瓶隨機藥劑"
     ]
   },
-  "OneTimeOffPlusPower": {
+  "${modId}:OneTimeOffPlusPower": {
     "NAME": "一回休",
     "DESCRIPTIONS": [
       "本回合不能發動 #y增幅 和 #y蓄力"
     ]
   },
-  "OneTimeOffPower": {
+  "${modId}:OneTimeOffPower": {
     "NAME": "一回休",
     "DESCRIPTIONS": [
       "本回合不能發動 #y增幅"
     ]
   },
-  "SuperNovaPower": {
+  "${modId}:SuperNovaPower": {
     "NAME": "超新星",
     "DESCRIPTIONS": [
       "每 #y消耗 一張 #y灼傷 ，獲得 #b",
@@ -162,116 +162,116 @@
       " 點 #y力量 。NL 不再受到 #y灼傷 傷害。 NL 在你的回合結束時， #y消耗 所有手牌"
     ]
   },
-  "CasketOfStarPlusPower": {
+  "${modId}:CasketOfStarPlusPower": {
     "NAME": "星之器",
     "DESCRIPTIONS": [
       "每獲得 #y格擋 ，將 #b",
       " 張 #y已升級 #y火花 加入手牌"
     ]
   },
-  "CasketOfStarPower": {
+  "${modId}:CasketOfStarPower": {
     "NAME": "星之器",
     "DESCRIPTIONS": [
       "每獲得 #y格擋 ，將 #b",
       " 張 #y火花 加入手牌"
     ]
   },
-  "GalacticHaloPower": {
+  "${modId}:GalacticHaloPower": {
     "NAME": "星暈",
     "DESCRIPTIONS": [
       "每打出1張攻擊牌，回合結束時獲得 #b",
       "  #y格擋"
     ]
   },
-  "ManaRampagePower": {
+  "${modId}:ManaRampagePower": {
     "NAME": "魔力暴走",
     "DESCRIPTIONS": [
       "下一張攻擊牌將被打出 #b",
       " 次"
     ]
   },
-  "PropBagPower": {
+  "${modId}:PropBagPower": {
     "NAME": "便攜道具包",
     "DESCRIPTIONS": [
       "戰鬥結束時，失去 #y",
       ""
     ]
   },
-  "UltraShortWavePower": {
+  "${modId}:UltraShortWavePower": {
     "NAME": "極超短波",
     "DESCRIPTIONS": [
       "#y極超短波 的效果被加強了 #b",
       " 次"
     ]
   },
-  "DarkSparkPower": {
+  "${modId}:DarkSparkPower": {
     "NAME": "暗色火花",
     "DESCRIPTIONS": [
       "本回合打出的每一張名字有 火花 的牌都會給你 #b",
       " 點額外的 #y蓄力"
     ]
   },
-  "MagicChantPower": {
+  "${modId}:MagicChantPower": {
     "NAME": "詠唱",
     "DESCRIPTIONS": [
       "下一回合，使 #b",
       " 的耗能減1"
     ]
   },
-  "SatelIllusPower": {
+  "${modId}:SatelIllusPower": {
     "NAME": "衛星幻覺",
     "DESCRIPTIONS": [
       "在你的回合內，若抽牌堆的卡牌數量增加，獲得 #b",
       " [E]"
     ]
   },
-  "GrandCrossPower": {
+  "${modId}:GrandCrossPower": {
     "NAME": "增幅",
     "DESCRIPTIONS": [
       "本回合已發動了 #y增幅"
     ]
   },
-  "Diaspora": {
+  "${modId}:Diaspora": {
     "NAME": "散滅",
     "DESCRIPTIONS": [
       "在其回合結束時，若該生物的生命值低於 #b",
       " 則會被立即殺死"
     ]
   },
-  "GiftOfLife": {
+  "${modId}:GiftOfLife": {
     "NAME": "生命恩賜",
     "DESCRIPTIONS": [
       "在回合結束時恢復 #b",
       " 點生命值"
     ]
   },
-  "TalismanPower": {
+  "${modId}:TalismanPower": {
     "NAME": "五色魔符",
     "DESCRIPTIONS": [
       "在你的回合開始時，將 #b",
       " 張隨機 #y技能 加入手牌"
     ]
   },
-  "Wraith": {
+  "${modId}:Wraith": {
     "NAME": "怨靈",
     "DESCRIPTIONS": [
       "在你的回合開始時， #y消耗 1張隨機手牌"
     ]
   },
-  "LimboContact": {
+  "${modId}:LimboContact": {
     "NAME": "死靈之觸",
     "DESCRIPTIONS": [
       "每當這名敵人攻擊你，你會獲得1層 #y怨靈 。 NL 在死亡時，給予你 #b1 層 #y怨靈"
     ]
   },
-  "Nebula": {
+  "${modId}:Nebula": {
     "NAME": "星雲",
     "DESCRIPTIONS": [
       "每當你因敵人或卡牌損失 格擋 ，獲得 ",
       " 層 多層護甲"
     ]
   },
-  "InfernoClaw": {
+  "${modId}:InfernoClaw": {
     "NAME": "地獄之爪",
     "DESCRIPTIONS": [
       "每當這名敵人對你造成傷害，將1張 #y灼傷 放入棄牌堆"

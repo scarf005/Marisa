@@ -1,25 +1,17 @@
 package marisa.relics
 
-import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.MarisaContinued
+import marisa.abstracts.MarisaRelic
 import marisa.patches.CardTagEnum
 import marisa.powers.Marisa.ChargeUpPower
-import marisa.texture
 
-class BewitchedHakkero : CustomRelic(
-    ID,
-    texture(IMG, ImageMaster::loadImage),
-    texture(IMG_OTL, ImageMaster::loadImage),
-    RelicTier.BOSS,
-    LandingSound.MAGICAL
-) {
+class BewitchedHakkero : MarisaRelic(ID, "Hakkero_1_s", RelicTier.BOSS, LandingSound.MAGICAL) {
     override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
     override fun makeCopy(): AbstractRelic = BewitchedHakkero()
@@ -56,7 +48,5 @@ class BewitchedHakkero : CustomRelic(
 
     companion object {
         const val ID = "marisa:BewitchedHakkero"
-        private const val IMG = "marisa/img/relics/Hakkero_1_s.png"
-        private const val IMG_OTL = "marisa/img/relics/outline/Hakkero_1_s.png"
     }
 }

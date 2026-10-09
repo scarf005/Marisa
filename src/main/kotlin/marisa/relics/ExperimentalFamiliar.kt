@@ -1,22 +1,14 @@
 package marisa.relics
 
-import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.actions.unique.DiscoveryAction
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.abstracts.MarisaRelic
 import marisa.cards.derivations.Spark
-import marisa.texture
 
-class ExperimentalFamiliar : CustomRelic(
-    ID,
-    texture(IMG, ImageMaster::loadImage),
-    texture(IMG_OTL, ImageMaster::loadImage),
-    RelicTier.BOSS,
-    LandingSound.FLAT
-) {
+class ExperimentalFamiliar : MarisaRelic(ID, "ExpFami", RelicTier.BOSS, LandingSound.FLAT) {
     override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
     override fun makeCopy(): AbstractRelic = ExperimentalFamiliar()
@@ -41,7 +33,5 @@ class ExperimentalFamiliar : CustomRelic(
 
     companion object {
         const val ID = "marisa:ExperimentalFamiliar"
-        private const val IMG = "marisa/img/relics/ExpFami.png"
-        private const val IMG_OTL = "marisa/img/relics/outline/ExpFami.png"
     }
 }

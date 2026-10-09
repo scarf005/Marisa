@@ -1,23 +1,15 @@
 package marisa.relics
 
-import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.powers.RegenPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import com.megacrit.cardcrawl.relics.DeadBranch
+import marisa.abstracts.MarisaRelic
 import marisa.p
-import marisa.texture
 
-class SproutingBranch : CustomRelic(
-    ID,
-    texture(IMG, ImageMaster::loadImage),
-    texture(IMG_OTL, ImageMaster::loadImage),
-    RelicTier.SPECIAL,
-    LandingSound.FLAT
-) {
+class SproutingBranch : MarisaRelic(ID, "sproutingBranch", RelicTier.SPECIAL, LandingSound.FLAT) {
     override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
     override fun makeCopy(): AbstractRelic = SproutingBranch()
@@ -35,8 +27,6 @@ class SproutingBranch : CustomRelic(
 
     companion object {
         const val ID = "marisa:SproutingBranch"
-        private const val IMG = "marisa/img/relics/sproutingBranch.png"
-        private const val IMG_OTL = "marisa/img/relics/outline/sproutingBranch.png"
         private const val REGEN = 4
     }
 }

@@ -1,23 +1,16 @@
 package marisa.relics
 
-import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.actions.common.HealAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import marisa.MarisaContinued
-import marisa.texture
+import marisa.abstracts.MarisaRelic
+import marisa.abstracts.relicTexture
 
-class BreadOfAWashokuLover : CustomRelic(
-    ID,
-    texture(IMG, ImageMaster::loadImage),
-    texture(IMG_OTL, ImageMaster::loadImage),
-    RelicTier.UNCOMMON,
-    LandingSound.FLAT
-) {
+class BreadOfAWashokuLover : MarisaRelic(ID, "bread_s", RelicTier.UNCOMMON, LandingSound.FLAT) {
     init {
         usedUp = false
     }
@@ -54,7 +47,7 @@ class BreadOfAWashokuLover : CustomRelic(
             addToBot(
                 RelicAboveCreatureAction(AbstractDungeon.player, this)
             )
-            img = texture(USED_IMG, ImageMaster::loadImage)
+            img = relicTexture(USED_IMG)
             AbstractDungeon.player.increaseMaxHp(13, true)
             usedUp()
             counter = -2
@@ -63,8 +56,6 @@ class BreadOfAWashokuLover : CustomRelic(
 
     companion object {
         const val ID = "marisa:BreadOfAWashokuLover"
-        private const val IMG = "marisa/img/relics/bread_s.png"
-        private const val IMG_OTL = "marisa/img/relics/outline/bread_s.png"
-        private const val USED_IMG = "marisa/img/relics/usedBread_s.png"
+        private const val USED_IMG = "usedBread_s"
     }
 }

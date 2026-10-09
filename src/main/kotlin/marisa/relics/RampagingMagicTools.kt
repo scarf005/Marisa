@@ -1,27 +1,19 @@
 package marisa.relics
 
-import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.powers.FrailPower
 import com.megacrit.cardcrawl.powers.PoisonPower
 import com.megacrit.cardcrawl.powers.VulnerablePower
 import com.megacrit.cardcrawl.powers.WeakPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.abstracts.MarisaRelic
 import marisa.p
 import marisa.powers.Marisa.ChargeUpPower
 import marisa.random
-import marisa.texture
 
-class RampagingMagicTools : CustomRelic(
-    ID,
-    texture(IMG, ImageMaster::loadImage),
-    texture(IMG_OTL, ImageMaster::loadImage),
-    RelicTier.BOSS,
-    LandingSound.FLAT
-) {
+class RampagingMagicTools : MarisaRelic(ID, "RamTool", RelicTier.BOSS, LandingSound.FLAT) {
     override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
     override fun makeCopy(): AbstractRelic = RampagingMagicTools()
@@ -49,8 +41,6 @@ class RampagingMagicTools : CustomRelic(
 
     companion object {
         const val ID = "marisa:RampagingMagicTools"
-        private const val IMG = "marisa/img/relics/RamTool.png"
-        private const val IMG_OTL = "marisa/img/relics/outline/RamTool.png"
         private const val STACK_DEBUFF = 1
         private const val STACK_POISON = 2
         private const val STACK_CHARGE = 8

@@ -1,20 +1,12 @@
 package marisa.relics
 
-import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import com.megacrit.cardcrawl.rooms.AbstractRoom
-import marisa.texture
+import marisa.abstracts.MarisaRelic
 
-class CatCart : CustomRelic(
-    ID,
-    texture(IMG, ImageMaster::loadImage),
-    texture(IMG_OTL, ImageMaster::loadImage),
-    RelicTier.SPECIAL,
-    LandingSound.FLAT
-) {
+class CatCart : MarisaRelic(ID, "CatCart", RelicTier.SPECIAL, LandingSound.FLAT) {
     init {
         counter = 0
     }
@@ -42,8 +34,6 @@ class CatCart : CustomRelic(
 
     companion object {
         const val ID = "marisa:CatCart"
-        private const val IMG = "marisa/img/relics/CatCart.png"
-        private const val IMG_OTL = "marisa/img/relics/outline/CatCart.png"
         private const val HEAL_PER_CHARGE = 4
     }
 }

@@ -1,19 +1,14 @@
 package marisa.relics
 
-import basemod.abstracts.CustomRelic
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction
 import com.megacrit.cardcrawl.actions.utility.UseCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
-import com.megacrit.cardcrawl.helpers.ImageMaster
 import com.megacrit.cardcrawl.relics.AbstractRelic
-import marisa.texture
+import marisa.abstracts.MarisaRelic
 
-class MagicBroom : CustomRelic(
-    ID, texture(IMG, ImageMaster::loadImage), texture(IMG_OTL, ImageMaster::loadImage), RelicTier.RARE,
-    LandingSound.FLAT
-) {
+class MagicBroom : MarisaRelic(ID, "Broom_s", RelicTier.RARE, LandingSound.FLAT) {
     override fun getUpdatedDescription(): String = DESCRIPTIONS[0]
 
     override fun makeCopy(): AbstractRelic = MagicBroom()
@@ -44,7 +39,5 @@ class MagicBroom : CustomRelic(
 
     companion object {
         const val ID = "marisa:MagicBroom"
-        private const val IMG = "marisa/img/relics/Broom_s.png"
-        private const val IMG_OTL = "marisa/img/relics/outline/Broom_s.png"
     }
 }

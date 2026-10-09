@@ -17,8 +17,10 @@ import kotlin.math.pow
 class ChargeUpPower(
     owner: AbstractCreature?, amount: Int
 ) : AbstractPower() {
-    private var cnt: Int
-    private var stc = 0
+    /** Stacks per doubling of attack damage. */
+    private val threshold get() = if (AbstractDungeon.player.hasRelic(SimpleLauncher.ID)) IMPR_STACK else ACT_STACK
+    private val doublings get() = amount / threshold
+    private val multiplier get() = 2.0.pow(doublings)
 
     init {
         name = NAME
@@ -28,73 +30,37 @@ class ChargeUpPower(
         type = PowerType.BUFF
         updateDescription()
         img = texture("marisa/img/powers/generator.png")
-        divider
-        cnt = this.amount / stc
     }
 
     override fun stackPower(stackAmount: Int) {
-        if (stackAmount > 0) {
-            if (isExhausted()) {
-                return
-            }
-        }
+        if (stackAmount > 0 && isExhausted()) return
         fontScale = 8.0f
-        amount += stackAmount
-        if (amount <= 0) {
-            amount = 0
-        }
-        divider
-        cnt = amount / stc
+        amount = (amount + stackAmount).coerceAtLeast(0)
     }
 
     override fun updateDescription() {
-        description = if (cnt > 0) {
-            """${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]},${DESCRIPTIONS[2]}${
-                2.0.pow(cnt.toDouble()).toInt()
-            }${DESCRIPTIONS[3]}"""
+        description = if (doublings > 0) {
+            "${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]},${DESCRIPTIONS[2]}${multiplier.toInt()}${DESCRIPTIONS[3]}"
         } else {
-            """${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]}."""
+            "${DESCRIPTIONS[0]}$amount${DESCRIPTIONS[1]}."
         }
     }
+
+    /** Whether the next attack is multiplied and spends the stacks. */
+    private val isCharged get() = doublings > 0 && !owner.hasPower(OneTimeOffPlusPower.POWER_ID) && !isExhausted()
 
     override fun onAfterCardPlayed(card: AbstractCard) {
-        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || isExhausted()) {
-            return
-        }
-        if (cnt > 0 && card.type == CardType.ATTACK) {
+        if (isCharged && card.type == CardType.ATTACK) {
             MarisaContinued.logger.info("ChargeUpPower : onPlayCard : consuming stacks for :" + card.cardID)
             flash()
-            divider
-
-            AbstractDungeon.actionManager.addToTop(
-                ConsumeChargeUpAction(cnt * stc)
-            )
+            AbstractDungeon.actionManager.addToTop(ConsumeChargeUpAction(doublings * threshold))
         }
     }
 
-    override fun atDamageFinalGive(damage: Float, type: DamageType): Float {
-        if (owner.hasPower(OneTimeOffPlusPower.POWER_ID) || isExhausted()) {
-            return damage
-        }
-        if (cnt > 0) {
-            if (type == DamageType.NORMAL && amount >= 1) {
-                return (damage * 2.0.pow(cnt.toDouble())).toFloat()
-            }
-        }
-        return damage
-    }
+    override fun atDamageFinalGive(damage: Float, type: DamageType): Float =
+        if (isCharged && type == DamageType.NORMAL) (damage * multiplier).toFloat() else damage
 
-    private val divider: Unit
-        get() {
-            stc = if (AbstractDungeon.player.hasRelic(SimpleLauncher.ID)) {
-                IMPR_STACK
-            } else {
-                ACT_STACK
-            }
-        }
-
-    private fun isExhausted(): Boolean =
-        AbstractDungeon.player.hand.group.filterIsInstance<Exhaustion_MRS>().isNotEmpty()
+    private fun isExhausted() = AbstractDungeon.player.hand.group.any { it is Exhaustion_MRS }
 
     companion object {
         const val POWER_ID = "marisa:ChargeUpPower"

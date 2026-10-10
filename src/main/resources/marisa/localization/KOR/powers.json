@@ -23,11 +23,32 @@
       " 번 남음)"
     ]
   },
+  "${modId}:IllusionStarPower": {
+    "NAME": "환상의 별",
+    "DESCRIPTIONS": [
+      "턴이 시작할 때 손에 있는 카드 #b",
+      " 장을 변화시킵니다."
+    ]
+  },
   "${modId}:MilliPulsaPower": {
     "NAME": "밀리초 펄서",
     "DESCRIPTIONS": [
       "#y증폭이 [E] 를 소모하지 않습니다.",
       ""
+    ]
+  },
+  "${modId}:SatellIllusPower": {
+    "NAME": "위성 환상",
+    "DESCRIPTIONS": [
+      "덱에 없는 카드를 사용할 때마다 카드를 #b",
+      " 장 뽑습니다."
+    ]
+  },
+  "${modId}:TempStrength": {
+    "NAME": "일시적 힘",
+    "DESCRIPTIONS": [
+      "다음 공격이 피해를 #b",
+      " 추가로 줍니다."
     ]
   },
   "${modId}:TempStrengthLoss": {
@@ -71,6 +92,13 @@
     "DESCRIPTIONS": [
       "다음 공격이 #b",
       " 배의 피해를 줍니다."
+    ]
+  },
+  "${modId}:BlazeAwayPower": {
+    "NAME": "블레이즈 어웨이",
+    "DESCRIPTIONS": [
+      "다음에 사용하는 공격 카드의 복사본을 #b",
+      " 장 추가합니다."
     ]
   },
   "${modId}:MPPower": {
@@ -151,6 +179,13 @@
       " 장 얻습니다."
     ]
   },
+  "${modId}:GalacticHaloPower": {
+    "NAME": "은하 헤일로",
+    "DESCRIPTIONS": [
+      "턴 종료 시 이번 턴에 사용한 #y공격 카드마다 #y방어도를 #b",
+      " 얻습니다."
+    ]
+  },
   "${modId}:ManaRampagePower": {
     "NAME": "마나 폭주",
     "DESCRIPTIONS": [
@@ -172,6 +207,20 @@
       " 증가시킵니다."
     ]
   },
+  "${modId}:DarkSparkPower": {
+    "NAME": "다크 스파크",
+    "DESCRIPTIONS": [
+      "이번 턴에 이름에 '스파크'가 들어간 카드를 사용할 때마다 #y충전을 #b",
+      " 추가로 얻습니다."
+    ]
+  },
+  "${modId}:MagicChantPower": {
+    "NAME": "마법 노래",
+    "DESCRIPTIONS": [
+      "다음 턴에 비용이 #b",
+      " 감소합니다."
+    ]
+  },
   "${modId}:SatelIllusPower": {
     "NAME": "새틀라이트 일루전",
     "DESCRIPTIONS": [
@@ -186,11 +235,32 @@
       ""
     ]
   },
+  "${modId}:Diaspora": {
+    "NAME": "디아스포라",
+    "DESCRIPTIONS": [
+      "턴 종료 시 체력이 #b",
+      " 미만이면 즉시 죽습니다."
+    ]
+  },
+  "${modId}:TalismanPower": {
+    "NAME": "오색 부적",
+    "DESCRIPTIONS": [
+      "턴이 시작할 때 무작위 #y스킬 카드를 #b",
+      " 장 손에 추가합니다."
+    ]
+  },
   "${modId}:Wraith": {
     "NAME": "망령",
     "DESCRIPTIONS": [
       "턴이 시작할 때 무작위 카드를 #y소멸시킵니다.",
       ""
+    ]
+  },
+  "${modId}:Nebula": {
+    "NAME": "성운",
+    "DESCRIPTIONS": [
+      "적이나 카드로 인해 방어도를 잃을 때마다 판금 갑옷을 ",
+      " 얻습니다."
     ]
   },
   "${modId}:LimboContact": {

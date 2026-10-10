@@ -305,7 +305,8 @@
     "DESCRIPTION": "每回合只能打出1張。將2張 暗物質 放入抽牌堆。抽1張牌。 消耗 時獲得 !B! 點 格擋 。 NL 虛無",
     "UPGRADE_DESCRIPTION": "每回合只能打出1張。將2張 已升級 暗物質 放入抽牌堆。抽1張牌。 消耗 時獲得 !B! 點 格擋 。 NL 虛無",
     "EXTENDED_DESCRIPTION": [
-      "本回合不能再打出暗物質"
+      "本回合不能再打出暗物質",
+      ""
     ]
   },
   "${modId}:GasGiant": {
@@ -349,7 +350,8 @@
   },
   "${modId}:AFriendsGift": {
     "NAME": "友人之贈",
-    "DESCRIPTION": "無法打出 。抽到此牌時獲得效果"
+    "DESCRIPTION": "無法打出 。抽到此牌時獲得效果",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 造成 !D! 點傷害。 NL 你的回合開始時，傷害增加2。 NL 消耗 。 NL 增幅 [E] ：改為造成 !B! 點傷害，且不 消耗 。"
   },
   "${modId}:BinaryStars": {
     "NAME": "雙星",

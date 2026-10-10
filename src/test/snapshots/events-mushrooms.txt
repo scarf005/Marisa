@@ -1,0 +1,17 @@
+eat
+  option 1
+    phase=EVENT monsters=null
+    hp=55/75 relics=[] deck=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:MasterSpark, marisa:UpSweep, Parasite]
+    rewards=[]
+    options=[[Leave]]
+fight
+  option 0
+    phase=EVENT monsters=[FungiBeast, FungiBeast, FungiBeast]
+    hp=37/75 relics=[] deck=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:MasterSpark, marisa:UpSweep]
+    rewards=[]
+    options=[[Fight]]
+  option 0
+    phase=COMBAT monsters=[FungiBeast, FungiBeast, FungiBeast]
+    hp=37/75 relics=[] deck=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:MasterSpark, marisa:UpSweep]
+    rewards=[GOLD, RELIC:marisa:ShroomBag]
+    options=[]

@@ -88,6 +88,8 @@ object Game {
         CardLibrary.initialize()
         RelicLibrary.initialize()
         TipTracker.initialize()
+        // As a player who has seen the tutorials, which would open screens mid-action.
+        TipTracker.disableAllFtues()
         CardCrawlGame.metricData = MetricData()
         CardCrawlGame.characterManager = CharacterManager()
         BaseMod.publishEditCharacters()

@@ -2,7 +2,7 @@ end turn
   player hp=999/999 block=0 powers=[] energy=3 gold=99 potions=[] relics=[]
   marisa:ZombieFairy hp=14/14 block=7 powers=[marisa:LimboContact(-1), Flight(99)]
   hand=[] draw=[] discard=[] exhaust=[]
-  intents=[marisa:ZombieFairy:DEFEND_BUFF]
+  intents=[marisa:ZombieFairy:DEFEND]
 end turn
   player hp=999/999 block=0 powers=[] energy=3 gold=99 potions=[] relics=[]
   marisa:ZombieFairy hp=14/14 block=7 powers=[marisa:LimboContact(-1), Flight(99)]

@@ -53,19 +53,12 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
                 if (turnNum >= POWER_UP) {
                     repeat(3) { addToBot(DamageAction(p, damage[1])) }
                 } else {
-                    addToBot(DamageAction(p, damage[1]))
+                    addToBot(DamageAction(p, damage[0]))
                 }
             }
 
             2 -> for (m in AbstractDungeon.getCurrRoom().monsters.monsters) {
-                val block = block
-
-                if (!m.isDeadOrEscaped) {
-                    addToBot(
-                        GainBlockAction(m, this, block)
-                    )
-
-                }
+                if (!m.isDeadOrEscaped) addToBot(GainBlockAction(m, this, block))
             }
 
             else -> logger.info(
@@ -103,15 +96,15 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
     }
 
     private fun setAttackAction() {
-        if (turnNum < 2) {
-            setMove(1.toByte(), Intent.ATTACK_DEBUFF, DMG)
+        if (turnNum < POWER_UP) {
+            setMove(1.toByte(), Intent.ATTACK_DEBUFF, damage[0].base)
         } else {
-            setMove(1.toByte(), Intent.ATTACK_DEBUFF, DMG_MULTI, 3, true)
+            setMove(1.toByte(), Intent.ATTACK_DEBUFF, damage[1].base, 3, true)
         }
     }
 
     private fun setDefendAction() {
-        setMove(2.toByte(), Intent.DEFEND_BUFF)
+        setMove(2.toByte(), Intent.DEFEND)
     }
 
     fun revive() {

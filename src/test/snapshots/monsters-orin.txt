@@ -21,7 +21,7 @@ end turn
   marisa:ZombieFairy hp=12/12 block=0 powers=[marisa:LimboContact(-1), Minion(-1), Flight(99)]
   marisa:Orin hp=272/272 block=0 powers=[marisa:InfernoClaw(-1), Strength(3)]
   hand=[Burn, Burn] draw=[] discard=[] exhaust=[]
-  intents=[marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:DEFEND_BUFF, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:Orin:DEBUFF]
+  intents=[marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:DEFEND, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:Orin:DEBUFF]
 end turn
   player hp=973/999 block=0 powers=[marisa:Wraith(5)] energy=3 gold=99 potions=[] relics=[]
   marisa:ZombieFairy hp=13/13 block=7 powers=[marisa:LimboContact(-1), Minion(-1), Flight(99)]
@@ -30,7 +30,7 @@ end turn
   marisa:ZombieFairy hp=12/12 block=7 powers=[marisa:LimboContact(-1), Minion(-1), Flight(99)]
   marisa:Orin hp=272/272 block=7 powers=[marisa:InfernoClaw(-1), Strength(3)]
   hand=[Burn] draw=[] discard=[] exhaust=[Burn]
-  intents=[marisa:ZombieFairy:DEFEND_BUFF, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:DEFEND_BUFF, marisa:Orin:ATTACK_DEBUFF]
+  intents=[marisa:ZombieFairy:DEFEND, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:ATTACK_DEBUFF, marisa:ZombieFairy:DEFEND, marisa:Orin:ATTACK_DEBUFF]
 end turn
   player hp=949/999 block=0 powers=[marisa:Wraith(6), Weakened(1)] energy=3 gold=99 potions=[] relics=[]
   marisa:ZombieFairy hp=13/13 block=14 powers=[marisa:LimboContact(-1), Minion(-1), Flight(99)]

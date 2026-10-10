@@ -133,7 +133,7 @@ Tests do not require the generated `docs/changelog/` files. Packaging and publis
 
 `patchGame` applies the ModTheSpire patches of BaseMod and this mod to the game classes, then the tests boot that patched game headlessly on the game's own JRE and play cards in a first-act fight. Configs and preferences go to `build/test-workdir/`. The report is written to `build/reports/tests/test/index.html`.
 
-Snapshots in `src/test/snapshots/` record every card, relic, potion and power, and what each card does when played. After an intended change, review and rewrite them with:
+Snapshots in `src/test/snapshots/` record every card, relic, potion and power, what each card does when played, a turn with each power and relic, fights against Orin and Zombie Fairy, and the choices of the mod's events. After an intended change, review and rewrite them with:
 
 ```sh
 UPDATE_SNAPSHOTS=1 ./gradlew test

@@ -37,7 +37,7 @@ class Orin : AbstractMonster(
     tempImgUrl,
     -20.0f,
     -10.0f
-) /* implements BaseMod.GetMonster */ {
+) {
     private var form1 = true
     private var att = true
     private var firstTurn = true
@@ -50,7 +50,6 @@ class Orin : AbstractMonster(
     private var exc = 0
     private var executeDmg = 0
     private var quad = 0
-    private var blc = 0
     private var turnCount = 0
 
     init {
@@ -286,7 +285,7 @@ class Orin : AbstractMonster(
 
     private fun setSummonAction() {
         logger.info("Orin : setSummonAction : firstTurn : ")
-        run { setMove(8.toByte(), Intent.UNKNOWN) }
+        setMove(8.toByte(), Intent.UNKNOWN)
     }
 
     private fun setExecuteAction() {
@@ -324,34 +323,9 @@ class Orin : AbstractMonster(
             }
             turnCount++
             when (turnCount) {
-                1 -> {
-                    setBuffAction()
-                    return
-                }
-
-                2 -> {
-                    setDoubleTapAction()
-                    return
-                }
-
-                3 -> {
-                    setMultiAttackAction()
-                    return
-                }
-
-                else -> {
-                    logger.info("Orin : form 1 :getMove : error : turnCount :$turnCount")
-                    setMultiAttackAction()
-                }
-            }
-            if (turnCount >= 4) {
-                setMultiAttackAction()
-                return
-            }
-            if (num > 50) {
-                setDoubleTapAction()
-            } else {
-                setBuffAction()
+                1 -> setBuffAction()
+                2 -> setDoubleTapAction()
+                else -> setMultiAttackAction()
             }
         } else {
             val fairyCount = fairyCount()
@@ -431,7 +405,6 @@ class Orin : AbstractMonster(
             att = false
             setMove(3.toByte(), Intent.UNKNOWN)
             createIntent()
-            setMove(3.toByte(), Intent.UNKNOWN)
             applyPowers()
         }
     }
@@ -443,7 +416,6 @@ class Orin : AbstractMonster(
             } else {
                 STAGE_2_HP
             }
-            blc = BLOCK_UPG
             if (Settings.isEndless && AbstractDungeon.player.hasBlight("ToughEnemies")) {
                 val mod = AbstractDungeon.player.getBlight("ToughEnemies").effectFloat()
                 maxHealth = (maxHealth * mod).toInt()
@@ -494,12 +466,7 @@ class Orin : AbstractMonster(
                 }
             }
         }
-    } /*
-  @Override
-  public AbstractMonster get() {
-    return new Orin();
-  }
-  */
+    }
 
     companion object {
         private val logger = MarisaContinued.logger
@@ -531,7 +498,6 @@ class Orin : AbstractMonster(
         private const val QUAD_DMG = 3
         private const val QUAD_DMG_A = 4
 
-        private const val BLOCK_UPG = 12
         private const val tempImgUrl = "marisa/img/monsters/Orin/Orin_.png"
         private const val MODEL_HUMANOID_ATLAS = "marisa/img/monsters/Orin/Orin.atlas"
         private const val MODEL_HUMANOID_JSON = "marisa/img/monsters/Orin/Orin.json"

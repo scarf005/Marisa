@@ -15,8 +15,7 @@ import marisa.powers.monsters.LimboContactPower
 class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
     AbstractMonster(NAME, ID, HP, 0.0f, 0.0f, 140.0f, 170.0f, null, x, y + 25.0f) {
     var turnNum = 0
-    private var block = 0
-    private var block_upg = 0
+    private val block: Int
 
     init {
         if (AbstractDungeon.ascensionLevel >= 8) {
@@ -28,12 +27,10 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
             damage.add(DamageInfo(this, DMG_A))
             damage.add(DamageInfo(this, DMG_MULTI_A))
             block = BLOCK_A
-            block_upg = BLOCK_UPG_A
         } else {
             damage.add(DamageInfo(this, DMG))
             damage.add(DamageInfo(this, DMG_MULTI))
             block = BLOCK
-            block_upg = BLOCK_UPG
         }
         loadAnimation(MODEL_ATLAS, MODEL_JSON, 3.0f)
         val e = state.setAnimation(0, "newAnimation", true)
@@ -119,14 +116,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
     override fun die() {
         super.die()
         turnNum = 0
-    } /*
-  public void changeState(String stateName) {
-
-  }
-
-  public void damage(DamageInfo info) {
-  }
-  */
+    }
 
     companion object {
         private val logger = MarisaContinued.logger
@@ -142,11 +132,7 @@ class ZombieFairy @JvmOverloads constructor(x: Float = 0.0f, y: Float = 0.0f) :
         private const val DMG_MULTI_A = 5
         private const val BLOCK = 7
         private const val BLOCK_A = 10
-        private const val BLOCK_UPG = 12
-        private const val BLOCK_UPG_A = 15
         private const val POWER_UP = 3
-        private const val STR = 1
-        private const val STR_UPG = 2
         private const val MODEL_ATLAS = "marisa/img/monsters/ZombieFairy/ZombieFairy.atlas"
         private const val MODEL_JSON = "marisa/img/monsters/ZombieFairy/ZombieFairy.json"
     }

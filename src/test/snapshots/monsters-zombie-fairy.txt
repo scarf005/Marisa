@@ -1,0 +1,25 @@
+end turn
+  player hp=999/999 block=0 powers=[] energy=3 gold=99 potions=[] relics=[]
+  marisa:ZombieFairy hp=14/14 block=7 powers=[marisa:LimboContact(-1), Flight(99)]
+  hand=[] draw=[] discard=[] exhaust=[]
+  intents=[marisa:ZombieFairy:DEFEND_BUFF]
+end turn
+  player hp=999/999 block=0 powers=[] energy=3 gold=99 potions=[] relics=[]
+  marisa:ZombieFairy hp=14/14 block=7 powers=[marisa:LimboContact(-1), Flight(99)]
+  hand=[] draw=[] discard=[] exhaust=[]
+  intents=[marisa:ZombieFairy:ATTACK_DEBUFF]
+end turn
+  player hp=987/999 block=0 powers=[marisa:Wraith(2)] energy=3 gold=99 potions=[] relics=[]
+  marisa:ZombieFairy hp=14/14 block=0 powers=[marisa:LimboContact(-1), Flight(99)]
+  hand=[] draw=[] discard=[] exhaust=[]
+  intents=[marisa:ZombieFairy:ATTACK_DEBUFF]
+end turn
+  player hp=975/999 block=0 powers=[marisa:Wraith(4)] energy=3 gold=99 potions=[] relics=[]
+  marisa:ZombieFairy hp=14/14 block=0 powers=[marisa:LimboContact(-1), Flight(99)]
+  hand=[] draw=[] discard=[] exhaust=[]
+  intents=[marisa:ZombieFairy:ATTACK_DEBUFF]
+kill marisa:ZombieFairy
+  player hp=975/999 block=0 powers=[marisa:Wraith(4)] energy=3 gold=99 potions=[] relics=[]
+  marisa:ZombieFairy hp=0/14 block=0 powers=[marisa:LimboContact(-1), Flight(99)]
+  hand=[] draw=[] discard=[] exhaust=[]
+  intents=[marisa:ZombieFairy:ATTACK_DEBUFF]

@@ -61,6 +61,8 @@ class Combat(spawn: () -> List<AbstractMonster> = { listOf(Cultist(0f, 0f)) }) {
                 phase = AbstractRoom.RoomPhase.COMBAT
             }
         }
+        // As the first update of the room does.
+        AbstractDungeon.getMonsters().usePreBattleAction()
         AbstractDungeon.lastCombatMetricKey = monsters.joinToString(" and ") { it.id }
         player.energy.prep()
         EnergyPanel.totalCount = 3
@@ -158,7 +160,7 @@ class Combat(spawn: () -> List<AbstractMonster> = { listOf(Cultist(0f, 0f)) }) {
             "player ${player.describe()} energy=${EnergyPanel.totalCount} gold=${player.gold}" +
                 " potions=${player.potions.map { it.ID }.filter { it != "Potion Slot" }}" +
                 " relics=${player.relics.map { "${it.relicId}(${it.counter})" }}",
-            *monsters.map { "${it.id} ${it.describe()}" }.toTypedArray(),
+            *AbstractDungeon.getMonsters().monsters.map { "${it.id} ${it.describe()}" }.toTypedArray(),
             "hand=${player.hand.ids()} draw=${player.drawPile.ids()} discard=${player.discardPile.ids()}" +
                 " exhaust=${player.exhaustPile.ids()}",
         ).joinToString("\n")

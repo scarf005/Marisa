@@ -18,7 +18,7 @@ import kotlin.test.Test
 class PlayTest {
     private enum class Setup { BASE, UPGRADED, AMPLIFY_ENERGY, CHARGED }
 
-    private fun outcome(make: () -> AbstractCard, setup: Setup): String {
+    private fun outcome(prototype: AbstractCard, setup: Setup): String {
         val combat = Combat { listOf(Cultist(-150f, 0f), JawWorm(150f, 0f)) }
         val player = combat.player
         repeat(4) { player.drawPile.addToTop(Strike_MRS()) }
@@ -31,10 +31,13 @@ class PlayTest {
             Setup.CHARGED -> player.addPower(ChargeUpPower(player, 8))
             else -> Unit
         }
-        val card = make().apply { if (setup == Setup.UPGRADED) upgrade() }
-        val result = runCatching { combat.play(card) }.exceptionOrNull()
-            ?.let { "\nerror: ${it.javaClass.simpleName}: ${it.message}" }.orEmpty()
-        return combat.state() + result
+        val card = prototype.makeCopy().apply { if (setup == Setup.UPGRADED) upgrade() }
+        try {
+            combat.play(card)
+        } catch (e: Exception) {
+            throw AssertionError("${card.cardID} $setup threw", e)
+        }
+        return combat.state()
     }
 
     @Test
@@ -44,7 +47,7 @@ class PlayTest {
             val setups = Setup.entries.filter { it != Setup.AMPLIFY_ENERGY || prototype is AmplifiableCard }
             setups.joinToString("") { setup ->
                 "${prototype.cardID} $setup\n" +
-                    outcome({ prototype.makeCopy() }, setup).prependIndent("  ") + "\n"
+                    outcome(prototype, setup).prependIndent("  ") + "\n"
             }
         }
         assertSnapshot("plays", snapshot)

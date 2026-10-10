@@ -260,9 +260,9 @@ class Orin : AbstractMonster(
     private fun setDoubleTapAction() {
         logger.info("Orin : setDoubleTapAction : form1 : $form1")
         if (form1) {
-            setMove(1.toByte(), Intent.ATTACK_DEFEND, catTap, 2, true)
+            setMove(1.toByte(), Intent.ATTACK, catTap, 2, true)
         } else {
-            setMove(4.toByte(), Intent.ATTACK_DEFEND, doubleTap, 2, true)
+            setMove(4.toByte(), Intent.ATTACK_DEBUFF, doubleTap, 2, true)
         }
     }
 

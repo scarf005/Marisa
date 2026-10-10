@@ -7,29 +7,30 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.MarisaCard
 import marisa.action.RandomDamageAction
 
+/** Shows its damage range as `!D!` to `!B!`, both modified by the player's powers. */
 class UnstableBomb : MarisaCard(ID, "UnstableBomb", COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY) {
-    private var damageMaxAdded = DAMAGE_MAX_ADDED
-    private val maxDamage get() = baseDamage + damageMaxAdded
-
-    private fun setMaxDamageDisplay() {
-        if (baseBlock > maxDamage)
-            isBlockModified = true
-        baseBlock = maxDamage
-    }
-
     init {
-        damageMaxAdded = DAMAGE_MAX_ADDED
         baseDamage = DAMAGE_BASE
-        setMaxDamageDisplay()
+        baseBlock = DAMAGE_BASE + DAMAGE_MAX_ADDED
     }
 
     override fun applyPowers() {
+        val min = baseDamage
+        baseDamage = baseBlock
         super.applyPowers()
-        setMaxDamageDisplay()
+        val max = damage
+        baseDamage = min
+        super.applyPowers()
+        // The maximum is shown as block, which super.applyPowers modifies by Dexterity instead.
+        block = max
+        isBlockModified = max != baseBlock
     }
 
+    override fun calculateCardDamage(mo: AbstractMonster?) = applyPowers()
+
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        addToBot(RandomDamageAction(4) { AbstractDungeon.cardRandomRng.random(baseDamage, maxDamage) })
+        val (min, max) = damage to block
+        addToBot(RandomDamageAction(4) { AbstractDungeon.cardRandomRng.random(min, max) })
     }
 
     override fun makeCopy(): AbstractCard = UnstableBomb()
@@ -38,7 +39,7 @@ class UnstableBomb : MarisaCard(ID, "UnstableBomb", COST, CardType.ATTACK, CardR
         if (upgraded) return
 
         upgradeDamage(UPG_DAMAGE)
-        setMaxDamageDisplay()
+        upgradeBlock(UPG_DAMAGE)
         upgradeName()
     }
 

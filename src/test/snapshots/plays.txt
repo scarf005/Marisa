@@ -1215,8 +1215,8 @@ marisa:UnstableBomb UPGRADED
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:UnstableBomb+] exhaust=[]
 marisa:UnstableBomb CHARGED
   player hp=75/75 block=0 powers=[marisa:ChargeUpPower(0)] energy=2 gold=99 potions=[]
-  Cultist hp=45/52 block=0 powers=[]
-  JawWorm hp=38/40 block=0 powers=[]
+  Cultist hp=40/52 block=0 powers=[]
+  JawWorm hp=35/40 block=0 powers=[]
   hand=[marisa:Spark, marisa:Defend_MRS] draw=[marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Strike_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS, marisa:Defend_MRS] discard=[marisa:Strike_MRS, marisa:UnstableBomb] exhaust=[]
 marisa:UpSweep BASE
   player hp=75/75 block=0 powers=[marisa:ChargeUpPower(1)] energy=3 gold=99 potions=[]

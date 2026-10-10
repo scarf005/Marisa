@@ -41,21 +41,21 @@ class AmplifyTest {
 
     @Test
     fun `One Time Off disables amplify`() {
-        combat.applyToPlayer(OneTimeOffPower(player))
+        combat.apply(OneTimeOffPower(player))
         assertEquals(2 to 3, playAcceleration(energy = 3))
         assertFalse(amplified())
     }
 
     @Test
     fun `upgraded One Time Off disables amplify`() {
-        combat.applyToPlayer(OneTimeOffPlusPower(player))
+        combat.apply(OneTimeOffPlusPower(player))
         assertEquals(2 to 3, playAcceleration(energy = 3))
         assertFalse(amplified())
     }
 
     @Test
     fun `Millisecond Pulsars amplifies for free`() {
-        combat.applyToPlayer(MillisecondPulsarsPower(player))
+        combat.apply(MillisecondPulsarsPower(player))
         assertEquals(3 to 0, playAcceleration(energy = 0))
         assertTrue(amplified())
     }

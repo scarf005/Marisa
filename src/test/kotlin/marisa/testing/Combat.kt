@@ -43,6 +43,7 @@ class Combat(spawn: () -> List<AbstractMonster> = { listOf(Cultist(0f, 0f)) }) {
         MathUtils.random.setSeed(0L)
         monsters = spawn()
         AbstractDungeon.actionManager = GameActionManager()
+        GameActionManager.turn = 1
         AbstractDungeon.effectList.clear()
         player = Marisa("Marisa")
         AbstractDungeon.player = player
@@ -52,11 +53,16 @@ class Combat(spawn: () -> List<AbstractMonster> = { listOf(Cultist(0f, 0f)) }) {
         player.relics.clear()
         AbstractDungeon.currMapNode = MapRoomNode(0, 0).apply {
             room = MonsterRoom().apply {
-                monsters = MonsterGroup(this@Combat.monsters.toTypedArray()).apply { init() }
+                monsters = MonsterGroup(this@Combat.monsters.toTypedArray()).apply {
+                    init()
+                    // As BattleStartEffect does.
+                    showIntent()
+                }
                 phase = AbstractRoom.RoomPhase.COMBAT
             }
         }
         AbstractDungeon.lastCombatMetricKey = monsters.joinToString(" and ") { it.id }
+        player.energy.prep()
         EnergyPanel.totalCount = 3
     }
 
@@ -69,9 +75,15 @@ class Combat(spawn: () -> List<AbstractMonster> = { listOf(Cultist(0f, 0f)) }) {
         resolve()
     }
 
-    /** Applies [power] to the player through the action queue, as cards do. */
-    fun applyToPlayer(power: AbstractPower) {
-        AbstractDungeon.actionManager.addToBottom(ApplyPowerAction(player, player, power, power.amount))
+    /** Applies [power] to its owner through the action queue, as cards do. */
+    fun apply(power: AbstractPower) {
+        AbstractDungeon.actionManager.addToBottom(ApplyPowerAction(power.owner, player, power, power.amount))
+        resolve()
+    }
+
+    /** Ends the turn like the end turn button does, then runs the monsters' turn and the start of the next one. */
+    fun endTurn() {
+        AbstractDungeon.getCurrRoom().endTurn()
         resolve()
     }
 
@@ -82,11 +94,14 @@ class Combat(spawn: () -> List<AbstractMonster> = { listOf(Cultist(0f, 0f)) }) {
             if (AbstractDungeon.isScreenUp) select() else manager.update()
             updateEffects()
             if (manager.phase == GameActionManager.Phase.WAITING_ON_USER && manager.actions.isEmpty() &&
-                manager.cardQueue.isEmpty() && isIdle()
+                manager.cardQueue.isEmpty() && manager.monsterQueue.isEmpty() && !manager.turnHasEnded && isIdle()
             ) return
         }
         val pending = listOfNotNull(manager.currentAction) + AbstractDungeon.effectList + AbstractDungeon.topLevelEffects
-        error("${pending.map { it.javaClass.simpleName }} still running after a minute, souls active: ${SoulGroup.isActive()}")
+        error(
+            "${pending.map { it.javaClass.simpleName }} still running after a minute, souls active: ${SoulGroup.isActive()}," +
+                " monsters queued: ${manager.monsterQueue.size}, turn ended: ${manager.turnHasEnded}",
+        )
     }
 
     /** Makes the choice the open selection screen waits for, like a player confirming it. */
@@ -141,7 +156,8 @@ class Combat(spawn: () -> List<AbstractMonster> = { listOf(Cultist(0f, 0f)) }) {
         fun CardGroup.ids() = group.map { it.cardID + if (it.upgraded) "+" else "" }
         return listOf(
             "player ${player.describe()} energy=${EnergyPanel.totalCount} gold=${player.gold}" +
-                " potions=${player.potions.map { it.ID }.filter { it != "Potion Slot" }}",
+                " potions=${player.potions.map { it.ID }.filter { it != "Potion Slot" }}" +
+                " relics=${player.relics.map { "${it.relicId}(${it.counter})" }}",
             *monsters.map { "${it.id} ${it.describe()}" }.toTypedArray(),
             "hand=${player.hand.ids()} draw=${player.drawPile.ids()} discard=${player.discardPile.ids()}" +
                 " exhaust=${player.exhaustPile.ids()}",

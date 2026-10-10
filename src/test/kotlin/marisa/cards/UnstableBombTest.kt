@@ -30,7 +30,7 @@ class UnstableBombTest {
 
     @Test
     fun `Strength raises both ends of the range and every hit`() {
-        combat.applyToPlayer(StrengthPower(player, 10))
+        combat.apply(StrengthPower(player, 10))
         val (shown, total) = range()
         assertEquals(11..13, shown)
         assertTrue(total in 44..52, "$total")
@@ -38,13 +38,13 @@ class UnstableBombTest {
 
     @Test
     fun `Dexterity does not change the range`() {
-        combat.applyToPlayer(DexterityPower(player, 5))
+        combat.apply(DexterityPower(player, 5))
         assertEquals(1..3, range().first)
     }
 
     @Test
     fun `Charge-up doubles the range and every hit`() {
-        combat.applyToPlayer(ChargeUpPower(player, 8))
+        combat.apply(ChargeUpPower(player, 8))
         val (shown, total) = range()
         assertEquals(2..6, shown)
         assertTrue(total in 8..24, "$total")

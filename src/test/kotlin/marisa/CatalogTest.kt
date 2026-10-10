@@ -3,14 +3,13 @@ package marisa
 import basemod.ReflectionHacks
 import basemod.abstracts.CustomCard
 import com.megacrit.cardcrawl.cards.AbstractCard
-import com.megacrit.cardcrawl.core.AbstractCreature
 import com.megacrit.cardcrawl.potions.AbstractPotion
-import com.megacrit.cardcrawl.powers.AbstractPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
-import marisa.relics.MiniHakkero
 import marisa.testing.Combat
 import marisa.testing.assertSnapshot
 import marisa.testing.concreteClasses
+import marisa.testing.newPower
+import marisa.testing.powerClasses
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
@@ -105,18 +104,8 @@ class CatalogTest {
 
     @Test
     fun `powers keep their type and text`() {
-        val snapshot = concreteClasses<AbstractPower>("marisa.powers").joinToString("") { cls ->
-            val constructor = cls.constructors.single()
-            val owner: AbstractCreature = if (cls.`package`.name.endsWith("monsters")) combat.monster else combat.player
-            val args = constructor.parameterTypes.map {
-                when (it) {
-                    AbstractCreature::class.java -> owner
-                    Int::class.javaPrimitiveType -> 3
-                    AbstractRelic::class.java -> MiniHakkero()
-                    else -> error("no argument for $it in ${cls.simpleName}")
-                }
-            }
-            val power = constructor.newInstance(*args.toTypedArray()) as AbstractPower
+        val snapshot = powerClasses.joinToString("") { cls ->
+            val power = newPower(cls, combat)
             "${power.ID}\n  name=${power.name} | type=${power.type} | amount=${power.amount}" +
                 " | description=${power.description}\n"
         }

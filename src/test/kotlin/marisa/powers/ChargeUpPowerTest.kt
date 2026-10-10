@@ -15,7 +15,7 @@ class ChargeUpPowerTest {
     private val combat = Combat()
     private val player = combat.player
 
-    private fun gain(stacks: Int) = combat.applyToPlayer(ChargeUpPower(player, stacks))
+    private fun gain(stacks: Int) = combat.apply(ChargeUpPower(player, stacks))
     private fun stacks() = player.getPower(ChargeUpPower.POWER_ID)?.amount ?: 0
     private fun damageOf(card: AbstractCard): Int {
         val hp = combat.monster.currentHealth
@@ -88,7 +88,7 @@ class ChargeUpPowerTest {
     @Test
     fun `upgraded One Time Off keeps stacks from doubling damage`() {
         gain(8)
-        combat.applyToPlayer(OneTimeOffPlusPower(player))
+        combat.apply(OneTimeOffPlusPower(player))
         assertEquals(6, damageOf(Strike_MRS()))
         assertEquals(8, stacks())
     }

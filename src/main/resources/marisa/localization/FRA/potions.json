@@ -6,5 +6,19 @@
       "Details",
       "Attaque : Potion de peur ; NL Compétence : Potion de faiblesse ; NL Pouvoir : Potion de poison ; NL Statut : Potion de feu ; NL Malédiction : fumigène ."
     ]
+  },
+  "${modId}:BottledSpark": {
+    "NAME": "Étincelle en bouteille",
+    "DESCRIPTIONS": [
+      "Ajoutez #b",
+      " #yÉtincelle à votre main."
+    ]
+  },
+  "${modId}:StarNLove": {
+    "NAME": "Étoile & Amour",
+    "DESCRIPTIONS": [
+      "Les effets #yAmplifier ne coûtent pas d'énergie supplémentaire. NL Gagnez #b",
+      " #yCharge."
+    ]
   }
 }

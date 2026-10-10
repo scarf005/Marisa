@@ -158,7 +158,7 @@
     "NAME": "SuperNova",
     "DESCRIPTIONS": [
       "Cuando #yExhaust una #yBurn, ganas #b",
-      "Cuando #yExhaust una #yCurse o un #Status, ganas #b",
+      "Cuando #yExhaust una #yCurse o un #yStatus, ganas #b",
       " #yStrength. NL Ya no recibes daño de #yBurn. NL #yExhausta tu mano cuando tu turno termina."
     ]
   },

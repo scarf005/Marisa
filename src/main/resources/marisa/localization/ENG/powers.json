@@ -158,7 +158,7 @@
     "NAME": "SuperNova",
     "DESCRIPTIONS": [
       "When you #yExhaust a #yBurn ,Gain  #b",
-      "When you #yExhaust a #yCurse or a #Status ,Gain  #b",
+      "When you #yExhaust a #yCurse or a #yStatus ,Gain  #b",
       " #yStrength . NL You no longer take damage from #yBurn . NL #yExhaust you hand when your turn ends."
     ]
   },

@@ -3,4 +3,4 @@ marisa:BottledSpark
 marisa:ShroomBrew
   name=Shroom Brew | rarity=UNCOMMON | potency=1 | description= Exhaust a card. NL The effect of this potion depends on the type of the card you Exhausted.
 marisa:StarNLove
-  name=Star & Love | rarity=RARE | potency=8 | description=You do not need to pay extra Cost for Amplify effect.Gain #8 #yCharge-up.
+  name=Star & Love | rarity=RARE | potency=8 | description=You do not need to pay extra Cost for Amplify effect.Gain #b8 #yCharge-up.

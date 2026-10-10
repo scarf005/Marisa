@@ -158,7 +158,7 @@
     "NAME": "SuperNova",
     "DESCRIPTIONS": [
       "Lorsque vous #yExhaust une #yBrûlure , gagnez  #b",
-      "Lorsque vous #yExhaust une #yMalédiction or un #Statut , gagnez  #b",
+      "Lorsque vous #yExhaust une #yMalédiction or un #yStatut , gagnez  #b",
       " #yStrength . NL Vous ne prenez plus de dégâts des #yBrûlure . NL #yExhaust votre main lorsque votre tour se termine."
     ]
   },

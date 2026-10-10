@@ -17,7 +17,7 @@
   "${modId}:StarNLove": {
     "NAME": "恋星魔药",
     "DESCRIPTIONS": [
-      "获得 #",
+      "获得 #b",
       " 层 #y蓄力 。本回合 #y增幅 不需额外支付费用。"
     ]
   }

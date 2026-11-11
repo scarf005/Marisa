@@ -33,3 +33,10 @@ Deno.test("parseCommits() correctly parse commits", () => {
     },
   ])
 })
+
+Deno.test("getSections() lists a breaking fix only under Breaking Changes", () => {
+  const sections = getSections(parseCommits(["fix!: add namespace (#264)"]))
+
+  assertEquals(sections["Breaking Changes"].length, 1)
+  assertEquals(sections.Fixes, [])
+})

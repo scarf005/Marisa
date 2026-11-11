@@ -325,7 +325,7 @@
   "${modId}:EnergyRecoil": {
     "NAME": "エナジーリコイル",
     "DESCRIPTION": " チャージ と等しい量の ブロック を得る。",
-    "UPGRADE_DESCRIPTION": " チャージ + 3  と等しい量 の ブロック を得る。",
+    "UPGRADE_DESCRIPTION": " チャージ + 3 と等しい量 の ブロック を得る。",
     "EXTENDED_DESCRIPTION": [
       " NL ( ",
       " ブロック を得る。 )"

@@ -257,7 +257,7 @@
   },
   "${modId}:WitchOfGreed": {
     "NAME": "욕심쟁이 마녀",
-    "DESCRIPTION": "전투가 끝나면 골드를 !M! 얻습니다.  NL 증폭 [E] : 추가로 무작위 포션을 1개 얻습니다."
+    "DESCRIPTION": "전투가 끝나면 골드를 !M! 얻습니다. NL 증폭 [E] : 추가로 무작위 포션을 1개 얻습니다."
   },
   "${modId}:TreasureHunter": {
     "NAME": "보물 사냥꾼",

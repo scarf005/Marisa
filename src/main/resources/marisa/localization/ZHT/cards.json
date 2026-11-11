@@ -35,7 +35,7 @@
   "${modId}:EarthLightRay": {
     "NAME": "地球光",
     "DESCRIPTION": "恢復 !M! 點生命。 NL 消耗 。 NL 增幅 [E] :將棄牌堆中的1張隨機牌放入手牌",
-    "UPGRADE_DESCRIPTION": "恢復 !M! 點生命。 NL 消耗 。 NL 增幅 [E]  :將棄牌堆中的1張牌放入手牌"
+    "UPGRADE_DESCRIPTION": "恢復 !M! 點生命。 NL 消耗 。 NL 增幅 [E] :將棄牌堆中的1張牌放入手牌"
   },
   "${modId}:EscapeVelocity": {
     "NAME": "第二宇宙速度",
@@ -79,8 +79,8 @@
   },
   "${modId}:MasterSpark": {
     "NAME": "極限火花",
-    "DESCRIPTION": "造成 !D! 點傷害。 NL 增幅  [E]  :傷害變為 !B! 點",
-    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害。 NL 增幅  [E]  :傷害增加 9 點"
+    "DESCRIPTION": "造成 !D! 點傷害。 NL 增幅 [E] :傷害變為 !B! 點",
+    "UPGRADE_DESCRIPTION": "造成 !D! 點傷害。 NL 增幅 [E] :傷害增加 9 點"
   },
   "${modId}:MeteoricShower": {
     "NAME": "流星雨",
@@ -105,7 +105,7 @@
   },
   "${modId}:OortCloud": {
     "NAME": "奧爾特雲",
-    "DESCRIPTION": "獲得 !M! 層多層護甲。 NL 增幅  [E] :獲得額外 !B! 層",
+    "DESCRIPTION": "獲得 !M! 層多層護甲。 NL 增幅 [E] :獲得額外 !B! 層",
     "UPGRADE_DESCRIPTION": "獲得 !M! 層 多層護甲。 NL 增幅 [E] :獲得額外3層"
   },
   "${modId}:PolarisUnique": {
@@ -146,7 +146,7 @@
   },
   "${modId}:GuidingStar": {
     "NAME": "引導星",
-    "DESCRIPTION": "保留 。 NL 若回合開始時此卡在你手中，獲得  [E]  。"
+    "DESCRIPTION": "保留 。 NL 若回合開始時此卡在你手中，獲得 [E] 。"
   },
   "${modId}:OrrerysSun": {
     "NAME": "太陽儀",
@@ -206,7 +206,7 @@
   },
   "${modId}:ShootingEcho": {
     "NAME": "流星共鳴",
-    "DESCRIPTION": " 造成 !D! 點傷害。 NL  消耗 一張手卡。 NL 若消耗的是 灼傷 則此卡返回手牌",
+    "DESCRIPTION": " 造成 !D! 點傷害。 NL 消耗 一張手卡。 NL 若消耗的是 灼傷 則此卡返回手牌",
     "UPGRADE_DESCRIPTION": "消耗 1張手牌，增加1張 已升級 流星共鳴 到手牌。 NL 造成 !D! 點傷害。 NL 消耗"
   },
   "${modId}:EnergyFlow": {
@@ -337,7 +337,7 @@
   },
   "${modId}:ManaConvection": {
     "NAME": "魔力對流",
-    "DESCRIPTION": "消耗最多 !M! 張卡，每消耗一張獲得  [E]  。  消耗 。"
+    "DESCRIPTION": "消耗最多 !M! 張卡，每消耗一張獲得 [E] 。 消耗 。"
   },
   "${modId}:ManaRampage": {
     "NAME": "魔力暴走",

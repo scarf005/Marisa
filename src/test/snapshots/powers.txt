@@ -26,7 +26,7 @@ marisa:OrrerysSunPower
   name=Orrerys Sun | type=BUFF | amount=3 | description=Whenever you consume #yCharge-up, gain  #b3 Blocks.
 marisa:PolarisUniquePower
   name=Guiding Star | type=BUFF | amount=-1 | description=If #yGuidingStar is in your draw pile, gain extra [E] at the start of each turn,.
-marisa:PropBagPower0
+marisa:PropBagPower
   name=Portable Prop Bagr | type=BUFF | amount=-1 | description=When the battle ends,you'll lose  #yMini-Hakkero.
 marisa:PulseMagicPower
   name=Pulse Magic | type=BUFF | amount=-1 | description=You don't need to pay  [E]  to activate #yAmplify effects this turn.

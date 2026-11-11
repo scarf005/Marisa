@@ -106,7 +106,8 @@ class CatalogTest {
     fun `powers keep their type and text`() {
         val snapshot = powerClasses.joinToString("") { cls ->
             val power = newPower(cls, combat)
-            "${power.ID}\n  name=${power.name} | type=${power.type} | amount=${power.amount}" +
+            // PropBagPower numbers its ID per instance, so the number depends on the tests that ran before.
+            "${power.ID.trimEnd(Char::isDigit)}\n  name=${power.name} | type=${power.type} | amount=${power.amount}" +
                 " | description=${power.description}\n"
         }
         assertSnapshot("powers", snapshot)

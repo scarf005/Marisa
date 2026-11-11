@@ -1,6 +1,7 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 import org.jetbrains.kotlin.com.google.gson.Gson
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 val modID = "marisa"
 val jarFile = "$buildDir/libs/${modID}.jar"
@@ -57,6 +58,11 @@ kotlin {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_1_8)
     }
+}
+
+// The game runs the kotlin-stdlib 1.4.10 that ModTheSpire ships; newer API fails with NoClassDefFoundError.
+tasks.compileKotlin {
+    compilerOptions.apiVersion.set(KotlinVersion.KOTLIN_1_4)
 }
 
 plugins {

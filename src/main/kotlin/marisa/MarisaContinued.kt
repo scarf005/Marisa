@@ -130,7 +130,7 @@ class MarisaContinued :
             RelicStrings::class.java, CardStrings::class.java, PowerStrings::class.java,
             PotionStrings::class.java, EventStrings::class.java
         )
-            .map { it to it.simpleName.removeSuffix("Strings").lowercase() + "s" }
+            .map { it to it.simpleName.removeSuffix("Strings").toLowerCase(Locale.ROOT) + "s" }
             .forEach { (cls, kind) ->
                 BaseMod.loadCustomStrings(cls, localize(kind))
             }

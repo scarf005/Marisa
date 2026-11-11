@@ -52,3 +52,12 @@ Deno.test("renderSections() returns empty text for an empty changelog", () => {
     "",
   )
 })
+
+Deno.test("renderMarkdown() renders commits pushed without a PR", () => {
+  const sections = getSections(parseCommits(["fix: upgrade Dark Spark only once"]))
+
+  assertEquals(
+    renderMarkdown({ version: "v1.2.4", date: "2026-11-11", sections }),
+    "# v1.2.4 (2026-11-11)\n\n## Fixes\n\n- upgrade Dark Spark only once",
+  )
+})

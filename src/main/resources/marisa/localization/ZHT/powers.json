@@ -180,7 +180,7 @@
     "NAME": "星暈",
     "DESCRIPTIONS": [
       "每打出1張攻擊牌，回合結束時獲得 #b",
-      "  #y格擋"
+      " #y格擋"
     ]
   },
   "${modId}:ManaRampagePower": {

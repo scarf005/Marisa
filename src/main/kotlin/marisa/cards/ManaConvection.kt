@@ -1,10 +1,13 @@
 package marisa.cards
 
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.MarisaCard
-import marisa.action.ManaConvectionAction
+import marisa.action.HandSelectAction
+import marisa.exhaust
 
 class ManaConvection : MarisaCard(ID, "ManaConvection", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
@@ -14,9 +17,11 @@ class ManaConvection : MarisaCard(ID, "ManaConvection", COST, CardType.SKILL, Ca
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        addToBot(
-            ManaConvectionAction(magicNumber)
-        )
+        val text = CardCrawlGame.languagePack.getUIString("ExhaustAction").TEXT[0]
+        addToBot(HandSelectAction(text, magicNumber, anyNumber = true, canPickZero = true) { cards ->
+            cards.forEach { it.exhaust() }
+            if (cards.isNotEmpty()) addToTop(GainEnergyAction(cards.size))
+        })
     }
 
     override fun makeCopy(): AbstractCard = ManaConvection()

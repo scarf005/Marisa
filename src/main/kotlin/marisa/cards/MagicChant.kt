@@ -2,9 +2,11 @@ package marisa.cards
 
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.core.CardCrawlGame
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import marisa.abstracts.MarisaCard
-import marisa.action.MagicChantAction
+import marisa.action.GridSelectAction
+import marisa.action.cardGroupOf
 
 class MagicChant : MarisaCard(ID, "Chant", COST, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.SELF) {
     init {
@@ -14,9 +16,24 @@ class MagicChant : MarisaCard(ID, "Chant", COST, CardType.SKILL, CardRarity.UNCO
     }
 
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        addToBot(
-            MagicChantAction()
-        )
+        val text = CardCrawlGame.languagePack.getUIString("BetterToHandAction").TEXT[0]
+        val drawPile = {
+            cardGroupOf(p.drawPile.group).apply {
+                sortAlphabetically(true)
+                sortByRarityPlusStatusCardType(false)
+            }
+        }
+        addToBot(GridSelectAction(text, forUpgrade = true, cards = drawPile) { cards ->
+            cards.forEach {
+                if (it.canUpgrade()) it.upgrade()
+                if (p.hand.size() == 10) {
+                    p.drawPile.moveToDiscardPile(it)
+                    p.createHandIsFullDialog()
+                } else {
+                    p.drawPile.moveToHand(it, p.drawPile)
+                }
+            }
+        })
     }
 
     override fun makeCopy(): AbstractCard = MagicChant()

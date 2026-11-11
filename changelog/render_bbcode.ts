@@ -3,7 +3,8 @@ import { Commit } from "./mod.ts"
 import { ChangelogRenderer, renderSections, SectionFormatter } from "./render.ts"
 
 const fmtCommit = (x: Commit) =>
-  `    [*] ${x.subject} ([url=https://github.com/scarf005/marisa/pull/${x.pr}]#${x.pr}[/url])`
+  (`    [*] ${x.subject}` +
+    (x.pr ? ` ([url=https://github.com/scarf005/marisa/pull/${x.pr}]#${x.pr}[/url])` : ""))
     .replace(/`([^`]+)`/g, "[i]$1[/i]")
 
 const fmtSection: SectionFormatter = ([section, commits]) =>

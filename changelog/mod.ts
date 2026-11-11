@@ -17,7 +17,7 @@ export const getCommits = ({ from, to }: CommitRange) =>
   $`git log ${from}..${to} --pretty=format:"%s"`.lines()
 
 const re =
-  "^(?<type>\\w+)(\\((?<scopes>.*)?\\))?(?<breaking>!)?:\\s*(?<subject>.*?)\\s*\\(#(?<pr>\\d+)\\)$"
+  "^(?<type>\\w+)(\\((?<scopes>.*)?\\))?(?<breaking>!)?:\\s*(?<subject>.*?)(\\s*\\(#(?<pr>\\d+)\\))?$"
 
 const commitParser = typedRegEx(re)
 

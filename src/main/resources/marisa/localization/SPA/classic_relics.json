@@ -1,0 +1,16 @@
+{
+  "${modId}:RampagingMagicTools": {
+    "NAME": "Herramienta Mágica Descontrolada",
+    "FLAVOR": "Ha pasado tanto tiempo desde que alguien las usó por última vez. ¿Quién sabe qué podría pasar?",
+    "DESCRIPTIONS": [
+      "Gana [E] al comienzo de cada turno. NL Aplica un debilitamiento/buff aleatorio ( #b2 #yFrágil , #b2 #yDébil , #b2 #yVulnerable , #b3 #yVeneno , #b8 #yCarga ) al comienzo de cada combate."
+    ]
+  },
+  "${modId}:SproutingBranch": {
+    "NAME": "Rama Brotante",
+    "FLAVOR": "La rama muerta cobra vida en la mano de Marisa, qué poético.",
+    "DESCRIPTIONS": [
+      "Al comienzo del combate, gana #b5 #yRegeneración ."
+    ]
+  }
+}

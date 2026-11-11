@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel
 import marisa.ApplyPowerToPlayerAction
+import marisa.MarisaContinued.Companion.isClassic
 import marisa.MarisaContinued.Companion.logger
 import marisa.addToTop
 import marisa.powers.Marisa.*
@@ -51,6 +52,7 @@ abstract class AmplifiableCard(
                 player.hasPower(MillisecondPulsarsPower.POWER_ID) -> true
                 player.hasPower(PulseMagicPower.POWER_ID) -> true
                 freeToPlayOnce -> true
+                isClassic && purgeOnUse -> true
                 else -> false
             }
         }

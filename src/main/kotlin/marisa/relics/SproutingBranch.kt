@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.powers.RegenPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
 import com.megacrit.cardcrawl.relics.DeadBranch
+import marisa.MarisaContinued.Companion.isClassic
 import marisa.abstracts.MarisaRelic
 import marisa.p
 
@@ -21,12 +22,13 @@ class SproutingBranch : MarisaRelic(ID, "sproutingBranch", RelicTier.SPECIAL, La
     override fun atBattleStart() {
         marisa.addToBot(
             RelicAboveCreatureAction(p, this),
-            ApplyPowerAction(p, p, RegenPower(p, REGEN)),
+            ApplyPowerAction(p, p, RegenPower(p, if (isClassic) CLASSIC_REGEN else REGEN)),
         )
     }
 
     companion object {
         const val ID = "marisa:SproutingBranch"
         private const val REGEN = 4
+        private const val CLASSIC_REGEN = 5
     }
 }

@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
 import marisa.abstracts.MarisaCard
 import marisa.action.RandomDamageAction
 
@@ -11,7 +12,7 @@ import marisa.action.RandomDamageAction
 class UnstableBomb : MarisaCard(ID, "UnstableBomb", COST, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY) {
     init {
         baseDamage = DAMAGE_BASE
-        baseBlock = DAMAGE_BASE + DAMAGE_MAX_ADDED
+        baseBlock = DAMAGE_BASE + if (MarisaContinued.isClassic) CLASSIC_DAMAGE_MAX_ADDED else DAMAGE_MAX_ADDED
     }
 
     override fun applyPowers() {
@@ -48,6 +49,7 @@ class UnstableBomb : MarisaCard(ID, "UnstableBomb", COST, CardType.ATTACK, CardR
         private const val COST = 1
         private const val DAMAGE_BASE = 1
         private const val DAMAGE_MAX_ADDED = 2
+        private const val CLASSIC_DAMAGE_MAX_ADDED = 3
         private const val UPG_DAMAGE = 1
     }
 }

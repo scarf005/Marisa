@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer
 import com.megacrit.cardcrawl.monsters.AbstractMonster
 import com.megacrit.cardcrawl.powers.DrawCardNextTurnPower
 import marisa.ApplyPowerToPlayerAction
+import marisa.MarisaContinued
 import marisa.abstracts.MarisaCard
 import marisa.powers.Marisa.OneTimeOffPlusPower
 import marisa.powers.Marisa.OneTimeOffPower
@@ -25,7 +26,7 @@ class OneTimeOff : MarisaCard(ID, "MoraleDelpletion", COST, CardType.SKILL, Card
         addToBot(
             ApplyPowerAction(p, p, DrawCardNextTurnPower(p, magicNumber), magicNumber)
         )
-        val powerToAdd = if (upgraded) OneTimeOffPlusPower::class else OneTimeOffPower::class
+        val powerToAdd = if (upgraded || MarisaContinued.isClassic) OneTimeOffPlusPower::class else OneTimeOffPower::class
         addToBot(ApplyPowerToPlayerAction(powerToAdd))
     }
 

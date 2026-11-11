@@ -45,11 +45,12 @@ class MarisaContinued :
     PostInitializeSubscriber, PostEnergyRechargeSubscriber,
     EditCharactersSubscriber, EditStringsSubscriber, EditKeywordsSubscriber,
     EditCardsSubscriber, EditRelicsSubscriber, OnCardUseSubscriber {
-    private enum class Config { CATEVENT, REPLACEDEADBRANCH }
+    private enum class Config { CATEVENT, REPLACEDEADBRANCH, CLASSIC }
 
     private val defaultConfig = Properties().apply {
         setProperty(Config.CATEVENT.name, "FALSE")
         setProperty(Config.REPLACEDEADBRANCH.name, "FALSE")
+        setProperty(Config.CLASSIC.name, "FALSE")
     }
 
     private fun getConfig() = SpireConfig("MarisaContinued", "MarisaContinuedConfig", defaultConfig)
@@ -59,6 +60,7 @@ class MarisaContinued :
 
         isCatEventEnabled = getConfig().getBool(Config.CATEVENT.name)
         isDeadBranchEnabled = getConfig().getBool(Config.REPLACEDEADBRANCH.name)
+        isClassic = getConfig().getBool(Config.CLASSIC.name)
 
         logger.info("creating the color : MARISA_COLOR")
         listOf(AbstractCardEnum.MARISA_COLOR, AbstractCardEnum.MARISA_DERIVATIONS)
@@ -134,6 +136,10 @@ class MarisaContinued :
             .forEach { (cls, kind) ->
                 BaseMod.loadCustomStrings(cls, localize(kind))
             }
+        if (isClassic) {
+            listOf(CardStrings::class.java to "classic_cards", RelicStrings::class.java to "classic_relics")
+                .forEach { (cls, name) -> BaseMod.loadCustomStrings(cls, localize(name)) }
+        }
     }
 
     override fun receivePostInitialize() = logger.runInfo("badge, configs,event and potion") {
@@ -163,8 +169,13 @@ class MarisaContinued :
             "Don't replace Dead Branch?", 600.0f,
             Config.REPLACEDEADBRANCH.name, isDeadBranchEnabled
         )
+        val classicButton = toggleButton(
+            "Classic balance (restart required)", 500.0f,
+            Config.CLASSIC.name, isClassic
+        )
         settingsPanel.addUIElement(enableBlackCatButton)
         settingsPanel.addUIElement(enableDeadBranchButton)
+        settingsPanel.addUIElement(classicButton)
         BaseMod.addEvent(Mushrooms_MRS.ID, Mushrooms_MRS::class.java, Exordium.ID)
         BaseMod.addEvent(OrinTheCat.ID, OrinTheCat::class.java, TheBeyond.ID)
 
@@ -251,8 +262,15 @@ class MarisaContinued :
         @JvmField
         var isDeadBranchEnabled: Boolean = false
 
+        /** Restores the original mod's balance and card text; read once at startup. */
+        @JvmField
+        var isClassic: Boolean = false
+
         @JvmStatic
         val randomMarisaCard: AbstractCard
-            get() = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
+            get() = when {
+                isClassic && AbstractDungeon.miscRng.random(0, 100) == 15 -> GuidingStar()
+                else -> AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy()
+            }
     }
 }

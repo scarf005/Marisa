@@ -12,6 +12,8 @@ Deno.test(async function testDirEntries() {
     "keywords",
     "events",
     "cards",
+    "classic_cards",
+    "classic_relics",
     "relics",
     "powers",
     "potions",

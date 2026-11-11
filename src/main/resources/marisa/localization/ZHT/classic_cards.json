@@ -1,0 +1,20 @@
+{
+  "${modId}:BlazeAway": {
+    "NAME": "連續發射",
+    "DESCRIPTION": "打出本回合最後打出的攻擊牌 !M! 次。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （最後打出的攻擊牌: ",
+      " ）",
+      " NL （本回合沒有打出過攻擊牌）"
+    ]
+  },
+  "${modId}:Acceleration": {
+    "NAME": "加速",
+    "DESCRIPTION": "抽取你抽卡堆頂的 !B! 張卡。 NL 增幅 [E] : 抽取你抽卡堆頂的 !M! 張卡 "
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "一回休",
+    "DESCRIPTION": "獲得 !B! 點 格擋 ，本回合不能發動 增幅 和 蓄力 。 NL 下回合抽 !M! 張牌",
+    "UPGRADE_DESCRIPTION": "獲得 !B! 點 格擋 ，本回合不能發動 增幅 和 蓄力 。 NL 下回合抽 !M! 張牌"
+  }
+}

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.powers.PoisonPower
 import com.megacrit.cardcrawl.powers.VulnerablePower
 import com.megacrit.cardcrawl.powers.WeakPower
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.MarisaContinued.Companion.isClassic
 import marisa.abstracts.MarisaRelic
 import marisa.p
 import marisa.powers.Marisa.ChargeUpPower
@@ -26,11 +27,14 @@ class RampagingMagicTools : MarisaRelic(ID, "RamTool", RelicTier.BOSS, LandingSo
         AbstractDungeon.player.energy.energyMaster -= 1
     }
 
-    private fun effects() = listOf(
-        FrailPower(p, STACK_DEBUFF, false),
-        WeakPower(p, STACK_DEBUFF, false),
-        VulnerablePower(p, STACK_DEBUFF, false),
-        PoisonPower(p, p, STACK_POISON),
+    private fun effects(
+        debuff: Int = if (isClassic) CLASSIC_STACK_DEBUFF else STACK_DEBUFF,
+        poison: Int = if (isClassic) CLASSIC_STACK_POISON else STACK_POISON,
+    ) = listOf(
+        FrailPower(p, debuff, false),
+        WeakPower(p, debuff, false),
+        VulnerablePower(p, debuff, false),
+        PoisonPower(p, p, poison),
         ChargeUpPower(p, STACK_CHARGE),
     )
 
@@ -44,5 +48,7 @@ class RampagingMagicTools : MarisaRelic(ID, "RamTool", RelicTier.BOSS, LandingSo
         private const val STACK_DEBUFF = 1
         private const val STACK_POISON = 2
         private const val STACK_CHARGE = 8
+        private const val CLASSIC_STACK_DEBUFF = 2
+        private const val CLASSIC_STACK_POISON = 3
     }
 }

@@ -1,0 +1,20 @@
+{
+  "${modId}:BlazeAway": {
+    "NAME": "Blaze Away",
+    "DESCRIPTION": "Play the last Attack you played this turn !M! time(s).",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Last Attack : ",
+      " ).",
+      " NL (You haven't played an Attack this turn.)"
+    ]
+  },
+  "${modId}:Acceleration": {
+    "NAME": "Acceleration",
+    "DESCRIPTION": "Draw top !B! cards in your draw pile. NL Amplify  [E] : Draw !M! more."
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "One Time Off",
+    "DESCRIPTION": "Gain !B! Block. You can't activate Amplify effects or consume Charge-up this turn. NL Draw !M! card(s) next turn.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. You can't activate Amplify effects or consume Charge-up this turn. NL Draw !M! card(s) next turn."
+  }
+}

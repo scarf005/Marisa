@@ -1,0 +1,16 @@
+{
+  "${modId}:RampagingMagicTools": {
+    "NAME": "Outil magique déchaîné",
+    "FLAVOR": "Cela fait si longtemps que personne ne les a utilisés. Qui sait ce qui pourrait se passer ? ",
+    "DESCRIPTIONS": [
+      "Gagnez [E] au début de chaque tour. NL Applique un debuff/buff aléatoire ( #b2 #yFrêle , #b2 #yFaiblesse , #b2 #yVulnérabilité , #b3 #yPoison , #b8 #yCharge ) à vous même au début de chaque combat."
+    ]
+  },
+  "${modId}:SproutingBranch": {
+    "NAME": "Branche qui pousse",
+    "FLAVOR": "La branche morte revient à la vie dans les mains de Marisa, Poétique ~.",
+    "DESCRIPTIONS": [
+      "Au début du combat, gagnez #b5 #yRegen ."
+    ]
+  }
+}

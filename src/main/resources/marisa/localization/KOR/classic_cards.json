@@ -1,0 +1,20 @@
+{
+  "${modId}:BlazeAway": {
+    "NAME": "블레이즈 어웨이",
+    "DESCRIPTION": "이번 턴에 마지막으로 사용한 공격 카드를 !M! 회 사용합니다.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (사용할 카드 : ",
+      " )",
+      " NL (사용한 공격 카드가 없습니다.)"
+    ]
+  },
+  "${modId}:Acceleration": {
+    "NAME": "가속",
+    "DESCRIPTION": "뽑을 카드 더미 맨 위 카드 !B! 장을 뽑습니다. NL 증폭 [E] : 카드를 !M! 장 더 뽑습니다."
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "잠깐의 휴식",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 이번 턴에 증폭을 발동하거나 충전을 소모할 수 없습니다. NL 다음 턴에 카드를 !M! 장 뽑습니다.",
+    "UPGRADE_DESCRIPTION": "방어도를 !B! 얻습니다. NL 이번 턴에 증폭을 발동하거나 충전을 소모할 수 없습니다. NL 다음 턴에 카드를 !M! 장 뽑습니다."
+  }
+}

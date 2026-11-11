@@ -1,0 +1,115 @@
+{
+  "${modId}:MiniHakkero": {
+    "NAME": "Mini Hakkero",
+    "FLAVOR": "Küçük bir Sekiz Trigram Ocağı. Marisa ailesinden ayrılırken Rinosuke'nin hediyesiydi.",
+    "DESCRIPTIONS": [
+      "Bir kart oynadığında #b1 #yŞarj kazan."
+    ]
+  },
+  "${modId}:BewitchedHakkero": {
+    "NAME": "Büyülü Hakkero",
+    "FLAVOR": "Ateş gücü bambaşka bir seviyede, ama büyülü bir aleti kullanmak güvenli mi?",
+    "DESCRIPTIONS": [
+      "#rMini #rHakkero yerine geçer. NL Bir kart oynadığında #b1 #yŞarj kazan. NL Oynadığın kart bir #yKıvılcım kartıysa 1 tane daha kazan."
+    ]
+  },
+  "${modId}:MagicArmor": {
+    "NAME": "Kara Büyü Kalkanı",
+    "FLAVOR": "Aslında bunun ne olduğunu bilmiyorum, ama tasarımcı plana koyduğu için burada. -programcı",
+    "DESCRIPTIONS": [
+      "Bir Durum veya Lanet kartı çektiğinde 5 Blok kazan."
+    ]
+  },
+  "${modId}:MagicBroom": {
+    "NAME": "Büyülü Süpürge",
+    "FLAVOR": "Marisa her zaman uçan süpürgesiyle seyahat eder.",
+    "DESCRIPTIONS": [
+      "Maliyeti 0 olan #b3 kart oynadığında 1 kart çek."
+    ]
+  },
+  "${modId}:AmpWand": {
+    "NAME": "Yükseltme Asası",
+    "FLAVOR": "Pek kullanılmadığı belli olan bir asa.",
+    "DESCRIPTIONS": [
+      "3 #yYükselt etkisi kullandığında [E] [E] kazan."
+    ]
+  },
+  "${modId}:RampagingMagicTools": {
+    "NAME": "Çılgın Büyü Aleti",
+    "FLAVOR": "Uzun zamandır kimse kullanmadı. Ne olacağını kim bilir?",
+    "DESCRIPTIONS": [
+      "Her tur başında [E] kazan. NL Her dövüş başında üzerine rastgele bir olumsuz veya olumlu etki uygula ( #b1 #yKırılgan , #b1 #yZayıf , #b1 #ySavunmasız , #b2 #yZehir , #b8 #yŞarj )."
+    ]
+  },
+  "${modId}:ExperimentalFamiliar": {
+    "NAME": "Deneysel Yardımcı Ruh",
+    "FLAVOR": "Parlak bir küreye benzeyen bir yardımcı ruh. Pek güçlü değil, ama sana kesinlikle çok yardımı dokunur.",
+    "DESCRIPTIONS": [
+      "Her tur başında eline 1 #yKıvılcım ekle. NL Dövüş başında #b3 rastgele karttan #b1 tanesini seçebilirsin. Bu tur maliyeti 0 olur."
+    ]
+  },
+  "${modId}:BreadOfAWashokuLover": {
+    "NAME": "Washoku Sevenin Ekmeği",
+    "FLAVOR": "\"Şimdiye kadar kaç dilim ekmek yediğini hatırlıyor musun?\" \"On üç. Ben Japon yemeğini tercih ederim.\"",
+    "DESCRIPTIONS": [
+      "Bir #yDurum veya #yLanet kartı Tüketilirse 1 CP iyileş. NL 13 kez tetiklenince #b13 Maksimum CP kazanırsın ve bu kalıntı çalışmayı bırakır."
+    ]
+  },
+  "${modId}:SimpleLauncher": {
+    "NAME": "Basit Fırlatıcı",
+    "FLAVOR": "El feneri, ne dersen de el fenerdir...",
+    "DESCRIPTIONS": [
+      "#yŞarj harcama eşiğini #b8 yerine #b6 yap."
+    ]
+  },
+  "${modId}:HandmadeGrimoire": {
+    "NAME": "El Yapımı Büyü Kitabı",
+    "FLAVOR": "Deney kayıtları ve büyü malzemesi tarifleriyle dolu bir defter. Marisa büyülerini işte böyle geliştirir.",
+    "DESCRIPTIONS": [
+      "Dövüş başında ana destendeki her 15 kart için [E] kazan ve bir kart çek."
+    ]
+  },
+  "${modId}:ShroomBag": {
+    "NAME": "Mantar Çantası",
+    "FLAVOR": "Bütün cadıların mantara olağandışı bir düşkünlüğü var... Yoksa sadece Marisa mı...?",
+    "DESCRIPTIONS": [
+      "Alındığında 2 #yAsalak kazan. Asalak kartları artık oynanabilir. Bir #yAsalak oynamak #b2 CP iyileştirir ve bir kart çektirir, sonra Tükenir."
+    ]
+  },
+  "${modId}:Cape": {
+    "NAME": "Pelerin",
+    "FLAVOR": "Marisa canının istediğini alır ve bu pelerin ona kesinlikle yardımcı olur.",
+    "DESCRIPTIONS": [
+      "Bir mağaza odasına girdiğinde rastgele dövüş ödülleri kazan.",
+      " kullanım kaldı. NL Bir mağazadaki ilk ürünü bedavaya alabilirsin."
+    ]
+  },
+  "${modId}:SproutingBranch": {
+    "NAME": "Filizlenen Dal",
+    "FLAVOR": "Ölü dal Marisa'nın elinde canlandı, ne kadar şiirsel.",
+    "DESCRIPTIONS": [
+      "Dövüş başında #b4 #yYenilenme kazan."
+    ]
+  },
+  "${modId}:AmplifyWand": {
+    "NAME": "Yükseltme Asası",
+    "FLAVOR": "Pek kullanılmadığı belli olan bir asa.",
+    "DESCRIPTIONS": [
+      "Bir #yYükselt etkisi kullandığında #b4 #yBlok kazan."
+    ]
+  },
+  "${modId}:CatCart": {
+    "NAME": "Kedi Arabası",
+    "FLAVOR": "Savaşta düştüğünde sadık kedilerin seni bununla hayata döndürür.",
+    "DESCRIPTIONS": [
+      "Bir kat çıktığında 1 yük kazan. Öleceğin zaman tüm yükleri harca ve her biri için #g4 CP iyileş."
+    ]
+  },
+  "${modId}:BigShroomBag": {
+    "NAME": "Büyük Mantar Çantası",
+    "FLAVOR": "Mantar çantasının büyük bir sürümü.",
+    "DESCRIPTIONS": [
+      "#rMantar #rÇantası yerine geçer. NL Asalak kartları artık oynanabilir. Bir #yAsalak oynamak #b3 CP iyileştirir ve #b2 kart çektirir, sonra Tükenir."
+    ]
+  }
+}

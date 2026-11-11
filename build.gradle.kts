@@ -182,7 +182,8 @@ data class Config(
         "Korean",
         "Japanese",
         "Spanish - Spain",
-        "Polish"
+        "Polish",
+        "Turkish"
     ),
 )
 

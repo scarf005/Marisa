@@ -1,0 +1,442 @@
+{
+  "${modId}:Strike_MRS": {
+    "NAME": "Basit Kıvılcım",
+    "DESCRIPTION": "!D! hasar ver."
+  },
+  "${modId}:Defend_MRS": {
+    "NAME": "Savunma",
+    "DESCRIPTION": "!B! Blok kazan."
+  },
+  "${modId}:AsteroidBelt": {
+    "NAME": "Asteroit Kuşağı",
+    "DESCRIPTION": "!B! Blok kazan. NL Yükselt [E] : Sonraki tur !B! Blok kazan."
+  },
+  "${modId}:BigCrunch": {
+    "NAME": "Büyük Çöküş",
+    "DESCRIPTION": "Atma yığınındaki ve çekme yığınındaki kartların yarısını Tüket. Tükettiğin her !M! kart için [E] kazan ve 1 kart çek. NL Tüket."
+  },
+  "${modId}:BlazingStar": {
+    "NAME": "Alevli Yıldız",
+    "DESCRIPTION": "!B! hasar ver. Elindeki her Yanık için !M! hasar daha ver. NL Yükselt [E] : İki kat hasar ver."
+  },
+  "${modId}:DarkSpark": {
+    "NAME": "Karanlık Kıvılcım",
+    "DESCRIPTION": "Çekme yığınının üstündeki !M! kartı Tüket. Tükettiğin her Saldırı için TÜM düşmanlara !D! hasar ver."
+  },
+  "${modId}:DeepEcoloBomb": {
+    "NAME": "Derin Ekolojik Bomba",
+    "DESCRIPTION": "Rastgele bir düşmana !D! hasar ver, sonra bu tur onun Kuvvetini !M! azalt. NL Yükselt [E] : Bu etkiyi tekrar uygula."
+  },
+  "${modId}:DoubleSpark": {
+    "NAME": "Çifte Kıvılcım",
+    "DESCRIPTION": "!D! hasar ver. Eline 1 Kıvılcım ekle.",
+    "UPGRADE_DESCRIPTION": "!D! hasar ver. Eline 1 Geliştirilmiş Kıvılcım ekle."
+  },
+  "${modId}:EarthLightRay": {
+    "NAME": "Dünya Işığı Huzmesi",
+    "DESCRIPTION": "!M! CP iyileş. Tüket. NL Yükselt [E] : Atma yığınından rastgele bir kartı eline al.",
+    "UPGRADE_DESCRIPTION": "!M! CP iyileş. Tüket. NL Yükselt [E] : Atma yığınından seçtiğin bir kartı eline al."
+  },
+  "${modId}:EscapeVelocity": {
+    "NAME": "Kaçış Hızı",
+    "DESCRIPTION": "Her tur başında 2 kart daha çek ve eline bir Yanık ekle.",
+    "UPGRADE_DESCRIPTION": "Yerleşik. Her tur başında 2 kart daha çek ve eline bir Yanık ekle."
+  },
+  "${modId}:FinalSpark": {
+    "NAME": "Son Kıvılcım",
+    "DESCRIPTION": "Bu dövüşte oynadığın adında \"Kıvılcım\" geçen her kart için maliyeti [E] azalır. NL TÜM düşmanlara !D! hasar ver. NL Bu kartın maliyetini sıfırla.",
+    "UPGRADE_DESCRIPTION": "Sakla. NL Bu dövüşte oynadığın adında \"Kıvılcım\" geçen her kart için maliyeti [E] azalır. NL TÜM düşmanlara !D! hasar ver. NL Bu kartın maliyetini sıfırla."
+  },
+  "${modId}:GrandCross": {
+    "NAME": "Büyük Haç",
+    "DESCRIPTION": "!D! hasar ver. NL Bu tur bir Yükselt etkisi kullandıysan maliyeti 0 olur."
+  },
+  "${modId}:GravityBeat": {
+    "NAME": "Yerçekimi Vuruşu",
+    "DESCRIPTION": "!D! hasar ver ve ana destendeki her !B! kart için 1 kart çek.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " kez)."
+    ]
+  },
+  "${modId}:IllusionStar": {
+    "NAME": "Yanılsama Yıldızı",
+    "DESCRIPTION": "Eline !M! rastgele kart ekle. Elinden bir kartı çekme yığınının üstüne koy. NL Tüket.",
+    "UPGRADE_DESCRIPTION": "Eline !M! rastgele kart ekle. Elinden bir kartı çekme yığınının üstüne koy."
+  },
+  "${modId}:MachineGunSpark": {
+    "NAME": "Makineli Kıvılcım",
+    "DESCRIPTION": "!M! kez !D! hasar ver. NL Tüket."
+  },
+  "${modId}:MagicAbsorber": {
+    "NAME": "Büyü Emici",
+    "DESCRIPTION": "!B! Blok kazan. Üzerinden rastgele bir olumsuz etkiyi kaldır. NL Tüket."
+  },
+  "${modId}:MasterSpark": {
+    "NAME": "Usta Kıvılcım",
+    "DESCRIPTION": "!D! hasar ver. NL Yükselt [E] : Bunun yerine !B! hasar ver."
+  },
+  "${modId}:MeteoricShower": {
+    "NAME": "Meteor Yağmuru",
+    "DESCRIPTION": "En fazla X + 1 kart Tüket. NL Tükettiğin her kart için rastgele bir düşmana 2 kez, her Yanık için 3 kez !D! hasar ver."
+  },
+  "${modId}:MilkyWay": {
+    "NAME": "Samanyolu",
+    "DESCRIPTION": "!B! Blok kazan. 1 kart çek. NL Elindeki TÜM Saldırılar bu dövüş boyunca !M! hasar daha verir."
+  },
+  "${modId}:NonDirectionalLaser": {
+    "NAME": "Yönsüz Lazer",
+    "DESCRIPTION": "TÜM düşmanlara !D! hasar ver, sonra rastgele bir düşmana !D! hasar ver."
+  },
+  "${modId}:Occultation": {
+    "NAME": "Örtülme",
+    "DESCRIPTION": "Çekme yığınını at. Attığın her kart için 1 Blok kazan.",
+    "UPGRADE_DESCRIPTION": "Çekme yığınını at. Attığın her kart için 1 Blok kazan +3.",
+    "EXTENDED_DESCRIPTION": [
+      "(Toplam !B! Blok kazan.)",
+      ""
+    ]
+  },
+  "${modId}:OortCloud": {
+    "NAME": "Oort Bulutu",
+    "DESCRIPTION": "!M! Kaplı Zırh kazan. NL Yükselt [E] : !B! Kaplı Zırh daha kazan.",
+    "UPGRADE_DESCRIPTION": "!M! Kaplı Zırh kazan. NL Yükselt [E] : 3 Kaplı Zırh daha kazan."
+  },
+  "${modId}:PolarisUnique": {
+    "NAME": "Eşsiz Kutup Yıldızı",
+    "DESCRIPTION": "Yerleşik. Çekme yığınına bir Rehber Yıldız karıştır. O çekme yığınındayken tur başında [E] kazan (üst üste binmez).",
+    "UPGRADE_DESCRIPTION": "Yerleşik. Çekme yığınına bir Rehber Yıldız karıştır. O çekme yığınındayken tur başında [E] kazan."
+  },
+  "${modId}:SatelliteIllusion": {
+    "NAME": "Uydu Yanılsaması",
+    "DESCRIPTION": "Turun içinde çekme yığınındaki kart sayısı arttığında [E] kazan.",
+    "UPGRADE_DESCRIPTION": "Yerleşik. Turun içinde çekme yığınındaki kart sayısı arttığında [E] kazan."
+  },
+  "${modId}:ShootTheMoon": {
+    "NAME": "Aya Ateş Et",
+    "DESCRIPTION": "Hedef Boss düşman değilse üzerinden rastgele bir olumlu etkiyi kaldır. !D! hasar ver. NL Yükselt [E] : TÜM olumlu etkileri kaldır ve bunun yerine !B! hasar ver."
+  },
+  "${modId}:StarDustReverie": {
+    "NAME": "Yıldız Tozu Hayali",
+    "DESCRIPTION": "Elini çekme yığınına karıştır, sonra o kadar rastgele kartı eline ekle. NL Tüket.",
+    "UPGRADE_DESCRIPTION": "Elini çekme yığınına karıştır, sonra o kadar rastgele Geliştirilmiş kartı eline ekle. NL Tüket."
+  },
+  "${modId}:UltraShortWave": {
+    "NAME": "Nihai Kısa Dalga",
+    "DESCRIPTION": "!B! [E] ve !M! Şarj kazan. Bu dövüş boyunca bu kartın verdiği enerjiyi ve Şarjı 1 artır."
+  },
+  "${modId}:MillisecondPulsars": {
+    "NAME": "Milisaniye Pulsarları",
+    "DESCRIPTION": "Bu dövüş boyunca Yükselt etkileri [E] harcamaz.",
+    "UPGRADE_DESCRIPTION": "Yerleşik. NL Bu dövüş boyunca Yükselt etkileri [E] harcamaz."
+  },
+  "${modId}:Spark": {
+    "NAME": "Kıvılcım",
+    "DESCRIPTION": "!D! hasar ver. NL Tüket."
+  },
+  "${modId}:UpSweep": {
+    "NAME": "Yükselen Süpürüş",
+    "DESCRIPTION": "!D! hasar ver. !M! Şarj kazan."
+  },
+  "${modId}:GuidingStar": {
+    "NAME": "Rehber Yıldız",
+    "DESCRIPTION": "Sakla. NL Tur başında bu kart elindeyse [E] kazan."
+  },
+  "${modId}:OrrerysSun": {
+    "NAME": "Orrery Güneşi",
+    "DESCRIPTION": "Şarj her harcandığında !M! Blok kazan."
+  },
+  "${modId}:ChargingUp": {
+    "NAME": "Şarj Oluyor",
+    "DESCRIPTION": "!M! Şarj kazan. NL Tüket.",
+    "UPGRADE_DESCRIPTION": "!M! Şarj kazan. NL Yükselt [E] : 3 yığın daha kazan."
+  },
+  "${modId}:LuminesStrike": {
+    "NAME": "Parlak Darbe",
+    "DESCRIPTION": "Elindeki kart sayısının 2 katı kadar hasar ver ( !D! hasar). NL Yükselt [E] : Bunun yerine mevcut enerjinin 4 katı kadar hasar ver ( !B! hasar).",
+    "UPGRADE_DESCRIPTION": "Elindeki kart sayısının 3 katı kadar hasar ver ( !D! hasar). NL Yükselt [E] : Bunun yerine mevcut enerjinin 5 katı kadar hasar ver ( !B! hasar)."
+  },
+  "${modId}:OpenUniverse": {
+    "NAME": "Açık Evren",
+    "DESCRIPTION": "Çekme yığınına 5 rastgele kart karıştır. Her biri !D! % ihtimalle Geliştirilmiş olur. NL !M! kart çek.",
+    "UPGRADE_DESCRIPTION": "Çekme yığınına 5 rastgele kart karıştır. !M! kart çek."
+  },
+  "${modId}:BlazeAway": {
+    "NAME": "Alev Saçışı",
+    "DESCRIPTION": "Bu tur oynadığın son Saldırıyı !M! kez oyna. NL Tüket.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Son Saldırı : ",
+      " ).",
+      " NL (Bu tur henüz Saldırı oynamadın.)"
+    ]
+  },
+  "${modId}:MaximisePower": {
+    "NAME": "Azami Güç",
+    "DESCRIPTION": "Şarj yığınlarını enerjiye çevir. Eline 1 Bitkinlik ekle. Bu tur saldırı hasarın iki katı olur. NL Tüket.",
+    "UPGRADE_DESCRIPTION": "Şarj yığınlarını enerjiye çevir. Eline 1 Bitkinlik ekle. NL Bu tur saldırı hasarın iki katı olur."
+  },
+  "${modId}:StarlightTyphoon": {
+    "NAME": "Yıldız Işığı Tayfunu",
+    "DESCRIPTION": "Elindeki Saldırı olmayan TÜM kartları Tüket. Eline aynı sayıda Kıvılcım ekle.",
+    "UPGRADE_DESCRIPTION": "Elindeki Saldırı olmayan TÜM kartları Tüket. Eline aynı sayıda Geliştirilmiş Kıvılcım ekle.",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !B! hasar verir.)",
+      ""
+    ]
+  },
+  "${modId}:StarlightTyphoon_D": {
+    "NAME": "Yıldız Işığı Tayfunu",
+    "DESCRIPTION": "Elindeki Saldırı olmayan TÜM kartları Tüket. Eline aynı sayıda Kıvılcım ekle.",
+    "UPGRADE_DESCRIPTION": "Elindeki Saldırı olmayan TÜM kartları Tüket. Eline aynı sayıda Geliştirilmiş Kıvılcım ekle."
+  },
+  "${modId}:SuperPerseids": {
+    "NAME": "Süper Perseidler",
+    "DESCRIPTION": "Oynanamaz. Bu kart çekildiğinde [E] kazan. NL Bu kart Tüketilirse rastgele bir düşmana !D! hasar ver."
+  },
+  "${modId}:MysteriousBeam": {
+    "NAME": "Gizemli Huzme",
+    "DESCRIPTION": "Eline rastgele bir Saldırı ekle. Eklenen kartın hasarı kadar hasar ver.",
+    "UPGRADE_DESCRIPTION": "Eline rastgele Geliştirilmiş bir Saldırı ekle. Eklenen kartın hasarı kadar hasar ver."
+  },
+  "${modId}:ShootingEcho": {
+    "NAME": "Atış Yankısı",
+    "DESCRIPTION": "!D! hasar ver. NL Bir kart Tüket. NL Tükettiğin kart Yanık ise bu kartı eline geri koy.",
+    "UPGRADE_DESCRIPTION": "Bir kart Tüket. Eline Geliştirilmiş bir Atış Yankısı ekle. NL !D! hasar ver. NL Tüket."
+  },
+  "${modId}:EnergyFlow": {
+    "NAME": "Enerji Akışı",
+    "DESCRIPTION": "Tur sonunda !M! Şarj kazan."
+  },
+  "${modId}:PowerUp": {
+    "NAME": "Güçlen!",
+    "DESCRIPTION": "Elindeki TÜM Saldırılar bu dövüş boyunca !M! hasar daha verir."
+  },
+  "${modId}:WitchLeyline": {
+    "NAME": "Cadı Ley Hattı",
+    "DESCRIPTION": "!D! hasar ver. Eline !M! Yanık ekle."
+  },
+  "${modId}:JA": {
+    "NAME": "Isınma",
+    "DESCRIPTION": "!D! hasar ver. Eline bir *Yükselen *Süpürüş, bir *Kıvılcım ve bir *Cadı *Ley *Hattı ekle.",
+    "UPGRADE_DESCRIPTION": "!D! hasar ver. Eline bir *Yükselen *Süpürüş+, bir *Kıvılcım+ ve bir *Cadı *Ley *Hattı+ ekle."
+  },
+  "${modId}:AbsoluteMagnitude": {
+    "NAME": "Mutlak Büyüklük",
+    "DESCRIPTION": "Şarjının 2 katı kadar hasar ver ( !D! hasar).",
+    "UPGRADE_DESCRIPTION": "Şarjının 3 katı kadar hasar ver ( !D! hasar)."
+  },
+  "${modId}:DragonMeteor": {
+    "NAME": "Ejderha Göktaşı",
+    "DESCRIPTION": "!D! hasar ver. NL Tüketme yığınındaki her kart için !M! hasar daha ver."
+  },
+  "${modId}:EventHorizon": {
+    "NAME": "Olay Ufku",
+    "DESCRIPTION": "Her tur !M! kez, bir Yükselt etkisi kullandığında atma yığınından bir Saldırıyı eline alabilirsin."
+  },
+  "${modId}:PulseMagic": {
+    "NAME": "Darbe Büyüsü",
+    "DESCRIPTION": "Sonraki tur [E] kazan. Yükselt [E] : Bu tur Yükselt etkileri [E] harcamaz.",
+    "UPGRADE_DESCRIPTION": "Sonraki tur [E] [E] kazan. Yükselt [E] : Bu tur Yükselt etkileri [E] harcamaz."
+  },
+  "${modId}:DC": {
+    "NAME": "66C",
+    "DESCRIPTION": "Yerleşik. NL !D! hasar ver. NL Atma yığınında kart yoksa iki kat hasar verir."
+  },
+  "${modId}:Singularity": {
+    "NAME": "Tekillik",
+    "DESCRIPTION": "Maliyeti 0 olan bir kart oynadığında elindeki rastgele bir Saldırının hasarını !M! artır."
+  },
+  "${modId}:SporeBomb": {
+    "NAME": "Spor Patlaması",
+    "DESCRIPTION": "Bir düşmana !M! Savunmasız uygula. NL Yükselt [E] : Bunun yerine TÜM düşmanlara !M! Savunmasız uygula.",
+    "UPGRADE_DESCRIPTION": "TÜM düşmanlara !M! Savunmasız uygula. NL Yükselt [E] : 1 yığın daha uygula."
+  },
+  "${modId}:FluorensentBeam": {
+    "NAME": "Floresan Huzme",
+    "DESCRIPTION": "TÜM düşmanlar !D! CP kaybeder. NL Yükselt [E] [E] : Bunun yerine !B! CP kaybettir."
+  },
+  "${modId}:WitchOfGreed": {
+    "NAME": "Açgözlülük Cadısı",
+    "DESCRIPTION": "Dövüş sonunda !M! altın kazan. NL Yükselt [E] : Ayrıca rastgele bir iksir kazan."
+  },
+  "${modId}:TreasureHunter": {
+    "NAME": "Hazine Avcısı",
+    "DESCRIPTION": "!D! hasar ver. NL Bu, Elit veya Boss odasında minyon olmayan bir düşmanı öldürürse dövüş sonunda 1 rastgele kalıntı kazan. NL Tüket."
+  },
+  "${modId}:Robbery": {
+    "NAME": "Soygun",
+    "DESCRIPTION": "!D! hasar ver. Engellenmeyen hasar kadar altın kazan. NL Tüket. NL Yükselt [E] : Kazandığın altını iki katına çıkar."
+  },
+  "${modId}:6A": {
+    "NAME": "6A",
+    "DESCRIPTION": "!D! hasar ver. Engellenmeyen hasar kadar Blok kazan."
+  },
+  "${modId}:CircumpolarStar": {
+    "NAME": "Kutup Çevresi Yıldızı",
+    "DESCRIPTION": "!B! Blok kazan. !M! kart çek. Bu dövüş boyunca bu kartın çektirdiği kart sayısını 1 artır."
+  },
+  "${modId}:RefractionSpark": {
+    "NAME": "Kırılma Kıvılcımı",
+    "DESCRIPTION": "!D! hasar ver. Elindeki TÜM Kıvılcım kartlarının hasarını engellenmeyen hasar kadar artır. NL Yükselt [E] : Bunun yerine !B! hasar ver."
+  },
+  "${modId}:MagicChant": {
+    "NAME": "Büyü Ezgisi",
+    "DESCRIPTION": "Çekme yığınından bir kart seç, eline al ve Geliştir. NL Tüket.",
+    "UPGRADE_DESCRIPTION": "Çekme yığınından bir kart seç, eline al ve Geliştir."
+  },
+  "${modId}:UnstableBomb": {
+    "NAME": "Dengesiz Bomba",
+    "DESCRIPTION": "Rastgele bir düşmana 4 kez rastgele hasar ver ( !D! ile !B! arası)."
+  },
+  "${modId}:SuperNova": {
+    "NAME": "Süpernova",
+    "DESCRIPTION": "Artık Yanıktan hasar almazsın. Bir Yanık Tükettiğinde !M! Kuvvet kazan. NL Her tur sonunda elini Tüket.",
+    "UPGRADE_DESCRIPTION": "Yerleşik. NL Artık Yanıktan hasar almazsın. Bir Yanık Tükettiğinde 1 Kuvvet kazan. NL Her tur sonunda elini Tüket."
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "Bir Kez Ara",
+    "DESCRIPTION": "!B! Blok kazan. Bu tur Yükselt etkilerini kullanamazsın. NL Sonraki tur !M! kart çek.",
+    "UPGRADE_DESCRIPTION": "!B! Blok kazan. Bu tur Yükselt etkilerini kullanamaz ve Şarj harcayamazsın. NL Sonraki tur !M! kart çek."
+  },
+  "${modId}:DarkMatter": {
+    "NAME": "Karanlık Madde",
+    "DESCRIPTION": "Tur başına yalnızca bir kez oynanabilir. NL Çekme yığınına bu kartın 2 kopyasını karıştır. 1 kart çek. Bu kart Tüketilirse !B! Blok kazan. NL Ruhani.",
+    "UPGRADE_DESCRIPTION": "Tur başına yalnızca bir kez oynanabilir. NL Çekme yığınına bu kartın 2 kopyasını karıştır. 1 kart çek. Bu kart Tüketilirse !B! Blok kazan. NL Ruhani.",
+    "EXTENDED_DESCRIPTION": [
+      "Bu tur Karanlık Madde'yi tekrar oynayamam.",
+      ""
+    ]
+  },
+  "${modId}:GasGiant": {
+    "NAME": "Gaz Devi",
+    "DESCRIPTION": "!B! Blok kazan. Eline !M! Yanık ekle."
+  },
+  "${modId}:CasketOfStar": {
+    "NAME": "Yıldız Mücevher Kutusu",
+    "DESCRIPTION": "Blok kazandığında eline bir Kıvılcım ekle.",
+    "UPGRADE_DESCRIPTION": "Blok kazandığında eline Geliştirilmiş bir Kıvılcım ekle."
+  },
+  "${modId}:ChargeUpSpray": {
+    "NAME": "Şarj Püskürtmesi",
+    "DESCRIPTION": "!D! hasar ver. NL Bu kart Şarj harcarsa [E] kazan ve !M! kart çek."
+  },
+  "${modId}:EnergyRecoil": {
+    "NAME": "Enerji Tepmesi",
+    "DESCRIPTION": "Şarjın kadar Blok kazan.",
+    "UPGRADE_DESCRIPTION": "Şarjın + 3 kadar Blok kazan.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " Blok kazan.)"
+    ]
+  },
+  "${modId}:GalacticHalo": {
+    "NAME": "Galaktik Hale",
+    "DESCRIPTION": "!B! Blok ve !M! Şarj kazan."
+  },
+  "${modId}:ManaConvection": {
+    "NAME": "Mana Konveksiyonu",
+    "DESCRIPTION": "En fazla !M! kart Tüket. Tükettiğin her kart için [E] kazan. NL Tüket."
+  },
+  "${modId}:ManaRampage": {
+    "NAME": "Mana Çılgınlığı",
+    "DESCRIPTION": "X rastgele Saldırı oyna.",
+    "UPGRADE_DESCRIPTION": "X rastgele Geliştirilmiş Saldırı oyna."
+  },
+  "${modId}:StarBarrage": {
+    "NAME": "Yıldız Barajı",
+    "DESCRIPTION": "!M! kez !D! hasar ver. NL Bu kart her oynandığında bu dövüş boyunca 1 kez daha hasar verir."
+  },
+  "${modId}:AFriendsGift": {
+    "NAME": "Bir Dostun Hediyesi",
+    "DESCRIPTION": "Oynanamaz. Bu kartı belirli üç karttan rastgele birine dönüştür.",
+    "UPGRADE_DESCRIPTION": "Sakla. !D! hasar ver. Turun başladığında hasarı 2 artır. Tüket. NL Yükselt [E] : Bunun yerine !B! hasar ver ve Tüketme."
+  },
+  "${modId}:BinaryStars": {
+    "NAME": "İkili Yıldızlar",
+    "DESCRIPTION": "Eline Kara Alev Yıldızı veya Beyaz Cüce'den birini ekle. NL Yükselt [E] : Bunun yerine ikisini de ekle.",
+    "UPGRADE_DESCRIPTION": "Eline Kara Alev Yıldızı veya Beyaz Cüce'den birini ekle ve Geliştir. NL Yükselt [E] : Bunun yerine ikisini de ekle."
+  },
+  "${modId}:CollectingQuirk": {
+    "NAME": "Toplama Huyu",
+    "DESCRIPTION": "Sahip olduğun her !M! kalıntı için rastgele bir düşmana !D! hasar ver.",
+    "EXTENDED_DESCRIPTION": [
+      "( !B! kez hasar verir)",
+      ""
+    ]
+  },
+  "${modId}:FungusSplash": {
+    "NAME": "Mantar Karışımı",
+    "DESCRIPTION": "Bir kart Tüket. Hedefe bir iksir fırlat. NL İksirin türü Tükettiğin kartın türüne bağlıdır. NL Tüket.",
+    "UPGRADE_DESCRIPTION": "Bir kart Tüket. Hedefe bir iksir fırlat. NL İksirin türü Tükettiğin kartın türüne bağlıdır."
+  },
+  "${modId}:PropBag": {
+    "NAME": "Taşınabilir Eşya Çantası",
+    "DESCRIPTION": "Rastgele bir kalıntı kazan. NL Dövüş bittiğinde kalıntıyı kaybet. NL Tüket.",
+    "UPGRADE_DESCRIPTION": "Yerleşik. NL Rastgele bir kalıntı kazan. NL Dövüş bittiğinde kalıntıyı kaybet. NL Tüket."
+  },
+  "${modId}:BlackFlareStar": {
+    "NAME": "Kara Alev Yıldızı",
+    "DESCRIPTION": "Yalnızca elinde 4 veya daha fazla kart varken oynanabilir. Tüket. NL Elinden istediğin sayıda kartı at ve attığın her kart için !B! Blok kazan.",
+    "EXTENDED_DESCRIPTION": [
+      "Elimde 4 kart yok.",
+      ""
+    ]
+  },
+  "${modId}:WhiteDwarf": {
+    "NAME": "Beyaz Cüce",
+    "DESCRIPTION": "Yalnızca elinde 4 veya daha az kart varken oynanabilir. Tüket. NL !D! hasar ver (atma yığını boyutunun 2 katı). Eline 2 Yanık ekle.",
+    "UPGRADE_DESCRIPTION": "Yalnızca elinde 4 veya daha az kart varken oynanabilir. Tüket. NL !D! hasar ver (atma yığını boyutunun 3 katı). Eline 2 Yanık ekle.",
+    "EXTENDED_DESCRIPTION": [
+      "Elimde 4'ten fazla kart var.",
+      ""
+    ]
+  },
+  "${modId}:FairyDestructionRay": {
+    "NAME": "Peri Yıkım Işını",
+    "DESCRIPTION": "TÜM düşmanlara !D! hasar ver. Yükselt [E] [E] : CP'si !M! veya daha az olanları anında öldür."
+  },
+  "${modId}:Orbital": {
+    "NAME": "Yörünge",
+    "DESCRIPTION": "Oynanamaz. Bu kart çekildiğinde 1 kart çek. NL Bu kart Tüketilirse tüketme yığınından !M! kartı eline al."
+  },
+  "${modId}:ExplosiveMarionette": {
+    "NAME": "Patlayıcı Kukla",
+    "DESCRIPTION": "Sakla. !D! hasar ver. NL Yükselt [E] : İki kat hasar ver. Tüket."
+  },
+  "${modId}:OpticalCamouflage": {
+    "NAME": "Optik Kamuflaj",
+    "DESCRIPTION": "Sakla. !B! Blok kazan. NL Yükselt [E] : İki kat kazan. Tüket."
+  },
+  "${modId}:FiveColoredTalisman": {
+    "NAME": "Beş Renkli Tılsım",
+    "DESCRIPTION": "Sakla. Tur başında eline rastgele bir Beceri ekle."
+  },
+  "${modId}:AlicesGift": {
+    "NAME": "Alice'in Hediyesi",
+    "DESCRIPTION": "Sakla. !D! hasar ver. NL Yükselt [E] [E] : Üç kat hasar ver. NL Tüket."
+  },
+  "${modId}:Exhaustion_MRS": {
+    "NAME": "Bitkinlik",
+    "DESCRIPTION": "Oynanamaz. NL Elindeyken Şarj kazanamaz veya harcayamazsın."
+  },
+  "${modId}:UltimateShortwave": {
+    "NAME": "Nihai Kısa Dalga",
+    "DESCRIPTION": "!B! [E] ve !M! Şarj kazan. Bu dövüş boyunca bu kartın verdiği enerjiyi 1, Şarjı ise !D! artır."
+  },
+  "${modId}:NebulaRing": {
+    "NAME": "Bulutsu Halkası",
+    "DESCRIPTION": "Düşmanlardan veya kartlardan Blok kaybettiğinde !M! Kaplı Zırh kazan."
+  },
+  "${modId}:SprinkleStarSeal": {
+    "NAME": "Yıldız Serpme Mührü",
+    "DESCRIPTION": "99 Zayıf uygula. NL Tüket."
+  },
+  "${modId}:Wraith": {
+    "NAME": "Hayalet",
+    "DESCRIPTION": "Oynanamaz. NL Tur sonunda 1 Hayalet kazan."
+  },
+  "${modId}:Acceleration": {
+    "NAME": "Hızlanma",
+    "DESCRIPTION": "!B! kart çek. NL Yükselt [E] : !M! kart daha çek."
+  }
+}

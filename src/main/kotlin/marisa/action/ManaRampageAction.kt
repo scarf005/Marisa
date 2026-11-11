@@ -17,9 +17,7 @@ class ManaRampageAction(
 
     override fun update() {
         val cnt = energyOnUse + countRelic(ChemicalX.ID) * 2
-        for (i in 0..<cnt) {
-            addToBot(PlayManaRampageCardAction(upgraded))
-        }
+        repeat(cnt) { addToBot(PlayManaRampageCardAction(upgraded)) }
         if (!freeToPlay) {
             p.energy.use(EnergyPanel.totalCount)
         }

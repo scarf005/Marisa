@@ -1,0 +1,24 @@
+{
+  "${modId}:ShroomBrew": {
+    "NAME": "Grzybowy wywar",
+    "DESCRIPTIONS": [
+      "Wyklucz kartę. NL Efekt mikstury zależy od typu Wykluczonej karty.",
+      "Szczegóły",
+      "Atak: Płynny strach; NL Umiejętność: Mikstura osłabienia; NL Moc: Fiolka trucizny; NL Stan: Płynny ogień; NL Klątwa: Bomba dymna."
+    ]
+  },
+  "${modId}:BottledSpark": {
+    "NAME": "Iskra w butelce",
+    "DESCRIPTIONS": [
+      "Dodaj #b",
+      " #yIskry do ręki."
+    ]
+  },
+  "${modId}:StarNLove": {
+    "NAME": "Gwiazda i miłość",
+    "DESCRIPTIONS": [
+      "Nie musisz płacić dodatkowego kosztu za efekty Wzmocnienia. Zyskaj #b",
+      " pkt. #yŁadowania."
+    ]
+  }
+}

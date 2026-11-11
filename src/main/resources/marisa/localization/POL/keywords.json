@@ -1,0 +1,77 @@
+{
+  "keywords": [
+    {
+      "NAMES": [
+        "wzmocnienie",
+        "Wzmocnienie",
+        "wzmocnienia",
+        "Wzmocnienia"
+      ],
+      "DESCRIPTION": "Zapłać dodatkową energię za ten efekt, jeśli masz wystarczająco [E] ."
+    },
+    {
+      "NAMES": [
+        "wyczerpanie",
+        "Wyczerpanie",
+        "wyczerpania",
+        "Wyczerpania"
+      ],
+      "DESCRIPTION": "Wyczerpanie uniemożliwia zdobywanie i zużywanie Ładowania."
+    },
+    {
+      "NAMES": [
+        "iskra",
+        "Iskra",
+        "iskry",
+        "Iskry",
+        "iskrę",
+        "Iskrę",
+        "iskier",
+        "Iskier"
+      ],
+      "DESCRIPTION": "Iskra jest kartą Ataku kosztującą #b0 energii i zostaje Wykluczona po użyciu."
+    },
+    {
+      "NAMES": [
+        "ładowanie",
+        "Ładowanie",
+        "ładowania",
+        "Ładowania",
+        "ładowaniu",
+        "ładowaniem"
+      ],
+      "DESCRIPTION": "Za każde #b8 pkt. podwój obrażenia swojego następnego Ataku."
+    },
+    {
+      "NAMES": [
+        "Czarna Gwiazda Rozbłysku",
+        "czarna gwiazda rozbłysku",
+        "Czarną Gwiazdę Rozbłysku",
+        "czarną gwiazdę rozbłysku"
+      ],
+      "DESCRIPTION": "Czarna Gwiazda Rozbłysku jest kartą Umiejętności kosztującą #b0, która daje Blok za odrzucone karty."
+    },
+    {
+      "NAMES": [
+        "Biały Karzeł",
+        "biały karzeł",
+        "Białego Karła",
+        "białego karła"
+      ],
+      "DESCRIPTION": "Biały Karzeł jest kartą Ataku kosztującą #b0, która zadaje obrażenia zależne od wielkości stosu kart odrzuconych."
+    },
+    {
+      "NAMES": [
+        "upiór",
+        "Upiór",
+        "upiora",
+        "Upiora",
+        "upiorem",
+        "Upiorem",
+        "upiory",
+        "Upiory"
+      ],
+      "DESCRIPTION": "Upiór wyklucza losową kartę z twojej ręki po rozpoczęciu tury."
+    }
+  ]
+}

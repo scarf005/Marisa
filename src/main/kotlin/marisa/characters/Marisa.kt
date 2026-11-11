@@ -100,6 +100,11 @@ class Marisa(name: String) :
             flavor = """La magicienne "ordinaire" vie dans la forêt magique.  NL Spécialisées dans la magie de la lumière et de la chaleur."""
         )
 
+        GameLanguage.POL -> LoadoutText(
+            title = "Zwyczajna Czarodziejka",
+            flavor = "\"Zwyczajna\" czarodziejka mieszkająca w Lesie Magii. NL Specjalizuje się w magii światła i ciepła."
+        )
+
         else -> LoadoutText(
             title = "The Ordinary Magician",
             flavor = """The "ordinary" magician lives in the Forest of Magic. NL Specializes in light and heat magic."""
@@ -135,6 +140,7 @@ class Marisa(name: String) :
         GameLanguage.JPN -> """普通の魔法使い"""
         GameLanguage.ZHT -> """普通的魔法使"""
         GameLanguage.KOR -> """평범한 마법사"""
+        GameLanguage.POL -> "Zwyczajna Czarodziejka"
         else -> "The Ordinary Magician"
     }
 

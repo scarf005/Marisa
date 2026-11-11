@@ -1,0 +1,20 @@
+{
+  "${modId}:BlazeAway": {
+    "NAME": "Flambée",
+    "DESCRIPTION": "Jouez la dernière Attaque jouée ce tour !M! fois.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Dernière attaque : ",
+      " ).",
+      " NL (Vous n'avez pas joué d'Attaque ce tour.)"
+    ]
+  },
+  "${modId}:Acceleration": {
+    "NAME": "Accélération",
+    "DESCRIPTION": "Tirez les !B! cartes supérieures de votre pioche. NL Amplifier  [E] : Piochez !M! de plus."
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "Temps d'arrêt",
+    "DESCRIPTION": "Gagnez !B! d'Armure. Vous ne pouvez pas activer d'effet Amplifier ou consommer de charge ce tour. NL Au prochain tour, piochez !M! carte(s).",
+    "UPGRADE_DESCRIPTION": "Gagnez !B! d'Armure. Vous ne pouvez pas activer d'effet Amplifier ou consommer de charge ce tour. NL Au prochain tour, piochez !M! carte(s)."
+  }
+}

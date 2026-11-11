@@ -12,7 +12,7 @@ class BlazeAway : MarisaCard(ID, "blazeAway", COST, CardType.SKILL, CardRarity.U
     init {
         magicNumber = USE_TIMES
         baseMagicNumber = magicNumber
-        exhaust = true
+        exhaust = !MarisaContinued.isClassic
     }
 
     private val desc get() = strings.EXTENDED_DESCRIPTION.let { Description(it[0], it[1], it[2]) }

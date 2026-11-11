@@ -1,10 +1,14 @@
 package marisa.cards
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction
 import com.megacrit.cardcrawl.actions.common.DrawCardAction
 import com.megacrit.cardcrawl.cards.AbstractCard
 import com.megacrit.cardcrawl.characters.AbstractPlayer
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon
 import com.megacrit.cardcrawl.monsters.AbstractMonster
+import marisa.MarisaContinued
 import marisa.abstracts.AmplifiableCard
+import marisa.runThenDone
 
 class Acceleration : AmplifiableCard(ID, "GuidingStar", COST, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF) {
     init {
@@ -14,12 +18,22 @@ class Acceleration : AmplifiableCard(ID, "GuidingStar", COST, CardType.SKILL, Ca
         block = baseBlock
     }
 
+    /** Classic draws only what the draw pile holds, without shuffling the discard pile in. */
+    private fun draw(amount: Int) = addToBot(
+        if (!MarisaContinued.isClassic) DrawCardAction(amount)
+        else object : AbstractGameAction() {
+            override fun update() = runThenDone {
+                addToTop(DrawCardAction(minOf(amount, AbstractDungeon.player.drawPile.size())))
+            }
+        }
+    )
+
     override fun applyPowersToBlock() {}
     override fun use(p: AbstractPlayer, unused: AbstractMonster?) {
-        addToBot(DrawCardAction(block))
+        draw(block)
 
         if (tryAmplify()) {
-            addToBot(DrawCardAction(magicNumber))
+            draw(magicNumber)
         }
     }
 

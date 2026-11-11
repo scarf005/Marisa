@@ -1,0 +1,20 @@
+{
+  "${modId}:BlazeAway": {
+    "NAME": "Blaze Away",
+    "DESCRIPTION": "Juega el último Ataque que jugaste este turno !M! vez(s).",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Último Ataque : ",
+      " ).",
+      " NL (No has jugado un Ataque este turno.)"
+    ]
+  },
+  "${modId}:Acceleration": {
+    "NAME": "Acceleration",
+    "DESCRIPTION": "Roba las !B! cartas superiores de tu pila de robo. NL Amplificar [E] : Roba !M! más."
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "One Time Off",
+    "DESCRIPTION": "Gana !B! Bloqueo. No puedes activar efectos de Amplificar ni consumir Carga este turno. NL Roba !M! carta(s) el próximo turno.",
+    "UPGRADE_DESCRIPTION": "Gana !B! Bloqueo. No puedes activar efectos de Amplificar ni consumir Carga este turno. NL Roba !M! carta(s) el próximo turno."
+  }
+}

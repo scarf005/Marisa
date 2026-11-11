@@ -6,6 +6,12 @@ import com.megacrit.cardcrawl.core.Settings
 import com.megacrit.cardcrawl.core.Settings.GameLanguage
 import com.megacrit.cardcrawl.localization.LocalizedStrings
 import com.megacrit.cardcrawl.relics.AbstractRelic
+import marisa.cards.Acceleration
+import marisa.cards.BlazeAway
+import marisa.cards.OneTimeOff
+import marisa.cards.UnstableBomb
+import marisa.relics.RampagingMagicTools
+import marisa.relics.SproutingBranch
 import marisa.testing.Combat
 import marisa.testing.Game
 import marisa.testing.concreteClasses
@@ -48,6 +54,51 @@ class LocalizationTest {
         try {
             assertEquals(emptyList(), languages.flatMap(::problems))
         } finally {
+            Settings.language = GameLanguage.ENG
+            CardCrawlGame.languagePack = LocalizedStrings()
+        }
+    }
+
+    /** Words of the classic texts in each language: Exhaust, the draw pile and Charge-up. */
+    private val classicWords = mapOf(
+        GameLanguage.ENG to listOf("Exhaust", "draw pile", "Charge-up"),
+        GameLanguage.FRA to listOf("Épuisement", "pioche", "charge"),
+        GameLanguage.JPN to listOf("廃棄", "山札", "チャージ"),
+        GameLanguage.KOR to listOf("소멸", "뽑을 카드 더미", "충전"),
+        GameLanguage.ZHS to listOf("消耗", "抽牌堆", "蓄力"),
+        GameLanguage.ZHT to listOf("消耗", "抽卡堆", "蓄力"),
+        GameLanguage.SPA to listOf("Agota", "pila de robo", "Carga"),
+        // Without its own files, Russian falls back to English.
+        GameLanguage.RUS to listOf("Exhaust", "draw pile", "Charge-up"),
+    )
+
+    /** What the classic texts in the current language say against the classic balance. */
+    private fun classicProblems(exhaust: String, drawPile: String, charge: String): List<String> {
+        fun numbers(text: String) = Regex("#b(\\d+)").findAll(text).map { it.groupValues[1].toInt() }.sorted().toList()
+        val sproutingBranch = numbers(SproutingBranch().description)
+        val rampagingMagicTools = numbers(RampagingMagicTools().description)
+        return listOfNotNull(
+            "Blaze Away says $exhaust".takeIf { exhaust in BlazeAway().rawDescription },
+            "Acceleration lacks $drawPile".takeIf { drawPile !in Acceleration().rawDescription },
+            "One Time Off lacks $charge".takeIf { charge !in OneTimeOff().rawDescription },
+            "Unstable Bomb deals up to ${UnstableBomb().baseBlock}".takeIf { UnstableBomb().baseBlock != 4 },
+            "Sprouting Branch shows $sproutingBranch".takeIf { sproutingBranch != listOf(5) },
+            "Rampaging Magic Tool shows $rampagingMagicTools".takeIf { rampagingMagicTools != listOf(2, 2, 2, 3, 8) },
+        )
+    }
+
+    @Test
+    fun `every language describes the classic balance`() {
+        Game.init()
+        MarisaContinued.isClassic = true
+        try {
+            val found = classicWords.flatMap { (language, words) ->
+                val (exhaust, drawPile, charge) = words
+                problems(language) + classicProblems(exhaust, drawPile, charge).map { "$language $it" }
+            }
+            assertEquals(emptyList(), found)
+        } finally {
+            MarisaContinued.isClassic = false
             Settings.language = GameLanguage.ENG
             CardCrawlGame.languagePack = LocalizedStrings()
         }

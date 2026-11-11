@@ -1,0 +1,21 @@
+{
+  "${modId}:BlazeAway": {
+    "NAME": "连续发射",
+    "DESCRIPTION": "打出你本回合打出的上一张攻击牌 !M! 次。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （打出的上一张攻击牌：",
+      " ）。",
+      " NL （你本回合还没有使用过攻击牌。）"
+    ]
+  },
+  "${modId}:Acceleration": {
+    "NAME": "加速",
+    "DESCRIPTION": "抽 !B! 张你抽牌堆顶部的牌。 NL 增幅 [E] ：再抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL 抽 !M! 张牌。 NL 增幅 [E] ：再抽 !M! 张牌。"
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "一回休",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 这回合你将不能发动 增幅 和 蓄力 效果。 NL 下回合抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 这回合你将不能发动 增幅 和 蓄力 效果。 NL 下回合抽 !M! 张牌。"
+  }
+}

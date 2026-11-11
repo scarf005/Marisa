@@ -29,8 +29,8 @@ export const parseCommits = (xs: string[]) =>
 
 export const getSections = (commits: Commit[]): Sections => ({
   "Breaking Changes": commits.filter((x) => x.breaking),
-  "New Features": commits.filter((x) => x.type === "feat"),
-  Fixes: commits.filter((x) => x.type === "fix"),
+  "New Features": commits.filter((x) => !x.breaking && x.type === "feat"),
+  Fixes: commits.filter((x) => !x.breaking && x.type === "fix"),
 })
 
 if (import.meta.main) {

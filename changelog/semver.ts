@@ -6,12 +6,10 @@ import { format, increment, parse } from "@std/semver"
 const increaseBy = (commit: Commit): "major" | "minor" | "patch" =>
   commit.breaking ? "major" : commit.type === "feat" ? "minor" : "patch"
 
+const levels = ["patch", "minor", "major"] as const
+
 export const increaseVersion = (begin: SemVer, commits: Commit[]): SemVer =>
-  commits.reduce(({ ver, count }, commit) => {
-    const by = increaseBy(commit)
-    count[by]++
-    return (count[by] > 1) ? { ver, count } : { ver: increment(ver, increaseBy(commit)), count }
-  }, { ver: begin, count: { major: 0, minor: 0, patch: 0 } }).ver
+  increment(begin, levels[Math.max(...commits.map((x) => levels.indexOf(increaseBy(x))))])
 
 export const getNextVersion = (latest: string, commits: Commit[]): string =>
   "v" + format(increaseVersion(parse(latest), commits))

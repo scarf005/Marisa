@@ -17,5 +17,6 @@ export const hardlink = (from: string) => async (target: string) => {
   const { f, t } = await promiseObject({ f: resolve(from), t: resolve(target) })
 
   await remove(t)()
-  await Deno.link(f, t)
+  // Hard links fail across filesystems, e.g. a Steam library on another drive.
+  await Deno.link(f, t).catch(() => Deno.copyFile(f, t))
 }

@@ -17,13 +17,20 @@ export type LinkMeta = {
   isHardLinked: boolean
 }
 
+const sameBytes = async (a: string, b: string) => {
+  const [x, y] = await Promise.all([a, b].map((path) => Deno.readFile(path).catch(() => undefined)))
+  return x !== undefined && y !== undefined && x.length === y.length &&
+    x.every((byte, i) => byte === y[i])
+}
+
 const hardLinkMeta = (from: string) => async (to: string): Promise<LinkMeta> => {
   const target = join(to, parse(from).base)
   const { fromIno, targetIno } = await promiseObject({
     fromIno: inode(from)(),
     targetIno: inode(target)(),
   })
-  const isHardLinked = fromIno === targetIno
+  // A copy made where hard links cannot cross filesystems counts as linked when its bytes match.
+  const isHardLinked = fromIno === targetIno || await sameBytes(from, target)
 
   return { from, target, fromIno, targetIno, isHardLinked }
 }

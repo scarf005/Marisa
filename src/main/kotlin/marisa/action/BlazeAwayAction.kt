@@ -28,6 +28,8 @@ class BlazeAwayAction(val card: AbstractCard) : AbstractGameAction() {
             target_x = Settings.WIDTH / 2.0f - 300.0f * Settings.scale
             target_y = Settings.HEIGHT / 2.0f
             costForTurn = 0
+            // Makes AmplifiableCard amplify for free and AbstractPlayer.useCard skip the energy.
+            freeToPlayOnce = true
             purgeOnUse = true
             targetAngle = 0.0f
             drawScale = 0.12f

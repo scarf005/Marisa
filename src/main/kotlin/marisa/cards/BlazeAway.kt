@@ -35,16 +35,15 @@ class BlazeAway : MarisaCard(ID, "blazeAway", COST, CardType.SKILL, CardRarity.U
         val last = lastAttack() ?: return
 
         MarisaContinued.logger.info("""BlazeAway: last attack :${last.cardID}""")
-        val lastCard = last.makeStatEquivalentCopy()
-
-        with(lastCard) {
+        with(last) {
             MarisaContinued.logger.info(
                 """BlazeAway: card :$cardID;
                         |baseD: $baseDamage; Damage: $damage; baseB :$baseBlock ; B: $block ;
                         |baseM: $baseMagicNumber ; M : $magicNumber ; C : $cost ; CFT: $costForTurn""".trimMargin()
             )
         }
-        repeat(magicNumber) { addToBot(BlazeAwayAction(lastCard)) }
+        // One copy per play: UseCardAction clears freeToPlayOnce on the card it plays.
+        repeat(magicNumber) { addToBot(BlazeAwayAction(last.makeStatEquivalentCopy())) }
     }
 
     override fun makeCopy(): AbstractCard = BlazeAway()

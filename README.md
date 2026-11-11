@@ -70,7 +70,7 @@ https://user-images.githubusercontent.com/54838975/233419957-b16aaee0-948b-4af9-
 
 ### Installation
 
-subscribe [ModTheSpire][modthespire] and [BaseMod][basemod].
+Subscribe to [ModTheSpire][modthespire] and [BaseMod][basemod]. Then subscribe to the mod.
 
 [modthespire]: https://steamcommunity.com/sharedfiles/filedetails/?l=koreana&id=1605060445
 [basemod]: https://steamcommunity.com/sharedfiles/filedetails/?id=1605833019
@@ -81,59 +81,9 @@ subscribe [ModTheSpire][modthespire] and [BaseMod][basemod].
   <img alt="Link to Steam Workshop displaying Project Thumbnail" src="docs/thumbnail/image.jpg" style="width: 20vw">
 </a>
 
-#### Compile from source
+## Contributing
 
-> **Warning**
->
-> development environment is only tested on linux. may not work for other OS
-
-git clone repository `https://github.com/scarf005/Marisa.git`
-
-![Intellij's Project Structure window, with its Language Level set to 8 and SDK to openjdk-17](docs/ProjectStructure.png)
-
-setup java, kotlin, and gradle in your intellij. language version must be 8.
-
-```
-# fill in your steam directory ending with '/steamapps'
-userSteamDir=/home/scarf/.local/share/Steam/steamapps
-# default: "$userSteamDir/workshop/content/$gameSteamId"
-workshopDir=
-```
-
-copy `gradle.properties.example` to `gradle.properties` and provide path to your steam directory.
-
-```sh
-gradle changelog # install once
-./gradlew -t changelog --warning-mode all # dev mode: recompile on changes
-```
-
-run gradle task to copy jar into your steam mods folder.
-
-### Tests
-
-Run the Deno changelog and localization unit tests from the repository root:
-
-```sh
-deno task test
-```
-
-This excludes `releases_test.ts`, which checks a locally installed release and its hard links.
-
-Kotlin tests require JDK 17 for Gradle and the game (with its bundled `jre/`), BaseMod, and ModTheSpire under the Steam library configured in `gradle.properties`:
-
-```sh
-./gradlew test
-```
-
-Tests do not require the generated `docs/changelog/` files. Packaging and publishing still require them.
-
-`patchGame` applies the ModTheSpire patches of BaseMod and this mod to the game classes, then the tests boot that patched game headlessly on the game's own JRE and play cards in a first-act fight. Configs and preferences go to `build/test-workdir/`. The report is written to `build/reports/tests/test/index.html`.
-
-Snapshots in `src/test/snapshots/` record every card, relic, potion and power, what each card does when played, a turn with each power and relic, fights against Orin and Zombie Fairy, and the choices of the mod's events. After an intended change, review and rewrite them with:
-
-```sh
-UPDATE_SNAPSHOTS=1 ./gradlew test
-```
+See [CONTRIBUTING.md](CONTRIBUTING.md) to build the mod from source and to send changes. See [LOCALIZATION.md](LOCALIZATION.md) to add or fix a translation.
 
 ## [Credits][original-credit]
 

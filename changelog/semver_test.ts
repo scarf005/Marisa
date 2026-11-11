@@ -18,6 +18,13 @@ Deno.test("increaseVersion() only increases biggest change", async (t) => {
     )
   })
 
+  await t.step("major before minor", () => {
+    assertObjectMatch(
+      increaseVersion({ major: 4, minor: 1, patch: 1 }, [major, minor, patch]),
+      { major: 5, minor: 0, patch: 0 },
+    )
+  })
+
   await t.step("minor", () => {
     assertObjectMatch(
       increaseVersion({ major: 1, minor: 0, patch: 0 }, [patch, minor]),
@@ -27,7 +34,7 @@ Deno.test("increaseVersion() only increases biggest change", async (t) => {
 })
 
 Deno.test("nextVersion() returns correct version", () => {
-  assertEquals(getNextVersion("v1.0.0", [minor, patch]), "v1.1.1")
+  assertEquals(getNextVersion("v1.0.0", [minor, patch]), "v1.1.0")
 })
 
 Deno.test("nextVersion() handles multiple patch in single release", () => {

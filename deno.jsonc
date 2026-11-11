@@ -17,6 +17,7 @@
     "@cliffy/command": "jsr:@cliffy/command@^1.0.0-rc.7",
     "@david/dax": "jsr:@david/dax@^0.42.0",
     "@std/assert": "jsr:@std/assert@^1.0.6",
+    "@std/bytes": "jsr:@std/bytes@^1.0.6",
     "@std/collections": "jsr:@std/collections@^1.0.7",
     "@std/fmt": "jsr:@std/fmt@^1.0.2",
     "@std/fs": "jsr:@std/fs@^1.0.4",

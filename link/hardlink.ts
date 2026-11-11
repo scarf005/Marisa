@@ -1,5 +1,6 @@
 import { brightRed, magenta } from "@std/fmt/colors"
 import { join, parse, resolve } from "@std/path"
+import { equals } from "@std/bytes"
 
 import promiseObject from "https://deno.land/x/promise_object@v0.10.0/index.ts"
 
@@ -19,8 +20,7 @@ export type LinkMeta = {
 
 const sameBytes = async (a: string, b: string) => {
   const [x, y] = await Promise.all([a, b].map((path) => Deno.readFile(path).catch(() => undefined)))
-  return x !== undefined && y !== undefined && x.length === y.length &&
-    x.every((byte, i) => byte === y[i])
+  return x !== undefined && y !== undefined && equals(x, y)
 }
 
 const hardLinkMeta = (from: string) => async (to: string): Promise<LinkMeta> => {

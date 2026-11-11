@@ -71,6 +71,7 @@ body:
         - Simplified Chinese (ZHS)
         - Traditional Chinese (ZHT)
         - Spanish (SPA)
+        - Polish (POL)
     validations:
       required: true
 

@@ -1,0 +1,34 @@
+{
+  "Mushrooms_MRS": {
+    "NAME": "Grzyby",
+    "DESCRIPTIONS": [
+      "Ulegasz nienaturalnej chęci jedzenia. Gdy pochłaniasz grzyb za grzybem, wpadasz w odurzenie i tracisz przytomność. Po przebudzeniu czujesz się bardzo dziwnie. NL #gPrzywracasz #b25% #gPŻ, ale zostajesz też #rzarażony.",
+      "#r@Zasadzka!!@ NL Gryzonie zarażone grzybami pojawiają się znikąd!",
+      "Wchodzisz do korytarza pełnego #b~hipnotyzujących~ #b~kolorowych~ #b~grzybów.~ NL Te grzyby w niczym nie przypominają żadnych, jakie widziałeś. NL Chcesz zebrać część z nich, ale dziwnie czujesz przymus, by zjeść #b~jednego...~"
+    ],
+    "OPTIONS": [
+      "[Zbierz] #rRozsierdź #rgrzyby.",
+      "[Zjedz] #gPrzywróć #g",
+      " #gPŻ. #rOtrzymaj #rKlątwę #r- #rPasożyt.",
+      "[Walcz]",
+      "[Odejdź]"
+    ]
+  },
+  "OrinTheCat": {
+    "NAME": "Czarny kot",
+    "DESCRIPTIONS": [
+      "#yCzarny #bkot, który pojawił się znikąd, zatrzymuje się przed tobą i zagradza ci drogę. NL Kot cuchnie #r~Śmiercią~ #r~i~ #r~Nieszczęściem~, a gdy na ciebie patrzy, czujesz dreszcz na plecach. NL Miauczy do ciebie, próbując przyciągnąć twoją uwagę.",
+      "Wygląda na to, że kot nie chce cię tak puścić. Pokazuje pazury i kły i rzuca się na ciebie...",
+      "Kot wydaje się usatysfakcjonowany i ucieka, ale wciąż czujesz zapach #r~Śmierci~ #r~i~ #r~Nieszczęścia...~",
+      "Kot wskoczył w twoje objęcia... Wygląda na to, że masz teraz towarzysza.",
+      "Widząc, że go ignorujesz, kot po prostu odszedł."
+    ],
+    "OPTIONS": [
+      "[Pogłaszcz kota] #rOtrzymaj #rKlątwę #r- #rUpiór.",
+      "[Zignoruj kota] #gSpróbuj #godejść #gnatychmiast.",
+      "[Walcz]",
+      "[Odejdź]",
+      "[Pogłaszcz kota]"
+    ]
+  }
+}

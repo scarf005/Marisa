@@ -1,0 +1,442 @@
+{
+  "${modId}:Strike_MRS": {
+    "NAME": "Prosta Iskra",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń."
+  },
+  "${modId}:Defend_MRS": {
+    "NAME": "Obrona",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku."
+  },
+  "${modId}:AsteroidBelt": {
+    "NAME": "Pas asteroid",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku. NL Wzmocnienie [E] : W następnej turze zyskaj !B! pkt. Bloku."
+  },
+  "${modId}:BigCrunch": {
+    "NAME": "Wielki kolaps",
+    "DESCRIPTION": "Wyklucz połowę kart ze stosu kart odrzuconych i stosu rozgrywającego. Za każde !M! Wykluczone karty zyskaj [E] i dobierz 1 kartę. NL Wykluczenie."
+  },
+  "${modId}:BlazingStar": {
+    "NAME": "Płonąca gwiazda",
+    "DESCRIPTION": "Zadaj !B! pkt. obrażeń. Zadaje dodatkowe !M! pkt. obrażeń za każde Poparzenie w twojej ręce. NL Wzmocnienie [E] : Zadaj podwójne obrażenia."
+  },
+  "${modId}:DarkSpark": {
+    "NAME": "Mroczna Iskra",
+    "DESCRIPTION": "Wyklucz !M! kart z góry stosu rozgrywającego. Za każdą Wykluczoną kartę Ataku zadaj !D! pkt. obrażeń WSZYSTKIM przeciwnikom."
+  },
+  "${modId}:DeepEcoloBomb": {
+    "NAME": "Głęboka bomba ekologiczna",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń losowemu przeciwnikowi, a następnie odbierz mu !M! pkt. Siły w tej turze. NL Wzmocnienie [E] : Zastosuj ten efekt ponownie."
+  },
+  "${modId}:DoubleSpark": {
+    "NAME": "Podwójna Iskra",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. Dodaj 1 Iskrę do ręki.",
+    "UPGRADE_DESCRIPTION": "Zadaj !D! pkt. obrażeń. Dodaj 1 Ulepszoną Iskrę do ręki."
+  },
+  "${modId}:EarthLightRay": {
+    "NAME": "Promień światła Ziemi",
+    "DESCRIPTION": "Przywróć !M! PŻ. Wykluczenie. NL Wzmocnienie [E] : Umieść losową kartę ze stosu kart odrzuconych w ręce.",
+    "UPGRADE_DESCRIPTION": "Przywróć !M! PŻ. Wykluczenie. NL Wzmocnienie [E] : Umieść wybraną kartę ze stosu kart odrzuconych w ręce."
+  },
+  "${modId}:EscapeVelocity": {
+    "NAME": "Prędkość ucieczki",
+    "DESCRIPTION": "Na początku każdej tury dobierz o 2 karty więcej i dodaj Poparzenie do ręki.",
+    "UPGRADE_DESCRIPTION": "Startowa. Na początku każdej tury dobierz o 2 karty więcej i dodaj Poparzenie do ręki."
+  },
+  "${modId}:FinalSpark": {
+    "NAME": "Ostatnia Iskra",
+    "DESCRIPTION": "Kosztuje o 1 [E] mniej za każdą kartę z \"Iskrą\" w nazwie zagraną w tej walce. NL Zadaj !D! pkt. obrażeń WSZYSTKIM przeciwnikom. NL Zresetuj koszt tej karty.",
+    "UPGRADE_DESCRIPTION": "Zachowanie. NL Kosztuje o 1 [E] mniej za każdą kartę z \"Iskrą\" w nazwie zagraną w tej walce. NL Zadaj !D! pkt. obrażeń WSZYSTKIM przeciwnikom. NL Zresetuj koszt tej karty."
+  },
+  "${modId}:GrandCross": {
+    "NAME": "Wielki krzyż",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. NL Kosztuje 0, jeśli w tej turze aktywowano efekt Wzmocnienia."
+  },
+  "${modId}:GravityBeat": {
+    "NAME": "Grawitacyjny cios",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń i dobierz kartę za każde !B! kart w twojej talii.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " raz(y))."
+    ]
+  },
+  "${modId}:IllusionStar": {
+    "NAME": "Gwiazda iluzji",
+    "DESCRIPTION": "Dodaj !M! losowe karty do ręki. Połóż kartę z ręki na górze stosu rozgrywającego. NL Wykluczenie.",
+    "UPGRADE_DESCRIPTION": "Dodaj !M! losowe karty do ręki. Połóż kartę z ręki na górze stosu rozgrywającego."
+  },
+  "${modId}:MachineGunSpark": {
+    "NAME": "Karabin Iskier",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń !M! razy. NL Wykluczenie."
+  },
+  "${modId}:MagicAbsorber": {
+    "NAME": "Pochłaniacz magii",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku. Usuń z siebie losowy negatywny efekt. NL Wykluczenie."
+  },
+  "${modId}:MasterSpark": {
+    "NAME": "Mistrzowska Iskra",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. NL Wzmocnienie [E] : Zadaj zamiast tego !B! pkt. obrażeń."
+  },
+  "${modId}:MeteoricShower": {
+    "NAME": "Deszcz meteorów",
+    "DESCRIPTION": "Wyklucz do X + 1 kart. NL Za każdą Wykluczoną kartę zadaj !D! pkt. obrażeń losowemu przeciwnikowi 2 razy, a za każde Wykluczone Poparzenie 3 razy."
+  },
+  "${modId}:MilkyWay": {
+    "NAME": "Droga Mleczna",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku. Dobierz 1 kartę. NL WSZYSTKIE karty Ataku w twojej ręce zadają !M! pkt. obrażeń więcej w tej walce."
+  },
+  "${modId}:NonDirectionalLaser": {
+    "NAME": "Laser bezkierunkowy",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń WSZYSTKIM przeciwnikom, a następnie zadaj !D! pkt. obrażeń losowemu przeciwnikowi."
+  },
+  "${modId}:Occultation": {
+    "NAME": "Okultacja",
+    "DESCRIPTION": "Odrzuć swój stos rozgrywający. Zyskaj 1 pkt. Bloku za każdą odrzuconą kartę.",
+    "UPGRADE_DESCRIPTION": "Odrzuć swój stos rozgrywający. Zyskaj 1 pkt. Bloku za każdą odrzuconą kartę +3.",
+    "EXTENDED_DESCRIPTION": [
+      "(Łącznie zyskasz !B! pkt.)",
+      ""
+    ]
+  },
+  "${modId}:OortCloud": {
+    "NAME": "Obłok Oorta",
+    "DESCRIPTION": "Zyskaj !M! pkt. Pancerza. NL Wzmocnienie [E] : Zyskaj o !B! pkt. Pancerza więcej.",
+    "UPGRADE_DESCRIPTION": "Zyskaj !M! pkt. Pancerza. NL Wzmocnienie [E] : Zyskaj o 3 pkt. Pancerza więcej."
+  },
+  "${modId}:PolarisUnique": {
+    "NAME": "Gwiazda Polarna",
+    "DESCRIPTION": "Startowa. Wtasuj Gwiazdę przewodnią do stosu rozgrywającego. Na początku tury zyskaj [E] , dopóki jest w twoim stosie rozgrywającym (nie kumuluje się).",
+    "UPGRADE_DESCRIPTION": "Startowa. Wtasuj Gwiazdę przewodnią do stosu rozgrywającego. Na początku tury zyskaj [E] , dopóki jest w twoim stosie rozgrywającym."
+  },
+  "${modId}:SatelliteIllusion": {
+    "NAME": "Iluzja satelity",
+    "DESCRIPTION": "Zyskaj [E] , gdy liczba kart w twoim stosie rozgrywającym wzrośnie w trakcie twojej tury.",
+    "UPGRADE_DESCRIPTION": "Startowa. Zyskaj [E] , gdy liczba kart w twoim stosie rozgrywającym wzrośnie w trakcie twojej tury."
+  },
+  "${modId}:ShootTheMoon": {
+    "NAME": "Zestrzel Księżyc",
+    "DESCRIPTION": "Usuń losowy pozytywny efekt z celu, jeśli nie jest Bossem. Zadaj !D! pkt. obrażeń. NL Wzmocnienie [E] : Usuń WSZYSTKIE pozytywne efekty i zadaj zamiast tego !B! pkt. obrażeń."
+  },
+  "${modId}:StarDustReverie": {
+    "NAME": "Marzenie z gwiezdnego pyłu",
+    "DESCRIPTION": "Wtasuj rękę do stosu rozgrywającego, a następnie dodaj do ręki tyle samo losowych kart. NL Wykluczenie.",
+    "UPGRADE_DESCRIPTION": "Wtasuj rękę do stosu rozgrywającego, a następnie dodaj do ręki tyle samo losowych Ulepszonych kart. NL Wykluczenie."
+  },
+  "${modId}:UltraShortWave": {
+    "NAME": "Fala ultrakrótka",
+    "DESCRIPTION": "Zyskaj !B! [E] i !M! pkt. Ładowania. Zwiększ o 1 zysk energii i Ładowania z tej karty do końca walki."
+  },
+  "${modId}:MillisecondPulsars": {
+    "NAME": "Pulsary milisekundowe",
+    "DESCRIPTION": "Efekty Wzmocnienia nie kosztują [E] w tej walce.",
+    "UPGRADE_DESCRIPTION": "Startowa. NL Efekty Wzmocnienia nie kosztują [E] w tej walce."
+  },
+  "${modId}:Spark": {
+    "NAME": "Iskra",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. NL Wykluczenie."
+  },
+  "${modId}:UpSweep": {
+    "NAME": "Zamach w górę",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. Zyskaj !M! pkt. Ładowania."
+  },
+  "${modId}:GuidingStar": {
+    "NAME": "Gwiazda przewodnia",
+    "DESCRIPTION": "Zachowanie. NL Jeśli ta karta jest w twojej ręce na początku tury, zyskaj [E]."
+  },
+  "${modId}:OrrerysSun": {
+    "NAME": "Słońce planetarium",
+    "DESCRIPTION": "Za każdym razem, gdy zużyjesz Ładowanie, zyskaj !M! pkt. Bloku."
+  },
+  "${modId}:ChargingUp": {
+    "NAME": "Doładowanie",
+    "DESCRIPTION": "Zyskaj !M! pkt. Ładowania. NL Wykluczenie.",
+    "UPGRADE_DESCRIPTION": "Zyskaj !M! pkt. Ładowania. NL Wzmocnienie [E] : Zyskaj dodatkowe 3 pkt."
+  },
+  "${modId}:LuminesStrike": {
+    "NAME": "Świetlisty cios",
+    "DESCRIPTION": "Zadaj obrażenia równe 2-krotności liczby kart w ręce ( !D! pkt. obrażeń). NL Wzmocnienie [E] : Zadaj zamiast tego obrażenia równe 4-krotności swojej obecnej energii ( !B! pkt. obrażeń).",
+    "UPGRADE_DESCRIPTION": "Zadaj obrażenia równe 3-krotności liczby kart w ręce ( !D! pkt. obrażeń). NL Wzmocnienie [E] : Zadaj zamiast tego obrażenia równe 5-krotności swojej obecnej energii ( !B! pkt. obrażeń)."
+  },
+  "${modId}:OpenUniverse": {
+    "NAME": "Otwarty wszechświat",
+    "DESCRIPTION": "Wtasuj 5 losowych kart do stosu rozgrywającego. Każda z nich ma !D! % szans na bycie Ulepszoną. NL Dobierz !M! karty.",
+    "UPGRADE_DESCRIPTION": "Wtasuj 5 losowych kart do stosu rozgrywającego. Dobierz !M! karty."
+  },
+  "${modId}:BlazeAway": {
+    "NAME": "Ogniowa salwa",
+    "DESCRIPTION": "Zagraj ostatnią kartę Ataku zagraną w tej turze !M! raz(y). NL Wykluczenie.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Ostatni Atak: ",
+      ").",
+      " NL (W tej turze nie zagrano jeszcze Ataku.)"
+    ]
+  },
+  "${modId}:MaximisePower": {
+    "NAME": "Pełna moc",
+    "DESCRIPTION": "Zamień swoje Ładowanie na energię. Dodaj 1 Wyczerpanie do ręki. Twoje obrażenia od Ataków są podwojone w tej turze. NL Wykluczenie.",
+    "UPGRADE_DESCRIPTION": "Zamień swoje Ładowanie na energię. Dodaj 1 Wyczerpanie do ręki. NL Twoje obrażenia od Ataków są podwojone w tej turze."
+  },
+  "${modId}:StarlightTyphoon": {
+    "NAME": "Gwiezdny tajfun",
+    "DESCRIPTION": "Wyklucz WSZYSTKIE karty inne niż Ataki z ręki. Dodaj do ręki tyle samo Iskier.",
+    "UPGRADE_DESCRIPTION": "Wyklucz WSZYSTKIE karty inne niż Ataki z ręki. Dodaj do ręki tyle samo Ulepszonych Iskier.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Zadaje !B! pkt. obrażeń.)",
+      ""
+    ]
+  },
+  "${modId}:StarlightTyphoon_D": {
+    "NAME": "Gwiezdny tajfun",
+    "DESCRIPTION": "Wyklucz WSZYSTKIE karty inne niż Ataki z ręki. Dodaj do ręki tyle samo Iskier.",
+    "UPGRADE_DESCRIPTION": "Wyklucz WSZYSTKIE karty inne niż Ataki z ręki. Dodaj do ręki tyle samo Ulepszonych Iskier."
+  },
+  "${modId}:SuperPerseids": {
+    "NAME": "Super Perseidy",
+    "DESCRIPTION": "Niezagrywalna. Po dobraniu tej karty zyskaj [E]. NL Jeśli ta karta zostanie Wykluczona, zadaj !D! pkt. obrażeń losowemu przeciwnikowi."
+  },
+  "${modId}:MysteriousBeam": {
+    "NAME": "Tajemniczy promień",
+    "DESCRIPTION": "Dodaj losową kartę Ataku do ręki. Zadaj obrażenia równe obrażeniom dodanej karty.",
+    "UPGRADE_DESCRIPTION": "Dodaj losową Ulepszoną kartę Ataku do ręki. Zadaj obrażenia równe obrażeniom dodanej karty."
+  },
+  "${modId}:ShootingEcho": {
+    "NAME": "Strzelające echo",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. NL Wyklucz kartę. NL Jeśli Wykluczona karta to Poparzenie, umieść tę kartę z powrotem w ręce.",
+    "UPGRADE_DESCRIPTION": "Wyklucz kartę. Dodaj Ulepszone Strzelające echo do ręki. NL Zadaj !D! pkt. obrażeń. NL Wykluczenie."
+  },
+  "${modId}:EnergyFlow": {
+    "NAME": "Przepływ energii",
+    "DESCRIPTION": "Na koniec tury zyskaj !M! pkt. Ładowania."
+  },
+  "${modId}:PowerUp": {
+    "NAME": "Podkręcenie!",
+    "DESCRIPTION": "WSZYSTKIE karty Ataku w twojej ręce zadają !M! pkt. obrażeń więcej w tej walce."
+  },
+  "${modId}:WitchLeyline": {
+    "NAME": "Czarownicza linia Ley",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. Dodaj !M! Poparzenia do ręki."
+  },
+  "${modId}:JA": {
+    "NAME": "Rozgrzewka",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. Dodaj do ręki *Zamach *w *górę, *Iskrę i *Czarowniczą *linię *Ley.",
+    "UPGRADE_DESCRIPTION": "Zadaj !D! pkt. obrażeń. Dodaj *Zamach *w *górę+, *Iskrę+ i *Czarowniczą *linię *Ley+."
+  },
+  "${modId}:AbsoluteMagnitude": {
+    "NAME": "Wielkość absolutna",
+    "DESCRIPTION": "Zadaj obrażenia równe 2-krotności swojego Ładowania (zadaje !D! pkt. obrażeń).",
+    "UPGRADE_DESCRIPTION": "Zadaj obrażenia równe 3-krotności swojego Ładowania (zadaje !D! pkt. obrażeń)."
+  },
+  "${modId}:DragonMeteor": {
+    "NAME": "Smoczy meteor",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. NL Zadaje dodatkowe !M! pkt. obrażeń za każdą kartę w twoim stosie wykluczonych."
+  },
+  "${modId}:EventHorizon": {
+    "NAME": "Horyzont zdarzeń",
+    "DESCRIPTION": "!M! raz(y) na turę, gdy aktywujesz efekt Wzmocnienia, możesz wziąć kartę Ataku ze stosu kart odrzuconych do ręki."
+  },
+  "${modId}:PulseMagic": {
+    "NAME": "Magia impulsowa",
+    "DESCRIPTION": "W następnej turze zyskaj [E]. Wzmocnienie [E] : Efekty Wzmocnienia nie kosztują [E] w tej turze.",
+    "UPGRADE_DESCRIPTION": "W następnej turze zyskaj [E] [E]. Wzmocnienie [E] : Efekty Wzmocnienia nie kosztują [E] w tej turze."
+  },
+  "${modId}:DC": {
+    "NAME": "66C",
+    "DESCRIPTION": "Startowa. NL Zadaj !D! pkt. obrażeń. NL Zadaje podwójne obrażenia, jeśli w stosie kart odrzuconych nie ma żadnych kart."
+  },
+  "${modId}:Singularity": {
+    "NAME": "Osobliwość",
+    "DESCRIPTION": "Za każdym razem, gdy zagrasz kartę kosztującą 0, zwiększ o !M! obrażenia losowej karty Ataku w ręce."
+  },
+  "${modId}:SporeBomb": {
+    "NAME": "Zgniot zarodników",
+    "DESCRIPTION": "Nałóż !M! pkt. Wrażliwości na przeciwnika. NL Wzmocnienie [E] : Nałóż zamiast tego !M! pkt. Wrażliwości na WSZYSTKICH przeciwników.",
+    "UPGRADE_DESCRIPTION": "Nałóż !M! pkt. Wrażliwości na WSZYSTKICH przeciwników. NL Wzmocnienie [E] : O 1 pkt. więcej."
+  },
+  "${modId}:FluorensentBeam": {
+    "NAME": "Promień fluorescencyjny",
+    "DESCRIPTION": "WSZYSCY przeciwnicy tracą !D! PŻ. NL Wzmocnienie [E] [E] : Zadaj zamiast tego !B! pkt."
+  },
+  "${modId}:WitchOfGreed": {
+    "NAME": "Wiedźma chciwości",
+    "DESCRIPTION": "Na koniec walki zyskaj !M! szt. złota. NL Wzmocnienie [E] : Zdobądź też losową miksturę."
+  },
+  "${modId}:TreasureHunter": {
+    "NAME": "Łowca skarbów",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. NL Jeśli zabijesz tym przeciwnika niebędącego sługą w pokoju Elity lub Bossa, na koniec walki zdobądź 1 losowy artefakt. NL Wykluczenie."
+  },
+  "${modId}:Robbery": {
+    "NAME": "Rabunek",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. Zyskaj złoto równe zadanym niezablokowanym obrażeniom. NL Wykluczenie. NL Wzmocnienie [E] : Podwój zdobyte złoto."
+  },
+  "${modId}:6A": {
+    "NAME": "6A",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. Zyskaj Blok równy zadanym niezablokowanym obrażeniom."
+  },
+  "${modId}:CircumpolarStar": {
+    "NAME": "Gwiazda okołobiegunowa",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku. Dobierz !M! kart(y). Zwiększ o 1 liczbę kart dobieranych przez tę kartę do końca walki."
+  },
+  "${modId}:RefractionSpark": {
+    "NAME": "Iskra załamania",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. Zwiększ obrażenia WSZYSTKICH kart Iskry w twojej ręce o zadane niezablokowane obrażenia. NL Wzmocnienie [E] : Zadaj zamiast tego !B! pkt. obrażeń."
+  },
+  "${modId}:MagicChant": {
+    "NAME": "Magiczna inkantacja",
+    "DESCRIPTION": "Wybierz kartę ze stosu rozgrywającego, dodaj ją do ręki i ulepsz ją. NL Wykluczenie.",
+    "UPGRADE_DESCRIPTION": "Wybierz kartę ze stosu rozgrywającego, dodaj ją do ręki i ulepsz ją."
+  },
+  "${modId}:UnstableBomb": {
+    "NAME": "Niestabilna bomba",
+    "DESCRIPTION": "Zadaj losowe obrażenia (od !D! do !B! pkt.) losowemu przeciwnikowi 4 razy."
+  },
+  "${modId}:SuperNova": {
+    "NAME": "Supernowa",
+    "DESCRIPTION": "Nie otrzymujesz już obrażeń od Poparzenia. Za każdym razem, gdy Wykluczysz Poparzenie, zyskaj !M! pkt. Siły. NL Wyklucz swoją rękę na koniec każdej tury.",
+    "UPGRADE_DESCRIPTION": "Startowa. NL Nie otrzymujesz już obrażeń od Poparzenia. Za każdym razem, gdy Wykluczysz Poparzenie, zyskaj 1 pkt. Siły. NL Wyklucz swoją rękę na koniec każdej tury."
+  },
+  "${modId}:OneTimeOff": {
+    "NAME": "Jednorazowa przerwa",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku. Nie możesz aktywować efektów Wzmocnienia w tej turze. NL W następnej turze dobierz !M! kart(y).",
+    "UPGRADE_DESCRIPTION": "Zyskaj !B! pkt. Bloku. Nie możesz aktywować efektów Wzmocnienia ani zużywać Ładowania w tej turze. NL W następnej turze dobierz !M! kart(y)."
+  },
+  "${modId}:DarkMatter": {
+    "NAME": "Ciemna materia",
+    "DESCRIPTION": "Można zagrać tylko raz na turę. NL Wtasuj 2 kopie tej karty do stosu rozgrywającego. Dobierz 1 kartę. Gdy ta karta zostanie Wykluczona, zyskaj !B! pkt. Bloku. NL Eteryczna.",
+    "UPGRADE_DESCRIPTION": "Można zagrać tylko raz na turę. NL Wtasuj 2 kopie tej karty do stosu rozgrywającego. Dobierz 1 kartę. Gdy ta karta zostanie Wykluczona, zyskaj !B! pkt. Bloku. NL Eteryczna.",
+    "EXTENDED_DESCRIPTION": [
+      "Nie mogę znowu zagrać Ciemnej materii w tej turze.",
+      ""
+    ]
+  },
+  "${modId}:GasGiant": {
+    "NAME": "Gazowy olbrzym",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku. Dodaj !M! Poparzenie do ręki."
+  },
+  "${modId}:CasketOfStar": {
+    "NAME": "Szkatułka gwiazd",
+    "DESCRIPTION": "Za każdym razem, gdy zyskasz Blok, dodaj Iskrę do ręki.",
+    "UPGRADE_DESCRIPTION": "Za każdym razem, gdy zyskasz Blok, dodaj Ulepszoną Iskrę do ręki."
+  },
+  "${modId}:ChargeUpSpray": {
+    "NAME": "Seria ładowania",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń. NL Jeśli ta karta zużyje Ładowanie, zyskaj [E] i dobierz !M! karty."
+  },
+  "${modId}:EnergyRecoil": {
+    "NAME": "Odrzut energii",
+    "DESCRIPTION": "Zyskaj Blok równy swojemu Ładowaniu.",
+    "UPGRADE_DESCRIPTION": "Zyskaj Blok równy swojemu Ładowaniu + 3.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Zyskasz ",
+      " pkt. Bloku.)"
+    ]
+  },
+  "${modId}:GalacticHalo": {
+    "NAME": "Halo galaktyki",
+    "DESCRIPTION": "Zyskaj !B! pkt. Bloku i !M! pkt. Ładowania."
+  },
+  "${modId}:ManaConvection": {
+    "NAME": "Konwekcja many",
+    "DESCRIPTION": "Wyklucz do !M! kart, za każdą Wykluczoną kartę zyskaj [E]. NL Wykluczenie."
+  },
+  "${modId}:ManaRampage": {
+    "NAME": "Szał many",
+    "DESCRIPTION": "Zagraj X losowych kart Ataku.",
+    "UPGRADE_DESCRIPTION": "Zagraj X losowych Ulepszonych kart Ataku."
+  },
+  "${modId}:StarBarrage": {
+    "NAME": "Gwiezdna nawałnica",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń !M! raz(y). NL Za każdym razem, gdy zagrasz tę kartę, zadaje obrażenia o 1 raz więcej do końca walki."
+  },
+  "${modId}:AFriendsGift": {
+    "NAME": "Dar przyjaciela",
+    "DESCRIPTION": "Niezagrywalna. Podmień ją na losową kartę z trzech konkretnych kart.",
+    "UPGRADE_DESCRIPTION": "Zachowanie. Zadaj !D! pkt. obrażeń. Zwiększ obrażenia o 2 na początku swojej tury. Wykluczenie. NL Wzmocnienie [E] : Zadaj zamiast tego !B! pkt. obrażeń, nie Wykluczaj."
+  },
+  "${modId}:BinaryStars": {
+    "NAME": "Gwiazdy podwójne",
+    "DESCRIPTION": "Wybierz i dodaj do ręki Czarną Gwiazdę Rozbłysku albo Białego Karła. NL Wzmocnienie [E] : Dodaj zamiast tego obie.",
+    "UPGRADE_DESCRIPTION": "Wybierz i dodaj do ręki ulepszoną Czarną Gwiazdę Rozbłysku albo Białego Karła. NL Wzmocnienie [E] : Dodaj zamiast tego obie."
+  },
+  "${modId}:CollectingQuirk": {
+    "NAME": "Mania kolekcjonera",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń losowemu przeciwnikowi za każde !M! artefakty, które posiadasz.",
+    "EXTENDED_DESCRIPTION": [
+      "(Zada obrażenia !B! raz(y))",
+      ""
+    ]
+  },
+  "${modId}:FungusSplash": {
+    "NAME": "Grzybowy napar",
+    "DESCRIPTION": "Wyklucz kartę. Rzuć miksturą w cel. NL Typ mikstury zależy od typu Wykluczonej karty. NL Wykluczenie.",
+    "UPGRADE_DESCRIPTION": "Wyklucz kartę. Rzuć miksturą w cel. NL Typ mikstury zależy od typu Wykluczonej karty."
+  },
+  "${modId}:PropBag": {
+    "NAME": "Przenośna torba rekwizytów",
+    "DESCRIPTION": "Zdobądź losowy artefakt. NL Utrać artefakt po zakończeniu walki. NL Wykluczenie.",
+    "UPGRADE_DESCRIPTION": "Startowa. NL Zdobądź losowy artefakt. NL Utrać artefakt po zakończeniu walki. NL Wykluczenie."
+  },
+  "${modId}:BlackFlareStar": {
+    "NAME": "Czarna Gwiazda Rozbłysku",
+    "DESCRIPTION": "Można zagrać tylko, gdy masz w ręce 4 lub więcej kart. Wykluczenie. NL Odrzuć dowolną liczbę kart z ręki i zyskaj !B! pkt. Bloku za każdą.",
+    "EXTENDED_DESCRIPTION": [
+      "Nie mam 4 kart w ręce.",
+      ""
+    ]
+  },
+  "${modId}:WhiteDwarf": {
+    "NAME": "Biały Karzeł",
+    "DESCRIPTION": "Można zagrać tylko, gdy masz w ręce 4 lub mniej kart. Wykluczenie. NL Zadaj !D! pkt. obrażeń (2 × rozmiar stosu kart odrzuconych). Dodaj 2 Poparzenia do ręki.",
+    "UPGRADE_DESCRIPTION": "Można zagrać tylko, gdy masz w ręce 4 lub mniej kart. Wykluczenie. NL Zadaj !D! pkt. obrażeń (3 × rozmiar stosu kart odrzuconych). Dodaj 2 Poparzenia do ręki.",
+    "EXTENDED_DESCRIPTION": [
+      "Mam w ręce więcej niż 4 karty.",
+      ""
+    ]
+  },
+  "${modId}:FairyDestructionRay": {
+    "NAME": "Promień zniszczenia wróżki",
+    "DESCRIPTION": "Zadaj !D! pkt. obrażeń WSZYSTKIM przeciwnikom. Wzmocnienie [E] [E] : Natychmiast zabij tych, którzy mają !M! PŻ lub mniej."
+  },
+  "${modId}:Orbital": {
+    "NAME": "Orbita",
+    "DESCRIPTION": "Niezagrywalna. Po dobraniu tej karty dobierz 1 kartę. NL Jeśli ta karta zostanie Wykluczona, umieść !M! kart(y) ze stosu wykluczonych w ręce."
+  },
+  "${modId}:ExplosiveMarionette": {
+    "NAME": "Wybuchowa marionetka",
+    "DESCRIPTION": "Zachowanie. Zadaj !D! pkt. obrażeń. NL Wzmocnienie [E] : Zadaj podwójne obrażenia. Wykluczenie."
+  },
+  "${modId}:OpticalCamouflage": {
+    "NAME": "Kamuflaż optyczny",
+    "DESCRIPTION": "Zachowanie. Zyskaj !B! pkt. Bloku. NL Wzmocnienie [E] : Zyskaj podwójną ilość. Wykluczenie."
+  },
+  "${modId}:FiveColoredTalisman": {
+    "NAME": "Pięciokolorowy talizman",
+    "DESCRIPTION": "Zachowanie. Na początku tury dodaj do ręki losową kartę Umiejętności."
+  },
+  "${modId}:AlicesGift": {
+    "NAME": "Dar Alicji",
+    "DESCRIPTION": "Zachowanie. Zadaj !D! pkt. obrażeń. NL Wzmocnienie [E] [E] : Zadaj potrójne obrażenia. NL Wykluczenie."
+  },
+  "${modId}:Exhaustion_MRS": {
+    "NAME": "Wyczerpanie",
+    "DESCRIPTION": "Niezagrywalna. NL Dopóki jest w ręce, nie możesz zyskiwać ani zużywać Ładowania."
+  },
+  "${modId}:UltimateShortwave": {
+    "NAME": "Fala ultrakrótka",
+    "DESCRIPTION": "Zyskaj !B! [E] i !M! pkt. Ładowania. Zwiększ o !D! zysk Ładowania z tej karty, a o 1 zysk energii do końca walki."
+  },
+  "${modId}:NebulaRing": {
+    "NAME": "Pierścień mgławicy",
+    "DESCRIPTION": "Zyskaj !M! pkt. Pancerza za każdym razem, gdy stracisz Blok przez przeciwników lub karty."
+  },
+  "${modId}:SprinkleStarSeal": {
+    "NAME": "Pieczęć sypiących się gwiazd",
+    "DESCRIPTION": "Nałóż 99 pkt. Słabości. NL Wykluczenie."
+  },
+  "${modId}:Wraith": {
+    "NAME": "Upiór",
+    "DESCRIPTION": "Niezagrywalna. NL Na koniec tury zyskaj 1 pkt. Upiora."
+  },
+  "${modId}:Acceleration": {
+    "NAME": "Przyspieszenie",
+    "DESCRIPTION": "Dobierz !B! karty. NL Wzmocnienie [E] : Dobierz o !M! więcej."
+  }
+}

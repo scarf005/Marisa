@@ -1,0 +1,273 @@
+{
+  "${modId}:DarkMatterPower": {
+    "NAME": "Ciemna materia",
+    "DESCRIPTIONS": [
+      "Nie możesz już zagrać #yCiemnej #ymaterii w tej turze.",
+      ""
+    ]
+  },
+  "${modId}:ExtraDraw": {
+    "NAME": "Prędkość ucieczki",
+    "DESCRIPTIONS": [
+      "Na początku każdej tury dobierz dodatkowe karty: #b",
+      " i dodaj do ręki #yPoparzenia: #b",
+      "."
+    ]
+  },
+  "${modId}:EventHorizonPower": {
+    "NAME": "Horyzont zdarzeń",
+    "DESCRIPTIONS": [
+      "Gdy aktywujesz efekt #yWzmocnienia, możesz wziąć kartę Ataku ze stosu kart odrzuconych do ręki, maksymalnie #b",
+      " raz(y) na turę.",
+      "(Pozostało ",
+      " raz(y))"
+    ]
+  },
+  "${modId}:IllusionStarPower": {
+    "NAME": "Gwiazda iluzji",
+    "DESCRIPTIONS": [
+      "Na początku tury podmień #b",
+      " kart(y) z ręki."
+    ]
+  },
+  "${modId}:MilliPulsaPower": {
+    "NAME": "Pulsary milisekundowe",
+    "DESCRIPTIONS": [
+      "Efekty #yWzmocnienia nie wymagają już dodatkowej [E] do aktywacji.",
+      ""
+    ]
+  },
+  "${modId}:SatellIllusPower": {
+    "NAME": "Iluzja satelity",
+    "DESCRIPTIONS": [
+      "Gdy zagrasz kartę, której nie ma w twojej talii, dobierz #b",
+      " kartę."
+    ]
+  },
+  "${modId}:TempStrength": {
+    "NAME": "Tymczasowa Siła",
+    "DESCRIPTIONS": [
+      "Twój następny cios zadaje dodatkowe #b",
+      " pkt. obrażeń."
+    ]
+  },
+  "${modId}:TempStrengthLoss": {
+    "NAME": "Tymczasowa utrata Siły",
+    "DESCRIPTIONS": [
+      "Obrażenia tej istoty są zmniejszone o #b",
+      " w tej turze."
+    ]
+  },
+  "${modId}:ExtraEnergyPower": {
+    "NAME": "Dodatkowa energia",
+    "DESCRIPTIONS": [
+      "Zyskuj dodatkowo ",
+      " energii w każdej turze."
+    ]
+  },
+  "${modId}:ChargeUpPower": {
+    "NAME": "Ładowanie",
+    "DESCRIPTIONS": [
+      "Masz #b",
+      " pkt. #yŁadowania ",
+      " co zwiększa twoje obrażenia #b",
+      " razy."
+    ]
+  },
+  "${modId}:PolarisUniquePower": {
+    "NAME": "Gwiazda przewodnia",
+    "DESCRIPTIONS": [
+      "Jeśli #yGwiazda #yprzewodnia jest w twoim stosie rozgrywającym, zyskaj dodatkową [E] na początku każdej tury."
+    ]
+  },
+  "${modId}:OrrerysSunPower": {
+    "NAME": "Słońce planetarium",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy zużyjesz #yŁadowanie, zyskaj #b",
+      " pkt. Bloku."
+    ]
+  },
+  "${modId}:Charged": {
+    "NAME": "Naładowanie!",
+    "DESCRIPTIONS": [
+      "Twój następny cios zada #b",
+      " razy większe obrażenia."
+    ]
+  },
+  "${modId}:BlazeAwayPower": {
+    "NAME": "Ogniowa salwa",
+    "DESCRIPTIONS": [
+      "Doda #b",
+      " kopii następnej zagranej karty Ataku."
+    ]
+  },
+  "${modId}:MPPower": {
+    "NAME": "Pełna moc",
+    "DESCRIPTIONS": [
+      "Twoje obrażenia są pomnożone przez #b",
+      " w tej turze."
+    ]
+  },
+  "${modId}:EnergyFlowPower": {
+    "NAME": "Przepływ energii",
+    "DESCRIPTIONS": [
+      "Na koniec tury zyskaj #b",
+      " pkt. #yŁadowania."
+    ]
+  },
+  "${modId}:PulseMagicPower": {
+    "NAME": "Magia impulsowa",
+    "DESCRIPTIONS": [
+      "Nie musisz płacić [E] , aby aktywować efekty #yWzmocnienia w tej turze."
+    ]
+  },
+  "${modId}:SingularityPower": {
+    "NAME": "Osobliwość",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy zagrasz kartę kosztującą 0, losowa karta #yAtaku w twojej ręce zadaje #b",
+      " pkt. obrażeń więcej w tej walce."
+    ]
+  },
+  "${modId}:WitchOfGreedGold": {
+    "NAME": "Wiedźma chciwości",
+    "DESCRIPTIONS": [
+      "Na koniec walki zyskaj #b",
+      " szt. złota."
+    ]
+  },
+  "${modId}:WitchOfGreedPotion": {
+    "NAME": "Wiedźma chciwości",
+    "DESCRIPTIONS": [
+      "Na koniec walki zdobądź #b",
+      " losową miksturę."
+    ]
+  },
+  "${modId}:OneTimeOffPlusPower": {
+    "NAME": "Jednorazowa przerwa",
+    "DESCRIPTIONS": [
+      "W tej turze nie aktywujesz #yWzmocnienia ani #yŁadowania."
+    ]
+  },
+  "${modId}:OneTimeOffPower": {
+    "NAME": "Jednorazowa przerwa",
+    "DESCRIPTIONS": [
+      "W tej turze nie aktywujesz #yWzmocnienia."
+    ]
+  },
+  "${modId}:SuperNovaPower": {
+    "NAME": "Supernowa",
+    "DESCRIPTIONS": [
+      "Gdy #yWykluczysz #yPoparzenie, zyskaj #b",
+      "Gdy #yWykluczysz #yKlątwę lub kartę #yStanu, zyskaj #b",
+      " pkt. #ySiły. NL Nie otrzymujesz już obrażeń od #yPoparzenia. NL #yWyklucz swoją rękę na koniec tury."
+    ]
+  },
+  "${modId}:CasketOfStarPlusPower": {
+    "NAME": "Szkatułka gwiazd",
+    "DESCRIPTIONS": [
+      "Dodaj #b",
+      " #yulepszoną #yIskrę do ręki za każdym razem, gdy zyskasz #yBlok."
+    ]
+  },
+  "${modId}:CasketOfStarPower": {
+    "NAME": "Szkatułka gwiazd",
+    "DESCRIPTIONS": [
+      "Dodaj #b",
+      " #yIskrę do ręki za każdym razem, gdy zyskasz #yBlok."
+    ]
+  },
+  "${modId}:GalacticHaloPower": {
+    "NAME": "Halo galaktyki",
+    "DESCRIPTIONS": [
+      "Na koniec tury zyskaj #b",
+      " pkt. #yBloku za każdą kartę #yAtaku zagraną w tej turze."
+    ]
+  },
+  "${modId}:ManaRampagePower": {
+    "NAME": "Szał many",
+    "DESCRIPTIONS": [
+      "Twój następny #yAtak zostanie zagrany #b",
+      " razy więcej w tej turze."
+    ]
+  },
+  "${modId}:PropBagPower": {
+    "NAME": "Przenośna torba rekwizytów",
+    "DESCRIPTIONS": [
+      "Po zakończeniu walki utracisz #y",
+      "."
+    ]
+  },
+  "${modId}:UltraShortWavePower": {
+    "NAME": "Fala ultrakrótka",
+    "DESCRIPTIONS": [
+      "Efekt twojej #yFali #yultrakrótkiej jest #yWzmocniony #b",
+      " razy."
+    ]
+  },
+  "${modId}:DarkSparkPower": {
+    "NAME": "Mroczna Iskra",
+    "DESCRIPTIONS": [
+      "Każda zagrana karta z 'Iskrą' w nazwie da ci #b",
+      " dodatkowe pkt. #yŁadowania w tej turze."
+    ]
+  },
+  "${modId}:MagicChantPower": {
+    "NAME": "Magiczna inkantacja",
+    "DESCRIPTIONS": [
+      "Zmniejsz koszt #b",
+      " w następnej turze."
+    ]
+  },
+  "${modId}:SatelIllusPower": {
+    "NAME": "Iluzja satelity",
+    "DESCRIPTIONS": [
+      "Gdy w trakcie twojej tury liczba kart w stosie rozgrywającym wzrośnie, zyskaj #b",
+      " [E] ."
+    ]
+  },
+  "${modId}:GrandCrossPower": {
+    "NAME": "Wzmocniony",
+    "DESCRIPTIONS": [
+      "W tej turze aktywowano efekt #yWzmocnienia."
+    ]
+  },
+  "${modId}:Diaspora": {
+    "NAME": "Diaspora",
+    "DESCRIPTIONS": [
+      "Na koniec tury natychmiast zabij tę istotę, jeśli jej PŻ jest mniejsze niż #b",
+      "."
+    ]
+  },
+  "${modId}:TalismanPower": {
+    "NAME": "Pięciokolorowy talizman",
+    "DESCRIPTIONS": [
+      "Na początku tury dodaj do ręki #b",
+      " losową kartę #yUmiejętności."
+    ]
+  },
+  "${modId}:Wraith": {
+    "NAME": "Upiór",
+    "DESCRIPTIONS": [
+      "#yWyklucz losową kartę z ręki po rozpoczęciu tury."
+    ]
+  },
+  "${modId}:Nebula": {
+    "NAME": "Mgławica",
+    "DESCRIPTIONS": [
+      "Zyskaj ",
+      " pkt. Pancerza za każdym razem, gdy stracisz Blok przez przeciwników lub karty."
+    ]
+  },
+  "${modId}:LimboContact": {
+    "NAME": "Kontakt z nieumarłymi",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy zaatakuje cię ten przeciwnik, zyskaj 1 pkt. #yUpiora. NL Po śmierci nałóż na ciebie #b1 pkt. #yUpiora."
+    ]
+  },
+  "${modId}:InfernoClaw": {
+    "NAME": "Piekielny pazur",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy otrzymasz obrażenia od ataku tego przeciwnika, dodaj #yPoparzenie do stosu rozgrywającego."
+    ]
+  }
+}

@@ -18,7 +18,7 @@ import kotlin.test.assertEquals
 class LocalizationTest {
     private val languages = listOf(
         GameLanguage.ENG, GameLanguage.FRA, GameLanguage.JPN, GameLanguage.KOR,
-        GameLanguage.ZHS, GameLanguage.ZHT, GameLanguage.SPA,
+        GameLanguage.ZHS, GameLanguage.ZHT, GameLanguage.SPA, GameLanguage.POL,
     )
 
     /** What fails to build or describe itself in [language], as `class: problem`. */

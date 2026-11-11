@@ -1,0 +1,115 @@
+{
+  "${modId}:MiniHakkero": {
+    "NAME": "Mini-Hakkero",
+    "FLAVOR": "Miniaturowy piec ośmiu trygramów, prezent od Rinnosuke na pożegnanie, gdy Marisa opuszczała rodziców.",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy zagrasz kartę, zyskaj #b1 pkt. #yŁadowania."
+    ]
+  },
+  "${modId}:BewitchedHakkero": {
+    "NAME": "Zaczarowane Hakkero",
+    "FLAVOR": "Jego moc ognia jest na zupełnie nowym poziomie, ale czy na pewno można używać zaczarowanego narzędzia?",
+    "DESCRIPTIONS": [
+      "Zastępuje #rMini-Hakkero. NL Za każdym razem, gdy zagrasz kartę, zyskaj #b1 pkt. #yŁadowania. NL Zyskaj 1 pkt. więcej, jeśli to karta #yIskry."
+    ]
+  },
+  "${modId}:MagicArmor": {
+    "NAME": "Tarcza czarnej magii",
+    "FLAVOR": "Właściwie nie wiem, czym to jest, ale skoro projektant umieścił to w planie, to jest. - programista",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy dobierzesz kartę Stanu lub Klątwy, zyskaj 5 pkt. Bloku."
+    ]
+  },
+  "${modId}:MagicBroom": {
+    "NAME": "Magiczna miotła",
+    "FLAVOR": "Marisa zawsze podróżuje na swojej latającej miotle.",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy zagrasz #b3 karty kosztujące 0, dobierz 1 kartę."
+    ]
+  },
+  "${modId}:AmpWand": {
+    "NAME": "Różdżka wzmocnienia",
+    "FLAVOR": "Różdżka, która chyba nie jest często używana.",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy aktywujesz 3 efekty #yWzmocnienia, zyskaj [E] [E] ."
+    ]
+  },
+  "${modId}:RampagingMagicTools": {
+    "NAME": "Szalejące magiczne narzędzia",
+    "FLAVOR": "Minęło tyle czasu, odkąd ktoś ich używał. Kto wie, co się może stać?",
+    "DESCRIPTIONS": [
+      "Zyskaj [E] na początku każdej tury. NL Na początku każdej walki nałóż na siebie losowy negatywny lub pozytywny efekt ( #b1 pkt. #yKruchości, #b1 pkt. #ySłabości, #b1 pkt. #yWrażliwości, #b2 pkt. #yTrucizny, #b8 pkt. #yŁadowania )."
+    ]
+  },
+  "${modId}:ExperimentalFamiliar": {
+    "NAME": "Eksperymentalny chowaniec",
+    "FLAVOR": "Chowaniec wygląda jak błyszcząca kula. Nie jest zbyt potężny, ale na pewno bardzo ci pomoże.",
+    "DESCRIPTIONS": [
+      "Na początku każdej tury dodaj 1 #yIskrę do ręki. NL Na początku walki możesz wybrać #b1 z #b3 losowych kart. Kosztuje 0 w tej turze."
+    ]
+  },
+  "${modId}:BreadOfAWashokuLover": {
+    "NAME": "Chleb miłośnika washoku",
+    "FLAVOR": "\"Pamiętasz, ile kromek chleba zjadłaś do tej pory?\" \"Trzynaście. Wolę japońskie jedzenie.\"",
+    "DESCRIPTIONS": [
+      "Przywróć 1 PŻ za każdym razem, gdy Wykluczysz kartę #yStanu lub #yKlątwy. NL Po 13 aktywacjach zyskasz #b13 maks. PŻ, a ten artefakt przestanie działać."
+    ]
+  },
+  "${modId}:SimpleLauncher": {
+    "NAME": "Prosta wyrzutnia",
+    "FLAVOR": "Latarka to latarka, jak by jej nie nazwać...",
+    "DESCRIPTIONS": [
+      "Zmniejsz próg zużycia #yŁadowania z #b8 do #b6."
+    ]
+  },
+  "${modId}:HandmadeGrimoire": {
+    "NAME": "Ręcznie pisany grymuar",
+    "FLAVOR": "Zeszyt pełen zapisków z eksperymentów i przepisów na magiczne składniki; tak właśnie Marisa rozwija swoją magię.",
+    "DESCRIPTIONS": [
+      "Na początku walki za każde 15 kart w talii zyskaj [E] i dobierz kartę."
+    ]
+  },
+  "${modId}:ShroomBag": {
+    "NAME": "Torba na grzyby",
+    "FLAVOR": "Wszystkie wiedźmy mają niezdrowy entuzjazm do grzybów... A może tylko Marisa...?",
+    "DESCRIPTIONS": [
+      "Po podniesieniu zdobądź 2 #yPasożyty. Karty Pasożyta można teraz zagrywać. Zagranie #yPasożyta przywróci #b2 PŻ i dobierze kartę, a następnie go Wyklucza."
+    ]
+  },
+  "${modId}:Cape": {
+    "NAME": "Peleryna",
+    "FLAVOR": "Marisa zawsze bierze, co chce, a ta peleryna na pewno jej w tym pomoże.",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy wejdziesz do sklepu, zdobądź losowe nagrody za walkę.",
+      " użyć(cia) pozostało. NL Pierwszy towar w sklepie możesz wziąć za darmo."
+    ]
+  },
+  "${modId}:SproutingBranch": {
+    "NAME": "Kiełkująca gałąź",
+    "FLAVOR": "Uschnięta gałąź ożyła w dłoni Marisy, jakież to poetyckie.",
+    "DESCRIPTIONS": [
+      "Na początku walki zyskaj #b4 pkt. #yRegeneracji."
+    ]
+  },
+  "${modId}:AmplifyWand": {
+    "NAME": "Różdżka amplifikacji",
+    "FLAVOR": "Różdżka, która chyba nie jest często używana.",
+    "DESCRIPTIONS": [
+      "Za każdym razem, gdy aktywujesz efekt #yWzmocnienia, zyskaj #b4 pkt. #yBloku."
+    ]
+  },
+  "${modId}:CatCart": {
+    "NAME": "Kocia dorożka",
+    "FLAVOR": "Gdy polegniesz w walce, twoje wierne kotki przywrócą cię do życia za jej pomocą.",
+    "DESCRIPTIONS": [
+      "Zyskaj 1 ładunek, gdy wejdziesz piętro wyżej. Gdy miałbyś zginąć, zużyj wszystkie ładunki i przywróć #g4 PŻ za każdy z nich."
+    ]
+  },
+  "${modId}:BigShroomBag": {
+    "NAME": "Duża torba na grzyby",
+    "FLAVOR": "Większa wersja torby na grzyby.",
+    "DESCRIPTIONS": [
+      "Zastępuje #rTorbę #rna #rgrzyby. NL Karty Pasożyta można teraz zagrywać. Zagranie #yPasożyta przywróci #b3 PŻ i dobierze #b2 karty, a następnie go Wyklucza."
+    ]
+  }
+}

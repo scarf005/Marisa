@@ -9,6 +9,7 @@ directories below are named after the language code used in the game.
 - `ZHS`: Simplified Chinese
 - `ZHT`: Traditional Chinese
 - `SPA`: Spanish
+- `POL`: Polish
 
 ## Validation
 

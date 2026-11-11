@@ -30,7 +30,8 @@
         "src/main/resources/marisa/localization/KOR/cards.json",
         "src/main/resources/marisa/localization/ZHS/cards.json",
         "src/main/resources/marisa/localization/ZHT/cards.json",
-        "src/main/resources/marisa/localization/SPA/cards.json"
+        "src/main/resources/marisa/localization/SPA/cards.json",
+        "src/main/resources/marisa/localization/POL/cards.json"
       ],
       "url": "./src/main/resources/marisa/localization/schemas/cards.json"
     },
@@ -42,7 +43,8 @@
         "src/main/resources/marisa/localization/KOR/events.json",
         "src/main/resources/marisa/localization/ZHS/events.json",
         "src/main/resources/marisa/localization/ZHT/events.json",
-        "src/main/resources/marisa/localization/SPA/events.json"
+        "src/main/resources/marisa/localization/SPA/events.json",
+        "src/main/resources/marisa/localization/POL/events.json"
       ],
       "url": "./src/main/resources/marisa/localization/schemas/events.json"
     },
@@ -54,7 +56,8 @@
         "src/main/resources/marisa/localization/KOR/keywords.json",
         "src/main/resources/marisa/localization/ZHS/keywords.json",
         "src/main/resources/marisa/localization/ZHT/keywords.json",
-        "src/main/resources/marisa/localization/SPA/keywords.json"
+        "src/main/resources/marisa/localization/SPA/keywords.json",
+        "src/main/resources/marisa/localization/POL/keywords.json"
       ],
       "url": "./src/main/resources/marisa/localization/schemas/keywords.json"
     },
@@ -66,7 +69,8 @@
         "src/main/resources/marisa/localization/KOR/potions.json",
         "src/main/resources/marisa/localization/ZHS/potions.json",
         "src/main/resources/marisa/localization/ZHT/potions.json",
-        "src/main/resources/marisa/localization/SPA/potions.json"
+        "src/main/resources/marisa/localization/SPA/potions.json",
+        "src/main/resources/marisa/localization/POL/potions.json"
       ],
       "url": "./src/main/resources/marisa/localization/schemas/potions.json"
     },
@@ -78,7 +82,8 @@
         "src/main/resources/marisa/localization/KOR/powers.json",
         "src/main/resources/marisa/localization/ZHS/powers.json",
         "src/main/resources/marisa/localization/ZHT/powers.json",
-        "src/main/resources/marisa/localization/SPA/powers.json"
+        "src/main/resources/marisa/localization/SPA/powers.json",
+        "src/main/resources/marisa/localization/POL/powers.json"
       ],
       "url": "./src/main/resources/marisa/localization/schemas/powers.json"
     },
@@ -90,7 +95,8 @@
         "src/main/resources/marisa/localization/KOR/relics.json",
         "src/main/resources/marisa/localization/ZHS/relics.json",
         "src/main/resources/marisa/localization/ZHT/relics.json",
-        "src/main/resources/marisa/localization/SPA/relics.json"
+        "src/main/resources/marisa/localization/SPA/relics.json",
+        "src/main/resources/marisa/localization/POL/relics.json"
       ],
       "url": "./src/main/resources/marisa/localization/schemas/relics.json"
     }

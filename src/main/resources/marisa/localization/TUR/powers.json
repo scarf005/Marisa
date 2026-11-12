@@ -1,0 +1,273 @@
+{
+  "${modId}:DarkMatterPower": {
+    "NAME": "Karanlık Madde",
+    "DESCRIPTIONS": [
+      "Bu tur artık #yKaranlık #yMadde oynayamazsın.",
+      ""
+    ]
+  },
+  "${modId}:ExtraDraw": {
+    "NAME": "Kaçış Hızı",
+    "DESCRIPTIONS": [
+      "Her tur başında #b",
+      " kart daha çek ve eline #b",
+      " #yYanık ekle."
+    ]
+  },
+  "${modId}:EventHorizonPower": {
+    "NAME": "Olay Ufku",
+    "DESCRIPTIONS": [
+      "Bir #yYükselt etkisi kullandığında atma yığınından bir Saldırıyı eline alabilirsin. Her tur en fazla #b",
+      " kez.",
+      "( ",
+      " kez kaldı)"
+    ]
+  },
+  "${modId}:IllusionStarPower": {
+    "NAME": "Yanılsama Yıldızı",
+    "DESCRIPTIONS": [
+      "Tur başında elindeki #b",
+      " kartı dönüştür."
+    ]
+  },
+  "${modId}:MilliPulsaPower": {
+    "NAME": "Milisaniye Pulsarları",
+    "DESCRIPTIONS": [
+      "#yYükselt etkilerini kullanmak için artık fazladan [E] gerekmez.",
+      ""
+    ]
+  },
+  "${modId}:SatellIllusPower": {
+    "NAME": "Uydu Yanılsaması",
+    "DESCRIPTIONS": [
+      "Ana destende olmayan bir kart oynadığında #b",
+      " kart çek."
+    ]
+  },
+  "${modId}:TempStrength": {
+    "NAME": "Geçici Kuvvet",
+    "DESCRIPTIONS": [
+      "Bir sonraki vuruşun #b",
+      " hasar daha verir."
+    ]
+  },
+  "${modId}:TempStrengthLoss": {
+    "NAME": "Geçici Kuvvet Kaybı",
+    "DESCRIPTIONS": [
+      "Bu yaratığın hasarı bu tur #b",
+      " azaldı."
+    ]
+  },
+  "${modId}:ExtraEnergyPower": {
+    "NAME": "Fazladan Enerji",
+    "DESCRIPTIONS": [
+      "Her tur ayrıca ",
+      " enerji kazan."
+    ]
+  },
+  "${modId}:ChargeUpPower": {
+    "NAME": "Şarj",
+    "DESCRIPTIONS": [
+      "#b",
+      " yığın #yŞarjın var",
+      " bir sonraki Saldırın #b",
+      " kat hasar verir."
+    ]
+  },
+  "${modId}:PolarisUniquePower": {
+    "NAME": "Rehber Yıldız",
+    "DESCRIPTIONS": [
+      "#yRehber #yYıldız çekme yığınındaysa her tur başında fazladan [E] kazan."
+    ]
+  },
+  "${modId}:OrrerysSunPower": {
+    "NAME": "Orrery Güneşi",
+    "DESCRIPTIONS": [
+      "#yŞarj harcadığında #b",
+      " Blok kazan."
+    ]
+  },
+  "${modId}:Charged": {
+    "NAME": "Şarj Doldu!",
+    "DESCRIPTIONS": [
+      "Bir sonraki vuruşun #b",
+      " kat hasar verir"
+    ]
+  },
+  "${modId}:BlazeAwayPower": {
+    "NAME": "Alev Saçışı",
+    "DESCRIPTIONS": [
+      "Kullandığın bir sonraki Saldırı kartının #b",
+      " kopyasını ekler."
+    ]
+  },
+  "${modId}:MPPower": {
+    "NAME": "Azami Güç",
+    "DESCRIPTIONS": [
+      "Bu tur hasarın #b",
+      " ile çarpılır."
+    ]
+  },
+  "${modId}:EnergyFlowPower": {
+    "NAME": "Enerji Akışı",
+    "DESCRIPTIONS": [
+      "Tur sonunda #b",
+      " #yŞarj kazan."
+    ]
+  },
+  "${modId}:PulseMagicPower": {
+    "NAME": "Darbe Büyüsü",
+    "DESCRIPTIONS": [
+      "Bu tur #yYükselt etkilerini kullanmak için [E] harcamazsın."
+    ]
+  },
+  "${modId}:SingularityPower": {
+    "NAME": "Tekillik",
+    "DESCRIPTIONS": [
+      "Maliyeti 0 olan bir kart oynadığında elindeki rastgele bir #ySaldırı bu dövüş boyunca #b",
+      " hasar daha verir."
+    ]
+  },
+  "${modId}:WitchOfGreedGold": {
+    "NAME": "Açgözlülük Cadısı",
+    "DESCRIPTIONS": [
+      "Dövüş sonunda #b",
+      " altın kazan."
+    ]
+  },
+  "${modId}:WitchOfGreedPotion": {
+    "NAME": "Açgözlülük Cadısı",
+    "DESCRIPTIONS": [
+      "Dövüş sonunda #b",
+      " rastgele iksir kazan."
+    ]
+  },
+  "${modId}:OneTimeOffPlusPower": {
+    "NAME": "Bir Kez Ara",
+    "DESCRIPTIONS": [
+      "Bu tur #yYükselt ve #yŞarj etkilerini tetikleyemezsin."
+    ]
+  },
+  "${modId}:OneTimeOffPower": {
+    "NAME": "Bir Kez Ara",
+    "DESCRIPTIONS": [
+      "Bu tur #yYükselt etkilerini tetikleyemezsin."
+    ]
+  },
+  "${modId}:SuperNovaPower": {
+    "NAME": "Süpernova",
+    "DESCRIPTIONS": [
+      "Bir #yYanık #yTükettiğinde #b",
+      "Bir #yLanet veya #yDurum #yTükettiğinde #b",
+      " #yKuvvet kazan. NL Artık #yYanıktan hasar almazsın. NL Tur sonunda elini #yTüket."
+    ]
+  },
+  "${modId}:CasketOfStarPlusPower": {
+    "NAME": "Yıldız Mücevher Kutusu",
+    "DESCRIPTIONS": [
+      "#yBlok kazandığında eline #b",
+      " #yGeliştirilmiş #yKıvılcım ekle."
+    ]
+  },
+  "${modId}:CasketOfStarPower": {
+    "NAME": "Yıldız Mücevher Kutusu",
+    "DESCRIPTIONS": [
+      "#yBlok kazandığında eline #b",
+      " #yKıvılcım ekle."
+    ]
+  },
+  "${modId}:GalacticHaloPower": {
+    "NAME": "Galaktik Hale",
+    "DESCRIPTIONS": [
+      "Tur sonunda bu tur oynadığın her #ySaldırı için #b",
+      " #yBlok kazan."
+    ]
+  },
+  "${modId}:ManaRampagePower": {
+    "NAME": "Mana Çılgınlığı",
+    "DESCRIPTIONS": [
+      "Bir sonraki #ySaldırın bu tur fazladan #b",
+      " kez oynanır."
+    ]
+  },
+  "${modId}:PropBagPower": {
+    "NAME": "Taşınabilir Eşya Çantası",
+    "DESCRIPTIONS": [
+      "Dövüş bittiğinde şunu kaybedeceksin: #y",
+      "."
+    ]
+  },
+  "${modId}:UltraShortWavePower": {
+    "NAME": "Nihai Kısa Dalga",
+    "DESCRIPTIONS": [
+      "#yNihai #yKısa #yDalga etkin #b",
+      " kez #yYükseltilmiş."
+    ]
+  },
+  "${modId}:DarkSparkPower": {
+    "NAME": "Karanlık Kıvılcım",
+    "DESCRIPTIONS": [
+      "Bu tur adında 'Kıvılcım' geçen her kart oynadığında #b",
+      " #yŞarj daha kazan."
+    ]
+  },
+  "${modId}:MagicChantPower": {
+    "NAME": "Büyü Ezgisi",
+    "DESCRIPTIONS": [
+      "Sonraki tur şunun maliyetini azalt: #b",
+      "."
+    ]
+  },
+  "${modId}:SatelIllusPower": {
+    "NAME": "Uydu Yanılsaması",
+    "DESCRIPTIONS": [
+      "Turun içinde çekme yığınındaki kart sayısı arttığında #b",
+      " [E] kazan."
+    ]
+  },
+  "${modId}:GrandCrossPower": {
+    "NAME": "Yükseltildi",
+    "DESCRIPTIONS": [
+      "Bu tur bir #yYükselt etkisi kullandın."
+    ]
+  },
+  "${modId}:Diaspora": {
+    "NAME": "Diaspora",
+    "DESCRIPTIONS": [
+      "Tur sonunda CP'si #b",
+      " değerinden azsa bu yaratığı anında öldür."
+    ]
+  },
+  "${modId}:TalismanPower": {
+    "NAME": "Beş Renkli Tılsım",
+    "DESCRIPTIONS": [
+      "Tur başında eline #b",
+      " rastgele #yBeceri ekle."
+    ]
+  },
+  "${modId}:Wraith": {
+    "NAME": "Hayalet",
+    "DESCRIPTIONS": [
+      "Turun başladıktan sonra elindeki rastgele bir kartı #yTüket."
+    ]
+  },
+  "${modId}:Nebula": {
+    "NAME": "Bulutsu",
+    "DESCRIPTIONS": [
+      "Düşmanlardan veya kartlardan Blok kaybettiğinde ",
+      " Kaplı Zırh kazan."
+    ]
+  },
+  "${modId}:LimboContact": {
+    "NAME": "Ölümsüz Teması",
+    "DESCRIPTIONS": [
+      "Bu düşman sana her saldırdığında bir yığın #yHayalet kazan. NL Öldüğünde sana #b1 #yHayalet uygula."
+    ]
+  },
+  "${modId}:InfernoClaw": {
+    "NAME": "Cehennem Pençesi",
+    "DESCRIPTIONS": [
+      "Bu düşmandan saldırı hasarı aldığında çekme yığınına bir #yYanık ekle."
+    ]
+  }
+}

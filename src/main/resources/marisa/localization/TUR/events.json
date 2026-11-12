@@ -1,0 +1,34 @@
+{
+  "Mushrooms_MRS": {
+    "NAME": "Mantarlar",
+    "DESCRIPTIONS": [
+      "Doğal olmayan yeme isteğine yenik düşüyorsun. Mantar üstüne mantar yedikçe başın dönmeye başlıyor ve bayılıyorsun. Uyandığında kendini çok tuhaf hissediyorsun. NL CP'nin #b%25'ini #giyileştirirsin, ama aynı zamanda #renfekte olursun.",
+      "#r@Pusu!!@ NL Mantarlarla dolu kemirgenler birdenbire ortaya çıkıyor!",
+      "#b~Büyüleyici~ #b~renkli~ #b~mantarlarla~ dolu bir koridora giriyorsun. NL Bu mantarlar daha önce gördüklerine hiç benzemiyor. NL Birkaç tanesini toplamak istiyorsun, ama garip bir şekilde #b~birini~ #b~yemeye...~ zorlanıyorsun."
+    ],
+    "OPTIONS": [
+      "[Topla] #rMantarları #rkızdır.",
+      "[Ye] #g",
+      " #gCP #giyileş. #rLanetlen #r- #rAsalak.",
+      "[Savaş]",
+      "[Ayrıl]"
+    ]
+  },
+  "OrinTheCat": {
+    "NAME": "Kara Kedi",
+    "DESCRIPTIONS": [
+      "Birdenbire beliren #ykara bir #bkedi önünde durup yolunu kesiyor. NL Kediden #r~Ölüm~ #r~ve~ #r~Talihsizlik~ kokusu geliyor ve sana baktığında omurgandan aşağı bir ürperti iniyor. NL Dikkatini çekmek için sana miyavlıyor.",
+      "Kedi seni böyle gitmeye bırakmak istemiyor gibi. Pençelerini ve dişlerini gösterip üzerine atılıyor...",
+      "Kedi memnun kalmış gibi görünüp kaçıyor, ama #r~Ölüm~ #r~ve~ #r~Talihsizlik~ kokusu hâlâ üzerinde kalıyor...",
+      "Kedi kucağına atladı... Görünüşe göre artık bir yoldaşın var.",
+      "Onu görmezden geldiğini gören kedi çekip gidiyor."
+    ],
+    "OPTIONS": [
+      "[Kediyi sev] #rLanetlen #r- #rHayalet.",
+      "[Kediyi yok say] #gHemen #gayrılmayı #gdene.",
+      "[Savaş]",
+      "[Ayrıl]",
+      "[Kediyi sev]"
+    ]
+  }
+}

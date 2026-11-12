@@ -10,6 +10,7 @@ directories below are named after the language code used in the game.
 - `ZHT`: Traditional Chinese
 - `SPA`: Spanish
 - `POL`: Polish
+- `TUR`: Turkish
 
 ## Validation
 

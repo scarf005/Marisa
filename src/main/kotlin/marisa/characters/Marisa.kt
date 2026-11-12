@@ -105,6 +105,11 @@ class Marisa(name: String) :
             flavor = "\"Zwyczajna\" czarodziejka mieszkająca w Lesie Magii. NL Specjalizuje się w magii światła i ciepła."
         )
 
+        GameLanguage.TUR -> LoadoutText(
+            title = "Sıradan Büyücü",
+            flavor = """Büyü Ormanı'nda yaşayan "sıradan" bir büyücü. NL Işık ve ısı büyüsünde uzmanlaşmıştır."""
+        )
+
         else -> LoadoutText(
             title = "The Ordinary Magician",
             flavor = """The "ordinary" magician lives in the Forest of Magic. NL Specializes in light and heat magic."""
@@ -141,6 +146,7 @@ class Marisa(name: String) :
         GameLanguage.ZHT -> """普通的魔法使"""
         GameLanguage.KOR -> """평범한 마법사"""
         GameLanguage.POL -> "Zwyczajna Czarodziejka"
+        GameLanguage.TUR -> "Sıradan Büyücü"
         else -> "The Ordinary Magician"
     }
 

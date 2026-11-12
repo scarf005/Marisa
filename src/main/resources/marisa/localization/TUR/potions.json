@@ -1,0 +1,24 @@
+{
+  "${modId}:ShroomBrew": {
+    "NAME": "Mantar Karışımı",
+    "DESCRIPTIONS": [
+      "Bir kart Tüket. NL Bu iksirin etkisi Tükettiğin kartın türüne bağlıdır.",
+      "Ayrıntılar",
+      "Saldırı : Korku İksiri ; NL Beceri : Zayıflatma İksiri ; NL Güç : Zehir İksiri ; NL Durum : Ateş İksiri ; NL Lanet : Sis Bombası ."
+    ]
+  },
+  "${modId}:BottledSpark": {
+    "NAME": "Şişedeki Kıvılcım",
+    "DESCRIPTIONS": [
+      "Eline #b",
+      " #yKıvılcım ekle."
+    ]
+  },
+  "${modId}:StarNLove": {
+    "NAME": "Yıldız ve Aşk",
+    "DESCRIPTIONS": [
+      "Yükselt etkileri için fazladan maliyet ödemen gerekmez. #b",
+      " #yŞarj kazan."
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "keywords": [
+    {
+      "NAMES": [
+        "yükselt",
+        "Yükselt",
+        "yükseltme",
+        "Yükseltme",
+        "yükseltir",
+        "yükseltilir",
+        "yükseltilmiş",
+        "yükseltildiğinde"
+      ],
+      "DESCRIPTION": "Yeterli [E] varsa etkisi için fazladan enerji harca."
+    },
+    {
+      "NAMES": [
+        "bitkinlik",
+        "Bitkinlik",
+        "bitkinliği",
+        "bitkinlikler"
+      ],
+      "DESCRIPTION": "Bitkinlik, Şarj kazanmanı veya harcamanı engeller."
+    },
+    {
+      "NAMES": [
+        "kıvılcım",
+        "Kıvılcım",
+        "kıvılcımı",
+        "kıvılcıma",
+        "kıvılcımın",
+        "kıvılcımlar",
+        "kıvılcımları",
+        "kıvılcımlara",
+        "kıvılcım+",
+        "Kıvılcım+"
+      ],
+      "DESCRIPTION": "Kıvılcım, maliyeti #b0 enerji olan ve oynandığında Tüketilen bir Saldırı kartıdır."
+    },
+    {
+      "NAMES": [
+        "şarj",
+        "Şarj",
+        "şarjı",
+        "Şarjı",
+        "şarjın",
+        "Şarjın",
+        "şarja",
+        "Şarja",
+        "şarjını",
+        "Şarjını",
+        "şarj+",
+        "şarjının",
+        "Şarjının",
+        "chargeup"
+      ],
+      "DESCRIPTION": "Her #b8 yığın için bir sonraki Saldırının hasarını iki katına çıkar."
+    },
+    {
+      "NAMES": [
+        "Kara Alev Yıldızı",
+        "kara alev yıldızı"
+      ],
+      "DESCRIPTION": "Kara Alev Yıldızı, maliyeti #b0 olan ve kart atarak Blok kazandıran bir Beceri kartıdır."
+    },
+    {
+      "NAMES": [
+        "Beyaz Cüce",
+        "beyaz cüce"
+      ],
+      "DESCRIPTION": "Beyaz Cüce, maliyeti #b0 olan ve atma yığınının boyutuna göre hasar veren bir Saldırı kartıdır."
+    },
+    {
+      "NAMES": [
+        "hayalet",
+        "Hayalet",
+        "hayaleti",
+        "Hayaleti",
+        "hayalete",
+        "hayaletler"
+      ],
+      "DESCRIPTION": "Hayalet, turun başladıktan sonra elindeki rastgele bir kartı Tüketir."
+    }
+  ]
+}
